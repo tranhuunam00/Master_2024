@@ -11,4 +11,11 @@ https://www.researchgate.net/publication/361926287_IMPLEMENTATION_OF_TINY_MACHIN
 IMPLEMENTATION OF TINY MACHINE LEARNING MODELS ON ARDUINO 33 – BLE FOR GESTURE AND SPEECH RECOGNITION 
 
 https://ieeexplore-ieee-org.dbvista.idm.oclc.org/document/9745826
-Tiny Machine Learning (Tiny-ML) for Efficient Channel Estimation and Signal Detection
+Tiny Machine Learning (Tiny-ML) for Efficient Channel Estimation and Signal Detection\
+
+https://www.researchgate.net/publication/377646230_Tiny_Machine_Learning_TinyML_Based_Self_Diagnostic_Kit_for_Respiratory_Diseases
+Tiny Machine Learning (TinyML) Based Self Diagnostic Kit for Respiratory Diseases
+
+https://arxiv.org/pdf/2408.01283
+A Tiny Supervised ODL Core with Auto Data Pruning for
+Human Activity Recognition
