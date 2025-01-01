@@ -1,17 +1,22 @@
 /*
   IMU Capture
+
   This example uses the on-board IMU to start reading acceleration and gyroscope
   data from on-board IMU and prints it to the Serial Monitor for one second
   when the significant motion is detected.
+
   You can also use the Serial Plotter to graph the data.
+
   The circuit:
-  - Arduino Nano 33 BLE or Arduino Nano 33 BLE Sense Rev2 board.
+  - Arduino Nano 33 BLE or Arduino Nano 33 BLE Sense board.
+
   Created by Don Coleman, Sandeep Mistry
   Modified by Dominic Pajak, Sandeep Mistry
+
   This example code is in the public domain.
 */
 
-#include <Arduino_BMI270_BMM150.h>
+#include <Arduino_LSM9DS1.h>
 
 const float accelerationThreshold = 2.5; // threshold of significant in G's
 const int numSamples = 119;
@@ -52,15 +57,19 @@ void loop() {
     }
   }
 
-
+  // check if the all the required samples have been read since
+  // the last time the significant motion was detected
   while (samplesRead < numSamples) {
+    // check if both new acceleration and gyroscope data is
+    // available
     if (IMU.accelerationAvailable() && IMU.gyroscopeAvailable()) {
-      
+      // read the acceleration and gyroscope data
       IMU.readAcceleration(aX, aY, aZ);
       IMU.readGyroscope(gX, gY, gZ);
 
       samplesRead++;
 
+      // print the data in CSV format
       Serial.print(aX, 3);
       Serial.print(',');
       Serial.print(aY, 3);
