@@ -1,43 +1,14 @@
 import numpy as np
-from sklearn.decomposition import PCA
 import pandas as pd
-import matplotlib.pyplot as plt
-from scipy.signal import find_peaks
 import os
-import joblib
+# import joblib
 import os
 import tensorflow as tf
-
 from tensorflow import keras
 from tensorflow.keras import layers
 import numpy as np
 from sklearn.metrics import confusion_matrix, classification_report
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-
-def create_training_data_NN(data):
-    print("STARTING create_training_data_NN")
-
-    # Kiểm tra xem các cột cần thiết có tồn tại không
-    required_columns = {'x', 'y', 'z', 'activity'}
-    if not required_columns.issubset(data.columns):
-        raise ValueError(
-            f"Dữ liệu đầu vào thiếu một trong các cột: {required_columns}")
-
-    # Chuẩn hóa dữ liệu theo công thức: (x + 12) / 24
-    total_list_NN = data[['x', 'y', 'z']].values.astype(np.float32)
-    total_list_NN = (total_list_NN + 12) / 24  # Áp dụng chuẩn hóa
-
-    # Chuyển đổi nhãn `activity` thành số nguyên liên tục từ 0 đến num_classes - 1
-    unique_labels = np.unique(data['activity'])
-    label_mapping = {label: i for i, label in enumerate(unique_labels)}
-    train_labels_NN = np.array([label_mapping[label]
-                               for label in data['activity']], dtype=np.int32)
-
-    print(f"Nhãn sau khi chuyển đổi: {label_mapping}")
-
-    return total_list_NN, train_labels_NN
+from trainmodeltiny_createdata import create_training_data_NN
 
 
 def NeuralNetworkModel(train, test, labelTrain, labelTest):
@@ -98,7 +69,7 @@ total_list_NN, train_labels_NN = create_training_data_NN(data=data)
 
 print("total_list_NN")
 print(total_list_NN)
-print(train_labels_NN)
+# print(train_labels_NN)
 
 total_list_NN_test, train_labels_NN_test = create_training_data_NN(
     data=data_test)
@@ -114,7 +85,7 @@ print(len(labelTrainNN))
 nnM = NeuralNetworkModel(train=trainNN, test=testNN,
                          labelTrain=labelTrainNN, labelTest=labelTestNN)
 
-joblib.dump(nnM, 'namth.dat')
+# joblib.dump(nnM, 'namth.dat')
 converter = tf.lite.TFLiteConverter.from_keras_model(nnM)
 tflite_model = converter.convert()
 
