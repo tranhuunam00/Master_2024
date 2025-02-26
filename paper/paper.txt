@@ -19,3 +19,6 @@ Tiny Machine Learning (TinyML) Based Self Diagnostic Kit for Respiratory Disease
 https://arxiv.org/pdf/2408.01283
 A Tiny Supervised ODL Core with Auto Data Pruning for
 Human Activity Recognition
+
+https://github.com/wangxb96/Awesome-EdgeAI?tab=readme-ov-file
+EdgeAI
