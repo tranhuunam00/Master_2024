@@ -1,0 +1,67 @@
+\begin{lstlisting}[float,language=JavaScript,caption={Ví dụ phương thức API ($searchMasterData()$) gọi đến hai phương thức khác, trong đó có một phương thức ($get()$) cần được tạo hàm giả khi thực thi kiểm thử}, label=api_example,captionpos=b]
+async get(req: RequestModel): Promise<any> { //Accessing database (*@\label{declare_get_method}@*)
+    return await this.httpService
+      .post<any>(Utils.join(this.apiUrl, this.config.CORE_GET), req) (*@\label{call_http_service}@*)
+      .toPromise(); (*@\label{get_method_toPromise}@*)}
+      
+@Post('search') //The tested API
+async searchMasterData(@Body() body: RequestModel<BaseDto>): Promise<any> { (*@\label{declare_api_method}@*)
+    // Hidden code...
+    await this.checkRequired(body.condition['type']); (*@\label{lst_exp_check_require}@*)
+    let reqCon = body.condition;
+    switch (reqCon['type']) { (*@\label{lst_exp_switch_stmt}@*)
+        case "MASTER":(*@\label{lst_exp_case_branch}@*)
+            if (!(type of reqCon["keyword"] === "string") (*@\label{lst_exp_if_stmt}@*)) {
+                (*@\label{lst_exp_keyword_branch}@*)return ResponseModel(RESULT_STATUS.ERROR);}
+            const ret = await this.get(reqCon);(*@\label{lst_exp_start_uncover}@*)
+            if (ret.status == 200) { (*@\label{lst_exp_200}@*) 
+                // Hidden code... (*@\label{lst_exp_hidden_code}@*)
+                return  new ResponseModel(RESULT_STATUS.OK, ret); (*@\label{lst_exp_end_uncover}@*)}
+            return new ResponseModel(RESULT_STATUS.ERROR);(*@\label{lst_exp_return_error}@*)
+        //Other cases....
+        default: (*@\label{lst_exp_default_branch}@*)
+            return new ResponseModel(RESULT_STATUS.ERROR);}
+}
+
+checkRequired(s: string): Promise<any> { //A normal method (*@\label{declare_check_required_method}@*)
+    if (s == null (*@\label{check_null_equal}@*)) {
+        this.errors.push("error message");}
+}
+\end{lstlisting}
+
+% \begin{lstlisting}[float,language=JavaScript,caption={An example presents one caller ($search()$) and two callees ($get()$ and $check()$), in which the first callee ($get()$) needs to be mocked.}, label=api_example,captionpos=b]
+% @Post('search')
+% async search(body: Dto): any { (*@\label{declare_api_method}@*)
+%     this.check(body['type']); (*@\label{lst_exp_check_require}@*)
+%     switch (body['type']) { (*@\label{lst_exp_switch_stmt}@*)
+%         case "MASTER":(*@\label{lst_exp_case_branch}@*)
+%             if (body["keyword"] is not a string)(*@\label{lst_exp_if_stmt}@*)) 
+%                 return ...
+%             const ret = await this.get(reqCon);(*@\label{lst_exp_start_uncover}@*)
+%             if (ret.status == 200 (*@\label{lst_exp_200}@*)) 
+%                 return ... (*@\label{lst_exp_end_uncover}@*)
+%             else  return ...(*@\label{lst_exp_return_error}@*)
+%     }
+% }
+% //A method gets data from database
+% async get(req): any (*@\label{declare_get_method}@*){ ...}
+% check(s: string): any (*@\label{declare_check_required_method}@*) {  //A normal callee
+%     if (s == null (*@\label{check_null_equal}@*))  
+%         this.errors.push("error message");}
+% \end{lstlisting}
+% % return await this.httpService
+% %       .post<any>(Utils.join(this.apiUrl, this.config.CORE_GET), req) (*@\label{call_http_service}@*).toPromise(); (*@\label{get_method_toPromise}@*)
+% \begin{lstlisting}[float,language=JavaScript,caption=An example of mocking $get()$ method, label=mock_example,captionpos=b]
+% it("first test", (done) => {
+%     // generated input
+%     const body = {...}; (*@\label{input_declaration}@*)
+%     // initialize mock data
+%     const response: AxiosResponse < any > = {(*@\label{mock_declare_response}@*) status: 200,
+%         data: {}, headers: {}, statusText: 'OK', config: {url:'x'}};
+%     // set mock data to method accessing database
+%     jest.spyOn(controller_class, "get").mockResolvedValue(response); (*@\label{mock_spy}@*)
+%     // call the tested API
+%     return request(server).post("/search") (*@\label{begin_test_driver}@*)
+%     .send(body)  (*@\label{end_test_driver}@*).expect(201).then(res => {...})
+% });
+% \end{lstlisting}

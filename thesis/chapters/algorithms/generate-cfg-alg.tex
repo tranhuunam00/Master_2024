@@ -1,0 +1,42 @@
+\begin{algorithm}
+	\SetAlgoLined
+	\KwData{\textit{f}: Hàm kiểm thử viết bằng ngôn ngữ Typescript}
+    \KwResult{\textit{graph}: Đồ thị dòng điều khiển}
+    \SetKwFunction{GenerateCFG}{\textsc{Sinh}-CFG}
+    \SetKw{KwBy}{by}
+    \BlankLine
+    \GenerateCFG{$f$} \\
+    $B \leftarrow f.getBlocks()$\label{cfg:blocks}; $cfgs \leftarrow []$ \label{cfg:initCfgArray}\\
+    $start \leftarrow new BeginNode()$\label{cfg:start}; $end \leftarrow new EndNode()$ \label{cfg:end} \\
+    \For{$block : B$ \label{cfg:traverse} \label{cfg:traverseBlocks} }{
+        %  \eIf{$block.canSeperated()$ \label{cfg:checkSeperatable}}{
+        %     $subCFG \leftarrow $ \GenerateCFG{$block$} \label{cfg:subCFG} \\
+        %      $cfgs.push(subCFG)$ \label{cfg:addSubCFG}\\
+        %   }{
+        %     \eIf{ $block.isStopBlock()$ \label{cfg:checkStopBlock}}
+        %     {
+        %     $block.setNext(end)$ \label{cfg:updateGraph}\\
+        %     }
+        %     {
+        %     $subCFG = initSimpleCFG(block)$ \label{cfg:simpleCFG}\\
+        %      $cfgs.push(subCFG)$ \label{cfg:addSimpleCFG}\\
+        %     }
+        %   }
+        \uIf{$block.canSeperated()$ \label{cfg:checkSeperatable}}{
+             $subCFG \leftarrow $ \GenerateCFG{$block$} \label{cfg:subCFG} \\
+             $cfgs.push(subCFG)$ \label{cfg:addSubCFG}\\
+          }
+          \uElseIf{$block.isStopBlock()$ \label{cfg:checkStopBlock}}{
+              $block.setNext(end)$ \label{cfg:updateGraph}\\
+          }
+          \Else {
+             $subCFG = initSimpleCFG(block)$ \label{cfg:simpleCFG}\\
+             $cfgs.push(subCFG)$ \label{cfg:addSimpleCFG}\\
+          }
+          
+    }
+     $graph \leftarrow linkBlocks(start, cfgs, end)$ \label{cfg:linkGraphs}\\
+     \Return $graph$
+    \caption{Thuật toán sinh đồ thị dòng điều khiển \cite{ref-cft4cunit}}
+    \label{generate-cfg_alg}
+\end{algorithm}

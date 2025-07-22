@@ -1,0 +1,102 @@
+\documentclass[13pt,a4paper, oneside]{report} % twoside for draf
+%Report
+% \documentclass[13pt]{extreport}
+
+% \usepackage{babel}
+\usepackage[utf8]{vietnam}
+%\usepackage{times}
+% \usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{scrextend}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
+\usepackage{nomencl}
+\usepackage{multirow}
+\usepackage[]{listofsymbols}
+\usepackage{multicol}
+% \setlength{\columnsep}{1cm}
+\usepackage{titlesec}
+\usepackage[tocflat]{tocstyle}
+% \usepackage{blindtext}
+\usepackage{algcompatible}
+
+% \usepackage{tocloft}
+
+% \usepackage[tocflat]{tocstyle}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\usepackage{mathptmx}	% same Time New Roma
+\usepackage{nomencl}
+\usepackage{fancyhdr}
+\usepackage[linesnumbered,lined,ruled]{algorithm2e}
+% \usepackage{algorithm}
+
+\usepackage{longtable}
+\usepackage{lipsum} % just for dummy text- not needed for a longtable
+% \usepackage[nottoc]{tocbibind}
+
+\opensymdef
+
+\newsym[Aufrechter Buchstabe]{AB}{\text{A}}
+\closesymdef
+
+\usepackage{others/bkthesis}
+\newcommand{\True}{\textbf{true}}
+\newcommand{\False}{\textbf{false}}
+\renewcommand{\lstlistingname}{Mã nguồn}% Listing -> Algorithm
+\renewcommand{\listalgorithmcfname}{Danh sách thuật toán}
+\renewcommand{\nomname}{Danh sách ký hiệu, viết tắt}
+
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\makeatletter
+% \patchcmd{\thenomenclature}{\section*}{\section}{}{}
+\makeatother
+\crname{KHÓA LUẬN TỐT NGHIỆP\\
+NĂM HỌC 2019 – 2020}
+
+\title{{\Large Đề tài:}\\XÂY DỰNG CÔNG CỤ\\
+HỖ TRỢ KIỂM THỬ TỰ ĐỘNG\\
+DÀNH CHO CÁC ỨNG DỤNG \\
+SỬ DỤNG NGÔN NGỮ TYPESCRIPT
+}
+
+\csSupervise{\changefontsizes[15pt]{13pt}PGS. TS. Phạm Ngọc Hùng}
+% \csReviewer{TS. Pham Van Hai}
+\cttime{3/2020}
+
+\thesislayout
+
+\begin{document}
+
+\coverpage
+
+\frontmatter
+
+\end{document}

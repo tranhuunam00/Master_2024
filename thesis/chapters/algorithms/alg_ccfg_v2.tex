@@ -1,0 +1,39 @@
+\begin{algorithm}
+\SetAlgoLined
+	\KwData{\textit{m}: source code, \textit{d}: current depth of CCFG }
+    \KwResult{\textit{ccfg}: CCFG}
+    $maxDepth \leftarrow 4$\label{ccfg_maxDepth}\\
+    $savedCCFGs \leftarrow []$\label{ccfg_savedCCFGs}\\
+    \SetKwFunction{GenerateCCFG}{\textsc{Generate}-CCFG}
+    \SetKw{KwBy}{by}
+    \BlankLine
+    \GenerateCCFG{$m, d$} \\
+     $B\leftarrow \text{a list of blocks of } m$  \label{ccfg_getBlocks}\\
+    $G\leftarrow \text{a graph of linking blocks in } B$ \label{ccfg_linkBlocks}\\
+    Update $ccfg$ by replacing the vertex $m$ with $G$ \label{ccfg_updateCCFG}\\
+    \uIf{$G \textnormal{ contains } return/break/continue \textnormal{ vertices }$\label{ccfg_checkStopBlock}} 
+    {
+        Update the destination of $return/break/continue$ pointers in $ccfg$ \label{ccfg_updatePoiter}
+    }
+    \ElseIf{$G \textnormal{ contains statements calling other elements}$ \label{ccfg_checkCallOther}} 
+    {
+        $S\leftarrow \textnormal{source code of the called elements}$ \label{ccfg_getCallee} \\
+        \uIf{$savedCCFGs\textnormal{ not contain } S \textnormal{ and } d <= maxDepth$ \label{ccfg_checkExpand}}
+        {
+            \GenerateCCFG{S, d+1} \label{ccfg_generateCallee}
+        } 
+        \Else{
+            get sub-CCFGs in $saveCCFGs$ \label{ccfg_getSaved} \\
+        }
+        Link the sub-CCFGs to $ccfg$ \label{ccfg_linkSub}\\
+    }
+    \For{each block M in B}{
+        \If{M \textnormal{could be divided into smaller blocks}}{
+            \GenerateCCFG{M,d} \label{ccfg_generateDeeper}\\
+        }
+    }
+    Add $ccfg$ to $savedCCFGs$\label{ccfg_saveForReuse}\\ 
+     \Return $ccfg$
+    \caption{CCFG generation}
+    \label{algorithm_generate_ccfg}
+\end{algorithm}

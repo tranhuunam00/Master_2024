@@ -19,3 +19,12 @@ Tiny Machine Learning (TinyML) Based Self Diagnostic Kit for Respiratory Disease
 https://arxiv.org/pdf/2408.01283
 A Tiny Supervised ODL Core with Auto Data Pruning for
 Human Activity Recognition
+
+https://github.com/wangxb96/Awesome-EdgeAI?tab=readme-ov-file
+EdgeAI
+
+https://link.springer.com/article/10.1007/s10916-025-02199-8
+Wearable Sensors and Artificial Intelligence for Sleep Apnea Detection: A Systematic Review 2025
+
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9653035/
+Obstructive Sleep Apnea Detection Based on Sleep Sounds via Deep Learning 2025
