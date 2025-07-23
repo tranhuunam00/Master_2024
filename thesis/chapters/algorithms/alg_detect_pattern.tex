@@ -1,0 +1,47 @@
+\begin{algorithm}
+\SetAlgoLined
+	\KwData{\textit{iterator}: Starting vertex of the CCFG, \textit{valueTable}: Table of variables during traversal}
+    \KwResult{\textit{patterns}: A list of patterns}
+    \SetKwFunction{CollectPatterns}{\textsc{Collect}-Patterns}
+    \SetKw{KwBy}{by}
+    \BlankLine
+    
+    $iterator \leftarrow$ Root of $ccfg$ \label{pattern_getRoot}\\
+    $valueTable \leftarrow$ Table of parameters  \label{pattern_initParams}\\ 
+    \BlankLine
+    
+    \CollectPatterns{$iterator, valueTable$} \\
+    Traverse the CCFG from $iterator$, update $iterator$ after visiting a statement  \label{pattern_traverse}\\
+    % \For{$path : paths$ \label{pattern_for_paths} \label{cfg:traverseBlocks} }{
+        % $nodes \leftarrow path.getElements()$\label{cfg:blocks}\\ 
+        % $valueTable \leftarrow new Map()$ \label{pattern_initValueTable}\\
+        % \For{$node$ : $nodes$ \label{pattern_for_nodes} \label{cfg:traverseBlocks} }{
+            \uIf{$iterator$ \textnormal{is declaration statement} \label{pattern_checkDeclaration}}{
+                 Add a new variable with initiate value to  $valueTable$
+                  \label{pattern_addVar} \\
+              }
+              \uElseIf{$iterator$ \textnormal{is assignment statement} \label{pattern_checkAssigment}}{
+                  Update value of assigned variable in $valueTable$ \label{pattern_updateVar}\\
+              }
+              \uElseIf{$iterator$ \textnormal{is condition expression} \label{pattern_checkCondition}}{
+                    $newPatterns \leftarrow \textnormal{Analyze expression to find patterns}$ \label{pattern_find_in_expression} \\
+                    Replace variables in $newPatterns$  \label{pattern_replace_1}\\
+                  Add $newPatterns$ to $patterns$ \label{pattern_addToAll_1}\\
+                 \CollectPatterns{iterator.getTrue(), valueTable}  \label{pattern_visitTrue} \tcp{Continue traverse true branch}
+                 \CollectPatterns{iterator.getFalse(), valueTable}  \label{pattern_visitFalse} \tcp{Continue traverse false branch} 
+              }
+              \uElseIf{$iterator$ \textnormal{is linked to sub-CCFG} \label{pattern_checkLink}}{
+                    Collect patterns in sub-CCFG  \label{pattern_colectInSub}\\
+                    Replace variables of collected patterns by variables in $valueTable$  \label{pattern_replace_2}\\
+                    Add collected patterns to $patterns$ \label{pattern_addToAll_2}\\
+              }
+            %   \Else {
+            %      $subCFG = initSimpleCFG(block)$ \label{cfg:simpleCFG}\\
+            %      $cfgs.push(subCFG)$ \label{cfg:addSimpleCFG}\\
+            %   }
+        % }
+    % }
+     \Return $patterns$
+    \caption{Pattern detection of field usages}
+     \label{alg_detect_patterns}
+\end{algorithm}
