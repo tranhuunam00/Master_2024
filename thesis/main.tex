@@ -1,17 +1,18 @@
 \documentclass[12pt,a4paper,oneside]{book} % twoside for draf
 
-%\usepackage{babel}
+
 \usepackage[utf8]{vietnam}
-%\usepackage{times}
-%\usepackage{graphicx}
 
-\usepackage{mathptmx}	% same Time New Roma
 
-%\renewcommand{\rmdefault}{phv} % Arial
-%\renewcommand{\sfdefault}{phv} % Arial
-% \usepackage[fontsize=13pt]{scrextend}
+\usepackage{newtxtext}
+
+
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\addbibresource{refs.bib}
 
 \usepackage[acronym]{glossaries}
+\usepackage{placeins}
+
 
 \usepackage{fancyhdr}
 % \usepackage[utf8]{inputenc}
@@ -52,28 +53,18 @@
 
 \newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
 
-%\counterwithin{figure}{chapter}
-\usepackage[
-backend=biber,
-bibstyle=authoryear,
-sorting=none,
-citestyle=numeric-comp
-]{biblatex}
+
 \usepackage{xpatch}
 
-\makeatletter
-\input{numeric.bbx}
-\makeatother
 
-\xpatchbibmacro{date+extrayear}{%
-  \printtext[parens]%
-}{%
-  \setunit{\addperiod\space}%
-  \printtext%
-}{}{}
+% \makeatletter
+% \input{numeric.bbx}
+% \makeatother
 
 
-\addbibresource{refs.bib}      
+
+
+   
 
 % \renewcommand\labelitemi{--}
 
@@ -89,8 +80,7 @@ citestyle=numeric-comp
 
 \SetKwRepeat{Do}{do}{while}%
 
-% \algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
-% \usepackage{setting/uetthesis}
+
 
 %%% The following lines add Chapter or Appendix in front of the number
 \titlecontents{chapter}%
@@ -137,7 +127,7 @@ citestyle=numeric-comp
 	pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
 	colorlinks=false,       % false: boxed links; true: colored links
 	linkcolor=black,       % color of internal links
-	citecolor=black,       % color of links to bibliography
+	citecolor=black,       
 	filecolor=black,        % color of file links
 	urlcolor=black,        % color of external links
 	linktoc=page            % only page is linked
@@ -187,74 +177,22 @@ citestyle=numeric-comp
 
 \pagestyle{plain}
 \frontmatter
-
-
 \input{chapters/0-coverpage}
-
-% \changefontsizes[16pt]{14pt}
-% \input{chapters/0.2.start}
 
 \tableofcontents
 
-% \pagestyle{fancy}
 
-\addcontentsline{toc}{chapter}{\listfigurename}
+\renewcommand{\listfigurename}{Danh sách hình vẽ}
+\renewcommand{\listtablename}{Danh sách bảng}
+
 \listoffigures
-
+\addcontentsline{toc}{chapter}{Danh sách hình vẽ}
 
 \listoftables
-\addcontentsline{toc}{chapter}{\listtablename}
+\addcontentsline{toc}{chapter}{Danh sách bảng}
 
-\printglossaries
-
-% \newpage
-% \chapter*{Thuật ngữ}
-
-% \addcontentsline{toc}{chapter}{Thuật ngữ}
-% \begin{table}[h!]
-%     \centering
-%     \begin{adjustbox}{width=1\textwidth}
-%     \small
-%     \begin{tabular}{|c|c|c|}
-%          \hline
-%          \textbf{Từ viết tắt} & \textbf{Từ đầy đủ} &\textbf{Ý nghĩa}\\
-%          \hline
-%         API   & Application Programming Interface & Giao diện lập trình ứng dụng\\
-%         \hline
-%         AST   & Abstract Syntax Tree & Cây cú pháp trừu tượng\\
-%         \hline
-%          BDD   & Behaviour Driven Development & Mô hình phát triển phần mềm định hướng hành vi\\
-%         \hline
-%         CFG   & Control Flow Graph & Đồ thị dòng điều khiển\\
-%          \hline
-%         CFT   & Control Flow Testing & Kiểm thử dòng điều khiển\\
-%          \hline
-%         DFT  & Data Flow Testing & Kiểm thử dòng dữ liệu\\
-%         \hline
-%         HTML   & Hyper Text Markup Language & Ngôn ngữ đánh dấu siêu văn bản\\
-%         \hline
-%         JSON   & JavaScript Object Notation & Cú pháp lưu trữ và trao đổi dữ liệu\\
-%         \hline
-%         MC/DC   & Modified Condition/Decision Coverage & Bao phủ quyết định sửa đổi\\
-%         \hline
-%         OOP   & Object-oriented Programming & Lập trình hướng đối tượng\\
-%          \hline
-%         SE   & Symbolic Execution & Thực thi tượng trưng\\
-%         \hline
-%         SMT   & Satisfiability Modulo Theories & Lý thuyết mô-đun thỏa mãn\\
-%         \hline
-%         TDD   & Test Driven Development & Mô hình phát triển phần mềm định hướng kiểm thử\\
-%         \hline
-%         XML   & Extensible Markup Language & Ngôn ngữ đánh dấu có thể mở rộng\\
-%         \hline
-%         \end{tabular}
-%     \end{adjustbox}
-%     % \caption{Bảng thuật ngữ được sử dụng trong khóa luận}
-%     \label{table:1}
-% \end{table}
 
 \mainmatter
-
 
 
 \changefontsizes[16pt]{13pt}
@@ -281,7 +219,6 @@ citestyle=numeric-comp
 
 % \input{chapters/7-reference}
 
-% \bibliographystyle{plain} % ieeetr
 
 
 % \appendix
@@ -292,10 +229,8 @@ citestyle=numeric-comp
 
 
 \newpage
-\printbibliography[heading=bibintoc, title=Tài liệu tham khảo]
-% \printbibliography[heading=bibintoc, title=Tài liệu tham khảo tiếng Việt,keyword=vietnamese]
-% \printbibliography[heading=bibintoc, title=Tài liệu tham khảo tiếng Anh,keyword=english]
-% \appendix
+\printbibliography
+
 
 
 

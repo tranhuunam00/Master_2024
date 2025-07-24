@@ -1,35 +1,34 @@
-\begin{lstlisting}[float,language=dart,caption=Tập lệnh để tìm kiểm dịch vụ cảm biến ,label=flutterBle,captionpos=b]
+\begin{lstlisting}[float,language=Java,caption={Tập lệnh để tìm kiểm dịch vụ cảm biến},label=flutterBle,captionpos=b]
 StreamBuilder<List<BluetoothService>>(
-      stream: device.services,
-      initialData: [],
-      builder: (c, snapshot) {
-        if (snapshot.data!.length > 0) {
-          isService = true;
-        }
-        BluetoothService serviceAcclerometer;
-        if (snapshot.data == null || snapshot.data!.length == 0) {
-          return Text("Please contact customer Service");
-        }
-        for (int i = 0; i < snapshot.data!.length; i++) {
-          if (snapshot.data![i].uuid.toString() ==
-              Constants.ACCLEROMETER_SERVICE) {
-            accelerometerService = snapshot.data![i];
-           }
-        }
-        if (accelerometerService == null) {
-          return Text("Please contact customer Service");
-        }
-        for (int i = 0;
-            i < accelerometerService!.characteristics.length;
-            i++) {
-          print(accelerometerService!.characteristics[i].uuid);
-          if (accelerometerService!.characteristics[i].uuid
-                  .toString() ==
-              Constants.ACCLEROMETER_CHARACTION) {
-            accelerometerCharactis =
-                accelerometerService!.characteristics[i];
-          }
-        }
-}));
-
+  stream: device.services,
+  initialData: [],
+  builder: (c, snapshot) {
+    if (snapshot.data!.length > 0) {
+      isService = true;
+    }
+    BluetoothService serviceAcclerometer;
+    if (snapshot.data == null || snapshot.data!.length == 0) {
+      return Text("Please contact customer Service");
+    }
+    for (int i = 0; i < snapshot.data!.length; i++) {
+      if (snapshot.data![i].uuid.toString() ==
+          Constants.ACCLEROMETER_SERVICE) {
+        accelerometerService = snapshot.data![i];
+      }
+    }
+    if (accelerometerService == null) {
+      return Text("Please contact customer Service");
+    }
+    for (int i = 0;
+        i < accelerometerService!.characteristics.length;
+        i++) {
+      print(accelerometerService!.characteristics[i].uuid);
+      if (accelerometerService!.characteristics[i].uuid
+              .toString() ==
+          Constants.ACCLEROMETER_CHARACTION) {
+        accelerometerCharactis =
+            accelerometerService!.characteristics[i];
+      }
+    }
+  });
 \end{lstlisting}
