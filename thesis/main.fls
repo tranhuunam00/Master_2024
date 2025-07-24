@@ -441,19 +441,14 @@ INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-s
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 OUTPUT main.bcf
-INPUT main.bbl
-INPUT .\main.bbl
-INPUT .\main.bbl
-INPUT .\main.bbl
-INPUT main.bbl
 INPUT .\main.out
 INPUT .\main.out
 INPUT main.out
 INPUT main.out
+OUTPUT main.pdf
 INPUT .\main.out
 INPUT .\main.out
 OUTPUT main.out
-OUTPUT main.pdf
 INPUT .\chapters\0-coverpage.tex
 INPUT .\chapters\0-coverpage.tex
 INPUT .\chapters\0-coverpage.tex
@@ -482,6 +477,21 @@ INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\vnr\vnr17.tfm
 INPUT .\main.toc
 INPUT .\main.toc
 INPUT main.toc
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ot1ntxtlf.fd
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ot1ntxtlf.fd
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ot1ntxtlf.fd
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-ot1.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy9.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex9.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 OUTPUT main.toc
 INPUT .\main.lof
 INPUT .\main.lof
@@ -503,17 +513,6 @@ INPUT .\chapters\2-base-knowledge.tex
 INPUT .\chapters\2-base-knowledge.tex
 INPUT chapters\2-base-knowledge.tex
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\vnr\vnr17.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy9.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex9.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT .\images\vị trí đặt cảm biến.png
 INPUT .\images\vị trí đặt cảm biến.png
 INPUT .\images\vị trí đặt cảm biến.png
@@ -846,12 +845,9 @@ INPUT .\images\macjh.png
 INPUT .\images\macjh.png
 INPUT .\images\macjh.png
 INPUT main.aux
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ot1ntxtlf.fd
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ot1ntxtlf.fd
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ot1ntxtlf.fd
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-ot1.tfm
 INPUT .\main.out
 INPUT .\main.out
+INPUT main.run.xml
 OUTPUT main.run.xml
 INPUT C:\Users\ADMIN\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\ADMIN\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk

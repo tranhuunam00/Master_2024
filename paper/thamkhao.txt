@@ -1,0 +1,2 @@
+https://github.com/BaptisteZloch/MakeIT-How-to-deploy-a-linear-regression-on-Arduino-Nano-33: code linear on chip
+
