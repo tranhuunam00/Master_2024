@@ -441,6 +441,11 @@ INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-s
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 OUTPUT main.bcf
+INPUT main.bbl
+INPUT .\main.bbl
+INPUT .\main.bbl
+INPUT .\main.bbl
+INPUT main.bbl
 INPUT .\main.out
 INPUT .\main.out
 INPUT main.out
@@ -847,7 +852,6 @@ INPUT .\images\macjh.png
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
-INPUT main.run.xml
 OUTPUT main.run.xml
 INPUT C:\Users\ADMIN\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\ADMIN\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk

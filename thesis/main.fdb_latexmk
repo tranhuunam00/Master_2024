@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber main"] 1753331526.33796 "main.bcf" "main.bbl" "main" 1753331553.72081 2
-  "main.bcf" 1753331552 112422 39da337cad8d1b32a4312e62bb8fcd4e "pdflatex"
+["biber main"] 1753331721.7498 "main.bcf" "main.bbl" "main" 1753331740.93749 0
+  "main.bcf" 1753331740 112422 39da337cad8d1b32a4312e62bb8fcd4e "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1753331545.40898 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1753331553.72156 2
+["pdflatex"] 1753331733.53133 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1753331740.93821 2
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1753331100 170669 580f60f86b494b149fd13be17089526f ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1753331109 14064 c09422c9c68fb0c221657445c1009dde ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1753323483 13254313 89e2afc147c36950f3366f1142cce13c ""
@@ -299,14 +299,13 @@
   "images/svm_ovso.png" 1753256028 72431 1ef5c4cb9fa973e793d34d12b9ae827b ""
   "images/switch.png" 1753256028 421365 42a8de8d46a10969e9aa6353f7d2b8b5 ""
   "images/thucnghiem.png" 1753256028 411269 f32107c69e826a62b7003a15ef6ffb29 ""
-  "main.aux" 1753331552 22179 c0e9438b619daf917415ea7ae4db64bc "pdflatex"
-  "main.bbl" 0 -1 0 "biber main"
-  "main.lof" 1753331552 4808 c90f9b7e65b77107ab160cecbe93305d "pdflatex"
-  "main.lot" 1753331552 276 c33564d026b42a9a507d84018df21728 "pdflatex"
-  "main.out" 1753331552 6765 fde5ff665f2343aeecc610962f069e1b "pdflatex"
-  "main.run.xml" 1753331552 2268 f918a72198252e4ff2cbedb9e5121b21 "pdflatex"
+  "main.aux" 1753331740 22202 d91c962b5cb4a4998d42e99ea8773a23 "pdflatex"
+  "main.bbl" 1753331724 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
+  "main.lof" 1753331740 4808 c90f9b7e65b77107ab160cecbe93305d "pdflatex"
+  "main.lot" 1753331740 276 c33564d026b42a9a507d84018df21728 "pdflatex"
+  "main.out" 1753331740 6765 fde5ff665f2343aeecc610962f069e1b "pdflatex"
   "main.tex" 1753331543 6020 0e810851289d257a477d63b8203450bb ""
-  "main.toc" 1753331552 2841 4721c06dc839b65032de97c845611608 "pdflatex"
+  "main.toc" 1753331740 2841 4721c06dc839b65032de97c845611608 "pdflatex"
   "setting/bkthesis.sty" 1753256024 967 af4f61477f3f023e14bc982890f87805 ""
   "src/glossaries.tex" 1753256024 4991 3e7909c476ac007014addcb9684de782 ""
   (generated)
