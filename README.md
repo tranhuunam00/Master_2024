@@ -17,3 +17,9 @@ Vì đây là tài khoản dùng chung nên đề nghị Quý Thầy/Cô/Anh/Ch�
 Trân trọng
 
 // expert-project: https://github.com/edgeimpulse/expert-projects/tree/main/audio-projects
+
+pdflatex main.tex
+biber main
+makeglossaries main
+pdflatex main.tex
+pdflatex main.tex

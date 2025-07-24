@@ -19,16 +19,16 @@
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Lưu đồ hoạt động của thiết bị BLE}}{34}{figure.2.10}%
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Lưu đồ luồng gửi thông tin BLE}}{38}{figure.2.11}%
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Minh hoạ kết quả phân tích đường cong Allan}}{39}{figure.2.12}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Biểu đồ phương sai Allan của trục x}}{39}{figure.2.13}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Biểu đồ phương sai Allan của trục x}}{40}{figure.2.13}%
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Kết quả bộ lọc Kalman cho dữ liệu thô lấy trực tiếp từ trục X của cám biến gia tốc}}{40}{figure.2.14}%
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Các chức năng cơ bản của ứng dụng}}{42}{figure.2.15}%
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Cấu trúc BLOC}}{42}{figure.2.16}%
 \contentsline {figure}{\numberline {2.17}{\ignorespaces Mô hình tích hợp giữa mạng cảm biến và cấu trúc dữ liệu đám mây}}{46}{figure.2.17}%
 \contentsline {figure}{\numberline {2.18}{\ignorespaces Cấu trúc lưu trữ dữ liệu}}{47}{figure.2.18}%
 \contentsline {figure}{\numberline {2.19}{\ignorespaces Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}}{48}{figure.2.19}%
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Phân bố thời gian sử dụng đối với dự án học máy}}{49}{figure.2.20}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Phân bố thời gian sử dụng đối với dự án học máy}}{50}{figure.2.20}%
 \contentsline {figure}{\numberline {2.21}{\ignorespaces Tối ưu siêu phẳng sử dụng thuật toán SVM}}{52}{figure.2.21}%
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Thuật toán một với một}}{52}{figure.2.22}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Thuật toán một với một}}{53}{figure.2.22}%
 \contentsline {figure}{\numberline {2.23}{\ignorespaces Thuật toán một với nhiều}}{53}{figure.2.23}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Thực nghiệm với kit Adafruit Playground}}{56}{figure.3.1}%

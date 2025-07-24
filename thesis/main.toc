@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {2.3.1.}Lập trình vi xử lý}{33}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2.}Hiệu chuẩn cảm biến}{38}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3.}Xây dựng phần mềm ứng dụng}{41}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4.}Thiết kế và xây dựng hệ thống lưu trữ }{45}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.4.}Thiết kế và xây dựng hệ thống lưu trữ }{46}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5.}Tìm hiểu, ứng dụng phân loại tư thế ngủ bằng học máy }{49}{subsection.2.3.5}%
 \contentsline {chapter}{\numberline {3}KẾT QUẢ THỰC NGHIỆM VÀ ĐÁNH GIÁ}{55}{chapter.3}%
 \contentsline {section}{\numberline {3.1.}Đánh giá tư thế ngủ sử dụng cảm biến gia tốc}{55}{section.3.1}%

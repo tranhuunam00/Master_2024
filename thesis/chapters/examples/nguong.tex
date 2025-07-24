@@ -1,4 +1,10 @@
-\begin{lstlisting}[float,language=C,caption=Tập lệnh đánh giá tư thế ngủ bằng ngưỡng, label=nguong,captionpos=b]
+\begin{lstlisting}[%
+  float,
+  language=C,
+  caption={Tập lệnh đánh giá tư thế ngủ bằng ngưỡng},
+  captionpos=b,
+  label={lst:nguong}
+]
 static Function getPositionSleep = (double x, double y, double z) {
     if ((-6.5 < y && y < 6.5)) {
       if (-7.07 < x && x < 7.07) {
@@ -13,6 +19,5 @@ static Function getPositionSleep = (double x, double y, double z) {
       if (x < -3) return 3; //phai
   }
     return 6; // khong phai nam
-  };
-
+};
 \end{lstlisting}
