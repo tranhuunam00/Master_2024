@@ -1,16 +1,1 @@
-\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
-\begin{theglossary}\glossaryheader
-\glsgroupheading{B}\relax \glsresetentrylist %
-\glossentry{BLE}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{34}}}\glsgroupskip
-\glsgroupheading{G}\relax \glsresetentrylist %
-\glossentry{GATT}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{34}}}\glsgroupskip
-\glsgroupheading{O}\relax \glsresetentrylist %
-\glossentry{OSA}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{5\delimN 6}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{47}}}\glsgroupskip
-\glsgroupheading{P}\relax \glsresetentrylist %
-\glossentry{PSG}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{7}}}%
-\end{theglossary}\glossarypostamble
+\null
