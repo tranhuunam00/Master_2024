@@ -561,6 +561,17 @@ INPUT .\chapters\2-base-knowledge.tex
 INPUT chapters\2-base-knowledge.tex
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7y.vf
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Users\ADMIN\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7m.vf
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\psyro.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
 INPUT .\images\vị trí đặt cảm biến.png
 INPUT .\images\vị trí đặt cảm biến.png
 INPUT .\images\vị trí đặt cảm biến.png
@@ -579,17 +590,6 @@ INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8c.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7m.vf
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\psyro.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7y.vf
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
-INPUT C:\Users\ADMIN\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
 INPUT .\images\diendung.png
 INPUT .\images\diendung.png
@@ -920,6 +920,8 @@ INPUT .\main.out
 INPUT .\main.out
 INPUT main.run.xml
 OUTPUT main.run.xml
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb

@@ -1437,6 +1437,116 @@
       \verb https://doi.org/10.3233/AIC-170729
       \endverb
     \endentry
+    \entry{berry2012scoring}{article}{}{}
+      \name{author}{15}{}{%
+        {{hash=19c4326a096699090bf3f4896b75d893}{%
+           family={Berry},
+           familyi={B\bibinitperiod},
+           given={Richard\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=6c7be711fcef02123e69b4662615dfe4}{%
+           family={Budhiraja},
+           familyi={B\bibinitperiod},
+           given={Reena},
+           giveni={R\bibinitperiod}}}%
+        {{hash=375e6553d51548037cb4a2a25f71e219}{%
+           family={Gottlieb},
+           familyi={G\bibinitperiod},
+           given={Daniel\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=d68e4e31cccd718061e40a97bad807ac}{%
+           family={Gozal},
+           familyi={G\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1596587a93be14e092d0385b50ce504e}{%
+           family={Iber},
+           familyi={I\bibinitperiod},
+           given={Conrad},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4610d89e2d0fa384b8dde6753f4d7d03}{%
+           family={Kapur},
+           familyi={K\bibinitperiod},
+           given={Vishesh\bibnamedelima K.},
+           giveni={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=d331af06127709b0187f952f54600407}{%
+           family={Marcus},
+           familyi={M\bibinitperiod},
+           given={Carole\bibnamedelima L.},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=343d89fbee566f0fd7a8760581acbbc2}{%
+           family={Mehra},
+           familyi={M\bibinitperiod},
+           given={Reena},
+           giveni={R\bibinitperiod}}}%
+        {{hash=06ccf6e9669f5a6f25f368c236d0c2bd}{%
+           family={Parthasarathy},
+           familyi={P\bibinitperiod},
+           given={Sairam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c84013da2a214da29e92e6b640427957}{%
+           family={Quan},
+           familyi={Q\bibinitperiod},
+           given={Stuart\bibnamedelima F.},
+           giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=aeca370f2d7d68be10c93778c85662cc}{%
+           family={Redline},
+           familyi={R\bibinitperiod},
+           given={Susan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=234c9293e43dab2df5900971c42738a9}{%
+           family={Strohl},
+           familyi={S\bibinitperiod},
+           given={Kingman\bibnamedelima P.},
+           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=53232fdc8095224e354794b5a68d1207}{%
+           family={Ward},
+           familyi={W\bibinitperiod},
+           given={Sally\bibnamedelimb L.\bibnamedelimi Davidson},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=b917a2c5b9f562533cfdbe8261db7004}{%
+           family={Tangredi},
+           familyi={T\bibinitperiod},
+           given={Mary\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=986ab5eb7cbfd57951ec4a52d7dca9be}{%
+           family={Sleep\bibnamedelima Medicine},
+           familyi={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={American\bibnamedelima Academy},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a9ff317f323eab780d774ad3fa8c452}
+      \strng{fullhash}{0080c153045f72123cdaf89ccffde145}
+      \strng{fullhashraw}{0080c153045f72123cdaf89ccffde145}
+      \strng{bibnamehash}{1a9ff317f323eab780d774ad3fa8c452}
+      \strng{authorbibnamehash}{1a9ff317f323eab780d774ad3fa8c452}
+      \strng{authornamehash}{1a9ff317f323eab780d774ad3fa8c452}
+      \strng{authorfullhash}{0080c153045f72123cdaf89ccffde145}
+      \strng{authorfullhashraw}{0080c153045f72123cdaf89ccffde145}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1550-9389}
+      \field{journaltitle}{Journal of Clinical Sleep Medicine}
+      \field{number}{5}
+      \field{title}{Rules for Scoring Respiratory Events in Sleep: Update of the 2007 AASM Manual for the Scoring of Sleep and Associated Events. Deliberations of the Sleep Apnea Definitions Task Force of the American Academy of Sleep Medicine}
+      \field{volume}{8}
+      \field{year}{2012}
+      \field{pages}{597\bibrangedash 619}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.5664/jcsm.2172
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.5664/jcsm.2172
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.5664/jcsm.2172
+      \endverb
+    \endentry
     \entry{ThaySYOSA}{article}{}{}
       \name{author}{14}{}{%
         {{hash=22e451049def6b25343e2347e8657556}{%
@@ -1682,8 +1792,8 @@
       \strng{authornamehash}{d5d7dbceb45cc9e70a3b4daf5b854119}
       \strng{authorfullhash}{d5d7dbceb45cc9e70a3b4daf5b854119}
       \strng{authorfullhashraw}{d5d7dbceb45cc9e70a3b4daf5b854119}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nat Sci Sleep}
@@ -2009,8 +2119,8 @@
       \strng{authornamehash}{ecd8c1e5f9b83b58ff126143f8e65992}
       \strng{authorfullhash}{ecd8c1e5f9b83b58ff126143f8e65992}
       \strng{authorfullhashraw}{ecd8c1e5f9b83b58ff126143f8e65992}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ISRN Otolaryngol}
@@ -2349,8 +2459,8 @@
       \strng{authornamehash}{74bc0099986ec179a6f6e1e6582008ec}
       \strng{authorfullhash}{34ea6e2e274018027e26d2ac388ecf31}
       \strng{authorfullhashraw}{34ea6e2e274018027e26d2ac388ecf31}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1087-0792}
@@ -2663,8 +2773,8 @@
       \strng{authornamehash}{36316c1e52871093ff2bef1f938bf36b}
       \strng{authorfullhash}{36316c1e52871093ff2bef1f938bf36b}
       \strng{authorfullhashraw}{36316c1e52871093ff2bef1f938bf36b}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: April 6, 2025}
@@ -2898,8 +3008,8 @@
       \strng{authornamehash}{b67a306bf652d84e53191fbb4cfb5cde}
       \strng{authorfullhash}{b67a306bf652d84e53191fbb4cfb5cde}
       \strng{authorfullhashraw}{b67a306bf652d84e53191fbb4cfb5cde}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sleep Medicine}
