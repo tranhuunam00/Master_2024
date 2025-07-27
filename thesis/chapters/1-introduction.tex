@@ -8,57 +8,61 @@ Mặc dù PSG vẫn giữ vai trò là phương pháp tham chiếu trong chẩn 
 
 Trong những năm gần đây, nhiều nhóm nghiên đang chú trọng nghiên cứu, phát triển hệ thống HST nhằm mục đích thay thế hoặc hỗ trợ cho đa ký giấc ngủ. Năm 2011, Collop và cộng sự đã phát triển một hệ thống phân loại SCOPER (Sleep, Cardiovacular, Oximetry, Position, Effort, and Respiration) để đánh giá các tín hiệu sinh lý thu nhận trong việc chẩn đoán OSA\cite{hst_6p_paper}. Tác giả Morillo D và cộng sự đề xuất một phương pháp sàng lọc ngưng thở tắc nghẽn khi ngủ dựa trên cảm biến gia tốc gắn tại vị trí hõm ức, cho phép trích xuất các tín hiệu hô hấp, tim mạch và tiếng ngáy bằng kỹ thuật xử lý tín hiệu số, từ đó chứng minh tính khả thi của thiết bị di động đơn giản và chi phí thấp trong hỗ trợ chẩn đoán hội chứng ngưng thở – giảm thở khi ngủ\cite{morillo2010accelerometer}. Trong nhóm các thiết bị đeo, A.H. Yüzer và cộng sự đã phát triển thiết bị đeo tay sử dụng cảm biến gia tốc ADXL345 để phát hiện và phát tín hiệu rung khi cảnh báo. \cite{hst_wear_paper}. Tương tự, nhóm Yunyoung Nam và cộng sự cũng đã tích hợp hệ thống thu thập, phân tích sử dụng một cảm biến gia tốc ba trục và một cảm biến áp suất để giám sát chất lượng giấc ngủ tư thế ngủ, trạng thái ngủ, giai đoạn ngủ (REM và chu kỳ giai đoạn ngủ không REM) \cite{hst_pressure_paper}. Tại Việt Nam, nhóm nghiên cứu của  Giáo sư Lê Tiến Thường, trường đại học Bách Khoa TP Hồ Chí Minh đã sử dụng cảm biến gia tốc MPU6050 cùng với vi xử lý ESP32 nhằm ghi nhận hơi thở và nhịp tim của bệnh nhân OSA thông qua rung động, và dòng chảy của động mạch và tĩnh mạch ở cổ \cite{thuong_wear_paper}. Gần đây, Domingues và cộng sự (2024) xây dựng một mô hình mạng nơ-ron nhân tạo dựa trên dữ liệu từ máy đo (SpO$_2$), cấm biến gia tốc và ghi âm tiếng ngáy của hệ thống Biologix, nhằm dự đoán chính xác trạng thái ngủ. Kết quả cho thấy mô hình này có khả nâng cao độ chính xác trong chẩn đoán ngưng thở khi ngủ tại nhà, tiệm cận với tiêu chuẩn của đa ký giấc ngủ truyền thống \cite{domingues2024sleep}. Một hướng nghiên cứu khác là cảm biến đặt dưới nệm giường. Tác giả Andrei Boiko và cộng sự đánh giá hệ thống phát sử dụng cảm biến gia tốc đặt dưới đệm giường để ghi dao động do cử động ngực khi thở. Kết quả cho thấy thuật toán phát hiện ngưng thở đạt độ chính xác, độ đặc hiệu và độ nhạy lần lượt là 94.6\%, 95.3\% và 93.7\% \cite{Boiko2023}. 
 
-Nhìn chung, việc chẩn đoán hội chứng ngưng thở khi ngủ (OSA) và đặc biệt là dạng phụ thuộc tư thế (pOSA), 
-đòi hỏi một hệ thống giám sát có khả năng thu thập liên tục dữ liệu sinh lý và 
-đưa ra quyết định chính xác trong thời gian thực. 
-Trong bối cảnh đó, các mô hình học máy đang trở thành 
-công cụ đắc lực để phân loại mức độ nghiêm trọng của OSA 
-thông qua chỉ số AHI hoặc nhận diện tư thế ngủ dựa trên tín hiệu cảm biến. 
-Đây là hướng tiếp cận liên ngành giữa y học giấc ngủ và trí tuệ nhân tạo ứng dụng \cite{osa_sanchez2025}.
-Trong số các thuật toán học máy truyền được sử dụng phổ biến, 
-Random Forest (RF) \cite{genuer2020random} nổi bật nhờ khả năng kháng chống lại quá khớp và độ chính xác cao. 
-Trong nghiên cứu \cite{wang2023ml_wearable}, Wang và cộng sự đã ứng dụng RF để phân loại các trường hợp ngưng thở khi ngủ, đạt độ chính xác 93.88\%, độ nhạy 89.93\% và độ đặc hiệu 91.8\%. 
-Một nghiên cứu khác \cite{yeo2022respiratory}, Yeo và cộng sự sử dụng RF cho nhiệm vụ phân loại sự kiện hô hấp, thu được độ chính xác 83\%, độ nhạy 99\% và F1-score 81\%. 
-Mặc dù có sự khác biệt về nguồn dữ liệu và phương pháp trích chọn đặc trưng, RF vẫn cho thấy hiệu quả vượt trội khi 
-so sánh với các thuật toán khác như SVM, LDA hay QDA \cite{wang2023ml_wearable}, \cite{yeo2022respiratory}, \cite{parbat2024multiscale}.
+Các mô hình học máy đã được ứng dụng rộng rãi trong bài toán phát hiện 
+và phân loại hội chứng ngưng thở khi ngủ (Obstructive Sleep Apnea – OSA), 
+đặc biệt là trong các hệ thống giám sát sử dụng cảm biến đeo. 
+Đây là hướng tiếp cận liên ngành giữa y học giấc ngủ và trí tuệ nhân tạo ứng dụng, 
+cho phép khai thác hiệu quả tín hiệu sinh lý (như ECG, PPG, accelerometer) 
+nhằm phát hiện các sự kiện hô hấp bất thường và phân loại mức độ nghiêm trọng của 
+OSA một cách tự động, nhanh chóng và chính xác \cite{osa_sanchez2025}. 
+Trong số các thuật toán học máy truyền thống, Random Forest (RF) đã được chứng minh 
+là một trong những phương pháp hiệu quả nhất nhờ khả năng kháng quá khớp và độ chính xác cao, 
+với độ chính xác trên 93\% trong nhiều nghiên cứu \cite{genuer2020random,wang2023ml_wearable}. 
+SVM, KNN và LDA cũng được sử dụng phổ biến nhờ khả năng phân loại mạnh mẽ và khả năng thích ứng 
+với nhiều loại dữ liệu sinh lý \cite{cortes1995svm, cunningham2007knn, tharwat2017lda}. 
+Bên cạnh đó, các thuật toán tiên tiến như XGBoost đã được triển khai để tăng tốc huấn luyện và 
+cải thiện hiệu suất trong các hệ thống học máy gọn nhẹ (TinyML) 
+phục vụ chẩn đoán lâm sàng \cite{chen2016xgboost}.
 
-Bên cạnh đó, thuật toán SVM \cite{cortes1995svm} cũng đã được áp dụng nhằm xác định siêu phẳng tối ưu để phân loại các nhóm trong không gian đặc trưng. 
-Trong nghiên cứu \cite{wang2023ml_wearable}, Wang cũng sử dụng thêm mô hình SVM và đạt độ chính xác 88,28\%, độ đặc hiệu 91,69\% và độ nhạy 83,94\%, 
-cho thấy hiệu quả cao trong phát hiện ngưng thở khi ngủ, dù mô hình Random Forest thường có kết quả cao hơn.
-Ở nghiên cứu \cite{yeo2022respiratory}, SVM đạt độ chính xác 83\% và hệ số Cohen’s kappa 0,53 trong phân loại sự kiện hô hấp theo từng phút. 
-Trong \cite{parbat2024multiscale}, SVM được huấn luyện trên tín hiệu ECG một kênh, đạt độ chính xác 69,13\%, góp phần cải thiện hiệu suất của hệ thống phân loại khi tích hợp trong mô hình tổ hợp. 
-Những kết quả này cho thấy SVM vẫn là một phương pháp có giá trị trong ứng dụng học máy cho chẩn đoán ngưng thở khi ngủ.
+Bên cạnh các thuật toán học máy truyền thống, 
+các mô hình học sâu (deep learning) như mạng nơ-ron nhân tạo (ANN), 
+mạng nơ-ron tích chập (CNN), và mạng nơ-ron sâu (DNN) đã cho thấy hiệu quả vượt trội 
+trong việc xử lý tín hiệu sinh lý phức tạp và nhận diện sự kiện hô hấp liên quan đến OSA. 
+Nhiều nghiên cứu đã ứng dụng các kiến trúc CNN một chiều (1D-CNN), mạng kết hợp CNN–RNN,
+và mạng tích chập đa tầng để phân loại tư thế ngủ, phát hiện nhịp thở bất thường và ước lượng chỉ 
+số AHI với độ chính xác có thể đạt trên 90\% 
+\cite{Vu2025SleepPosition,HOANG2025116309,Sleep_Posture_Detection}. 
+Các mô hình này tận dụng khả năng tự động trích chọn đặc trưng từ dữ liệu cảm biến thô, 
+hỗ trợ phát hiện OSA theo thời gian thực và tối ưu hóa hiệu năng. Những kết quả này khẳng định tiềm năng lớn của học sâu trong việc 
+xây dựng các hệ thống giám sát giấc ngủ thế hệ mới, đặc biệt là trên các nền tảng nhúng và t
+hiết bị đeo thông minh.
 
-K-Nearest Neighbors (KNN) \cite{cunningham2007knn} là một thuật toán khác 
-cũng thường xuyên được áp dụng trong các nghiên cứu 
-về phát hiện ngưng thở khi ngủ \cite{wang2023ml_wearable}, \cite{jeon2020realtime}. 
-Dựa trên nguyên lý đo độ tương đồng trong không gian đặc trưng, 
-KNN phân loại một điểm dữ liệu mới dựa trên nhãn của các điểm lân cận gần nhất. 
-Wang và cộng sự đã dùng mô hình KNN xử lý tín hiệu quang học PPG và đạt độ chính xác 85.06\%, với độ đặc hiệu 86.11\% và độ nhạy 83.72\% \cite{wang2023ml_wearable}. 
-Trong khi đó, nghiên cứu \cite{jeon2020realtime} báo cáo hiệu quả vượt trội hơn với accuracy lên đến 95\%, đồng thời vẫn đảm bảo thời gian thực thi đáp ứng yêu cầu hệ thống. 
-Thành công này được cho là đến từ khả năng đo lường chính xác độ tương đồng giữa dữ liệu quan sát và dữ liệu đã học, 
-giúp mô hình KNN đưa ra dự đoán phù hợp với mức độ nghiêm trọng của OSA.
+Với mục tiêu triển khai hệ thống trên thiết bị đeo có tài nguyên tính toán hạn chế, 
+việc áp dụng các thuật toán học máy nhẹ (TinyML) đóng vai trò then chốt. 
+Khác với các mô hình học sâu truyền thống yêu cầu phần cứng mạnh và 
+tiêu tốn năng lượng, TinyML cho phép thực thi mô hình trực tiếp trên vi điều khiển 
+có dung lượng bộ nhớ và tốc độ xử lý thấp, đồng thời đảm bảo độ trễ tối thiểu và khả năng 
+hoạt động ngoại tuyến. Đặc điểm này đặc biệt phù hợp cho các ứng dụng y sinh tại nhà, 
+nơi thiết bị cần hoạt động liên tục, chi phí thấp và không phụ thuộc vào kết nối mạng.
 
-Bên cạnh các thuật toán truyền thống, mô hình XGBoost \cite{chen2016xgboost} cũng được đưa vào thử nghiệm trong nghiên cứu \cite{wang2023ml_wearable}
-nhằm đánh giá khả năng phân loại các mức độ ngưng thở khi ngủ. 
-Là một biến thể của thuật toán boosting, XGBoost được thiết kế tối ưu cho hiệu suất tính toán 
-và có khả năng xử lý hiệu quả cả bài toán hồi quy và phân loại. 
-Kết quả cho thấy XGBoost đạt độ chính xác 82.05\%, độ đặc hiệu 84.91\% và độ nhạy 78.42\%, 
-cho thấy tiềm năng lớn của mô hình này trong ứng dụng lâm sàng, 
-đặc biệt trong các hệ thống đòi hỏi cân bằng giữa độ chính xác và tốc độ huấn luyện.
-Trong nghiên cứu \cite{yeo2022respiratory}, 
-thuật toán Linear Discriminant Analysis (LDA) \cite{tharwat2017lda} được đánh giá là một phương pháp quan trọng. 
-LDA sử dụng trung bình và ma trận hiệp phương sai của từng lớp để xác định ranh giới quyết định tối ưu, 
-nhằm tối đa hóa sự phân biệt giữa các lớp và giảm thiểu phương sai nội bộ. 
-Trong bối cảnh nghiên cứu, LDA cho thấy hiệu quả vượt trội trong phát hiện sự kiện hô hấp với độ chính xác 
-81\%, độ nhạy 88\%, độ đặc hiệu 79\% và điểm F1 đạt 81\%.
-
-
+Tiny machine learning tập trung vào việc giảm thiểu số lượng tham số mô hình và độ phức tạp tính toán, 
+nhờ đó trở thành một hướng tiếp cận đầy hứa hẹn trong các ứng dụng chăm 
+sóc sức khỏe thông minh \cite{ray2021tinyml,diab2022embedded}. 
+Tuy nhiên, vẫn tồn tại sự đánh đổi giữa việc đơn giản hóa mô hình và 
+duy trì độ chính xác trong phân loại. Bài toán đặt ra là làm sao tối 
+ưu hóa đồng thời kích thước mô hình, tốc độ xử lý và hiệu suất trong việc phân loại tình trạng OSA, nhận diện tư thế, 
+đảm bảo hệ thống vừa đủ nhẹ để chạy trên phần cứng nhúng, vừa đủ chính xác để có giá trị trong giám sát y tế.
 
 
-Luận văn này nhằm nghiên cứu và phát triển một hệ thống 
-giám sát tư thế ngủ, ứng dụng cảm biến gia tốc kết hợp 
-với thuật toán học máy gọn nhẹ (TinyML) và phần mềm di động. 
+
+
+Mặc dù các nghiên cứu trước đây đã chứng minh hiệu quả của học máy trong phân loại tư thế ngủ và phát hiện OSA, 
+phần lớn các hệ thống vẫn phụ thuộc vào dữ liệu đa kênh phức tạp, mô hình tính toán nặng, 
+hoặc cần xử lý tập trung trên máy chủ. Điều này gây hạn chế khi triển khai thực tế 
+tại nhà hoặc trên thiết bị đeo. Hơn nữa, vẫn còn thiếu các giải pháp tích hợp đầy đủ từ thu thập, 
+xử lý, đến phân loại tín hiệu ngay trên vi điều khiển 
+với độ trễ thấp và khả năng hoạt động độc lập không cần kết nối mạng. 
+Luận văn này đề xuất một hướng tiếp cận mới, kết hợp cảm biến MEMS chi phí thấp với thuật toán TinyML tối ưu hóa trên thiết bị nhúng, nhằm xây dựng một hệ thống theo dõi tư thế ngủ cá nhân hóa, có tiềm năng hỗ trợ sàng lọc pOSA theo thời gian thực.
 Thiết bị được thiết kế theo hướng đeo được (wearable), 
 cho phép ghi nhận và phân loại chính xác các tư thế 
 ngủ phổ biến như nằm ngửa, nằm sấp, nằm nghiêng trái và phải. 
