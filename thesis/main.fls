@@ -578,6 +578,13 @@ INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8c.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
+INPUT .\images\4ngu.png
+INPUT .\images\4ngu.png
+INPUT .\images\4ngu.png
+INPUT .\images\4ngu.png
+INPUT .\images\4ngu.png
+INPUT .\images\4ngu.png
+INPUT .\images\4ngu.png
 INPUT .\images\vị trí đặt cảm biến.png
 INPUT .\images\vị trí đặt cảm biến.png
 INPUT .\images\vị trí đặt cảm biến.png
@@ -614,13 +621,9 @@ INPUT .\images\acce_apdien.png
 INPUT .\images\acce_apdien.png
 INPUT .\images\acce_apdien.png
 INPUT .\images\acce_apdien.png
-INPUT .\images\4ngu.png
-INPUT .\images\4ngu.png
-INPUT .\images\4ngu.png
-INPUT .\images\4ngu.png
-INPUT .\images\4ngu.png
-INPUT .\images\4ngu.png
-INPUT .\images\4ngu.png
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
 INPUT .\chapters\3-proposed_solution.tex
 INPUT .\chapters\3-proposed_solution.tex
 INPUT .\chapters\3-proposed_solution.tex
@@ -640,8 +643,6 @@ INPUT .\images\NRF52840-QFA_SPL.jpg
 INPUT .\images\NRF52840-QFA_SPL.jpg
 INPUT .\images\NRF52840-QFA_SPL.jpg
 INPUT .\images\NRF52840-QFA_SPL.jpg
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
 INPUT .\images\cortexM4.png
 INPUT .\images\cortexM4.png
 INPUT .\images\cortexM4.png
