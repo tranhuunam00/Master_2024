@@ -335,63 +335,78 @@ Nội dung cũng đề cập đến các yêu cầu chức năng, phi chức nă
 thiết kế hệ thống ở mức cao nhằm đảm bảo khả năng triển khai thực 
 tế và mở rộng trong tương lai.
 
+
 \subsection{Lập trình vi xử lý}
 
-\begin{figure}[!]
-		\centering
- 		\includegraphics[width=0.5\textwidth]{images/flowBLE.png}
-		\caption{Lưu đồ hoạt động của thiết bị BLE}
-		\label{flowBLE}
+Thiết bị được lập trình trên nền tảng Arduino IDE, sử dụng thư viện 
+\texttt{Adafruit Circuit Playground}. Trong hàm \texttt{setup()}, 
+thiết bị khởi tạo các bản tin quảng cáo (advertising), 
+cấu hình kết nối/ngắt kết nối, và thiết lập cấu trúc dịch vụ theo 
+giao thức \gls{GATT} của BLE, như được minh họa trong Hình~\ref{flowBLE}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/flowBLE.png}
+    \caption{Lưu đồ hoạt động của thiết bị BLE}
+    \label{flowBLE}
 \end{figure}
+
+Trong đoạn mã~\ref{arduinoBLE}, hàm \texttt{startAdv()} đảm nhiệm cấu 
+hình quảng bá BLE cho thiết bị. Quá trình này bao gồm: thiết lập cờ 
+kết nối tổng quát, chèn thông tin công suất truyền (Tx Power), 
+thêm UUID của dịch vụ tư thế (\texttt{positionService}) và tên thiết 
+bị vào gói quảng bá. Các thông số quảng bá được cấu hình theo khuyến 
+nghị của Apple nhằm đảm bảo khả năng tương thích với thiết bị iOS: 
+chế độ nhanh với chu kỳ 20ms, chế độ chậm 152.5ms, và thời gian chuyển 
+chế độ sau 30 giây. Thiết bị sẽ tiếp tục phát tín hiệu quảng bá cho 
+đến khi có kết nối được thiết lập.
+
+Trong cấu trúc dịch vụ, tác giả định nghĩa một dịch vụ chính với UUID 
+là \texttt{0x1821}, kèm theo hai đặc tính cảm biến: gia tốc 
+(\texttt{UUID 0x2713}, đơn vị \texttt{m/s\textsuperscript{2}}) và 
+gia tốc góc (\texttt{UUID 0x2744}, 
+đơn vị \texttt{rad/s\textsuperscript{2}}). 
+Tuy hệ thống hỗ trợ cả hai loại dữ liệu, trong khuôn khổ khoá luận này, 
+tác giả chỉ tập trung vào giá trị gia tốc thu được từ cảm biến để phục 
+vụ bài toán phân loại tư thế ngủ.
 
 \input{chapters/examples/arduino}
-
-
-Tác giả thực hiện lập trình trên Arduino IDE và thư viện Circuit Playground. Trong phần khởi tạo (setup) các bản tin quảng cáo (advertising) sẽ được khởi tạo và được thực thi. Tiếp theo là cấu hình các hàm kết nối, ngắt kết nối, cấu hình chung \gls{GATT} Hình~\ref{flowBLE}.
-
-
-
-Trong mã nguồn \ref{arduinoBLE}, hàm startAdv có nhiệm vụ khởi tạo tên, thêm các dịch vụ và bắt đầu quảng cáo cho thiết bị. Sau đó, cấu hình cho \gls{BLE} theo định dạng \gls{GATT} sẽ được thiết lập. Đầu tiên, khởi tạo dịch vụ $positionService$ có mã định dang duy nhất(Universally Unique IDentifier - UUID) là 0x1821. Tiếp theo, thêm các đặc tính $BLE-GATT-UNIT-ACCELERATION
--METRES-PER-SECOND-SQUARED
-$ và $BLE-GATT-UNIT-ANGULAR-ACCELERATION
--RADIAN-PER-SECOND-SQUARED
-$ có UUID lần lượt là 0x2713 và 0x2744. Hàm cấu hình setupPosition được tác giả sử dụng để cấu hình chi tiết GATT cho BLE. Có 2 service được khởi tạo là gia tốc và con quay hồi chuyển. Tuy nhiên, trong khuôn khổ khóa luận tác giả tập trung vào giá trị gia tốc của cảm biến gia tốc. 
-
-
-\input{chapters/examples/GattBle}
 \input{chapters/examples/senDataBle}
+Ngoài các thao tác khởi tạo dịch vụ, thư viện BLE của Adafruit còn cung cấp các phương thức cấu hình đặc tính (\textit{characteristics}) nhằm kiểm soát hành vi và bảo mật của kết nối BLE.
 
-\textbf{setProperties} - phương thức để thay đổi thuộc tính liên quan đến quyền BLE có thể được đặt thành một hoặc nhiều lựa chọn sau:
+Cụ thể, phương thức \texttt{setProperties} cho phép cấu hình quyền truy cập của đặc tính, với các lựa chọn phổ biến như:
 
-\begin{itemize}
-    \item CHR\_PROPS\_BROADCAST = bit (0)
-    
-    \item CHR\_PROPS\_READ = bit (1)
-    
-    \item CHR\_PROPS\_WRITE\_WO\_RESP = bit (2)
-    
-    \item CHR\_PROPS\_WRITE = bit (3)
-    
-    \item CHR\_PROPS\_NOTIFY = bit (4)
-    
-    \item CHR\_PROPS\_INDICATE = bit (5)
-\end{itemize}
-Ngoài ta còn nhiều hàm như \textbf{setPermission} để cài đặt tính bảo mật. \textbf{setFixedLen} để cấu hình gửi bao nhiêu bit.
+\begin{description}
+    \item[\texttt{CHR\_PROPS\_BROADCAST}] phát sóng đặc tính (bit 0)
+    \item[\texttt{CHR\_PROPS\_READ}] cho phép thiết bị đọc (bit 1)
+    \item[\texttt{CHR\_PROPS\_WRITE\_WO\_RESP}] ghi không cần phản hồi (bit 2)
+    \item[\texttt{CHR\_PROPS\_WRITE}] ghi với phản hồi (bit 3)
+    \item[\texttt{CHR\_PROPS\_NOTIFY}] gửi thông báo không xác nhận (bit 4)
+    \item[\texttt{CHR\_PROPS\_INDICATE}] gửi thông báo có xác nhận (bit 5)
+\end{description}
 
+Ngoài ra, một số phương thức bổ trợ khác bao gồm:
 
+\begin{description}
+    \item[\texttt{setPermission}] thiết lập quyền truy cập và mức độ bảo mật (ví dụ: không cần xác thực, cần mã hoá, v.v.)
+    \item[\texttt{setFixedLen}] xác định độ dài cố định của dữ liệu truyền
+\end{description}
 
-
-
-\begin{figure}[!]
-		\centering
- 		\includegraphics[width=1\textwidth]{images/sendBleFlow.png}
-		\caption{Lưu đồ luồng gửi thông tin BLE}
-		\label{sendBleFlow}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{images/sendBleFlow.png}
+    \caption{Lưu đồ luồng gửi thông tin BLE}
+    \label{sendBleFlow}
 \end{figure}
 
 
-
-
+Luồng xử lý dữ liệu BLE được minh hoạ tại Hình~\ref{sendBleFlow}. 
+Sau khi thu nhận dữ liệu cảm biến, thiết bị kiểm tra trạng thái 
+kết nối BLE. Nếu kết nối hợp lệ, nó sẽ tiếp tục lắng nghe hành động đọc 
+từ phía thiết bị trung tâm. Dữ liệu sau đó được làm tròn đến hai chữ số 
+thập phân và mã hoá thành ba byte: byte đầu tiên lưu dấu, byte thứ hai 
+chứa hai chữ số đầu, và byte cuối là hai chữ số cuối của giá trị gia tốc. 
+Chuỗi dữ liệu này được gửi qua BLE theo đặc tính đã định nghĩa trước đó.
 
 
 
@@ -407,33 +422,69 @@ Ngoài ta còn nhiều hàm như \textbf{setPermission} để cài đặt tính 
 
 
 \subsection{Hiệu chuẩn cảm biến}
-Việc thu nhận dữ liệu và tiền xử lý dữ liệu là cần thiết trong các hệ đo. Cảm biến mặc dù đã được hiệu chuẩn tại nơi sản xuất nhưng vẫn cần được hiệu chuẩn trong hệ thống và môi trường đo thực tế. Mục đích của việc hiệu chuẩn là cải thiện hiệu năng của cảm biến bằng cách loại bỏ hoặc giảm thiểu sai số trong dữ liệu đầu ra cảm biến. Lỗi cảm biến phân làm 2 loại i) lỗi mặc định và ii) lỗi ngẫu nhiên. Để xử lý lỗi mặc định, tác giả tác giả sử dụng gia tốc trọng trường để hiệu chuẩn cảm biến. Giá trị một trục gia tốc của cảm biến xoay lên trên so với mặt phẳng ngang sẽ nhận giá trị là -1g, khi xoay xuống dưới nhận giá trị là +1g. Hiệu chuẩn cảm biến bằng cách xoay cảm biến tạo bởi 6 vị trí tĩnh. Phương pháp xoay cảm biến từ +1 g đến -1 g giúp ta thu được giá trị 0 g chính xác và tin cậy.
-\begin{figure}[!]
-		\centering
- 		\includegraphics[width=1\textwidth]{images/allan.png}
-		\caption{Minh hoạ kết quả phân tích đường cong Allan}
-		\label{allan}
+Việc thu nhận và tiền xử lý dữ liệu là bước quan trọng trong các hệ đo 
+lường. Mặc dù cảm biến thường được hiệu chuẩn từ nhà sản xuất, nhưng 
+vẫn cần được hiệu chuẩn lại trong môi trường đo thực tế để cải thiện 
+hiệu năng và giảm thiểu sai số. Các sai số này được chia thành hai 
+loại chính: (i) sai số hệ thống (mặc định) và (ii) sai số ngẫu nhiên.
+
+\textbf{Hiệu chuẩn sai số hệ thống.} Tác giả sử dụng gia tốc trọng trường 
+để hiệu chuẩn cảm biến theo hướng tĩnh. Khi xoay cảm biến sao cho một 
+trục hướng lên vuông góc với mặt phẳng nằm ngang, giá trị đo được 
+là $-1g$; khi hướng xuống dưới, giá trị là $+1g$. Bằng cách xoay cảm 
+biến lần lượt qua sáu vị trí tĩnh tương ứng với các hướng trục chính, 
+có thể xác định được các điểm chuẩn, từ đó nội suy để xác định giá 
+trị $0g$ một cách chính xác và đáng tin cậy.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{images/allan.png}
+    \caption{Minh hoạ kết quả phân tích đường cong Allan}
+    \label{allan}
 \end{figure}
 
-\begin{figure}[!]
-		\centering
- 		\includegraphics[width=1\textwidth]{images/allan_real.png}
-		\caption{Biểu đồ phương sai Allan của trục x}
-		\label{allan_real}
+\textbf{Phân tích sai số ngẫu nhiên.} Tác giả sử dụng phương sai Allan 
+để phân tích các thành phần nhiễu trong dữ liệu cảm biến \cite{allan}. 
+Đây là phương pháp phân tích miền thời gian phổ biến nhằm đánh giá độ 
+ổn định tần số và định lượng các loại nhiễu khác nhau như nhiễu trắng, 
+trôi ngẫu nhiên, và nhiễu lượng tử. Biểu đồ Allan log-log cho phép nhận 
+diện các thành phần nhiễu thông qua độ dốc của từng đoạn đường cong.
+
+Trong thử nghiệm, cảm biến được đặt cố định trong phòng ở điều kiện 
+nhiệt độ ổn định, với tần số lấy mẫu 10 Hz, thu được tổng cộng 1.211.210 
+mẫu. Kết quả biểu diễn trong Hình~\ref{allan_real} cho thấy nhiễu chiếm 
+ưu thế là nhiễu lượng tử (quantization noise), đặc trưng bởi hệ số góc 
+tương ứng trong đồ thị.
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{images/allan_real.png}
+    \caption{Biểu đồ phương sai Allan của trục X}
+    \label{allan_real}
 \end{figure}
 
-Lỗi ngẫu nhiên phân tích theo phương sai Allan \cite{allan}. Phương sai Allan là phương pháp phân thích chuỗi dữ liệu trong miền thời gian để đo lường sự ổn định tần số trên miền tần số. Phương pháp này là một trong những phương pháp phổ biến nhất hiện nay để xác định và định lượng được nhiều loại nhiễu khác nhau tồn tại trong dữ liệu của cảm biến gia tốc, quán tính, cũng có thể sử dụng phương sai Allan để xác định các nhiễu nội tại trong một hệ thống như là một hàm trung bình cộng của thời gian. Các thành phần nhiễu cảm biến có thể xác định được bằng cách phân tích đồ thị log-log. Độ dốc đường cong Allan sẽ thể hiện các thành phần nhiễu khác nhau.
+\textbf{Lọc nhiễu bằng bộ lọc Kalman.} Để xử lý nhiễu, đặc biệt là nhiễu 
+lượng tử, tác giả sử dụng bộ lọc Kalman \cite{kalman}. Đây là một bộ lọc 
+đệ quy có khả năng ước lượng trạng thái tối ưu của hệ thống từ các chuỗi 
+đo lường bị nhiễu. Bộ lọc Kalman không chỉ phù hợp cho hệ thống tuyến 
+tính mà còn có thể áp dụng cho hệ thống phi tuyến thông qua tuyến tính 
+hoá cục bộ.
 
-Tác giả thu tập được 1211210 mẫu dữ liệu khi để cảm biến đứng với tần số lấy mẫu là 10 Hz ở trong phòng với nhiệt độ bình thường. Kết quả đường cong Allan Hình \ref{allan_real} cho thấy nhiễu lượng tử xuất hiện chủ yếu là nhiễu lượng tử (Quantization noise) dựa trên việc đối chiếu hệ số góc với Hình \ref{allan_real}. Đây là nhưng nhiễu chủ yếu từ bản thân của cảm biến.
+Trong hệ thống đề xuất, tín hiệu sau khi được cảm biến thu nhận sẽ 
+được lọc trực tiếp tại vi điều khiển trước khi truyền đến ứng dụng 
+để hiển thị và lưu trữ. Kết quả sau lọc được minh hoạ trong 
+Hình~\ref{kalman}, cho thấy sự cải thiện đáng kể về độ mượt và ổn 
+định của tín hiệu.
 
 
-\begin{figure}[!]
-		\centering
- 		\includegraphics[width=1\textwidth]{images/kalman.png}
-		\caption{Kết quả bộ lọc Kalman cho dữ liệu thô lấy trực tiếp từ trục X của cám biến gia tốc}
-		\label{kalman}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{images/kalman.png}
+    \caption{Kết quả bộ lọc Kalman cho dữ liệu trục X của cảm biến gia tốc}
+    \label{kalman}
 \end{figure}
-Trong khuôn khổ khoá luận, tác giả sử dụng bộ lọc Kalman để lọc các tín hiệu nhiễu đăc biệt là nhiễu lượng tử \cite{kalman}. Bộ lọc Kalman là thuật toán sử dụng chuỗi các giá trị đo lường, bị ảnh hưởng bởi nhiễu hoặc sai số, để ước đoán biến số nhằm tăng độ chính xác so với việc sử dụng duy nhất một giá trị đo lường. Bộ lọc Kalman là một bộ lọc đệ quy để ước lượng trạng thái của hệ thống tuyến tính, và cả hệ thống phi tuyến khi áp dụng phép ước lượng phi tuyến sang tuyến tính. Bộ lọc Kalman được ứng dụng rất nhiều trong lĩnh vực kĩ thuật, đặc biệt là lĩnh vực điều khiển. Tín hiệu sau khi được thu thâp sẽ được đi qua bộ lọc ở vi xử lý rồi mới được chuyển tới ứng dụng để hiển thị và lưu trữ. Bộ lọc đã được tác giả thực hiện lập trình và có kết quả như Hình ~\ref{kalman}. Kết quả cho thấy, bộ lọc Kalman đã lược bỏ dữ liệu ít ý nghĩa hoặc nhiễu (ồn) cho một đường biểu diễn mượt mà hơn.
 
 
 
@@ -441,99 +492,203 @@ Trong khuôn khổ khoá luận, tác giả sử dụng bộ lọc Kalman để 
 
 \subsection{Xây dựng phần mềm ứng dụng}
 
-Phần mềm ứng dụng được thiết kế với mục tiêu tạo thuận lợi cho người dung. Nhiệm vụ chính là thực hiện liên kết đến phần cứng và giao diện trực tiếp để người dùng thực hiện các thao tác. 
+Phần mềm ứng dụng được xây dựng với mục tiêu hỗ trợ người dùng trong việc 
+kết nối với thiết bị phần cứng và trực quan hoá dữ liệu cảm biến. 
+Ứng dụng đảm nhiệm vai trò là cầu nối giữa người dùng và hệ thống nhúng, 
+đồng thời cung cấp các chức năng tương tác, cấu hình và theo dõi dữ liệu 
+theo thời gian thực.
 
-\begin{itemize}
-    \item Ngôn ngữ: Dart
-    
-    \item Framework: Flutter
-    
-    \item Hệ điều hành: Android
-    
-    \item Kết nối với phần cứng: Ble
-    
-    \item Chức năng: Đảm bảo các yêu cầu cơ bản, thuận tiện cho người sử dụng.
-\end{itemize}
-\begin{figure}[!]
-		\centering
- 		\includegraphics[width=1\textwidth]{images/app_flow.png}
-		\caption{Các chức năng cơ bản của ứng dụng}
-		\label{app_flow}
+Các công nghệ và thành phần sử dụng được tóm tắt như sau:
+
+\begin{flushleft}
+\textbf{01)} Ngôn ngữ lập trình: \texttt{Dart} \\
+\textbf{02)} Framework: \texttt{Flutter} \\
+\textbf{03)} Nền tảng triển khai: \texttt{Android} \\
+\textbf{04)} Giao tiếp phần cứng: Bluetooth Low Energy (BLE) \\
+\textbf{05)} Chức năng chính: kết nối thiết bị, nhận dữ liệu, hiển thị, lưu trữ và cá nhân hóa trải nghiệm người dùng
+\end{flushleft}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{images/app_flow.png}
+    \caption{Các nhóm chức năng chính của ứng dụng}
+    \label{app_flow}
 \end{figure}
 
-Ứng dụng gồm 3 nhóm chức năng chính, Hình ~\ref{app_flow} bao gồm nhóm chức năng bảo mật, nhóm chức năng chung và nhóm chức năng cá nhân.
-\begin{figure}[!]
-		\centering
- 		\includegraphics[width=0.8\textwidth]{images/flutter.png}
-		\caption{Cấu trúc BLOC}
-		\label{flutter}
+Ứng dụng được thiết kế xoay quanh ba nhóm chức năng chính như minh họa 
+trong Hình~\ref{app_flow}:
+
+\begin{flushleft}
+\textbf{01)} Nhóm bảo mật: đăng nhập, xác thực và khôi phục tài khoản. \\
+\textbf{02)} Nhóm chức năng chung: kết nối với thiết bị phần cứng, thu thập và hiển thị dữ liệu cảm biến. \\
+\textbf{03)} Nhóm cá nhân hoá: theo dõi chỉ số sức khỏe, khai báo STOP-BANG, lưu hồ sơ người dùng.
+\end{flushleft}
+
+\subsubsection*{Kiến trúc phần mềm}
+Ứng dụng sử dụng mô hình \textbf{BLoC (Business Logic Component)} để tách biệt giao diện 
+người dùng và logic xử lý. BLoC hoạt động dựa trên nguyên tắc nhận sự 
+kiện đầu vào và trả về trạng thái phù hợp, giúp quản lý luồng dữ liệu 
+hiệu quả. Cấu trúc tổng thể của kiến trúc BLoC gồm ba lớp chính được mô 
+tả trong Hình~\ref{flutter}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/flutter.png}
+    \caption{Cấu trúc kiến trúc BLoC trong ứng dụng Flutter}
+    \label{flutter}
 \end{figure}
 
 
 \input{chapters/examples/flutter_ble}
-\input{chapters/examples/flutter_get_data}
-\textbf{Flutter} là cross-platform dành cho ứng dụng di động viết theo kiểu hướng đối tượng. Nó có thể lập trình cho cả ứng dụng trên nền tảng Android và IOS. Khả năng phát triển nhanh chóng có nhiều thành phần (Widget) có sẵn, đẹp, dễ sử dụng và có nhiều thư viện và cộng đồng sử dụng. Trong ứng dụng này tác giả sử dụng Bloc là một thư viện để quản lý trạng thái cho ứng dụng Flutter B.L.o.C (Business Logic Component). Nhận sự kiện như là đầu vào và trả về kết quả là trạng thái. Bloc được xây dựng dựa trên RxDart. Chúng ta có thể chia kiến trúc Flutter thành 3 lớp như Hình ~\ref{flutter}. Trong đó UI là giao diện của người dùng, nơi người dùng nhìn thấy dữ liệu, thao tác. Bloc là thư viện để quản lý các trạng thái của ứng dụng. Các sự kiện là các hành động như ấn nút, nhập dữ liệu, v.v.
+\input{chapters/examples/format_data_ble.tex}
+
+Sau khi kết nối BLE được thiết lập thành công, ứng dụng truy xuất đối tượng đặc 
+tính cảm biến (characteristic instance) và liên tục gửi yêu cầu đọc (\texttt{read}) 
+đến vi điều khiển. Thiết bị phản hồi bằng cách trả về dữ liệu cảm biến 
+dưới dạng mảng \texttt{UInt8}. Các giá trị này được ứng dụng giải mã, 
+chuyển đổi sang dạng số thực tương ứng với gia tốc trên ba trục (X, Y, Z), 
+và gắn nhãn thời gian thực.
+
+Quá trình xử lý này được thực hiện trong một vòng 
+lặp có kiểm soát độ trễ ngắn nhằm đảm bảo khả năng cập nhật liên tục 
+nhưng vẫn tối ưu hiệu suất hệ thống.
+
+Mã~\ref{flutterBle} minh hoạ toàn bộ quy trình xử lý: 
+từ kết nối BLE, truy xuất đặc tính gia tốc, đọc giá trị nhị phân 
+thô từ thiết bị, đến việc chuẩn hoá và gửi dữ liệu lên backend. 
+Trong đoạn mã này, dữ liệu dạng \texttt{Uint8List} nhận từ cảm biến được tách và chuyển đổi 
+thành ba thành phần tương ứng với ba trục gia tốc. Dữ liệu sau khi được xử lý sẽ được 
+đóng gói theo định dạng \texttt{JSON} và gửi đến máy chủ thông qua phương thức 
+POST, sử dụng thư viện \texttt{http} trong Flutter.
+
+Định dạng dữ liệu BLE được chuẩn hoá như trong Mã~\ref{format_ble}, 
+với trường \texttt{"value"} là chuỗi liên tục các 
+giá trị cảm biến (phân tách bằng ký tự đặc biệt) và trường 
+\texttt{"customer"} để định danh người dùng.
+
+Việc tối ưu hóa cả quá trình đọc BLE và đẩy dữ liệu HTTP theo lô 
+như vậy giúp giảm độ trễ, tránh tình trạng nghẽn băng thông, đồng thời 
+vẫn đảm bảo độ chính xác và toàn vẹn của dữ liệu cảm biến.
+
+
+Ngoài các chức năng thu thập và truyền dữ liệu cảm biến, ứng dụng còn tích hợp 
+các công cụ hỗ trợ đánh giá y học lâm sàng ban đầu nhằm phục vụ cho việc sàng 
+lọc và phân loại nguy cơ mắc hội chứng ngưng thở khi ngủ (OSA). Trong đó, 
+ba thành phần quan trọng được triển khai bao gồm:
+
+\noindent\textbf{01)} Bộ câu hỏi \textbf{STOP-BANG}: Đây là một bảng sàng lọc lâm sàng được sử dụng phổ biến trong y học giấc ngủ để đánh giá nguy cơ mắc OSA. Dữ liệu từ bảng này được lưu trữ cùng với dữ liệu cảm biến và đóng vai trò như đầu vào bổ sung cho các mô hình học máy dự đoán chỉ số AHI (Apnea–Hypopnea Index).
+
+\vspace{0.5em}
+\noindent\textbf{02)} Thang điểm \textbf{Epworth Sleepiness Scale (ESS)}: Tác giả triển khai thêm bảng câu hỏi ESS nhằm đánh giá mức độ buồn ngủ ban ngày của người dùng. Thang điểm này giúp phát hiện tình trạng buồn ngủ quá mức và có thể hỗ trợ phân tầng nguy cơ trong mô hình phân loại rối loạn giấc ngủ.
+
+\vspace{0.5em}
+\noindent\textbf{03)} Đánh giá \textbf{BMI (Body Mass Index)}: BMI được tự động tính toán dựa trên chiều cao và cân nặng người dùng nhập vào. Chỉ số này đóng vai trò là một trong các yếu tố nguy cơ chính trong chẩn đoán OSA, đặc biệt khi kết hợp cùng STOP-BANG.
+
+
+Ngoài ra, nhằm cải thiện trải nghiệm người dùng và hỗ trợ trả lời câu hỏi liên quan 
+đến giấc ngủ, tác giả 
+phát triển thêm tính năng \textbf{chatbot y học giấc ngủ} dựa trên kỹ thuật 
+\textbf{Retrieval-Augmented Generation (RAG)}. Chatbot này được xây dựng từ cơ 
+sở dữ liệu gồm hơn 2000 câu hỏi và 
+câu trả lời chuyên sâu liên quan đến giấc ngủ được biên tập bởi GS.TS Dương Quý Sỹ, 
+bao gồm cả tài liệu lâm sàng, nghiên cứu khoa học và các hướng dẫn thực hành. 
+Người dùng có thể đặt câu hỏi tự nhiên như “Tôi có nên lo nếu ngủ ngáy liên tục?” 
+hoặc “STOP-BANG > 5 có ý nghĩa gì?”, và chatbot sẽ phản hồi dựa trên kiến 
+thức được truy xuất từ tài liệu nền và được tổng hợp lại bằng mô hình ngôn ngữ.
+
+Hệ thống RAG kết hợp khả năng truy vấn ngữ nghĩa từ tập văn bản lớn 
+(document retrieval) và khả năng sinh văn bản linh hoạt từ mô hình ngôn ngữ lớn 
+(LLM), từ đó cung cấp các câu trả lời chính xác, có căn cứ và dễ hiểu cho 
+người dùng không chuyên.
+
+\textbf{Tính năng quản lý người dùng} cũng được mở rộng. Người dùng có thể 
+tạo tài khoản một lần và sử dụng lại trong các lần đăng nhập sau. Cơ chế này 
+giúp rút ngắn thao tác, đồng thời vẫn đảm bảo tính bảo mật và khả năng khôi 
+phục dữ liệu khi quên tài khoản hoặc mật khẩu. Dữ liệu người dùng 
+(câu hỏi, chỉ số BMI, lịch sử cảm biến) được liên kết thống nhất qua một 
+ID định danh duy nhất, hỗ trợ tốt cho việc phân tích, theo dõi tiến triển 
+và huấn luyện mô hình học máy cá nhân hoá trong tương lai.
 
 
 
-
-Khi đã lấy được đối tượng tính năng (charactis instance), tác giả sẽ liên tục đẩy  hành động đọc (read) từ phần mềm ứng dụng đến vi điều khiển. Khi vi điều khiển nhận được hành động đọc được gửi từ ứng dụng sẽ trả lại tín hiệu của cảm biến. Ở đây, các BLE gửi các dữ liệu theo định dạng là mảng các phần tử có kiểu là UInt8. Do đó, sau khi nhận được dữ liệu từ phần cứng, dữ liệu dạng UInt8 được chuyển về dạng Number. Với quy trình như vậy, hệ thống có độ trễ rất thấp (real time). Cuối cùng việc lưu trữ thông tin cảm biến được thông qua giao thức Giao thức Truyền tải Siêu Văn Bản (Hyper Text Transfer Protocol - HTTP) truyền lên phía máy chủ(backend) và được thực hiện ở đoạn Mã \ref{flutter_get_data}.
-\input{chapters/examples/format_data_ble}
-Việc đẩy tín hiệu như vậy, tránh được tình trạng tắc nghẽn ở phía backend. Trong thời gian tới, cơ chế nghe/nhận (pub/sub) sẽ được áp dụng để tránh tình trạng gọi các yêu cầu (request) liên tục. Dữ liệu sẽ được đẩy lên theo định dạng Mã \ref{format_ble}:
-
-Ngoài ra, tác giả phát triển thêm tính năng bộ câu hỏi STOPBANG nhằm đánh giá ban đầu người dùng. Và những dữ liệu này có trọng số quan trọng trong việc đánh giá chỉ số AHI sử dụng học máy sau này. Tính năng thêm người dùng được sử dụng để tránh phải thao tác tạo mới nhiều lần nhưng vẫn giữ được tính bảo mật, lấy lại dữ liệu khi mà quên tài khoản, mật khẩu.
-
-
-
-\subsection{Thiết kế và xây dựng hệ thống lưu trữ   }
-\begin{figure}[b!]
-		\centering
- 		\includegraphics[width=0.8\textwidth]{images/cloud.png}
-		\caption{Mô hình tích hợp giữa mạng cảm biến và cấu trúc dữ liệu đám mây}
-		\label{cloud}
+\subsection{Thiết kế và xây dựng hệ thống lưu trữ}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/cloud.png}
+    \caption{Mô hình tích hợp giữa mạng cảm biến và cấu trúc dữ liệu đám mây}
+    \label{cloud}
 \end{figure}
 
+Trong hệ thống đề xuất, dữ liệu cảm biến đóng vai trò trung tâm trong việc 
+huấn luyện và triển khai các mô hình trí tuệ nhân tạo (AI). Tuy nhiên, bộ nhớ 
+của vi điều khiển và thiết bị đầu cuối thường bị giới hạn, do đó giải pháp lưu 
+trữ dữ liệu trên nền tảng đám mây là lựa chọn phù hợp và linh hoạt. Việc triển 
+khai dữ liệu lên cloud không chỉ giúp loại bỏ rào cản về địa lý, mà còn hỗ 
+trợ truy cập, phân tích và chia sẻ dữ liệu từ bất kỳ đâu miễn có kết nối 
+Internet. Đồng thời, hệ thống hỗ trợ xuất dữ liệu dưới dạng văn bản (text), 
+CSV hoặc JSON, phục vụ nhu cầu chia sẻ giữa các nhóm nghiên cứu.
 
-Dữ liệu (data) là cơ sở của công nghệ trí tuệ nhân tạo để phân tích, đánh giá, dự đoán nhiều lĩnh vực trong cuộc sống. Vì mỗi thiết bị phần cứng chỉ có không gian bộ nhớ có hạn nên việc lưu trữ trên hệ thống đám mây (cloud) đang là phương pháp phổ biến nhất Hình ~\ref{cloud}. Việc triển khai dữ liệu lên cloud giúp xóa bỏ khoảng cách địa lý, thuận tiện cho việc trích xuất bất kì nơi nào miễn là có kết nối internet, qua đó có thể dễ dàng xuất ra các file text, csv và thuận tiện chia sẻ trao đổi với các nhóm nghiên cứu khác. Mục tiêu dài hạn của hướng nghiên cứu này là việc sử dụng cơ sở dữ liệu đủ lớn cho các mô hình toán học nhằm dự đoán, hỗ trợ ra quyết định trong các hoạt động sàng lọc và chẩn đoán chứng \gls{OSA} ở người. 
+Về dài hạn, mục tiêu của hệ thống là tích luỹ một tập dữ liệu lớn và đa dạng 
+nhằm huấn luyện các mô hình học máy hỗ trợ chẩn đoán và ra quyết định trong 
+sàng lọc hội chứng ngưng thở khi ngủ (\gls{OSA}).
 
 
-\begin{itemize}
-    \item MongoDB được thiết kế để có thể truy vấn hiệu quả các bộ dữ liệu rất lớn, ngay cả khi dữ liệu được phân chia trên nhiều máy chủ, miễn là có thể chọn share key đoạn phù hợp khớp với các truy vấn đọc phổ biến nhất của mình.
-    
-    \item Hỗ trợ tốt đối với dữ liệu TimeStamp.
-    
-    \item Các chỉ mục được phân nhóm tối ưu hóa hiệu suất và lưu trữ chỉ mục.
-    
-    \item Tự động xóa dữ liệu cũ hơn. Lưu trữ dữ liệu bằng kho lưu trữ trực tuyến Atlas và dễ mở rộng
-\end{itemize}
 
+\textbf{Cơ sở dữ liệu sử dụng là MongoDB Atlas} với các đặc điểm kỹ thuật nổi bật như sau:
+01) Hỗ trợ lưu trữ hiệu quả dữ liệu lớn, phân tán trên nhiều cụm máy chủ, 
+cho phép mở rộng theo chiều ngang.
+02) Tối ưu hoá truy vấn theo thời gian thực với dữ liệu dạng \texttt{timestamp}.
+03) Cơ chế đánh chỉ mục linh hoạt giúp tăng tốc độ truy vấn và giảm dung lượng lưu trữ.
+04) Hỗ trợ tự động xoá dữ liệu cũ dựa trên TTL (Time To Live index), 
+đồng thời tích hợp trực tiếp với nền tảng MongoDB Atlas.
 
-\begin{figure}[!]
-		\centering
- 		\includegraphics[width=1\textwidth]{images/csdl.png}
-		\caption{Cấu trúc lưu trữ dữ liệu}
-		\label{cloud}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{images/flow_http.png}
+\caption{Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}
+\label{flow_http}
 \end{figure}
-\begin{figure}[b!]
-		\centering
- 		\includegraphics[width=0.9\textwidth]{images/flow_http.png}
-		\caption{Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}
-		\label{flow_http}
-\end{figure}
+Phía máy chủ của hệ thống được xây dựng bằng nền tảng Node.js và triển khai 
+trên Amazon Web Services (AWS), cho phép triển khai nhanh, dễ mở rộng và tối 
+ưu chi phí trong giai đoạn thử nghiệm. MongoDB Atlas được lựa chọn là hệ quản 
+trị cơ sở dữ liệu chính, hỗ trợ gói miễn phí dung lượng 500MB – phù hợp cho 
+việc thu thập và đánh giá dữ liệu ở quy mô ban đầu.
+
+Để tránh tình trạng quá tải server khi có nhiều yêu cầu truy cập đồng thời, 
+ứng dụng không thực hiện gửi từng mẫu riêng lẻ. Thay vào đó, dữ liệu cảm biến 
+sẽ được tích luỹ theo từng lô gồm 1000 mẫu, sau đó mới được gửi lên backend. 
+Mỗi mẫu bao gồm ba thành phần gia tốc (\texttt{x, y, z}) và thời gian ghi 
+nhận tương ứng, bảo đảm tính toàn vẹn và khả năng truy xuất ngược theo dòng 
+thời gian.
+
+Lưu đồ thuật toán lưu trữ dữ liệu được thể hiện trong Hình~\ref{flow_http}, 
+gồm hai trường hợp chính:
+
+\vspace{0.5em}
+\noindent\textbf{1)} Khi người dùng không có kết nối mạng, hệ thống vẫn cho phép kết nối BLE và hiển thị dữ liệu cảm biến theo thời gian thực, tuy nhiên sẽ không tiến hành lưu trữ lên cloud.
+
+\vspace{0.5em}
+\noindent\textbf{2)} Khi người dùng đã đăng nhập và có kết nối Internet, ứng dụng sẽ tự động lưu trữ dữ liệu sau mỗi 1000 mẫu thu thập. Trong trường hợp thao tác gửi dữ liệu thất bại liên tục quá 10 lần, hệ thống sẽ thông báo lỗi và ngừng tiến trình lưu trữ để đảm bảo độ tin cậy.
 
 
-Trong khóa luận này, phần máy chủ của hệ thống được xây dựng trên nền tảng NodeJs và triển khai trên AWS - nền tảng đám mây cho phép các lập trình viên xây dựng, triển khai, quản lý và mở rộng ứng dụng. Cơ sở dữ liệu sử dụng trên nền tảng MongoDb Atlas hỗ trợ free 500Mb.
+Ngoài dữ liệu cảm biến thời gian thực được lưu trữ trên MongoDB Atlas, 
+hệ thống còn sử dụng cơ sở dữ liệu quan hệ MySQL để quản lý các dữ liệu định 
+danh và nghiệp vụ quan trọng khác. Cụ thể:
 
-Để tránh tình trạng quá tải server khi có quá nhiều yêu cầu truy cập cùng lúc đến, tác giả đã gộp các giá trị cảm biến vào 1 mảng 1000 phần tử rồi đẩy mảng đó lên backend. Việc lưu trữ này yêu cầu phải xác định được chính xác thời gian của từng giá trị của biến số trên ứng dụng di động và truyền lên cùng giá trị của 3 trục x, y, z. Việc lưu trữ dữ liệu được tác giả mô tả như lược đồ, Hình ~\ref{flow_http} bao gồm 2 trường hợp:
+\vspace{0.5em}
+\noindent\textbf{1)} Thông tin người dùng như tài khoản đăng nhập, mật khẩu mã hoá (hash), email, số điện thoại, lịch sử đăng nhập và phân quyền được lưu trữ trong hệ quản trị cơ sở dữ liệu MySQL. Cấu trúc dữ liệu dạng bảng (table) của MySQL giúp đảm bảo tính toàn vẹn quan hệ và dễ dàng thực hiện các truy vấn xác thực người dùng nhanh chóng, an toàn.
 
+\vspace{0.5em}
+\noindent\textbf{2)} Các dữ liệu khảo sát lâm sàng như bảng điểm STOP-BANG, thang điểm Epworth, chỉ số BMI, tiền sử bệnh nền và lịch sử đánh giá lặp lại theo từng thời điểm cũng được lưu trong MySQL nhằm đảm bảo tính liên kết logic giữa các thực thể (người dùng – biểu mẫu – kết quả – thời gian).
 
+\vspace{0.5em}
+\noindent\textbf{3)} Việc phân chia lưu trữ theo đặc thù dữ liệu (NoSQL cho dữ liệu cảm biến lớn và động, SQL cho dữ liệu người dùng có cấu trúc ổn định) giúp tối ưu hoá hiệu suất truy xuất, tính mở rộng và khả năng bảo trì hệ thống trong dài hạn.
 
-\begin{itemize}
-    \item Khi người dùng không có kết nối mạng thì người dùng chỉ được phép truy cập vào BLE và hiển thị dữ liệu không có lưu trữ.
-    
-    \item Khi trường hợp người dùng đã đăng nhập và có kết nối mạng thì ứng dụng sẽ tự động lưu trữ khi thu thập đủ 1000 giá trị. Nếu không thành công 10 lần sẽ báo cho người dùng.
-\end{itemize}
-
+Sự kết hợp giữa MongoDB (dành cho dữ liệu cảm biến, thời gian thực) 
+và MySQL (dành cho thông tin người dùng và nghiệp vụ) tạo thành một kiến trúc 
+lưu trữ lai (hybrid storage architecture) đáp ứng linh hoạt cả hai loại dữ 
+liệu – phi cấu trúc và có cấu trúc – vốn là đặc trưng phổ biến trong các 
+hệ thống y tế ứng dụng trí tuệ nhân tạo hiện đại.
 
 \subsection{Tìm hiểu, ứng dụng phân loại tư thế ngủ bằng học máy  }
 

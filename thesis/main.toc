@@ -23,11 +23,11 @@
 \contentsline {section}{\numberline {2.2.}Hệ thống thu thập, xử lý, lưu trữ dữ liệu}{47}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1.}Lập trình vi xử lý}{47}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2.}Hiệu chuẩn cảm biến}{52}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3.}Xây dựng phần mềm ứng dụng}{55}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4.}Thiết kế và xây dựng hệ thống lưu trữ }{59}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5.}Tìm hiểu, ứng dụng phân loại tư thế ngủ bằng học máy }{63}{subsection.2.2.5}%
-\contentsline {chapter}{\numberline {3}KẾT QUẢ THỰC NGHIỆM VÀ ĐÁNH GIÁ}{69}{chapter.3}%
-\contentsline {section}{\numberline {3.1.}Đánh giá tư thế ngủ sử dụng cảm biến gia tốc}{69}{section.3.1}%
-\contentsline {section}{\numberline {3.2.}Học máy với dữ liệu đánh giá từ thiết bị}{74}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Kết luận}{77}{chapter.4}%
+\contentsline {subsection}{\numberline {2.2.3.}Xây dựng phần mềm ứng dụng}{54}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4.}Thiết kế và xây dựng hệ thống lưu trữ}{59}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5.}Tìm hiểu, ứng dụng phân loại tư thế ngủ bằng học máy }{62}{subsection.2.2.5}%
+\contentsline {chapter}{\numberline {3}KẾT QUẢ THỰC NGHIỆM VÀ ĐÁNH GIÁ}{68}{chapter.3}%
+\contentsline {section}{\numberline {3.1.}Đánh giá tư thế ngủ sử dụng cảm biến gia tốc}{68}{section.3.1}%
+\contentsline {section}{\numberline {3.2.}Học máy với dữ liệu đánh giá từ thiết bị}{73}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Kết luận}{76}{chapter.4}%
 \contentsfinish 

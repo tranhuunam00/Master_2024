@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1753696882.70813 "main.bcf" "main.bbl" "main" 1753697441.28248 0
-  "main.bcf" 1753697439 120972 dc7e5d2e45949a1db0d4f6172fc4efa9 "pdflatex"
+["biber main"] 1753716181.45099 "main.bcf" "main.bbl" "main" 1753717526.70132 0
+  "main.bcf" 1753717525 120972 dc7e5d2e45949a1db0d4f6172fc4efa9 "pdflatex"
   "refs.bib" 1753696805 58767 3a60ea4b7fe1f771f8a1a5dce010131b ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1753697429.22368 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1753697441.28412 0
+["pdflatex"] 1753717516.92754 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1753717526.70237 0
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1753407352 170669 580f60f86b494b149fd13be17089526f ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1753283835 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1753323483 13254313 89e2afc147c36950f3366f1142cce13c ""
@@ -271,13 +271,11 @@
   "chapters/0-coverpage.tex" 1753406985 10206 e4e77577430b92eb61ab7221615e8deb ""
   "chapters/1-introduction.tex" 1753610443 17748 6703c2bc6e8b36104acefe61fddf3cef ""
   "chapters/2-base-knowledge.tex" 1753689480 131042 c145ebe233b029a844b0c3aa89a6d5dc ""
-  "chapters/3-proposed_solution.tex" 1753697418 50784 9336c065a5950e4b2b78294f30303beb ""
+  "chapters/3-proposed_solution.tex" 1753717505 58074 d3ab16ddea27751f82fd49af4446fb7f ""
   "chapters/4-experiment.tex" 1753256024 9171 4bec3990117c4572462c391099c67d66 ""
   "chapters/5-conclusion.tex" 1753256024 4090 da9a19f3b7f0081e1686114e5d96fb10 ""
-  "chapters/examples/GattBle.tex" 1753256024 1079 ed516b3b2a82c43bb818141cf82d34b8 ""
   "chapters/examples/arduino.tex" 1753256024 1165 6b71b2ca9bc8d0e9aa878851c948a635 ""
   "chapters/examples/flutter_ble.tex" 1753328888 1198 461958e69e184d7f0a84210889f8d0d9 ""
-  "chapters/examples/flutter_get_data.tex" 1753328913 1084 347308d1071a083eefa69e7d8061bcf6 ""
   "chapters/examples/format_data_ble.tex" 1753256024 307 76a899d431764178ff6f32ee5b020ac5 ""
   "chapters/examples/nguong.tex" 1753407325 562 2594c3ae3652f230ae889407eebf6c71 ""
   "chapters/examples/senDataBle.tex" 1753256024 1057 6313822a63e658338bc70f1f08984f20 ""
@@ -297,7 +295,6 @@
   "images/ble.png" 1753256026 195232 ef4701a5ee82998e6c83fd3836f397dc ""
   "images/cloud.png" 1753256026 153294 6223fd1ae828474e4fc53fa28c8249f4 ""
   "images/cortexM4.png" 1753256026 193487 205489ba2df2480c91a62a3f443abeaf ""
-  "images/csdl.png" 1753256026 70700 f323ae0fedf7547618be26f521b2a3aa ""
   "images/detail_ada.png" 1753256026 1373376 69c98713433b21ae460f54d629b4c2d6 ""
   "images/diendung.png" 1753256028 896541 67c7c306c1661a276861d99a1ff8ebc7 ""
   "images/flowBLE.png" 1753256026 45768 42d5f3178052f66a95d10bfd06514c4d ""
@@ -316,14 +313,14 @@
   "images/svm.png" 1753256028 66718 156a3fd0ce752ef66dd4a378b9a80390 ""
   "images/svm_ovso.png" 1753256028 72431 1ef5c4cb9fa973e793d34d12b9ae827b ""
   "images/thucnghiem.png" 1753256028 411269 f32107c69e826a62b7003a15ef6ffb29 ""
-  "main.aux" 1753697439 39630 884f63a1924630b60fb4d730b59246b6 "pdflatex"
-  "main.bbl" 1753696886 180613 d9b35d6af4dde8c98d7af2da52ca03cc "biber main"
-  "main.lof" 1753697439 4437 b9d077b460e553ee668da713834d2d8c "pdflatex"
-  "main.lot" 1753697439 792 175964bde067899b63bfa3a475ea946e "pdflatex"
-  "main.out" 1753697439 7458 aa6c63398430c4393e36a5d5570192b8 "pdflatex"
-  "main.run.xml" 1753697439 2268 f918a72198252e4ff2cbedb9e5121b21 "pdflatex"
+  "main.aux" 1753717525 38922 12b55c1075e01442c6adf0244fa0c451 "pdflatex"
+  "main.bbl" 1753716186 180613 d9b35d6af4dde8c98d7af2da52ca03cc "biber main"
+  "main.lof" 1753717525 4340 663f491bf2d39970a0a0469e3113c6a3 "pdflatex"
+  "main.lot" 1753717525 792 175964bde067899b63bfa3a475ea946e "pdflatex"
+  "main.out" 1753717525 7450 2f6cba96b21baee0b559536c3a1cab87 "pdflatex"
+  "main.run.xml" 1753717525 2268 f918a72198252e4ff2cbedb9e5121b21 "pdflatex"
   "main.tex" 1753689731 6176 e8e3429235006f96c2312627caf792e6 ""
-  "main.toc" 1753697439 3260 243cc02551b983faa36a46ed8ccf79de "pdflatex"
+  "main.toc" 1753717525 3259 2341411c18e673daf2ec4ffb7cd4c4d3 "pdflatex"
   "setting/bkthesis.sty" 1753256024 967 af4f61477f3f023e14bc982890f87805 ""
   "src/glossaries.tex" 1753407326 777 adc527e2093778beb062eccbb5f56229 ""
   (generated)
