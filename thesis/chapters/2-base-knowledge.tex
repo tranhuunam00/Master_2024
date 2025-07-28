@@ -250,7 +250,7 @@ cận của người sử dụng, đặc biệt là những người có thu nh�
 
 Hiện nay, đã có nhiều nghiên cứu và sản phẩm thương mại được phát triển nhằm mục đích theo dõi tư thế ngủ. 
 Trong đó, iSleePost là một hệ thống thiết bị đeo được phát triển bởi Po-Yuan Jeng 
-và cộng sự \cite{Jeng_osa}, gồm hai thiết bị đeo độc lập sử dụng cảm 
+và cộng sự \cite{Jeng}, gồm hai thiết bị đeo độc lập sử dụng cảm 
 biến gia tốc để theo dõi và phân loại tư thế ngủ. 
 Trong đó, một thiết bị được đeo ở cổ tay nhằm ghi nhận chuyển động, 
 còn thiết bị thứ hai được gắn ở ngực để thu thập nhãn tư thế một 
@@ -269,7 +269,7 @@ Một hệ thống thiết bị đeo theo dõi tư thế ngủ (Wearable Sleep S
 được Kwasnicki và cộng sự phát triển với thiết kế riêng biệt, 
 gồm các cảm biến đeo trên mỗi cánh tay và vùng ngực, kết nối không dây 
 với bộ xử lý trung tâm (trong nghiên cứu là máy tính xách tay) thông qua 
-bộ thu phát sóng vô tuyến \cite{p_2}. Nền tảng phần cứng của hệ thống sử dụng bộ vi 
+bộ thu phát sóng vô tuyến \cite{kwasnicki2018}. Nền tảng phần cứng của hệ thống sử dụng bộ vi 
 xử lý tiêu thụ điện năng cực thấp TI MSP430, kết hợp với mô-đun truyền 
 thông không dây Chipcon CC2420, cùng pin Li-ion polymer nhẹ. Mỗi nút cảm 
 biến được tích hợp cảm biến gia tốc ba trục ADXL330, con quay hồi chuyển 
@@ -335,7 +335,7 @@ Trong đó cảm biến gia tốc 3 trục được đánh giá là phương ph�
 tiết kiệm chi phí và độ chính xác cao. Jeng PY và đồng nghiệp đã thực hiện phát 
 triển chế tạo thiết bị đeo tay sử dụng cảm biến gia tốc kết hợp với 
 thiết bị ở ngực để lấy nhãn cho dữ liệu. Các phương pháp học máy truyền thống 
-được sử dụng với độ chính xác đánh giá 4 tư thế khi ngủ trên 85\% \cite{Jeng_osa}.
+được sử dụng với độ chính xác đánh giá 4 tư thế khi ngủ trên 85\% \cite{Jeng}.
 Trong \cite{ji2022airline}, Ji et al. và cộng sự phát triển một dây đeo ngực 
 tích hợp vào dây an toàn máy bay nhằm theo dõi giấc ngủ và sức khỏe 
 hành khách. Hệ thống kết hợp cảm biến ECG mềm, dải đai áp điện và 
@@ -544,41 +544,34 @@ công cụ đắc lực để phân loại mức độ nghiêm trọng của OSA
 thông qua chỉ số AHI hoặc nhận diện tư thế ngủ dựa trên tín hiệu cảm biến. 
 Đây là hướng tiếp cận liên ngành, kết hợp giữa y học giấc ngủ và 
 trí tuệ nhân tạo ứng dụng \cite{osa_sanchez2025}. 
-
-\subsection{Quy trình tổng quát trong hệ thống ứng dụng AI cho đánh giá OSA, và phân loại tư thế ngủ}
+\subsection{Quy trình tổng quát trong hệ thống ứng dụng AI cho đánh giá OSA và phân loại tư thế ngủ}
 \begin{table}[htbp]
 \centering
-\caption{Các bước chính trong hệ thống ứng dụng AI cho 
-phân tích tư thế ngủ và hỗ trợ chẩn đoán OSA}
-\label{tab:pipeline_steps}  % <- gắn label ở đây
-\begin{tabular}{|c|p{4cm}|p{8cm}|}
+\caption{Các bước chính trong hệ thống ứng dụng AI cho phân tích tư thế ngủ và hỗ trợ chẩn đoán OSA}
+\label{tab:pipeline_steps}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|p{3.8cm}|p{9.2cm}|}
 \hline
-\textbf{STT} & \textbf{Giai đoạn} & \textbf{Mô tả} \\
+\textbf{STT} & \textbf{Giai đoạn} & \textbf{Mô tả tổng quát} \\
 \hline
-1 & Thu thập tín hiệu \newline (Data Acquisition) & 
-Ghi nhận tín hiệu từ các cảm biến như gia tốc 3 trục, PPG, ECG hoặc cảm biến áp lực. Trong HST, thiết bị thường nhỏ gọn, đeo được, truyền dữ liệu qua BLE với tần số lấy mẫu từ 10–100 Hz. \\
+1 & \textbf{Thu thập tín hiệu} \newline (Data Acquisition) & Ghi nhận tín hiệu từ cảm biến như gia tốc ba trục, PPG, ECG hoặc áp lực. Thiết bị đeo nhỏ gọn, truyền dữ liệu qua BLE, tốc độ lấy mẫu 10–100 Hz. \\
 \hline
-2 & Tiền xử lý tín hiệu \newline (Preprocessing) & 
-Lọc nhiễu (notch, bandpass), loại bỏ trôi nền, phân đoạn tín hiệu theo cửa sổ thời gian. Bước này giúp làm sạch và ổn định tín hiệu đầu vào. \\
+2 & \textbf{Tiền xử lý tín hiệu} \newline (Preprocessing) & Lọc nhiễu (notch, bandpass), loại bỏ trôi nền, phân đoạn theo cửa sổ thời gian. Mục tiêu là làm sạch và ổn định dữ liệu đầu vào. \\
 \hline
-3 & Trích xuất đặc trưng \newline (Feature Extraction) & 
-Tính toán các đặc trưng thời gian (mean, std, peaks, energy), tần số (FFT), hoặc đặc trưng miền wavelet đại diện cho nội dung sinh lý trong từng đoạn tín hiệu. \\
+3 & \textbf{Trích xuất đặc trưng} \newline (Feature Extraction) & Tính toán các đặc trưng thời gian (mean, std, energy...) và tần số (FFT, wavelet), đại diện cho nội dung sinh lý trong từng đoạn tín hiệu. \\
 \hline
-4 & Lựa chọn và huấn luyện mô hình \newline (Model Selection \& Training) & 
-Chọn thuật toán học máy phù hợp (SVM, RF, LR, NN nhẹ) để huấn luyện mô hình phân loại tư thế hoặc đánh giá OSA từ dữ liệu đặc trưng. \\
+4 & \textbf{Lựa chọn và huấn luyện mô hình} \newline (Model Selection \& Training) & Lựa chọn thuật toán học máy (SVM, RF, LR, NN nhẹ) phù hợp với bài toán phân loại tư thế và/hoặc đánh giá OSA. \\
 \hline
-5 & Đánh giá hiệu năng \newline (Evaluation) & 
-Đánh giá mô hình bằng các chỉ số: Accuracy, Precision, Recall, F1-Score, AUC, confusion matrix. So sánh với các mô hình nền hoặc ngưỡng lâm sàng. \\
+5 & \textbf{Đánh giá hiệu năng} \newline (Evaluation) & Sử dụng các chỉ số đánh giá mô hình như Accuracy, Precision, Recall, F1-Score, AUC, confusion matrix. \\
 \hline
-6 & Tối ưu mô hình \newline (Model Optimization) & 
-Tối giản mô hình bằng các kỹ thuật như pruning (cắt tỉa trọng số), quantization (lượng tử hóa 8-bit) nhằm giảm kích thước mô hình. \\
+6 & \textbf{Tối ưu mô hình} \newline (Model Optimization) & Ứng dụng kỹ thuật pruning, quantization (8-bit) để giảm kích thước và độ phức tạp mô hình nhằm phục vụ triển khai biên. \\
 \hline
-7 & Triển khai thực tế \newline (Deployment) & 
-Triển khai mô hình tối ưu trên vi điều khiển (MCU) hỗ trợ TinyML, tích hợp vào thiết bị IoT để theo dõi tư thế và ước lượng AHI tại nhà. \\
+7 & \textbf{Triển khai thực tế} \newline (Deployment) & Triển khai mô hình trên vi điều khiển (MCU) hỗ trợ TinyML, tích hợp trong thiết bị đeo nhằm theo dõi tư thế ngủ và ước lượng AHI tại nhà. \\
 \hline
 \end{tabular}
-\label{tab:pipeline_steps}
 \end{table}
+
 
 Quy trình này có thể được điều chỉnh tùy theo loại tín hiệu đầu vào và 
 mục tiêu phân tích cụ thể (nhận diện tư thế, phát hiện ngưng thở, 
@@ -600,7 +593,7 @@ tín hiệu ECG để đánh giá hoạt động điện tim; hoặc tín hiệu
 hấp, cảm biến áp lực gắn trên giường để xác định tư thế ngủ qua phân 
 bố trọng lực. Tuỳ vào mục tiêu nghiên cứu và cấu hình thiết bị, các tín 
 hiệu này được lấy mẫu với tần số phù hợp, thường dao động từ 10 Hz đến 
-500 Hz \cite{Sleep_Posture_Detection, Jeng_osa, Zhang_osa, Ferrer_osa, Sang, osa_sanchez2025}.
+500 Hz \cite{Sleep_Posture_Detection, Jeng, Zhang_osa, Ferrer_osa, Sang, osa_sanchez2025}.
 Một trong những yêu cầu quan trọng của bước thu thập là đảm bảo tính 
 ổn định và chất lượng của dữ liệu. Các cảm biến cần được gắn chắc chắn 
 tại những vị trí tối ưu, chẳng hạn như vùng ngực, cổ tay hoặc hõm ức, 
@@ -886,36 +879,77 @@ Tập trung vào mục tiêu phát hiện các hoạt động thường ngày v�
 tư thế ngủ của con người, rất nhiều nghiên cứu gần đây 
 đã ứng dụng các phương pháp học máy và trí tuệ nhân tạo để xây dựng 
 hệ thống nhận dạng từ dữ liệu cảm biến đeo được. 
-
-\textit{Bảng \ref{tab:sleepml}} dưới đây tổng hợp một số nghiên cứu tiêu biểu trong lĩnh vực này, bao gồm cả các mô hình học máy truyền thống (như cây quyết định, KNN, SVM) và các phương pháp học sâu (CNN, LSTM). Các hệ thống được triển khai với mục đích phân loại tư thế ngủ hoặc hoạt động thể chất, sử dụng nhiều loại dữ liệu cảm biến khác nhau như gia tốc ba trục, tín hiệu quang học (PPG) hoặc đặc trưng miền thời gian. Nhiều nghiên cứu cũng đã chú trọng đến việc triển khai mô hình trên thiết bị nhúng (on-chip), nhằm hướng đến khả năng theo dõi tại nhà trong thời gian thực với chi phí và mức tiêu thụ năng lượng thấp.
+\textit{Bảng \ref{tab:sleepml}} dưới đây tổng hợp một số nghiên cứu 
+tiêu biểu trong lĩnh vực này, bao gồm cả các mô hình học máy truyền 
+thống (như cây quyết định, KNN, SVM) và các phương pháp học sâu 
+(CNN, LSTM). Các hệ thống được triển khai với mục đích phân loại tư 
+thế ngủ hoặc hoạt động thể chất, sử dụng nhiều loại dữ liệu cảm biến 
+khác nhau như gia tốc ba trục, tín hiệu quang học (PPG) hoặc đặc 
+trưng miền thời gian. Nhiều nghiên cứu cũng đã chú trọng đến việc 
+triển khai mô hình trên thiết bị nhúng (on-chip), nhằm hướng đến khả 
+năng theo dõi tại nhà trong thời gian thực với chi phí và mức tiêu 
+thụ năng lượng thấp.
 
 \begin{table}[htbp]
+\centering
 \caption{Hiệu quả mô hình học máy và khả năng triển khai biên trong nhận diện tư thế ngủ}
-\begin{center}
+\label{tab:sleepml}
+\small
+\renewcommand{\arraystretch}{1.2}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{|c|p{2cm}|p{2cm}|p{2.5cm}|p{3.2cm}|c|c|c|}
+\begin{tabular}{|c|p{2.2cm}|p{2.2cm}|p{2.7cm}|p{3.3cm}|c|c|p{1.2cm}|}
 \hline
-\textbf{Ref.} & \textbf{Data} & \textbf{Task} & \textbf{Features} & \textbf{Model(s)} & \textbf{Acc.} & \textbf{Soft.} & \textbf{On-Chip} \\
+\textbf{Tài liệu} & \textbf{Dữ liệu} & \textbf{Nhiệm vụ} & \textbf{Đặc trưng} & \textbf{Mô hình} & \textbf{Độ chính xác} & \textbf{Phần mềm} & \textbf{On-chip} \\
 \hline
-\cite{abdulsadig2023} & 18 subjects & Sleep posture & 12 time-domain & DT, Extra-Trees, LSTM-NN & $>$98\% & NM & Yes \\
-\cite{jeng2021} & Not mentioned & Sleep posture & NM & RF, SVM & 85\% & Yes & No \\
-\cite{vu2023} & 561,859 samples & Sleep posture & NM & LSTM\_sq, CNN, MLP, LSTM\_con & $>$99\% & No & No \\
-\cite{kwasnicki2018} & 16 subjects & Sleep posture & Mean, 3-axis & Threshold-based & 99.5\% & No & No \\
-\cite{elnaggar2023} & 5 subjects & Sleep posture & NM & Threshold-based & $>$99.2\% & No & No \\
-\cite{gomes2021} & 8 subjects & Human activity & Mean, Std (6) & KNN, RF, SVM & 97\% & No & No \\
-\cite{dao2022} & Public + 20 private & Human activity & 31 time-domain & RF & 97\% & Yes & No \\
-\cite{souza2017} & 10 subjects (public) & Human activity & 11 time-domain & KNN, NB, SVM, CTree, RF & 98\% & No & No \\
+\cite{abdulsadig2023} & 18 đối tượng & Tư thế ngủ & 12 đặc trưng miền thời gian & DT, Extra-Trees, LSTM-NN & $>$98\% & NM & Có \\
+\cite{Jeng} & Không nêu & Tư thế ngủ & NM & RF, SVM & 85\% & Có & Không \\
+\cite{vu2023} & 561.859 mẫu & Tư thế ngủ & NM & LSTM\_sq, CNN, MLP, LSTM\_con & $>$99\% & Không & Không \\
+\cite{kwasnicki2018} & 16 đối tượng & Tư thế ngủ & Trung bình, 3 trục & Ngưỡng cố định & 99.5\% & Không & Không \\
+\cite{elnaggar2023} & 5 đối tượng & Tư thế ngủ & NM & Ngưỡng cố định & $>$99.2\% & Không & Không \\
+\cite{gomes2021} & 8 đối tượng & Hoạt động người dùng & Trung bình, Độ lệch chuẩn (6) & KNN, RF, SVM & 97\% & Không & Không \\
+\cite{dao2022} & Public + 20 private & Hoạt động người dùng & 31 đặc trưng miền thời gian & RF & 97\% & Có & Không \\
+\cite{souza2017} & 10 đối tượng (public) & Hoạt động người dùng & 11 đặc trưng miền thời gian & KNN, NB, SVM, CTree, RF & 98\% & Không & Không \\
 \hline
-\multicolumn{8}{l}{\footnotesize NM = Not Mentioned; DT = Decision Tree; CNN = Convolutional Neural Network; MLP = Multilayer Perceptron;} \\
+\multicolumn{8}{l}{\footnotesize NM = Không đề cập; DT = Decision Tree; CNN = Convolutional Neural Network; MLP = Multilayer Perceptron;} \\
 \multicolumn{8}{l}{\footnotesize LSTM = Long Short-Term Memory; RF = Random Forest; SVM = Support Vector Machine; NB = Naive Bayes; CTree = Conditional Inference Tree.}
 \end{tabular}
 }
-\end{center}
-\label{tab:sleepml}
 \end{table}
 
 
-Sự phát triển nhanh chóng của trí tuệ nhân tạo (AI) trong lĩnh vực y học đã mở ra nhiều hướng tiếp cận mới trong việc đánh giá tư thế ngủ và chẩn đoán OSA. Các hệ thống AI đang dần chứng minh hiệu quả vượt trội trong việc xử lý dữ liệu cảm biến lớn và phức tạp, từ đó cung cấp các phân tích chính xác về hành vi giấc ngủ của bệnh nhân. Các mô hình học máy được huấn luyện trên tập dữ liệu cảm biến từ accelerometer, gyroscope hoặc thiết bị đeo thông minh có thể tự động phân loại các tư thế ngủ theo thời gian thực, với độ chính xác lên đến trên 90\% trong nhiều nghiên cứu gần đây \cite{Sleep_Posture_Detection}\cite{Vu2025SleepPosition}\cite{HOANG2025116309}. 
+Sự phát triển nhanh chóng của trí tuệ nhân tạo (AI) trong lĩnh vực y học 
+đã mở ra nhiều hướng tiếp cận mới trong việc đánh giá tư thế ngủ và 
+chẩn đoán OSA. Các hệ thống AI đang dần chứng minh hiệu quả vượt trội 
+trong việc xử lý dữ liệu cảm biến lớn và phức tạp, từ đó cung cấp các 
+phân tích chính xác về hành vi giấc ngủ của bệnh nhân. Các mô hình học 
+máy được huấn luyện trên tập dữ liệu cảm biến từ accelerometer, gyroscope 
+hoặc thiết bị đeo thông minh có thể tự động phân loại các tư thế ngủ 
+theo thời gian thực, với độ chính xác lên đến trên 90\% trong nhiều 
+nghiên cứu gần đây 
+\cite{Sleep_Posture_Detection}\cite{Vu2025SleepPosition}\cite{HOANG2025116309}.
+
+\textbf{Tiny Machine Learning (TinyML)} là lĩnh vực nghiên cứu và ứng dụng các 
+mô hình học máy có kích thước nhỏ gọn, tiêu thụ năng lượng thấp, 
+được triển khai trực tiếp trên các thiết bị nhúng như vi điều khiển 
+(microcontrollers – MCU) hoặc thiết bị đeo (wearables) \cite{ray2021tinyml}. 
+Không giống như các mô hình học máy truyền thống thường yêu cầu nền 
+tảng phần cứng mạnh và tính toán trên cloud, TinyML cho phép xử lý dữ 
+liệu tại chỗ (on-device inference) mà không cần kết nối internet, 
+nhờ đó nâng cao tính riêng tư, độ phản hồi thời gian thực và khả năng 
+hoạt động ngoại tuyến.
+
+Trong lĩnh vực chăm sóc sức khỏe, TinyML ngày càng được ứng dụng rộng 
+rãi để phân tích các tín hiệu sinh lý như nhịp tim, hô hấp, chuyển động 
+và tư thế ngủ. Với ưu điểm là tiết kiệm năng lượng và chi phí, 
+các mô hình TinyML rất phù hợp cho các hệ thống theo dõi lâu dài, 
+ví dụ như phát hiện ngưng thở khi ngủ (OSA) bằng cảm biến đeo tại nhà. 
+Các thuật toán thường được sử dụng trong TinyML bao gồm các biến thể đơn giản hoá của CNN, 
+LSTM hoặc các mô hình cây quyết định nhẹ như Decision Tree, Random Forest và Gradient Boosting 
+đã được tối ưu hoá cho các nền tảng hạn chế tài nguyên.
+Gần đây, các công cụ như TensorFlow Lite for Microcontrollers, 
+Edge Impulse, và TinyML EON Compiler cho phép huấn luyện, 
+chuyển đổi và triển khai các mô hình AI chỉ trong vài kilobyte bộ nhớ, 
+mở ra cơ hội mới cho chẩn đoán y tế cá nhân hoá dựa trên thiết bị đeo thông minh.
 
 Nhờ vào khả năng học và tự hiệu chỉnh, các thuật toán này có thể phân 
 biệt hiệu quả giữa các trạng thái nằm nghiêng trái, nghiêng phải, nằm ngửa và nằm sấp – 

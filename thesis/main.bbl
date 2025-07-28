@@ -1325,6 +1325,7 @@
       \strng{authornamehash}{03def0b5541591257f0c8ed829abc42b}
       \strng{authorfullhash}{93651231817cffff623ea6d6cfb4adc1}
       \strng{authorfullhashraw}{93651231817cffff623ea6d6cfb4adc1}
+      \field{extraname}{1}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -2808,24 +2809,24 @@
       \field{title}{Home Sleep Test (HST) Devices Comparison Guide}
       \field{year}{2022}
     \endentry
-    \entry{Jeng_osa}{article}{}{}
+    \entry{Jeng}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=f03df1a723e721b81e34564015f45bdb}{%
-           family={Jeng.\bibnamedelimi P.-Y.},
-           familyi={J\bibinitperiod\bibinitdelim P\bibinithyphendelim Y\bibinitperiod},
-           given={Hu.\bibnamedelimi C.-J.\& Wu.\bibnamedelimi D.\bibnamedelimi A},
-           giveni={H\bibinitperiod\bibinitdelim C\bibinithyphendelim J\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim A\bibinitperiod},
-           suffix={Wang.\bibnamedelimi L.-C.},
-           suffixi={W\bibinitperiod\bibinitdelim L\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=03942d124c8b59712d0e078c8fd43a82}{%
+           family={Jeng},
+           familyi={J\bibinitperiod},
+           given={L.-C.và\bibnamedelimb cộng\bibnamedelima sự},
+           giveni={L\bibinithyphendelim C\bibinitperiod\bibinitdelim c\bibinitperiod\bibinitdelim s\bibinitperiod},
+           suffix={P.-Y.;\bibnamedelima Wang},
+           suffixi={P\bibinithyphendelim Y\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
       }
-      \strng{namehash}{f03df1a723e721b81e34564015f45bdb}
-      \strng{fullhash}{f03df1a723e721b81e34564015f45bdb}
-      \strng{fullhashraw}{f03df1a723e721b81e34564015f45bdb}
-      \strng{bibnamehash}{f03df1a723e721b81e34564015f45bdb}
-      \strng{authorbibnamehash}{f03df1a723e721b81e34564015f45bdb}
-      \strng{authornamehash}{f03df1a723e721b81e34564015f45bdb}
-      \strng{authorfullhash}{f03df1a723e721b81e34564015f45bdb}
-      \strng{authorfullhashraw}{f03df1a723e721b81e34564015f45bdb}
+      \strng{namehash}{03942d124c8b59712d0e078c8fd43a82}
+      \strng{fullhash}{03942d124c8b59712d0e078c8fd43a82}
+      \strng{fullhashraw}{03942d124c8b59712d0e078c8fd43a82}
+      \strng{bibnamehash}{03942d124c8b59712d0e078c8fd43a82}
+      \strng{authorbibnamehash}{03942d124c8b59712d0e078c8fd43a82}
+      \strng{authornamehash}{03942d124c8b59712d0e078c8fd43a82}
+      \strng{authorfullhash}{03942d124c8b59712d0e078c8fd43a82}
+      \strng{authorfullhashraw}{03942d124c8b59712d0e078c8fd43a82}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
@@ -2834,7 +2835,7 @@
       \field{title}{A Wrist Sensor Sleep Posture Monitoring System: An Automatic Labeling Approach}
       \field{year}{2021}
       \verb{doi}
-      \verb /10.3390/s21010258
+      \verb https://doi.org/10.3390/s21010258
       \endverb
     \endentry
     \entry{Zhang_osa}{article}{}{}
@@ -2863,7 +2864,7 @@
       \field{title}{Monitoring cardio-respiratory and posture movements during sleep: What can be achieved by a single motion sensor}
       \field{year}{2015}
     \endentry
-    \entry{p_2}{article}{}{}
+    \entry{kwasnicki2018}{article}{}{}
       \name{author}{1}{}{%
         {{hash=6e9a9b71d6092f029936a4a589e3fd47}{%
            family={Kwasnicki},
@@ -3558,35 +3559,278 @@
       \verb https://www.sciencedirect.com/science/article/pii/S1746809423008777
       \endverb
     \endentry
-    \entry{LIS3DH}{online}{}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labeltitlesource}{title}
-      \field{note}{Available at \url{https://www.st.com/en/mems-and-sensors/lis3dh.html}}
-      \field{title}{3-axis MEMS accelerometer, ultra-low-power}
-    \endentry
-    \entry{st_lsm6ds3_2017}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=c38884ab3cf908c2798725960369391b}{%
-           family={{STMicroelectronics}},
-           familyi={S\bibinitperiod}}}%
+    \entry{abdulsadig2023}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=fcd26a176896693d54f34c891f26170a}{%
+           family={Abdulsadig},
+           familyi={A\bibinitperiod},
+           given={R.S.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1737d70def95d213714fb1c04844787c}{%
+           family={Rodriguez-Villegas},
+           familyi={R\bibinithyphendelim V\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
       }
-      \strng{namehash}{c38884ab3cf908c2798725960369391b}
-      \strng{fullhash}{c38884ab3cf908c2798725960369391b}
-      \strng{fullhashraw}{c38884ab3cf908c2798725960369391b}
-      \strng{bibnamehash}{c38884ab3cf908c2798725960369391b}
-      \strng{authorbibnamehash}{c38884ab3cf908c2798725960369391b}
-      \strng{authornamehash}{c38884ab3cf908c2798725960369391b}
-      \strng{authorfullhash}{c38884ab3cf908c2798725960369391b}
-      \strng{authorfullhashraw}{c38884ab3cf908c2798725960369391b}
+      \strng{namehash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{fullhash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{fullhashraw}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{bibnamehash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{authorbibnamehash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{authornamehash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{authorfullhash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{authorfullhashraw}{813c9cde4601ad286eb7996fbda01d8a}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://content.arduino.cc/assets/st_imu_lsm6ds3_datasheet.pdf}}
-      \field{note}{Accessed: 2025-03-31}
-      \field{title}{LSM6DS3 iNEMO Inertial Module: Always-on 3D Accelerometer and 3D Gyroscope Datasheet}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{Sleep posture monitoring using a single neck-situated accelerometer: A proof-of-concept}
+      \field{volume}{11}
+      \field{year}{2023}
+      \field{pages}{17693\bibrangedash 17706}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2023.3246266
+      \endverb
+    \endentry
+    \entry{vu2023}{inproceedings}{}{}
+      \name{author}{6}{}{%
+        {{hash=116c62b304b0166bd92da215c685948d}{%
+           family={Vu},
+           familyi={V\bibinitperiod},
+           given={H.-D.},
+           giveni={H\bibinithyphendelim D\bibinitperiod}}}%
+        {{hash=68a61b0d6f69edf38c7993789b61f061}{%
+           family={Tran},
+           familyi={T\bibinitperiod},
+           given={D.-N.},
+           giveni={D\bibinithyphendelim N\bibinitperiod}}}%
+        {{hash=9c6b914d49f509baaa81f935412027d8}{%
+           family={Can},
+           familyi={C\bibinitperiod},
+           given={K.-L.},
+           giveni={K\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=e0301ecbab0c3f3fb8b79f3ac46e636c}{%
+           family={Dao},
+           familyi={D\bibinitperiod},
+           given={T.-H.},
+           giveni={T\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=b15d66cb9c1225b26a9787c754bd7bde}{%
+           family={Pham},
+           familyi={P\bibinitperiod},
+           given={D.-D.},
+           giveni={D\bibinithyphendelim D\bibinitperiod}}}%
+        {{hash=b9ea5eee42f6708f978aa8f7cca7136f}{%
+           family={Tran},
+           familyi={T\bibinitperiod},
+           given={D.-T.},
+           giveni={D\bibinithyphendelim T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Hanoi, Vietnam}%
+      }
+      \strng{namehash}{381920e301ea60c8178ee46205eedd8c}
+      \strng{fullhash}{8a7f9fd334f56d5ad3464f653f5cb38d}
+      \strng{fullhashraw}{8a7f9fd334f56d5ad3464f653f5cb38d}
+      \strng{bibnamehash}{381920e301ea60c8178ee46205eedd8c}
+      \strng{authorbibnamehash}{381920e301ea60c8178ee46205eedd8c}
+      \strng{authornamehash}{381920e301ea60c8178ee46205eedd8c}
+      \strng{authorfullhash}{8a7f9fd334f56d5ad3464f653f5cb38d}
+      \strng{authorfullhashraw}{8a7f9fd334f56d5ad3464f653f5cb38d}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Statistical Signal Processing Workshop (SSP)}
+      \field{title}{Enhancing sleep postures classification by incorporating acceleration sensor and LSTM model}
+      \field{year}{2023}
+      \field{pages}{661\bibrangedash 665}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/SSP53291.2023.10208083
+      \endverb
+    \endentry
+    \entry{elnaggar2023}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=eede6a5ccdeec99a32c9f8415fd44ed4}{%
+           family={Elnaggar},
+           familyi={E\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+        {{hash=2559a97f8882c573f75e2e8029bdd6bb}{%
+           family={Arelhi},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8abc08818e1d3fc1032e7d0fd7011aea}{%
+           family={Coenen},
+           familyi={C\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{61d712043bcfd5b41303ebafe5ac477d}
+      \strng{fullhash}{61d712043bcfd5b41303ebafe5ac477d}
+      \strng{fullhashraw}{61d712043bcfd5b41303ebafe5ac477d}
+      \strng{bibnamehash}{61d712043bcfd5b41303ebafe5ac477d}
+      \strng{authorbibnamehash}{61d712043bcfd5b41303ebafe5ac477d}
+      \strng{authornamehash}{61d712043bcfd5b41303ebafe5ac477d}
+      \strng{authorfullhash}{61d712043bcfd5b41303ebafe5ac477d}
+      \strng{authorfullhashraw}{61d712043bcfd5b41303ebafe5ac477d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific Reports}
+      \field{title}{An interpretable framework for sleep posture change detection and postural inactivity segmentation using wrist kinematics}
+      \field{volume}{13}
+      \field{year}{2023}
+      \field{pages}{18027}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41598-023-44567-9
+      \endverb
+    \endentry
+    \entry{gomes2021}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=12dd925d896f2dbdf87f3be82cf9287d}{%
+           family={Gomes},
+           familyi={G\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9e000b166f3d0b56dfd6d3df08297651}{%
+           family={Bertini},
+           familyi={B\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=0c79647c198d2b63dae76416bf5b92d8}{%
+           family={Campos},
+           familyi={C\bibinitperiod},
+           given={W.R.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=d59cc60cf1ae33510ed4738ccce5a73f}{%
+           family={Sobral},
+           familyi={S\bibinitperiod},
+           given={A.P.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7fc9650120c8b546a7adcaf4b8efa7db}{%
+           family={Mocaiber},
+           familyi={M\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=77dc81222d725575c4f67b616cab55a1}{%
+           family={Copetti},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{666ae6fd94c886f7a78beca6ea8dfe80}
+      \strng{fullhash}{07dd82868e9ded22d0bf97a98f81ad26}
+      \strng{fullhashraw}{07dd82868e9ded22d0bf97a98f81ad26}
+      \strng{bibnamehash}{666ae6fd94c886f7a78beca6ea8dfe80}
+      \strng{authorbibnamehash}{666ae6fd94c886f7a78beca6ea8dfe80}
+      \strng{authornamehash}{666ae6fd94c886f7a78beca6ea8dfe80}
+      \strng{authorfullhash}{07dd82868e9ded22d0bf97a98f81ad26}
+      \strng{authorfullhashraw}{07dd82868e9ded22d0bf97a98f81ad26}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{title}{Machine learning algorithms for activity-intensity recognition using accelerometer data}
+      \field{volume}{21}
+      \field{year}{2021}
+      \field{pages}{1214}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s21041214
+      \endverb
+    \endentry
+    \entry{dao2022}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=e0301ecbab0c3f3fb8b79f3ac46e636c}{%
+           family={Dao},
+           familyi={D\bibinitperiod},
+           given={T.-H.},
+           giveni={T\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=aea966e967cb2d80336eef0b57faaabd}{%
+           family={Hoang},
+           familyi={H\bibinitperiod},
+           given={H.-Y.},
+           giveni={H\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=65b9c0fe78c26537d7eea08f18de456d}{%
+           family={Hoang},
+           familyi={H\bibinitperiod},
+           given={V.-N.},
+           giveni={V\bibinithyphendelim N\bibinitperiod}}}%
+        {{hash=b9ea5eee42f6708f978aa8f7cca7136f}{%
+           family={Tran},
+           familyi={T\bibinitperiod},
+           given={D.-T.},
+           giveni={D\bibinithyphendelim T\bibinitperiod}}}%
+        {{hash=68a61b0d6f69edf38c7993789b61f061}{%
+           family={Tran},
+           familyi={T\bibinitperiod},
+           given={D.-N.},
+           giveni={D\bibinithyphendelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{801ac96d5cb986f6f6606ad7ad17aaec}
+      \strng{fullhash}{758071539d36588763a0b86a93c05495}
+      \strng{fullhashraw}{758071539d36588763a0b86a93c05495}
+      \strng{bibnamehash}{801ac96d5cb986f6f6606ad7ad17aaec}
+      \strng{authorbibnamehash}{801ac96d5cb986f6f6606ad7ad17aaec}
+      \strng{authornamehash}{801ac96d5cb986f6f6606ad7ad17aaec}
+      \strng{authorfullhash}{758071539d36588763a0b86a93c05495}
+      \strng{authorfullhashraw}{758071539d36588763a0b86a93c05495}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{EAI Endorsed Transactions on Industrial Networks and Intelligent Systems}
+      \field{number}{4}
+      \field{title}{Human activity recognition system for moderate performance microcontroller using accelerometer data and random forest algorithm}
+      \field{volume}{9}
+      \field{year}{2022}
+      \field{pages}{e4\bibrangedash e4}
+      \range{pages}{-1}
+    \endentry
+    \entry{souza2017}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=51d3a28a76261a97882ed16084530a88}{%
+           family={Souza},
+           familyi={S\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=7e4a53281d5776f5da14e7864e87f0ff}{%
+           family={Rajamohan},
+           familyi={R\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{d4e5fc08990173d6eeb3f68383bfd6d6}
+      \strng{fullhash}{d4e5fc08990173d6eeb3f68383bfd6d6}
+      \strng{fullhashraw}{d4e5fc08990173d6eeb3f68383bfd6d6}
+      \strng{bibnamehash}{d4e5fc08990173d6eeb3f68383bfd6d6}
+      \strng{authorbibnamehash}{d4e5fc08990173d6eeb3f68383bfd6d6}
+      \strng{authornamehash}{d4e5fc08990173d6eeb3f68383bfd6d6}
+      \strng{authorfullhash}{d4e5fc08990173d6eeb3f68383bfd6d6}
+      \strng{authorfullhashraw}{d4e5fc08990173d6eeb3f68383bfd6d6}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Engineering and Technology}
+      \field{title}{Human activity recognition using accelerometer and gyroscope sensors}
+      \field{volume}{9}
       \field{year}{2017}
+      \field{pages}{1171\bibrangedash 1179}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.21817/ijet/2017/v9i2/170902134
+      \endverb
     \endentry
     \entry{p_1}{article}{}{}
       \name{author}{1}{}{%
@@ -3614,13 +3858,6 @@
       \field{title}{An unobtrusive sleep monitoring system for the human sleep behaviour understanding}
       \field{volume}{7}
       \field{year}{2016}
-    \endentry
-    \entry{nrf}{online}{}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labeltitlesource}{title}
-      \field{note}{Available at \url{https://infocenter.nordicsemi.com/index.jsp}}
-      \field{title}{Nordic Semiconductor provides technical and support documentation}
     \endentry
     \entry{arm_cortex_m_comparison}{misc}{}{}
       \name{author}{1}{}{%
@@ -3651,6 +3888,13 @@
       \verb{url}
       \verb https://developer.arm.com/documentation/102787/latest/
       \endverb
+    \endentry
+    \entry{cortexM4}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{Available at \url{https://developer.arm.com/Processors/Cortex-M4}}
+      \field{title}{Cortex-M4}
     \endentry
     \entry{electronics11162545}{article}{}{}
       \name{author}{3}{}{%
@@ -3737,12 +3981,28 @@
       \verb 10.1109/PEDES.2018.8707575
       \endverb
     \endentry
-    \entry{cortexM4}{online}{}{}
+    \entry{nrf52840}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=af5e4455ba6301bed1741b8796304f18}{%
+           family={{Nordic Semiconductor}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{af5e4455ba6301bed1741b8796304f18}
+      \strng{fullhash}{af5e4455ba6301bed1741b8796304f18}
+      \strng{fullhashraw}{af5e4455ba6301bed1741b8796304f18}
+      \strng{bibnamehash}{af5e4455ba6301bed1741b8796304f18}
+      \strng{authorbibnamehash}{af5e4455ba6301bed1741b8796304f18}
+      \strng{authornamehash}{af5e4455ba6301bed1741b8796304f18}
+      \strng{authorfullhash}{af5e4455ba6301bed1741b8796304f18}
+      \strng{authorfullhashraw}{af5e4455ba6301bed1741b8796304f18}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Available at \url{https://developer.arm.com/Processors/Cortex-M4}}
-      \field{title}{Cortex-M4}
+      \field{howpublished}{\url{https://www.nordicsemi.com/Products/nRF52840}}
+      \field{note}{Accessed: 2025-07-28}
+      \field{title}{nRF52840 – Advanced Bluetooth 5, Thread and Zigbee multiprotocol SoC}
+      \field{year}{2025}
     \endentry
     \entry{BLE}{online}{}{}
       \field{sortinit}{1}
@@ -3751,19 +4011,35 @@
       \field{note}{Available at \url{https://www.bluetooth.com/bluetooth-resources/bluetooth-core-specification-version-5-3-feature-enhancements/}}
       \field{title}{Bluetooth® Core Specification Version 5.3 Feature Enhancements}
     \endentry
-    \entry{ada_price}{online}{}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labeltitlesource}{title}
-      \field{note}{Available at \url{https://www.adafruit.com/product/3333}}
-      \field{title}{Circuit Playground Express}
-    \endentry
     \entry{ada_overview}{online}{}{}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{note}{Available at \url{https://learn.adafruit.com/introducing-circuit-playground/overview}}
       \field{title}{Introducing Circuit Playground}
+    \endentry
+    \entry{nano33ble}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ee5bced252ab77ec8d633c1afda7c5da}{%
+           family={{Arduino}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{fullhash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{fullhashraw}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{bibnamehash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{authorbibnamehash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{authornamehash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{authorfullhash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{authorfullhashraw}{ee5bced252ab77ec8d633c1afda7c5da}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://docs.arduino.cc/hardware/nano-33-ble-sense/}}
+      \field{note}{Accessed: 2025-07-28}
+      \field{title}{Nano 33 BLE Sense – Datasheet and Hardware Overview}
+      \field{year}{2025}
     \endentry
     \entry{allan}{article}{}{}
       \name{author}{2}{}{%
@@ -3798,35 +4074,6 @@
       \field{year}{2019}
       \verb{doi}
       \verb 10.1109/ET.2019.8878552.
-      \endverb
-    \endentry
-    \entry{Jeng}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=03942d124c8b59712d0e078c8fd43a82}{%
-           family={Jeng},
-           familyi={J\bibinitperiod},
-           given={L.-C.và\bibnamedelimb cộng\bibnamedelima sự},
-           giveni={L\bibinithyphendelim C\bibinitperiod\bibinitdelim c\bibinitperiod\bibinitdelim s\bibinitperiod},
-           suffix={P.-Y.;\bibnamedelima Wang},
-           suffixi={P\bibinithyphendelim Y\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-      }
-      \strng{namehash}{03942d124c8b59712d0e078c8fd43a82}
-      \strng{fullhash}{03942d124c8b59712d0e078c8fd43a82}
-      \strng{fullhashraw}{03942d124c8b59712d0e078c8fd43a82}
-      \strng{bibnamehash}{03942d124c8b59712d0e078c8fd43a82}
-      \strng{authorbibnamehash}{03942d124c8b59712d0e078c8fd43a82}
-      \strng{authornamehash}{03942d124c8b59712d0e078c8fd43a82}
-      \strng{authorfullhash}{03942d124c8b59712d0e078c8fd43a82}
-      \strng{authorfullhashraw}{03942d124c8b59712d0e078c8fd43a82}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Sensors}
-      \field{title}{A Wrist Sensor Sleep Posture Monitoring System: An Automatic Labeling Approach}
-      \field{year}{2021}
-      \verb{doi}
-      \verb https://doi.org/10.3390/s21010258
       \endverb
     \endentry
     \entry{Saha}{article}{}{}
@@ -3883,14 +4130,6 @@
       \field{year}{2019}
     \endentry
   \enddatalist
-  \missing{abdulsadig2023}
-  \missing{dao2022}
-  \missing{elnaggar2023}
-  \missing{gomes2021}
-  \missing{jeng2021}
-  \missing{kwasnicki2018}
-  \missing{souza2017}
-  \missing{vu2023}
 \endrefsection
 \endinput
 

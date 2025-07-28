@@ -1,11 +1,64 @@
 
-\section{Nghiên cứu, lựa chọn cảm biến \label{section_overview_propsed_method}}
-Trong tự nhiên, các chuyển động vật lý được phân loại thành ba nhóm chính: chuyển động đột ngột, chuyển động chậm và chuyển động dao động điều hòa. Đối với chuyển động của con người trong giấc ngủ, đây chủ yếu là chuyển động chậm, diễn ra ở cả hai giai đoạn: (1) giấc ngủ không chuyển động mắt nhanh (Non-Rapid Eye Movement – NREM) và (2) giấc ngủ có chuyển động mắt nhanh (Rapid Eye Movement – REM). Như đã trình bày trong Chương I, hiện nay có nhiều loại cảm biến gia tốc MEMS được ứng dụng rộng rãi trong lĩnh vực theo dõi tư thế ngủ. Sau quá trình khảo sát và đánh giá các tiêu chí kỹ thuật, tác giả đã tiến hành thực nghiệm với dòng cảm biến gia tốc phổ biến là LIS3DH \cite{LIS3DH} và 1 dòng LSM6DS3 \cite{st_lsm6ds3_2017} trong giai đoạn triển khai trên chip do công ty STMicroelectronics sản xuất. Mỗi loại cảm biến có những ưu điểm riêng, phù hợp với từng mục tiêu thiết kế cụ thể
+\section{Phần cứng thực nghiệm \label{section_overview_propsed_method}}
+\subsection{Cảm biến \label{section_overview_propsed_method}}
+
+Trong quá trình ngủ, các chuyển động thân thể chủ yếu là chuyển động 
+chậm, với biên độ nhỏ và không mang tính đột ngột. 
+Các chuyển động thân thể chủ yếu mang tính chậm và thường xảy ra 
+trong giai đoạn ngủ không chuyển động mắt nhanh (NREM), 
+khi cơ thể có khả năng tự do thay đổi tư thế. Ngược lại, 
+trong giai đoạn ngủ REM, hiện tượng ức chế trương lực cơ khiến 
+cơ thể gần như bất động.
+Do đó, việc ghi 
+nhận chính xác các thay đổi tư thế ngủ đòi hỏi cảm biến có độ nhạy cao, 
+khả năng phân giải tốt và ổn định với nhiễu nền thấp. Như đã trình bày 
+trong Chương I, các cảm biến gia tốc MEMS sử dụng nguyên lý điện dung 
+hiện đang được ứng dụng rộng rãi trong giám sát tư thế và chuyển động 
+khi ngủ nhờ vào đặc điểm nổi bật là kích thước nhỏ gọn, tiêu thụ năng 
+lượng thấp, tần số lấy mẫu phù hợp và đặc biệt là độ nhạy cao với 
+chuyển động cường độ thấp.
+
+Trong nghiên cứu của Vu và cộng sự (2023), dữ liệu tư thế ngủ được thu 
+thập thông qua một thiết bị đeo đặt tại vùng bụng của người tham gia. 
+Thiết bị này tích hợp cảm biến gia tốc ba trục ADXL345, 
+bộ điều khiển ESP8266 và pin Lithium, tất cả được đóng gói trong 
+một hộp nhựa nhỏ gọn \cite{vu2023}. Trong nghiên cứu của Boiko 
+và cộng sự, cảm biến gia tốc ba trục ADXL355z 
+được sử dụng để thu nhận tín hiệu hô hấp từ vùng ngực và bụng, 
+với tần số lấy mẫu 62 Hz. Đây là cảm biến có độ nhiễu thấp, 
+độ trôi nhiệt nhỏ và phù hợp với các ứng dụng y sinh. Trước đó, 
+dòng cảm biến này cũng đã được ứng dụng thành công trong các phép 
+đo tim–phổi \cite{Boiko2023}. Dữ liệu từ ADXL355z được đối chiếu với tín hiệu chuẩn 
+thu từ dây đeo hô hấp của hệ thống SOMNO HD eco PSG, nhằm đảm bảo 
+độ chính xác trong đánh giá tín hiệu sinh lý trong khi ngủ.
+Trong nghiên cứu của Abdulsadig và cộng sự, dữ liệu gia tốc được 
+thu thập bằng bo mạch điện tử thiết kế riêng tích hợp cảm biến gia tốc 
+ba trục LIS2DH12 (STMicroelectronics) và vi điều khiển nRF5232 
+(Nordic Semiconductor) \cite{Sleep_Posture_Detection}.
 
 
-Tiêu chí đầu tiên được xem xét là độ nhạy, thể hiện tỉ lệ giữa tín hiệu điện đầu ra và gia tốc g. Độ nhạy thường được biểu diễn bằng các đơn vị như mV/g, count/g hoặc LSB/g (Least Significant Bit per g), và có mối quan hệ tỉ lệ nghịch với biên độ tối đa mà cảm biến có thể đo được. Độ nhạy cao cho phép phát hiện các chuyển động nhỏ, vốn rất đặc trưng trong giấc ngủ. Bên cạnh đó, loại tín hiệu thay đổi cũng đóng vai trò quan trọng trong việc xác định cảm biến phù hợp. Trong ba loại nguyên lý phổ biến dùng để chế tạo cảm biến gia tốc là điện dung, điện trở và điện áp, thì cảm biến dựa trên nguyên lý điện dung và áp điện được đánh giá là phù hợp hơn cả cho các ứng dụng theo dõi chuyển động chậm. Cảm biến áp điện đặc biệt hiệu quả trong việc ghi nhận các dao động điều hòa, trong khi cảm biến áp điện trở lại thích hợp hơn để phát hiện các chuyển động đột ngột. Tiêu chí tiếp theo là biên độ đo lường, tức khoảng gia tốc mà cảm biến có thể ghi nhận chính xác. Nếu gia tốc vượt ngoài khoảng này, tín hiệu sẽ bị sai lệch. LIS3DH cho phép lập trình dải đo từ ±2g đến ±16g. Cần lưu ý rằng biên độ càng lớn thì độ nhạy và độ phân giải càng giảm. Ví dụ, với cảm biến 16-bit có tổng cộng 65.536 mức giá trị, nếu chọn dải đo ±100g, thì độ phân giải sẽ tương đương khoảng 0,003g. Một yếu tố quan trọng khác là số trục đo. LIS3DH hỗ trợ đo trên ba trục X, Y, Z, đáp ứng tiêu chuẩn ba bậc tự do (3 Degrees of Freedom – DOF), đủ để xác định tư thế và vị trí trong không gian ba chiều. Số bậc tự do càng cao thì lượng thông tin chuyển động thu thập được càng phong phú và chính xác hơn, tuy nhiên cũng kéo theo sự phức tạp trong thiết kế và xử lý dữ liệu. Mức tiêu thụ năng lượng là một tiêu chí không thể bỏ qua, đặc biệt trong các hệ thống đeo cá nhân. Cảm biến có công suất tiêu thụ thấp sẽ kéo dài thời gian hoạt động của thiết bị, đồng thời cho phép sử dụng pin nhỏ hơn, từ đó giảm kích thước tổng thể và tăng tính di động.
+Dựa trên khảo sát thực tế và đánh giá các tiêu chí kỹ thuật phù hợp 
+với đặc thù đo chuyển động chậm khi ngủ, luận văn lựa chọn hai dòng 
+cảm biến gia tốc phổ biến là LIS3DH và LSM6DS3, đều do hãng 
+STMicroelectronics sản xuất. Cả hai cảm biến đều tích hợp khả năng đo gia tốc ba trục, 
+hỗ trợ các chuẩn giao tiếp \texttt{I\textsuperscript{2}C} và \texttt{SPI}, 
+đồng thời có thể hoạt động trong chế độ tiêu thụ điện năng siêu thấp (\textit{ultra-low power mode}), 
+đáp ứng yêu cầu sử dụng lâu dài trong các thiết bị đeo cá nhân hoạt động liên 
+tục suốt đêm.
 
-Cuối cùng, yếu tố giá thành cũng được cân nhắc kỹ lưỡng. Các bộ phát triển thương mại thường có giá cao do tích hợp nhiều chức năng phần cứng và phần mềm. Tuy nhiên, đối với ứng dụng chuyên biệt như theo dõi tư thế ngủ, việc tự phát triển phần cứng và phần mềm tùy biến có thể giúp tối ưu hóa chi phí đáng kể. Trong khuôn khổ luận văn này, tác giả sử dụng bộ phát triển có sẵn để tiến hành đánh giá kỹ thuật đo lường và thu thập dữ liệu. Giai đoạn phát triển phần cứng tùy biến sẽ được thực hiện trong các nghiên cứu tiếp theo.
+Trong các ứng dụng theo dõi tư thế ngủ, độ nhạy của cảm biến là một 
+trong những tiêu chí quan trọng hàng đầu, bởi nó quyết định khả năng 
+phát hiện các chuyển động nhỏ đặc trưng với biên độ thấp và tốc độ 
+thay đổi chậm. Cảm biến \textbf{LIS3DH} cho phép lập trình dải đo động 
+từ $\pm2g$ đến $\pm16g$, mang lại tính linh hoạt cao trong thiết kế hệ 
+thống. Tuy nhiên, khi mở rộng dải đo, độ nhạy và độ phân giải sẽ giảm 
+đáng kể. Ví dụ, đối với cảm biến 16-bit, nếu cấu hình ở dải $\pm100g$, 
+độ phân giải chỉ đạt khoảng $0{,}003g$/LSB, điều này có thể làm suy giảm 
+khả năng nhận biết các chuyển động vi mô trong khi ngủ - một yếu tố 
+then chốt trong phân loại chính xác tư thế ngủ.
+
+
+
 
 \begin{figure}[!ht]
 		\centering
@@ -14,31 +67,82 @@ Cuối cùng, yếu tố giá thành cũng được cân nhắc kỹ lưỡng. C
 		\label{lis}
 \end{figure}
 
-LIS3DH với thang đo đầy đủ khá rộng cho phép người phát triển có thể lựa chọn các giá trị ± 2g / ± 4g / ± 8g / ± 16g và có khả năng đo gia tốc với tần số ở lối ra từ 1 Hz đến 5.3 kHz. Thiết bị có thể được cấu hình để tạo ra tín hiệu ngắt bằng cách sử dụng hai sự kiện đánh thức / rơi tự do theo quán tính độc lập cũng như theo vị trí của chính thiết bị. Người dùng cuối có thể lập trình ngưỡng và thời gian của bộ tạo ngắt. LIS3DH tích hợp bộ đệm 32 cấp vào ra tuần tự (FIFO) cho phép người dùng lưu trữ dữ liệu nhằm hạn chế sự can thiệp của bộ xử lý chủ. LIS3DH được đảm bảo hoạt động trong phạm vi nhiệt độ mở rộng từ -40°C đến +85°C. LIS3DH có kích thước nhỏ gọn, thích hợp trong thiết kế mạch đo nhỏ gọn, Hình~\ref{lis}. Thiết bị hỗ trợ dải điện áp cung cấp rộng, dao động từ 1.71 V đến 3.6 V, cho phép linh hoạt trong thiết kế nguồn. Ngoài ra, cảm biến còn tích hợp nguồn cung cấp I/O độc lập ở mức 1.8 V, đồng thời vẫn đảm bảo khả năng tương thích với các hệ thống điện áp khác nhau. Một trong những ưu điểm nổi bật của LIS3DH là chế độ tiêu thụ dòng điện cực thấp, chỉ khoảng 2~$\mu$A trong chế độ tiết kiệm năng lượng, điều này rất quan trọng đối với các hệ thống hoạt động liên tục trong thời gian dài. Thiết bị sử dụng giao diện kỹ thuật số I2C/SPI cho đầu ra dữ liệu, giúp đơn giản hóa việc truyền nhận thông tin giữa cảm biến và bộ xử lý trung tâm. Cảm biến cung cấp đầu ra dữ liệu với độ phân giải 10 bit, cho phép ghi nhận chính xác các thay đổi nhỏ trong chuyển động. Bên cạnh đó, LIS3DH còn được trang bị hai bộ ngắt lập trình độc lập, hỗ trợ phát hiện các chuyển động đặc biệt như rơi tự do và chuyển động nhanh, đồng thời tích hợp tính năng phát hiện định hướng không gian 4D/6D, rất hữu ích trong việc phân loại tư thế ngủ. Thiết bị này đáp ứng các tiêu chuẩn môi trường nghiêm ngặt như ECOPACK®, RoHS và "Green", bảo đảm thân thiện với môi trường và an toàn cho người sử dụng. Trong ngữ cảnh theo dõi tư thế ngủ, khi người đang ngủ thay đổi vị trí, gia tốc cơ thể thường dao động trong phạm vi ±2g. Với độ phân giải đầu ra 10 bit, tức 1024 mức chia, hệ thống có thể đạt độ phân giải lý thuyết khoảng 0.004g. Độ phân giải này là hoàn toàn phù hợp để ghi nhận các thay đổi chậm và nhỏ đặc trưng trong quá trình chuyển đổi tư thế khi ngủ, từ đó hỗ trợ hiệu quả cho các mô hình phân tích bằng trí tuệ nhân tạo.
-
-
-\section{Nghiên cứu, lựa chọn vi xử lý}
-
-Với sự phát triển vượt bậc và đa dạng của công nghệ chế tạo, có rất nhiều cấu hình phần cứng được nhiều nhóm tác giả lựa chọn phù hợp với các mục đích khác nhau. Trong đó, \cite{p_1} các tác giả đã sử dụng máy tính đơn Raspberry Pi kết hợp các điện trở cảm biến lực để phát hiện 4 tư thế ngủ với sự lấy nhãn từ video theo dõi người bệnh trong suốt quá trình lấy mẫu. Kwasnicki và cộng sự đã phát triển hệ thống ngủ có thể đeo (wearable sleep system) sử dụng bộ xử lý công suất thấp TI MSP430 và mô-đun RF Chipcon CC2420 cho truyền thông không dây kết hợp với cảm biến gia tốc 3 trục ADXL330, con quay hồi chuyển InvenSense ITG-3200, Honeywell HMC5843 để đo từ trường xác định 99.5\% chính xác 4 tư thế ngủ \cite{p_2}. Tuy nhiên, các thiết bị vẫn yêu cầu một nguồn nặng lượng khiến cho tính liên tục bị hạn chế đáng kể. I.Yun và cộng sự đã phát triển thiết bị theo dõi tư thế ngủ của trẻ nhỏ sử dụng vi xử lý ATmega328P-PU cùng module Bluetooth kết hợp cảm biến gia tốc ADXL335 được đặt trên bụng đã nhưng lựa chọn về mặt cấu hình thiết bị và chế tạo ra mạch cung cấp năng lượng cho những thành phần cần thiết \cite{p_3}. Từ đó, giảm thiếu đáng kể mức tiêu thụ năng lượng và vẫn giữ nguyên độ chính xác nhưng khá bất tiện cho trẻ nhỏ.
-
-\begin{figure}[!ht]
-		\centering
- 		\includegraphics[width=0.8\textwidth]{images/NRF52840-QFA_SPL.jpg}
-		\caption{Nordic Semiconductor NRF52840}
-		\label{lis}
-\end{figure}
-
-Sau quá trình khảo sát, đánh giá và so sánh giữa các lựa chọn vi xử lý phổ biến hiện nay, tác giả quyết định lựa chọn vi xử lý nRF52840 \cite{nrf} cho hệ thống được đề xuất, dựa trên những ưu điểm nổi bật như kích thước nhỏ gọn, mức tiêu thụ năng lượng thấp và khả năng tích hợp Bluetooth năng lượng thấp (Bluetooth Low Energy – BLE). nRF52840 là vi xử lý cao cấp nhất trong dòng họ nRF52 do hãng Nordic Semiconductor phát triển. Đây là một hệ thống tích hợp trên một vi mạch (System-on-Chip – SoC), được thiết kế tối ưu cho các ứng dụng yêu cầu mức tiêu thụ năng lượng cực thấp, đặc biệt là trong các mạng không dây tầm ngắn. Vi xử lý này tích hợp bộ thu phát đa giao thức hoạt động ở băng tần 2.4 GHz, sử dụng kiến trúc CPU Arm Cortex-M4F với tốc độ xung nhịp 64 MHz, cùng bộ xử lý dấu phẩy động (FPU) và dung lượng bộ nhớ gồm 1 MB bộ nhớ Flash và 256 KB RAM. Bên cạnh đó, nRF52840 hỗ trợ chuẩn Bluetooth 5.3 với khả năng giao tiếp đa giao thức, cho phép tăng cường phạm vi truyền dữ liệu, cải thiện tốc độ truyền và giảm tiêu thụ năng lượng. Bộ tính năng bảo mật được tích hợp một cách đầy đủ, đáp ứng các yêu cầu ngày càng cao trong bảo vệ dữ liệu và truyền thông không dây. Vi xử lý này còn sở hữu khả năng quản lý năng lượng linh hoạt, có thể hoạt động trong dải điện áp rộng từ +5.5V xuống đến +1.7V, cho phép thiết bị hoạt động trực tiếp từ nguồn pin hoặc cổng USB. Về khả năng giao tiếp ngoại vi, nRF52840 cung cấp cấu hình đa dạng, bao gồm tối đa hai giao tiếp I2C, bốn giao tiếp SPI ở chế độ master và ba SPI ở chế độ slave, cùng bốn kênh PWM tích hợp EasyDMA. Ngoài ra, thiết bị còn hỗ trợ năm bộ định thời 32-bit, phù hợp với các ứng dụng đòi hỏi độ chính xác cao trong xử lý thời gian thực.
 
 
 
-\subsection{Vi điều khiển ARM Cortex-M4}
+\subsection{Vi xử lý}
 
-Kiến trúc ARM có nhiều dòng vi xử lý khác nhau, được phát triển và nâng cấp liên tục nhằm đáp ứng nhu cầu đa dạng trong lĩnh vực công nghệ nhúng. Trong đó, dòng Cortex-M thuộc kiến trúc ARMv7 đã trở thành nền tảng phổ biến cho các hệ thống nhúng sử dụng vi điều khiển nhờ vào hiệu suất cao, khả năng mở rộng và mức tiêu thụ năng lượng tối ưu. Dòng Cortex-M bao gồm nhiều phiên bản như Cortex-M0, Cortex-M0+, Cortex-M1, Cortex-M3, Cortex-M4 và Cortex-M7, mỗi phiên bản được thiết kế để phục vụ cho các mức độ yêu cầu hiệu năng khác nhau \cite{arm_cortex_m_comparison}. Các vi xử lý thuộc họ Cortex-M chủ yếu được ứng dụng trong các hệ thống nhúng thời gian thực, nơi yêu cầu sự cân bằng giữa hiệu suất xử lý, tiêu thụ năng lượng và chi phí. Một số vi xử lý ARM khác, không thuộc họ Cortex-M, được sử dụng trong các thiết bị hiệu suất cao như điện thoại thông minh và máy tính bảng, vốn yêu cầu cấu hình phần cứng mạnh hơn và khả năng xử lý đa tác vụ cao hơn. Ngoài ra, hiện nay ứng dụng trí tuệ nhân tạo (AI) tại thiết bị biên (Edge AI) đang ngày càng phổ biến, đặc biệt trong các lĩnh vực như nhà thông minh, thiết bị đeo, giám sát an ninh và công nghiệp 4.0. Với khả năng xử lý tín hiệu số (DSP) và hỗ trợ các mạng nơ-ron nhỏ gọn, các vi xử lý Cortex-M, đặc biệt là dòng Cortex-M4, đang được khai thác để triển khai các mô hình học sâu nhẹ (tinyML) ngay trên vi điều khiển \cite{electronics11162545}\cite{applicationCortexM4}.
+Với sự phát triển vượt bậc và đa dạng của công nghệ chế tạo, 
+có rất nhiều cấu hình phần cứng được nhiều nhóm tác giả lựa chọn phù 
+hợp với các mục đích khác nhau. Trong đó, \cite{p_1} các tác giả đã 
+sử dụng máy tính đơn Raspberry Pi kết hợp các điện trở cảm biến 
+lực để phát hiện 4 tư thế ngủ với sự lấy nhãn từ video theo dõi người 
+bệnh trong suốt quá trình lấy mẫu. Kwasnicki và cộng sự đã phát triển 
+hệ thống ngủ có thể đeo (wearable sleep system) sử dụng bộ xử lý công 
+suất thấp TI MSP430 và mô-đun RF Chipcon CC2420 cho truyền thông không 
+dây kết hợp với cảm biến gia tốc 3 trục ADXL330, con quay hồi chuyển 
+InvenSense ITG-3200, Honeywell HMC5843 để đo từ trường xác định 99.5\% 
+chính xác 4 tư thế ngủ \cite{kwasnicki2018}. Tuy nhiên, các thiết bị vẫn 
+yêu cầu một nguồn nặng lượng khiến cho tính liên tục bị hạn chế đáng kể. 
+I.Yun và cộng sự đã phát triển thiết bị theo dõi tư thế ngủ của trẻ nhỏ 
+sử dụng vi xử lý ATmega328P-PU cùng module Bluetooth kết hợp cảm biến gia 
+tốc ADXL335 được đặt trên bụng đã nhưng lựa chọn về mặt cấu hình thiết bị 
+và chế tạo ra mạch cung cấp năng lượng cho những thành phần cần thiết 
+\cite{p_3}. Từ đó, giảm thiếu đáng kể mức tiêu thụ năng lượng và vẫn 
+giữ nguyên độ chính xác nhưng khá bất tiện cho trẻ nhỏ. 
+Trong nghiên cứu của Abdulsadig và cộng sự, 
+hệ thống thu thập dữ liệu được xây dựng dựa trên một bo mạch tùy chỉnh tích 
+hợp vi điều khiển nRF5232 (Nordic Semiconductor) – một SoC thuộc dòng 
+ARM Cortex-M4F, hỗ trợ truyền thông không dây thông qua giao 
+thức Bluetooth Low Energy (BLE). Vi điều khiển này đảm nhiệm đồng 
+thời cả việc lấy mẫu dữ liệu từ cảm biến gia tốc ba trục LIS2DH12 
+(STMicroelectronics) với tần số 100 Hz và truyền dữ liệu không dây 
+theo thời gian thực \cite{Sleep_Posture_Detection, abdulsadig2023}. 
+Trong nghiên cứu của Vũ Hoàng Diệu và cộng sự, 
+mô-đun ESP32 được lựa chọn làm đơn vị xử lý trung tâm nhờ tích hợp bộ vi điều khiển hiệu năng cao, 
+kết nối không dây Wi-Fi và khả năng mở rộng linh hoạt \cite{vu2023}. 
+Với thiết kế nhỏ gọn, chi phí hợp lý và mức tiêu thụ điện năng thấp, 
+ESP32 đáp ứng tốt yêu cầu của hệ thống thu thập dữ liệu tư thế ngủ theo 
+thời gian thực. Thiết bị không chỉ cho phép truyền dữ liệu trực tiếp 
+lên máy chủ hoặc nền tảng đám mây thông qua Wi-Fi, mà còn hỗ trợ 
+lưu trữ cục bộ trên thẻ nhớ microSD, đảm bảo tính liên tục và 
+an toàn dữ liệu trong điều kiện mất kết nối mạng.
 
-Nhờ vào đặc điểm kỹ thuật như vậy, Cortex-M4 được ứng dụng rộng rãi trong nhiều lĩnh vực khác nhau, bao gồm điều khiển động cơ, công nghiệp ô tô, hệ thống quản lý năng lượng, âm thanh nhúng và các hệ thống tự động hóa công nghiệp. Tính linh hoạt và hiệu quả về hiệu suất – năng lượng giúp Cortex-M4 trở thành một trong những vi xử lý được ưa chuộng nhất trong phát triển hệ thống nhúng hiện đại.
+Tuy nhiên, qua phân tích các nghiên cứu trên có thể thấy rằng phần 
+lớn các cấu hình phần cứng hiện tại hoặc có chi phí triển khai cao, 
+hoặc tiêu tốn năng lượng, hoặc gặp giới hạn trong khả năng tích hợp mô 
+hình học máy tại thiết bị. Do đó, việc lựa chọn một kiến trúc vi xử lý 
+vừa đảm bảo hiệu suất xử lý tín hiệu sinh lý thời gian thực, vừa tối 
+ưu năng lượng và có khả năng triển khai mô hình TinyML là cần thiết. 
+Trong số các kiến trúc hiện nay, dòng ARM Cortex-M4 nổi bật nhờ tính 
+cân bằng giữa hiệu năng, mức tiêu thụ năng lượng thấp và khả năng hỗ 
+trợ xử lý tín hiệu số, phù hợp với các hệ thống đeo được trong theo 
+dõi tư thế ngủ.
 
-Theo tài liệu \cite{cortexM4}, bộ vi xử lý Cortex-M4 là một vi xử lý 32-bit sử dụng kiến trúc tập lệnh giảm (RISC), được thiết kế theo kiến trúc Harvard, trong đó bus dữ liệu và bus lệnh được tách biệt nhằm tối ưu tốc độ truyền tải và xử lý. Vi xử lý này hỗ trợ đầy đủ tập lệnh Thumb-1 (16-bit) cũng như Thumb-2 (kết hợp 16-bit và 32-bit), mang lại sự linh hoạt trong việc mã hóa lệnh và hiệu quả bộ nhớ. Về mặt hiệu năng, Cortex-M4 đạt được từ 1,25 đến 1,95 DMIPS trên mỗi MHz (Dhrystone Million Instructions Per Second per MHz), cho thấy khả năng xử lý tốt trong các ứng dụng nhúng yêu cầu độ chính xác cao. Bộ xử lý hỗ trợ lên đến 240 tín hiệu ngắt, bao gồm các ngắt ngoại lệ không chắn được (Non-Maskable Interrupts – NMI), cùng với khả năng cấu hình từ 8 đến 256 mức ngắt ưu tiên khác nhau. Điều này giúp hệ thống xử lý hiệu quả các tác vụ thời gian thực, đặc biệt trong môi trường nhúng có nhiều ngắt cạnh tranh xảy ra đồng thời.
+
+Kiến trúc ARM có nhiều dòng vi xử lý khác nhau, được phát triển và nâng
+cấp liên tục nhằm đáp ứng nhu cầu đa dạng trong lĩnh vực công nghệ nhúng. 
+Trong đó, dòng Cortex-M thuộc kiến trúc ARMv7 đã trở thành nền tảng phổ 
+biến cho các hệ thống nhúng sử dụng vi điều khiển nhờ vào hiệu suất cao, 
+khả năng mở rộng và mức tiêu thụ năng lượng tối ưu. Dòng Cortex-M bao 
+gồm nhiều phiên bản như Cortex-M0, Cortex-M0+, Cortex-M1, Cortex-M3, 
+Cortex-M4 và Cortex-M7, mỗi phiên bản được thiết kế để phục vụ cho các mức 
+độ yêu cầu hiệu năng khác nhau \cite{arm_cortex_m_comparison}. 
+Các vi xử lý thuộc họ Cortex-M chủ yếu được ứng dụng trong các hệ thống 
+nhúng thời gian thực, nơi yêu cầu sự cân bằng giữa hiệu suất xử lý, tiêu 
+thụ năng lượng và chi phí. Một số vi xử lý ARM khác, không thuộc họ 
+Cortex-M, được sử dụng trong các thiết bị hiệu suất cao như điện thoại 
+thông minh và máy tính bảng, vốn yêu cầu cấu hình phần cứng mạnh hơn và 
+khả năng xử lý đa tác vụ cao hơn.
+Theo tài liệu \cite{cortexM4}, vi xử lý Cortex-M4 là một bộ xử lý 32-bit 
+sử dụng kiến trúc tập lệnh rút gọn (RISC), được xây dựng theo kiến trúc 
+Harvard, trong đó bus dữ liệu và bus lệnh được tách biệt nhằm tối ưu 
+hiệu suất truy xuất bộ nhớ. Vi xử lý này hỗ trợ đầy đủ cả tập lệnh 
+Thumb-1 (16-bit) và Thumb-2 (hỗn hợp 16/32-bit), mang lại sự linh hoạt 
+trong mã hóa lệnh và tiết kiệm không gian bộ nhớ chương trình.
+
+Về hiệu năng, Cortex-M4 đạt từ 1,25 đến 1,95 DMIPS/MHz (Dhrystone Million Instructions Per Second per MHz), cho thấy khả năng xử lý hiệu quả trong các ứng dụng nhúng yêu cầu độ chính xác và độ phản hồi thời gian thực cao. Bên cạnh đó, vi xử lý hỗ trợ tối đa 240 tín hiệu ngắt, bao gồm cả ngắt không thể bị chặn (Non-Maskable Interrupts – NMI), cùng khả năng cấu hình từ 8 đến 256 mức ưu tiên ngắt, giúp hệ thống hoạt động ổn định trong môi trường có nhiều sự kiện cạnh tranh đồng thời.
+Ngoài ra, hiện nay ứng dụng trí tuệ nhân tạo (AI) tại thiết bị biên (Edge AI) đang ngày càng phổ biến, đặc biệt trong các lĩnh vực như nhà thông minh, thiết bị đeo, giám sát an ninh và công nghiệp 4.0. Với khả năng xử lý tín hiệu số (DSP) và hỗ trợ các mạng nơ-ron nhỏ gọn, các vi xử lý Cortex-M, đặc biệt là dòng Cortex-M4, đang được khai thác để triển khai các mô hình học sâu nhẹ (tinyML) ngay trên vi điều khiển \cite{electronics11162545}\cite{applicationCortexM4}.
 
 
 \begin{figure}[!ht]
@@ -55,8 +159,51 @@ Bên cạnh đó, kiến trúc Cortex-M4 tích hợp Bộ điều khiển ngắt
 Đối với các ứng dụng yêu cầu tiết kiệm năng lượng, hệ thống còn được trang bị bộ đánh thức ngắt (Wake-up Interrupt Controller – WIC), cho phép đưa bộ vi điều khiển vào chế độ nghỉ bằng cách tắt hầu hết các thành phần không cần thiết, đồng thời duy trì khả năng đánh thức hệ thống khi phát hiện một yêu cầu ngắt. Ngoài ra, cơ chế bảo vệ bộ nhớ cũng được tích hợp nhằm đảm bảo an toàn cho hệ thống, ví dụ như chỉ cho phép truy cập đọc tại một số vùng bộ nhớ hoặc ngăn người dùng truy cập vào các vùng dữ liệu đặc quyền của hệ điều hành hoặc ứng dụng hệ thống.
 
 
+\begin{figure}[!ht]
+		\centering
+ 		\includegraphics[width=0.8\textwidth]{images/NRF52840-QFA_SPL.jpg}
+		\caption{Nordic Semiconductor NRF52840}
+		\label{lis}
+\end{figure}
+Sau quá trình khảo sát và so sánh các dòng vi xử lý phổ biến, tác giả 
+lựa chọn nRF52840 (Nordic Semiconductor) làm nền tảng phần cứng cho hệ 
+thống đề xuất, nhờ vào các ưu điểm nổi bật như kích thước nhỏ, 
+tiêu thụ năng lượng thấp và tích hợp sẵn giao tiếp Bluetooth Low Energy 
+(BLE). Đây là vi xử lý cao cấp nhất trong dòng nRF52, thuộc loại hệ thống 
+trên một vi mạch (System-on-Chip – SoC), được thiết kế chuyên biệt cho 
+các ứng dụng không dây tầm ngắn và tiết kiệm năng lượng \cite{nrf52840}.
+
+\textbf{nRF52840} tích hợp bộ thu phát đa giao thức hoạt động ở băng tần 2.4 GHz 
+và bộ xử lý trung tâm Arm Cortex-M4F chạy ở xung nhịp 64 MHz, 
+kèm bộ xử lý dấu phẩy động (FPU). Vi xử lý này được trang bị bộ nhớ 
+1 MB Flash và 256 KB RAM, hỗ trợ chuẩn Bluetooth 5.3 cùng khả năng giao 
+tiếp đa giao thức (multiprotocol), cho phép cải thiện tốc độ, phạm vi 
+truyền và độ tin cậy của kết nối không dây. Hệ thống bảo mật tích hợp 
+đầy đủ, bao gồm các tính năng mã hóa phần cứng, đáp ứng yêu cầu khắt khe 
+về bảo vệ dữ liệu. Ngoài khả năng hoạt động trong dải điện áp rộng 
+từ +1.7 V đến +5.5 V (tương thích với nguồn pin và USB), nRF52840 còn 
+cung cấp các giao tiếp ngoại vi phong phú: tối đa hai giao diện I2C, 
+bốn SPI master, ba SPI slave, bốn kênh PWM hỗ trợ EasyDMA, cùng với 
+năm bộ định thời 32-bit, phù hợp cho các ứng dụng đòi hỏi xử lý thời 
+gian thực chính xác. Tất cả các đặc điểm trên khiến nRF52840 trở thành 
+lựa chọn lý tưởng cho các hệ thống nhúng đeo được tích hợp AI nhẹ và 
+kết nối không dây thông minh.
+
+Ngoài ra, nRF52840 hỗ trợ một hệ sinh thái phần mềm mạnh mẽ, bao gồm SDK 
+của Nordic và nền tảng TensorFlow Lite for Microcontrollers, giúp rút 
+ngắn thời gian phát triển và triển khai hệ thống TinyML. Thiết bị còn 
+sở hữu khả năng quản lý năng lượng linh hoạt, tương thích tốt với nguồn pin hoặc USB. 
+
+
+
+
+
 \subsection{Bluetooth năng lượng thấp}
-    
+
+Với mục tiêu tối ưu hóa năng lượng và đảm bảo khả năng hoạt động lâu dài 
+cho thiết bị đeo sử dụng pin, Bluetooth Low Energy (BLE) được lựa chọn 
+làm chuẩn kết nối không dây chính trong hệ thống phần cứng.
+
 \begin{figure}[!ht]
 		\centering
  		\includegraphics[width=0.8\textwidth]{images/ble.png}
@@ -64,11 +211,42 @@ Bên cạnh đó, kiến trúc Cortex-M4 tích hợp Bộ điều khiển ngắt
 		\label{ble}
 \end{figure}
 
-Bluetooth năng lượng thấp (Bluetooth Low Energy – BLE) là một chuẩn kết nối không dây chi phí thấp, được thiết kế tối ưu cho các ứng dụng tiêu thụ điện năng thấp, đặc biệt phù hợp với các thiết bị hoạt động bằng pin kích thước nhỏ. BLE hoạt động trong băng tần ISM 2.4 GHz, hỗ trợ thông lượng ứng dụng lên đến 1.4 Mbps, cho phép truyền dữ liệu hiệu quả trong khi vẫn duy trì mức tiêu thụ năng lượng tối thiểu.
+BLE là giao thức kết nối không dây được thiết kế chuyên biệt cho 
+các ứng dụng năng lượng thấp, hoạt động ở băng tần ISM 2.4 GHz, 
+hỗ trợ thông lượng ứng dụng lên đến 1.4 Mbps. Với ưu thế tiêu thụ năng 
+lượng tối thiểu nhưng vẫn đảm bảo tốc độ truyền phù hợp, BLE đặc biệt 
+thích hợp cho các thiết bị y sinh hoạt động liên tục bằng pin có dung 
+lượng hạn chế. BLE hiện được hỗ trợ phổ biến trên hầu hết các hệ điều 
+hành như iOS, Android, macOS, Windows 10 và Linux, cũng như trong các 
+thiết bị di động hiện đại.
 
-Về mặt bảo mật, BLE tích hợp các cơ chế mã hóa và xác thực nhằm đảm bảo tính bí mật, toàn vẹn và riêng tư của dữ liệu truyền qua mạng. Công nghệ này đã trở thành một phần tiêu chuẩn trong hầu hết các thiết bị di động hiện đại như smartphone, máy tính bảng, và laptop, đồng thời được hỗ trợ đầy đủ trên các hệ điều hành phổ biến bao gồm iOS, Android, macOS, Windows 10 và Linux. Bluetooth 5 là bước phát triển đột phá tiếp theo kể từ khi BLE được giới thiệu trong chuẩn Bluetooth 4.0, mang đến hàng loạt cải tiến đáng kể giúp mở rộng phạm vi ứng dụng và nâng cao hiệu suất hệ thống. Một trong những cải tiến nổi bật là chế độ 2 Mbps, cho phép tăng gấp đôi tốc độ truyền lý thuyết, tương ứng với thông lượng thực tế lên đến 1.4 Mbps. Quan trọng hơn, chế độ này còn giúp giảm đáng kể mức tiêu thụ năng lượng – cụ thể là giảm một nửa năng lượng tiêu thụ trên mỗi bit dữ liệu – từ đó kéo dài thời gian hoạt động của thiết bị hoặc cho phép sử dụng các nguồn năng lượng nhỏ và chi phí thấp hơn \cite{BLE}. 
+Về mặt bảo mật, BLE tích hợp các cơ chế mã hóa và xác thực nhằm đảm bảo 
+tính bí mật, toàn vẹn và riêng tư của dữ liệu truyền qua mạng. 
+Công nghệ này đã trở thành một phần tiêu chuẩn trong hầu hết các 
+thiết bị di động hiện đại như smartphone, máy tính bảng, và laptop, 
+đồng thời được hỗ trợ đầy đủ trên các hệ điều hành phổ biến bao gồm iOS, 
+Android, macOS, Windows 10 và Linux. Bluetooth 5 là bước phát triển 
+đột phá tiếp theo kể từ khi BLE được giới thiệu trong chuẩn Bluetooth 
+4.0, mang đến hàng loạt cải tiến đáng kể giúp mở rộng phạm vi ứng dụng 
+và nâng cao hiệu suất hệ thống. Một trong những cải tiến nổi bật là 
+chế độ 2 Mbps, cho phép tăng gấp đôi tốc độ truyền lý thuyết, tương 
+ứng với thông lượng thực tế lên đến 1.4 Mbps. Quan trọng hơn, chế độ 
+này còn giúp giảm đáng kể mức tiêu thụ năng lượng – cụ thể là giảm một 
+nửa năng lượng tiêu thụ trên mỗi bit dữ liệu – từ đó kéo dài thời gian 
+hoạt động của thiết bị hoặc cho phép sử dụng các nguồn năng lượng nhỏ 
+và chi phí thấp hơn \cite{BLE}. 
 
-Bên cạnh đó, tính năng Advertising Extensions (mở rộng quảng cáo) đã cách mạng hóa cơ chế phát sóng của BLE. Các gói quảng cáo giờ đây có thể chứa lượng dữ liệu gấp 8 lần so với phiên bản trước, cho phép truyền tải các khối dữ liệu lớn hơn mà không cần thiết lập kết nối ngay lập tức. Đồng thời, các gói quảng cáo có thể được xâu chuỗi để tạo thành các tập tin quảng cáo phức hợp. Tính năng lựa chọn kênh được tối ưu hóa giúp tăng cường độ ổn định và khả năng chống nhiễu trong các môi trường có mật độ thiết bị cao. Đặc biệt, chế độ Long Range mở rộng đáng kể phạm vi truyền thông của BLE, cho phép các thiết bị duy trì kết nối trong toàn bộ không gian của một ngôi nhà thông minh hoặc trong các ứng dụng IoT công nghiệp quy mô vừa và nhỏ.
+Bên cạnh đó, tính năng Advertising Extensions (mở rộng quảng cáo) đã 
+cách mạng hóa cơ chế phát sóng của BLE. Các gói quảng cáo giờ đây có 
+thể chứa lượng dữ liệu gấp 8 lần so với phiên bản trước, cho phép 
+truyền tải các khối dữ liệu lớn hơn mà không cần thiết lập kết nối 
+ngay lập tức. Đồng thời, các gói quảng cáo có thể được xâu chuỗi 
+để tạo thành các tập tin quảng cáo phức hợp. Tính năng lựa chọn kênh 
+được tối ưu hóa giúp tăng cường độ ổn định và khả năng chống nhiễu 
+trong các môi trường có mật độ thiết bị cao. Đặc biệt, chế độ Long 
+Range mở rộng đáng kể phạm vi truyền thông của BLE, cho phép các thiết 
+bị duy trì kết nối trong toàn bộ không gian của một ngôi nhà thông minh 
+hoặc trong các ứng dụng IoT công nghiệp quy mô vừa và nhỏ.
 
 
 
@@ -80,32 +258,62 @@ Bên cạnh đó, tính năng Advertising Extensions (mở rộng quảng cáo) 
 	\label{gatt}
 \end{figure}
 
-Ngoài các tính năng nổi bật đã đề cập, vi xử lý nRF52840 còn hỗ trợ Bluetooth Mesh, một công nghệ mạng lưới tiên tiến được phát triển nhằm mở rộng đáng kể khả năng truyền thông của Bluetooth Low Energy (BLE). Bluetooth Mesh cho phép thiết lập mạng truyền thông nhiều-đến-nhiều (many-to-many), hoạt động ổn định trong các hệ thống có thể lên đến hàng nghìn nút mạng, phù hợp với các ứng dụng IoT quy mô lớn như nhà thông minh, chiếu sáng công nghiệp, giám sát môi trường và hệ thống cảm biến phân tán.
+BLE tổ chức logic giao tiếp dựa trên mô hình GATT 
+(Generic Attribute Profile). GATT quy định cách hai thiết bị BLE 
+trao đổi dữ liệu thông qua các đơn vị logic: dịch vụ (services) 
+và đặc tính (characteristics). Giao thức nền tảng là Attribute Protocol 
+(ATT) – nơi mỗi đặc tính được định danh bằng UUID 16-bit hoặc 128-bit, 
+với quyền truy cập như chỉ đọc, chỉ ghi, hoặc hỗ trợ thông báo (notify).
 
-Bluetooth Mesh sử dụng BLE làm lớp truyền tải vật lý, trong đó các thông điệp được đóng gói trong các gói quảng cáo (advertising packets) hoặc gói GATT – còn được gọi là gói cấu hình thuộc tính chung (Generic Attribute Profile – GATT). Khi một thiết bị di động hoặc máy chủ trung tâm kết nối với một nút BLE bất kỳ trong mạng Mesh, nút này có thể chuyển tiếp (relay) thông điệp đến các nút khác trong mạng theo một kiến trúc định tuyến phân tán, như minh họa trong Hình~\ref{ble}.
+Một điểm quan trọng trong mô hình GATT là tính kết nối độc quyền: 
+tại một thời điểm, thiết bị ngoại vi chỉ có thể duy trì một kết nối 
+duy nhất với thiết bị trung tâm. Khi kết nối được thiết lập, thiết bị 
+ngừng quảng cáo, điều này hạn chế khả năng kết nối đồng thời từ 
+nhiều thiết bị.
 
-Cấu trúc logic của BLE được tổ chức dựa trên mô hình GATT. GATT định nghĩa cách hai thiết bị BLE truyền dữ liệu qua lại bằng các thành phần logic gọi là dịch vụ (services) và đặc tính (characteristics). Giao tiếp GATT dựa trên Attribute Protocol (ATT) – một giao thức định hướng dữ liệu, nơi các dịch vụ và đặc tính được lưu trữ và nhận dạng bằng các mã định danh (UUID) có độ dài 16-bit hoặc 128-bit. Hình~\ref{gatt} minh họa cấu trúc phân cấp của GATT, trong đó một thiết bị ngoại vi BLE cung cấp nhiều dịch vụ, mỗi dịch vụ lại bao gồm một hoặc nhiều đặc tính có thể được đọc, ghi hoặc thông báo (notify) tùy theo cấu hình.
+Ngoài ra, vi xử lý nRF52840 còn hỗ trợ Bluetooth Mesh, cho phép thiết 
+lập mạng lưới nhiều-nút (many-to-many), sử dụng BLE làm lớp truyền tải 
+vật lý. Mỗi nút trong mạng có thể đóng vai trò chuyển tiếp (relay), 
+cho phép dữ liệu lan truyền đến các vùng rộng hơn theo mô hình phân 
+tán – phù hợp với các ứng dụng IoT quy mô lớn như nhà thông minh, 
+chiếu sáng công nghiệp hoặc giám sát phân tán. Trong mạng Mesh, 
+các gói dữ liệu có thể được đóng gói qua advertising packet hoặc 
+qua các giao tiếp GATT tùy tình huống sử dụng.
 
-Điều đặc biệt quan trọng trong giao tiếp GATT là tính chất kết nối độc quyền (exclusive connection): tại một thời điểm nhất định, một thiết bị ngoại vi chỉ có thể kết nối với một thiết bị trung tâm duy nhất. Ngay khi kết nối được thiết lập, thiết bị ngoại vi sẽ ngừng quảng cáo, khiến các thiết bị khác không thể phát hiện hoặc kết nối với nó cho đến khi kết nối hiện tại bị ngắt.
+Các profile BLE là tập hợp các dịch vụ được chuẩn hóa bởi Bluetooth 
+SIG hoặc định nghĩa tùy chỉnh, ví dụ như dịch vụ UART tùy chỉnh gồm 
+hai đặc tính RX và TX, tương ứng với kênh nhận và truyền.
 
-Hồ sơ (Profile) là tập hợp các dịch vụ được xác định trước, được tiêu chuẩn hóa bởi tổ chức Bluetooth SIG hoặc do nhà phát triển thiết kế tùy chỉnh. Mỗi dịch vụ đại diện cho một thực thể logic trong hệ thống BLE, chứa một hoặc nhiều đặc tính, là đơn vị dữ liệu cơ bản nhất. Một đặc tính bao gồm giá trị chính (value), mô tả (description), và các thuộc tính điều khiển quyền truy cập như chỉ đọc, chỉ ghi hoặc hỗ trợ thông báo.
+\subsection{Thiết bị thực nghiệm}
+Trong khuôn khổ của khóa luận, nhằm đảm bảo tiến độ triển khai và tính an 
+toàn trong giai đoạn thử nghiệm, tác giả lựa chọn sử dụng bộ kit thương 
+mại Adafruit Playground để tiến hành thực nghiệm sơ bộ. Bộ kit này tích 
+hợp sẵn cảm biến gia tốc MEMS LIS3DH được gắn tại vị trí trung tâm, 
+cho phép đo gia tốc theo ba trục không gian X, Y và Z với độ chính xác cao. 
+Theo tài liệu từ nhà sản xuất, chi phí cho mỗi bộ kit Adafruit vào khoảng 
+25 USD \cite{ada_overview}. Trong bộ kit, cảm biến LIS3DH được kết nối với 
+vi điều khiển thông qua giao thức SPI, với chân chọn thiết bị (CS) được 
+gán tại chân số 8 và đầu ra ngắt tùy chọn (IRQ) tại chân số 7 (IRQ \#4). 
+Theo sơ đồ bố trí tiêu chuẩn của kit, trục X định hướng theo chiều giắc 
+USB, trục Y hướng sang bên trái, và trục Z vuông góc theo hướng mặt trên 
+của thiết bị.
 
-Chẳng hạn, một ứng dụng BLE có thể triển khai Dịch vụ UART tùy chỉnh, bao gồm hai đặc tính đại diện cho kênh truyền (TX) và kênh nhận (RX), trong đó một đặc tính chỉ cho phép đọc và đặc tính còn lại cho phép ghi từ phía thiết bị trung tâm.
+Bên cạnh đó, để mở rộng khả năng nghiên cứu và đánh giá tính khả thi khi 
+tích hợp học máy nhẹ (TinyML) cũng như kết nối không dây, nhóm nghiên 
+cứu sử dụng thêm nền tảng Arduino Nano 33 BLE Sense. Đây là vi điều khiển 
+hiện đại tích hợp vi xử lý nRF52840 (ARM Cortex-M4F), hỗ trợ Bluetooth 
+Low Energy (BLE) và nhiều cảm biến tích hợp (IMU, microphone, nhiệt độ, 
+độ ẩm, v.v.), đồng thời tương thích với nền tảng TensorFlow Lite for 
+Microcontrollers \cite{nano33ble}.
 
-Với các khả năng kỹ thuật tiên tiến như trên – bao gồm hỗ trợ Bluetooth Mesh, giao tiếp GATT hiệu quả, khả năng quản lý năng lượng linh hoạt, bảo mật tích hợp và khả năng xử lý tín hiệu số – nRF52840 được xem là lựa chọn phù hợp và chiến lược trong khuôn khổ triển khai hệ thống được đề xuất trong luận văn này.
+Đáng chú ý, bên cạnh việc sử dụng các bộ kit sẵn có, một thành viên khác 
+trong nhóm đang tiến hành phát triển và xây dựng bản mạch phần cứng 
+tùy chỉnh dựa trên các thông số kỹ thuật đã được phân tích ở các phần 
+trước. Hướng tiếp cận này không chỉ giúp nhóm triển khai nhanh chóng hệ 
+thống thử nghiệm trong giai đoạn đầu, mà còn mở ra khả năng thiết kế một 
+thiết bị nhúng chuyên dụng, tối ưu hơn về chi phí, hiệu năng và khả năng 
+tích hợp trong các ứng dụng thực tiễn.
 
-
-\subsection{Thiết bị thử nghiệm}
-Trong khuôn khổ của khoá luận, vì lý do thời gian và sự an toàn nên tác giả sử dụng bộ kit Adafruid PlayGround để thực nghiệm. Trong bộ kit có 1 cảm biến gia tốc MEMS LIS3DH ở chính giữa. Cảm biến gia tốc này thường dùng trong điện thoại và các thiết bị điện tử khác có thể cảm nhận độ nghiêng, trọng lực, chuyển động và các hiệu ứng 'chạm'. Thông tin mà tác giả có được, chi phí cho mỗi một kit từ Adafruit khoảng 25 USD \cite{ada_price}. LIS3DH được kết nối với các chân SPI phần cứng và có chân chọn chip (CS) trên chân số 8 và đầu ra ngắt tùy chọn trên chân số 7 (còn được gọi là IRQ \# 4). Có thể phát hiện các giá trị gia tốc theo 3 trục X, Y và Z. Giá trị dương là mặt màu của kit. Trục X là hướng tới giắc cắm USB. Trục Y trục hướng sang bên trái. Đối với Z là hướng thẳng hướng lên.
-
-\textbf{Các thành phần trên bộ kit Adafruit Circuit PlayGround\cite{ada_overview}:}
-
-\begin{figure}[!ht]
-		\centering
- 		\includegraphics[width=0.8\textwidth]{images/ada.png}
-		\caption{Hình ảnh kit Adafruit PlayGround}
-		\label{ada}
-\end{figure}
 
 \begin{figure}[!ht]
 		\centering
@@ -114,71 +322,19 @@ Trong khuôn khổ của khoá luận, vì lý do thời gian và sự an toàn 
 		\label{detail_ada}
 \end{figure}
 
-\begin{itemize}
-    \item 1 x bộ xử lý nRF52840 Cortex M4 với hỗ trợ Bluetooth Low Energy
-    \item 10 x NeoPixels mini, mỗi cái có thể hiển thị bất kỳ màu nào
-    \item 1 x Cảm biến chuyển động (gia tốc kế ba trục LIS3DH với phát hiện chạm, phát hiện rơi tự do)
-    \item 1 x Cảm biến nhiệt độ (nhiệt điện trở)
-    \item 1 x Cảm biến ánh sáng (phototransistor). Cũng có thể hoạt động như một cảm biến màu và cảm biến xung
-    \item 1 x Cảm biến âm thanh (micrô MEMS)
-    \item 1 x Loa mini với bộ khuếch đại lớp D (loa từ tính 7,5mm / còi)
-    \item 2 x Nút ấn, có nhãn A và B
-    \item 1 x Công tắc trượt
-    \item 8 x chân đầu vào / đầu ra thân thiện với alligator-clip
-    \item Bao gồm I2C, UART, 6 chân có thể làm đầu vào tương tự, nhiều đầu ra PWM
-    \item Đèn LED "On" màu xanh lục để bạn biết nó được cấp nguồn
-    \item 2 MB dung lượng lưu trữ SPI Flash, được sử dụng chủ yếu với CircuitPython để lưu trữ mã và thư viện.
-    \item Cổng MicroUSB để lập trình và gỡ lỗi
-    \item Cổng USB có thể hoạt động như cổng nối tiếp, bàn phím, chuột, cần điều khiển hoặc MIDI!
-    \item Thiết kế ăng-ten đã được tối ưu và có thêm một chốt cho phép người dùng tắt nguồn của NeoPixels, micrô và cảm biến nhiệt độ / ánh sáng để chỉ có gia tốc kế hoạt động, để sử dụng năng lượng thấp!
-    \item Đường kính ngoài: ~ 50.6 mm / ~ 2,0 "
-    
-    
-\end{itemize}
 
 
 
 
+\section{Hệ thống thu thập, xử lý, lưu trữ dữ liệu}
+Phần này trình bày tổng quan kiến trúc hệ thống bao gồm: 
+lập trình firmware trên vi điều khiển để thu thập dữ liệu cảm biến, 
+thiết kế ứng dụng di động làm cầu nối giữa phần cứng và hệ thống đám mây, 
+cùng với backend và cơ sở dữ liệu lưu trữ phục vụ huấn luyện mô hình. 
+Nội dung cũng đề cập đến các yêu cầu chức năng, phi chức năng và 
+thiết kế hệ thống ở mức cao nhằm đảm bảo khả năng triển khai thực 
+tế và mở rộng trong tương lai.
 
-
-\begin{figure}[!]
-		\centering
- 		\includegraphics[width=0.8\textwidth]{images/angten.png}
-		\caption{Vị trí của ăng ten trên bo mạch}
-		\label{angten}
-\end{figure}
-
-\begin{figure}[!]
-		\centering
- 		\includegraphics[width=0.8\textwidth]{images/switch.png}
-		\caption{Vị trí của chân chuyển đổi cấu hình trên bo mạch}
-		\label{switch}
-\end{figure}
-
-\textbf{Năng lượng và dữ liệu:}
-\begin{itemize}
-    \item Đầu nối USB Micro B ở trên cùng của bo mạch cho phép giao tiếp nguồn hoặc USB (bộ nạp khởi động tiếp, HID, v.v.). 
-    \item Chân cấp nguồn ngoài có thể sử dụng đầu vào DC 6V và có các bảo vệ chống phân cực ngược, quá dòng và nhiệt. Mạch bên trong sẽ sử dụng nguồn điện đầu vào của pin hoặc nguồn điện USB, chuyển từ nguồn này sang nguồn khác một cách an toàn. Nếu cả hai được kết nối, nó sẽ sử dụng cái nào có điện áp cao hơn. Hoạt động hiệu quả với pin Lithium Polymer hoặc các gói pin 3xAAA của tác giả với đầu nối JST ở cuối. Không có sạc pin tích hợp.
-\end{itemize}
-
-
-\textbf{Ăng ten cho BLE}
-
-Ăng-ten Bluetooth nằm ở giữa bo mạch như trên Hình~\ref{angten}. Cần phải đảm bảo không có linh kiện nào gần ăng-ten có thể gây nhiễu, hoặc bề mặt kim loại để tối ưu tầm hoạt động của ăng-ten.
-
-
-
-
-\textbf{Chân chuyển đổi cấu hình}
-Công tắc trượt gần phía dưới trung tâm của Circuit Playground Bluefruit. nó được kết nối với D7 kỹ thuật số, Hình~\ref{switch}. Công tác sử dụng điện trở kéo để thiết lập cấu hình tiêu thụ năng lượng cao hoặc cấu hình tiêu thụ năng lượng thấp. 
-
-
-
-
-
-
-
-\section{Kỹ thuật thu thập và xử lý tín hiệu}
 \subsection{Lập trình vi xử lý}
 
 \begin{figure}[!]
