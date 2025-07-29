@@ -2558,11 +2558,12 @@
     <bcf:citekey order="153" intorder="1">nano33ble</bcf:citekey>
     <bcf:citekey order="154" intorder="1">allan</bcf:citekey>
     <bcf:citekey order="155" intorder="1">kalman</bcf:citekey>
-    <bcf:citekey order="156" intorder="1">Jeng</bcf:citekey>
-    <bcf:citekey order="157" intorder="1">Saha</bcf:citekey>
-    <bcf:citekey order="158" intorder="1">Syeda</bcf:citekey>
-    <bcf:citekey order="159" intorder="1">Uday</bcf:citekey>
-    <bcf:citekey order="160" intorder="1">Sang</bcf:citekey>
+    <bcf:citekey order="156" intorder="1">cramer2002logistic</bcf:citekey>
+    <bcf:citekey order="157" intorder="1">cortes1995svm</bcf:citekey>
+    <bcf:citekey order="158" intorder="1">breiman2001random</bcf:citekey>
+    <bcf:citekey order="159" intorder="1">chen2016xgboost</bcf:citekey>
+    <bcf:citekey order="160" intorder="1">jain1996</bcf:citekey>
+    <bcf:citekey order="161" intorder="1">lecun2015deep</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

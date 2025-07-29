@@ -690,79 +690,325 @@ lưu trữ lai (hybrid storage architecture) đáp ứng linh hoạt cả hai lo
 liệu – phi cấu trúc và có cấu trúc – vốn là đặc trưng phổ biến trong các 
 hệ thống y tế ứng dụng trí tuệ nhân tạo hiện đại.
 
-\subsection{Tìm hiểu, ứng dụng phân loại tư thế ngủ bằng học máy  }
+\subsection{Học máy trong phân loại tư thế ngủ}
 
-Tác giả cũng đã tìm hiểu nhiều mô hình, phương pháp để phân loại các tư thế ngủ, tư thế cơ bản của con người và đánh giá chỉ số AHI dự trên các tín hiệu cảm biến thu được. Các bước cơ bản để tiến hành dự án học máy liên quan đến các tín hiệu cảm biến:
+ 
 
-
-\begin{figure}[b!]
-		\centering
- 		\includegraphics[width=1\textwidth]{images/hocmay_time.png}
-		\caption{Phân bố thời gian sử dụng đối với dự án học máy}
-		\label{hocmay_time}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1\textwidth]{images/hocmay_time.png}
+\caption{Phân bố thời gian thực hiện đối với dự án học máy}
+\label{hocmay_time}
 \end{figure}
 
-\begin{itemize}
-    \item Thu thập dự liệu (bao gồm thu thập và gắn nhãn cho dữ liệu)
-    
-    \item Khám phá dữ liệu (đánh giá cân bằng dữ liệu, tỉ lệ dữ liệu có ý nghĩa)
-    
-    \item Chuẩn bị dữ liệu (làm sạch dữ liệu, tạo ra các đặc tính trên miền thời gian và miền tần số)
-    
-    \item Mô hình hoá dữ liệu (lựa chọn ra các mô hình phù hợp)
-    
-    \item Lựa chọn tính năng (lựa chọn ra các tính năng có ý nghĩa cao đối với mô hình)
+Hình~\ref{hocmay_time} trình bày phân bố thời gian tương đối giữa các 
+công đoạn trong quá trình triển khai một dự án học máy thực tế. 
+Dữ liệu trong biểu đồ cho thấy rằng phần lớn thời gian không nằm ở 
+bước huấn luyện mô hình, mà được dành cho các công việc tiền xử lý 
+dữ liệu – chiếm đến hơn 60\% tổng thời gian.
+Cụ thể, hai hoạt động tốn thời gian nhất là \textbf{làm sạch dữ liệu} 
+và \textbf{gán nhãn dữ liệu}, mỗi hoạt động chiếm 25\% tổng thời lượng 
+thực hiện. Tiếp theo là \textbf{bổ sung dữ liệu} (15\%) và 
+\textbf{phân tích dữ liệu} (10\%). Bốn công đoạn này là nền tảng quyết 
+định chất lượng đầu vào, ảnh hưởng trực tiếp đến độ chính xác và khả 
+năng tổng quát hóa của mô hình sau khi huấn luyện.
 
-    \item Tinh chỉnh mô hình
-\end{itemize}
+Trong khi đó, các bước thường được quan tâm trong các tài liệu học thuật 
+như huấn luyện mô hình (10\%), phát triển thuật toán (3\%) và 
+tinh chỉnh mô hình (5\%) lại chiếm tỷ trọng thấp hơn. 
+Giai đoạn vận hành thực tế (deployment) cũng chỉ chiếm khoảng 2\%, 
+tuy nhiên vẫn đóng vai trò quan trọng trong việc chuyển giao ứng dụng 
+ra ngoài môi trường thử nghiệm.
 
-Jeng PY và cộng sự đã đề xuất chế tạo 2 thiết bị đeo ở cổ và ở cổ tay để đánh giá tư thế ngủ ở người \cite{Jeng}. Trong dự án này, tín hiệu thu được ở thiết bị đeo ở tay được chia thành những cửa sổ 1 giây rồi trích xuất các tính năng trên cửa sổ đó. Cảm biến đeo ở cổ sẽ được sử dụng để lấy nhãn tín hiệu theo phương pháp lấy đa số của tín hiệu trong cửa sổ. Nhóm tác giả đã sử dụng mô hình SVM và RF để đánh giá và đạt được kết quả có độ chính xác lần lượt là 82\% và 72\%. Nhóm của Saha S., Kabir M và cộng sự đã tiến hành nghiên cứu 1 thiết bị đeo được sử dụng bao gồm cảm biến gia tốc, cảm biến âm trên 31 đối tượng thử nghiệm. Sau đó họ tiến hành loại bỏ các bộ dữ liệu có độ dài dưới 2 giờ và cuối cùng sử dụng so sánh ngưỡng để xác định chứng OSA bằng việc phân chia các cửa sổ 10s với độ lặp 80\% \cite{Saha}. Trong khi đó, nhóm của Syeda Zuriat-e-Zehra Ali và cộng sử đã nghiên cứu và thử nghiệm thiết bị gối ngủ để tự điều chỉnh hoặc báo hiệu khi có chứng ngưng thở khi ngủ dựa trên các tín hiệu thô như nồng độ Oxi trong máu, nhịp tim [27]. Jarvis L, Moninger S và cộng sử đã trình bày hệ thống phát hiện đánh giá 5 tư thế gồm nằm, nằm tựa, ngồi thẳng, đứng, đi bộ với tập dữ liệu đươc lấy từ 2 cảm biến gắn ở cổ và đùi \cite{Syeda}. Dữ liệu được lấy mẫu với tần số 25 Hz sau đó được lưu vào bộ nhớ cục bộ trên điện thoại rồi gửi bản csv qua mail. Mô hình học máy gồm hồi quy logistic, SVM, DT với độ chính xác cao > 96\% đã được sử dụng đánh giá tập dữ liệu gồm 6 hành động thường ngày của con người như đứng, ngồi, đi bộ, lên cầu thang, xuống cầu thang và nằm \cite{Uday}. Nhóm nghiên cứu của Gomes E, Bertini L và cộng sự đã nghiên cứu, xây dựng, đánh giá giữa 3 mô hình: K-Nearest-Neighbor (KNN), cây quyết định (Decision tree) và SVM. Trong các bước tiền xử lý các tác giả đã phân đoạn dữ liệu theo cửa sổ 2.5s không che phủ sau đó phân tích, chuẩn hoá dữ liệu và đã có độ chính xác > 97\% đối với việc phát hiện tư thế. Ở Việt Nam, nhóm tác gủa Vũ Ngọc Thanh Sang và Nguyễn Đức Thắng đã phát triển thiết bị thu thâp dữ liệu từ điện thoại sau đó qua các bước xử lý dữ liệu, trích xuất tính năng và phân loại bằng các mô hình K-hàng xóm gần nhất (KNN) với độ chính xác là 100\% với toàn bộ tư thế ngoại trừ lái xe là 80\% \cite{Sang}. Qua tổng quan tài liệu tác giả nhận thấy các phương pháp học máy cổ điển đang chiến ưu thế hơn so với các phương pháp học sâu vì phát triển nhanh và dễ dàng và phù hợp với tính chất của bài toán đánh giá các tư thế của con người sử dụng cảm biến gia tốc. Trong đó, nổi bật lên là mô hình SVM, hồi quy Logistic và Random Forest. Từ đó, tác giả sẽ tập trung tìm hiểu và hướng tới áp dụng cho tập dữ liệu của tác giả.
+Sự phân bố này phản ánh đặc điểm phổ biến trong các dự án học máy với 
+dữ liệu thực tế từ cảm biến: chất lượng mô hình phụ thuộc chủ yếu vào 
+dữ liệu và quy trình xử lý trước huấn luyện. Do đó, việc đầu tư thời 
+gian vào xử lý dữ liệu là hoàn toàn cần thiết và hợp lý.
+
+Tổng quan về các bước xây dựng hệ thống học máy cho bài toán phân loại 
+tư thế ngủ đã được trình bày tại Chương~\ref{chapter:1-introduction}.
+Trong mục này, tác giả đi sâu vào phân tích các thuật toán học máy 
+đã được lựa chọn, lý do lựa chọn, đặc điểm cấu trúc của từng mô hình, 
+cũng như hiệu quả của chúng trong bối cảnh bài toán sử dụng dữ liệu 
+cảm biến gia tốc ba trục.
 
 
-\textbf{Hồi quy logistic - LR}: Đây là phương thức tốt nhất cho các vấn đề phân loại nhị phân (vấn đề với hai lớp giá trị). Hồi quy logistic giống như hồi quy tuyến tính với mục đích là để tìm ra các giá trị cho các hệ số mà trọng lượng mỗi biến đầu vào. Không giống như hồi quy tuyến tính, dự đoán đầu ra được chuyển đổi bằng cách sử dụng một hàm không tuyến tính được gọi là hàm logistic. Hàm logistic trông giống như một chữ S lớn và sẽ biến đổi bất kỳ giá trị nào thành 0-1. Tuy nhiên, nhược điểm của nó là chỉ giải quyết được bài toán phân loại 2 lớp. Để giải quyết được những bài toán đa lớp chúng ta có thể sử dụng mô hình Softmax Logistic là dạng tổng quát của hồi quy Logistic.
 
-\textbf{Máy vec tơ hỗ trợ (Support vector machines - SVM)}: xây dựng một mặt siêu phẳng được sử dụng để phân chia không gian biến đầu vào. Trong SVM, một mặt siêu phẳng được chọn để phân tách tốt nhất các điểm trong không gian các biến đầu vào theo lớp của chúng, hoặc là lớp 0 hoặc lớp 1. Trong không gian hai chiều, có thể hình dung nó như một đường thẳng và giả sử rằng tất cả các biến đầu vào có thể được tách hoàn toàn bằng đường thẳng này. Thuật toán SVM tìm ra các hệ số dẫn đến sự phân tách tốt nhất của các lớp theo mặt siêu phẳng Hình ~\ref{svm}.
+\textbf{Hồi quy Logistic (Logistic Regression – LR)} là một trong những thuật toán 
+cơ bản và phổ biến nhất trong học máy, đặc biệt phù hợp với các 
+bài toán phân loại nhị phân. Về mặt cấu trúc, LR tương tự như hồi 
+quy tuyến tính ở chỗ sử dụng tổ hợp tuyến tính giữa các đặc trưng 
+đầu vào và trọng số, tuy nhiên kết quả đầu ra được đưa qua một hàm 
+kích hoạt phi tuyến gọi là \textbf{hàm logistic (sigmoid)} 
+để ánh xạ về miền giá trị $[0, 1]$ \cite{cramer2002logistic}:
 
+\begin{equation}
+    \sigma(z) = \frac{1}{1 + e^{-z}}, \quad \text{với } z = \mathbf{w}^T \mathbf{x} + b
+\end{equation}
 
-\begin{figure}
+Trong đó, $\mathbf{w}$ là vector trọng số, $\mathbf{x}$ là vector đặc trưng đầu vào, và $b$ là hệ số điều chỉnh (bias). Giá trị $\sigma(z)$ thể hiện xác suất điểm dữ liệu $\mathbf{x}$ thuộc lớp 1. Nếu xác suất này lớn hơn ngưỡng (thường là 0.5), mô hình phân loại $\mathbf{x}$ thuộc lớp dương.
+
+Mặc dù đơn giản và dễ triển khai, hồi quy logistic nguyên thủy chỉ phù hợp với các bài toán phân loại nhị phân. Để mở rộng cho bài toán phân loại đa lớp (multiclass classification), có thể sử dụng biến thể \textbf{Softmax Regression}, trong đó mô hình ước lượng xác suất đầu ra theo phân phối softmax:
+
+\begin{equation}
+    P(y = j \mid \mathbf{x}) = \frac{e^{\mathbf{w}_j^T \mathbf{x}}}{\sum_{k=1}^{K} e^{\mathbf{w}_k^T \mathbf{x}}}
+\end{equation}
+
+Trong đó, $K$ là tổng số lớp, $\mathbf{w}_j$ là vector trọng số tương ứng với lớp $j$.
+
+Trong khuôn khổ đề tài này, Logistic Regression được lựa chọn nhờ ưu 
+điểm về đơn giản, hiệu quả tính toán và kích thước mô hình nhỏ gọn 
+(< 5 KB), cho phép triển khai trực tiếp trên các vi điều khiển như 
+\texttt{nRF52840}. Mặc dù độ chính xác có thể thấp hơn một số mô hình 
+phức tạp hơn như Random Forest hoặc Gradient Boosting, LR vẫn đảm bảo 
+hiệu năng chấp nhận được trong bối cảnh hệ thống nhúng giới hạn tài 
+nguyên.
+
+\textbf{Máy vector hỗ trợ (Support Vector Machine – SVM)} là một thuật 
+toán học có giám sát, đặc biệt hiệu quả cho các bài toán phân loại nhị 
+phân với biên ranh giới rõ ràng \cite{cortes1995svm}. Ý tưởng chính của SVM là tìm kiếm một 
+\textbf{mặt siêu phẳng (hyperplane)} trong không gian đặc trưng để phân 
+chia các điểm dữ liệu thành hai lớp sao cho biên phân cách giữa các lớp 
+là lớn nhất.
+
+Trong không gian hai chiều, mặt siêu phẳng tương ứng với một đường thẳng; 
+trong không gian ba chiều, đó là một mặt phẳng; và trong không gian 
+nhiều chiều hơn, nó là một siêu mặt phẳng tổng quát. 
+SVM chọn mặt siêu phẳng sao cho khoảng cách (margin) từ nó đến các 
+điểm dữ liệu gần nhất của mỗi lớp – gọi là \textbf{support vectors} – 
+là tối đa. Bài toán tối ưu hóa trong SVM có thể biểu diễn như sau:
+
+\begin{equation}
+\min_{\mathbf{w}, b} \frac{1}{2} \|\mathbf{w}\|^2 \quad 
+\text{subject to } \quad y_i(\mathbf{w}^T \mathbf{x}_i + b) \geq 1, \quad \forall i
+\end{equation}
+
+Trong đó, $\mathbf{w}$ là vector trọng số, $b$ là hệ số bias, và $(\mathbf{x}_i, y_i)$ là tập dữ liệu huấn luyện.
+
+Hình~\ref{svm} minh hoạ khái niệm mặt siêu phẳng và các support vectors trong không gian hai chiều.
+
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/svm.png}
-    \caption{Tối ưu siêu phẳng sử dụng thuật toán SVM}
+    \includegraphics[width=0.6\textwidth]{images/svm.png}
+    \caption{Minh họa mặt siêu phẳng phân tách hai lớp trong SVM}
     \label{svm}
 \end{figure}
-Khoảng cách giữa mặt siêu phẳng và điểm dữ liệu gần nhất được gọi là biên. Mặt siêu phẳng tốt nhất hoặc tối ưu có thể tách riêng hai lớp là dòng có biên lớn nhất. Chỉ những điểm này có liên quan đến việc xác định hyperplane và trong việc xây dựng các điểm phân loại. Những điểm này được gọi là các vector hỗ trợ. Chúng hỗ trợ hoặc xác định hyperplane. Trong thực tế, một thuật toán tối ưu được sử dụng để tìm các giá trị cho các hệ số tối đa hóa biên. SVM có thể là một trong những phương pháp phân loại hàng đầu mạnh mẽ nhất và đáng thử trên tập dữ liệu. Cũng như hồi quy Logistic thì SVM cũng chỉ sử dụng để phân loại nhị phân. Để giải quyết vấn đề này thì có 2 phương pháp:
+Ưu điểm nổi bật của SVM là khả năng xử lý hiệu quả trong không gian 
+đặc trưng cao. Thêm vào đó, SVM có thể mở rộng cho các bài toán 
+không tuyến tính thông qua việc sử dụng các hàm kernel, chẳng hạn như 
+\textbf{Gaussian RBF kernel} hoặc \textbf{polynomial kernel}, 
+giúp ánh xạ dữ liệu vào không gian mới nơi mà việc phân tách tuyến tính 
+trở nên khả thi.
 
-\begin{figure}
+Tuy nhiên, SVM cũng tồn tại một số hạn chế. Khi dữ liệu không thể 
+phân tách tuyến tính rõ ràng hoặc chứa nhiều nhiễu, hiệu quả phân loại 
+có thể suy giảm đáng kể. Ngoài ra, chi phí tính toán trong giai 
+đoạn huấn luyện tăng nhanh theo kích thước tập dữ liệu, điều này làm 
+cho SVM trở nên khó triển khai trong các hệ thống có tài nguyên hạn 
+chế hoặc yêu cầu thời gian thực, như thiết bị nhúng hoặc biên.
+
+Một khái niệm quan trọng trong SVM là \textbf{biên (margin)} – khoảng 
+cách giữa mặt siêu phẳng và các điểm dữ liệu gần nhất thuộc hai lớp. 
+Mặt siêu phẳng tối ưu là mặt phẳng có biên lớn nhất, và chỉ những điểm 
+nằm gần sát biên mới ảnh hưởng đến việc xác định mặt siêu phẳng, 
+được gọi là \textbf{các vector hỗ trợ (support vectors)}. Các điểm này 
+hỗ trợ việc xác định biên phân cách và trực tiếp ảnh hưởng đến hàm 
+quyết định (decision function) của mô hình. Bài toán tối ưu hoá của 
+SVM tìm ra các trọng số và bias sao cho biên được cực đại.
+
+Để mở rộng cho các bài toán phân loại đa lớp, có thể áp dụng hai kỹ 
+thuật phổ biến: \textbf{one-vs-one} và \textbf{one-vs-rest}, được minh 
+hoạ trong Hình~\ref{svm_ovso} và Hình~\ref{ovsr}.
+
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\linewidth]{images/svm_ovso.png}
-    \caption{Thuật toán một với một}
+    \caption{Chiến lược phân loại đa lớp bằng phương pháp One-vs-One}
     \label{svm_ovso}
 \end{figure}
 
-
-
-\begin{figure}
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\linewidth]{images/ovsr.png}
-    \caption{Thuật toán một với nhiều}
+    \caption{Chiến lược phân loại đa lớp bằng phương pháp One-vs-Rest}
     \label{ovsr}
 \end{figure}
 
-\begin{itemize}
-    \item Một với một (one vs one): Một mặt siêu phẳng được thiết lập để phân tách giữa hai lớp, bỏ qua các điểm của lớp thứ ba. Điều này có nghĩa là sự phân tách chỉ tính đến điểm của hai lớp trong sự phân tách hiện tại. Ví dụ: đường màu đỏ-xanh dương sẽ tách tối đa khoảng cách chỉ giữa các điểm màu xanh lam và màu đỏ Hình ~\ref{svm_ovso}.
-    
-    \item Một với nhiều (one vs rest): Cần một mặt siêu phẳng để tách biệt giữa một lớp và tất cả các lớp khác cùng một lúc. Điều này có nghĩa là sự tách biệt có tính đến tất cả các điểm, chia chúng thành hai nhóm; một nhóm cho các điểm của lớp và một nhóm cho tất cả các điểm khác. Ví dụ: đường màu sẽ tách tối đa hóa khoảng cách giữa các điểm màu lục và tất cả các điểm khác cùng một lúc Hình ~\ref{ovsr}.
-\end{itemize}
+\textbf{One-vs-One (OvO):} Trong phương pháp này, một mô hình SVM được 
+huấn luyện cho mỗi cặp lớp. Với $K$ lớp, tổng cộng $\frac{K(K-1)}{2}$ 
+mô hình con được huấn luyện. Mỗi mô hình học cách phân biệt giữa hai 
+lớp cụ thể và bỏ qua các lớp còn lại. Trong quá trình dự đoán, một cơ 
+chế bỏ phiếu (voting) được sử dụng để xác định lớp cuối cùng. 
+
+
+\textbf{One-vs-Rest (OvR):} Phương pháp này huấn luyện một mô hình cho 
+mỗi lớp, trong đó mô hình học cách phân biệt giữa một lớp cụ thể và 
+phần còn lại. Với $K$ lớp, ta có $K$ mô hình. Trong quá trình suy luận, 
+mô hình đưa ra xác suất hoặc độ tin cậy, và lớp có giá trị cao nhất 
+sẽ được chọn.
+
+Cả hai chiến lược OvO và OvR đều giúp mở rộng SVM từ mô hình phân loại 
+nhị phân thành phân loại đa lớp hiệu quả, nhưng mỗi phương pháp đều có 
+ưu và nhược điểm riêng về thời gian huấn luyện, độ phức tạp tính toán 
+và hiệu năng phân loại.
 
 
 
+\textbf{Rừng ngẫu nhiên (Random Forest – RF)} là một mô hình học có 
+giám sát thuộc nhóm thuật toán tổ hợp (ensemble learning), 
+được xây dựng dựa trên nền tảng của 
+\textbf{Cây quyết định (Decision Tree)} \cite{breiman2001random}. 
+Khác với việc sử dụng một cây duy nhất như trong Decision Tree 
+truyền thống, Random Forest xây dựng một tập hợp gồm nhiều cây 
+quyết định độc lập, mỗi cây học trên một phần khác nhau của dữ liệu và 
+không sử dụng toàn bộ tập thuộc tính. Dự đoán cuối cùng của mô hình 
+được xác định thông qua cơ chế biểu quyết (voting) hoặc trung bình hoá 
+(trong bài toán hồi quy).
+
+Ý tưởng chính của Random Forest nhằm giảm thiểu hiện tượng 
+\textbf{quá khớp (overfitting)} thường gặp trong Decision Tree đơn lẻ. 
+Khi xây dựng một cây quyết định mà không giới hạn độ sâu, 
+cây có xu hướng học thuộc hoàn toàn dữ liệu huấn luyện, 
+dẫn đến khả năng tổng quát kém trên tập kiểm thử. 
+RF khắc phục điều này bằng cách đưa vào hai cơ chế ngẫu nhiên chính:
+
+\vspace{0.5em}
+\noindent\textbf{1) Lấy mẫu bootstrap:} Mỗi cây được huấn luyện trên 
+một tập con của dữ liệu ban đầu, được chọn ngẫu nhiên có lặp lại 
+(bootstrap sampling). Như vậy, một phần dữ liệu được bỏ qua, 
+làm tăng tính đa dạng giữa các cây.
+
+\vspace{0.5em}
+\noindent\textbf{2) Lựa chọn ngẫu nhiên tập thuộc tính:} Tại mỗi nút 
+phân chia của cây, chỉ một tập con ngẫu nhiên của các thuộc tính được 
+xem xét để chọn điểm chia tốt nhất. Điều này làm giảm sự tương quan 
+giữa các cây trong rừng.
+
+Do các cây trong Random Forest được huấn luyện trên những tập dữ liệu 
+và tập thuộc tính khác nhau, mỗi cây đơn lẻ có thể có sai số lớn 
+(high bias hoặc underfitting). Tuy nhiên, việc tổng hợp kết quả của 
+nhiều cây giúp giảm phương sai (variance), cải thiện khả năng tổng 
+quát hoá. Nhờ đó, Random Forest đạt được sự cân bằng giữa bias và 
+variance – một trong những đặc điểm lý tưởng của mô hình học máy tốt.
+
+Một đặc điểm quan trọng khác là \textbf{tính ổn định} của RF 
+đối với nhiễu và dữ liệu không cân bằng, cùng với khả năng 
+\textbf{đánh giá mức độ quan trọng của đặc trưng (feature importance)} 
+thông qua chỉ số Gini hoặc entropy trung bình trên toàn bộ cây.
+
+Tuy nhiên, mô hình Random Forest có kích thước lớn do lưu trữ nhiều 
+cây quyết định, mỗi cây có thể có độ sâu đáng kể. Điều này khiến RF 
+khó triển khai trực tiếp trong môi trường hạn chế tài nguyên như các 
+vi điều khiển hoặc thiết bị đeo (wearables). Trong nghiên cứu này, 
+RF được sử dụng như một mô hình tham chiếu mạnh về độ chính xác, 
+nhưng chưa phải là lựa chọn phù hợp cho triển khai biên (TinyML).
+
+
+\textbf{Học tăng cường (Gradient Boosting – GB)} là một phương pháp học 
+có giám sát thuộc nhóm thuật toán tổ hợp (ensemble learning), 
+trong đó nhiều mô hình yếu (weak learners) – thường là các cây quyết định có độ sâu nông – 
+được kết hợp theo cách tuần tự để tạo thành một mô hình mạnh hơn \cite{chen2016xgboost}.
+
+Khác với Random Forest – nơi các cây được xây dựng song song và độc lập 
+– Gradient Boosting xây dựng mô hình theo từng bước lặp (iteration), 
+mỗi cây tiếp theo được huấn luyện để sửa lỗi còn lại từ mô hình trước đó. 
+Cụ thể, tại mỗi vòng lặp $t$, mô hình hiện tại $F_t(x)$ được cập nhật 
+bằng cách cộng thêm một cây mới $h_t(x)$ được huấn luyện để xấp xỉ 
+gradient âm của hàm mất mát:
+
+\begin{equation}
+F_{t+1}(x) = F_t(x) + \gamma h_t(x)
+\end{equation}
+
+Trong đó, $\gamma$ là hệ số học (learning rate), điều chỉnh mức đóng góp của cây mới vào tổng thể mô hình.
+
+Một trong những đặc điểm quan trọng của GB là khả năng 
+\textbf{tối ưu hoá trực tiếp một hàm mất mát bất kỳ}, 
+chẳng hạn như hàm log-loss trong bài toán phân loại, hoặc hàm bình 
+phương sai số (MSE) trong bài toán hồi quy. Nhờ đó, GB thường đạt độ 
+chính xác rất cao, đặc biệt trên các bài toán với dữ liệu có quan 
+hệ phi tuyến và có nhiều đặc trưng tương tác phức tạp.
+
+Tuy nhiên, Gradient Boosting cũng có những hạn chế rõ rệt. 
+Do các cây được xây dựng tuần tự phụ thuộc lẫn nhau, 
+GB thường mất nhiều thời gian huấn luyện hơn so với Random Forest. 
+Hơn nữa, mô hình nhạy cảm với nhiễu và dữ liệu nhiễu sẽ dễ dàng 
+bị mô hình "học theo", dẫn đến hiện tượng quá khớp (overfitting) 
+nếu không áp dụng kỹ thuật regularization hoặc early stopping.
+
+Trong nghiên cứu này, tác giả sử 
+dụng \textbf{GB} để phân loại tư thế ngủ đạt độ chính xác cao nhất, điều này đúng trên toàn bộ kịch bản thử nghiệm.
+Tuy nhiên, do số lượng cây lớn và trọng số tổng thể cao (trên 500~KB), Gradient Boosting chưa phù hợp để triển khai 
+trực tiếp trên các thiết bị vi điều khiển hạn chế tài nguyên. Thay vào đó, mô hình này được sử dụng để thiết lập ngưỡng hiệu năng tham chiếu (baseline) trong môi trường huấn luyện trên máy chủ hoặc máy tính cá nhân.
+
+
+\textbf{Mạng nơ-ron nhân tạo (Artificial Neural Network – ANN)} là một 
+mô hình học sâu mô phỏng cấu trúc hoạt động của hệ thần kinh sinh học, 
+trong đó các nơ-ron nhân tạo (artificial neurons) được tổ chức thành nhiều 
+lớp (layers) và kết nối với nhau qua các trọng số (weights) \cite{jain1996}. 
+Trong nghiên cứu này, tác giả sử dụng kiến trúc \textbf{Multilayer Perceptron (MLP)} – 
+một loại mạng nơ-ron đơn giản gồm ít nhất ba lớp: lớp đầu vào (input layer), 
+một hoặc nhiều lớp ẩn (hidden layers) và lớp đầu ra (output layer).
+
+Mỗi nơ-ron trong lớp ẩn thực hiện một tổ hợp tuyến tính giữa các đầu vào, 
+sau đó áp dụng một hàm kích hoạt phi tuyến như hàm ReLU 
+(Rectified Linear Unit):
+
+\begin{equation}
+    f(x) = \max(0, x)
+\end{equation}
+
+Đầu ra của mạng được tính thông qua lan truyền tiến (forward propagation), 
+và mô hình được huấn luyện bằng cách tối thiểu hóa một hàm mất mát 
+(loss function), chẳng hạn như hàm binary cross-entropy trong phân 
+loại nhị phân, thông qua thuật toán lan truyền ngược (backpropagation) và 
+phương pháp tối ưu như \texttt{Adam} hoặc \texttt{SGD}.
+
+Ưu điểm chính của mạng nơ-ron là khả năng học các quan hệ phi tuyến 
+phức tạp và tự động trích xuất đặc trưng từ dữ liệu. Khác với các mô 
+hình tuyến tính như LR hoặc SVM, ANN có thể biểu diễn các ranh giới 
+phân lớp không tuyến tính và phù hợp với các bài toán tín hiệu cảm 
+biến có nhiễu, biến đổi theo thời gian hoặc không gian.
+
+Tuy nhiên, ANN cũng tồn tại nhiều thách thức trong thực tế triển khai:
+01) Lựa chọn tham số
+02) Yêu cầu tính toán cao
+03) Khó giải thích: ANN hoạt động như một hộp đen, 
+khó hiểu về mặt trực quan so với cây quyết định hoặc hồi quy logistic.
+
+Trong đề tài này, tác giả sử dụng một kiến trúc MLP đơn giản gồm hai lớp ẩn với 
+số lượng nơ-ron tương đối nhỏ $(8, 4)$ và hàm kích hoạt ReLU, 
+được huấn luyện bằng thuật toán tối ưu \texttt{Adam} với 
+tốc độ học ban đầu là $0.01$.
+
+
+\textbf{Convolutional Neural Network (CNN)} là một mô hình học sâu được 
+thiết kế chuyên biệt để xử lý các loại dữ liệu có cấu trúc lưới, 
+chẳng hạn như ảnh hai chiều hoặc tín hiệu chuỗi thời gian một chiều. 
+Không giống như mạng neural truyền thống, CNN sử dụng phép tích chập 
+để trích xuất tự động các đặc trưng cục bộ trong dữ liệu, từ đó giảm 
+thiểu đáng kể nhu cầu tiền xử lý và cải thiện hiệu quả học biểu diễn 
+\cite{lecun2015deep}.
+
+
+Một kiến trúc CNN điển hình bao gồm các tầng tích chập 
+(convolutional layers), tiếp theo là các hàm kích hoạt phi tuyến như 
+ReLU và các tầng giảm mẫu (pooling layers). Sau các tầng này, các 
+đặc trưng được đưa vào một hoặc nhiều tầng kết nối đầy đủ 
+(fully connected layers) để thực hiện phân loại. 
+Quá trình này cho phép CNN học được cả đặc trưng cục bộ lẫn 
+toàn cục trong tín hiệu đầu vào.
+
+Tuy nhiên, trong khuôn khổ của nghiên cứu này, mục tiêu chính không chỉ 
+là đạt độ chính xác tối đa mà còn là đánh giá ảnh hưởng của các 
+đặc trưng (features) trên miền thời gian và miền tần số đối với 
+hiệu suất của mô hình học máy nên tác giả quyết định chọn LR, SVM, RF, GB, NN để tiến hành thử nghiệm. 
+Để thực hiện điều đó, tác giả xây dựng 
+tám kịch bản khác nhau tương ứng với các tổ hợp đặc trưng và 
+kích thước cửa sổ khác nhau. Việc huấn luyện và đánh giá trên nhiều 
+kịch bản đòi hỏi một mô hình đủ linh hoạt, dễ kiểm soát về kích thước 
+và thời gian huấn luyện.
 
 
 
-\textbf{Rừng ngẫu nhiên (Random Forest - RF)}: được xây dựng trên cơ sở thuật toán Decision Tree (cây quyết định). Mỗi cây quyết định sẽ khác nhau (có yếu tố ngẫu nhiên khác nhau). Sau đó kết quả dự đoán được tổng hợp từ các cây quyết định. Trong thuật toán Decision Tree, khi xây dựng cây quyết định nếu để độ sâu tùy ý thì cây sẽ phân loại đúng hết các dữ liệu trong tập training dẫn đến mô hình có thể dự đoán tệ trên tập validation/test, khi đó mô hình bị quá khớp (overfitting).
-Thuật toán Random Forest gồm nhiều cây quyết định, mỗi cây quyết định đều có những yếu tố ngẫu nhiên:
-Lấy ngẫu nhiên dữ liệu để xây dựng cây quyết định.
-Lấy ngẫu nhiên các thuộc tính để xây dựng cây quyết định.
-Do mỗi cây quyết định trong thuật toán Random Forest không dùng tất cả dữ liệu training, cũng như không dùng tất cả các thuộc tính của dữ liệu để xây dựng cây nên mỗi cây có thể sẽ dự đoán không tốt, khi đó mỗi mô hình cây quyết định không bị overfitting mà có thế bị underfitting, hay nói cách khác là mô hình có high bias. Tuy nhiên, kết quả cuối cùng của thuật toán Random Forest lại tổng hợp từ nhiều cây quyết định, thế nên thông tin từ các cây sẽ bổ sung thông tin cho nhau, dẫn đến mô hình có low bias và low variance, hay mô hình có kết quả dự đoán tốt.
-	Những kiến thức cơ bản về học máy sẽ được ứng dụng sâu trong những nghiên cứu tới đây của tác giả.
 

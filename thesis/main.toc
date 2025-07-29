@@ -3,31 +3,44 @@
 \contentsline {chapter}{Lời cam đoan}{i}{Doc-Start}%
 \contentsline {chapter}{Lời cảm ơn}{ii}{Doc-Start}%
 \contentsline {chapter}{Tóm tắt}{iii}{Doc-Start}%
-\contentsline {chapter}{Danh sách hình vẽ}{viii}{chapter*.2}%
-\contentsline {chapter}{Danh sách bảng}{ix}{chapter*.3}%
+\contentsline {chapter}{Danh sách hình vẽ}{ix}{chapter*.2}%
+\contentsline {chapter}{Danh sách bảng}{x}{chapter*.3}%
 \contentsline {chapter}{Đặt vấn đề}{1}{chapter*.4}%
-\contentsline {chapter}{\numberline {1}Tổng quan về hội chứng ngưng thở khi ngủ và các giải pháp công nghệ trong giám sát tư thế ngủ }{7}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Tổng quan về hội chứng ngưng thở khi ngủ và các giải pháp công nghệ trong giám sát tư thế ngủ}{7}{chapter.1}%
 \contentsline {section}{\numberline {1.1.}Hội chứng ngưng thở khi ngủ}{7}{section.1.1}%
 \contentsline {section}{\numberline {1.2.}Ứng dụng cảm biến gia tốc trong đánh giá tư thế ngủ của người mắc OSA tại nhà}{15}{section.1.2}%
 \contentsline {section}{\numberline {1.3.}Ứng dụng trí tuệ nhân tạo trong đánh giá tư thế ngủ và hỗ trợ chẩn đoán hội chứng ngưng thở khi ngủ (OSA)}{24}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1.}Quy trình tổng quát trong hệ thống ứng dụng AI cho đánh giá OSA và phân loại tư thế ngủ}{25}{subsection.1.3.1}%
-\contentsline {subsubsection}{Tiền xử lý dữ liệu}{27}{subsubsection*.5}%
-\contentsline {subsubsection}{Trích xuất đặc trưng}{28}{subsubsection*.6}%
-\contentsline {subsubsection}{Lựa chọn và huấn luyện mô hình}{30}{subsubsection*.7}%
+\contentsline {subsubsection}{Tiền xử lý dữ liệu}{27}{subsubsection*.14}%
+\contentsline {subsubsection}{Trích xuất đặc trưng}{28}{subsubsection*.15}%
+\contentsline {subsubsection}{Lựa chọn và huấn luyện mô hình}{30}{subsubsection*.16}%
 \contentsline {chapter}{\numberline {2}XÂY DỰNG HỆ THỐNG THU THẬP DỮ LIỆU, HUẤN LUYỆN MÔ HÌNH VÀ CHUẨN BỊ TRIỂN KHAI TRÊN THIẾT BỊ BIÊN.}{36}{chapter.2}%
 \contentsline {section}{\numberline {2.1.}Phần cứng thực nghiệm }{36}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1.}Cảm biến }{36}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2.}Vi xử lý}{38}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3.}Bluetooth năng lượng thấp}{42}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4.}Thiết bị thực nghiệm}{45}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2.}Hệ thống thu thập, xử lý, lưu trữ dữ liệu}{47}{section.2.2}%
+\contentsline {section}{\numberline {2.2.}Hệ thống thu thập, xử lý, lưu trữ dữ liệu}{46}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1.}Lập trình vi xử lý}{47}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2.}Hiệu chuẩn cảm biến}{52}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3.}Xây dựng phần mềm ứng dụng}{54}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3.}Xây dựng phần mềm ứng dụng}{53}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4.}Thiết kế và xây dựng hệ thống lưu trữ}{59}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5.}Tìm hiểu, ứng dụng phân loại tư thế ngủ bằng học máy }{62}{subsection.2.2.5}%
-\contentsline {chapter}{\numberline {3}KẾT QUẢ THỰC NGHIỆM VÀ ĐÁNH GIÁ}{68}{chapter.3}%
-\contentsline {section}{\numberline {3.1.}Đánh giá tư thế ngủ sử dụng cảm biến gia tốc}{68}{section.3.1}%
-\contentsline {section}{\numberline {3.2.}Học máy với dữ liệu đánh giá từ thiết bị}{73}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Kết luận}{76}{chapter.4}%
+\contentsline {subsection}{\numberline {2.2.5.}Học máy trong phân loại tư thế ngủ}{62}{subsection.2.2.5}%
+\contentsline {chapter}{\numberline {3}KẾT QUẢ THỰC NGHIỆM VÀ ĐÁNH GIÁ}{71}{chapter.3}%
+\contentsline {section}{\numberline {3.1.}Hệ thống thực nghiệm}{71}{section.3.1}%
+\contentsline {section}{\numberline {3.2.}Thu thập và gắn nhãn dữ liệu}{76}{section.3.2}%
+\contentsline {section}{\numberline {3.3.}Phân loại tư thế ngủ bằng học máy}{78}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1.}Phân tích dữ liệu}{78}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2.}Xử lý và trích xuất đặc trưng}{80}{subsection.3.3.2}%
+\contentsline {subsubsection}{Đặc trưng miền thời gian (T1)}{81}{subsubsection*.52}%
+\contentsline {subsubsection}{Đặc trưng miền tần số (F1)}{81}{subsubsection*.53}%
+\contentsline {subsection}{\numberline {3.3.3.}Kịch bản kiểm thử và lựa chọn tính năng}{81}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4.}Huấn luyện mô hình}{86}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5.}Đánh giá kết quả}{88}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4.}Triển khai trên chip}{90}{section.3.4}%
+\contentsline {section}{\numberline {3.5.}Triển khai trên vi điều khiển nhúng}{90}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1.}Lựa chọn mô hình và nền tảng triển khai}{90}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2.}Quy trình triển khai mô hình}{91}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3.}Đánh giá hiệu suất và tài nguyên}{91}{subsection.3.5.3}%
+\contentsline {chapter}{\numberline {4}Kết luận}{93}{chapter.4}%
 \contentsfinish 

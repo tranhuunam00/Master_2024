@@ -1,41 +1,74 @@
-\section{Đánh giá tư thế ngủ sử dụng cảm biến gia tốc}
-Tác giả tiến hành thử nghiệm bằng cách gắn bộ kit tại phần xương ức ở cổ khi ngủ. Phòng ngủ kín với nhiệt độ ổn định kín.  Đầu tiên, thiết bị sẽ được gắn lên vị trí đo bằng bang keo y tế. Khởi động thiết bị, sau đó tiến hành đăng nhập trên ứng dụng trên điện thoại. Cuối cùng kết nối với BLE với thiết bị phần cứng có tên là “Adafruit Playground” và chọn dịch vụ cảm biến gia tốc. Tác giả thử nghiệm theo từng tư thế ngủ bao gồm: nằm ngửa, nằm nghiêng trái, nằm sấp, nằm nghiêng phải. Mỗi tư thế sẽ được thử nghiệm trong 5 phút và cho ra kết quả tương đối chính xác. Khi chuyển các tư thế nằm ngủ, sẽ có 2 trường hợp xảy ra: 
+Trong phần này, tác giả trình bày các kết quả đạt được từ hai giai đoạn chính: 
+(i) thu thập và xử lý dữ liệu cảm biến từ các tư thế ngủ khác nhau; 
+(ii) huấn luyện mô hình học máy và triển khai mô hình tối ưu lên vi điều khiển nhằm đánh giá tính khả thi của giải pháp trên thiết bị biên.
 
-\begin{itemize}
-    \item Nếu chuyển động thay đổi tư thế nhẹ nhàng, kết quả vẫn có độ chính xác cao.
-    
-    \item Chuyển động nhanh có thể xảy ra và khó phát hiện đó là tư thế ngủ nào.
-\end{itemize}
+\section{Hệ thống thực nghiệm}
 
-Trường hợp nằm ngủ với góc nghiêng (so với mặt phẳng ngang) lớn hơn 450, không được ghi nhận là tư thế ngủ. Tác giả xác nhận dữ liệu lấy ra từ cảm biến, dữ liệu truyền qua BLE, dữ liệu được lưu trữ trên đám mây đồng bộ với nhau, không có sự mất mát.
-
-Các bước tiến hành thực nghiệm như Hình ~\ref{thucnghiem}:
-\begin{itemize}
-    \item Gắn cố định kit bằng băng ý tế lên phần xương ức ở cổ.
-    
-    \item Tiến hành đăng nhập.
-    \item Lựa chọn thiết bị BLE.
-
-    \item Kiểm tra kết quả
-
-    \item Tiếp cận cơ bản mô hình học máy.
-    
-\end{itemize}
-\begin{figure} [b!]
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\linewidth]{images/thucnghiem.png}
-    \caption{Thực nghiệm với kit Adafruit Playground}
-    \label{thucnghiem}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth,height=6cm,keepaspectratio]{images/sleepdive2.png}
+        \caption{}
+        \label{fig:device_position}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth,height=6cm,keepaspectratio]{images/thucnghiem.png}
+        \caption{}
+        \label{fig:practical_test}
+    \end{subfigure}
+    \caption{Hệ thống thử nghiệm: (a) vị trí đặt thiết bị cảm biến; (b) minh hoạ thực nghiệm thực tế trong tư thế nằm.}
+    \label{fig:experiment_system}
 \end{figure}
 
+Tác giả đã hoàn thiện việc lập trình firmware cho bộ vi mạch cảm biến 
+tích hợp vi điều khiển NRF52840 và cảm biến gia tốc ba trục LIS3DH. 
+Firmware được xây dựng sử dụng ngôn ngữ C/C++ trên nền tảng Arduino Core, 
+tối ưu hóa để vận hành ổn định trong môi trường năng lượng thấp và 
+hỗ trợ giao tiếp không dây chuẩn Bluetooth Low Energy (BLE).
 
-Một trong những nhiệm vụ mà tác giả được giao khi thực hiện khóa luận là phát triển một phần mềm ứng dụng cho phép người dùng sử dụng một cách đơn giản. Với nhận thức của tác giả, dựa trên góp ý của nhóm nghiên cứu, phần mềm ứng dụng phải đáp ứng những yêu cầu như dễ dàng thao tác, giao diện thân thiện, tính năng cơ bản.
+Để đảm bảo khả năng hoạt động liên tục trong suốt một đêm ngủ 
+(tối thiểu 8 giờ), hệ thống được thiết kế sử dụng pin cúc áo CR2032, 
+với dòng tiêu thụ trung bình được đo đạt dưới 8 mA trong chế độ 
+ghi nhận liên tục và truyền dữ liệu định kỳ.
 
-Sau khi cài đặt, cửa sổ đăng nhập (cho người đã đăng ký) hoặc đăng ký mới có giao diện như trong Hình ~\ref{appAuth}. Với người mới bắt đầu sử dụng và muốn lưu trữ dữ liệu cần phải đăng ký tài khoản và xác thực qua email. Mục đích để xác định người đang sử dụng và lấy lại mật khẩu khi cần thiết.
-\begin{figure} [h!]
+Mã nguồn firmware bao gồm các khối chức năng chính: 
+khởi tạo cảm biến, hiệu chỉnh dải đo và tần số lấy mẫu (10~Hz), 
+lọc nhiễu đầu vào (bằng kỹ thuật trung bình trượt), 
+đóng gói dữ liệu,
+và truyền dữ liệu qua BLE đến ứng dụng Android. 
+Ngoài ra, tác giả cũng tích hợp cơ chế báo hiệu bằng LED để xác nhận 
+trạng thái hoạt động của thiết bị (kết nối, truyền dữ liệu, và lỗi).
+Kết quả thử nghiệm thực tế cho thấy hệ thống hoạt động ổn định 
+trong suốt thời gian ghi nhận dữ liệu qua đêm, không xảy ra hiện tượng 
+rớt kết nối hay tràn bộ đệm dữ liệu. Toàn bộ dữ liệu thu được được đồng 
+bộ theo thời gian thực tới ứng dụng di động, phục vụ cho các giai đoạn 
+xử lý tín hiệu và huấn luyện mô hình học máy ở các chương sau.
+
+
+Một trong các nhiệm vụ chính mà tác giả thực hiện là phát triển ứng dụng 
+di động phục vụ cho quá trình thu thập, hiển thị và xử lý dữ liệu. 
+Dựa trên phản hồi từ nhóm nghiên cứu, tư vấn khoa học của Thầy PGS.TS. Mai Anh Tuấn, tư vấn
+y khoa của Thầy GS.TS. Dương Quý Sỹ,
+ứng dụng được thiết kế với tiêu 
+chí giao diện thân thiện, thao tác đơn giản và tính năng tập trung vào 
+mục tiêu thử nghiệm.
+
+Sau khi cài đặt, người dùng có thể đăng nhập hoặc đăng ký tài khoản 
+thông qua giao diện như được thể hiện trong Hình~\ref{appAuth}. 
+Với người dùng mới, quá trình đăng ký yêu cầu xác thực địa chỉ 
+email nhằm đảm bảo bảo mật và hỗ trợ tính năng khôi phục tài khoản.
+Hình ~\ref{app_cate} là giao diện khi người dùng đăng nhập thành công, 
+bao gồm các tính năng: Kết nối BLE và đọc dữ liệu, chuyển người dùng, 
+xem thông tin người dùng v.v.
+Hình ~\ref{listble} thể hiện danh sách BLE có thể kết nối và 
+dịch vụ kết nối với phần cứng đã được nhắc tới bên trên.
+
+
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\linewidth]{images/appAuth.png}
-    \caption{Các chức năng đăng ký, đăng nhập}
+    \caption{Giao diện chức năng đăng ký và đăng nhập}
     \label{appAuth}
 \end{figure}
 
@@ -46,72 +79,513 @@ Sau khi cài đặt, cửa sổ đăng nhập (cho người đã đăng ký) ho�
     \label{app_cate}
 \end{figure}
 
-Hình ~\ref{app_cate} là giao diện khi người dùng đăng nhập thành công, bao gồm các tính năng: Kết nối BLE và đọc dữ liệu, chuyển người dùng, xem thông tin người dùng v.v.
 
-
-\begin{figure}
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/app_ble.png}
-    \caption{Kết nối với BLE và hiển thị dữ liệu}
-    \label{app_ble}
+    \includegraphics[width=0.5\linewidth]{images/app_ble.png}
+    \caption{Giao diện màn hình danh sách BLE và chi tiết các dịch vụ kết nối với phần cứng}
+    \label{listble}
 \end{figure}
 
-Hình ~\ref{app_ble} là giao diện kết thể hiện các thiết bị đang mở trạng thái quảng cáo. Sau khi chọn đúng thiết bị phần cứng thì giao diện sẽ chuyển tới màn hình chọn dịch vụ. Sau khi chọn dịch vụ cảm biến màn hình tự động chuyển đến màn hình hiển thị các biểu đồ. Trong khuôn khổ khoá luận, tác giả sử dụng so sánh ngưỡng dữ liệu thu được từ 3 trục của cảm biến gia tốc thu được với các giá trị đặt sẵn sau nhiều lần thực nghiệm Mã nguồn \ref{nguong}.
+Hình~\ref{appsleep} minh họa giao diện của các chức năng hỗ trợ người 
+dùng trong quá trình sàng lọc nguy cơ ngưng thở khi ngủ và cung cấp 
+thông tin về chất lượng giấc ngủ. Giao diện đầu tiên (từ trái sang) 
+hiển thị mục "Hỏi – Đáp về Giấc Ngủ", nơi người dùng có thể tra cứu 
+các thông tin được tổng hợp từ chuyên gia trong lĩnh vực y học giấc ngủ. 
+Giao diện thứ hai trình bày tập hợp các công cụ đo lường phổ biến như 
+thang điểm Epworth, STOP-BANG, chỉ số khó có thể duy trì sự tỉnh táo 
+(ESS), và các bộ câu hỏi dành riêng cho trẻ em hoặc đánh giá chất lượng 
+giấc ngủ theo thang điểm Pittsburgh (PSQI).
+Giao diện thứ ba mô tả chi tiết một bộ câu hỏi sàng lọc nguy cơ ngưng 
+thở khi ngủ (tên mục: “Tầm soát ngày – Ngưng thở”) bao gồm các câu hỏi 
+tổng quát và chuyên biệt nhằm đánh giá các yếu tố liên quan đến OSA 
+(Obstructive Sleep Apnea), như tần suất ngáy, triệu chứng ngủ gật ban 
+ngày, gián đoạn giấc ngủ, hoặc các đặc điểm nhân trắc học có liên quan.
+
+Giao diện thứ tư là chức năng chatbot – nơi người dùng có thể trao 
+đổi trực tiếp với hệ thống trí tuệ nhân tạo được lập trình sẵn để 
+phản hồi các câu hỏi về OSA. Chatbot có khả năng nhận diện từ khóa 
+và cung cấp phản hồi ngắn gọn dựa trên cơ sở dữ liệu đã huấn luyện. 
+Trong ví dụ minh họa, chatbot phản hồi một truy vấn liên quan đến chỉ 
+số BMI và nguy cơ mắc OSA, thể hiện vai trò hỗ trợ tư vấn bước đầu 
+cho người dùng nghi ngờ có hội chứng ngưng thở khi ngủ.
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/appsleep.png}
+    \caption{Giao diện chức năng chatbot và bộ câu hỏi tầm soát}
+    \label{appsleep}
+\end{figure}
 
 \input{chapters/examples/nguong}
 
+Hình~\ref{appbieudo} minh họa giao diện hiển thị giá trị 
+cảm biến theo thời gian thực. Phần đầu hiển thị biểu đồ ba trục 
+x, y, z. Phần thứ hai là tổng thời gian theo từng tư thế ngủ 
+được tính toán dựa trên tín hiệu nhận dạng. Phần cuối cùng cho biết 
+tư thế hiện tại mà hệ thống đang xác định được. 
+Tuy nhiên, phương pháp xác định tư thế dựa trên ngưỡng chưa có tính tổng quát cao. 
+Do đó, trong các phần tiếp theo, các mô hình học máy sẽ 
+được áp dụng để cải thiện độ chính xác và ổn định của hệ 
+thống nhận diện tư thế. Việc cập nhật tư thế được thực hiện 
+định kỳ mỗi 10 giây để tăng khả năng phản hồi theo thời gian thực.
 
-Hình ~\ref{appbieudo} là phần quan trọng nhất của ứng dụng. Phần đầu tiên là biểu đồ giá trị 3 trục theo thời gian thực. Phần 2 là tổng thời gian theo tư thế ngủ tính theo phút. Và cuối cùng là tư thế hiện tại của người dùng.
-Tuy nhiên việc so sánh ngưỡng như vậy chưa mang tính thống kê trong khuôn khổ khoá luận. Vì vậy, các mô hình học máy cần phải được sử dụng trong tương lai để đánh giá và kết luận tư thế ngủ với độ chính xác cao. Theo đó, tư thế ngủ liên tục được cập nhật và tổng hợp sau mỗi 10 giây.
-
-\begin{figure}
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.75\linewidth]{images/appbieudo.png}
-    \caption{Màn hình hiển thị giá trị của 3 trục cảm biến gia tốc}
+    \includegraphics[width=0.3\linewidth]{images/appbieudo.png}
+    \caption{Giao diện hiển thị dữ liệu gia tốc ba trục}
     \label{appbieudo}
 \end{figure}
 
-\section{Học máy với dữ liệu đánh giá từ thiết bị}
-Sau khi tìm hiểu những bước cơ bản từ chương 2 tác giả đã có những bước tiến hành như sau:
+Về mặt kiến trúc lưu trữ dữ liệu, hệ thống được thiết kế phân tách 
+giữa dữ liệu định tính và dữ liệu định lượng. Cụ thể, thông tin người 
+dùng (tài khoản, cấu hình cá nhân), các bộ câu hỏi tầm soát 
+(ví dụ: STOP-BANG, ESS), cùng với nội dung trả lời và phản hồi của 
+chatbot được lưu trữ trong cơ sở dữ liệu quan hệ \textbf{PostgreSQL}. 
+Cơ sở dữ liệu này hỗ trợ tính nhất quán cao và dễ dàng cho việc mở 
+rộng truy vấn phức tạp trong các bài toán phân tích sau này.
+Trong khi đó, dữ liệu cảm biến gia tốc được lưu trữ song song tại cơ 
+sở dữ liệu phi quan hệ \textbf{MongoDB}, với định dạng BSON linh hoạt, 
+phù hợp cho việc ghi nhận chuỗi thời gian lớn và truy xuất nhanh theo 
+timestamp. Ngoài ra, hệ thống được mở rộng với các API cho phép trích 
+xuất dữ liệu dưới dạng Excel, nhằm hỗ trợ phân tích và chia sẻ thông 
+tin một cách linh hoạt.
+
+
+
+\section{Thu thập và gắn nhãn dữ liệu}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.8\linewidth]{images/4position.png}}
+\caption{Mô phỏng thực nghiệm thực tế}
+\label{4Position}
+\end{figure}
+
+Trong phần này, tác giả trình bày chi tiết phương pháp thu thập dữ liệu, 
+các kịch bản thực nghiệm, cũng như quy trình xử lý và trích xuất đặc trưng 
+để phục vụ cho việc huấn luyện các mô hình học máy trong bài toán nhận diện tư thế ngủ.
+
+Tổng cộng 25 tình nguyện viên đã được tuyển chọn tham gia vào quá trình 
+thu thập dữ liệu, với độ tuổi dao động từ 10 đến 60, trong đó độ tuổi 
+phổ biến là 24. Nhóm tình nguyện viên bao gồm cả nam và nữ, được lựa 
+chọn với tiêu chí đa dạng về giới tính và độ tuổi nhằm tăng tính đại 
+diện và khách quan cho bộ dữ liệu.
+
+Trong kịch bản đầu tiên (gọi là \textbf{thu thập có giám sát}), 
+mỗi tình nguyện viên được hướng dẫn gắn thiết bị cảm biến vào vùng 
+xương ức (ngay dưới hõm cổ) bằng băng keo y tế hai mặt 3M, 
+sau đó đăng nhập vào ứng dụng di động với tài khoản cá nhân đã đăng ký. 
+Dưới sự giám sát trực tiếp của tác giả, mỗi người tham gia sẽ lần 
+lượt thực hiện các tư thế ngủ cơ bản (nằm ngửa, nằm sấp, nghiêng trái, nghiêng phải) 
+trong thời gian tối thiểu 5 phút cho mỗi tư thế. 
+Thứ tự thay đổi tư thế được thực hiện ngẫu nhiên nhằm tránh thiên 
+lệch theo trình tự. Mỗi tư thế được lặp lại ít nhất hai lần để đảm 
+bảo tính lặp lại và ổn định của tín hiệu.
+Sau khi xác minh rằng dữ liệu cảm biến đã được lưu trữ đầy đủ 
+trên hệ thống (kiểm tra trên MongoDB và giao diện ứng dụng), quá trình 
+thu thập dữ liệu từ một tình nguyện viên được xem là hoàn tất.
+
+Bên cạnh đó, để mô phỏng điều kiện thực tế khi sử dụng thiết bị trong 
+sinh hoạt ban đêm, tác giả đã tự thực hiện kịch bản thứ hai 
+(\textbf{thu thập trong giấc ngủ tự nhiên}). Trong kịch bản này, 
+thiết bị được gắn vào cổ trước khi đi ngủ và ghi nhận dữ liệu liên 
+tục trong suốt một đêm. Song song đó, một camera cố định được lắp 
+đặt phía trên giường để ghi hình toàn bộ quá trình ngủ, từ đó hỗ 
+trợ gán nhãn chính xác theo thời gian thực. Dữ liệu trong giai đoạn 
+này được xử lý và đồng bộ thủ công giữa tín hiệu cảm biến và video 
+để loại bỏ các đoạn có chuyển động hoặc sai lệch nhãn Hình~\ref{4Position}.
+
+Mặc dù phương pháp thu thập trong môi trường tự nhiên sát với điều kiện 
+sử dụng thực tế, nhưng đòi hỏi nhiều công sức xử lý hậu kỳ và 
+khó kiểm soát chất lượng dữ liệu đầu vào. 
+Theo ý kiến tư vấn từ các chuyên gia trong lĩnh vực y học giấc ngủ, 
+phương pháp thu thập có giám sát (phương pháp 1) vẫn được ưu tiên do 
+khả năng kiểm soát tốt, đảm bảo dữ liệu cân bằng giữa các tư thế, 
+đồng thời vẫn duy trì được mức độ tương thích cao với điều kiện 
+thực tế khi triển khai ứng dụng theo dõi tại nhà.
+
+Sau quá trình thu thập, bộ dữ liệu huấn luyện bao gồm tổng cộng \textbf{158.750 mẫu} 
+hợp lệ sau khi đã lọc nhiễu và loại bỏ các phiên ghi nhận không đạt yêu cầu của 25 tình nguyện viên. 
+Dữ liệu kiểm thử sẽ là dữ liệu trong suốt một đêm ngủ tự nhiên của tác giả 
+Việc gán nhãn dữ liệu được thực hiện thủ công bằng cách đồng bộ thời gian giữa 
+tín hiệu cảm biến và dữ liệu video, sau đó loại bỏ toàn bộ các đoạn có chuyển động 
+hoặc tư thế không rõ ràng. Kết quả là bộ dữ liệu kiểm thử gồm \textbf{64.258 mẫu} 
+đảm bảo độ chính xác cao về mặt nhãn.
+
+Tất cả dữ liệu thu thập từ các tình nguyện viên và tác giả đều được xuất ra định 
+dạng \texttt{CSV}, bao gồm thông tin thời gian (timestamp), 
+giá trị cảm biến trên ba trục $x$, $y$, $z$, và nhãn tư thế tương ứng 
+(nếu có). Dữ liệu này được sử dụng làm đầu vào cho quá trình trích 
+xuất đặc trưng và huấn luyện mô hình học máy.
+
+
+\section{Phân loại tư thế ngủ bằng học máy}
+
+\subsection{Phân tích dữ liệu}
+Tư thế ngủ ban đầu có thể được ước lượng bằng phương pháp dựa trên ngưỡng 
+(threshold-based), áp dụng trực tiếp lên dữ liệu cảm biến gia tốc ba 
+trục. Trong phương pháp này, các ngưỡng được thiết lập trước cho từng 
+trục ($x$, $y$, $z$), và sự thay đổi tư thế được suy đoán khi giá trị 
+gia tốc đo được vượt quá ngưỡng tương ứng. Kỹ thuật này có ưu điểm là 
+đơn giản, chi phí tính toán thấp, và đặc biệt phù hợp với các hệ thống 
+nhúng tiêu thụ năng lượng thấp. 
+Mặc dù kỹ thuật dựa trên ngưỡng có ưu điểm đơn giản và phù hợp với 
+các hệ thống nhúng có tài nguyên hạn chế, nó tồn tại một số hạn chế 
+nhất định. Cụ thể, phương pháp này khó phát hiện các chuyển động nhẹ 
+hoặc tư thế trung gian giữa các trạng thái rõ ràng. Ngoài ra, các 
+ngưỡng thường cần hiệu chỉnh theo từng cá nhân do sự khác biệt về 
+hình thể, kiểu vận động và vị trí gắn cảm biến.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{images/threshhold.jpg} 
+\caption{Phân bố dữ liệu cảm biến theo ba trục $x$, $y$, $z$ ứng với các tư thế ngủ khác nhau.}
+\label{fig:axis_distribution}
+\end{figure}
+Hình~\ref{fig:axis_distribution} trình bày phân tích chi tiết phân bố 
+tín hiệu cảm biến theo ba trục gia tốc ứng với bốn tư thế ngủ cơ bản. 
+Ở trục $x$, các phân bố tương đối biệt lập, đặc biệt giữa hai tư thế 
+nằm ngửa và nằm sấp, cũng như giữa nghiêng trái và nghiêng phải. 
+Điều này cho thấy trục $x$ có khả năng phân biệt tư thế tốt. 
+Ngược lại, trục $y$ thể hiện mức độ chồng lấn lớn giữa các tư thế, 
+dẫn đến khả năng tách biệt thấp và ít giá trị trong việc xác định tư 
+thế ngủ. Đối với trục $z$, có thể quan sát được sự phân tách 
+rõ ràng giữa tư thế nằm nghiêng và các tư thế dọc 
+(nằm ngửa và nằm sấp), chứng tỏ vai trò quan trọng của trục $z$ 
+trong phân loại tư thế.
+
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\linewidth]{images/distribution actions.jpg} 
+\caption{Phân bố số lượng mẫu trong tập huấn luyện theo từng tư thế.}
+\label{fig:countActions}
+\end{figure}
+
+
+Hình~\ref{fig:countActions} minh họa sự phân bố số lượng mẫu trong 
+tập huấn luyện theo từng tư thế. Tư thế nằm ngửa (Back) chiếm tỷ 
+trọng cao nhất với khoảng 50.000 mẫu, trong khi ba tư thế còn lại 
+(nghiêng trái, nghiêng phải và nằm sấp) có số lượng tương đối cân bằng, 
+dao động từ 30.000 đến 35.000 mẫu. Phân bố này phản ánh xu hướng phổ 
+biến của tư thế nằm ngửa trong giấc ngủ tự nhiên, đồng thời cho thấy 
+tầm quan trọng lâm sàng của tư thế này, đặc biệt trong bối cảnh hội 
+chứng ngưng thở khi ngủ (OSA), khi tư thế nằm ngửa có thể làm trầm 
+trọng tình trạng bệnh.
+
+
+
+\subsection{Xử lý và trích xuất đặc trưng}
+
+Dữ liệu cảm biến thu thập được trước tiên được xử lý khử nhiễu bằng 
+phương pháp hiệu chỉnh điểm gốc (differential technique), bằng cách 
+lấy hiệu giữa giá trị hiện tại và giá trị tham chiếu ban đầu trên ba 
+trục $x$, $y$, và $z$. Sau đó, tín hiệu được chia thành các cửa sổ 
+thời gian có độ dài 2 giây, với mức chồng lấn 50\% giữa các cửa sổ 
+liên tiếp nhằm tăng độ mịn của chuỗi dữ liệu đầu vào.
+Chỉ những cửa sổ dữ liệu có nhãn nhất quán trong toàn bộ thời gian 
+mới được giữ lại để huấn luyện mô hình. Các cửa sổ chứa nhãn không 
+đồng nhất (nhiều hơn một nhãn) hoặc có biểu hiện chuyển động bất 
+thường sẽ bị loại bỏ khỏi quá trình xử lý tiếp theo.
+
+\begin{table}[htbp]
+\caption{Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}
+\label{tab:features}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{9.5cm}|}
+\hline
+\textbf{Đặc trưng} & \textbf{Mô tả / Công thức} \\
+\hline
+Giá trị trung bình & $\mu_s = \frac{1}{n} \sum_{i=1}^{n} S_i$ \\
+\hline
+Độ lệch chuẩn & $\sigma_s = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (S_i - \mu_s)^2}$ \\
+\hline
+Độ lệch tuyệt đối trung bình & $\text{AAD} = \frac{1}{n} \sum_{i=1}^{n} |S_i - \mu_s|$ \\
+\hline
+Giá trị nhỏ nhất & $\min(s) = \min(S_1, S_2, \ldots, S_n)$ \\
+\hline
+Giá trị lớn nhất & $\max(s) = \max(S_1, S_2, \ldots, S_n)$ \\
+\hline
+Hiệu số lớn nhất - nhỏ nhất & $\max(s) - \min(s)$ \\
+\hline
+Trung vị & $\text{Median}(s) = \text{median}(S_1, S_2, \ldots, S_n)$ \\
+\hline
+Độ lệch tuyệt đối trung vị & $\text{MAD} = \frac{1}{n} \sum_{i=1}^{n} |S_i - \text{Median}(s)|$ \\
+\hline
+Khoảng tứ phân vị & $IQR = \text{percentile}(75) - \text{percentile}(25)$ \\
+\hline
+Số giá trị âm & $\#(S_i < 0)$ \\
+\hline
+Số giá trị dương & $\#(S_i > 0)$ \\
+\hline
+Số giá trị lớn hơn trung bình & $\#(S_i > \mu_s)$ \\
+\hline
+Số đỉnh (local maxima) & Số lượng điểm cực đại cục bộ trong chuỗi tín hiệu \\
+\hline
+Độ lệch (Skewness) & $\frac{1}{n \sigma_s^3} \sum_{i=1}^{n} (S_i - \mu_s)^3$ \\
+\hline
+Độ nhọn (Kurtosis) & $\frac{1}{n \sigma_s^4} \sum_{i=1}^{n} (S_i - \mu_s)^4$ \\
+\hline
+Năng lượng tín hiệu & $\sum_{i=1}^{n} S_i^2$ \\
+\hline
+Gia tốc tổng hợp trung bình & $\frac{1}{n} \sum_{i=1}^{n} \sqrt{x_i^2 + y_i^2 + z_i^2}$ \\
+\hline
+Tổng độ lớn tín hiệu (SMA) & $\frac{1}{n} \sum_{i=1}^{n} (|x_i| + |y_i| + |z_i|)$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsubsection{Đặc trưng miền thời gian (T1)}\label{AA}
+
+Dữ liệu cảm biến gia tốc vốn là chuỗi thời gian, do đó các đặc trưng miền thời gian đóng vai trò rất quan trọng trong nhận diện tư thế ngủ. Trong nghiên cứu này, tác giả trích xuất tổng cộng 40 đặc trưng thống kê cho mỗi cửa sổ dữ liệu, trên cả ba trục $x$, $y$, $z$. Các đặc trưng bao gồm giá trị trung bình, độ lệch chuẩn, độ lệch tuyệt đối trung bình, giá trị lớn nhất, nhỏ nhất, hiệu số lớn-nhỏ nhất, trung vị, độ lệch tuyệt đối trung vị, khoảng tứ phân vị, số lượng giá trị âm/dương, số lượng giá trị lớn hơn trung bình, số đỉnh tín hiệu, độ lệch, độ nhọn, năng lượng tín hiệu, gia tốc tổng hợp và tổng độ lớn tín hiệu. Các đặc trưng này được lựa chọn dựa trên tính dễ tính toán, hiệu quả phân tách tư thế và khả năng triển khai trên vi điều khiển.
+
+\subsubsection{Đặc trưng miền tần số (F1)}\label{AA}
+
+Để khai thác thông tin trong miền tần số, tác giả sử dụng Biến đổi Fourier Nhanh (FFT) để chuyển đổi dữ liệu từ miền thời gian sang miền tần số. Từ các cửa sổ tín hiệu sau biến đổi, 29 đặc trưng thống kê được tính toán, bao gồm các đặc trưng tương tự như trong miền thời gian: trung bình, độ lệch chuẩn, độ lệch tuyệt đối, giá trị cực đại – cực tiểu, trung vị, khoảng tứ phân vị, số đỉnh, độ lệch, độ nhọn, năng lượng tín hiệu,... Ngoài ra, hai đặc trưng kết hợp là gia tốc tổng hợp trung bình và tổng độ lớn tín hiệu (SMA) cũng được duy trì trong miền tần số để phục vụ so sánh với miền thời gian.
+
+Việc sử dụng đồng thời các đặc trưng từ cả hai miền thời gian và tần số giúp tăng khả năng mô tả đặc trưng cho mô hình học máy, từ đó nâng cao hiệu quả phân loại tư thế ngủ trong các điều kiện khác nhau.
+
+\subsection{Kịch bản kiểm thử và lựa chọn tính năng}
+
+Lựa chọn đặc trưng là một bước quan trọng trong quá trình xây dựng mô hình học máy, giúp giảm chiều dữ liệu, cải thiện hiệu quả huấn luyện, rút ngắn thời gian tính toán và hạn chế hiện tượng quá khớp (overfitting). Nguyên lý chung là các đặc trưng hiệu quả phải có mối tương quan cao với biến mục tiêu (tư thế ngủ), đồng thời có mức tương quan thấp với nhau nhằm tránh dư thừa thông tin.
+
+\textbf{Thứ nhất}, phân tích ma trận tương quan Pearson (Hình~\ref{fig:correlation}) đã cho thấy một số cặp đặc trưng có mức tương quan rất cao, điển hình như $x_{\mathrm{std}}$ và $x_{\mathrm{aad}}$ ($r = 0.98$), hay $y_{\mathrm{std}}$ và $y_{\mathrm{aad}}$ ($r = 0.68$). Điều này gợi ý rằng có thể loại bỏ một phần các đặc trưng trùng lặp nhằm giảm độ phức tạp mô hình mà vẫn giữ được thông tin cốt lõi.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1\linewidth]{images/correlation.png} 
+\caption{Ma trận tương quan giữa các đặc trưng trích xuất. Cường độ màu thể hiện hệ số tương quan Pearson. Màu đỏ là tương quan dương mạnh, xanh là tương quan âm mạnh, xám là không tương quan.}
+\label{fig:correlation}
+\end{figure}
+
+\textbf{Thứ hai}, kết quả phân tích SHAP (SHapley Additive exPlanations) ở Hình~\ref{fig:shap} chỉ ra rằng một số đặc trưng – đặc biệt là các đặc trưng miền thời gian trên trục $z$ như trung bình, năng lượng, trung vị – có ảnh hưởng vượt trội đến dự đoán của mô hình. Do đó, việc ưu tiên các đặc trưng này trong kịch bản triển khai nhẹ (TinyML) là hoàn toàn hợp lý về mặt kỹ thuật.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\linewidth]{images/shap20.jpg} 
+\caption{Phân tích giá trị SHAP nhằm xác định tầm quan trọng của các đặc trưng trong mô hình phân loại tư thế ngủ. Các đặc trưng từ trục $z$ chiếm ưu thế về mức ảnh hưởng đến đầu ra mô hình.}
+\label{fig:shap}
+\end{figure}
+
+\textbf{Thứ ba}, để hệ thống hóa việc đánh giá vai trò của từng nhóm đặc trưng và cấu hình mô hình, tác giả đã xây dựng tám kịch bản thực nghiệm được trình bày trong Bảng~\ref{tab:scenarios}. Các kịch bản được thiết kế nhằm phản ánh đầy đủ các yếu tố cần đánh giá như loại đặc trưng (miền thời gian, tần số), mức độ tương quan, độ dài cửa sổ tín hiệu và bộ đặc trưng tối ưu hoá bằng SHAP.
+
+\begin{table}[htbp]
+\caption{Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}
+\label{tab:scenarios}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|p{6.1cm}|}
+\hline
+\textbf{Kịch bản} & \textbf{Mô tả} \\
+\hline
+1 & Sử dụng toàn bộ đặc trưng để đánh giá ảnh hưởng tổng thể đến mô hình. \\
+\hline
+2 & Áp dụng toàn bộ đặc trưng trong miền thời gian. \\
+\hline
+3 & Áp dụng toàn bộ đặc trưng trong miền tần số. \\
+\hline
+4 & Sử dụng đặc trưng miền thời gian, loại bỏ các đặc trưng có tương quan $>$ 95\%. \\
+\hline
+5 & Chọn ra 11 đặc trưng quan trọng nhất theo giá trị SHAP. \\
+\hline
+6 & Dùng cửa sổ 3 giây (50\% overlap), với 11 đặc trưng SHAP. \\
+\hline
+7 & Dùng cửa sổ 1 giây (50\% overlap), với 11 đặc trưng SHAP. \\
+\hline
+8 & Dùng cửa sổ 2 giây (25\% overlap), với 11 đặc trưng SHAP. \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Đối với các kịch bản 5 đến 8, việc lựa chọn 11 đặc trưng được thực hiện bằng cách huấn luyện mô hình Random Forest trên toàn bộ tập đặc trưng, sau đó tính giá trị SHAP trung bình cho từng đặc trưng và chọn ra nhóm có ảnh hưởng cao nhất. Việc rút gọn đặc trưng này giúp mô hình nhẹ hơn, nhanh hơn, phù hợp với môi trường nhúng có giới hạn về bộ nhớ và tính toán.
+
+Các kịch bản 6 đến 8 thay đổi độ dài cửa sổ trượt (1 giây, 2 giây, 3 giây) và mức chồng lấn nhằm khảo sát tác động của kích thước đoạn tín hiệu đến hiệu quả mô hình, đồng thời phản ánh điều kiện sử dụng thực tế trong các thiết bị đeo (wearables) hoặc hệ thống biên (edge-AI).
+
+Với thiết kế kịch bản như trên, luận văn không chỉ đánh giá hiệu quả mô hình theo nhiều hướng khác nhau, mà còn hướng tới việc xác định cấu hình tối ưu giữa độ chính xác, chi phí tính toán và khả năng triển khai thực tiễn.
+
+\subsection{Huấn luyện mô hình}
+
+Dựa trên các phương pháp phân loại được đề cập ở các phần trước — 
+bao gồm phương pháp ngưỡng, học máy và học sâu — 
+tác giả đã lựa chọn một tập hợp đại diện các mô hình để 
+tiến hành đánh giá hiệu quả trong bài toán nhận diện tư thế ngủ 
+từ dữ liệu cảm biến gia tốc. Cụ thể, bốn mô hình học máy truyền 
+thống được lựa chọn từ thư viện \texttt{scikit-learn} gồm: 
+\textbf{Random Forest (RF)}, \textbf{Logistic Regression (LR)}, 
+\textbf{Support Vector Machine (SVM)}, và \textbf{Gradient Boosting (GB)}. 
+Đây đều là các mô hình đã được chứng minh hiệu quả trong việc xử lý dữ 
+liệu cảm biến có cấu trúc, đặc biệt trong các bài toán phân loại đa lớp.
+
+Để đảm bảo tính công bằng trong so sánh và khả năng triển khai thực tế trên vi điều khiển, các siêu tham số (hyperparameters) của từng mô hình được lựa chọn dựa trên kinh nghiệm thực tiễn trong các công trình trước và quá trình tinh chỉnh sơ bộ nhằm đạt được sự cân bằng giữa độ chính xác và độ phức tạp tính toán. Chi tiết tham số của từng mô hình được trình bày trong Bảng~\ref{tab:models}.
+
+\begin{table}[htbp]
+\caption{Các mô hình học máy và siêu tham số sử dụng trong nghiên cứu}
+\label{tab:models}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Mô hình} & \textbf{Tham số cấu hình} \\
+\hline
+\textbf{Random Forest (RF)} & 
+Số cây quyết định: 50; \newline
+Độ sâu tối đa: 5; \newline
+Số đặc trưng được xét tại mỗi nút: \texttt{log2} \\
+\hline
+\textbf{Logistic Regression (LR)} & 
+Chiến lược đa lớp: \texttt{one-vs-rest}; \newline
+Số vòng lặp tối đa: 50; \newline
+Hàm tối ưu: \texttt{lbfgs} \\
+\hline
+\textbf{Support Vector Machine (SVM)} & 
+Hàm kernel: \texttt{sigmoid}; \newline
+Tham số điều chuẩn $C = 2$; \newline
+Chiến lược đa lớp: \texttt{one-vs-rest} \\
+\hline
+\textbf{Gradient Boosting (GB)} & 
+Tốc độ học: 0.01; \newline
+Số lượng cây tăng cường: 50; \newline
+Độ sâu tối đa: 3; \newline
+Số đặc trưng được chọn: \texttt{log2} \\
+\hline
+\textbf{Mạng nơ-ron (Neural Network, Keras)} & 
+Cấu trúc: [50, 15, 4]; \newline
+Hàm kích hoạt: \texttt{ReLU}, \texttt{ReLU}, \texttt{Softmax}; \newline
+Thuật toán tối ưu: \texttt{RMSprop}; \newline
+Hàm mất mát: Mean Squared Error (MSE); \newline
+Epochs: 30; Batch size: 1 \\
+\hline
+\end{tabular}
+\end{table}
+
+Ngoài các mô hình học máy, một mạng nơ-ron nhân tạo tuyến tính đơn giản (feedforward neural network) được xây dựng bằng thư viện \texttt{TensorFlow/Keras} để đại diện cho phương pháp học sâu. Mạng bao gồm hai lớp ẩn với số lượng nơ-ron lần lượt là 50 và 15, theo sau là một lớp đầu ra sử dụng hàm kích hoạt \texttt{Softmax} cho bài toán phân loại đa lớp. Các lớp ẩn sử dụng hàm kích hoạt \texttt{ReLU} nhằm mô hình hóa các quan hệ phi tuyến hiệu quả hơn. Mô hình này được tối ưu bằng thuật toán \texttt{RMSprop} và huấn luyện trên dữ liệu thô (raw accelerometer data) mà không cần trích xuất đặc trưng, nhằm kiểm tra khả năng triển khai trực tiếp trong môi trường thiết bị nhúng hạn chế về tài nguyên.
+
+Việc lựa chọn kết hợp các mô hình với mức độ phức tạp khác nhau cho phép đánh giá toàn diện về 
+hiệu quả phân loại trong các điều kiện thực tế. 
+Từ các mô hình cây đơn giản và dễ diễn giải, đến các mô hình mạnh 
+hơn như Gradient Boosting hoặc mạng nơ-ron – nghiên cứu nhằm tìm r
+a giải pháp cân bằng tối ưu giữa độ chính xác, kích thước mô hình, 
+tốc độ suy luận (inference latency) và mức sử dụng bộ nhớ, 
+phục vụ cho các ứng dụng thực tiễn như hệ thống AI biên (Edge-AI) 
+hoặc thiết bị đeo thông minh.
+\subsection{Đánh giá kết quả}
+Để đánh giá hiệu quả của các mô hình học máy và tác động của lựa 
+chọn đặc trưng đầu vào, tám kịch bản thực nghiệm đã được thiết kế 
+như trình bày ở các phần trước. Các kịch bản này không chỉ cho phép 
+phân tích ảnh hưởng của đặc trưng, cửa sổ tín hiệu và trục cảm biến, 
+mà còn hướng đến tối ưu hóa trọng số mô hình phục vụ triển khai trên 
+thiết bị nhúng.
+
+
+\begin{table}[htbp]
+\caption{Độ chính xác phân loại của các mô hình trong 8 kịch bản}
+\label{tab:accuracy}
+\centering
+\renewcommand{\arraystretch}{1.1}
+\scriptsize
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Mô hình} & S1 & S2 & S3 & S4 & S5 & S6 & S7 & S8 \\
+\hline
+LR  & 0.970 & 0.970 & 0.368 & 0.970 & 0.987 & 0.990 & 0.990 & 0.987 \\
+RF  & 0.995 & 0.996 & 0.426 & 0.994 & 0.993 & 0.993 & 0.993 & 0.991 \\
+SVM & 0.995 & 0.985 & 0.280 & 0.991 & 0.989 & 0.982 & 0.982 & 0.870 \\
+GB  & 0.996 & 0.996 & 0.439 & 0.995 & 0.995 & 0.996 & 0.996 & 0.996 \\
+NN  &  0.920 &  --   &  --   &  --   &  --   &  --   &  --   & -- \\
+\hline
+\end{tabular}
+\end{table}
+
+Kết quả trong Bảng~\ref{tab:accuracy} cho thấy mô hình 
+\textbf{Gradient Boosting (GB)} đạt độ chính xác cao nhất, 
+lên đến 0.996 trong hầu hết các kịch bản (S1, S2, S6, S7, S8). 
+Mô hình \textbf{Random Forest (RF)} cũng thể hiện hiệu năng ấn tượng 
+với độ chính xác trên 0.99, ngoại trừ ở kịch bản S3. 
+Tất cả mô hình đều có sự sụt giảm rõ rệt về hiệu suất trong kịch 
+bản S3 — nơi chỉ sử dụng đặc trưng miền tần số — 
+với độ chính xác của LR giảm còn 0.368 và SVM giảm xuống 0.280. 
+Kết quả này phù hợp với phân tích SHAP (Hình~\ref{fig:shap}) 
+khi cho thấy các đặc trưng quan trọng nhất chủ yếu đến từ miền 
+thời gian, đặc biệt là trục $z$.
+
+
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{images/matrix (2).png}
+    \caption{Ma trận nhầm lẫn (confusion matrix) của năm mô hình 
+    phân loại trong kịch bản S1. GB và RF cho kết quả chính xác 
+    cao nhất. Mô hình NN được huấn luyện trực tiếp trên dữ liệu thô.}
+    \label{fig:cm_all_models}
+\end{figure}
+
+Kết quả này nhấn mạnh vai trò then chốt của lựa chọn đặc trưng đầu vào đối với hiệu quả mô hình. Các kịch bản sử dụng đặc trưng đã rút gọn theo SHAP (như S5–S8) vừa đạt độ chính xác cao, vừa giảm số chiều dữ liệu đầu vào, qua đó hỗ trợ triển khai mô hình nhẹ trong môi trường nhúng. Ngược lại, các kịch bản thiếu chọn lọc như S3 dẫn đến hiệu suất kém.
+
+\begin{table}[htbp]
+\caption{Kích thước mô hình (KB) trong 8 kịch bản}
+\label{tab:modelsize}
+\centering
+\renewcommand{\arraystretch}{1.1}
+\scriptsize
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Mô hình} & S1 & S2 & S3 & S4 & S5 & S6 & S7 & S8 \\
+\hline
+LR  & 4   & 2   & 2    & 2   & 2   & 2   & 2   & 2   \\
+RF  & 187 & 151 & 291  & 176 & 89  & 89  & 141 & 103 \\
+SVM & 315 & 232 & 3051 & 294 & 150 & 92  & 183 & 274 \\
+GB  & 605 & 602 & 615  & 603 & 587 & 587 & 587 & 589 \\
+NN  & 55  & --  & --   & --  & --  & --  & --  & --   \\
+\hline
+\end{tabular}
+\end{table}
+
+Bảng~\ref{tab:modelsize} trình bày kích thước mô hình (tính theo kilobyte) trong từng kịch bản. GB và RF có dung lượng lớn nhất, đặc biệt GB luôn trên 580~KB. RF biến động từ 89~KB đến 291~KB tùy theo số đặc trưng sử dụng. Ngược lại, LR duy trì kích thước rất nhỏ, chỉ từ 2–4~KB ở tất cả kịch bản, phù hợp với hệ thống vi điều khiển có bộ nhớ hạn chế. SVM có kích thước trung bình, nhưng ở kịch bản S3 (3051~KB), dung lượng tăng vọt do số chiều đầu vào lớn. Mô hình NN mặc dù chỉ được đánh giá trong S1 nhưng đạt độ chính xác cao với kích thước chỉ 55~KB — một lựa chọn triển vọng cho các ứng dụng Edge AI.
+
+Nhìn chung, kết quả cho thấy cần đánh đổi giữa hiệu quả dự đoán và kích thước mô hình khi triển khai thực tế trên thiết bị nhúng. Các mô hình ensemble như RF và GB cho kết quả xuất sắc, nhưng LR và NN lại là lựa chọn tối ưu trong môi trường hạn chế tài nguyên.
+
+\section{Triển khai trên chip}
+
+\section{Triển khai trên vi điều khiển nhúng}
+
+Sau khi huấn luyện và đánh giá các mô hình học máy, bước tiếp theo của nghiên cứu là xác minh khả năng triển khai mô hình trong môi trường thực tế sử dụng vi điều khiển nhúng. Mục tiêu chính là kiểm tra độ tương thích, hiệu suất suy luận và mức sử dụng tài nguyên của mô hình mạng nơ-ron nông (Neural Network – NN) khi được tích hợp lên thiết bị phần cứng có tài nguyên hạn chế.
+
+\subsection{Lựa chọn mô hình và nền tảng triển khai}
+
+Trong số các mô hình khảo sát, mô hình mạng nơ-ron đạt được sự cân bằng tốt giữa độ chính xác (0.92 trong kịch bản S1) và dung lượng bộ nhớ (khoảng 55~KB). Khác với các mô hình ensemble như Gradient Boosting (GB) hoặc Random Forest (RF) tuy có độ chính xác cao hơn nhưng dung lượng lớn và tính phức tạp tính toán, mạng nơ-ron được thiết kế tối giản và hướng đến triển khai trong các môi trường vi điều khiển tiêu thụ năng lượng thấp.
+
+Vi điều khiển được lựa chọn là \textbf{Arduino Nano 33 BLE Sense}, sử dụng chip \texttt{nRF52840} (ARM Cortex-M4F, 64~MHz), 1~MB flash và 256~KB RAM. Bo mạch này cũng tích hợp sẵn cảm biến gia tốc, rất phù hợp để xây dựng hệ thống nhận diện tư thế ngủ hoàn chỉnh và hoạt động độc lập.
+
+\subsection{Quy trình triển khai mô hình}
+
+Mô hình mạng nơ-ron được huấn luyện bằng TensorFlow/Keras với hai lớp ẩn (50 và 15 nơ-ron), sử dụng hàm kích hoạt \texttt{ReLU} và lớp đầu ra \texttt{Softmax} để phân loại tư thế ngủ thành 4 lớp. Sau huấn luyện, mô hình được chuyển sang định dạng \texttt{TensorFlow Lite (.tflite)} để phục vụ cho suy luận trên thiết bị nhúng.
+
+Vì mô hình đã được thiết kế tối giản từ đầu nên dung lượng ở định dạng TFLite chỉ khoảng 55~KB, không cần thêm bước lượng tử hóa để giảm kích thước. Tuy vậy, để đảm bảo khả năng thực thi ổn định trên nền tảng không có bộ xử lý dấu phẩy động (FPU), mô hình vẫn được chuyển về định dạng số nguyên 8-bit (\texttt{int8}) thông qua kỹ thuật lượng tử hóa sau huấn luyện (post-training quantization). Quá trình này không làm giảm kích thước mô hình đáng kể, nhưng giúp cải thiện tốc độ suy luận và giảm mức tiêu thụ điện năng.
+
+Sau đó, mô hình được tích hợp vào mã nguồn Arduino bằng cách chuyển đổi file `.tflite` thành mảng nhị phân C (`const unsigned char model[]`) và sử dụng thư viện \texttt{TensorFlow Lite for Microcontrollers (TFLM)} để khởi tạo trình suy luận (\texttt{MicroInterpreter}). Tín hiệu đầu vào từ cảm biến gia tốc được xử lý theo đúng chuẩn hóa đầu vào như khi huấn luyện và đưa vào mô hình để thực hiện phân loại tư thế theo thời gian thực.
+
+\subsection{Đánh giá hiệu suất và tài nguyên}
+
+Quá trình triển khai và kiểm thử cho kết quả như sau:
 
 \begin{itemize}
-    \item Thu thập dữ liệu và đánh nhãn: Tác giả thu tập 3859 mẫu dữ liệu theo từng tư thế ngủ: ngửa, nghiêng trái, nghiên phải và sấp với 1 đối tượng trong nhóm. Mỗi tư thế tác giả thực hiện trong 100 giây là dừng lại để đánh nhãn trực tiếp sau mỗi lần thử nghiệm. Việc lấy mẫu như vậy có tác dụng i) cân bằng dữ liệu ii)) tối ưu độ chính xác của nhãn.
-    
-    \item Phân tích dữ liệu: Xóa bỏ những dữ liệu ban đầu của mỗi hoạt động. Trích xuất tính năng theo miền thời gian (trung bình, phương sai, giá trị nhỏ nhất, giá trị lớn nhất,…) theo các của sổ 1 giây.
-    \item Đánh giá tương quan và loại bỏ tính năng.
-
-    \item Sử dụng các mô hình học máy.
-    
+    \item \textbf{Dung lượng mô hình (flash):} khoảng 55~KB;
+    \item \textbf{Mức sử dụng RAM trong lúc suy luận:} khoảng 19.6~KB;
+    \item \textbf{Thời gian suy luận trung bình:} khoảng 17~ms/mẫu;
+    \item \textbf{Tốc độ lấy mẫu cảm biến:} 10~Hz (mỗi 100~ms);
+    \item \textbf{Dòng tiêu thụ trung bình:} 6.5~mA (hoạt động liên tục, BLE tắt).
 \end{itemize}
 
+Kết quả cho thấy hệ thống đáp ứng tốt yêu cầu suy luận thời gian thực, bộ nhớ sử dụng nằm trong giới hạn an toàn của thiết bị, và có thể hoạt động liên tục nhiều giờ bằng pin cúc áo CR2032.
 
 
 
-\begin{figure} [!]
-    \centering
-    \includegraphics[width=0.75\linewidth]{images/hocmay_mau.png}
-    \caption{Biểu đồ số lượng các mẫu}
-    \label{hocmay_mau}
-\end{figure}
-
-Các thuật toán phân loại tiêu chuẩn khó có thể tối ưu được khi áp dụng trực tiếp cho dữ liệu chuỗi thời gian thô. Đầu tiên, tác giả chia dữ liệu thành các cửa sổ 3 giây. Sau đó, tác giả tạo các tính năng mới bằng cách tổng hợp 30 mẫu thô có trong mỗi phân đoạn 3 giây này.Để gán nhãn lớp cho các tính năng được chuyển đổi, tác giả sẽ lấy tư thế đa số trong của sổ đó. Ví dụ: tập dữ liệu thô có 100 hàng dữ liệu tuần tự.Vì vậy, sau khi tạo cửa sổ và tổng hợp (sử dụng kích thước cửa sổ = 30), nó sẽ được chuyển thành 10 hàng.
-Có một điều nữa, tác giả lấy các cửa sổ chồng chéo với 50\% độ phủ. Điều này đảm bảo rằng mọi hàng tiếp theo trong tập dữ liệu được chuyển đổi cũng có một số thông tin từ dữ liệu trong cửa sổ trước đó.
-Sau khi trích xuất tính năng, tác giả sẽ sử dụng ma trận tương quan Hình ~\ref{matrantuongquan} để đánh giá các tính năng.
-
-
-
-\begin{figure}[!]
-    \centering
-    \includegraphics[width=1\linewidth]{images/matrantuongquan.png}
-    \caption{Ma trận tương quan giữa các tính năng}
-    \label{matrantuongquan}
-\end{figure}
-
-Tác giả sẽ loại bỏ đi những tính năng có hệ số tương quan > 0.95 để giảm thiểu thích thước dữ liệu.
-Kết quả có độ chính xác lên tới 96\% trong việc đánh giá 4 tư thế ngủ từ tập kiểm tra chiếm 25\% dữ liệu thu thập bằng cách áp dụng mô hình SVM. Đây mới chỉ là những kết quả bước đầu với số lượng mẫu còn hạn chế và chỉ tập trung vào 4 tư thế cơ bản. Nếu chỉ so sánh việc phát hiện 4 tư thế thì độ chính xác thì kết quả của 2 phương pháp tương đương nhau. Tuy nhiên, nhược điểm của phương pháp đánh giá ngưỡng là khó phát hiện những chuyển động đột ngột, bất thường trong lúc ngủ mà hiện tại tác giả coi đây là những tư thế chưa xác định. Để giải quyết vấn đề này thì học máy được coi là phương pháp hiệu quả nhất. Tư thế nằm ngửa và nghiêng trái đang có sự nhầm lẫn có thể do bước loại bỏ các dữ liệu hoặc do bước đánh nhãn cho 1 cửa sổ Hình \ref{matrannhamlan}. 
-\begin{figure} [!]
-    \centering
-    \includegraphics[width=1\linewidth]{images/matrannhamlan.png}
-    \caption{Ma trận nhầm lẫn}
-    \label{matrannhamlan}
-\end{figure}

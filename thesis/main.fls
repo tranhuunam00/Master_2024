@@ -401,6 +401,14 @@ INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\collectbox\collectb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\adjustbox\tc-pdftex.def
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\adjustbox\tc-pdftex.def
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\adjustbox\tc-pdftex.def
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\caption\subcaption.sty
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\caption\subcaption.sty
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption.sty
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption.sty
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption3.sty
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption3.sty
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\caption\ltcaption.sty
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\caption\ltcaption.sty
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\makecell\makecell.sty
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\makecell\makecell.sty
 INPUT .\setting\bkthesis.sty
@@ -538,6 +546,11 @@ INPUT .\main.lof
 INPUT .\main.lof
 INPUT main.lof
 OUTPUT main.lof
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7m.vf
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\psyro.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\base\8r.enc
 INPUT .\main.lot
 INPUT .\main.lot
 INPUT main.lot
@@ -551,7 +564,6 @@ INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\base\8r.enc
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
 INPUT .\chapters\2-base-knowledge.tex
@@ -568,10 +580,6 @@ INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.
 INPUT C:\Users\ADMIN\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7m.vf
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\psyro.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
@@ -796,6 +804,16 @@ INPUT .\images\hocmay_time.png
 INPUT .\images\hocmay_time.png
 INPUT .\images\hocmay_time.png
 INPUT .\images\hocmay_time.png
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7y.vf
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7m.vf
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\psyro.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT .\images\svm.png
 INPUT .\images\svm.png
 INPUT .\images\svm.png
@@ -803,6 +821,16 @@ INPUT .\images\svm.png
 INPUT .\images\svm.png
 INPUT .\images\svm.png
 INPUT .\images\svm.png
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7m.vf
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\psyro.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7v.vf
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
 INPUT .\images\svm_ovso.png
 INPUT .\images\svm_ovso.png
 INPUT .\images\svm_ovso.png
@@ -822,6 +850,13 @@ INPUT .\chapters\4-experiment.tex
 INPUT .\chapters\4-experiment.tex
 INPUT .\chapters\4-experiment.tex
 INPUT chapters\4-experiment.tex
+INPUT .\images\sleepdive2.png
+INPUT .\images\sleepdive2.png
+INPUT .\images\sleepdive2.png
+INPUT .\images\sleepdive2.png
+INPUT .\images\sleepdive2.png
+INPUT .\images\sleepdive2.png
+INPUT .\images\sleepdive2.png
 INPUT .\images\thucnghiem.png
 INPUT .\images\thucnghiem.png
 INPUT .\images\thucnghiem.png
@@ -850,6 +885,13 @@ INPUT .\images\app_ble.png
 INPUT .\images\app_ble.png
 INPUT .\images\app_ble.png
 INPUT .\images\app_ble.png
+INPUT .\images\appsleep.png
+INPUT .\images\appsleep.png
+INPUT .\images\appsleep.png
+INPUT .\images\appsleep.png
+INPUT .\images\appsleep.png
+INPUT .\images\appsleep.png
+INPUT .\images\appsleep.png
 INPUT .\chapters\examples\nguong.tex
 INPUT .\chapters\examples\nguong.tex
 INPUT .\chapters\examples\nguong.tex
@@ -862,27 +904,72 @@ INPUT .\images\appbieudo.png
 INPUT .\images\appbieudo.png
 INPUT .\images\appbieudo.png
 INPUT .\images\appbieudo.png
-INPUT .\images\hocmay_mau.png
-INPUT .\images\hocmay_mau.png
-INPUT .\images\hocmay_mau.png
-INPUT .\images\hocmay_mau.png
-INPUT .\images\hocmay_mau.png
-INPUT .\images\hocmay_mau.png
-INPUT .\images\hocmay_mau.png
-INPUT .\images\matrantuongquan.png
-INPUT .\images\matrantuongquan.png
-INPUT .\images\matrantuongquan.png
-INPUT .\images\matrantuongquan.png
-INPUT .\images\matrantuongquan.png
-INPUT .\images\matrantuongquan.png
-INPUT .\images\matrantuongquan.png
-INPUT .\images\matrannhamlan.png
-INPUT .\images\matrannhamlan.png
-INPUT .\images\matrannhamlan.png
-INPUT .\images\matrannhamlan.png
-INPUT .\images\matrannhamlan.png
-INPUT .\images\matrannhamlan.png
-INPUT .\images\matrannhamlan.png
+INPUT .\images\4position.png
+INPUT .\images\4position.png
+INPUT .\images\4position.png
+INPUT .\images\4position.png
+INPUT .\images\4position.png
+INPUT .\images\4position.png
+INPUT .\images\4position.png
+INPUT .\images\threshhold.jpg
+INPUT .\images\threshhold.jpg
+INPUT .\images\threshhold.jpg
+INPUT .\images\threshhold.jpg
+INPUT .\images\threshhold.jpg
+INPUT .\images\threshhold.jpg
+INPUT .\images\threshhold.jpg
+INPUT .\images\distribution actions.jpg
+INPUT .\images\distribution actions.jpg
+INPUT .\images\distribution actions.jpg
+INPUT .\images\distribution actions.jpg
+INPUT .\images\distribution actions.jpg
+INPUT .\images\distribution actions.jpg
+INPUT .\images\distribution actions.jpg
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT .\images\correlation.png
+INPUT .\images\correlation.png
+INPUT .\images\correlation.png
+INPUT .\images\correlation.png
+INPUT .\images\correlation.png
+INPUT .\images\correlation.png
+INPUT .\images\correlation.png
+INPUT .\images\shap20.jpg
+INPUT .\images\shap20.jpg
+INPUT .\images\shap20.jpg
+INPUT .\images\shap20.jpg
+INPUT .\images\shap20.jpg
+INPUT .\images\shap20.jpg
+INPUT .\images\shap20.jpg
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
+INPUT .\images\matrix (2).png
+INPUT .\images\matrix (2).png
+INPUT .\images\matrix (2).png
+INPUT .\images\matrix (2).png
+INPUT .\images\matrix (2).png
+INPUT .\images\matrix (2).png
+INPUT .\images\matrix (2).png
 INPUT .\chapters\5-conclusion.tex
 INPUT .\chapters\5-conclusion.tex
 INPUT .\chapters\5-conclusion.tex
@@ -898,7 +985,6 @@ INPUT .\images\macjh.png
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmrc8v.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\vntex\urwvn\utmrc8v.vf
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8c.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmri8c.vf
 INPUT main.aux
@@ -906,6 +992,8 @@ INPUT .\main.out
 INPUT .\main.out
 INPUT main.run.xml
 OUTPUT main.run.xml
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
@@ -914,6 +1002,10 @@ INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\urw\symbol\usyr.pfb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\urw\symbol\usyr.pfb
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\urw\symbol\usyr.pfb
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\urw\symbol\usyr.pfb
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\vntex\urwvn\utmb8v.pfb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\vntex\urwvn\utmb8v.pfb
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\type1\vntex\urwvn\utmbi8v.pfb

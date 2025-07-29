@@ -4076,58 +4076,177 @@
       \verb 10.1109/ET.2019.8878552.
       \endverb
     \endentry
-    \entry{Saha}{article}{}{}
+    \entry{cramer2002logistic}{report}{}{}
       \name{author}{1}{}{%
-        {{hash=b67a306bf652d84e53191fbb4cfb5cde}{%
-           family={Saha\bibnamedelima S.},
-           familyi={S\bibinitperiod\bibinitdelim S\bibinitperiod},
-           given={Montazeri\bibnamedelimb N.và\bibnamedelimb cộng\bibnamedelima sự},
-           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim c\bibinitperiod\bibinitdelim s\bibinitperiod},
-           suffix={Kabir\bibnamedelima M.},
-           suffixi={K\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=0b33b72cdad0bb7a5981e1a344c51754}{%
+           family={Cramer},
+           familyi={C\bibinitperiod},
+           given={J.\bibnamedelimi S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
       }
-      \strng{namehash}{b67a306bf652d84e53191fbb4cfb5cde}
-      \strng{fullhash}{b67a306bf652d84e53191fbb4cfb5cde}
-      \strng{fullhashraw}{b67a306bf652d84e53191fbb4cfb5cde}
-      \strng{bibnamehash}{b67a306bf652d84e53191fbb4cfb5cde}
-      \strng{authorbibnamehash}{b67a306bf652d84e53191fbb4cfb5cde}
-      \strng{authornamehash}{b67a306bf652d84e53191fbb4cfb5cde}
-      \strng{authorfullhash}{b67a306bf652d84e53191fbb4cfb5cde}
-      \strng{authorfullhashraw}{b67a306bf652d84e53191fbb4cfb5cde}
+      \list{institution}{1}{%
+        {Tinbergen Institute}%
+      }
+      \strng{namehash}{0b33b72cdad0bb7a5981e1a344c51754}
+      \strng{fullhash}{0b33b72cdad0bb7a5981e1a344c51754}
+      \strng{fullhashraw}{0b33b72cdad0bb7a5981e1a344c51754}
+      \strng{bibnamehash}{0b33b72cdad0bb7a5981e1a344c51754}
+      \strng{authorbibnamehash}{0b33b72cdad0bb7a5981e1a344c51754}
+      \strng{authornamehash}{0b33b72cdad0bb7a5981e1a344c51754}
+      \strng{authorfullhash}{0b33b72cdad0bb7a5981e1a344c51754}
+      \strng{authorfullhashraw}{0b33b72cdad0bb7a5981e1a344c51754}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Sleep Medicine}
-      \field{title}{Portable diagnosis of sleep apnea with the validation of individual event detection}
-      \field{year}{2020}
+      \field{month}{1}
+      \field{note}{Available at SSRN: \url{https://doi.org/10.2139/ssrn.360300}}
+      \field{number}{TI 2001-119/4}
+      \field{title}{The Origins of Logistic Regression}
+      \field{type}{Tinbergen Institute Discussion Paper}
+      \field{year}{2002}
       \verb{doi}
-      \verb 10.1016/j.sleep.2019.12.021
+      \verb 10.2139/ssrn.360300
+      \endverb
+      \verb{urlraw}
+      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=360300
+      \endverb
+      \verb{url}
+      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=360300
       \endverb
     \endentry
-    \entry{Syeda}{article}{}{}
+    \entry{breiman2001random}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=0c4a07a2dd453cbee8768ba64b4ada8c}{%
-           family={Syeda\bibnamedelimb Zuriat-e-Zehra\bibnamedelima Ali},
-           familyi={S\bibinitperiod\bibinitdelim Z\bibinithyphendelim e\bibinithyphendelim Z\bibinitperiod\bibinitdelim A\bibinitperiod},
-           given={Rida\bibnamedelimb Ashfaq\bibnamedelimb và\bibnamedelimb cộng\bibnamedelima sự},
-           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim v\bibinitperiod\bibinitdelim c\bibinitperiod\bibinitdelim s\bibinitperiod}}}%
+        {{hash=132b7100417675d55d5d4d8b244f7a34}{%
+           family={Breiman},
+           familyi={B\bibinitperiod},
+           given={Leo},
+           giveni={L\bibinitperiod}}}%
       }
-      \strng{namehash}{0c4a07a2dd453cbee8768ba64b4ada8c}
-      \strng{fullhash}{0c4a07a2dd453cbee8768ba64b4ada8c}
-      \strng{fullhashraw}{0c4a07a2dd453cbee8768ba64b4ada8c}
-      \strng{bibnamehash}{0c4a07a2dd453cbee8768ba64b4ada8c}
-      \strng{authorbibnamehash}{0c4a07a2dd453cbee8768ba64b4ada8c}
-      \strng{authornamehash}{0c4a07a2dd453cbee8768ba64b4ada8c}
-      \strng{authorfullhash}{0c4a07a2dd453cbee8768ba64b4ada8c}
-      \strng{authorfullhashraw}{0c4a07a2dd453cbee8768ba64b4ada8c}
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{132b7100417675d55d5d4d8b244f7a34}
+      \strng{fullhash}{132b7100417675d55d5d4d8b244f7a34}
+      \strng{fullhashraw}{132b7100417675d55d5d4d8b244f7a34}
+      \strng{bibnamehash}{132b7100417675d55d5d4d8b244f7a34}
+      \strng{authorbibnamehash}{132b7100417675d55d5d4d8b244f7a34}
+      \strng{authornamehash}{132b7100417675d55d5d4d8b244f7a34}
+      \strng{authorfullhash}{132b7100417675d55d5d4d8b244f7a34}
+      \strng{authorfullhashraw}{132b7100417675d55d5d4d8b244f7a34}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{International Conference on Robot Intelligence Technology and Applications (RiTA)}
-      \field{title}{Smart Pillow:Sleep Apnea Monitoring \& Minimization Device}
-      \field{year}{2019}
+      \field{journaltitle}{Machine Learning}
+      \field{number}{1}
+      \field{title}{Random Forests}
+      \field{volume}{45}
+      \field{year}{2001}
+      \field{pages}{5\bibrangedash 32}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.1023/A:1010933404324
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1023/A:1010933404324
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1023/A:1010933404324
+      \endverb
+    \endentry
+    \entry{jain1996}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=cd01587a47d1084d2adebe55a57d1c5c}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={Anil\bibnamedelima K.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=32928b237f876080a4c73d015420fe3f}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Jianchang},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2db875f80c425bc0e57a5069876f43fb}{%
+           family={Mohiuddin},
+           familyi={M\bibinitperiod},
+           given={K.\bibnamedelimi M.},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{74db379c2d178bf9d14a8aeedcdb1004}
+      \strng{fullhash}{74db379c2d178bf9d14a8aeedcdb1004}
+      \strng{fullhashraw}{74db379c2d178bf9d14a8aeedcdb1004}
+      \strng{bibnamehash}{74db379c2d178bf9d14a8aeedcdb1004}
+      \strng{authorbibnamehash}{74db379c2d178bf9d14a8aeedcdb1004}
+      \strng{authornamehash}{74db379c2d178bf9d14a8aeedcdb1004}
+      \strng{authorfullhash}{74db379c2d178bf9d14a8aeedcdb1004}
+      \strng{authorfullhashraw}{74db379c2d178bf9d14a8aeedcdb1004}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{Artificial neural networks: a tutorial}
+      \field{volume}{29}
+      \field{year}{1996}
+      \field{pages}{31\bibrangedash 44}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/2.485891
+      \endverb
+    \endentry
+    \entry{lecun2015deep}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{fullhash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{fullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{bibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorbibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authornamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorfullhash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorfullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{month}{5}
+      \field{number}{7553}
+      \field{title}{Deep learning}
+      \field{volume}{521}
+      \field{year}{2015}
+      \field{pages}{436\bibrangedash 444}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1038/nature14539
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/nature14539
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/nature14539
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
