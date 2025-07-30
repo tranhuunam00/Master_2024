@@ -1,31 +1,32 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
-[0] Config.pm:331> INFO - Logfile is 'main.blg'
-[151] biber-MSWIN64:342> INFO - === 
-[211] Biber.pm:421> INFO - Reading 'main.bcf'
-[364] Biber.pm:1002> INFO - Found 100 citekeys in bib section 0
-[385] Biber.pm:4487> INFO - Processing section 0
-[405] Biber.pm:4678> INFO - Looking for bibtex file 'refs.bib' for section 0
-[544] bibtex.pm:1713> INFO - LaTeX decoding ...
-[964] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
-[1791] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1792] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1793] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'vi-VN'
-[1938] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[2037] bbl.pm:779> INFO - Output to main.bbl
-[2038] Biber.pm:132> WARN - Duplicate entry key: 'yeo2022respiratory' in file 'refs.bib', skipping ...
-[2039] Biber.pm:132> WARN - legacy month field 'Jan' in entry 'Salari2025' is not an integer - this will probably not sort properly.
-[2039] Biber.pm:132> WARN - legacy month field 'Feb' in entry 'eckert2007csa' is not an integer - this will probably not sort properly.
-[2040] Biber.pm:132> WARN - legacy month field 'June' in entry 'frank2014positional' is not an integer - this will probably not sort properly.
-[2040] Biber.pm:132> WARN - legacy month field 'Jun' in entry 'mooe1996sleep' is not an integer - this will probably not sort properly.
-[2040] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_8Te6\8fe4c9854184545302f21ebf0d47516c_56812.utf8, line 646, warning: undefined macro "March"
-[2040] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_8Te6\8fe4c9854184545302f21ebf0d47516c_56812.utf8, line 785, warning: undefined macro "July"
-[2041] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_8Te6\8fe4c9854184545302f21ebf0d47516c_56812.utf8, line 792, warning: undefined macro "July"
-[2042] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_8Te6\8fe4c9854184545302f21ebf0d47516c_56812.utf8, line 816, warning: undefined macro "February"
-[2042] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_8Te6\8fe4c9854184545302f21ebf0d47516c_56812.utf8, line 867, warning: undefined macro "July"
-[2042] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_8Te6\8fe4c9854184545302f21ebf0d47516c_56812.utf8, line 875, warning: undefined macro "July"
-[2042] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_8Te6\8fe4c9854184545302f21ebf0d47516c_56812.utf8, line 882, warning: undefined macro "July"
-[2043] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_8Te6\8fe4c9854184545302f21ebf0d47516c_56812.utf8, line 957, warning: undefined macro "November"
-[2043] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_8Te6\8fe4c9854184545302f21ebf0d47516c_56812.utf8, line 963, warning: undefined macro "November"
-[2044] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_8Te6\8fe4c9854184545302f21ebf0d47516c_56812.utf8, line 978, warning: undefined macro "November"
-[2044] Biber.pm:132> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[2045] Biber.pm:134> INFO - WARNINGS: 16
+[1] Config.pm:331> INFO - Logfile is 'main.blg'
+[238] biber-MSWIN64:342> INFO - === 
+[300] Biber.pm:421> INFO - Reading 'main.bcf'
+[566] Biber.pm:1002> INFO - Found 100 citekeys in bib section 0
+[604] Biber.pm:4487> INFO - Processing section 0
+[634] Biber.pm:4678> INFO - Looking for bibtex file 'refs.bib' for section 0
+[737] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1044] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
+[2321] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2321] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2322] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'vi-VN'
+[2386] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[2460] bbl.pm:779> INFO - Output to main.bbl
+[2461] Biber.pm:132> WARN - Duplicate entry key: 'yeo2022respiratory' in file 'refs.bib', skipping ...
+[2463] Biber.pm:132> WARN - legacy month field 'Jan' in entry 'Salari2025' is not an integer - this will probably not sort properly.
+[2463] Biber.pm:132> WARN - legacy month field 'jan' in entry 'ThaySUCHildren' is not an integer - this will probably not sort properly.
+[2464] Biber.pm:132> WARN - legacy month field 'Feb' in entry 'eckert2007csa' is not an integer - this will probably not sort properly.
+[2464] Biber.pm:132> WARN - legacy month field 'June' in entry 'frank2014positional' is not an integer - this will probably not sort properly.
+[2464] Biber.pm:132> WARN - legacy month field 'Jun' in entry 'mooe1996sleep' is not an integer - this will probably not sort properly.
+[2464] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_iURd\8fe4c9854184545302f21ebf0d47516c_51956.utf8, line 646, warning: undefined macro "March"
+[2464] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_iURd\8fe4c9854184545302f21ebf0d47516c_51956.utf8, line 785, warning: undefined macro "July"
+[2465] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_iURd\8fe4c9854184545302f21ebf0d47516c_51956.utf8, line 792, warning: undefined macro "July"
+[2465] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_iURd\8fe4c9854184545302f21ebf0d47516c_51956.utf8, line 816, warning: undefined macro "February"
+[2466] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_iURd\8fe4c9854184545302f21ebf0d47516c_51956.utf8, line 867, warning: undefined macro "July"
+[2466] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_iURd\8fe4c9854184545302f21ebf0d47516c_51956.utf8, line 875, warning: undefined macro "July"
+[2466] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_iURd\8fe4c9854184545302f21ebf0d47516c_51956.utf8, line 882, warning: undefined macro "July"
+[2467] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_iURd\8fe4c9854184545302f21ebf0d47516c_51956.utf8, line 957, warning: undefined macro "November"
+[2467] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_iURd\8fe4c9854184545302f21ebf0d47516c_51956.utf8, line 963, warning: undefined macro "November"
+[2467] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_iURd\8fe4c9854184545302f21ebf0d47516c_51956.utf8, line 978, warning: undefined macro "November"
+[2468] Biber.pm:132> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[2468] Biber.pm:134> INFO - WARNINGS: 17

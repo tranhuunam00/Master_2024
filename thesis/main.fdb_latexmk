@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1753764193.73742 "main.bcf" "main.bbl" "main" 1753887556.69254 0
-  "main.bcf" 1753887556 121092 024ee28c80ffa863c023fca384806862 "pdflatex"
-  "refs.bib" 1753887216 60297 cde6c74a7351c8c8cb6094b4a4e9c40f ""
+["biber main"] 1753889387.21271 "main.bcf" "main.bbl" "main" 1753889391.80607 0
+  "main.bcf" 1753889364 121187 1d014d5c11bd0c870f23cb0a5e6c6391 "pdflatex"
+  "refs.bib" 1753889386 62001 55479e10ead7987e539ede0730328132 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1753887546.54862 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1753887556.69342 0
+["pdflatex"] 1753889355.00894 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1753889391.80686 0
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1753757792 170669 580f60f86b494b149fd13be17089526f ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1753283835 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1753323483 13254313 89e2afc147c36950f3366f1142cce13c ""
@@ -277,7 +277,7 @@
   "C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/tex/latex/xfor/xfor.sty" 1233849756 2689 44855b72da58344b1c1d9b3087bce6ca ""
   "C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" 1753887531 6212 2fa6176206ecfdc57bd7e2e857a733f9 ""
+  "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" 1753889325 6280 1fe3740e74b05ca9e7ccb8ee2c7df28a ""
   "chapters/0-coverpage.tex" 1753406985 10206 e4e77577430b92eb61ab7221615e8deb ""
   "chapters/1-introduction.tex" 1753610443 17748 6703c2bc6e8b36104acefe61fddf3cef ""
   "chapters/2-base-knowledge.tex" 1753689480 131042 c145ebe233b029a844b0c3aa89a6d5dc ""
@@ -328,14 +328,14 @@
   "images/svm_ovso.png" 1753256028 72431 1ef5c4cb9fa973e793d34d12b9ae827b ""
   "images/threshhold.jpg" 1753763678 122530 577a80c71af7bef4dd27e9f1f9e78b3c ""
   "images/thucnghiem.png" 1753256028 411269 f32107c69e826a62b7003a15ef6ffb29 ""
-  "main.aux" 1753887556 46857 e1af19515d60df7e0f10f15e61d768e3 "pdflatex"
-  "main.bbl" 1753764198 184360 f2eb9fe58a9d8fba6c69b1879b3da5bf "biber main"
-  "main.lof" 1753887556 6047 5640c32f538684bb695a4d49d737e62c "pdflatex"
-  "main.lot" 1753887556 1616 9b4b6c8fcbd2f592fae9c19110be6684 "pdflatex"
-  "main.out" 1753887556 9634 143a1e84ba11893ba88068db78be1d63 "pdflatex"
-  "main.run.xml" 1753887556 2268 f918a72198252e4ff2cbedb9e5121b21 "pdflatex"
-  "main.tex" 1753887531 6212 2fa6176206ecfdc57bd7e2e857a733f9 ""
-  "main.toc" 1753887556 4527 56ce6243c92e5a9cd75449585746a472 "pdflatex"
+  "main.aux" 1753889364 46857 7c04f43e783fed1ec35388c8a5a5728e "pdflatex"
+  "main.bbl" 1753889391 184277 a7df3731555653d30fa8f979c342e937 "biber main"
+  "main.lof" 1753889364 6047 5640c32f538684bb695a4d49d737e62c "pdflatex"
+  "main.lot" 1753889364 1616 9b4b6c8fcbd2f592fae9c19110be6684 "pdflatex"
+  "main.out" 1753889364 9634 143a1e84ba11893ba88068db78be1d63 "pdflatex"
+  "main.run.xml" 1753889364 2268 f918a72198252e4ff2cbedb9e5121b21 "pdflatex"
+  "main.tex" 1753889325 6280 1fe3740e74b05ca9e7ccb8ee2c7df28a ""
+  "main.toc" 1753889364 4527 56ce6243c92e5a9cd75449585746a472 "pdflatex"
   "setting/bkthesis.sty" 1753256024 967 af4f61477f3f023e14bc982890f87805 ""
   "src/glossaries.tex" 1753407326 777 adc527e2093778beb062eccbb5f56229 ""
   (generated)
