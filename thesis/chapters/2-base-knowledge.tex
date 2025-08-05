@@ -244,9 +244,12 @@ thu từ các dải piezoelectric đeo được, có thể được sử dụng 
 thuật toán SVM. Kết quả cho thấy khi kết hợp cả hai tín hiệu, độ chính xác phân loại đạt trung bình 81.8\%, 
 khẳng định tiềm năng ứng dụng của phương pháp này trong sàng lọc và theo dõi OSA tại nhà hoặc trong lâm sàng.
 
-Theo tìm hiểu của tác giả, thiết bị HST vẫn có cấu hình khá phức tạp với nhiều cảm biến và thao thác 
-cũng chưa hoàn toàn đơn giản, thêm vào đó giá trung bình của thiết bị vào khoảng 2300 USD làm hạn chế khả năng tiếp 
-cận của người sử dụng, đặc biệt là những người có thu nhập trung bình hoặc thấp \cite{hst_review}. 
+Tuy nhiên, một rào cản lớn cho việc triển khai HST trên diện rộng vẫn 
+nằm ở chi phí. Theo báo cáo tổng quan \cite{hst_review}, giá trung bình 
+của một thiết bị HST khoảng 2300 USD – vượt quá khả năng chi trả của đại 
+đa số bệnh nhân, đặc biệt ở các nước có thu nhập trung bình – thấp. 
+Do đó, việc tối ưu hóa chi phí, giảm số lượng cảm biến và đơn giản hóa 
+quy trình sử dụng vẫn là các mục tiêu cấp thiết.
 
 Hiện nay, đã có nhiều nghiên cứu và sản phẩm thương mại được phát triển nhằm mục đích theo dõi tư thế ngủ. 
 Trong đó, iSleePost là một hệ thống thiết bị đeo được phát triển bởi Po-Yuan Jeng 
@@ -283,18 +286,30 @@ bằng nhiều thuật toán học máy giám sát, trong đó các mô hình nh
 KNN và Linear SVM đạt độ chính xác nhận dạng tư thế lên tới 98,7\%. 
 
 
-Các nghiên cứu hiện nay đã phát triển nhiều hệ thống theo dõi tư thế ngủ với độ chính xác cao, sử dụng đa dạng nền tảng như thiết bị đeo tích hợp cảm biến gia tốc, PPG, ECG hoặc thảm cảm biến áp lực. Nhiều hệ thống đã chứng minh hiệu quả trong việc phân loại tư thế ngủ và ghi nhận các chỉ số sinh lý liên quan đến hội chứng ngưng thở khi ngủ tắc nghẽn (OSA).
+Các nghiên cứu hiện nay đã phát triển nhiều hệ thống theo dõi tư thế ngủ với độ chính xác cao, 
+sử dụng đa dạng nền tảng như thiết bị đeo tích hợp cảm biến gia tốc, 
+PPG, ECG hoặc thảm cảm biến áp lực. Nhiều hệ thống đã chứng minh 
+hiệu quả trong việc phân loại tư thế ngủ và ghi nhận các chỉ số 
+sinh lý liên quan đến hội chứng ngưng thở khi ngủ tắc nghẽn (OSA).
 
-Tuy nhiên, để đáp ứng yêu cầu triển khai thực tế tại nhà, các giải pháp cần được tiếp tục hoàn thiện theo hướng tối giản phần cứng, giảm số lượng cảm biến, đồng thời tối ưu mô hình học máy cho nền tảng tính toán giới hạn (TinyML). Việc xây dựng một quy trình thu thập và xử lý dữ liệu rõ ràng, có thể lặp lại, cũng đóng vai trò quan trọng trong việc đảm bảo tính ổn định và khả năng áp dụng rộng rãi.
+Tuy nhiên, để đáp ứng yêu cầu triển khai thực tế tại nhà, các giải pháp 
+cần được tiếp tục hoàn thiện theo hướng tối giản phần cứng, giảm số 
+lượng cảm biến, đồng thời tối ưu mô hình học máy cho nền tảng tính 
+toán giới hạn (TinyML). Việc xây dựng một quy trình thu thập và xử 
+lý dữ liệu rõ ràng, có thể lặp lại, cũng đóng vai trò quan trọng 
+trong việc đảm bảo tính ổn định và khả năng áp dụng rộng rãi.
 
-Bám sát định hướng này, luận văn đề xuất một hệ thống sử dụng duy nhất một cảm biến gia tốc dán dưới hõm ức để phát hiện các tư thế ngủ liên quan đến OSA. Trên cơ sở dữ liệu thu được, mô hình học máy nhẹ sẽ được xây dựng và tối ưu, hướng tới việc phát triển thiết bị IoT nhỏ gọn, chi phí thấp, có khả năng ước lượng chỉ số AHI – phục vụ cho sàng lọc và theo dõi OSA tại nhà một cách hiệu quả.
+Bám sát định hướng này, luận văn đề xuất một hệ thống sử dụng duy 
+nhất một cảm biến gia tốc dán dưới hõm ức để phát hiện các tư thế 
+ngủ liên quan đến OSA. Trên cơ sở dữ liệu thu được, mô hình học máy nhẹ sẽ được xây dựng và tối ưu, hướng tới việc phát triển thiết bị IoT nhỏ gọn, chi phí thấp, có khả năng ước lượng chỉ số AHI – phục vụ cho sàng lọc và theo dõi OSA tại nhà một cách hiệu quả.
 
 
 \section{Ứng dụng cảm biến gia tốc trong đánh giá tư thế ngủ của người mắc OSA tại nhà}
 
 Tư thế ngủ của con người thường được phân loại thành bốn nhóm chính: 
 nằm ngửa, nghiêng trái, nghiêng phải và nằm sấp (Hình~\ref{4_tuthe}) \cite{4_ngu}. 
-Việc phân biệt rõ ràng các tư thế này giúp nâng cao độ chính xác trong việc phân tích ảnh hưởng của 
+Việc phân biệt rõ ràng các tư thế này giúp nâng cao độ chính xác trong việc phân tích 
+ảnh hưởng của 
 tư thế đến các chỉ số sinh lý trong giấc ngủ.
 
 \begin{figure}
@@ -309,44 +324,51 @@ Việc theo dõi tư thế cơ thể đặc biệt hữu ích trong phát hiện
 và điều trị hội chứng ngưng thở khi ngủ phụ thuộc tư thế (positional OSA).
 Hiểu được mối quan hệ giữa tư thế ngủ và rối loạn hô hấp sẽ mở ra hướng điều trị cá thể hóa, 
 chẳng hạn như liệu pháp định hướng tư thế. 
-Việc tích hợp cảm biến đeo được như miếng dán, vòng tay hoặc 
-nhẫn thông minh không chỉ tăng sự tiện lợi khi theo dõi tại nhà mà còn cung cấp góc 
-nhìn toàn diện về hướng cơ thể và chuyển động hô hấp trong suốt thời gian ngủ. 
-Các đặc trưng như mức độ chuyển động khí quản và chu kỳ nỗ lực hô hấp 
-có thể được sử dụng để ước lượng mức độ nghiêm trọng của OSA, 
-từ đó hướng tới phát hiện chính xác hơn và quản lý cá nhân hóa cho từng bệnh nhân.
 
-Nhiều phương pháp kỹ thuật đã được phát triển nhằm ghi nhận và phân tích tư thế 
-ngủ một cách chính xác. Các hệ thống ghi hình sử dụng camera hồng ngoại có khả năng 
-thu thập toàn bộ quá trình ngủ trong điều kiện ánh sáng thấp, 
-trong khi đó, các cảm biến gia tốc ba trục (triaxial accelerometers) 
-cho phép nhận diện sự thay đổi tư thế dựa trên dao động và gia tốc của cơ thể. 
-Bên cạnh đó, các thiết bị tích hợp cảm biến áp suất cung cấp thông tin về 
-sự phân bố trọng lực và áp lực tiếp xúc, từ đó suy luận tư thế ngủ một cách gián tiếp 
-nhưng hiệu quả. Những hệ thống tiên tiến hơn còn kết hợp đa cảm biến và 
-tích hợp nhiều phương pháp đồng thời, nhằm nâng cao độ tin cậy, 
-tính định lượng và khả năng ứng dụng trong cả môi trường lâm sàng lẫn tại nhà. 
-Theo S. Akbarian và đồng các tác giả đã đề cập đến phương pháp giám sát tư 
-thế ngủ bằng máy ảnh hồng ngoại kết hợp với công nghệ học sâu (Deep learning) 
-\cite{Akbarian_osa} có kết quả tốt nhưng có khó khăn để xác định các góc các khác nhau của khuôn mặt. 
-Còn theo A. Channa, M. Yousuf và N. Popescu đã sử dụng cảm biến áp suất được gắn dưới đệm để theo dõi 
-thư thế ngủ với 2048 điểm cảm biến \cite{Channa_osa}. 
-Trong đó cảm biến gia tốc 3 trục được đánh giá là phương pháp hiệu quả, 
-tiết kiệm chi phí và độ chính xác cao. Jeng PY và đồng nghiệp đã thực hiện phát 
-triển chế tạo thiết bị đeo tay sử dụng cảm biến gia tốc kết hợp với 
-thiết bị ở ngực để lấy nhãn cho dữ liệu. Các phương pháp học máy truyền thống 
-được sử dụng với độ chính xác đánh giá 4 tư thế khi ngủ trên 85\% \cite{Jeng}.
-Trong \cite{ji2022airline}, Ji et al. và cộng sự phát triển một dây đeo ngực 
-tích hợp vào dây an toàn máy bay nhằm theo dõi giấc ngủ và sức khỏe 
-hành khách. Hệ thống kết hợp cảm biến ECG mềm, dải đai áp điện và 
-cảm biến gia tốc 3 trục để ghi nhận ECG, hô hấp và tư thế cơ thể. 
-Việc tiếp xúc da là cần thiết để đảm bảo thu nhận chính xác các tín 
-hiệu sinh lý.
+Trong bối cảnh đó, cảm biến gia tốc ba trục (triaxial accelerometers) 
+nổi lên như một công cụ đầy hứa hẹn nhờ vào đặc tính đo lường trực tiếp 
+chuyển động và hướng trọng lực của cơ thể. So với các phương pháp truyền 
+thống như ghi hình hồng ngoại, cảm biến áp suất hay hệ thống camera 
+đa góc, gia tốc kế mang lại ưu thế về kích thước, mức độ xâm nhập, 
+khả năng tiêu thụ năng lượng thấp và đặc biệt là chi phí triển khai 
+hợp lý – các yếu tố quyết định khi xét đến ứng dụng tại nhà trên 
+quy mô lớn.
 
-Cách đặt và vị trí đặt cảm biến ảnh hướng rất lớn đến chất lượng, độ chính xác của phép đo. 
-Theo đó vị trí xương ức cổ được xem là vị trí có thể thu được tín hiệu chính xác để đặt 
-đơn cảm biến \cite{Zhang_osa}. Việc sử dụng nhiều cảm biến ở những vị trí khác như cổ tay, trán, … 
-sẽ có thêm nhiều dữ liệu hữu ích để phân tích, đánh giá. 
+Các hệ thống ghi hình sử dụng camera hồng ngoại có khả năng ghi nhận toàn bộ hoạt động của 
+cơ thể trong điều kiện ánh sáng yếu, và có thể kết hợp với học sâu để 
+phân loại tư thế ngủ một cách chính xác. Tuy nhiên, phương pháp này 
+đòi hỏi không gian phòng ngủ cố định, điều kiện lắp đặt tối ưu, 
+và đặt ra các thách thức về quyền riêng tư \cite{Akbarian_osa}. 
+Việc tái tạo các góc khuôn mặt hoặc cơ thể khi bị chăn/mền che 
+khuất cũng làm giảm hiệu quả hệ thống.
+Trong khi đó, cảm biến áp suất bố trí dưới đệm có thể ghi nhận phân bố 
+trọng lực và áp lực tiếp xúc, từ đó gián tiếp suy đoán tư thế. 
+Channa và cộng sự \cite{Channa_osa} sử dụng tới 2048 điểm cảm biến để 
+tăng cường độ phân giải, cho phép phân biệt chính xác các tư thế cơ bản. 
+Tuy nhiên, nhược điểm của phương pháp này nằm ở tính cố định 
+(không đeo được), chi phí lắp đặt cao và không phù hợp cho người hay 
+di chuyển nơi ngủ hoặc sinh sống trong điều kiện không gian hạn chế.
+
+Trái lại, cảm biến gia tốc mang tính linh hoạt cao. 
+Thiết bị có thể đeo trực tiếp lên cơ thể (dạng vòng tay, miếng dán, 
+đai ngực) hoặc tích hợp vào các vật dụng quen thuộc như điện thoại 
+di động \cite{sun2017sleepmonitor, Natale_osa}. 
+Thiết kế này vừa đảm bảo tính di động, vừa cho phép giám sát liên tục 
+với mức độ can thiệp tối thiểu.
+
+Từ góc độ học thuật, các nghiên cứu gần đây đã xác nhận hiệu quả của 
+cảm biến gia tốc trong phân loại tư thế ngủ. Jeng và công sự \cite{Jeng} 
+sử dụng thiết bị đeo tay kết hợp cảm biến ngực để huấn luyện mô hình 
+học máy đạt độ chính xác trên 85\%. Zhang và cộng sự \cite{Zhang_osa} 
+chỉ sử dụng một cảm biến tại vị trí xương ức đã có thể phân biệt 
+chính xác các tư thế phổ biến. Đặc biệt, việc chọn vị trí gắn cảm biến 
+là yếu tố then chốt. Các vị trí như cổ tay hay trán thường chịu nhiều 
+chuyển động ngoại ý và lệch trục so với thân người, làm giảm tính đại 
+diện của tín hiệu. Vùng xương ức, cụ thể là ngay dưới hõm cổ 
+(suprasternal notch), được xem là vị trí lý tưởng do sự ổn định 
+hình học và gần đường trung trục cơ thể, từ đó phản ánh đúng hướng 
+trọng lực – nền tảng để suy luận tư thế một cách chính xác.
+
 Ngoài ra, hiện nay với sự phát triển vượt bậc của điện thoại di động, 
 việc tận dụng cảm biến gia tốc 
 ở ngay trên chính chiếc điện thoại cũng là giải pháp hữu hiệu \cite{sun2017sleepmonitor}. 
@@ -373,22 +395,44 @@ lâu cũng có gây những ảnh hưởng nhất định đến người dùng.
 		\label{position_sensor}
 \end{figure}
 
-Trong khuôn khổ luận văn, tác giả đề xuất thiết kế một thiết bị đeo 
-tiếp xúc sử dụng cảm biến gia tốc được đặt tại vị trí xương ức cổ 
-nhằm theo dõi và phân tích tư thế ngủ của người dùng. 
-Vị trí này được lựa chọn không chỉ do tính ổn định trong 
-quá trình ngủ mà còn thuận lợi để tích hợp thêm các cảm biến 
-khác như cảm biến âm thanh và cảm biến nhiệt độ – phục vụ cho các mục tiêu nghiên 
-cứu mở rộng của nhóm. Tín hiệu từ cảm biến gia tốc sẽ được 
-thu thập dưới dạng ba trục không gian (x, y, z), phản ánh chuyển động và 
-hướng trọng lực tương ứng với tư thế cơ thể trong suốt thời gian ngủ. 
-Sau quá trình thu thập, dữ liệu gia tốc sẽ được xử lý sơ cấp bao gồm hiệu chỉnh, 
-lọc nhiễu, và chuẩn hóa nhằm đảm bảo tính chính xác và đồng nhất giữa các mẫu đo. 
-Tiếp theo, các đặc trưng định lượng (features) trong miền thời gian 
-sẽ được trích xuất để phục vụ cho bài toán phân loại tư thế ngủ (ngửa, nghiêng trái, nghiêng phải, sấp). 
-Các đặc trưng này cùng với dữ liệu gốc sẽ được lưu trữ trong hệ thống để phục vụ cho các bước phân tích tiếp theo, 
-bao gồm huấn luyện mô hình học máy hoặc tích hợp với các chỉ số sinh lý khác trong đánh giá rối loạn giấc ngủ, 
-đặc biệt là hội chứng ngưng thở khi ngủ (OSA) Hình~\ref{position_sensor}.
+Ưu điểm nổi bật nhất của cảm biến gia tốc là khả năng hoạt động độc lập 
+với mức tiêu thụ điện năng thấp, dễ dàng tích hợp vào hệ thống vi điều 
+khiển nhúng như nRF52, ESP32, hoặc STM32 để xây dựng thiết bị đeo có khả 
+năng xử lý cục bộ (on-device) – phù hợp với định hướng TinyML. 
+Ngoài ra, cảm biến gia tốc không yêu cầu điều kiện môi trường đặc 
+biệt như ánh sáng hay bề mặt phẳng, đồng thời không ảnh hưởng đến 
+quyền riêng tư như hệ thống camera.
+
+
+Tuy nhiên, giới hạn của cảm biến gia tốc là việc nhận diện tư thế phụ 
+thuộc mạnh vào vị trí gắn cảm biến. Một cảm biến đặt sai vị trí hoặc 
+xoay lệch trục có thể làm sai lệch hoàn toàn kết quả phân loại. 
+Hơn nữa, gia tốc kế không cung cấp thông tin về các chỉ số sinh lý 
+như $\mathrm{SpO_2}$, nhịp thở hay nhịp tim, vì vậy để chẩn đoán toàn diện OSA, 
+cần tích hợp thêm các cảm biến khác hoặc kết hợp với các mô hình 
+suy luận (inference models) để bù đắp cho thiếu sót này.
+
+Xuất phát từ các phân tích nêu trên, nghiên cứu này lựa chọn thiết 
+kế một thiết bị đeo tiếp xúc sử dụng cảm biến gia tốc ba trục, 
+được gắn tại vùng xương ức (suprasternal notch). 
+Việc lựa chọn vị trí và cấu trúc thiết bị được cân nhắc dựa trên 
+các yếu tố sau Hình~\ref{position_sensor}:
+
+\begin{enumerate}
+    \item Vị trí xương ức có độ ổn định cao trong suốt quá trình ngủ, 
+		hạn chế dịch chuyển ngoài ý muốn, từ đó đảm bảo tính nhất quán của 
+		dữ liệu thu nhận.
+    \item Vị trí này phản ánh chính xác hướng trọng lực của cơ thể, 
+		giúp tăng độ chính xác trong phân loại tư thế ngủ dựa trên gia 
+		tốc ba trục (x, y, z).
+    \item Cấu trúc gắn tại xương ức thuận lợi cho việc tích hợp thêm 
+		các cảm biến khác như cảm biến âm thanh (microphone) hoặc cảm biến 
+		nhiệt độ, phục vụ cho các mục tiêu mở rộng trong các nghiên cứu 
+		tiếp theo.
+\end{enumerate}
+
+
+\subsection*{Cảm biến gia tốc và nguyên lý ứng dụng trong theo dõi tư thế ngủ}
 
 Cảm biến gia tốc là một thiết bị đo lường có khả năng phát hiện 
 và ghi nhận gia tốc – tức là sự thay đổi vận tốc theo thời gian – 
@@ -397,6 +441,14 @@ Với ưu điểm nhỏ gọn, tiêu thụ năng lượng thấp và chi phí h�
 cảm biến gia tốc được ứng dụng rộng rãi trong nhiều lĩnh vực 
 như điện tử tiêu dùng, ô tô, công nghiệp, và đặc biệt là y học, 
 trong các thiết bị theo dõi hoạt động và giấc ngủ.
+
+Tuy nhiên, giới hạn của cảm biến gia tốc là việc nhận diện tư thế phụ 
+thuộc mạnh vào vị trí gắn cảm biến. Một cảm biến đặt sai vị trí hoặc 
+xoay lệch trục có thể làm sai lệch hoàn toàn kết quả phân loại. 
+Hơn nữa, gia tốc kế không cung cấp thông tin về các chỉ số sinh lý 
+như $\mathrm{SpO_2}$, nhịp thở hay nhịp tim, vì vậy để chẩn đoán toàn diện OSA, 
+cần tích hợp thêm các cảm biến khác hoặc kết hợp với các mô hình 
+suy luận (inference models) để bù đắp cho thiếu sót này.
 
 Nguyên lý hoạt động của cảm biến gia tốc dựa trên 
 \textbf{Định luật II Newton}:
@@ -407,10 +459,50 @@ F = ma
 
 Trong đó, $F$ là lực tác động lên một khối lượng $m$, tạo ra gia tốc $a$. Trong cấu trúc vi cơ điện tử (MEMS) của cảm biến gia tốc, một khối lượng nhỏ được treo bằng các thanh đàn hồi. Khi cảm biến chịu tác động gia tốc, khối lượng này dịch chuyển, gây ra sự thay đổi về đặc tính điện, chẳng hạn như: 01) thay đổi điện dung trong cảm biến kiểu điện dung (capacitive type); 02) thay đổi điện tích do hiệu ứng áp điện trong cảm biến kiểu áp điện (piezoelectric type); và 03) thay đổi điện áp trong các cảm biến điện trở áp (piezoresistive type).
 
-Tín hiệu điện sinh ra từ quá trình này được khuếch đại và số hóa để xử lý trong các ứng dụng khác nhau. Chính khả năng chuyển đổi giữa năng lượng cơ học và điện học giúp cảm biến gia tốc hoạt động hiệu quả trong việc ghi nhận các trạng thái động học của vật thể, bao gồm: 01) dịch chuyển tuyến tính (linear movement), 02) góc nghiêng (tilt), 03) rung động (vibration), và 04) va chạm (shock) hoặc rơi tự do (free fall).
+Cấu trúc của cảm biến gia tốc MEMS bao gồm một khối lượng vi mô được 
+gắn với hệ thống lò xo vi cơ. Khi có gia tốc tác động, 
+khối lượng này dịch chuyển so với vị trí cân bằng ban đầu, 
+gây ra sự biến dạng trong hệ lò xo. 
+Theo định luật Hooke, lực đàn hồi sinh ra bởi sự biến dạng này 
+được xác định bởi:
 
-Trong lĩnh vực y sinh, đặc biệt là trong nghiên cứu về giấc ngủ và ngưng thở khi ngủ (OSA), cảm biến gia tốc được sử dụng để: 01) theo dõi tư thế ngủ (supine, prone, lateral); 02) ghi nhận chu kỳ chuyển động hô hấp; và 03) phát hiện dao động vùng khí quản nhằm xác định sự kiện ngưng thở hoặc giảm thở.
+\begin{equation}
+F = k \cdot \Delta l
+\end{equation}
 
+kết hợp với phương trình Newton ta thu được:
+
+\begin{equation}
+a = \frac{k \cdot \Delta l}{m}
+\end{equation}
+
+Điều này cho thấy: gia tốc có thể được xác định gián tiếp thông qua 
+độ biến dạng $\Delta l$ của phần tử đàn hồi – yếu tố có thể đo được 
+bằng các cảm biến vật lý (điện dung, áp điện, áp điện trở). 
+Đây là cơ sở vật lý cho toàn bộ hoạt động của các cảm biến gia 
+tốc hiện đại.
+
+Tín hiệu điện sinh ra từ quá trình này được khuếch đại và số hóa để xử lý trong các 
+ứng dụng khác nhau. Chính khả năng chuyển đổi giữa năng lượng 
+cơ học và điện học giúp cảm biến gia tốc hoạt động hiệu quả 
+trong việc ghi nhận các trạng thái động học của vật thể, 
+bao gồm: 01) dịch chuyển tuyến tính (linear movement), 
+02) góc nghiêng (tilt), 03) rung động (vibration), 
+và 04) va chạm (shock) hoặc rơi tự do (free fall).
+Trong lĩnh vực y sinh, đặc biệt là trong nghiên cứu giấc ngủ và 
+hội chứng ngưng thở khi ngủ (OSA), cảm biến gia tốc không chỉ 
+giúp xác định tư thế ngủ (supine, prone, lateral) mà còn 
+ghi nhận các dao động nhỏ trong lồng ngực do hô hấp – 
+yếu tố gián tiếp giúp phát hiện bất thường hô hấp như 
+hypopnea hoặc apnea.
+
+Một điểm đặc biệt trong ứng dụng là \textbf{hệ trục tọa độ trong cảm biến}. 
+Khi cảm biến được gắn trên cơ thể, trục $z$ thường hướng vuông góc 
+với mặt phẳng ngang và sẽ ghi nhận gia tốc trọng trường. 
+Ở trạng thái tĩnh, trục $z$ đo được giá trị gần bằng $g = 9.81, 
+\mathrm{m/s^2}$. Điều này không chỉ giúp hiệu chuẩn cảm biến mà 
+còn cung cấp thông tin định hướng không gian – yếu tố thiết yếu 
+để phân biệt các tư thế ngủ dựa trên định hướng của trục trọng lực.
 Nhờ khả năng tích hợp dễ dàng vào các thiết bị đeo (vòng tay, miếng dán, nhẫn), cảm biến gia tốc trở thành thành phần cốt lõi trong các hệ thống theo dõi không xâm lấn, hỗ trợ hiệu quả cho việc sàng lọc và đánh giá OSA tại nhà hoặc trong môi trường lâm sàng.
 \begin{figure}[!ht]
 		\centering
@@ -421,13 +513,12 @@ Nhờ khả năng tích hợp dễ dàng vào các thiết bị đeo (vòng tay,
 		\label{acce}
 \end{figure}
 
-Như minh họa trong Hình~\ref{acce}, khi cảm biến gia tốc chịu tác động từ một chuyển động, khối gia trọng (proof mass) sẽ dịch chuyển, làm lò xo kết nối bị biến dạng. Sự biến dạng này tạo ra một lực đàn hồi theo định luật Hooke, tỷ lệ thuận với độ giãn của lò xo. Áp dụng định luật II Newton, ta có mối quan hệ giữa lực, khối lượng và gia tốc như sau:
+Như minh họa trong Hình~\ref{acce}, khi cảm biến gia tốc chịu tác động từ 
+một chuyển động, khối gia trọng (proof mass) sẽ dịch chuyển, 
+làm lò xo kết nối bị biến dạng. 
 
-\begin{equation} F = m \cdot a \Rightarrow a = \frac{k \cdot \Delta l}{m} \end{equation}
 
-Trong đó: \begin{itemize} \item $F$ là lực đàn hồi tác dụng lên khối gia trọng (N) \item $m$ là khối lượng của khối gia trọng (kg) \item $k$ là hệ số đàn hồi của lò xo (N/m) \item $\Delta l$ là độ biến dạng (thay đổi chiều dài) của lò xo (m) \end{itemize}
 
-Phương trình trên cho thấy gia tốc có thể được tính toán gián tiếp thông qua độ biến dạng của lò xo, từ đó cho phép cảm biến gia tốc chuyển đổi dao động cơ học thành tín hiệu điện phục vụ cho việc đo đạc và phân tích chuyển động. Trong hệ tọa độ của cảm biến gia tốc ba trục, trục z thường nằm theo phương vuông góc với mặt phẳng ngang và sẽ chịu thêm tác dụng của trọng lực. Do đó, ở trạng thái cân bằng (khi thiết bị đứng yên và không có chuyển động nào khác), giá trị gia tốc đo được tại trục z sẽ xấp xỉ bằng gia tốc trọng trường $g$ (khoảng 9.81 m/s²). Đặc điểm này có thể được khai thác trong việc hiệu chuẩn cảm biến cũng như xác định tư thế không gian tương đối của thiết bị.
 
 Trong khuôn khổ luận văn này, tác giả tập trung tìm hiểu và ứng dụng 
 cảm biến gia tốc được chế tạo dựa trên công nghệ vi cơ điện tử (Micro-Electro-Mechanical Systems – MEMS). 
@@ -440,110 +531,128 @@ qua đó giảm thiểu thể tích chiếm dụng, tiết kiệm chi phí sản
 cho các ứng dụng trong thiết bị đeo cá nhân, điện thoại di động, và các 
 hệ thống theo dõi sức khỏe thế hệ mới.
 
+Dựa trên nguyên lý chuyển đổi dao động cơ học thành tín hiệu điện, cảm biến gia tốc MEMS được chia thành ba loại chính, mỗi loại ứng dụng một cơ chế vật lý riêng biệt \cite{Acce, cambien}:
 
-Dựa trên nguyên lý hoạt động, cảm biến gia tốc MEMS hiện được phân thành ba loại chính, mỗi loại ứng dụng một cơ chế vật lý khác nhau để chuyển đổi dao động cơ học thành tín hiệu điện \cite{Acce}\cite{cambien}.
+\begin{enumerate}
+    \item \textbf{Cảm biến gia tốc kiểu điện dung (Capacitive Accelerometers)}:
+    
+    Đây là loại cảm biến phổ biến nhất trong các thiết bị điện tử tiêu dùng như điện thoại thông minh, vòng đeo tay sức khỏe và các hệ thống theo dõi chuyển động đeo được. Nguyên lý hoạt động của cảm biến dựa trên sự thay đổi điện dung giữa các bản cực trong cấu trúc tụ điện khi khối gia trọng (\textit{proof mass}) dịch chuyển dưới tác động của gia tốc.
 
-Hiện nay, cảm biến gia tốc MEMS được chia thành ba loại chính dựa trên nguyên lý hoạt động. 01) Cảm biến gia tốc dựa trên hiệu ứng điện dung (Capacitive accelerometers): 
-Đây là loại cảm biến phổ biến nhất trong các thiết bị điện tử tiêu dùng như điện thoại thông minh 
-và thiết bị đeo. Nguyên lý hoạt động dựa trên sự thay đổi điện dung giữa 
-các bản cực khi khối gia trọng dịch chuyển dưới tác dụng của gia tốc. 
-Sự thay đổi này được chuyển đổi thành tín hiệu điện tỷ lệ với mức gia tốc tác động. 
-02) Cảm biến gia tốc dựa trên hiệu ứng áp điện trở (Piezoresistive accelerometers): 
-Trong loại cảm biến này, ứng suất cơ học tác động lên vật liệu bán dẫn 
-sẽ làm thay đổi điện trở của nó – hiện tượng gọi là hiệu ứng áp điện 
-trở. Đặc tính tuyến tính giữa lực và điện trở giúp loại cảm biến này 
-hoạt động ổn định trong môi trường có điều kiện khắc nghiệt, đặc biệt là 
-nhiệt độ cao. 03) Cảm biến gia tốc dựa trên hiệu ứng áp điện 
-(Piezoelectric accelerometers): Loại cảm biến này dựa trên khả năng 
-sinh điện tích của các tinh thể áp điện khi bị nén hoặc kéo. Điện tích 
-sinh ra tỷ lệ với lực tác động, cho phép ghi nhận các dao động cơ học 
-có tần số cao. Cảm biến áp điện thường được sử dụng trong các ứng dụng 
-yêu cầu đo rung động chính xác.
+    Khi có gia tốc tác động, khối lượng vi mô được treo bằng hệ lò xo vi cơ (MEMS spring system) sẽ dịch chuyển, làm thay đổi khoảng cách giữa các bản cực. Biến thiên điện dung này được ghi nhận thông qua mạch đo điện dung nhạy, sau đó được khuếch đại và chuyển đổi thành tín hiệu điện tỷ lệ với gia tốc. Ưu điểm chính bao gồm: độ nhạy cao ở vùng tần số thấp, kích thước nhỏ, tiêu thụ năng lượng thấp và khả năng tích hợp tốt vào các hệ thống nhúng. Loại cảm biến này đặc biệt phù hợp với các ứng dụng theo dõi tư thế và chuyển động chậm.
 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{images/diendung.png}
+        \vspace*{-7mm}
+        \caption{Cấu trúc cảm biến gia tốc điện dung}
+        \label{acce_mems}
+    \end{figure}
 
+    \item \textbf{Cảm biến gia tốc kiểu áp điện trở (Piezoresistive Accelerometers)}:
+    
+    Loại cảm biến này hoạt động dựa trên hiện tượng thay đổi điện trở của vật liệu bán dẫn khi chịu ứng suất cơ học – còn gọi là hiệu ứng áp điện trở. Các phần tử cảm biến thường được gắn trực tiếp lên thanh dầm (cantilever) nối với khối gia trọng. Khi có gia tốc, sự biến dạng cơ học của thanh dầm làm thay đổi điện trở của phần tử cảm biến.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{images/diendung.png}
-	\vspace*{-7mm}
-	\caption{Cấu trúc cảm biến gia tốc điện dung}
-	\label{acce_mems}
-\end{figure}
+    Để tăng độ nhạy và khả năng khuếch đại tín hiệu, cấu trúc cảm biến thường được tích hợp trong mạch cầu Wheatstone, giúp tăng cường tỷ số tín hiệu trên nhiễu (Signal-to-Noise Ratio – SNR).
 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{images/acce_aptro.png}
+        \vspace*{-7mm}
+        \caption{Cấu trúc cảm biến áp điện trở}
+        \label{acce_aptro}
+    \end{figure}
 
+    Ưu điểm chính của cảm biến áp điện trở là khả năng hoạt động 
+		ổn định trong môi trường nhiệt độ cao hoặc điều kiện công nghiệp khắc nghiệt. 
+		Tuy nhiên, chúng tiêu thụ nhiều năng lượng hơn và kém nhạy hơn 
+		với chuyển động biên độ nhỏ, do đó ít phù hợp với các ứng dụng 
+		theo dõi sinh lý học dài hạn như tư thế ngủ.
 
+    \item \textbf{Cảm biến gia tốc kiểu áp điện (Piezoelectric Accelerometers)}:
+    
+    Dựa trên hiệu ứng áp điện, cảm biến kiểu này sử dụng các vật liệu như thạch anh hoặc gốm sứ có khả năng tạo ra điện tích khi bị biến dạng (nén hoặc kéo). Lượng điện tích sinh ra tỉ lệ thuận với lực cơ học tác động lên cảm biến.
 
-\textbf{Cảm biến gia tốc kiểu điện dung (Capacitive Accelerometers)}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{images/acce_apdien.png}
+        \vspace*{-7mm}
+        \caption{Cấu trúc cảm biến áp điện}
+        \label{acce_apdien}
+    \end{figure}
 
-\textit{Nguyên lý hoạt động}: Cảm biến gia tốc kiểu điện dung hoạt động dựa trên nguyên lý biến thiên điện dung giữa các bản cực trong cấu trúc tụ điện khi chịu tác động bởi gia tốc. Cấu hình cơ bản của cảm biến bao gồm một khối lượng vi mô (proof mass) được treo bằng hệ thống lò xo vi cơ (MEMS spring system), trong đó một đầu được cố định và đầu còn lại liên kết với bản cực di động của tụ điện. Khi có gia tốc tác động theo một phương nhất định, khối lượng này sẽ lệch khỏi vị trí cân bằng, làm thay đổi khoảng cách giữa các bản cực và kéo theo sự biến đổi điện dung. Biến thiên này được phát hiện thông qua mạch đo nhạy điện dung, sau đó được chuyển đổi thành tín hiệu điện tử tỷ lệ với độ lớn của gia tốc. 
-Quá trình này cho phép cảm biến ghi nhận gia tốc theo thời gian 
-thực với độ chính xác cao và độ nhiễu thấp. Hình~\ref{acce_mems} minh họa nguyên lý dịch chuyển khối lượng và sự thay đổi điện dung trong cấu trúc cảm biến gia tốc MEMS kiểu điện dung.
+    Cảm biến kiểu áp điện có ưu điểm nổi bật là khối lượng nhẹ, 
+		tốc độ phản hồi nhanh, và dải tần hoạt động rất rộng 
+		(có thể lên tới hàng MHz). Chúng thường được ứng dụng trong đo 
+		rung động chính xác, giám sát kết cấu, và phân tích chấn động 
+		ngắn hạn trong môi trường khắc nghiệt.
 
-
-\begin{figure} [!]
-		\centering
- 		\includegraphics[width=\textwidth]{images/acce_aptro.png}
- 		\vspace*{-7mm}
-		\caption{Cấu trúc cảm biến áp trở}
-		\label{acce_aptro}
-  \FloatBarrier
-\end{figure}
-
-\textbf{Cảm biến gia tốc kiểu áp điện trở (Piezoresistive Accelerometers)}
-
-\textit{Nguyên lý hoạt động}: Cảm biến gia tốc kiểu áp điện trở hoạt động dựa trên hiện tượng thay đổi điện trở của các phần tử nhạy cảm khi chịu ứng suất cơ học. Trong cấu hình tiêu chuẩn, các phần tử áp điện trở được gắn trực tiếp lên thanh dầm (cantilever) liên kết với một khối gia trọng được treo trong vùng đo. Khi có gia tốc tác động lên hệ thống, lực quán tính gây ra sự biến dạng cơ học của thanh dầm, từ đó làm thay đổi điện trở của các phần tử cảm biến. Để tăng độ chính xác và khuếch đại tín hiệu, cấu hình cảm biến thường được tích hợp trong một mạch cầu Wheatstone, giúp tối đa hóa độ nhạy và cải thiện tỷ số tín hiệu trên nhiễu (Signal-to-Noise Ratio – SNR) của phép đo (xem Hình~\ref{acce_aptro}).
-
-Cảm biến áp điện trở có ưu điểm nổi bật trong việc ghi nhận các biến đổi gia tốc chậm và có thể hoạt động hiệu quả trong một dải đo rộng. Nhờ đó, loại cảm biến này đặc biệt phù hợp cho các ứng dụng cần đo dao động có biên độ hoặc tần số lớn, chẳng hạn như trong thử nghiệm va chạm, đo động học kết cấu, hoặc môi trường công nghiệp có điều kiện phức tạp. Ngoài ra, cảm biến cũng thể hiện khả năng ổn định tốt trước các dao động nhiệt của môi trường xung quanh.
-
-Tuy nhiên, hạn chế chính của cảm biến kiểu áp điện trở nằm ở độ nhạy tương đối thấp khi đo các tín hiệu yếu hoặc biên độ dao động nhỏ. Điều này có thể làm giảm độ chính xác trong các ứng dụng yêu cầu độ phân giải cao. Bên cạnh đó, chi phí chế tạo và triển khai cảm biến áp điện trở thường cao hơn so với các cảm biến điện dung MEMS, khiến việc tích hợp vào các hệ thống nhúng hoặc thiết bị tiêu dùng gặp nhiều giới hạn về mặt kinh tế.
-
-\begin{figure} [!]
-		\centering
- 		\includegraphics[width=\textwidth]{images/acce_apdien.png}
- 		\vspace*{-7mm}
-		\caption{Cấu trúc cảm biến áp điện}
-		\label{acce_apdien}
-  \FloatBarrier
-\end{figure}
-
-\textbf{Cảm biến gia tốc kiểu áp điện (Piezoelectric Accelerometers)}
-
-\textit{Nguyên lý hoạt động}:Cảm biến gia tốc kiểu áp điện hoạt động dựa trên hiệu ứng áp điện của một số vật liệu đặc biệt như gốm sứ hoặc thạch anh. Khi các vật liệu này chịu ứng suất cơ học, chúng sẽ bị biến dạng và tạo ra điện thế trên bề mặt. Lượng điện tích sinh ra có độ lớn tỉ lệ thuận với lực tác động lên cảm biến, trong khi cực tính phụ thuộc vào hướng của lực. Một trong những ưu điểm nổi bật của cảm biến áp điện so với các loại cảm biến gia tốc khác là khối lượng nhẹ và khả năng đáp ứng tần số rất cao, có thể đạt đến mức hàng megahertz. Nhờ đó, cảm biến áp điện đặc biệt phù hợp cho các ứng dụng yêu cầu đo dao động nhanh, ngắn hạn trong môi trường khắc nghiệt hoặc cần độ chính xác cao về thời gian và tần số.
-
-Tuy nhiên, cảm biến kiểu áp điện có trở kháng đầu ra rất cao và chỉ tạo ra điện áp nhỏ, điều này khiến tín hiệu dễ bị suy giảm hoặc nhiễu nếu không được xử lý đúng cách. Để đảm bảo chất lượng tín hiệu và giảm thiểu sai số do tải (loading error), hệ thống đo thường được tích hợp thêm các bộ khuếch đại chuyển đổi trở kháng chuyên dụng, chẳng hạn như bộ khuếch đại điện tích (charge amplifier) (xem Hình~\ref{acce_apdien}).
+		Tuy cảm biến áp điện có độ nhạy cao với rung động nhanh và 
+		tần số cao, nhưng chúng không phù hợp để đo gia tốc tĩnh hoặc 
+		chuyển động chậm kéo dài – vốn là đặc trưng của bài toán theo 
+		dõi tư thế ngủ. Nguyên nhân là vì cảm biến này không phản hồi với 
+		lực không đổi như trọng lực, do điện tích tạo ra bị rò dần 
+		theo thời gian. Bên cạnh đó, tín hiệu đầu ra có trở kháng rất cao, 
+		dễ suy hao, đòi hỏi bộ khuếch đại điện tích chuyên dụng, 
+		làm tăng độ phức tạp, kích thước và tiêu thụ năng lượng của 
+		hệ thống. Những yếu tố này khiến cảm biến áp điện không phù hợp để tích hợp vào thiết bị đeo cá nhân dùng trong theo dõi OSA tại nhà.
+\end{enumerate}
 
 
+Trong khuôn khổ luận văn này, cảm biến gia tốc MEMS kiểu điện dung được 
+lựa chọn làm phần tử cảm biến trung tâm cho hệ thống theo dõi tư thế 
+ngủ kéo dài, trên cơ sở đánh giá đa chiều cả về đặc trưng tín hiệu, 
+yêu cầu hệ thống, lẫn khả năng triển khai thực tế.
 
-Trong khuôn khổ luận văn này, cảm biến gia tốc MEMS kiểu điện dung được lựa chọn vì có độ nhạy cao với chuyển động chậm và biên độ nhỏ – đặc trưng của thay đổi tư thế khi ngủ. Loại cảm biến này có kích thước nhỏ, tiêu thụ điện năng thấp, dễ tích hợp vào thiết bị đeo và cho tín hiệu ổn định trong theo dõi dài hạn. So với các loại cảm biến khác, điện dung MEMS có chi phí hợp lý, phù hợp với yêu cầu kỹ thuật và tính khả thi triển khai trong hệ thống theo dõi tư thế ngủ.
+Thứ nhất, từ góc độ \textit{đặc trưng tín hiệu}, bài toán nhận diện tư 
+thế ngủ yêu cầu hệ thống có khả năng ghi nhận chính xác các chuyển động 
+biên độ nhỏ, xảy ra chậm rãi trong thời gian dài (ví dụ như quá trình 
+xoay người khi ngủ hoặc chuyển từ nằm ngửa sang nghiêng). 
+Đây là điều kiện lý tưởng cho cảm biến điện dung MEMS – 
+vốn có độ nhạy cao trong vùng tần số thấp (DC đến vài chục Hz), 
+cho phép nhận diện rõ ràng sự thay đổi hướng trọng lực tác động 
+lên trục cảm biến. Không giống như cảm biến áp điện, vốn chỉ phản hồi 
+với dao động nhanh và không ghi nhận được trạng thái tĩnh, 
+cảm biến điện dung cho phép theo dõi liên tục tư thế cơ thể với 
+độ ổn định tín hiệu cao, phù hợp với đặc điểm sinh lý của giấc ngủ.
 
-\section{Ứng dụng trí tuệ nhân tạo trong đánh giá tư thế ngủ và hỗ trợ chẩn đoán hội chứng ngưng thở khi ngủ (OSA)}
-Trong những năm gần đây, các mô hình học máy và mạng nơ-ron đã được 
-ứng dụng rộng rãi trong lĩnh vực y sinh, đặc biệt là trong bài toán 
-phân loại tư thế ngủ và hỗ trợ chẩn đoán hội chứng ngưng thở khi ngủ 
-(OSA). Trong các hệ thống học máy ứng dụng cho y sinh, quy trình 
-phân tích tín hiệu thường tuân theo một chuỗi các bước: (1) thu thập 
-dữ liệu cảm biến, (2) xử lý tín hiệu thô, (3) trích xuất đặc trưng 
-có ý nghĩa, (4) lựa chọn mô hình học máy phù hợp, và cuối cùng là 
-(5) đánh giá hiệu năng của mô hình trên tập kiểm thử.
-Mỗi bước trong quy trình này đều có ảnh hưởng trực tiếp đến độ chính xác 
-và tính ổn định của hệ thống. Đặc biệt, trong bối cảnh thiết bị đeo và 
-hệ thống IoT có tài nguyên tính toán hạn chế, việc tối ưu hóa lựa chọn 
-đặc trưng và sử dụng các mô hình nhẹ là yếu tố then chốt để đảm bảo 
-khả năng triển khai thực tế mà vẫn duy trì hiệu quả phân loại tư thế 
-ngủ phục vụ đánh giá OSA.
+Thứ hai, về \textit{yêu cầu hệ thống}, thiết bị theo dõi tư thế ngủ 
+tại nhà cần đảm bảo ba yếu tố: (i) tiêu thụ năng lượng thấp để hoạt 
+động xuyên đêm bằng pin; (ii) kích thước nhỏ gọn để đeo thoải mái 
+mà không ảnh hưởng đến giấc ngủ; và (iii) khả năng tích hợp lên vi 
+điều khiển nhúng (như dòng ARM Cortex-M) nhằm xử lý tín hiệu tại 
+chỗ mà không cần truyền tải liên tục về máy chủ. Cảm biến điện dung 
+MEMS đáp ứng hoàn toàn các yêu cầu này: tiêu thụ năng lượng ở mức 
+vài µA, kích thước thường chỉ vài mm$^2$, và tín hiệu đầu ra dạng 
+điện áp hoặc giao tiếp I\textsuperscript{2}C/SPI – thuận tiện cho 
+việc kết nối với hệ thống nhúng tiêu chuẩn.
 
+Thứ ba, xét về \textit{tính khả thi triển khai}, cảm biến điện dung 
+MEMS có chi phí sản xuất và tích hợp thấp hơn rõ rệt so với các loại 
+cảm biến dùng hiệu ứng áp điện hoặc áp điện trở, vốn yêu cầu mạch xử 
+lý tín hiệu chuyên biệt (như khuếch đại điện tích hoặc cầu đo điện 
+trở chính xác). Hơn nữa, loại cảm biến này có độ phổ biến cao trong 
+chuỗi cung ứng linh kiện, dễ dàng tìm thấy các model tối ưu 
+(như LIS3DH, ADXL345, MMA8451Q\ldots) với đầy đủ tài liệu kỹ thuật, 
+thư viện lập trình và driver mã nguồn mở – giúp rút ngắn thời gian 
+phát triển, tăng tính linh hoạt và khả năng tái sử dụng của hệ thống.
 
+Cuối cùng, việc sử dụng cảm biến điện dung không chỉ đảm bảo độ 
+chính xác đo lường trong môi trường thử nghiệm mà còn mang lại 
+độ tin cậy và tính thực tiễn cao khi triển khai ở quy mô cộng đồng. 
+Thiết kế hệ thống đơn giản, tiêu thụ điện năng thấp, dễ chế tạo và 
+mở rộng – đây là những yếu tố then chốt trong các giải pháp y học số 
+(digital health) hướng tới phòng ngừa sớm và giám sát cá nhân hoá tại 
+nhà.
 
-Nhìn chung, việc chẩn đoán hội chứng ngưng thở khi ngủ — đặc biệt pOSA — đòi hỏi 
-một hệ thống giám sát có khả năng thu thập liên tục dữ liệu sinh lý, 
-phân tích chính xác tư thế ngủ, và đưa ra cảnh báo kịp thời trong 
-thời gian thực. Điều này đặt ra yêu cầu ngày càng cao đối với tính tối 
-ưu của mô hình, tính gọn nhẹ của thiết bị phần cứng, và khả năng triển 
-khai thực tế tại nhà. Trong bối cảnh đó, các mô hình học máy đang trở thành 
-công cụ đắc lực để phân loại mức độ nghiêm trọng của OSA 
-thông qua chỉ số AHI hoặc nhận diện tư thế ngủ dựa trên tín hiệu cảm biến. 
-Đây là hướng tiếp cận liên ngành, kết hợp giữa y học giấc ngủ và 
-trí tuệ nhân tạo ứng dụng \cite{osa_sanchez2025}. 
+\textbf{Tóm lại}, việc lựa chọn cảm biến điện dung MEMS không đơn thuần là một quyết định kỹ thuật thuần tuý, mà còn phản ánh một giải pháp có tính cân bằng giữa hiệu quả đo lường, khả năng tích hợp phần cứng, và chiến lược mở rộng ứng dụng lâm sàng theo hướng chi phí thấp. Đây là một trong những nguyên tắc then chốt trong xu hướng đổi mới công nghệ y tế cộng đồng hiện đại – nơi mà tính khả thi triển khai và khả năng mở rộng đóng vai trò không kém phần quan trọng so với độ chính xác kỹ thuật.
+
+\vspace{1em}
+
+Nhìn chung, việc chẩn đoán hội chứng ngưng thở khi ngủ – đặc biệt là thể ngưng thở tắc nghẽn phụ thuộc tư thế (positional OSA – pOSA) – đòi hỏi một hệ thống giám sát liên tục, có khả năng thu thập dữ liệu sinh lý trong thời gian dài, nhận diện chính xác tư thế ngủ, và đưa ra cảnh báo kịp thời trong môi trường sinh hoạt tự nhiên tại nhà. Những yêu cầu này không chỉ giới hạn ở độ chính xác mô hình, mà còn mở rộng tới tiêu chí về tính gọn nhẹ, tiết kiệm năng lượng, và dễ triển khai trên nền tảng vi điều khiển hoặc thiết bị đeo. 
+
+Trong bối cảnh đó, các mô hình học máy (machine learning) đang nổi lên như một công cụ hữu hiệu để xử lý, phân loại và suy luận dữ liệu cảm biến đầu vào – đặc biệt trong việc tính toán chỉ số AHI (Apnea–Hypopnea Index) hoặc nhận diện chính xác các tư thế ngủ từ chuỗi tín hiệu ba trục. Hướng tiếp cận này không chỉ đẩy mạnh khả năng phát hiện sớm OSA mà còn mở ra tiềm năng triển khai các hệ thống hỗ trợ chẩn đoán thông minh trong môi trường chăm sóc sức khoẻ cá thể hoá tại nhà. 
+Đây chính là sự giao thoa giữa y học giấc ngủ truyền thống và công nghệ trí tuệ nhân tạo ứng dụng – một lĩnh vực đang chứng kiến sự phát triển nhanh chóng trong thập niên gần đây \cite{osa_sanchez2025}.
+
 \subsection{Quy trình tổng quát trong hệ thống ứng dụng AI cho đánh giá OSA và phân loại tư thế ngủ}
 \begin{table}[htbp]
 \centering
@@ -890,6 +999,28 @@ triển khai mô hình trên thiết bị nhúng (on-chip), nhằm hướng đ�
 năng theo dõi tại nhà trong thời gian thực với chi phí và mức tiêu 
 thụ năng lượng thấp.
 
+
+Sự phát triển nhanh chóng của trí tuệ nhân tạo (AI) trong lĩnh vực y học 
+đã mở ra nhiều hướng tiếp cận mới trong việc đánh giá tư thế ngủ và 
+chẩn đoán OSA. Các hệ thống AI đang dần chứng minh hiệu quả vượt trội 
+trong việc xử lý dữ liệu cảm biến lớn và phức tạp, từ đó cung cấp các 
+phân tích chính xác về hành vi giấc ngủ của bệnh nhân. Các mô hình học 
+máy được huấn luyện trên tập dữ liệu cảm biến từ accelerometer, gyroscope 
+hoặc thiết bị đeo thông minh có thể tự động phân loại các tư thế ngủ 
+theo thời gian thực, với độ chính xác lên đến trên 90\% trong nhiều 
+nghiên cứu gần đây 
+\cite{Sleep_Posture_Detection}\cite{Vu2025SleepPosition}\cite{HOANG2025116309}.
+
+\textbf{Tiny Machine Learning (TinyML)} là lĩnh vực nghiên cứu và ứng dụng các 
+mô hình học máy có kích thước nhỏ gọn, tiêu thụ năng lượng thấp, 
+được triển khai trực tiếp trên các thiết bị nhúng như vi điều khiển 
+(microcontrollers – MCU) hoặc thiết bị đeo (wearables) \cite{ray2021tinyml}. 
+Không giống như các mô hình học máy truyền thống thường yêu cầu nền 
+tảng phần cứng mạnh và tính toán trên cloud, TinyML cho phép xử lý dữ 
+liệu tại chỗ (on-device inference) mà không cần kết nối internet, 
+nhờ đó nâng cao tính riêng tư, độ phản hồi thời gian thực và khả năng 
+hoạt động ngoại tuyến.
+
 \begin{table}[htbp]
 \centering
 \caption{Hiệu quả mô hình học máy và khả năng triển khai biên trong nhận diện tư thế ngủ}
@@ -916,64 +1047,57 @@ thụ năng lượng thấp.
 }
 \end{table}
 
+Trong lĩnh vực chăm sóc sức khỏe, công nghệ \textbf{TinyML} (Tiny Machine Learning) ngày càng được ứng dụng rộng rãi để phân tích các tín hiệu sinh lý như nhịp tim, nhịp thở, chuyển động và tư thế ngủ. Với ưu điểm tiêu thụ năng lượng thấp, chi phí triển khai rẻ và khả năng vận hành lâu dài trên phần cứng hạn chế, các mô hình TinyML đặc biệt phù hợp cho các hệ thống theo dõi y tế tại nhà, chẳng hạn như phát hiện hội chứng ngưng thở khi ngủ (OSA) bằng thiết bị đeo không xâm lấn.
+Các thuật toán thường được sử dụng trong TinyML bao gồm các biến thể nhẹ và được đơn giản hóa từ các mô hình học sâu như \textit{Convolutional Neural Networks (CNN)}, \textit{Long Short-Term Memory (LSTM)}, cùng với các mô hình cây quyết định gọn nhẹ như \textit{Decision Tree}, \textit{Random Forest} hoặc \textit{Gradient Boosting}, vốn đã được tối ưu hoá cho việc hoạt động trên nền tảng vi điều khiển có giới hạn tài nguyên (MCU).
 
-Sự phát triển nhanh chóng của trí tuệ nhân tạo (AI) trong lĩnh vực y học 
-đã mở ra nhiều hướng tiếp cận mới trong việc đánh giá tư thế ngủ và 
-chẩn đoán OSA. Các hệ thống AI đang dần chứng minh hiệu quả vượt trội 
-trong việc xử lý dữ liệu cảm biến lớn và phức tạp, từ đó cung cấp các 
-phân tích chính xác về hành vi giấc ngủ của bệnh nhân. Các mô hình học 
-máy được huấn luyện trên tập dữ liệu cảm biến từ accelerometer, gyroscope 
-hoặc thiết bị đeo thông minh có thể tự động phân loại các tư thế ngủ 
-theo thời gian thực, với độ chính xác lên đến trên 90\% trong nhiều 
-nghiên cứu gần đây 
-\cite{Sleep_Posture_Detection}\cite{Vu2025SleepPosition}\cite{HOANG2025116309}.
+Dữ liệu trong Bảng~\ref{tab:sleepml} cho thấy sự đa dạng trong 
+cách tiếp cận bài toán nhận diện tư thế ngủ và hoạt động người dùng. 
+Hầu hết các nghiên cứu đạt độ chính xác cao (trên 95\%), ngay cả khi sử dụng các thuật toán đơn giản như ngưỡng cố định hoặc mô hình học máy cổ điển như KNN, SVM và RF. Tuy nhiên, một điểm đáng lưu ý là chỉ duy nhất 
+nghiên cứu của Abdulsadig và cộng sự \cite{abdulsadig2023} 
+thực sự được triển khai trên phần cứng nhúng (on-chip), 
+chứng tỏ tính khả thi trong môi trường tài nguyên hạn chế. 
+Các nghiên cứu còn lại chủ yếu dừng ở mức mô phỏng phần mềm hoặc 
+chạy trên máy tính hiệu năng cao, chưa đáp ứng được yêu cầu 
+triển khai thực tế trong các thiết bị đeo.
 
-\textbf{Tiny Machine Learning (TinyML)} là lĩnh vực nghiên cứu và ứng dụng các 
-mô hình học máy có kích thước nhỏ gọn, tiêu thụ năng lượng thấp, 
-được triển khai trực tiếp trên các thiết bị nhúng như vi điều khiển 
-(microcontrollers – MCU) hoặc thiết bị đeo (wearables) \cite{ray2021tinyml}. 
-Không giống như các mô hình học máy truyền thống thường yêu cầu nền 
-tảng phần cứng mạnh và tính toán trên cloud, TinyML cho phép xử lý dữ 
-liệu tại chỗ (on-device inference) mà không cần kết nối internet, 
-nhờ đó nâng cao tính riêng tư, độ phản hồi thời gian thực và khả năng 
-hoạt động ngoại tuyến.
+Đi sâu hơn, nhóm mô hình học sâu như CNN, LSTM hoặc kết hợp nhiều lớp 
+(LSTM\_sq, LSTM\_con, MLP) tuy đạt độ chính xác vượt trội (trên 99\%) như trong nghiên cứu của Vu et al. \cite{vu2023}, nhưng đều chưa tích hợp trực tiếp lên vi điều khiển do dung lượng bộ nhớ lớn và nhu cầu tính toán cao. Điều này đặt ra thách thức cho việc ứng dụng chúng trong môi trường thực tế như giấc ngủ tại nhà, nơi mà năng lượng, khả năng lưu trữ và kết nối đều bị hạn chế.
 
-Trong lĩnh vực chăm sóc sức khỏe, TinyML ngày càng được ứng dụng rộng 
-rãi để phân tích các tín hiệu sinh lý như nhịp tim, hô hấp, chuyển động 
-và tư thế ngủ. Với ưu điểm là tiết kiệm năng lượng và chi phí, 
-các mô hình TinyML rất phù hợp cho các hệ thống theo dõi lâu dài, 
-ví dụ như phát hiện ngưng thở khi ngủ (OSA) bằng cảm biến đeo tại nhà. 
-Các thuật toán thường được sử dụng trong TinyML bao gồm các biến thể đơn giản hoá của CNN, 
-LSTM hoặc các mô hình cây quyết định nhẹ như Decision Tree, Random Forest và Gradient Boosting 
-đã được tối ưu hoá cho các nền tảng hạn chế tài nguyên.
-Gần đây, các công cụ như TensorFlow Lite for Microcontrollers, 
-Edge Impulse, và TinyML EON Compiler cho phép huấn luyện, 
-chuyển đổi và triển khai các mô hình AI chỉ trong vài kilobyte bộ nhớ, 
-mở ra cơ hội mới cho chẩn đoán y tế cá nhân hoá dựa trên thiết bị đeo thông minh.
+Ở chiều ngược lại, các mô hình đơn giản hơn như Decision Tree, 
+Random Forest hay ngưỡng cố định cho thấy hiệu quả không hề thua 
+kém khi được khai thác đúng đặc trưng. 
+Đặc biệt, việc sử dụng các đặc trưng miền thời gian 
+(mean, std, energy, entropy) — vốn dễ tính toán và 
+không cần FFT — giúp giảm đáng kể độ phức tạp tính toán.
+Điều này rất phù hợp với triết lý thiết kế của TinyML: 
+đơn giản, hiệu quả và khả thi khi triển khai thực 
+tế trên các nền tảng hạn chế như MCU.
 
-Nhờ vào khả năng học và tự hiệu chỉnh, các thuật toán này có thể phân 
-biệt hiệu quả giữa các trạng thái nằm nghiêng trái, nghiêng phải, nằm ngửa và nằm sấp – 
-ngay cả khi có sự biến đổi nhẹ về góc độ hoặc cử động cơ thể. 
-Hơn nữa, AI còn cho phép tích hợp thông tin về tư thế ngủ với các chỉ số sinh lý 
-khác như nhịp tim, nhịp thở, SpO$_2$ và dữ liệu âm thanh để xây 
-dựng mô hình chẩn đoán OSA đa chiều. Việc kết hợp các nguồn dữ liệu 
-này giúp phát hiện chính xác các giai đoạn ngưng thở và giảm thở, 
-đồng thời đánh giá được mức độ ảnh hưởng của từng tư thế đến tình trạng 
-hẹp đường thở trong khi ngủ. Đây là một bước tiến quan trọng hướng đến 
-cá nhân hóa chẩn đoán và điều trị OSA – điều mà các phương pháp truyền thống 
-như đa ký giấc ngủ (polysomnography) còn nhiều hạn chế do chi phí cao và 
-điều kiện thực hiện phức tạp. Đặc biệt, các hệ thống AI có thể được 
-triển khai trong các thiết bị đeo thông minh tại nhà, hỗ trợ theo dõi 
-lâu dài và liên tục mà không gây xâm lấn hay gián đoạn giấc ngủ. 
-Nhờ đó, dữ liệu thu thập được phản ánh chính xác hơn về hành vi giấc 
-ngủ trong môi trường tự nhiên của người bệnh, từ đó nâng cao giá trị 
-lâm sàng của các kết quả phân tích. Ngoài ra, sự tích hợp AI trong các 
-thiết bị di động, cùng với công nghệ điện toán biên (edge computing), 
-có thể cho phép xử lý dữ liệu tại chỗ và phản hồi thời gian thực – 
-mở ra tiềm năng to lớn trong việc sàng lọc, theo dõi và cá nhân hóa 
-chiến lược quản lý OSA.
+Một điểm sáng là khả năng cải thiện hiệu năng của mô hình 
+bằng cách lựa chọn đặc trưng phù hợp với tín hiệu đầu vào. 
+Ví dụ, các đặc trưng trung bình và phương sai theo trục trong các 
+nghiên cứu \cite{gomes2021}, \cite{souza2017} đủ mạnh để phân biệt 
+các tư thế ngủ hoặc hoạt động cơ bản, mà không cần tới biểu diễn 
+phức tạp trong miền tần số hay wavelet.
 
 
+
+Nhờ sự phát triển của các nền tảng hỗ trợ triển khai mô hình học máy 
+như \textbf{TensorFlow Lite for Microcontrollers}, 
+\textbf{Edge Impulse}, và \textbf{TinyML EON Compiler}, việc huấn luyện, chuyển đổi và triển khai các mô hình chỉ yêu cầu vài kilobyte bộ nhớ đã trở nên khả thi. Điều này mở ra hướng tiếp cận mới trong chẩn đoán y tế cá nhân hóa, thông qua thiết bị đeo thông minh hoạt động liên tục tại nhà.
+
+
+Một điểm mạnh nổi bật của các mô hình AI triển khai trên nền TinyML là khả năng học và tự hiệu chỉnh theo dữ liệu thực tế. Nhờ vậy, hệ thống có thể phân biệt hiệu quả giữa các tư thế ngủ cơ bản — nghiêng trái, nghiêng phải, nằm ngửa, và nằm sấp — ngay cả khi có những sai lệch nhỏ về góc đặt thiết bị hoặc chuyển động cơ thể không mong muốn. 
+Hơn nữa, AI còn cho phép tích hợp dữ liệu tư thế với các thông số sinh lý khác như nhịp tim, nhịp thở, độ bão hòa oxy máu (SpO$_2$), và âm thanh để xây dựng mô hình chẩn đoán OSA đa chiều. Việc tổng hợp đa nguồn tín hiệu này giúp hệ thống: 
+\begin{itemize}
+    \item Phát hiện chính xác các giai đoạn ngưng thở và giảm thở (apnea/hypopnea),
+    \item Phân tích tác động của từng tư thế ngủ đến mức độ hẹp đường thở,
+    \item Ước lượng mức độ nghiêm trọng của OSA theo từng cá nhân.
+\end{itemize}
+Đây là một bước tiến quan trọng, hướng đến mục tiêu cá nhân hóa chẩn đoán và điều trị OSA – điều mà các phương pháp truyền thống như đa ký giấc ngủ (\textit{polysomnography – PSG}) còn nhiều hạn chế do chi phí cao, quy trình phức tạp và tính không đại diện cho điều kiện giấc ngủ tự nhiên.
+Khi được triển khai trên các thiết bị đeo thông minh, hệ thống AI này cho phép theo dõi liên tục trong thời gian dài mà không gây xâm lấn hay ảnh hưởng đến chất lượng giấc ngủ của người dùng. Dữ liệu thu thập trong điều kiện sinh hoạt tự nhiên tại nhà có độ chính xác cao hơn, giúp nâng cao giá trị chẩn đoán và hỗ trợ quyết định điều trị chính xác hơn cho bác sĩ.
+
+Cuối cùng, sự kết hợp giữa \textbf{AI}, \textbf{thiết bị đeo} và công nghệ \textbf{điện toán biên (edge computing)} mang lại tiềm năng rất lớn cho các hệ thống sàng lọc, chẩn đoán sớm và quản lý cá thể hóa OSA theo thời gian thực — mở ra hướng phát triển bền vững cho y tế thông minh trong kỷ nguyên số.
 
 
 

@@ -2975,53 +2975,6 @@
       \verb 10.1155/2013/670381
       \endverb
     \endentry
-    \entry{ji2022airline}{article}{}{}
-      \true{moreauthor}
-      \true{morelabelname}
-      \name{author}{3}{}{%
-        {{hash=eeb2c41db93152a44216f8b8004404ab}{%
-           family={Ji},
-           familyi={J\bibinitperiod},
-           given={Xinyu},
-           giveni={X\bibinitperiod}}}%
-        {{hash=5d568355191aa81631bf2236775b0181}{%
-           family={Rao},
-           familyi={R\bibinitperiod},
-           given={Zhihao},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=68036e0ba555e586a3d9cc3dd2cda6e0}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Weijie},
-           giveni={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{fullhash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{fullhashraw}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{bibnamehash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{authorbibnamehash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{authornamehash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{authorfullhash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{authorfullhashraw}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Micromachines (Basel)}
-      \field{number}{11}
-      \field{title}{Airline Point-of-Care System on Seat Belt for Hybrid Physiological Signal Monitoring}
-      \field{volume}{13}
-      \field{year}{2022}
-      \verb{doi}
-      \verb 10.3390/mi13111880
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.3390/mi13111880
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.3390/mi13111880
-      \endverb
-    \endentry
     \entry{sun2017sleepmonitor}{article}{}{}
       \name{author}{5}{}{%
         {{hash=08ab64238cc1fc90eee77df980b84f77}{%
@@ -3087,6 +3040,30 @@
       \endverb
       \keyw{Smartwatch,body position,filtering,fusion,respiratory rate}
     \endentry
+    \entry{Natale_osa}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5531b34b6b41f1cf8aa7d4f05792b9e2}{%
+           family={Natale},
+           familyi={N\bibinitperiod},
+           given={Vincenzo\bibnamedelimb và\bibnamedelimb cộng\bibnamedelima sự},
+           giveni={V\bibinitperiod\bibinitdelim v\bibinitperiod\bibinitdelim c\bibinitperiod\bibinitdelim s\bibinitperiod}}}%
+      }
+      \strng{namehash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
+      \strng{fullhash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
+      \strng{fullhashraw}{5531b34b6b41f1cf8aa7d4f05792b9e2}
+      \strng{bibnamehash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
+      \strng{authorbibnamehash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
+      \strng{authornamehash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
+      \strng{authorfullhash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
+      \strng{authorfullhashraw}{5531b34b6b41f1cf8aa7d4f05792b9e2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sleep and Biological Rhythms}
+      \field{title}{Monitoring sleep with a smartphone accelerometer}
+      \field{year}{2012}
+    \endentry
     \entry{Ferrer_osa}{article}{}{}
       \name{author}{1}{}{%
         {{hash=221e95a7e254dca76c65699c6b1ad7ab}{%
@@ -3115,30 +3092,6 @@
       \verb{doi}
       \verb 10.3390/s21134531
       \endverb
-    \endentry
-    \entry{Natale_osa}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=5531b34b6b41f1cf8aa7d4f05792b9e2}{%
-           family={Natale},
-           familyi={N\bibinitperiod},
-           given={Vincenzo\bibnamedelimb và\bibnamedelimb cộng\bibnamedelima sự},
-           giveni={V\bibinitperiod\bibinitdelim v\bibinitperiod\bibinitdelim c\bibinitperiod\bibinitdelim s\bibinitperiod}}}%
-      }
-      \strng{namehash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
-      \strng{fullhash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
-      \strng{fullhashraw}{5531b34b6b41f1cf8aa7d4f05792b9e2}
-      \strng{bibnamehash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
-      \strng{authorbibnamehash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
-      \strng{authornamehash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
-      \strng{authorfullhash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
-      \strng{authorfullhashraw}{5531b34b6b41f1cf8aa7d4f05792b9e2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Sleep and Biological Rhythms}
-      \field{title}{Monitoring sleep with a smartphone accelerometer}
-      \field{year}{2012}
     \endentry
     \entry{Acce}{article}{}{}
       \name{author}{1}{}{%
@@ -3226,8 +3179,8 @@
       \strng{authornamehash}{ee51fd682f7ae907a9e1d9d32daaedec}
       \strng{authorfullhash}{ee51fd682f7ae907a9e1d9d32daaedec}
       \strng{authorfullhashraw}{ee51fd682f7ae907a9e1d9d32daaedec}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Conference on Biomedical Engineering in Vietnam}
@@ -3507,8 +3460,8 @@
       \strng{authornamehash}{71d04e64b6c0a297ef4bcdbc5a530ef2}
       \strng{authorfullhash}{71d04e64b6c0a297ef4bcdbc5a530ef2}
       \strng{authorfullhashraw}{71d04e64b6c0a297ef4bcdbc5a530ef2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arxiv}
@@ -3555,6 +3508,53 @@
       \endverb
       \verb{url}
       \verb https://www.sciencedirect.com/science/article/pii/S1746809423008777
+      \endverb
+    \endentry
+    \entry{ji2022airline}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=eeb2c41db93152a44216f8b8004404ab}{%
+           family={Ji},
+           familyi={J\bibinitperiod},
+           given={Xinyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=5d568355191aa81631bf2236775b0181}{%
+           family={Rao},
+           familyi={R\bibinitperiod},
+           given={Zhihao},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=68036e0ba555e586a3d9cc3dd2cda6e0}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Weijie},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{6acb35716a3037364fa6cce5ae4b5c3a}
+      \strng{fullhash}{6acb35716a3037364fa6cce5ae4b5c3a}
+      \strng{fullhashraw}{6acb35716a3037364fa6cce5ae4b5c3a}
+      \strng{bibnamehash}{6acb35716a3037364fa6cce5ae4b5c3a}
+      \strng{authorbibnamehash}{6acb35716a3037364fa6cce5ae4b5c3a}
+      \strng{authornamehash}{6acb35716a3037364fa6cce5ae4b5c3a}
+      \strng{authorfullhash}{6acb35716a3037364fa6cce5ae4b5c3a}
+      \strng{authorfullhashraw}{6acb35716a3037364fa6cce5ae4b5c3a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Micromachines (Basel)}
+      \field{number}{11}
+      \field{title}{Airline Point-of-Care System on Seat Belt for Hybrid Physiological Signal Monitoring}
+      \field{volume}{13}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.3390/mi13111880
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.3390/mi13111880
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3390/mi13111880
       \endverb
     \endentry
     \entry{abdulsadig2023}{article}{}{}

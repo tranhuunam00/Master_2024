@@ -37,37 +37,128 @@ ba trục LIS2DH12 (STMicroelectronics) và vi điều khiển nRF5232
 (Nordic Semiconductor) \cite{Sleep_Posture_Detection}.
 
 
-Dựa trên khảo sát thực tế và đánh giá các tiêu chí kỹ thuật phù hợp 
-với đặc thù đo chuyển động chậm khi ngủ, luận văn lựa chọn hai dòng 
-cảm biến gia tốc phổ biến là LIS3DH và LSM6DS3, đều do hãng 
-STMicroelectronics sản xuất. Cả hai cảm biến đều tích hợp khả năng đo gia tốc ba trục, 
-hỗ trợ các chuẩn giao tiếp \texttt{I\textsuperscript{2}C} và \texttt{SPI}, 
-đồng thời có thể hoạt động trong chế độ tiêu thụ điện năng siêu thấp (\textit{ultra-low power mode}), 
-đáp ứng yêu cầu sử dụng lâu dài trong các thiết bị đeo cá nhân hoạt động liên 
-tục suốt đêm.
 
-Trong các ứng dụng theo dõi tư thế ngủ, độ nhạy của cảm biến là một 
-trong những tiêu chí quan trọng hàng đầu, bởi nó quyết định khả năng 
-phát hiện các chuyển động nhỏ đặc trưng với biên độ thấp và tốc độ 
-thay đổi chậm. Cảm biến \textbf{LIS3DH} cho phép lập trình dải đo động 
-từ $\pm2g$ đến $\pm16g$, mang lại tính linh hoạt cao trong thiết kế hệ 
-thống. Tuy nhiên, khi mở rộng dải đo, độ nhạy và độ phân giải sẽ giảm 
-đáng kể. Ví dụ, đối với cảm biến 16-bit, nếu cấu hình ở dải $\pm100g$, 
-độ phân giải chỉ đạt khoảng $0{,}003g$/LSB, điều này có thể làm suy giảm 
-khả năng nhận biết các chuyển động vi mô trong khi ngủ - một yếu tố 
-then chốt trong phân loại chính xác tư thế ngủ.
+Việc lựa chọn cảm biến gia tốc phù hợp đòi hỏi phải cân nhắc 
+đồng thời nhiều yếu tố kỹ thuật nhằm đảm bảo độ chính xác đo lường, 
+khả năng tích hợp phần cứng và tính khả thi khi triển khai thực 
+tế trong thiết bị đeo. 
+
+\textbf{Dải đo động (Full-Scale Range):}
+
+Một trong những tham số quan trọng hàng đầu trong thiết kế hệ 
+thống đo lường là \textit{dải đo động} (full-scale range) 
+của cảm biến gia tốc. Đối với bài toán giám sát tư thế ngủ, 
+các chuyển động của cơ thể thường diễn ra chậm và có biên độ 
+thấp – chủ yếu dưới $1g$, tương ứng với các thao tác xoay người 
+hoặc thay đổi tư thế nhẹ nhàng trong khi ngủ. 
+Vì vậy, lựa chọn dải đo nhỏ như $\pm2g$ hoặc $\pm4g$ là hợp 
+lý nhằm tối ưu hoá độ phân giải của cảm biến.
+
+Về mặt kỹ thuật, độ phân giải của cảm biến phụ thuộc trực tiếp 
+vào dải đo và số bit của bộ chuyển đổi tín hiệu nội bộ. 
+Chẳng hạn, với cảm biến có độ phân giải 16-bit và dải 
+đo $\pm2g$, độ phân giải lý thuyết đạt được sẽ vào khoảng:
+\[
+\frac{2 \times 2g}{2^{16}} \approx 0.000061g/\text{LSB}
+\]
+Ngược lại, nếu mở rộng dải đo lên đến $\pm16g$, 
+độ phân giải bị giảm xuống còn:
+\[
+\frac{2 \times 16g}{2^{16}} \approx 0.000488g/\text{LSB}
+\]
+Sự suy giảm độ phân giải này có thể khiến cảm biến bỏ sót các 
+dao động vi mô đặc trưng, 
+làm ảnh hưởng đến hiệu quả phân loại tư thế hoặc phát hiện 
+các chuyển động nhẹ trong trạng thái ngủ.
+
+Từ đó, có thể thấy rằng việc lựa chọn dải đo động phù hợp 
+là yếu tố then chốt trong tối ưu hiệu năng của hệ thống. 
+Việc đặt dải đo quá lớn để “bao phủ toàn bộ biên độ có thể xảy ra” 
+sẽ dẫn đến lãng phí độ phân giải và giảm độ nhạy trong các tình 
+huống thực tế vốn không yêu cầu dải đo rộng. 
+Do đó, việc lựa chọn dải đo $\pm2g$ là lựa chọn ưu tiên 
+trong hệ thống theo dõi tư thế ngủ với yêu cầu chính xác 
+cao và chuyển động cường độ thấp.
+
+\textbf{Tín hiệu đầu ra (Analog vs. Digital):} 
+
+Một trong những tiêu chí quan trọng trong thiết kế hệ thống cảm biến 
+nhúng là lựa chọn loại tín hiệu đầu ra – giữa cảm biến đầu ra 
+tương tự (\textit{analog output}) và cảm biến đầu ra số 
+(\textit{digital output}). Trong khuôn khổ hệ thống theo dõi tư 
+thế ngủ, cảm biến kỹ thuật số được ưu tiên vì nhiều lợi thế vượt 
+trội về tính ổn định, khả năng tích hợp và đơn giản hóa mạch xử 
+lý tín hiệu.
+Trước hết, cảm biến đầu ra số không yêu cầu bổ sung bộ chuyển 
+đổi tương tự–số (ADC) rời. Trong khi cảm biến analog cần mạch 
+ADC để số hóa tín hiệu trước khi xử lý, cảm biến digital thực 
+hiện trực tiếp quá trình này trong nội bộ mạch tích hợp. 
+Điều này giúp giảm đáng kể độ phức tạp trong thiết kế phần cứng, 
+tiết kiệm diện tích PCB, và giảm chi phí linh kiện.
+Hơn nữa, tín hiệu tương tự dễ bị suy giảm do nhiễu điện từ, 
+đặc biệt khi truyền qua dây dẫn dài hoặc trong môi trường nhiễu 
+cao như hệ thống đeo gần cơ thể người. Ngược lại, 
+tín hiệu số được truyền dưới dạng xung nhịp nhị phân có khả 
+năng chống nhiễu tốt hơn, đảm bảo độ chính xác trong truyền 
+dẫn và làm tăng độ tin cậy của hệ thống.
+Ngoài ra, các cảm biến kỹ thuật số hiện đại thường tích hợp sẵn 
+các khối chức năng bổ trợ như: bộ lọc thông thấp phần cứng 
+(hardware low-pass filter) giúp loại bỏ nhiễu tần số cao, 
+bộ đệm FIFO (\textit{first-in-first-out}) để giảm yêu cầu đọc 
+dữ liệu liên tục từ MCU, và thậm chí cả bộ hiệu chuẩn nội tại 
+tự động (auto-calibration unit). 
+Những tính năng này góp phần giảm đáng kể khối lượng tính 
+toán cần thiết từ phía vi điều khiển, từ đó tiết kiệm năng 
+lượng hệ thống và cải thiện hiệu suất vận hành, đặc biệt trong 
+các ứng dụng thời gian thực và nền tảng tính toán giới hạn như 
+thiết bị đeo.
 
 
+\textbf{Chuẩn giao tiếp (Communication Interface):}
 
+Xét về yếu tố giao tiếp giữa cảm biến và vi điều khiển, chuẩn \texttt{I\textsuperscript{2}C} được lựa chọn là phương án tối ưu cho hệ thống theo dõi tư thế ngủ. Ưu điểm lớn nhất của \texttt{I\textsuperscript{2}C} nằm ở thiết kế đơn giản – chỉ yêu cầu hai đường tín hiệu (SCL và SDA) cho toàn bộ giao tiếp dữ liệu. Điều này giúp tiết kiệm số chân phần cứng trên vi điều khiển và đặc biệt phù hợp trong các thiết bị đeo cá nhân, nơi không gian mạch in (PCB) và tài nguyên cổng GPIO đều rất hạn chế.
+Trong khi đó, chuẩn \texttt{SPI} dù có ưu điểm về tốc độ truyền dữ liệu cao hơn và khả năng truyền song song hiệu quả, lại đòi hỏi ít nhất bốn dây kết nối (SCLK, MISO, MOSI, CS) và thường tiêu tốn nhiều chân vi điều khiển hơn. Hơn nữa, với đặc thù của bài toán giám sát tư thế ngủ – vốn không yêu cầu tốc độ truyền dữ liệu cao do tín hiệu thay đổi chậm và tần số lấy mẫu thấp (chỉ từ 25–50 Hz) – thì lợi thế của \texttt{SPI} không thực sự cần thiết.
+Từ các phân tích trên, có thể kết luận rằng \texttt{I\textsuperscript{2}C} là giao thức phù hợp nhất cho hệ thống, không chỉ đảm bảo khả năng truyền dữ liệu ổn định mà còn giúp đơn giản hóa thiết kế phần cứng, giảm thiểu mức tiêu thụ năng lượng và diện tích PCB – những yếu tố then chốt trong thiết kế thiết bị đeo có kích thước và tài nguyên hạn chế.
 
-\begin{figure}[!ht]
-		\centering
- 		\includegraphics[width=0.8\textwidth]{images/lis.png}
-		\caption{Cảm biến gia tốc LIS3DH và sơ đồ chân kết nối}
-		\label{lis}
+\textbf{Tần số lấy mẫu (Sampling Rate):}
+
+Các chuyển động liên quan đến thay đổi tư thế khi ngủ thường mang tính chậm rãi, diễn ra trong thời gian dài và chủ yếu xuất hiện trong giai đoạn ngủ không chuyển động mắt nhanh (NREM). Khác với các ứng dụng đo rung động công nghiệp hoặc phát hiện va chạm – vốn đòi hỏi tần số lấy mẫu cao (trên 100~Hz) để ghi nhận các thay đổi nhanh, thì bài toán phân loại tư thế ngủ chỉ yêu cầu theo dõi các chuyển động có tần số thấp, thường nằm trong khoảng dưới 1–2~Hz.
+Theo định lý Nyquist, để thu thập chính xác các tín hiệu có tần số tối đa $f_\mathrm{max}$, hệ thống cần lấy mẫu ở tần số tối thiểu là $2f_\mathrm{max}$. Với giả định biên độ dao động tư thế xảy ra ở dải tần 0.3–3~Hz, tần số lấy mẫu 10~Hz là đủ để đảm bảo không xảy ra hiện tượng aliasing và vẫn ghi nhận được đầy đủ thông tin về các thay đổi tư thế theo thời gian.
+Ngoài ra, việc lựa chọn mức 10~Hz mang lại nhiều lợi ích thiết thực cho hệ thống nhúng: giúp giảm lưu lượng dữ liệu đầu ra, tiết kiệm bộ nhớ lưu trữ, giảm tần suất đánh thức vi điều khiển, từ đó tối ưu thời lượng pin – yếu tố then chốt trong các thiết bị đeo theo dõi giấc ngủ hoạt động liên tục suốt đêm. 
+
+\textbf{Tiêu thụ điện năng} là một trong những yếu tố then chốt trong thiết kế hệ thống giám sát tư thế ngủ, đặc biệt khi mục tiêu là triển khai trên thiết bị đeo hoạt động liên tục suốt đêm mà không gây phiền toái cho người dùng. Do đó, cảm biến cần hỗ trợ chế độ \textit{ultra-low power}, với mức dòng tiêu thụ dưới 10~$\mu$A ở chế độ chờ (\textit{standby}) hoặc khi vận hành ở tần số thấp. Khả năng tiết kiệm năng lượng này không chỉ kéo dài thời lượng pin, mà còn giảm thiểu yêu cầu về dung lượng pin và trọng lượng thiết bị, qua đó nâng cao trải nghiệm sử dụng và mức độ chấp nhận của người dùng trong môi trường thực tế.
+
+Ngoài ra, cảm biến được lựa chọn cũng cần đảm bảo \textbf{kích thước vật lý nhỏ gọn} để dễ dàng tích hợp vào các PCB có không gian hạn chế. Việc tích hợp sẵn các tính năng hỗ trợ như bộ phát hiện chuyển động (\textit{motion detection}), bộ lọc phần cứng (\textit{hardware filtering}) hay tự hiệu chỉnh (\textit{auto-calibration}) cũng là những lợi thế quan trọng. Các chức năng này giúp giảm độ phức tạp của hệ thống tổng thể, tiết kiệm tài nguyên xử lý trên vi điều khiển, đồng thời cải thiện khả năng phản hồi thời gian thực của hệ thống, đặc biệt trong các ứng dụng yêu cầu xử lý tại chỗ như \textit{TinyML} trên thiết bị đeo.
+
+Từ các phân tích trên, có thể xác định rằng cảm biến gia tốc lý tưởng 
+cho bài toán giám sát tư thế ngủ cần thỏa mãn đồng thời các 
+tiêu chí: dải đo động nhỏ (từ $\pm2g$ đến $\pm4g$), đầu ra kỹ thuật số để đơn giản hóa phần cứng và giảm nhiễu, hỗ trợ giao tiếp qua giao thức \texttt{I\textsuperscript{2}C} để tiết kiệm chân kết nối, tiêu thụ năng lượng cực thấp nhằm duy trì hoạt động liên tục suốt đêm, và có khả năng tích hợp cao nhằm giảm tải tính toán cho hệ thống vi điều khiển.
+
+Dựa trên các tiêu chí trên, luận văn lựa chọn hai dòng cảm biến tiêu biểu do hãng \textbf{STMicroelectronics} sản xuất là \textbf{LIS3DH} và \textbf{LSM6DS3} để triển khai thực nghiệm. Đây là hai cảm biến phổ biến trong các thiết bị đeo và ứng dụng IoT y sinh nhờ sự cân bằng tốt giữa hiệu năng, độ ổn định và tính khả thi triển khai thực tế.
+
+Cả hai cảm biến đều đáp ứng các yêu cầu kỹ thuật sau:
+
+\begin{itemize}
+    \item Hỗ trợ dải đo động từ $\pm2g$ đến $\pm16g$, cho phép linh hoạt cấu hình theo nhu cầu đo lường, với độ phân giải từ 12 đến 16 bit.
+    \item Tín hiệu đầu ra dạng số (digital), hỗ trợ giao tiếp qua \texttt{I\textsuperscript{2}C} và \texttt{SPI}, tương thích với đa số vi điều khiển phổ biến.
+    \item Hỗ trợ chế độ tiết kiệm năng lượng (\textit{ultra-low power}), với mức tiêu thụ dòng dưới 10~$\mu$A trong các chế độ nghỉ hoặc đo chu kỳ thấp.
+    \item Có khả năng lập trình ngưỡng phát hiện chuyển động, tích hợp bộ lọc thông thấp và bộ đệm tín hiệu nội bộ, giúp giảm tải xử lý phần mềm.
+    \item Kích thước vật lý nhỏ gọn (khoảng 3×3~mm), dễ tích hợp trên PCB của thiết bị đeo cá nhân.
+\end{itemize}
+
+Trong đó, cảm biến \textbf{LIS3DH} nổi bật nhờ cấu hình linh hoạt, độ nhạy tốt và đã được ứng dụng hiệu quả trong nhiều nghiên cứu theo dõi chuyển động chậm và phân loại tư thế ngủ. Trong khi đó, cảm biến \textbf{LSM6DS3} là một cảm biến kết hợp (IMU – Inertial Measurement Unit), tích hợp thêm con quay hồi chuyển (gyroscope), cung cấp khả năng mở rộng nghiên cứu trong tương lai như nhận diện vi chuyển động hoặc phân tích tư thế ba chiều chi tiết hơn.
+
+Vì vậy, cả hai cảm biến được đưa vào thử nghiệm nhằm đánh giá 
+toàn diện các yếu tố gồm: độ nhạy, mức độ nhiễu, khả năng nhận diện 
+tư thế và mức tiêu thụ năng lượng trong điều kiện thực tế sử 
+dụng tại nhà. Hình~\ref{lis} minh họa hình dạng thực tế và sơ đồ chân kết nối của cảm biến \textbf{LIS3DH}.
+
+\begin{figure}[htbp]
+	\centering
+ 	\includegraphics[width=0.8\textwidth]{images/lis.png}
+	\caption{Cảm biến gia tốc LIS3DH và sơ đồ chân kết nối}
+	\label{lis}
 \end{figure}
-
-
 
 
 \subsection{Vi xử lý}
@@ -145,7 +236,7 @@ Về hiệu năng, Cortex-M4 đạt từ 1,25 đến 1,95 DMIPS/MHz (Dhrystone M
 Ngoài ra, hiện nay ứng dụng trí tuệ nhân tạo (AI) tại thiết bị biên (Edge AI) đang ngày càng phổ biến, đặc biệt trong các lĩnh vực như nhà thông minh, thiết bị đeo, giám sát an ninh và công nghiệp 4.0. Với khả năng xử lý tín hiệu số (DSP) và hỗ trợ các mạng nơ-ron nhỏ gọn, các vi xử lý Cortex-M, đặc biệt là dòng Cortex-M4, đang được khai thác để triển khai các mô hình học sâu nhẹ (tinyML) ngay trên vi điều khiển \cite{electronics11162545}\cite{applicationCortexM4}.
 
 
-\begin{figure}[!ht]
+\begin{figure}[htbp]
 		\centering
  		\includegraphics[width=0.8\textwidth]{images/cortexM4.png}
 		\caption{Thành phần chính của vi điều khiển Cortex-M4}
@@ -159,11 +250,11 @@ Bên cạnh đó, kiến trúc Cortex-M4 tích hợp Bộ điều khiển ngắt
 Đối với các ứng dụng yêu cầu tiết kiệm năng lượng, hệ thống còn được trang bị bộ đánh thức ngắt (Wake-up Interrupt Controller – WIC), cho phép đưa bộ vi điều khiển vào chế độ nghỉ bằng cách tắt hầu hết các thành phần không cần thiết, đồng thời duy trì khả năng đánh thức hệ thống khi phát hiện một yêu cầu ngắt. Ngoài ra, cơ chế bảo vệ bộ nhớ cũng được tích hợp nhằm đảm bảo an toàn cho hệ thống, ví dụ như chỉ cho phép truy cập đọc tại một số vùng bộ nhớ hoặc ngăn người dùng truy cập vào các vùng dữ liệu đặc quyền của hệ điều hành hoặc ứng dụng hệ thống.
 
 
-\begin{figure}[!ht]
+\begin{figure}[htbp]
 		\centering
  		\includegraphics[width=0.8\textwidth]{images/NRF52840-QFA_SPL.jpg}
 		\caption{Nordic Semiconductor NRF52840}
-		\label{lis}
+		\label{Nordic}
 \end{figure}
 Sau quá trình khảo sát và so sánh các dòng vi xử lý phổ biến, tác giả 
 lựa chọn nRF52840 (Nordic Semiconductor) làm nền tảng phần cứng cho hệ 
@@ -204,7 +295,7 @@ Với mục tiêu tối ưu hóa năng lượng và đảm bảo khả năng ho�
 cho thiết bị đeo sử dụng pin, Bluetooth Low Energy (BLE) được lựa chọn 
 làm chuẩn kết nối không dây chính trong hệ thống phần cứng.
 
-\begin{figure}[!ht]
+\begin{figure}[htbp]
 		\centering
  		\includegraphics[width=0.8\textwidth]{images/ble.png}
 		\caption{Các kiểu kết nối không dây trong họ chip nRF52}
@@ -251,7 +342,7 @@ hoặc trong các ứng dụng IoT công nghiệp quy mô vừa và nhỏ.
 
 
 
-\begin{figure}[!ht]
+\begin{figure}[htbp]
 	\centering
  	\includegraphics[width=0.5\textwidth]{images/gatt.drawio.png}
 	\caption{Cấu trúc của GATT}
@@ -315,7 +406,7 @@ thiết bị nhúng chuyên dụng, tối ưu hơn về chi phí, hiệu năng v
 tích hợp trong các ứng dụng thực tiễn.
 
 
-\begin{figure}[!ht]
+\begin{figure}[htbp]
 		\centering
  		\includegraphics[width=0.8\textwidth]{images/detail_ada.png}
 		\caption{Cấu trúc các thành phần trên Circuit PlayGround}
