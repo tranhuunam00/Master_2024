@@ -41,15 +41,25 @@ void loop() {
       sampleIndex++;
     }
     if (sampleIndex == WINDOW_SIZE) {
+      unsigned long t_start = micros();
       extractFeatures(x, y, z, features);
       normalizeFeatures(features, normalized);
 
       int pred = predict(normalized);
+
+      unsigned long t_end = micros();
+      unsigned long duration = t_end - t_start;
+
       const char* labels[NUM_CLASSES] = {"Back", "Left", "Right", "Stomach"};
       Serial.print("[Predict] Posture: ");
       Serial.print(pred + 1);
       Serial.print(" → ");
       Serial.println(labels[pred]);
+
+      Serial.print(" | Thời gian xử lý: ");
+      Serial.print(duration);
+      Serial.println(" µs");
+
 
       sampleIndex = 0;  // reset lại để lấy 21 mẫu tiếp theo
       delay(500);       // nghỉ 0.5s trước chu kỳ mới
