@@ -5,15 +5,6 @@
 #include "model.h"
 
 int predict(float features[]) {
-  // Apply MinMax normalization [-1, 1] using precomputed scale
-  for (int i = 0; i < NUM_FEATURES; i++) {
-    if (scale[i] != 0) {
-      features[i] = (features[i] - min_vals[i]) * scale[i] - 1.0;
-    } else {
-      features[i] = 0.0; // fallback to 0 if scale is zero
-    }
-  }
-
   // Compute logits (linear combination with weights)
   float logits[NUM_CLASSES] = {0};
   for (int i = 0; i < NUM_CLASSES; i++) {
@@ -64,6 +55,7 @@ int predict(float features[]) {
   int predicted = 0;
   float max_prob = probs[0];
   for (int i = 1; i < NUM_CLASSES; i++) {
+    
     if (probs[i] > max_prob) {
       max_prob = probs[i];
       predicted = i;

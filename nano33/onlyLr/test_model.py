@@ -44,22 +44,25 @@ def load_and_prepare_data(csv_path):
 if __name__ == "__main__":
     # Load và xử lý dữ liệu
     features, labels = load_and_prepare_data(INPUT_CSV)
-    print(f"[INFO] Total samples: {len(features)}")
-    print(f"[INFO] Label distribution: {np.bincount(labels)}")
 
-    # Load model và scaler đã huấn luyện
-    print("[INFO] Loading trained model and scaler...")
     model = joblib.load('onlyLR_minmax.dat')
     scaler = joblib.load('onlyScaler_minmax.dat')
 
-    # Chuẩn hóa đặc trưng
     features_scaled = scaler.transform(features)
 
-    # Dự đoán
     predictions = model.predict(features_scaled)
 
-    # In tiêu đề
-    print("label,pred")
+    # In toàn bộ feature values
+    pd.set_option('display.max_columns', None)  # hiển thị tất cả cột
+    pd.set_option('display.width', None)        # không giới hạn chiều ngang
+    pd.set_option('display.max_colwidth', None)  # không rút gọn nội dung cột
+
+    print("=== features ===")
+    print(features.to_string(index=False))  # ẩn chỉ số dòng, in đẹp hơn
+
+    print("\n=== features_scaled ===")
+    np.set_printoptions(precision=6, suppress=True, linewidth=200)
+    print(features_scaled)
 
     # In từng dòng nhãn thực tế và nhãn dự đoán
     for t, p in zip(labels, predictions):

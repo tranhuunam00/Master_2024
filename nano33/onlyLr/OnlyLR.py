@@ -70,22 +70,38 @@ def train_LR_model(X_train, X_test, y_train, y_test):
 
 def export_model_parameters(model, scaler):
     print("\n===== Model Parameters (for Arduino) =====")
-    np.set_printoptions(suppress=True, precision=6)
+    np.set_printoptions(suppress=True, precision=5, linewidth=200)
 
-    print("\n// Coefficients (weights):")
-    print(model.coef_)
+    # Weights
+    print("\nconst float weights[NUM_CLASSES][NUM_FEATURES] = {")
+    for class_weights in model.coef_:
+        weight_str = ', '.join([f"{w: .5f}" for w in class_weights])
+        print(f"  {{ {weight_str} }},")
+    print("};")
 
-    print("\n// Intercepts (biases):")
-    print(model.intercept_)
+    # Biases
+    biases = ', '.join([f"{b: .5f}" for b in model.intercept_])
+    print("\nconst float biases[NUM_CLASSES] = {")
+    print(f"  {biases}")
+    print("};")
 
-    print("\n// Scaler min:")
-    print(scaler.data_min_)
+    # Min values
+    min_vals = ', '.join([f"{v: .5f}" for v in scaler.data_min_])
+    print("\nconst float min_vals[NUM_FEATURES] = {")
+    print(f"  {min_vals}")
+    print("};")
 
-    print("\n// Scaler max:")
-    print(scaler.data_max_)
+    # Max values
+    max_vals = ', '.join([f"{v: .5f}" for v in scaler.data_max_])
+    print("\nconst float max_vals[NUM_FEATURES] = {")
+    print(f"  {max_vals}")
+    print("};")
 
-    print("\n// Scaler scale:")
-    print(scaler.scale_)  # scale = 2 / (max - min)
+    # Scale values
+    scales = ', '.join([f"{v: .5f}" for v in scaler.scale_])
+    print("\nconst float scale[NUM_FEATURES] = {")
+    print(f"  {scales}")
+    print("};")
 
 
 if __name__ == "__main__":
