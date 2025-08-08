@@ -2,6 +2,8 @@
 #include "predict.h"
 #include <math.h>
 #include <algorithm>
+#include "Arduino_BMI270_BMM150.h"
+
 
 #define WINDOW_SIZE 21
 #define NUM_FEATURES 16
@@ -14,67 +16,45 @@ void setup() {
   Serial.begin(115200);
   while (!Serial);
 
-  Serial.println("=== Feature Extraction & Normalization Test ===");
 
-  // Gán dữ liệu mẫu
-  float sample_data[WINDOW_SIZE][3] = {
-    {-0.03870, -0.00964, 1.00513},
-    {-0.03662, -0.00769, 1.01428},
-    {-0.03650, -0.01135, 1.01733},
-    {-0.04089, -0.01587, 1.00879},
-    {-0.03772, -0.01929, 1.00708},
-    {-0.03271, -0.00488, 1.00806},
-    {-0.04187, -0.01685, 1.02344},
-    {-0.03625, -0.00244, 1.01563},
-    {-0.03967, -0.01086, 0.99060},
-    {-0.04333, -0.00854, 1.01392},
-    {-0.04578, -0.01831, 1.00610},
-    {-0.04431, -0.01685, 1.01990},
-    {-0.05310, -0.02246, 1.01855},
-    {-0.05310,  0.00452, 1.00354},
-    {-0.05957,  0.02832, 0.99792},
-    {-0.05579,  0.09863, 0.96973},
-    {-0.05603,  0.07727, 1.00452},
-    {-0.06189,  0.05505, 0.98987},
-    {-0.05798, -0.00525, 1.00037},
-    {-0.05579, -0.03113, 1.00171}
-  };
-
-
-  for (int i = 0; i < WINDOW_SIZE; i++) {
-    x[i] = sample_data[i][0];
-    y[i] = sample_data[i][1];
-    z[i] = sample_data[i][2];
+ if (!IMU.begin()) {
+    Serial.println("Failed to initialize IMU!");
+    while (1)
+      ;
   }
-
-  extractFeatures(x, y, z, features);
-  normalizeFeatures(features, normalized);
-
-  Serial.println("--- Features ---");
-  for (int i = 0; i < NUM_FEATURES; i++) {
-    Serial.print("features[");
-    Serial.print(i);
-    Serial.print("] = ");
-    Serial.println(features[i], 6);
-  }
-
-  Serial.println("--- Normalized ---");
-  for (int i = 0; i < NUM_FEATURES; i++) {
-    Serial.print("normalized[");
-    Serial.print(i);
-    Serial.print("] = ");
-    Serial.println(normalized[i], 6);
-  }
-
-  int pred = predict(normalized);
-  const char* labels[NUM_CLASSES] = {"Back", "Left", "Right", "Stomach"};
-  Serial.print("Predicted: ");
-  Serial.print(pred + 1);
-  Serial.print(" → ");
-  Serial.println(labels[pred]);
+  Serial.println("=== Real-time Sleep Posture Detection ===");
 }
 
+int sampleIndex = 0;
+
 void loop() {
+  float ax, ay, az;
+
+  if (IMU.accelerationAvailable()) {
+   
+
+    IMU.readAcceleration(ax, ay, az);
+    if (sampleIndex < WINDOW_SIZE) {
+      x[sampleIndex] = ax;
+      y[sampleIndex] = ay;
+      z[sampleIndex] = az;
+      sampleIndex++;
+    }
+    if (sampleIndex == WINDOW_SIZE) {
+      extractFeatures(x, y, z, features);
+      normalizeFeatures(features, normalized);
+
+      int pred = predict(normalized);
+      const char* labels[NUM_CLASSES] = {"Back", "Left", "Right", "Stomach"};
+      Serial.print("[Predict] Posture: ");
+      Serial.print(pred + 1);
+      Serial.print(" → ");
+      Serial.println(labels[pred]);
+
+      sampleIndex = 0;  // reset lại để lấy 21 mẫu tiếp theo
+      delay(500);       // nghỉ 0.5s trước chu kỳ mới
+    }
+  }
   // nothing
 }
 
