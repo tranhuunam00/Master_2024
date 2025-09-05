@@ -302,9 +302,12 @@ sở hữu khả năng quản lý năng lượng linh hoạt, tương thích t�
 
 \subsection{Bluetooth năng lượng thấp}
 
-Với mục tiêu tối ưu hóa năng lượng và đảm bảo khả năng hoạt động lâu dài 
-cho thiết bị đeo sử dụng pin, Bluetooth Low Energy (BLE) được lựa chọn 
-làm chuẩn kết nối không dây chính trong hệ thống phần cứng.
+Với mục tiêu tối ưu hóa năng lượng và đảm bảo khả năng hoạt động lâu dài cho thiết bị đeo sử dụng pin, Bluetooth Low Energy (BLE) được lựa chọn làm chuẩn kết nối không dây chính trong hệ thống phần cứng. So với các giao thức khác, BLE tỏ ra vượt trội nhờ mức tiêu thụ năng lượng rất thấp, tốc độ khởi tạo kết nối nhanh và khả năng tương thích rộng rãi với hầu hết các thiết bị di động hiện nay.
+
+Ngược lại, các công nghệ truyền thông không dây khác đều bộc lộ những hạn chế khó khắc phục trong bối cảnh thiết bị theo dõi giấc ngủ cá nhân. Wi-Fi, tuy có ưu thế về băng thông và khả năng truy cập trực tiếp Internet, lại tiêu thụ năng lượng cao và mất nhiều thời gian để khởi tạo kết nối, điều này đi ngược với yêu cầu tiết kiệm pin và hoạt động liên tục của thiết bị đeo cỡ nhỏ. Bluetooth cổ điển (BR/EDR), vốn được thiết kế cho các ứng dụng truyền tải dữ liệu dung lượng lớn như âm thanh, cũng đòi hỏi năng lượng cao hơn nhiều so với BLE, trong khi hệ thống theo dõi tư thế ngủ chỉ cần trao đổi các gói dữ liệu nhỏ giọt. ZigBee, mặc dù hiệu quả trong các mạng cảm biến nhà thông minh nhờ cấu trúc mesh, lại thiếu sự hỗ trợ trên điện thoại thông minh và đòi hỏi gateway riêng, gây bất tiện cho mô hình thiết bị cá nhân. Trong khi đó, LoRa/LoRaWAN nổi bật với khả năng truyền xa và tiết kiệm năng lượng, nhưng tốc độ dữ liệu rất thấp (chỉ vài kbps), không thể đáp ứng yêu cầu truyền tải gần thời gian thực trong giám sát giấc ngủ.
+
+
+\textbf{Tóm lại}, so với các giao thức không dây khác, BLE đạt sự cân bằng tối ưu giữa năng lượng, tốc độ, độ trễ và tính phổ biến. Đây là cơ sở để luận văn lựa chọn BLE làm chuẩn kết nối chính, bảo đảm vừa duy trì độ chính xác của dữ liệu cảm biến, vừa kéo dài thời lượng pin, đồng thời tạo thuận lợi cho việc triển khai thực tế trên quy mô cộng đồng.
 
 \begin{figure}[htbp]
 		\centering
@@ -387,44 +390,50 @@ SIG hoặc định nghĩa tùy chỉnh, ví dụ như dịch vụ UART tùy ch�
 hai đặc tính RX và TX, tương ứng với kênh nhận và truyền.
 
 \subsection{Thiết bị thực nghiệm}
-Trong khuôn khổ của khóa luận, nhằm đảm bảo tiến độ triển khai và tính an 
-toàn trong giai đoạn thử nghiệm, tác giả lựa chọn sử dụng bộ kit thương 
-mại Adafruit Playground để tiến hành thực nghiệm sơ bộ. Bộ kit này tích 
-hợp sẵn cảm biến gia tốc MEMS LIS3DH được gắn tại vị trí trung tâm, 
-cho phép đo gia tốc theo ba trục không gian X, Y và Z với độ chính xác cao. 
-Theo tài liệu từ nhà sản xuất, chi phí cho mỗi bộ kit Adafruit vào khoảng 
-25 USD \cite{ada_overview}. Trong bộ kit, cảm biến LIS3DH được kết nối với 
-vi điều khiển thông qua giao thức SPI, với chân chọn thiết bị (CS) được 
-gán tại chân số 8 và đầu ra ngắt tùy chọn (IRQ) tại chân số 7 (IRQ \#4). 
-Theo sơ đồ bố trí tiêu chuẩn của kit, trục X định hướng theo chiều giắc 
-USB, trục Y hướng sang bên trái, và trục Z vuông góc theo hướng mặt trên 
-của thiết bị.
 
-Bên cạnh đó, để mở rộng khả năng nghiên cứu và đánh giá tính khả thi khi 
-tích hợp học máy nhẹ (TinyML) cũng như kết nối không dây, nhóm nghiên 
-cứu sử dụng thêm nền tảng Arduino Nano 33 BLE Sense. Đây là vi điều khiển 
-hiện đại tích hợp vi xử lý nRF52840 (ARM Cortex-M4F), hỗ trợ Bluetooth 
-Low Energy (BLE) và nhiều cảm biến tích hợp (IMU, microphone, nhiệt độ, 
-độ ẩm, v.v.), đồng thời tương thích với nền tảng TensorFlow Lite for 
-Microcontrollers \cite{nano33ble}.
+Việc lựa chọn nền tảng phần cứng thử nghiệm có ý nghĩa quyết định đối với 
+toàn bộ nghiên cứu, bởi nó không chỉ ảnh hưởng đến độ tin cậy của dữ liệu 
+và khả năng huấn luyện mô hình mà còn định hình hướng phát triển thiết bị 
+trong các giai đoạn tiếp theo. Sau khi xác định được loại cảm biến và vi xử 
+lý phù hợp, luận văn triển khai song song hai nền tảng kit thương mại nhằm 
+đáp ứng hai mục tiêu khác nhau: thu thập dữ liệu huấn luyện và đánh giá 
+khả năng triển khai mô hình học máy nhẹ trên thiết bị đeo thực tế.  
 
-Đáng chú ý, bên cạnh việc sử dụng các bộ kit sẵn có, một thành viên khác 
-trong nhóm đang tiến hành phát triển và xây dựng bản mạch phần cứng 
-tùy chỉnh dựa trên các thông số kỹ thuật đã được phân tích ở các phần 
-trước. Hướng tiếp cận này không chỉ giúp nhóm triển khai nhanh chóng hệ 
-thống thử nghiệm trong giai đoạn đầu, mà còn mở ra khả năng thiết kế một 
+Thứ nhất, bộ kit \textit{Adafruit Playground} được lựa chọn cho giai đoạn 
+thu thập dữ liệu và thực nghiệm sơ bộ. Kit này tích hợp sẵn cảm biến gia tốc 
+MEMS LIS3DH, cho phép đo gia tốc theo ba trục không gian (X, Y, Z) với độ 
+chính xác cao. Cảm biến được kết nối với vi điều khiển thông qua giao thức 
+SPI, trong đó chân chọn thiết bị (CS) được gán tại chân số 8 và đầu ra ngắt 
+(IRQ) tại chân số 7 (IRQ \#4). Theo cấu trúc bố trí tiêu chuẩn, trục X được 
+định hướng theo chiều giắc USB, trục Y hướng sang bên trái, trong khi trục Z 
+vuông góc với mặt phẳng thiết bị. Với chi phí chỉ khoảng 25 USD/kit 
+\cite{ada_overview}, nền tảng này mang lại sự cân bằng hợp lý giữa tính 
+kinh tế và độ tin cậy, cho phép triển khai nhanh chóng hệ thống thu thập dữ 
+liệu trong giai đoạn đầu.  
+
+Thứ hai, để kiểm chứng tính khả thi trong triển khai mô hình tối ưu và đánh 
+giá hiệu năng thực tế của hệ thống đeo, luận văn sử dụng thêm bo mạch 
+\textit{Arduino Nano 33 BLE Sense}. Đây là nền tảng hiện đại dựa trên vi 
+xử lý nRF52840 (ARM Cortex-M4F), hỗ trợ Bluetooth Low Energy (BLE) và 
+tích hợp sẵn nhiều cảm biến (IMU, microphone, nhiệt độ, độ ẩm, \ldots). 
+Đặc biệt, bo mạch này tương thích trực tiếp với \textit{TensorFlow Lite for 
+Microcontrollers} \cite{nano33ble}, nhờ đó có thể triển khai và đánh giá trực 
+tiếp các mô hình TinyML trong môi trường nhúng.  
+
+Đáng chú ý, bên cạnh việc tận dụng các bộ kit thương mại, nhóm nghiên cứu 
+đồng thời phát triển một phiên bản mạch phần cứng tùy chỉnh dựa trên những 
+phân tích ở các chương trước. Hướng tiếp cận này vừa bảo đảm tiến độ triển 
+khai trong giai đoạn thử nghiệm, vừa đặt nền tảng cho việc xây dựng một 
 thiết bị nhúng chuyên dụng, tối ưu hơn về chi phí, hiệu năng và khả năng 
-tích hợp trong các ứng dụng thực tiễn.
-
+tích hợp trong các ứng dụng giám sát tư thế ngủ và hỗ trợ chẩn đoán ngưng 
+thở tắc nghẽn khi ngủ.  
 
 \begin{figure}[htbp]
-		\centering
- 		\includegraphics[width=0.8\textwidth]{images/detail_ada.png}
-		\caption{Cấu trúc các thành phần trên Circuit PlayGround}
-		\label{detail_ada}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/detail_ada.png}
+    \caption{Cấu trúc các thành phần trên Circuit Playground}
+    \label{detail_ada}
 \end{figure}
-
-
 
 
 
@@ -440,12 +449,24 @@ tế và mở rộng trong tương lai.
 
 \subsection{Lập trình vi xử lý}
 
-Thiết bị được lập trình trên nền tảng Arduino IDE, sử dụng thư viện 
-\texttt{Adafruit Circuit Playground}. Trong hàm \texttt{setup()}, 
-thiết bị khởi tạo các bản tin quảng cáo (advertising), 
-cấu hình kết nối/ngắt kết nối, và thiết lập cấu trúc dịch vụ theo 
-giao thức \gls{GATT} của BLE, như được minh họa trong Hình~\ref{flowBLE}.
+Mục tiêu của phần lập trình là ứng dụng các thư viện và framework hiện có 
+nhằm rút ngắn thời gian phát triển, đảm bảo tính ổn định và khả năng mở rộng 
+của hệ thống. Quá trình phát triển phần mềm được thực hiện trên nền tảng 
+\textit{Arduino IDE}, kết hợp hai thư viện chính: \texttt{Adafruit Circuit Playground} 
+(cho bo Adafruit Playground) và \texttt{ArduinoBLE}/\texttt{Arduino\_LSM9DS1} 
+(cho bo Arduino Nano 33 BLE Sense). Việc sử dụng các thư viện này giúp đơn giản hóa 
+công việc lập trình giao tiếp với cảm biến, quản lý tín hiệu và thiết lập kết nối 
+không dây, đồng thời bảo đảm tính tương thích với \textit{TensorFlow Lite for 
+Microcontrollers} trong giai đoạn triển khai TinyML.  
 
+Trong quá trình khởi tạo (\texttt{setup()}), hệ thống thực hiện cấu hình các 
+thành phần cốt lõi của giao thức Bluetooth Low Energy (BLE), bao gồm: tạo 
+bản tin quảng cáo (advertising), thiết lập cơ chế kết nối và ngắt kết nối, 
+cũng như định nghĩa cấu trúc dịch vụ và đặc tính theo mô hình \gls{GATT}. 
+Cách tiếp cận này cho phép thiết bị vừa duy trì mức tiêu thụ năng lượng thấp, 
+vừa bảo đảm khả năng truyền dữ liệu cảm biến tới ứng dụng di động một cách 
+ổn định và theo chuẩn công nghiệp. Quy trình này được minh họa trong 
+Hình~\ref{flowBLE}.  
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{images/flowBLE.png}
