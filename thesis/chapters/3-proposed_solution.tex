@@ -1,5 +1,16 @@
 
 \section{Phần cứng thực nghiệm \label{section_overview_propsed_method}}
+Trong thiết kế hệ thống giám sát tư thế ngủ, quá trình lựa chọn phần cứng được xây dựng theo một lộ trình rõ ràng:
+
+\begin{enumerate}
+\item \textbf{Xác định mục tiêu}: Hệ thống cần đạt độ chính xác cao trong phân loại tư thế ngủ, tiêu thụ năng lượng thấp để hoạt động suốt đêm, đồng thời có khả năng triển khai mô hình TinyML trực tiếp trên thiết bị đeo.
+\item \textbf{Lựa chọn cảm biến}: Dựa trên đặc tính chuyển động chậm – biên độ nhỏ trong giấc ngủ, cảm biến gia tốc số với độ nhạy cao, dải đo hẹp và khả năng tích hợp tốt được ưu tiên.
+\item \textbf{Lựa chọn vi xử lý}: Trên cơ sở yêu cầu về xử lý tín hiệu thời gian thực và triển khai mô hình học máy nhẹ, dòng ARM Cortex-M4 được chọn nhờ sự cân bằng giữa hiệu năng, năng lượng và hỗ trợ thư viện DSP/TinyML.
+\item \textbf{Lựa chọn kit phát triển}: Sau khi xác định được cảm biến và vi xử lý, bước cuối cùng là chọn nền tảng phần cứng cụ thể. Luận văn sử dụng hai kit: (i) bo Adafruit Playground với nRF52840 + LIS3DH để thu thập dữ liệu và huấn luyện mô hình; (ii) Arduino Nano 33 BLE Sense để triển khai mô hình tối ưu trên thiết bị đeo thực tế.
+\item \textbf{Nghiên cứu và thiết kế phần cứng riêng}: Bên cạnh việc sử dụng kit thương mại nhằm rút ngắn quá trình thử nghiệm, luận văn cũng hướng tới việc chế tạo bo mạch chuyên dụng tích hợp cảm biến và vi xử lý đã chọn. Mục tiêu là tạo ra nguyên mẫu thiết bị đeo có kích thước nhỏ gọn, tối ưu năng lượng, đáp ứng chuẩn y sinh và sẵn sàng cho các nghiên cứu mở rộng trong tương lai.
+\end{enumerate}
+
+Cách tiếp cận này đảm bảo hệ thống phần cứng vừa có tính thực tiễn trong giai đoạn thử nghiệm, vừa có tính định hướng dài hạn trong phát triển sản phẩm hoàn chỉnh, từ đó tạo cơ sở cho việc chuyển giao công nghệ và ứng dụng lâm sàng
 \subsection{Cảm biến \label{section_overview_propsed_method}}
 
 Trong quá trình ngủ, các chuyển động thân thể chủ yếu là chuyển động 

@@ -1,4 +1,5 @@
 
+Trong chương này, tác giả sẽ trình bày tổng quan về hội chứng ngưng thở khi ngủ (OSA) và thể phụ thuộc tư thế (pOSA), làm rõ mối liên hệ giữa tư thế ngủ và mức độ rối loạn hô hấp. Tiếp theo, chương giới thiệu lý do lựa chọn cảm biến gia tốc làm giải pháp theo dõi tư thế, nguyên lý hoạt động và vị trí đặt cảm biến tối ưu. Cuối cùng, tác giả đề cập đến xu hướng ứng dụng trí tuệ nhân tạo và điện toán biên trong phân tích OSA và tư thế ngủ, qua đó đặt nền tảng cho các chương tiếp theo của luận văn.
 \section{Hội chứng ngưng thở khi ngủ}
 
 Trong bối cảnh nghiên cứu các rối loạn hô hấp liên quan đến giấc ngủ, 
@@ -411,12 +412,53 @@ Hơn nữa, gia tốc kế không cung cấp thông tin về các chỉ số sin
 như $\mathrm{SpO_2}$, nhịp thở hay nhịp tim, vì vậy để chẩn đoán toàn diện OSA, 
 cần tích hợp thêm các cảm biến khác hoặc kết hợp với các mô hình 
 suy luận (inference models) để bù đắp cho thiếu sót này.
+\begin{table}[htbp]
+\centering
+\caption{So sánh ưu và nhược điểm của các vị trí gắn cảm biến gia tốc trong theo dõi tư thế ngủ}
+\label{tab:sensor_position}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{3cm}|p{5.2cm}|p{6.2cm}|}
+\hline
+\textbf{Vị trí} & \textbf{Ưu điểm} & \textbf{Nhược điểm} \\
+\hline
+\textbf{Cổ tay} & 
+- Dễ đeo, quen thuộc (giống đồng hồ, vòng tay).  
+- Thuận tiện cho người dùng tự gắn. &
+- Chịu nhiều chuyển động ngoài ý muốn của tay.  
+- Tín hiệu kém đại diện cho tư thế toàn thân. \\
+\hline
+\textbf{Trán} &
+- Có thể cố định bằng băng quấn đầu.  
+- Ít bị ảnh hưởng bởi quần áo hay chăn phủ. &
+- Không phản ánh chính xác trục cơ thể.  
+- Gây khó chịu, ảnh hưởng thẩm mỹ và giấc ngủ. \\
+\hline
+\textbf{Ngực (lateral)} &
+- Gần trung tâm thân người, phản ánh tương đối hướng trọng lực.  
+- Thuận lợi để kết hợp với dây đeo ngực (chest strap). &
+- Có nguy cơ xô lệch khi nằm nghiêng.  
+- Có thể gây khó chịu khi nằm sấp. \\
+\hline
+\textbf{Xương ức (suprasternal notch)} &
+- Ổn định hình học, gần trục trung tâm cơ thể.  
+- Phản ánh chính xác hướng trọng lực và tư thế toàn thân.  
+- Ít chịu ảnh hưởng từ chuyển động tay/chân.  
+- Thuận lợi để tích hợp thêm cảm biến (âm thanh, nhiệt độ, SpO$_2$). &
+- Yêu cầu thiết kế miếng dán/thiết bị đeo chuyên dụng để cố định đúng vị trí. \\
+\hline
+\end{tabular}
+\end{table}
 
 Xuất phát từ các phân tích nêu trên, nghiên cứu này lựa chọn thiết 
 kế một thiết bị đeo tiếp xúc sử dụng cảm biến gia tốc ba trục, 
 được gắn tại vùng xương ức (suprasternal notch). 
-Việc lựa chọn vị trí và cấu trúc thiết bị được cân nhắc dựa trên 
-các yếu tố sau Hình~\ref{position_sensor}:
+Việc lựa chọn vị trí và cấu trúc thiết bị được cân nhắc dựa 
+trên các yếu tố sau (Hình~\ref{position_sensor}). 
+Bảng~\ref{tab:sensor_position} dưới đây so sánh ưu 
+và nhược điểm của các vị trí gắn cảm biến gia tốc thường gặp, 
+qua đó cho thấy vùng xương ức (suprasternal notch) 
+là lựa chọn hợp lý nhất:
 
 \begin{enumerate}
     \item Vị trí xương ức có độ ổn định cao trong suốt quá trình ngủ, 
@@ -430,6 +472,9 @@ các yếu tố sau Hình~\ref{position_sensor}:
 		nhiệt độ, phục vụ cho các mục tiêu mở rộng trong các nghiên cứu 
 		tiếp theo.
 \end{enumerate}
+
+Sau khi xác định được vị trí gắn tối ưu, bước tiếp theo là làm rõ cơ sở nguyên lý đo lường của cảm biến, nhằm lý giải vì sao thiết bị này có thể phản ánh chính xác tư thế cơ thể trong khi ngủ.
+
 
 
 \subsection*{Cảm biến gia tốc và nguyên lý ứng dụng trong theo dõi tư thế ngủ}
@@ -650,10 +695,17 @@ nhà.
 
 Nhìn chung, việc chẩn đoán hội chứng ngưng thở khi ngủ – đặc biệt là thể ngưng thở tắc nghẽn phụ thuộc tư thế (positional OSA – pOSA) – đòi hỏi một hệ thống giám sát liên tục, có khả năng thu thập dữ liệu sinh lý trong thời gian dài, nhận diện chính xác tư thế ngủ, và đưa ra cảnh báo kịp thời trong môi trường sinh hoạt tự nhiên tại nhà. Những yêu cầu này không chỉ giới hạn ở độ chính xác mô hình, mà còn mở rộng tới tiêu chí về tính gọn nhẹ, tiết kiệm năng lượng, và dễ triển khai trên nền tảng vi điều khiển hoặc thiết bị đeo. 
 
-Trong bối cảnh đó, các mô hình học máy (machine learning) đang nổi lên như một công cụ hữu hiệu để xử lý, phân loại và suy luận dữ liệu cảm biến đầu vào – đặc biệt trong việc tính toán chỉ số AHI (Apnea–Hypopnea Index) hoặc nhận diện chính xác các tư thế ngủ từ chuỗi tín hiệu ba trục. Hướng tiếp cận này không chỉ đẩy mạnh khả năng phát hiện sớm OSA mà còn mở ra tiềm năng triển khai các hệ thống hỗ trợ chẩn đoán thông minh trong môi trường chăm sóc sức khoẻ cá thể hoá tại nhà. 
-Đây chính là sự giao thoa giữa y học giấc ngủ truyền thống và công nghệ trí tuệ nhân tạo ứng dụng – một lĩnh vực đang chứng kiến sự phát triển nhanh chóng trong thập niên gần đây \cite{osa_sanchez2025}.
+Trong bối cảnh đó, các mô hình học máy trở thành công cụ thiết yếu 
+để khai thác dữ liệu cảm biến. Chúng không chỉ cho phép phân loại tư 
+thế với độ chính xác cao mà còn mở rộng sang suy luận các chỉ số lâm 
+sàng như AHI. Việc triển khai trực tiếp trên vi điều khiển Cortex-M4 
+theo hướng TinyML đưa giải pháp từ phòng thí nghiệm đến ứng dụng 
+thực tiễn tại nhà, đánh dấu sự giao thoa giữa y học giấc ngủ truyền 
+thống và trí tuệ nhân tạo ứng dụng – một lĩnh vực đang phát triển 
+mạnh mẽ trong thập niên gần đây \cite{osa_sanchez2025}.
 
-\subsection{Quy trình tổng quát trong hệ thống ứng dụng AI cho đánh giá OSA và phân loại tư thế ngủ}
+\subsection{Quy trình tổng quát trong hệ thống ứng dụng AI cho đánh 
+giá OSA và phân loại tư thế ngủ}
 \begin{table}[htbp]
 \centering
 \caption{Các bước chính trong hệ thống ứng dụng AI cho phân tích tư thế ngủ và hỗ trợ chẩn đoán OSA}
@@ -1099,6 +1151,13 @@ Khi được triển khai trên các thiết bị đeo thông minh, hệ thống
 
 Cuối cùng, sự kết hợp giữa \textbf{AI}, \textbf{thiết bị đeo} và công nghệ \textbf{điện toán biên (edge computing)} mang lại tiềm năng rất lớn cho các hệ thống sàng lọc, chẩn đoán sớm và quản lý cá thể hóa OSA theo thời gian thực — mở ra hướng phát triển bền vững cho y tế thông minh trong kỷ nguyên số.
 
+Đây là một bước tiến quan trọng, hướng đến mục tiêu cá nhân hóa chẩn đoán và điều trị OSA – điều mà đa ký giấc ngủ (\textit{polysomnography – PSG}) truyền thống còn hạn chế do chi phí cao, quy trình phức tạp và tính không đại diện cho điều kiện ngủ tự nhiên. Khi được triển khai trên thiết bị đeo thông minh, hệ thống AI cho phép theo dõi liên tục, không xâm lấn trong bối cảnh sinh hoạt tại nhà, nhờ đó nâng cao độ tin cậy của dữ liệu và hỗ trợ quyết định điều trị chính xác hơn cho bác sĩ. Sự kết hợp giữa \textbf{AI}, \textbf{thiết bị đeo} và \textbf{điện toán biên (edge computing)} vì thế mở ra tiềm năng lớn cho sàng lọc, chẩn đoán sớm và quản lý OSA theo thời gian thực.
+
+\noindent\textbf{Vì vậy, luận văn được tổ chức theo hai giai đoạn mạch lạc:}
+(i) \emph{Đánh giá đặc trưng và mô hình trên dữ liệu thu thập} – xây dựng chuỗi xử lý từ tiền xử lý, phân đoạn theo cửa sổ, trích xuất đặc trưng đại diện (miền thời gian và tần số) đến so sánh các mô hình nhẹ (ngưỡng–hình học, LR, SVM, RF, NN nông). Tiêu chí lựa chọn không chỉ dựa trên độ chính xác/F1 vi mô–vĩ mô và ma trận nhầm lẫn cho từng tư thế, mà còn cân nhắc tính bền vững trước sai lệch gắn cảm biến, chi phí tính toán và khả năng co giãn khi giảm tần số lấy mẫu.
+(ii) \emph{Triển khai on-chip (TinyML) trên vi điều khiển mục tiêu} – ánh xạ pipeline suy luận lên nền tảng Cortex-M4 với các tối ưu đặc thù phần cứng (quantization số nguyên, rút gọn đặc trưng, sử dụng FIFO/INT để giảm đánh thức CPU), bảo đảm ràng buộc bộ nhớ–độ trễ–năng lượng, đồng thời kiểm chứng sai lệch hiệu năng so với giai đoạn (i) ở mức chấp nhận được cho ứng dụng thực tế.
+
+Cấu trúc hai giai đoạn này phản ánh lộ trình từ bằng chứng thuật toán trên dữ liệu đến khả năng vận hành ngoài đời thực trên thiết bị đeo chi phí thấp, qua đó hiện thực hóa mục tiêu cá thể hóa chẩn đoán và theo dõi OSA trong môi trường tại nhà.
 
 
 
