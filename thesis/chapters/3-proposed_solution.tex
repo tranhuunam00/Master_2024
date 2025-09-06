@@ -399,6 +399,12 @@ lý phù hợp, luận văn triển khai song song hai nền tảng kit thương
 đáp ứng hai mục tiêu khác nhau: thu thập dữ liệu huấn luyện và đánh giá 
 khả năng triển khai mô hình học máy nhẹ trên thiết bị đeo thực tế.  
 
+Việc sử dụng đồng thời hai nền tảng mang lại ý 
+nghĩa khoa học quan trọng. Một mặt, nó giúp kiểm 
+chứng mô hình trên các điều kiện phần cứng khác 
+nhau qua đó làm rõ khả năng tổng quát 
+hóa và tính ổn định của hệ thống. Mặt khác, cách tiếp cận này tránh được sự lệ thuộc vào một cấu hình duy nhất, chứng minh rằng mô hình có thể tái triển khai và thích ứng trên nhiều nền tảng phần cứng cùng họ vi xử lý. Nhờ đó, nghiên cứu không chỉ dừng lại ở việc xây dựng một nguyên mẫu cụ thể, mà còn góp phần khẳng định tính khả chuyển và độ tin cậy của giải pháp trong các ứng dụng thực tiễn lâu dài.
+
 Thứ nhất, bộ kit \textit{Adafruit Playground} được lựa chọn cho giai đoạn 
 thu thập dữ liệu và thực nghiệm sơ bộ. Kit này tích hợp sẵn cảm biến gia tốc 
 MEMS LIS3DH, cho phép đo gia tốc theo ba trục không gian (X, Y, Z) với độ 
@@ -446,52 +452,73 @@ Nội dung cũng đề cập đến các yêu cầu chức năng, phi chức nă
 thiết kế hệ thống ở mức cao nhằm đảm bảo khả năng triển khai thực 
 tế và mở rộng trong tương lai.
 
-
 \subsection{Lập trình vi xử lý}
 
-Mục tiêu của phần lập trình là ứng dụng các thư viện và framework hiện có 
-nhằm rút ngắn thời gian phát triển, đảm bảo tính ổn định và khả năng mở rộng 
-của hệ thống. Quá trình phát triển phần mềm được thực hiện trên nền tảng 
-\textit{Arduino IDE}, kết hợp hai thư viện chính: \texttt{Adafruit Circuit Playground} 
-(cho bo Adafruit Playground) và \texttt{ArduinoBLE}/\texttt{Arduino\_LSM9DS1} 
-(cho bo Arduino Nano 33 BLE Sense). Việc sử dụng các thư viện này giúp đơn giản hóa 
-công việc lập trình giao tiếp với cảm biến, quản lý tín hiệu và thiết lập kết nối 
-không dây, đồng thời bảo đảm tính tương thích với \textit{TensorFlow Lite for 
-Microcontrollers} trong giai đoạn triển khai TinyML.  
+Mục tiêu của phần lập trình không chỉ dừng lại ở việc xây dựng các đoạn mã 
+điều khiển cơ bản, mà còn hướng đến việc tận dụng tối đa hệ sinh thái 
+thư viện và framework đã được cộng đồng kiểm chứng. Cách tiếp cận này 
+giúp rút ngắn đáng kể thời gian phát triển, giảm thiểu rủi ro sai sót khi 
+lập trình ở mức thanh ghi thấp, đồng thời bảo đảm tính ổn định và khả năng 
+mở rộng của hệ thống trong các giai đoạn triển khai tiếp theo.  
 
-Trong quá trình khởi tạo (\texttt{setup()}), hệ thống thực hiện cấu hình các 
-thành phần cốt lõi của giao thức Bluetooth Low Energy (BLE), bao gồm: tạo 
-bản tin quảng cáo (advertising), thiết lập cơ chế kết nối và ngắt kết nối, 
+Quá trình phát triển phần mềm được thực hiện trên nền tảng \textit{Arduino IDE}, 
+kết hợp hai thư viện chính: \texttt{Adafruit Circuit Playground} 
+(cho bo Adafruit Playground) và \texttt{Arduino\_LSM9DS1}/\texttt{ArduinoBLE} 
+(cho bo Arduino Nano 33 BLE Sense). Việc sử dụng các thư viện này không 
+chỉ đơn giản hóa thao tác giao tiếp với cảm biến và quản lý tín hiệu, 
+mà còn tạo điều kiện tương thích trực tiếp với \textit{TensorFlow Lite for 
+Microcontrollers}, giúp rút ngắn đáng kể giai đoạn triển khai TinyML 
+trên thiết bị.  
+
+\subsubsection{Cấu hình vi xử lý và cảm biến}
+
+Trước khi tích hợp kết nối không dây, hệ thống được thiết lập các thông số hoạt động của vi xử lý và cảm biến dựa trên định hướng tối ưu năng lượng và đảm bảo chất lượng dữ liệu đã phân tích ở các chương trước. Mục tiêu của giai đoạn này là duy trì thời lượng pin dài trên thiết bị đeo, đồng thời vẫn thu được dữ liệu gia tốc đủ chính xác để phục vụ huấn luyện mô hình nhận diện tư thế ngủ.
+
+Cụ thể, vi xử lý nRF52840 được vận hành ở chế độ tiết kiệm năng lượng trong trạng thái chờ, và chỉ chuyển sang xử lý khi nhận tín hiệu ngắt từ cảm biến. Cảm biến gia tốc MEMS LIS3DH (trên Adafruit Playground) và IMU tích hợp (trên Arduino Nano 33 BLE Sense) được cấu hình với tần số lấy mẫu 10 Hz và dải đo ±2g. Thiết lập này được lựa chọn vì:
+
+Tần số 10 Hz đủ để ghi nhận chuyển động chậm và biến đổi tư thế trong khi ngủ, đồng thời giúp giảm thiểu khối lượng dữ liệu cần xử lý và lưu trữ.
+
+Dải đo ±2g cung cấp độ nhạy cao, phù hợp với các chuyển động mức thấp của cơ thể khi thay đổi tư thế, đồng thời hạn chế tiêu thụ năng lượng hơn so với các dải đo rộng hơn.
+
+Ngoài ra, cảm biến được cấu hình sử dụng ngắt dữ liệu (INT pin), tức là chỉ khi có mẫu mới trong thanh ghi thì tín hiệu ngắt mới được gửi tới vi xử lý. Cách tiếp cận này cho phép vi xử lý duy trì trạng thái ngủ phần lớn thời gian, chỉ thức dậy để đọc dữ liệu cần thiết, từ đó giảm đáng kể mức tiêu thụ năng lượng.
+
+\subsubsection{Cấu hình BLE}
+
+Trong quá trình khởi tạo (\texttt{setup()}), hệ thống thực hiện cấu hình 
+các thành phần cốt lõi của giao thức Bluetooth Low Energy (BLE), bao gồm: 
+tạo bản tin quảng bá (advertising), thiết lập cơ chế kết nối/ngắt kết nối, 
 cũng như định nghĩa cấu trúc dịch vụ và đặc tính theo mô hình \gls{GATT}. 
-Cách tiếp cận này cho phép thiết bị vừa duy trì mức tiêu thụ năng lượng thấp, 
-vừa bảo đảm khả năng truyền dữ liệu cảm biến tới ứng dụng di động một cách 
-ổn định và theo chuẩn công nghiệp. Quy trình này được minh họa trong 
+Điểm mạnh của BLE là cho phép thiết bị đeo duy trì mức tiêu thụ năng lượng 
+cực thấp trong khi vẫn bảo đảm tốc độ truyền dữ liệu cảm biến đủ nhanh để 
+phục vụ các ứng dụng thời gian thực. Đây là một yêu cầu quan trọng trong 
+các thiết bị y tế đeo người, vốn cần hoạt động liên tục trong nhiều giờ 
+hoặc nhiều ngày chỉ với một pin nhỏ. Quy trình này được minh họa trong 
 Hình~\ref{flowBLE}.  
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/flowBLE.png}
-    \caption{Lưu đồ hoạt động của thiết bị BLE}
-    \label{flowBLE}
-\end{figure}
 
 Trong đoạn mã~\ref{arduinoBLE}, hàm \texttt{startAdv()} đảm nhiệm cấu 
 hình quảng bá BLE cho thiết bị. Quá trình này bao gồm: thiết lập cờ 
-kết nối tổng quát, chèn thông tin công suất truyền (Tx Power), 
-thêm UUID của dịch vụ tư thế (\texttt{positionService}) và tên thiết 
-bị vào gói quảng bá. Các thông số quảng bá được cấu hình theo khuyến 
-nghị của Apple nhằm đảm bảo khả năng tương thích với thiết bị iOS: 
-chế độ nhanh với chu kỳ 20ms, chế độ chậm 152.5ms, và thời gian chuyển 
-chế độ sau 30 giây. Thiết bị sẽ tiếp tục phát tín hiệu quảng bá cho 
-đến khi có kết nối được thiết lập.
+kết nối tổng quát, chèn thông tin công suất truyền (Tx Power), thêm UUID 
+của dịch vụ tư thế (\texttt{positionService}) và tên thiết bị vào gói quảng bá. 
+Đặc biệt, các thông số quảng bá được cấu hình theo khuyến nghị của Apple 
+(20~ms ở chế độ nhanh, 152.5~ms ở chế độ chậm, chuyển đổi sau 30 giây), 
+nhằm đảm bảo mức độ tương thích tối đa với hệ sinh thái iOS. Cách cấu hình 
+này giúp thiết bị duy trì trạng thái “luôn sẵn sàng” để ghép nối, nhưng 
+không tiêu tốn năng lượng quá mức.  
 
-Trong cấu trúc dịch vụ, tác giả định nghĩa một dịch vụ chính với UUID 
-là \texttt{0x1821}, kèm theo hai đặc tính cảm biến: gia tốc 
+Trong cấu trúc dịch vụ, hệ thống định nghĩa một dịch vụ chính với UUID 
+\texttt{0x1821}, kèm theo hai đặc tính cảm biến: gia tốc 
 (\texttt{UUID 0x2713}, đơn vị \texttt{m/s\textsuperscript{2}}) và 
-gia tốc góc (\texttt{UUID 0x2744}, 
-đơn vị \texttt{rad/s\textsuperscript{2}}). 
-Tuy hệ thống hỗ trợ cả hai loại dữ liệu, trong khuôn khổ khoá luận này, 
-tác giả chỉ tập trung vào giá trị gia tốc thu được từ cảm biến để phục 
-vụ bài toán phân loại tư thế ngủ.
+gia tốc góc (\texttt{UUID 0x2744}, đơn vị \texttt{rad/s\textsuperscript{2}}). 
+Mặc dù phần cứng hỗ trợ thu thập song song nhiều loại dữ liệu cảm biến, 
+khoá luận này tập trung vào tín hiệu gia tốc tuyến tính – loại dữ liệu 
+được coi là trực quan nhất để phân loại tư thế ngủ, đồng thời giảm độ phức 
+tạp của mô hình TinyML trong giai đoạn thử nghiệm.  
+
+Cách tiếp cận này chứng minh rằng việc lựa chọn đúng nền tảng và thư viện 
+không chỉ giải quyết nhu cầu trước mắt (truyền dữ liệu ổn định, tiết kiệm pin) 
+mà còn mở ra khả năng tích hợp lâu dài với các hệ thống phân tích dữ liệu 
+trên di động hoặc đám mây, phù hợp với hướng phát triển thiết bị chăm sóc 
+sức khoẻ thông minh theo chuẩn công nghiệp.
 
 \input{chapters/examples/arduino}
 \input{chapters/examples/senDataBle}
@@ -587,39 +614,68 @@ tương ứng trong đồ thị.
     \caption{Biểu đồ phương sai Allan của trục X}
     \label{allan_real}
 \end{figure}
+\subsection{Hiệu chuẩn cảm biến}
 
-\textbf{Lọc nhiễu bằng bộ lọc Kalman.} Để xử lý nhiễu, đặc biệt là nhiễu 
-lượng tử, tác giả sử dụng bộ lọc Kalman \cite{kalman}. Đây là một bộ lọc 
-đệ quy có khả năng ước lượng trạng thái tối ưu của hệ thống từ các chuỗi 
-đo lường bị nhiễu. Bộ lọc Kalman không chỉ phù hợp cho hệ thống tuyến 
-tính mà còn có thể áp dụng cho hệ thống phi tuyến thông qua tuyến tính 
-hoá cục bộ.
+Trong bất kỳ hệ thống đo lường nào, chất lượng dữ liệu đầu vào quyết định trực tiếp đến hiệu năng xử lý và độ tin cậy của kết quả đầu ra. Các mô hình học máy, đặc biệt trong bối cảnh nhúng với tài nguyên hạn chế, rất nhạy cảm với sai số và nhiễu. Do đó, hiệu chuẩn cảm biến không chỉ là bước kỹ thuật đơn thuần mà còn mang ý nghĩa khoa học quan trọng: nó đảm bảo rằng dữ liệu thu thập được phản ánh đúng hiện tượng vật lý, hạn chế tối đa sai lệch hệ thống và định lượng rõ ràng các yếu tố ngẫu nhiên, qua đó nâng cao khả năng tổng quát hóa của mô hình.
 
-Trong hệ thống đề xuất, tín hiệu sau khi được cảm biến thu nhận sẽ 
-được lọc trực tiếp tại vi điều khiển trước khi truyền đến ứng dụng 
-để hiển thị và lưu trữ. Kết quả sau lọc được minh hoạ trong 
-Hình~\ref{kalman}, cho thấy sự cải thiện đáng kể về độ mượt và ổn 
-định của tín hiệu.
+Mặc dù các cảm biến thương mại thường được nhà sản xuất hiệu chuẩn ở mức cơ bản, nhưng sự khác biệt về môi trường, cách gắn lắp, và độ trôi theo thời gian vẫn tạo ra những sai lệch đáng kể. Trong nghiên cứu này, cảm biến được hiệu chuẩn theo hai hướng: (i) loại bỏ sai số hệ thống cố hữu, và (ii) phân tích, định lượng các thành phần nhiễu ngẫu nhiên.
 
+\textbf{Hiệu chuẩn sai số hệ thống.} Sai số hệ thống bao gồm độ lệch offset, sai số độ nhạy và sai số giao thoa trục (cross-axis). Để hiệu chỉnh, tác giả sử dụng gia tốc trọng trường như một tín hiệu chuẩn có giá trị tuyệt đối ổn định. Khi đặt cảm biến ở trạng thái tĩnh và xoay lần lượt để các trục X, Y, Z hướng lên hoặc xuống vuông góc với mặt phẳng ngang, giá trị lý tưởng phải là $\pm1g$. Bằng cách đo tại sáu vị trí này, có thể xác định được đường cong đặc trưng của từng trục, từ đó hiệu chỉnh offset (xác định $0g$ chính xác) và scale factor (tuyến tính hóa độ nhạy). Cách tiếp cận này đảm bảo rằng dữ liệu đầu ra từ mỗi trục gia tốc bám sát hiện tượng vật lý, hạn chế tối đa sự sai lệch tích lũy khi tích hợp dữ liệu trong các thuật toán phân loại.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{images/kalman.png}
-    \caption{Kết quả bộ lọc Kalman cho dữ liệu trục X của cảm biến gia tốc}
-    \label{kalman}
+\centering
+\includegraphics[width=\textwidth]{images/allan.png}
+\caption{Minh hoạ kết quả phân tích đường cong Allan}
+\label{allan}
 \end{figure}
 
+\textbf{Phân tích sai số ngẫu nhiên.} Bên cạnh sai số hệ thống, cảm biến còn chịu ảnh hưởng của nhiễu ngẫu nhiên mà không thể loại bỏ bằng hiệu chuẩn tĩnh. Để đánh giá các thành phần này, tác giả sử dụng phương pháp phương sai Allan \cite{allan}, một công cụ kinh điển trong phân tích ổn định tín hiệu và được ứng dụng rộng rãi trong lĩnh vực quán tính học. Phương pháp này cho phép phân tách và định lượng các loại nhiễu như nhiễu trắng (white noise), trôi ngẫu nhiên (random walk), và nhiễu lượng tử (quantization noise), dựa trên độ dốc đặc trưng ở từng miền thời gian trong biểu đồ log–log.
 
+Trong thí nghiệm, cảm biến được cố định trong môi trường nhiệt độ ổn định, hoạt động ở tần số lấy mẫu 10 Hz và dải đo $\pm 2g$, thu được tổng cộng 1.211.210 mẫu liên tục. Kết quả biểu diễn trong Hình~\ref{allan_real} cho thấy thành phần nhiễu trội là nhiễu lượng tử, thể hiện bằng độ dốc $-1$ trong miền thời gian ngắn của đồ thị Allan. Phát hiện này có ý nghĩa thực tiễn: do dữ liệu chủ yếu chịu ảnh hưởng bởi nhiễu lượng tử, các phương pháp lọc tuyến tính đơn giản (như trung bình trượt hoặc bộ lọc thông thấp bậc thấp) là đủ để cải thiện chất lượng tín hiệu, thay vì phải áp dụng các kỹ thuật lọc phức tạp vốn tiêu tốn tài nguyên xử lý.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{images/allan_real.png}
+\caption{Biểu đồ phương sai Allan của trục X}
+\label{allan_real}
+\end{figure}
+
+Việc hiệu chuẩn cảm biến theo hai bước nêu trên giúp hệ thống đạt được hai mục tiêu quan trọng: (i) loại bỏ sai số hệ thống để dữ liệu phản ánh trung thực hiện tượng vật lý, và (ii) định lượng đặc tính nhiễu nhằm lựa chọn phương pháp lọc tối ưu, cân bằng giữa chất lượng tín hiệu và tiêu thụ năng lượng. Quan trọng hơn, quá trình này nâng cao độ tin cậy của toàn bộ nghiên cứu: mô hình học máy được huấn luyện trên dữ liệu chuẩn hóa, ít sai lệch, từ đó tăng khả năng tổng quát khi áp dụng trên các thiết bị đeo thực tế khác nhau. Nhờ vậy, nghiên cứu không chỉ dừng lại ở việc xây dựng một nguyên mẫu, mà còn khẳng định được giá trị khoa học ở mức cao hơn: dữ liệu và mô hình có khả năng tái sử dụng, mở rộng và thích ứng trong nhiều bối cảnh ứng dụng khác nhau.
+
+\textbf{Lọc nhiễu bằng bộ lọc Kalman.}
+Để xử lý nhiễu trong dữ liệu cảm biến, đặc biệt là nhiễu trắng và nhiễu lượng tử vốn chiếm ưu thế theo phân tích Allan, tác giả lựa chọn bộ lọc Kalman \cite{kalman}. Khác với các bộ lọc số cổ điển như trung bình trượt hoặc bộ lọc thông thấp FIR/IIR chỉ đơn thuần làm trơn tín hiệu, Kalman là một bộ lọc đệ quy dựa trên lý thuyết ước lượng Bayes. Nó có khả năng ước lượng trạng thái tối ưu của hệ thống từ chuỗi quan sát bị nhiễu, đồng thời duy trì khả năng thích ứng theo thời gian mà không cần lưu trữ toàn bộ dữ liệu lịch sử.
+
+\textbf{Lý do lựa chọn Kalman.} So với moving average (dễ gây trễ tín hiệu) hay Butterworth low-pass (cần bậc lọc cao, tốn tài nguyên), Kalman phù hợp hơn cho hệ thống nhúng vì ba lý do: (i) hoạt động theo cơ chế cập nhật đệ quy, tiết kiệm bộ nhớ và chi phí tính toán; (ii) cho phép cân bằng động giữa độ tin cậy của mô hình và tín hiệu đo; (iii) hiệu quả đặc biệt với dữ liệu nhiễu trắng và nhiễu lượng tử, vốn đã được xác định chiếm ưu thế. Điều này giúp tín hiệu sau lọc vừa mượt, vừa bảo toàn các đặc trưng quan trọng để phân loại tư thế ngủ.
+
+\textbf{Lựa chọn tham số.} Trong bộ lọc Kalman, ma trận hiệp phương sai quá trình ($Q$) và đo lường ($R$) được xác định từ thực nghiệm. Với dữ liệu cảm biến ở tần số lấy mẫu 10 Hz, $R$ được ước lượng dựa trên phương sai nhiễu trắng từ phân tích Allan, trong khi $Q$ được chọn nhỏ hơn nhằm giả định trạng thái hệ thống thay đổi chậm theo thời gian (phù hợp với chuyển động cơ thể khi ngủ). Ma trận $P$ ban đầu được đặt gần bằng $R$ để phản ánh độ tin cậy trung bình ở giai đoạn khởi tạo, sau đó được cập nhật động theo từng bước lặp.
+
+\textbf{Kết quả thực nghiệm.} Sau khi áp dụng bộ lọc Kalman trực tiếp tại vi điều khiển, tín hiệu đầu ra trở nên mượt và ổn định hơn, loại bỏ phần lớn dao động tức thời do nhiễu mà không gây trễ đáng kể. Hình~\ref{kalman} minh họa dữ liệu trục X trước và sau lọc, cho thấy biên độ dao động được làm giảm trong khi các biến thiên chính của tư thế vẫn được giữ nguyên. Kết quả này chứng tỏ Kalman không chỉ cải thiện chất lượng dữ liệu mà còn giúp duy trì đặc tính động học quan trọng, đảm bảo độ chính xác cho giai đoạn phân loại mô hình TinyML.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{images/kalman.png}
+\caption{Kết quả bộ lọc Kalman cho dữ liệu trục X của cảm biến gia tốc}
+\label{kalman}
+\end{figure}
 
 
 \subsection{Xây dựng phần mềm ứng dụng}
 
-Phần mềm ứng dụng được xây dựng với mục tiêu hỗ trợ người dùng trong việc 
-kết nối với thiết bị phần cứng và trực quan hoá dữ liệu cảm biến. 
-Ứng dụng đảm nhiệm vai trò là cầu nối giữa người dùng và hệ thống nhúng, 
-đồng thời cung cấp các chức năng tương tác, cấu hình và theo dõi dữ liệu 
-theo thời gian thực.
+Phần mềm ứng dụng được xây dựng với mục tiêu hỗ trợ người dùng trong việc kết nối với thiết bị phần cứng và trực quan hoá dữ liệu cảm biến. Ứng dụng không chỉ đóng vai trò là cầu nối giữa người dùng và hệ thống nhúng, mà còn đảm nhiệm chức năng quan trọng trong toàn bộ pipeline nghiên cứu: từ thu thập dữ liệu đến huấn luyện mô hình học máy.
+
+Trong giai đoạn 1, luồng xử lý dữ liệu được thiết kế theo kiến trúc phân tầng như sau:
+
+\textbf{Thiết bị nhúng (device):} cảm biến gia tốc trên kit thu nhận tín hiệu thô, được vi xử lý xử lý sơ bộ và truyền qua giao thức \textit{Bluetooth Low Energy (BLE)}.
+
+\textbf{Kết nối BLE – Ứng dụng di động:} ứng dụng trên điện thoại thông minh thiết lập liên kết BLE để nhận dữ liệu theo thời gian thực. Bên cạnh việc hiển thị trực quan tín hiệu trên màn hình, ứng dụng còn cho phép người dùng cấu hình tham số thiết bị (tần số lấy mẫu, thời lượng ghi, định dạng dữ liệu).
+
+\textbf{Ứng dụng – Máy chủ (server):} dữ liệu cảm biến được đồng bộ về server qua kết nối Internet. Server lưu trữ dữ liệu trong cơ sở dữ liệu quan hệ và cung cấp giao diện quản lý thí nghiệm, gắn nhãn dữ liệu và phân quyền truy cập.
+
+\textbf{Xuất dữ liệu – Định dạng CSV:} để phục vụ cho giai đoạn phân tích và huấn luyện, hệ thống cho phép xuất dữ liệu dưới dạng chuẩn CSV. Dữ liệu này bao gồm chuỗi tín hiệu thô, nhãn tư thế, và siêu dữ liệu (thời gian, ID thiết bị, thông số cấu hình).
+
+\textbf{Huấn luyện mô hình học máy:} dữ liệu CSV sau khi được làm sạch và tiền xử lý được đưa vào pipeline huấn luyện mô hình (Python/Scikit-learn/TensorFlow). Các mô hình được đánh giá ngoại tuyến (offline) trước khi lựa chọn phương án tối ưu để triển khai trên thiết bị nhúng.
+
+Cách tiếp cận phân tầng này đảm bảo rằng dữ liệu được thu thập từ môi trường thực tế được lưu trữ một cách nhất quán, có thể tái sử dụng và dễ dàng tích hợp vào các framework học máy phổ biến. Đồng thời, nó tạo điều kiện cho việc mở rộng hệ thống: sau giai đoạn huấn luyện, mô hình tối ưu có thể được đưa ngược trở lại ứng dụng để kiểm chứng trong thời gian thực trên thiết bị.
 
 Các công nghệ và thành phần sử dụng được tóm tắt như sau:
 
