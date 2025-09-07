@@ -557,8 +557,15 @@ Nhìn chung, kết quả cho thấy cần đánh đổi giữa hiệu quả dự
 
 \section{Triển khai trên vi điều khiển nhúng}
 
-Sau khi huấn luyện và đánh giá các mô hình học máy, bước tiếp theo của nghiên cứu là xác minh khả năng triển khai mô hình trong môi trường thực tế sử dụng vi điều khiển nhúng. Mục tiêu chính là kiểm tra độ tương thích, hiệu suất suy luận và mức sử dụng tài nguyên của mô hình mạng nơ-ron nông (Neural Network – NN) khi được tích hợp lên thiết bị phần cứng có tài nguyên hạn chế.
+Sau khi hoàn tất quá trình huấn luyện và đánh giá trên máy tính, bước tiếp theo của nghiên cứu là kiểm chứng khả năng triển khai mô hình trong môi trường thực tế sử dụng vi điều khiển nhúng. Mục tiêu khoa học ở giai đoạn này không chỉ dừng ở việc “chạy được” mô hình trên phần cứng hạn chế, mà còn nhằm làm sáng tỏ mối quan hệ đánh đổi giữa hiệu năng thuật toán và giới hạn tài nguyên của hệ thống nhúng.  
 
+Cụ thể, nghiên cứu tiến hành triển khai song song hai mô hình: mạng nơ-ron nông (Neural Network – NN) với khả năng biểu diễn phi tuyến mạnh mẽ, và hồi quy logistic (Logistic Regression – LR) với cấu trúc tuyến tính cực kỳ gọn nhẹ. NN được kỳ vọng duy trì độ chính xác cao trong phân loại tư thế ngủ, trong khi LR đóng vai trò như một đối chứng quan trọng, minh chứng cho khả năng đạt được sự cân bằng tối ưu giữa độ chính xác vừa đủ và mức tiêu thụ tài nguyên tối thiểu.  
+
+Qua nhiều lần triển khai thực nghiệm trực tiếp trên vi điều khiển, tác giả rút ra kết luận quan trọng: việc giảm số lượng mẫu huấn luyện và rút gọn tập đặc trưng giúp mô hình suy luận nhẹ hơn, kích thước tệp và mức sử dụng bộ nhớ giảm đáng kể, trong khi độ chính xác chỉ suy giảm ở mức rất nhỏ và hoàn toàn chấp nhận được.  
+
+Điều này cho thấy trong bối cảnh phần cứng hạn chế, giá trị khoa học không nằm ở việc đạt độ chính xác tuyệt đối trong điều kiện lý tưởng, mà ở khả năng thiết kế một mô hình “đủ tốt” nhưng có thể vận hành bền vững trên chip. Chính sự đánh đổi này khẳng định nguyên lý cốt lõi của TinyML: hy sinh một phần nhỏ về độ chính xác để đổi lấy tính khả thi, hiệu quả năng lượng và độ tin cậy trong môi trường thực.  
+
+Kết quả cũng cho thấy sự song hành giữa hai mô hình được lựa chọn. Mạng nơ-ron (NN) duy trì độ chính xác cao nhưng tiêu tốn nhiều tài nguyên, trong khi hồi quy logistic (LR) có dung lượng siêu nhỏ, tốc độ suy luận nhanh, và vẫn giữ mức chính xác tiệm cận. Việc triển khai song song cả NN và LR trên chip vì vậy không chỉ mang ý nghĩa kiểm chứng kỹ thuật, mà còn cung cấp bằng chứng khoa học cho thấy ranh giới cân bằng giữa “độ chính xác tối đa” và “khả năng ứng dụng thực tế” trong hệ thống nhúng y sinh.
 \subsection{Lựa chọn mô hình và nền tảng triển khai}
 
 Trong số các mô hình khảo sát, mô hình mạng nơ-ron đạt được sự cân bằng tốt giữa độ chính xác (0.92 trong kịch bản S1) và dung lượng bộ nhớ (khoảng 55~KB). Khác với các mô hình ensemble như Gradient Boosting (GB) hoặc Random Forest (RF) tuy có độ chính xác cao hơn nhưng dung lượng lớn và tính phức tạp tính toán, mạng nơ-ron được thiết kế tối giản và hướng đến triển khai trong các môi trường vi điều khiển tiêu thụ năng lượng thấp.

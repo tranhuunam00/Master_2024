@@ -6,12 +6,13 @@
 \contentsline {table}{\numberline {1.4}{\ignorespaces Các bước chính trong hệ thống ứng dụng AI cho phân tích tư thế ngủ và hỗ trợ chẩn đoán OSA}}{28}{table.caption.14}%
 \contentsline {table}{\numberline {1.5}{\ignorespaces Hiệu quả mô hình học máy và khả năng triển khai biên trong nhận diện tư thế ngủ}}{37}{table.caption.18}%
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Các nhóm chức năng chính của ứng dụng}}{69}{table.caption.35}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}}{95}{table.caption.55}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}}{98}{table.caption.60}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Các mô hình học máy và siêu tham số sử dụng trong nghiên cứu}}{100}{table.caption.61}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Độ chính xác phân loại của các mô hình trong 8 kịch bản}}{101}{table.caption.62}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Kích thước mô hình (KB) trong 8 kịch bản}}{102}{table.caption.64}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}}{99}{table.caption.55}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}}{102}{table.caption.60}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Các mô hình học máy và siêu tham số sử dụng trong nghiên cứu}}{104}{table.caption.61}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Độ chính xác phân loại của các mô hình trong 8 kịch bản}}{105}{table.caption.62}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Kích thước mô hình (KB) trong 8 kịch bản}}{106}{table.caption.64}%
 \addvspace {10\p@ }
 \contentsfinish 
 \contentsfinish 

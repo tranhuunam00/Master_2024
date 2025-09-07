@@ -661,9 +661,14 @@ Việc hiệu chuẩn cảm biến theo hai bước nêu trên giúp hệ thốn
 
 \subsection{Xây dựng phần mềm ứng dụng}
 
-Phần mềm ứng dụng được xây dựng với mục tiêu hỗ trợ người dùng trong việc kết nối với thiết bị phần cứng và trực quan hoá dữ liệu cảm biến. Ứng dụng không chỉ đóng vai trò là cầu nối giữa người dùng và hệ thống nhúng, mà còn đảm nhiệm chức năng quan trọng trong toàn bộ pipeline nghiên cứu: từ thu thập dữ liệu đến huấn luyện mô hình học máy.
-
-Trong giai đoạn 1, luồng xử lý dữ liệu được thiết kế theo kiến trúc phân tầng như sau:
+Phần mềm ứng dụng trong nghiên cứu này không chỉ đơn thuần là công cụ trực quan hoá dữ liệu cảm biến, 
+mà còn được thiết kế như một mắt xích trọng yếu trong toàn bộ pipeline từ thu thập, truyền tải, lưu trữ, 
+cho đến huấn luyện và triển khai mô hình học máy. 
+Cách tiếp cận này đảm bảo rằng dữ liệu thu nhận từ môi trường thực tế được xử lý nhất quán, có khả năng tái sử dụng 
+và dễ dàng tích hợp với các framework học máy phổ biến. 
+So với các hệ thống Home Sleep Testing (HST) thương mại thường đóng kín và khó tùy biến, 
+ứng dụng của chúng tôi đặt trọng tâm vào tính mở, khả năng cấu hình, và khả năng mở rộng để đáp ứng yêu cầu của 
+cả nghiên cứu học thuật lẫn triển khai lâm sàng. Trong giai đoạn đầu, kiến trúc phân tầng được xây dựng nhằm tách biệt rõ chức năng của từng thành phần: 
 
 \textbf{Thiết bị nhúng (device):} cảm biến gia tốc trên kit thu nhận tín hiệu thô, được vi xử lý xử lý sơ bộ và truyền qua giao thức \textit{Bluetooth Low Energy (BLE)}.
 
@@ -677,31 +682,51 @@ Trong giai đoạn 1, luồng xử lý dữ liệu được thiết kế theo ki
 
 Cách tiếp cận phân tầng này đảm bảo rằng dữ liệu được thu thập từ môi trường thực tế được lưu trữ một cách nhất quán, có thể tái sử dụng và dễ dàng tích hợp vào các framework học máy phổ biến. Đồng thời, nó tạo điều kiện cho việc mở rộng hệ thống: sau giai đoạn huấn luyện, mô hình tối ưu có thể được đưa ngược trở lại ứng dụng để kiểm chứng trong thời gian thực trên thiết bị.
 
-Các công nghệ và thành phần sử dụng được tóm tắt như sau:
+\textbf{Các công nghệ và thành phần sử dụng được tóm tắt như sau:}
 
-\begin{flushleft}
-\textbf{01)} Ngôn ngữ lập trình: \texttt{Dart} \\
-\textbf{02)} Framework: \texttt{Flutter} \\
-\textbf{03)} Nền tảng triển khai: \texttt{Android} \\
-\textbf{04)} Giao tiếp phần cứng: Bluetooth Low Energy (BLE) \\
-\textbf{05)} Chức năng chính: kết nối thiết bị, nhận dữ liệu, hiển thị, lưu trữ và cá nhân hóa trải nghiệm người dùng
-\end{flushleft}
+Ứng dụng được xây dựng bằng ngôn ngữ lập trình \texttt{Dart} và phát triển trên 
+nền tảng \texttt{Flutter}, cho phép triển khai hiệu quả trên hệ điều hành 
+\texttt{Android}. Về mặt giao tiếp phần cứng, ứng dụng sử dụng chuẩn 
+\textit{Bluetooth Low Energy (BLE)} nhằm tối ưu hóa tiêu thụ năng lượng và 
+bảo đảm kết nối ổn định giữa thiết bị và điện thoại di động. 
+Các chức năng chính của ứng dụng bao gồm: thiết lập kết nối với thiết bị đeo, 
+thu nhận dữ liệu cảm biến, hiển thị tín hiệu theo thời gian thực, lưu trữ dữ liệu 
+có cấu trúc, đồng thời hỗ trợ cá nhân hóa trải nghiệm người dùng thông qua các 
+tùy chọn cấu hình và quản lý hồ sơ cá nhân.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{images/app_flow.png}
-    \caption{Các nhóm chức năng chính của ứng dụng}
-    \label{app_flow}
-\end{figure}
+\begin{table}[htbp]
+\centering
+\caption{Các nhóm chức năng chính của ứng dụng}
+\label{tab:app_features}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\textbf{Nhóm} & \textbf{Chức năng} & \textbf{Mô tả} \\ \hline
+\multirow{3}{*}{Bảo mật} 
+ & Đăng ký & Người dùng đăng kí thông tin và được gửi xác thực qua email \\ \cline{2-3}
+ & Đăng nhập & Sử dụng tài khoản mật khẩu đã được đăng ký để đăng nhập vào hệ thống \\ \cline{2-3}
+ & Quên mật khẩu & Lấy lại tài khoản của người dùng \\ \hline
+\multirow{3}{*}{Chức năng chung} 
+ & Kết nối Bluetooth & Kết nối ứng dụng với phần cứng thông qua BLE \\ \cline{2-3}
+ & Chọn cảm biến & Lựa chọn cảm biến như (gia tốc, âm thanh, \ldots) \\ \cline{2-3}
+ & Câu hỏi STOPBANG & Trả lời câu hỏi STOP BANG để đánh giá OSA và hiển thị lịch sử các lần trả lời \\ \cline{2-3}
+ & Theo dõi thông tin từ cảm biến & Dữ liệu thời gian thực thông qua màn hình giao diện và có đánh giá về tư thế ngủ \\ \cline{2-3}
+ & Chatbot y tế& Chatbot xây dựng trên bộ câu hỏi 2000 câu về y học giấc ngủ và công nghệ RAG \\ \hline
+\multirow{3}{*}{Cá nhân hóa} 
+ & Đổi thông tin cá nhân, mật khẩu & Sửa đổi thông tin cá nhân trên ứng dụng \\ \cline{2-3}
+ & Thêm người dùng phụ & Thêm người dùng phụ ví dụ trong cùng 1 gia đình \\ \cline{2-3}
+ & Đăng xuất & Thoát khỏi ứng dụng \\ \hline
+\end{tabularx}
+\end{table}
 
-Ứng dụng được thiết kế xoay quanh ba nhóm chức năng chính như minh họa 
-trong Hình~\ref{app_flow}:
-
-\begin{flushleft}
-\textbf{01)} Nhóm bảo mật: đăng nhập, xác thực và khôi phục tài khoản. \\
-\textbf{02)} Nhóm chức năng chung: kết nối với thiết bị phần cứng, thu thập và hiển thị dữ liệu cảm biến. \\
-\textbf{03)} Nhóm cá nhân hoá: theo dõi chỉ số sức khỏe, khai báo STOP-BANG, lưu hồ sơ người dùng.
-\end{flushleft}
+Ứng dụng được thiết kế xoay quanh ba nhóm chức năng chính như minh họa trong 
+Bảng~\ref{tab:app_features}. Trước hết, nhóm \textbf{bảo mật} tập trung vào các thao tác 
+đăng nhập, xác thực và khôi phục tài khoản, nhằm đảm bảo an toàn dữ liệu và bảo vệ quyền 
+riêng tư của người dùng. Tiếp theo, nhóm \textbf{chức năng chung} bao gồm các tính năng 
+cốt lõi như kết nối với thiết bị phần cứng, thu thập tín hiệu từ cảm biến và hiển thị dữ liệu 
+theo thời gian thực, qua đó tạo nên cầu nối trực tiếp giữa người dùng và hệ thống nhúng. 
+Cuối cùng, nhóm \textbf{cá nhân hoá} cho phép theo dõi các chỉ số sức khỏe, khai báo bảng 
+hỏi STOP-BANG, cũng như lưu trữ hồ sơ người dùng, góp phần xây dựng nền tảng dữ liệu 
+cá nhân phục vụ phân tích lâm sàng và huấn luyện mô hình học máy trong tương lai.
 
 \subsubsection*{Kiến trúc phần mềm}
 Ứng dụng sử dụng mô hình \textbf{BLoC (Business Logic Component)} để tách biệt giao diện 
@@ -788,7 +813,17 @@ phục dữ liệu khi quên tài khoản hoặc mật khẩu. Dữ liệu ngư�
 ID định danh duy nhất, hỗ trợ tốt cho việc phân tích, theo dõi tiến triển 
 và huấn luyện mô hình học máy cá nhân hoá trong tương lai.
 
-
+Có thể thấy rằng, việc đáp ứng đầy đủ các \textbf{yêu cầu chức năng} mới chỉ đảm bảo 
+hệ thống thực hiện được các nhiệm vụ cốt lõi đã đề ra, chẳng hạn như thu thập dữ liệu, 
+hiển thị tín hiệu hay quản lý hồ sơ người dùng. Tuy nhiên, trong bối cảnh triển khai thực tiễn, 
+điều này là chưa đủ. Một hệ thống có thể hoạt động đúng chức năng nhưng sẽ nhanh chóng trở nên 
+khó sử dụng hoặc thậm chí thất bại nếu thiếu đi các \textbf{yêu cầu phi chức năng} quan trọng. 
+Những yêu cầu này bao gồm độ tin cậy khi vận hành liên tục trong môi trường thực tế, 
+tính bảo mật nhằm bảo vệ dữ liệu y tế nhạy cảm, khả năng mở rộng để thích ứng với số lượng 
+người dùng tăng dần, cũng như hiệu năng xử lý để đảm bảo dữ liệu được truyền tải theo thời gian thực. 
+Do đó, chỉ khi cả hai nhóm yêu cầu được quan tâm song song và được tích hợp hài hòa 
+ngay từ giai đoạn thiết kế, hệ thống mới vừa đáp ứng đúng mục tiêu nghiên cứu, 
+vừa có tính khả thi và bền vững khi ứng dụng trong y tế lâm sàng và cộng đồng.
 
 \subsection{Thiết kế và xây dựng hệ thống lưu trữ}
 \begin{figure}[htbp]
@@ -798,28 +833,136 @@ và huấn luyện mô hình học máy cá nhân hoá trong tương lai.
     \label{cloud}
 \end{figure}
 
-Trong hệ thống đề xuất, dữ liệu cảm biến đóng vai trò trung tâm trong việc 
-huấn luyện và triển khai các mô hình trí tuệ nhân tạo (AI). Tuy nhiên, bộ nhớ 
-của vi điều khiển và thiết bị đầu cuối thường bị giới hạn, do đó giải pháp lưu 
-trữ dữ liệu trên nền tảng đám mây là lựa chọn phù hợp và linh hoạt. Việc triển 
-khai dữ liệu lên cloud không chỉ giúp loại bỏ rào cản về địa lý, mà còn hỗ 
-trợ truy cập, phân tích và chia sẻ dữ liệu từ bất kỳ đâu miễn có kết nối 
-Internet. Đồng thời, hệ thống hỗ trợ xuất dữ liệu dưới dạng văn bản (text), 
-CSV hoặc JSON, phục vụ nhu cầu chia sẻ giữa các nhóm nghiên cứu.
+Trong hệ thống đề xuất, dữ liệu cảm biến giữ vai trò trung tâm trong việc huấn luyện và triển khai 
+các mô hình trí tuệ nhân tạo (\textit{AI}). Do giới hạn bộ nhớ của vi điều khiển và thiết bị đầu cuối, 
+giải pháp lưu trữ dữ liệu trên nền tảng đám mây trở thành lựa chọn tất yếu. 
+Không chỉ giúp vượt qua hạn chế về dung lượng, cloud còn loại bỏ rào cản về địa lý, 
+cho phép chia sẻ và phân tích dữ liệu từ bất kỳ đâu có kết nối Internet. 
+Để bảo đảm hiệu quả, kiến trúc lưu trữ được phân chia thành ba khối chức năng chính: 
+\textbf{máy chủ xử lý}, \textbf{tầng bộ nhớ đệm (cache)}, và \textbf{cơ sở dữ liệu lưu trữ}.
 
-Về dài hạn, mục tiêu của hệ thống là tích luỹ một tập dữ liệu lớn và đa dạng 
-nhằm huấn luyện các mô hình học máy hỗ trợ chẩn đoán và ra quyết định trong 
-sàng lọc hội chứng ngưng thở khi ngủ (\gls{OSA}).
+\textbf{(i) Máy chủ xử lý.} 
+Máy chủ được triển khai trên nền tảng \texttt{Node.js} và vận hành trong hạ tầng 
+Amazon Web Services (AWS), thể hiện một sự lựa chọn chiến lược trong thiết kế kiến trúc hệ thống. 
+Trong bối cảnh các ứng dụng IoT y tế tạo ra luồng dữ liệu liên tục và khối lượng lớn, 
+việc sử dụng Node.js với mô hình bất đồng bộ (asynchronous, event-driven) cho phép máy chủ xử lý đồng thời 
+nhiều kết nối mà không cần tiêu tốn tài nguyên theo kiểu đa luồng truyền thống. 
+Điều này đặc biệt quan trọng khi hệ thống cần thu nhận dữ liệu từ nhiều thiết bị đeo cùng lúc 
+trong các nghiên cứu lâm sàng quy mô lớn, vốn tiềm ẩn nguy cơ quá tải nếu không có cơ chế tối ưu.
+
+Một nguyên tắc cốt lõi của thiết kế máy chủ là \textit{batch processing}. 
+Thay vì gửi từng gói dữ liệu riêng lẻ, hệ thống tích luỹ các gói tin thành lô 1000 mẫu 
+trước khi truyền tới backend. Cách tiếp cận này không chỉ giảm số lượng yêu cầu HTTP, 
+mà còn tối ưu băng thông, giảm độ trễ mạng và hạ thấp chi phí vận hành trên cloud. 
+Từ góc độ khoa học dữ liệu, xử lý theo lô cũng giúp bảo toàn tính toàn vẹn của chuỗi thời gian, 
+cho phép phân tích tín hiệu gia tốc (\texttt{x, y, z}) đi kèm mốc thời gian (\texttt{timestamp}) 
+một cách nhất quán. Đây là yếu tố then chốt để đảm bảo tính tái lập (reproducibility) 
+của các thí nghiệm và độ tin cậy của mô hình học máy huấn luyện từ dữ liệu đó.
+
+Máy chủ còn được trang bị cơ chế \textit{retry logic} để tăng tính bền bỉ (resilience) 
+của hệ thống trước những sự cố mạng thường gặp trong môi trường thực tế. 
+Thay vì chấp nhận mất gói dữ liệu, hệ thống sẽ thử gửi lại nhiều lần; 
+chỉ khi thất bại liên tục quá 10 lần mới thông báo lỗi và tạm dừng tiến trình lưu trữ. 
+Cơ chế này phản ánh nguyên tắc thiết kế quan trọng trong các hệ thống y tế: 
+\textit{“fail-safe and fault-tolerant”}, tức là ngay cả khi gặp lỗi, hệ thống vẫn đảm bảo 
+không gây ra sai lệch dữ liệu, đồng thời cung cấp tín hiệu rõ ràng cho người vận hành.
+
+Tóm lại, tầng máy chủ không chỉ đơn thuần là nơi tiếp nhận dữ liệu từ thiết bị, 
+mà còn là lớp điều phối trung tâm, 
+kết hợp giữa hiệu quả tính toán (nhờ kiến trúc bất đồng bộ của Node.js), 
+khả năng mở rộng linh hoạt (nhờ hạ tầng AWS), 
+và các cơ chế bảo đảm tính toàn vẹn dữ liệu (batch processing và retry logic). 
+Thiết kế này cho thấy một hướng tiếp cận hệ thống phân tán trong lĩnh vực IoT y tế, 
+nơi yêu cầu vừa đáp ứng tải dữ liệu cao, vừa bảo đảm chất lượng khoa học 
+và tính khả thi triển khai trong môi trường lâm sàng.
+
+\textbf{(ii) Bộ nhớ đệm (cache).} 
+Trong kiến trúc hệ thống IoT y tế, tầng cache giữ vai trò chiến lược như một lớp 
+trung gian giữa ứng dụng và cơ sở dữ liệu, không chỉ để lưu tạm dữ liệu khi mất kết nối 
+mạng, mà còn để tối ưu hiệu năng và giảm áp lực cho backend. 
+Nếu ứng dụng gửi trực tiếp từng gói dữ liệu lên cơ sở dữ liệu, hệ thống sẽ phải xử lý 
+một lượng lớn yêu cầu nhỏ lẻ, gây nghẽn băng thông và tăng độ trễ phản hồi. 
+Đặc biệt với dữ liệu cảm biến liên tục theo thời gian thực, chiến lược này dễ dẫn đến 
+tình trạng “request storm” khiến máy chủ và cơ sở dữ liệu bị quá tải. 
+Việc bổ sung một lớp cache giúp gom dữ liệu thành lô, 
+tối ưu băng thông truyền tải và đồng thời cung cấp cơ chế \textit{write-back} 
+tới cơ sở dữ liệu khi mạng ổn định. 
+
+Ý nghĩa của tầng cache không chỉ dừng ở việc lưu trữ tạm thời. 
+Nó còn là thành phần bảo đảm \textbf{tính liên tục dịch vụ (service continuity)}: 
+người dùng vẫn có thể quan sát dữ liệu cảm biến theo thời gian thực ngay cả khi mất mạng, 
+và hệ thống sẽ tự động đồng bộ dữ liệu sau khi kết nối được khôi phục. 
+Điều này đặc biệt quan trọng trong nghiên cứu y học giấc ngủ tại nhà, 
+nơi mà gián đoạn kết nối Internet là tình huống phổ biến. 
+Từ góc nhìn lâm sàng, sự hiện diện của cache giúp giảm thiểu nguy cơ mất dữ liệu, 
+một yếu tố có thể ảnh hưởng trực tiếp tới độ tin cậy của mô hình học máy huấn luyện trên dữ liệu đó.
+
+Trong giai đoạn mở rộng, tầng cache có thể triển khai bằng các hệ thống bộ nhớ đệm phân tán như 
+\texttt{Redis} hoặc \texttt{Memcached}, hỗ trợ hàng nghìn truy vấn đồng thời và cho phép 
+xử lý dữ liệu theo cơ chế \textit{publish/subscribe}. 
+Ở mức độ cao hơn, tầng cache có thể kết hợp với hàng đợi thông điệp (\textit{message queue}) 
+như \texttt{RabbitMQ} hoặc \texttt{Kafka}, nhằm điều phối luồng dữ liệu giữa ứng dụng và backend. 
+Giải pháp này đặc biệt hữu ích khi hệ thống mở rộng tới hàng trăm hoặc hàng nghìn thiết bị đeo cùng hoạt động, 
+giúp cân bằng tải, tránh tình trạng \textit{data race}, và tăng tính ổn định tổng thể. 
+
+Tóm lại, tầng cache không chỉ là một cơ chế tối ưu hiệu năng, 
+mà còn là \textbf{cấu phần bảo đảm tính tin cậy và khả năng mở rộng} của toàn bộ hệ thống. 
+Nếu coi máy chủ là trung tâm điều phối và cơ sở dữ liệu là nền tảng lưu trữ, 
+thì tầng cache chính là “vùng đệm an toàn” giúp hệ thống hấp thụ sự biến động của môi trường mạng 
+và duy trì hoạt động ổn định trong mọi kịch bản triển khai.
 
 
 
-\textbf{Cơ sở dữ liệu sử dụng là MongoDB Atlas} với các đặc điểm kỹ thuật nổi bật như sau:
-01) Hỗ trợ lưu trữ hiệu quả dữ liệu lớn, phân tán trên nhiều cụm máy chủ, 
-cho phép mở rộng theo chiều ngang.
-02) Tối ưu hoá truy vấn theo thời gian thực với dữ liệu dạng \texttt{timestamp}.
-03) Cơ chế đánh chỉ mục linh hoạt giúp tăng tốc độ truy vấn và giảm dung lượng lưu trữ.
-04) Hỗ trợ tự động xoá dữ liệu cũ dựa trên TTL (Time To Live index), 
-đồng thời tích hợp trực tiếp với nền tảng MongoDB Atlas.
+\textbf{(iii) Cơ sở dữ liệu lưu trữ.} 
+Trong các hệ thống IoT y tế, đặc biệt là khi dữ liệu cảm biến và dữ liệu lâm sàng cùng tồn tại, 
+không một mô hình cơ sở dữ liệu đơn lẻ nào có thể đáp ứng tối ưu tất cả yêu cầu. 
+Do đó, kiến trúc lưu trữ được thiết kế theo hướng \textbf{lai (hybrid storage architecture)}, 
+kết hợp cả NoSQL (MongoDB Atlas) và SQL (MySQL), nhằm tận dụng thế mạnh riêng của từng loại hình. 
+
+Với dữ liệu cảm biến thời gian thực, \textbf{MongoDB Atlas} thể hiện ưu thế vượt trội nhờ khả năng 
+lưu trữ phi cấu trúc, phân tán trên nhiều cụm máy chủ và hỗ trợ mở rộng theo chiều ngang 
+(\textit{horizontal scaling}). 
+Đặc thù của dữ liệu gia tốc là liên tục, khối lượng lớn, và thay đổi nhanh, 
+do đó cơ chế đánh chỉ mục theo \texttt{timestamp} cùng với tính năng TTL (Time-To-Live index) 
+của MongoDB giúp tối ưu hóa truy vấn, giảm dung lượng lưu trữ.
+Điều này mang lại ý nghĩa khoa học quan trọng: cho phép xử lý tín hiệu theo chuỗi thời gian 
+mà không bị nhiễu bởi dữ liệu cũ, đồng thời bảo đảm tính nhất quán khi huấn luyện mô hình học máy.
+
+Trong khi đó, \textbf{MySQL} được sử dụng để quản lý các dữ liệu có cấu trúc ổn định và đòi hỏi 
+tính toàn vẹn quan hệ, chẳng hạn như thông tin định danh người dùng, mật khẩu mã hoá, 
+kết quả bảng điểm STOP-BANG, thang điểm Epworth, chỉ số BMI, và tiền sử bệnh nền. 
+Việc sử dụng hệ quản trị quan hệ cho phép đảm bảo \textbf{tính ràng buộc (constraints)} giữa các bảng 
+và duy trì độ chính xác dữ liệu trong các thao tác xác thực, phân quyền và theo dõi tiến triển y khoa. 
+Từ góc nhìn triển khai lâm sàng, đây là điều kiện tiên quyết để hệ thống đáp ứng được các quy chuẩn 
+bảo mật dữ liệu y tế (ví dụ HIPAA hoặc các tiêu chuẩn tương tự).
+
+Do đó, kiến trúc lai chính là sự cân bằng giữa \textbf{tính linh hoạt} và \textbf{tính toàn vẹn}, 
+vừa bảo đảm hiệu năng, vừa bảo đảm tính tin cậy khi ứng dụng trong môi trường y tế. 
+
+\textbf{Mở rộng về sau}, khi khối lượng dữ liệu ngày càng gia tăng và đa dạng hoá về nguồn gốc 
+(cảm biến đeo, hồ sơ bệnh án điện tử, dữ liệu hình ảnh y tế), hệ thống có thể được mở rộng 
+thành một \textbf{datalake} trên nền tảng cloud. 
+Khác với cơ sở dữ liệu truyền thống chỉ lưu dữ liệu đã chuẩn hóa, datalake cho phép lưu trữ 
+song song dữ liệu có cấu trúc, bán cấu trúc và phi cấu trúc, mở ra khả năng phân tích hợp nhất 
+trên toàn bộ phổ dữ liệu. Điều này mang lại giá trị chiến lược cho các nghiên cứu y học giấc ngủ, 
+vì cho phép liên kết dữ liệu tư thế ngủ với dữ liệu sinh học khác (EEG, SpO$_2$, nhịp tim) 
+trong các nghiên cứu đa trung tâm.
+
+Song song, việc tích hợp các công cụ phân tích và trực quan hóa như \textbf{Microsoft Power BI} 
+giúp chuyển đổi dữ liệu thô thành báo cáo và biểu đồ động, hỗ trợ các bác sĩ và nhà nghiên cứu 
+ra quyết định kịp thời. 
+Power BI không chỉ đơn thuần là công cụ hiển thị, mà còn là một lớp phân tích trung gian, 
+cho phép truy vấn dữ liệu từ cả MySQL, MongoDB và datalake, sau đó biểu diễn các chỉ số quan trọng 
+theo thời gian thực. 
+Đây chính là cầu nối giữa \textbf{dữ liệu lớn (big data)} và \textbf{tri thức y khoa}, 
+tạo ra tác động trực tiếp đến chất lượng chẩn đoán và theo dõi bệnh nhân.
+
+Ở mức độ khái quát hơn, việc lựa chọn kiến trúc lưu trữ lai kết hợp mở rộng sang datalake 
+và trực quan hóa bằng Power BI phản ánh xu hướng thiết kế hệ thống y tế hiện đại: 
+\textit{“data-centric and insight-driven architecture”}. 
+Không chỉ dừng ở việc thu thập và lưu trữ dữ liệu, hệ thống còn tiến tới 
+khai thác tri thức từ dữ liệu để hỗ trợ chẩn đoán, dự báo nguy cơ 
+và nâng cao chất lượng chăm sóc sức khỏe cộng đồng.
 
 \begin{figure}[htbp]
 \centering
@@ -827,49 +970,22 @@ cho phép mở rộng theo chiều ngang.
 \caption{Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}
 \label{flow_http}
 \end{figure}
-Phía máy chủ của hệ thống được xây dựng bằng nền tảng Node.js và triển khai 
-trên Amazon Web Services (AWS), cho phép triển khai nhanh, dễ mở rộng và tối 
-ưu chi phí trong giai đoạn thử nghiệm. MongoDB Atlas được lựa chọn là hệ quản 
-trị cơ sở dữ liệu chính, hỗ trợ gói miễn phí dung lượng 500MB – phù hợp cho 
-việc thu thập và đánh giá dữ liệu ở quy mô ban đầu.
-
-Để tránh tình trạng quá tải server khi có nhiều yêu cầu truy cập đồng thời, 
-ứng dụng không thực hiện gửi từng mẫu riêng lẻ. Thay vào đó, dữ liệu cảm biến 
-sẽ được tích luỹ theo từng lô gồm 1000 mẫu, sau đó mới được gửi lên backend. 
-Mỗi mẫu bao gồm ba thành phần gia tốc (\texttt{x, y, z}) và thời gian ghi 
-nhận tương ứng, bảo đảm tính toàn vẹn và khả năng truy xuất ngược theo dòng 
-thời gian.
-
-Lưu đồ thuật toán lưu trữ dữ liệu được thể hiện trong Hình~\ref{flow_http}, 
-gồm hai trường hợp chính:
-
-\vspace{0.5em}
-\noindent\textbf{1)} Khi người dùng không có kết nối mạng, hệ thống vẫn cho phép kết nối BLE và hiển thị dữ liệu cảm biến theo thời gian thực, tuy nhiên sẽ không tiến hành lưu trữ lên cloud.
-
-\vspace{0.5em}
-\noindent\textbf{2)} Khi người dùng đã đăng nhập và có kết nối Internet, ứng dụng sẽ tự động lưu trữ dữ liệu sau mỗi 1000 mẫu thu thập. Trong trường hợp thao tác gửi dữ liệu thất bại liên tục quá 10 lần, hệ thống sẽ thông báo lỗi và ngừng tiến trình lưu trữ để đảm bảo độ tin cậy.
 
 
-Ngoài dữ liệu cảm biến thời gian thực được lưu trữ trên MongoDB Atlas, 
-hệ thống còn sử dụng cơ sở dữ liệu quan hệ MySQL để quản lý các dữ liệu định 
-danh và nghiệp vụ quan trọng khác. Cụ thể:
 
-\vspace{0.5em}
-\noindent\textbf{1)} Thông tin người dùng như tài khoản đăng nhập, mật khẩu mã hoá (hash), email, số điện thoại, lịch sử đăng nhập và phân quyền được lưu trữ trong hệ quản trị cơ sở dữ liệu MySQL. Cấu trúc dữ liệu dạng bảng (table) của MySQL giúp đảm bảo tính toàn vẹn quan hệ và dễ dàng thực hiện các truy vấn xác thực người dùng nhanh chóng, an toàn.
-
-\vspace{0.5em}
-\noindent\textbf{2)} Các dữ liệu khảo sát lâm sàng như bảng điểm STOP-BANG, thang điểm Epworth, chỉ số BMI, tiền sử bệnh nền và lịch sử đánh giá lặp lại theo từng thời điểm cũng được lưu trong MySQL nhằm đảm bảo tính liên kết logic giữa các thực thể (người dùng – biểu mẫu – kết quả – thời gian).
-
-\vspace{0.5em}
-\noindent\textbf{3)} Việc phân chia lưu trữ theo đặc thù dữ liệu (NoSQL cho dữ liệu cảm biến lớn và động, SQL cho dữ liệu người dùng có cấu trúc ổn định) giúp tối ưu hoá hiệu suất truy xuất, tính mở rộng và khả năng bảo trì hệ thống trong dài hạn.
-
-Sự kết hợp giữa MongoDB (dành cho dữ liệu cảm biến, thời gian thực) 
-và MySQL (dành cho thông tin người dùng và nghiệp vụ) tạo thành một kiến trúc 
-lưu trữ lai (hybrid storage architecture) đáp ứng linh hoạt cả hai loại dữ 
-liệu – phi cấu trúc và có cấu trúc – vốn là đặc trưng phổ biến trong các 
-hệ thống y tế ứng dụng trí tuệ nhân tạo hiện đại.
+Lưu đồ thuật toán lưu trữ dữ liệu được thể hiện trong Hình~\ref{flow_http}, bao gồm hai nhánh xử lý nhằm
+đảm bảo tính liên tục dịch vụ và độ tin cậy dữ liệu. \textit{(i)} Khi người dùng không có kết nối
+mạng, hệ thống vẫn duy trì liên kết BLE và hiển thị tín hiệu thời gian thực; dữ liệu được lưu tạm
+ở phía thiết bị/ứng dụng thay vì đẩy lên cloud. \textit{(ii)} Khi người dùng đã đăng nhập và có Internet, ứng dụng chuyển sang
+chế độ đồng bộ theo lô: mỗi 1000 mẫu được gộp thành một batch để gửi lên máy chủ. Cơ chế này vừa
+giảm overhead giao thức, vừa bảo toàn tính liên tục của chuỗi thời gian để phục vụ phân tích tín hiệu.
+Trong trường hợp thao tác gửi thất bại liên tiếp quá 10 lần, hệ thống chủ động phát cảnh báo và tạm
+ngừng quá trình lưu trữ nhằm bảo đảm tính nhất quán (consistency) và tránh sai lệch dữ liệu.
 
 \subsection{Học máy trong phân loại tư thế ngủ}
+Học máy ngày càng được xem là công cụ hiệu quả trong việc phân loại tư thế ngủ dựa trên dữ liệu cảm biến. 
+Các thuật toán học máy cho phép phát hiện và nhận diện tư thế với độ chính xác cao hơn so với các phương pháp truyền thống. 
+Nhờ đó, chúng tạo nền tảng quan trọng cho việc phát triển các hệ thống giám sát giấc ngủ thông minh, hỗ trợ sàng lọc và chẩn đoán hội chứng ngưng thở khi ngủ. 
 
  
 
