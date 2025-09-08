@@ -1,3 +1,7 @@
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from tensorflow.keras import layers
+from tensorflow import keras
+import tensorflow as tf
 from util import matrixConf
 from scipy.stats import skew, kurtosis
 import math
@@ -156,3 +160,51 @@ def NeuralNetworkModel(train, test, labelTrain, labelTest):
     matrixConf(labelTest, y_pred)
 
     return nn_model
+
+
+def NeuralNetworkModel2(train, test, labelTrain, labelTest):
+    # Convert numpy array
+    train = np.array(train, dtype=np.float32)
+    test = np.array(test, dtype=np.float32)
+    labelTrain = np.array(labelTrain, dtype=np.int32)
+    labelTest = np.array(labelTest, dtype=np.int32)
+
+    # Dịch nhãn về 0-based
+    labelTrain = labelTrain - 1
+    labelTest = labelTest - 1
+
+    num_classes = int(max(labelTrain.max(), labelTest.max()) + 1)
+    print("Unique labels train after shift:", np.unique(labelTrain))
+    print("Unique labels test after shift:", np.unique(labelTest))
+    print("num_classes set to:", num_classes)
+
+    # Define model
+    model = keras.Sequential([
+        layers.Dense(8, activation='relu'),
+        layers.Dense(4, activation='relu'),
+        layers.Dense(num_classes, activation='softmax')
+    ])
+
+    optimizer = keras.optimizers.Adam(learning_rate=0.01)
+
+    model.compile(optimizer=optimizer,
+                  loss='sparse_categorical_crossentropy',
+                  metrics=['accuracy'])
+
+    # Train
+    start = time.time()
+    model.fit(train, labelTrain, epochs=30, verbose=1, batch_size=16)
+    end = time.time()
+    print("Training time complexity:", end - start, "s")
+
+    # Predict
+    y_pred_prob = model.predict(test)
+    y_pred = np.argmax(y_pred_prob, axis=1)
+
+    # Evaluation
+    print("Accuracy:", accuracy_score(labelTest, y_pred))
+    print("\n -------------Classification Neural Network Report-------------\n")
+    print(classification_report(labelTest, y_pred))
+    print("Confusion Matrix:\n", confusion_matrix(labelTest, y_pred))
+
+    return model

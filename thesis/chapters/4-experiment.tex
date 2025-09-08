@@ -456,16 +456,24 @@ Số lượng cây tăng cường: 50; \newline
 Số đặc trưng được chọn: \texttt{log2} \\
 \hline
 \textbf{Mạng nơ-ron (Neural Network, Keras)} & 
-Cấu trúc: [50, 15, 4]; \newline
+Cấu trúc: [8, 4, \textit{num\_classes}]; \newline
 Hàm kích hoạt: \texttt{ReLU}, \texttt{ReLU}, \texttt{Softmax}; \newline
-Thuật toán tối ưu: \texttt{RMSprop}; \newline
-Hàm mất mát: Mean Squared Error (MSE); \newline
-Epochs: 30; Batch size: 1 \\
+Thuật toán tối ưu: \texttt{Adam} (learning rate = 0.01); \newline
+Hàm mất mát: \texttt{sparse\_categorical\_crossentropy}; \newline
+Độ đo đánh giá: \texttt{accuracy} \\
 \hline
 \end{tabular}
 \end{table}
 
-Ngoài các mô hình học máy, một mạng nơ-ron nhân tạo tuyến tính đơn giản (feedforward neural network) được xây dựng bằng thư viện \texttt{TensorFlow/Keras} để đại diện cho phương pháp học sâu. Mạng bao gồm hai lớp ẩn với số lượng nơ-ron lần lượt là 50 và 15, theo sau là một lớp đầu ra sử dụng hàm kích hoạt \texttt{Softmax} cho bài toán phân loại đa lớp. Các lớp ẩn sử dụng hàm kích hoạt \texttt{ReLU} nhằm mô hình hóa các quan hệ phi tuyến hiệu quả hơn. Mô hình này được tối ưu bằng thuật toán \texttt{RMSprop} và huấn luyện trên dữ liệu thô (raw accelerometer data) mà không cần trích xuất đặc trưng, nhằm kiểm tra khả năng triển khai trực tiếp trong môi trường thiết bị nhúng hạn chế về tài nguyên.
+Ngoài các mô hình học máy, một mạng nơ-ron nhân tạo tuyến tính đơn giản 
+(feedforward neural network) được xây dựng bằng thư viện \texttt{TensorFlow/Keras} 
+để đại diện cho phương pháp học sâu. 
+Mạng bao gồm hai lớp ẩn với số lượng nơ-ron lần lượt là 8 và 4, 
+theo sau là một lớp đầu ra sử dụng hàm kích hoạt \texttt{Softmax} cho bài toán phân loại đa lớp. 
+Các lớp ẩn sử dụng hàm kích hoạt \texttt{ReLU} nhằm mô hình hóa các quan hệ phi tuyến hiệu quả hơn. 
+Mô hình này được tối ưu bằng thuật toán \texttt{Adam} với tốc độ học (learning rate) là 0.01 
+và được huấn luyện bằng hàm mất mát \texttt{sparse\_categorical\_crossentropy}, 
+sử dụng độ đo đánh giá \texttt{accuracy} để phản ánh hiệu suất phân loại.
 
 Việc lựa chọn kết hợp các mô hình với mức độ phức tạp khác nhau cho phép đánh giá toàn diện về 
 hiệu quả phân loại trong các điều kiện thực tế. 
