@@ -39,10 +39,12 @@
 \contentsline {subsection}{\numberline {3.3.3.}Kịch bản kiểm thử và lựa chọn tính năng}{98}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4.}Huấn luyện mô hình}{103}{subsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.3.5.}Đánh giá kết quả}{105}{subsection.3.3.5}%
-\contentsline {section}{\numberline {3.4.}Triển khai trên chip}{107}{section.3.4}%
-\contentsline {section}{\numberline {3.5.}Triển khai trên vi điều khiển nhúng}{107}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1.}Lựa chọn mô hình và nền tảng triển khai}{108}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2.}Quy trình triển khai mô hình}{108}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3.}Đánh giá hiệu suất và tài nguyên}{109}{subsection.3.5.3}%
-\contentsline {chapter}{\numberline {4}Kết luận}{110}{chapter.4}%
+\contentsline {section}{\numberline {3.4.}Triển khai trên vi điều khiển nhúng}{109}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1.}Quy trình triển khai mô hình}{110}{subsection.3.4.1}%
+\contentsline {subsubsection}{B1}{110}{subsubsection*.65}%
+\contentsline {subsubsection}{B2}{110}{subsubsection*.66}%
+\contentsline {subsubsection}{B3}{111}{subsubsection*.67}%
+\contentsline {subsubsection}{B4-B5}{112}{subsubsection*.68}%
+\contentsline {subsection}{\numberline {3.4.2.}Đánh giá hiệu suất và tài nguyên}{113}{subsection.3.4.2}%
+\contentsline {chapter}{\numberline {4}Kết luận}{115}{chapter.4}%
 \contentsfinish 

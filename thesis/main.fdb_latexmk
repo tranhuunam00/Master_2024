@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1757325024.81899 "main.bcf" "main.bbl" "main" 1757325952.78696 0
-  "main.bcf" 1757325951 121582 c0eb324e34a21c3a52624871ee65f945 "pdflatex"
+["biber main"] 1757325024.81899 "main.bcf" "main.bbl" "main" 1757407717.77134 0
+  "main.bcf" 1757407716 121582 c0eb324e34a21c3a52624871ee65f945 "pdflatex"
   "refs.bib" 1753889416 62001 55479e10ead7987e539ede0730328132 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1757325939.57275 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1757325952.78834 0
+["pdflatex"] 1757407705.22896 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1757407717.77288 0
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1753757792 170669 580f60f86b494b149fd13be17089526f ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1753283835 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1753323483 13254313 89e2afc147c36950f3366f1142cce13c ""
@@ -282,7 +282,7 @@
   "chapters/1-introduction.tex" 1753610443 17748 6703c2bc6e8b36104acefe61fddf3cef ""
   "chapters/2-base-knowledge.tex" 1757080347 141651 41544c611e91f9dcc0b55fb595a83594 ""
   "chapters/3-proposed_solution.tex" 1757317831 111136 d949c9fafd6c79c9363a503f0f5fe992 ""
-  "chapters/4-experiment.tex" 1757325923 43176 4ca59a9726a294441c3baa1ce150d104 ""
+  "chapters/4-experiment.tex" 1757407691 56948 9aaab64dd0ba3a992949fd72c46d1e51 ""
   "chapters/5-conclusion.tex" 1753766245 5530 cb60d1a7fcfc572f8fad57c8deccf34d ""
   "chapters/examples/arduino.tex" 1753256024 1165 6b71b2ca9bc8d0e9aa878851c948a635 ""
   "chapters/examples/flutter_ble.tex" 1753328888 1198 461958e69e184d7f0a84210889f8d0d9 ""
@@ -326,14 +326,14 @@
   "images/svm_ovso.png" 1753256028 72431 1ef5c4cb9fa973e793d34d12b9ae827b ""
   "images/threshhold.jpg" 1753763678 122530 577a80c71af7bef4dd27e9f1f9e78b3c ""
   "images/thucnghiem.png" 1753256028 411269 f32107c69e826a62b7003a15ef6ffb29 ""
-  "main.aux" 1757325951 48112 f73b29c95d1a945fffa24082dafeead3 "pdflatex"
+  "main.aux" 1757407716 48222 ca6f36adecf73c8bf909e5ebf0042f75 "pdflatex"
   "main.bbl" 1757325029 184277 57f2fa9107ba59ee43150c29babf6fab "biber main"
-  "main.lof" 1757325951 6064 e14a235bec388b1093a5373faec752c5 "pdflatex"
-  "main.lot" 1757325951 1943 ca5bf3b1fd06f8ec34d31f26e33c6532 "pdflatex"
-  "main.out" 1757325951 9088 43e8156d98e5b476aa5124a6a0cb191d "pdflatex"
-  "main.run.xml" 1757325951 2268 f918a72198252e4ff2cbedb9e5121b21 "pdflatex"
+  "main.lof" 1757407716 6064 194bb34a6458853dbc5cd971c62f2ef6 "pdflatex"
+  "main.lot" 1757407716 1943 5975a265035eaa1bcae7a5dfd076249c "pdflatex"
+  "main.out" 1757407716 8613 91320150fb38a60a91a503d534086ed3 "pdflatex"
+  "main.run.xml" 1757407716 2268 f918a72198252e4ff2cbedb9e5121b21 "pdflatex"
   "main.tex" 1757324978 6280 1fe3740e74b05ca9e7ccb8ee2c7df28a ""
-  "main.toc" 1757325951 4598 f1943ced5fc5833e5eda1fd60acaeb5e "pdflatex"
+  "main.toc" 1757407716 4626 d46485a0746f5bdfee173886bd733e2a "pdflatex"
   "setting/bkthesis.sty" 1753256024 967 af4f61477f3f023e14bc982890f87805 ""
   "src/glossaries.tex" 1753407326 777 adc527e2093778beb062eccbb5f56229 ""
   (generated)

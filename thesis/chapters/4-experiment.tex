@@ -511,18 +511,34 @@ NN  &  0.920 &  --   &  --   &  --   &  --   &  --   &  --   & -- \\
 \end{tabular}
 \end{table}
 
-Kết quả trong Bảng~\ref{tab:accuracy} cho thấy mô hình 
-\textbf{Gradient Boosting (GB)} đạt độ chính xác cao nhất, 
-lên đến 0.996 trong hầu hết các kịch bản (S1, S2, S6, S7, S8). 
-Mô hình \textbf{Random Forest (RF)} cũng thể hiện hiệu năng ấn tượng 
-với độ chính xác trên 0.99, ngoại trừ ở kịch bản S3. 
-Tất cả mô hình đều có sự sụt giảm rõ rệt về hiệu suất trong kịch 
-bản S3 — nơi chỉ sử dụng đặc trưng miền tần số — 
-với độ chính xác của LR giảm còn 0.368 và SVM giảm xuống 0.280. 
-Kết quả này phù hợp với phân tích SHAP (Hình~\ref{fig:shap}) 
-khi cho thấy các đặc trưng quan trọng nhất chủ yếu đến từ miền 
-thời gian, đặc biệt là trục $z$.
+Kết quả trong Bảng~\ref{tab:accuracy} làm sáng tỏ sự khác biệt căn bản giữa các nhóm đặc trưng và cách tiếp cận mô hình. 
+Trước hết, \textbf{Gradient Boosting (GB)} nổi bật với hiệu năng ổn định nhất, 
+liên tục đạt giá trị chính xác tối đa (0.996) trong năm kịch bản (S1, S2, S6, S7, S8). 
+Đặc điểm này cho thấy ưu thế vượt trội của các phương pháp tăng cường mô hình dựa trên cây quyết định, 
+khả năng khai thác tốt cả quan hệ phi tuyến và sự tương tác giữa các đặc trưng. 
+\textbf{Random Forest (RF)} mặc dù có đôi chút biến thiên, nhưng vẫn duy trì độ chính xác vượt ngưỡng 0.99 trong hầu hết kịch bản, 
+củng cố vai trò của các mô hình ensemble dựa trên bootstrap aggregation trong việc giảm phương sai và cải thiện khả năng tổng quát hoá.  
 
+Trái lại, \textbf{Logistic Regression (LR)} và \textbf{Support Vector Machine (SVM)} 
+chỉ đạt được hiệu năng tiệm cận 0.99 trong các kịch bản sử dụng đặc trưng miền thời gian hoặc đặc trưng được lựa chọn bằng SHAP. 
+Đặc biệt, ở kịch bản S3 – vốn chỉ khai thác đặc trưng miền tần số – cả hai mô hình này sụt giảm nghiêm trọng về độ chính xác (LR còn 0.368, SVM chỉ 0.280). 
+Kết quả nhấn mạnh rằng các tín hiệu động học quan trọng để phân loại chủ yếu được mã hoá trong miền thời gian. 
+Điều này hoàn toàn tương thích với phân tích SHAP (Hình~\ref{fig:shap}), 
+khi các đặc trưng đóng góp nhiều nhất đều tập trung ở miền thời gian, đặc biệt trên trục $z$, 
+nơi thể hiện rõ sự khác biệt về động học tư thế.
+
+Một điểm đáng chú ý khác là khi áp dụng cơ chế chọn lọc đặc trưng dựa trên \textbf{SHAP} (các kịch bản S5–S8), 
+độ chính xác của các mô hình hầu như không suy giảm, thậm chí trong một số trường hợp còn được cải thiện nhẹ 
+(ví dụ LR đạt 0.990 ở S6 và S7 so với 0.970 ở S1). 
+Điều này chứng tỏ việc loại bỏ các đặc trưng dư thừa và tập trung vào những đặc trưng quan trọng nhất 
+không chỉ giúp giảm chiều dữ liệu mà còn hạn chế hiện tượng nhiễu, từ đó gia tăng độ khái quát hoá. 
+Kết quả này có ý nghĩa thực tiễn quan trọng, vì nó cho phép duy trì hiệu năng phân loại cao 
+trong khi giảm thiểu chi phí tính toán và bộ nhớ – yếu tố then chốt khi triển khai trên các thiết bị nhúng hoặc hệ thống IoT có tài nguyên hạn chế.
+
+Tóm lại, Bảng~\ref{tab:accuracy} không chỉ xác nhận ưu thế vượt trội của các mô hình ensemble như GB và RF, 
+mà còn chứng minh tính hiệu quả của phương pháp chọn lọc đặc trưng dựa trên SHAP. 
+Sự thất bại rõ rệt của kịch bản S3 nhấn mạnh rằng miền tần số không mang lại giá trị phân loại đáng kể trong trường hợp này, 
+trong khi các đặc trưng miền thời gian mới là nguồn thông tin then chốt để mô hình học được ranh giới phân lớp một cách chính xác và bền vững.
 
 
 
@@ -557,11 +573,49 @@ NN  & 55  & --  & --   & --  & --  & --  & --  & --   \\
 \end{tabular}
 \end{table}
 
-Bảng~\ref{tab:modelsize} trình bày kích thước mô hình (tính theo kilobyte) trong từng kịch bản. GB và RF có dung lượng lớn nhất, đặc biệt GB luôn trên 580~KB. RF biến động từ 89~KB đến 291~KB tùy theo số đặc trưng sử dụng. Ngược lại, LR duy trì kích thước rất nhỏ, chỉ từ 2–4~KB ở tất cả kịch bản, phù hợp với hệ thống vi điều khiển có bộ nhớ hạn chế. SVM có kích thước trung bình, nhưng ở kịch bản S3 (3051~KB), dung lượng tăng vọt do số chiều đầu vào lớn. Mô hình NN mặc dù chỉ được đánh giá trong S1 nhưng đạt độ chính xác cao với kích thước chỉ 55~KB — một lựa chọn triển vọng cho các ứng dụng Edge AI.
+Bảng~\ref{tab:modelsize} cho thấy sự khác biệt đáng kể về kích thước giữa các mô hình. 
+\textbf{Gradient Boosting (GB)} luôn duy trì dung lượng trên 580~KB bất kể kịch bản, 
+cho thấy tính ổn định nhưng đồng thời cũng phản ánh hạn chế khi triển khai trên thiết bị nhúng có bộ nhớ giới hạn. 
+\textbf{Random Forest (RF)} có kích thước biến thiên rõ rệt (89–291~KB) phụ thuộc vào số lượng và loại đặc trưng đầu vào, 
+song vẫn duy trì ở mức chấp nhận được đối với các nền tảng nhúng có tài nguyên trung bình.  
 
-Nhìn chung, kết quả cho thấy cần đánh đổi giữa hiệu quả dự đoán và kích thước mô hình khi triển khai thực tế trên thiết bị nhúng. Các mô hình ensemble như RF và GB cho kết quả xuất sắc, nhưng LR và NN lại là lựa chọn tối ưu trong môi trường hạn chế tài nguyên.
+Ngược lại, \textbf{Logistic Regression (LR)} chỉ chiếm 2–4~KB, 
+một dung lượng cực kỳ nhỏ, khiến mô hình này trở thành ứng viên lý tưởng trong các hệ thống vi điều khiển hoặc IoT cần tối ưu bộ nhớ, 
+mặc dù độ chính xác có phần thấp hơn so với các mô hình ensemble. 
+\textbf{Support Vector Machine (SVM)} thường dao động trong khoảng 92–315~KB, 
+tuy nhiên ở kịch bản S3 kích thước tăng vọt lên 3051~KB, 
+nguyên nhân xuất phát từ số chiều đầu vào lớn và cấu trúc bộ nhớ của kernel. 
+Điều này cho thấy SVM kém ổn định về mặt tài nguyên và khó kiểm soát khi triển khai thực tế.  
 
-\section{Triển khai trên chip}
+Đáng chú ý, \textbf{Neural Network (NN)} ở kịch bản S1 đạt độ chính xác 0.92 với dung lượng chỉ 55~KB. 
+Mặc dù chưa đạt hiệu năng tối ưu, kết quả này mở ra hướng tiếp cận tiềm năng cho các ứng dụng Edge AI, 
+nơi sự cân bằng giữa hiệu năng và tính gọn nhẹ được đặt lên hàng đầu.  
+
+Tổng thể, Bảng~\ref{tab:modelsize} nhấn mạnh bài toán đánh đổi (trade-off) giữa \emph{hiệu quả dự đoán} và \emph{tài nguyên triển khai}. 
+Trong khi RF và GB cho kết quả phân loại vượt trội về độ chính xác, 
+thì LR và NN lại nổi bật nhờ kích thước gọn nhẹ, đặc biệt phù hợp với môi trường hạn chế tài nguyên. 
+Sự đánh đổi này cho thấy rằng lựa chọn mô hình tối ưu không chỉ dựa vào độ chính xác thuần tuý, 
+mà còn phụ thuộc vào yêu cầu hệ thống và ngữ cảnh triển khai cụ thể.
+Từ hai bảng kết quả có thể thấy rõ sự đánh đổi giữa \emph{hiệu năng phân loại} và \emph{tài nguyên triển khai}. 
+Trong bối cảnh nghiên cứu hướng đến ứng dụng trên thiết bị nhúng và hệ thống IoT, 
+các mô hình có kích thước gọn nhẹ nhưng vẫn duy trì độ chính xác ở mức cao cần được ưu tiên. 
+Do đó, mặc dù \textbf{RF} và \textbf{GB} thể hiện hiệu năng vượt trội về mặt độ chính xác, 
+luận án lựa chọn thử nghiệm chuyên sâu với \textbf{Logistic Regression (LR)} và \textbf{Neural Network (NN)}. 
+Hai mô hình này có ưu điểm quan trọng: dung lượng bộ nhớ rất nhỏ (2--4~KB đối với LR, 55~KB đối với NN) 
+và khả năng triển khai thuận lợi trên vi điều khiển, vốn thường chỉ có vài trăm kilobyte bộ nhớ khả dụng.  
+
+Một điểm cần lưu ý là các kịch bản S1–S5 được xây dựng với cửa sổ trượt 2~giây, 
+trong khi các kịch bản S7 sử dụng cửa sổ 1~giây với mức chồng lấn 50\%. 
+Kết quả cho thấy việc giảm độ dài cửa sổ từ 2~giây xuống 1~giây không làm suy giảm đáng kể độ chính xác 
+(thậm chí trong một số trường hợp, LR và GB còn cải thiện nhẹ, ví dụ LR đạt 0.990 ở S7 so với 0.987 ở S5). 
+Việc lựa chọn cửa sổ 1~giây thay vì 2~giây có ý nghĩa thực tiễn quan trọng: 
+nó cho phép hệ thống phản hồi nhanh hơn, nắm bắt kịp thời sự thay đổi tư thế, 
+đồng thời giảm độ trễ trong nhận dạng – một yêu cầu thiết yếu khi triển khai trong môi trường y tế thực tế.  
+
+Tóm lại, mặc dù các mô hình ensemble như RF và GB đạt hiệu năng cao nhất về mặt số liệu, 
+luận án định hướng ưu tiên triển khai thử nghiệm với LR và NN kết hợp cửa sổ 1~giây. 
+Đây là lựa chọn cân bằng hợp lý giữa \emph{độ chính xác}, \emph{tính gọn nhẹ của mô hình}, 
+và \emph{khả năng đáp ứng thời gian thực} khi triển khai trong các hệ thống nhúng hỗ trợ giám sát sức khỏe.
 
 \section{Triển khai trên vi điều khiển nhúng}
 
@@ -569,26 +623,132 @@ Sau khi hoàn tất quá trình huấn luyện và đánh giá trên máy tính,
 
 Cụ thể, nghiên cứu tiến hành triển khai song song hai mô hình: mạng nơ-ron nông (Neural Network – NN) với khả năng biểu diễn phi tuyến mạnh mẽ, và hồi quy logistic (Logistic Regression – LR) với cấu trúc tuyến tính cực kỳ gọn nhẹ. NN được kỳ vọng duy trì độ chính xác cao trong phân loại tư thế ngủ, trong khi LR đóng vai trò như một đối chứng quan trọng, minh chứng cho khả năng đạt được sự cân bằng tối ưu giữa độ chính xác vừa đủ và mức tiêu thụ tài nguyên tối thiểu.  
 
-Qua nhiều lần triển khai thực nghiệm trực tiếp trên vi điều khiển, tác giả rút ra kết luận quan trọng: việc giảm số lượng mẫu huấn luyện và rút gọn tập đặc trưng giúp mô hình suy luận nhẹ hơn, kích thước tệp và mức sử dụng bộ nhớ giảm đáng kể, trong khi độ chính xác chỉ suy giảm ở mức rất nhỏ và hoàn toàn chấp nhận được.  
-
 Điều này cho thấy trong bối cảnh phần cứng hạn chế, giá trị khoa học không nằm ở việc đạt độ chính xác tuyệt đối trong điều kiện lý tưởng, mà ở khả năng thiết kế một mô hình “đủ tốt” nhưng có thể vận hành bền vững trên chip. Chính sự đánh đổi này khẳng định nguyên lý cốt lõi của TinyML: hy sinh một phần nhỏ về độ chính xác để đổi lấy tính khả thi, hiệu quả năng lượng và độ tin cậy trong môi trường thực.  
 
 Kết quả cũng cho thấy sự song hành giữa hai mô hình được lựa chọn. Mạng nơ-ron (NN) duy trì độ chính xác cao nhưng tiêu tốn nhiều tài nguyên, trong khi hồi quy logistic (LR) có dung lượng siêu nhỏ, tốc độ suy luận nhanh, và vẫn giữ mức chính xác tiệm cận. Việc triển khai song song cả NN và LR trên chip vì vậy không chỉ mang ý nghĩa kiểm chứng kỹ thuật, mà còn cung cấp bằng chứng khoa học cho thấy ranh giới cân bằng giữa “độ chính xác tối đa” và “khả năng ứng dụng thực tế” trong hệ thống nhúng y sinh.
-\subsection{Lựa chọn mô hình và nền tảng triển khai}
 
-Trong số các mô hình khảo sát, mô hình mạng nơ-ron đạt được sự cân bằng tốt giữa độ chính xác (0.92 trong kịch bản S1) và dung lượng bộ nhớ (khoảng 55~KB). Khác với các mô hình ensemble như Gradient Boosting (GB) hoặc Random Forest (RF) tuy có độ chính xác cao hơn nhưng dung lượng lớn và tính phức tạp tính toán, mạng nơ-ron được thiết kế tối giản và hướng đến triển khai trong các môi trường vi điều khiển tiêu thụ năng lượng thấp.
-
-Vi điều khiển được lựa chọn là \textbf{Arduino Nano 33 BLE Sense}, sử dụng chip \texttt{nRF52840} (ARM Cortex-M4F, 64~MHz), 1~MB flash và 256~KB RAM. Bo mạch này cũng tích hợp sẵn cảm biến gia tốc, rất phù hợp để xây dựng hệ thống nhận diện tư thế ngủ hoàn chỉnh và hoạt động độc lập.
 
 \subsection{Quy trình triển khai mô hình}
 
-Mô hình mạng nơ-ron được huấn luyện bằng TensorFlow/Keras với hai lớp ẩn (50 và 15 nơ-ron), sử dụng hàm kích hoạt \texttt{ReLU} và lớp đầu ra \texttt{Softmax} để phân loại tư thế ngủ thành 4 lớp. Sau huấn luyện, mô hình được chuyển sang định dạng \texttt{TensorFlow Lite (.tflite)} để phục vụ cho suy luận trên thiết bị nhúng.
 
-Vì mô hình đã được thiết kế tối giản từ đầu nên dung lượng ở định dạng TFLite chỉ khoảng 55~KB, không cần thêm bước lượng tử hóa để giảm kích thước. Tuy vậy, để đảm bảo khả năng thực thi ổn định trên nền tảng không có bộ xử lý dấu phẩy động (FPU), mô hình vẫn được chuyển về định dạng số nguyên 8-bit (\texttt{int8}) thông qua kỹ thuật lượng tử hóa sau huấn luyện (post-training quantization). Quá trình này không làm giảm kích thước mô hình đáng kể, nhưng giúp cải thiện tốc độ suy luận và giảm mức tiêu thụ điện năng.
+Dựa trên các kết quả phân tích và đánh giá ở giai đoạn~1, 
+tác giả quyết định bước sang giai đoạn~2 với mục tiêu triển khai thực tế trên phần cứng nhúng. 
+Như đã trình bày, hai mô hình được lựa chọn cho thử nghiệm là \textbf{Neural Network (NN)} 
+và \textbf{Logistic Regression (LR)}, bởi chúng đáp ứng tốt yêu cầu về tính gọn nhẹ và khả năng triển khai trên vi điều khiển.  
 
-Sau đó, mô hình được tích hợp vào mã nguồn Arduino bằng cách chuyển đổi file `.tflite` thành mảng nhị phân C (`const unsigned char model[]`) và sử dụng thư viện \texttt{TensorFlow Lite for Microcontrollers (TFLM)} để khởi tạo trình suy luận (\texttt{MicroInterpreter}). Tín hiệu đầu vào từ cảm biến gia tốc được xử lý theo đúng chuẩn hóa đầu vào như khi huấn luyện và đưa vào mô hình để thực hiện phân loại tư thế theo thời gian thực.
+Quy trình triển khai bao gồm các bước sau:  
+\begin{enumerate}
+    \item \textbf{Xác định vi điều khiển mục tiêu}: lựa chọn nền tảng phần cứng phù hợp với giới hạn bộ nhớ và khả năng tính toán.  
+    \item \textbf{Thu thập lại dữ liệu trực tiếp trên vi điều khiển}: đảm bảo dữ liệu phản ánh đúng điều kiện hoạt động của phần cứng thực tế, tránh sai lệch do khác biệt môi trường so với giai đoạn mô phỏng.  
+    \item \textbf{Huấn luyện lại mô hình}: sử dụng bộ dữ liệu thu thập mới để tinh chỉnh và tái huấn luyện, nhằm tối ưu hóa mô hình cho nền tảng phần cứng được chọn.  
+    \item \textbf{Chuyển đổi mô hình sang mã C/C++}: áp dụng các công cụ biên dịch và chuyển đổi chuyên dụng để xuất mô hình dưới dạng mã nguồn có thể nhúng trực tiếp.  
+    \item \textbf{Triển khai trên chip}: nạp mã nguồn vào vi điều khiển, kiểm tra khả năng suy luận và hiệu năng thời gian thực.  
+\end{enumerate}
+\subsubsection{B1}
+
+Vi điều khiển được lựa chọn là \textbf{Arduino Nano 33 BLE Sense}, sử dụng chip \texttt{nRF52840} (ARM Cortex-M4F, 64~MHz), 1~MB flash và 256~KB RAM. Bo mạch này cũng tích hợp sẵn cảm biến gia tốc, rất phù hợp để xây dựng hệ thống nhận diện tư thế ngủ hoàn chỉnh và hoạt động độc lập.
+
+\subsubsection{B2}
+
+Qua nhiều lần triển khai thực nghiệm trực tiếp trên vi điều khiển, 
+tác giả đã rút ra một kết luận quan trọng: 
+việc \textbf{giảm số lượng mẫu huấn luyện} kết hợp với \textbf{rút gọn tập đặc trưng} 
+mang lại hiệu quả rõ rệt trong việc tối ưu mô hình cho môi trường nhúng. 
+Cụ thể, các mô hình sau khi được tinh giản có \emph{kích thước tệp nhỏ hơn}, 
+\emph{mức sử dụng bộ nhớ giảm đáng kể}, và \emph{thời gian suy luận nhanh hơn}, 
+nhưng độ chính xác chỉ suy giảm ở mức rất nhỏ và hoàn toàn nằm trong ngưỡng chấp nhận được đối với ứng dụng thực tế. 
+Điều này chứng tỏ rằng, trong bối cảnh triển khai Edge AI, 
+sự đánh đổi giữa số lượng đặc trưng và hiệu năng mô hình có thể được cân bằng một cách hợp lý, 
+từ đó vừa đảm bảo tính khả thi trên phần cứng hạn chế, vừa duy trì độ tin cậy trong dự đoán.  
+
+Đặc biệt, ở \textbf{bước 2 của quy trình}, tác giả đã tiến hành \emph{thu thập lại 1.470 mẫu dữ liệu} 
+trực tiếp từ thiết bị \textbf{Arduino Nano 33 BLE Sense}. 
+Khác với bộ dữ liệu mô phỏng trên máy tính, tập dữ liệu này phản ánh sát thực tế điều kiện hoạt động của phần cứng, 
+bao gồm cả đặc điểm nhiễu, độ trễ và sai số phép đo. 
+Nhờ vậy, việc huấn luyện lại mô hình trên tập dữ liệu thực nghiệm giúp tăng tính tương thích giữa mô hình và nền tảng nhúng, 
+giảm thiểu nguy cơ sai lệch do khoảng cách giữa môi trường mô phỏng và môi trường thực thi.  
+
+\subsubsection{B3}
+Trong quá trình triển khai thực tế, tác giả tiến hành hai hướng tiếp cận riêng biệt 
+tương ứng với hai mô hình đã được lựa chọn từ giai đoạn~1: \textbf{Logistic Regression (LR)} và \textbf{Neural Network (NN)}.  
+
+\begin{itemize}
+    \item \textbf{Đối với LR:} sau khi huấn luyện lại mô hình trên tập dữ liệu thu thập từ Arduino Nano 33, 
+    toàn bộ tham số bao gồm trọng số, hệ số bias và giá trị chuẩn hoá (min, max, scale) 
+    được xuất trực tiếp sang mã C/C++. Cách tiếp cận này cho phép mô hình LR 
+    được biểu diễn dưới dạng các mảng hằng số \texttt{const float[]} trong chương trình Arduino, 
+    từ đó vi điều khiển có thể tính toán đầu ra bằng phép nhân ma trận và cộng bias đơn giản. 
+    Việc xuất mô hình theo phương thức này đảm bảo kích thước file rất nhỏ (chỉ vài kilobyte) 
+    và suy luận có thể thực hiện nhanh chóng mà không phụ thuộc vào thư viện học máy phức tạp.  
+
+    \item \textbf{Đối với NN:} mô hình được thiết kế với hai lớp ẩn (8 và 4 nơ-ron), 
+    sử dụng hàm kích hoạt ReLU và lớp đầu ra Softmax. Sau khi huấn luyện, 
+    mô hình được chuyển đổi sang định dạng \textbf{TensorFlow Lite (TFLite)} bằng công cụ \texttt{TFLiteConverter}. 
+    File nhị phân \texttt{.tflite} sau đó được ánh xạ sang mã C thông qua tiện ích \texttt{xxd -i}, 
+    tạo thành một mảng byte \texttt{const unsigned char[]} để nạp trực tiếp vào bộ nhớ của vi điều khiển. 
+    Cách tiếp cận này cho phép duy trì toàn bộ cấu trúc của mạng nơ-ron, 
+    đồng thời tận dụng khả năng tối ưu hoá suy luận của TensorFlow Lite trên nền tảng nhúng.  
+\end{itemize}
+
+Sự khác biệt giữa hai phương pháp này phản ánh bản chất của từng mô hình: 
+LR dựa trên phương trình tuyến tính với đặc trưng đã trích xuất, 
+nên việc chuyển đổi tham số sang C/C++ là tối ưu và gọn nhẹ nhất. 
+Ngược lại, NN có cấu trúc phi tuyến và nhiều lớp, do đó cần sử dụng định dạng TFLite 
+để đóng gói toàn bộ mô hình dưới dạng nhị phân, vừa đảm bảo tính toàn vẹn, 
+vừa khai thác được khả năng tối ưu hoá suy luận trên chip.  
+
+Qua đó, luận án đã thiết lập được hai quy trình triển khai hoàn chỉnh:  
+(i) LR với mô hình tuyến tính tối giản, phù hợp với các hệ thống nhúng cực kỳ hạn chế tài nguyên;  
+(ii) NN với mô hình phi tuyến phức tạp hơn, tận dụng TFLite để cân bằng giữa độ chính xác và tốc độ suy luận.  
+
+\subsubsection{B4-B5}
+Trong bước triển khai thực tế, mô hình Logistic Regression (LR) được ánh xạ trực tiếp sang mã C/C++ 
+thông qua ba thành phần chính: (i) tệp \texttt{model.h} lưu trữ toàn bộ tham số huấn luyện (trọng số, hệ số bias, 
+giá trị chuẩn hoá); (ii) tệp \texttt{predict.h} định nghĩa cơ chế suy luận bằng phép tính tuyến tính kết hợp Softmax; 
+và (iii) chương trình chính điều khiển cảm biến, trích xuất đặc trưng, chuẩn hoá và gọi hàm dự đoán. 
+Cách tổ chức này giúp mô hình hoạt động độc lập hoàn toàn trên vi điều khiển mà không cần bất kỳ thư viện học máy ngoài nào.  
+
+Thực nghiệm cho thấy toàn bộ quá trình suy luận được thực hiện chỉ với các phép toán cơ bản 
+(\emph{cộng, nhân, căn bậc hai, hàm mũ}), tiêu tốn rất ít tài nguyên tính toán 
+và đạt thời gian xử lý ở mức micro giây cho mỗi cửa sổ dữ liệu. 
+Điều này khẳng định tính phù hợp của LR trong bối cảnh triển khai trên thiết bị nhúng 
+có bộ nhớ và công suất xử lý hạn chế.  
+
+Từ góc độ khoa học, việc triển khai LR theo cách này minh chứng rằng một mô hình học máy 
+có thể được rút gọn thành tập tham số tĩnh và tái hiện chính xác trên chip, 
+đồng thời duy trì độ chính xác ở mức chấp nhận được cho ứng dụng giám sát sức khoẻ thời gian thực. 
+Chiến lược \textbf{tối giản mô hình} này là minh chứng rõ rệt cho tính khả thi của Edge AI: 
+đảm bảo độ trễ thấp, tính riêng tư dữ liệu và khả năng vận hành bền vững trong môi trường hạn chế tài nguyên.
+
+Khác với LR, mô hình Neural Network (NN) được triển khai trên chip thông qua định dạng 
+\textbf{TensorFlow Lite Micro (TFLM)}. Sau khi huấn luyện, mô hình Keras được chuyển đổi sang 
+tệp nhị phân \texttt{.tflite} và sau đó nhúng trực tiếp vào chương trình Arduino dưới dạng mảng byte 
+(\texttt{const unsigned char model[]}). Việc này cho phép vi điều khiển thực thi suy luận với sự hỗ trợ 
+của thư viện TFLM, vốn đã được tối ưu hóa cho các hệ thống nhúng có bộ nhớ giới hạn.  
+
+Trong chương trình triển khai, bộ gia tốc của Arduino Nano 33 BLE Sense 
+cung cấp dữ liệu ba trục $(x, y, z)$ liên tục. Tiếp đó dữ liệu được chuẩn hóa để bảo đảm sự tương thích với dải giá trị đầu vào mà mô hình đã được huấn luyện.  
+
+Khối \texttt{MicroInterpreter} trong TFLM chịu trách nhiệm phân bổ bộ nhớ, 
+thực thi các toán tử (Dense, ReLU, Softmax), và trả về xác suất dự đoán cho từng lớp tư thế 
+(\emph{ngửa, nghiêng trái, nghiêng phải, sấp}). Kết quả cuối cùng được xác định bằng cách 
+chọn lớp có xác suất cao nhất.  
+
+Ý nghĩa khoa học của phương thức triển khai này nằm ở chỗ: 
+thay vì trích xuất đặc trưng thủ công như với LR, NN có khả năng \textbf{học trực tiếp từ dữ liệu thô}, 
+từ đó giảm thiểu sự phụ thuộc vào các bước tiền xử lý. 
+Mặc dù chi phí tính toán cao hơn, 
+NN có ưu thế trong việc nắm bắt quan hệ phi tuyến 
+phức tạp giữa các tín hiệu.  
+
+Như vậy, hai mô hình LR và NN phản ánh hai chiến lược bổ sung cho nhau: 
+LR tối giản, phù hợp khi ưu tiên tốc độ và tài nguyên, trong khi NN khai thác tối đa dữ liệu thô 
+nhờ khả năng biểu diễn phi tuyến, phù hợp cho các ứng dụng đòi hỏi độ chính xác cao và tính khái quát.  
 
 \subsection{Đánh giá hiệu suất và tài nguyên}
+
+
+
 
 Quá trình triển khai và kiểm thử cho kết quả như sau:
 
