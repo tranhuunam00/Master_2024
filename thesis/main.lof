@@ -40,6 +40,5 @@
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Phân tích giá trị SHAP nhằm xác định tầm quan trọng của các đặc trưng trong mô hình phân loại tư thế ngủ. Các đặc trưng từ trục $z$ chiếm ưu thế về mức ảnh hưởng đến đầu ra mô hình.}}{103}{figure.caption.59}%
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Ma trận nhầm lẫn (confusion matrix) của năm mô hình phân loại trong kịch bản S1. GB và RF cho kết quả chính xác cao nhất. Mô hình NN được huấn luyện trực tiếp trên dữ liệu thô.}}{107}{figure.caption.63}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Thiết kế mạch nguyên lý trên phần mềm Altium}}{116}{figure.caption.69}%
 \contentsfinish 
 \contentsfinish 

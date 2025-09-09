@@ -3,8 +3,8 @@
 \contentsline {chapter}{Lời cam đoan}{i}{Doc-Start}%
 \contentsline {chapter}{Lời cảm ơn}{ii}{Doc-Start}%
 \contentsline {chapter}{Tóm tắt}{iii}{Doc-Start}%
-\contentsline {chapter}{Danh sách hình vẽ}{ix}{chapter*.2}%
-\contentsline {chapter}{Danh sách bảng}{x}{chapter*.3}%
+\contentsline {chapter}{Danh sách hình vẽ}{viii}{chapter*.2}%
+\contentsline {chapter}{Danh sách bảng}{ix}{chapter*.3}%
 \contentsline {chapter}{Đặt vấn đề}{1}{chapter*.4}%
 \contentsline {chapter}{\numberline {1}Tổng quan về hội chứng ngưng thở khi ngủ và các giải pháp công nghệ trong giám sát tư thế ngủ}{7}{chapter.1}%
 \contentsline {section}{\numberline {1.1.}Hội chứng ngưng thở khi ngủ}{7}{section.1.1}%
@@ -41,10 +41,6 @@
 \contentsline {subsection}{\numberline {3.3.5.}Đánh giá kết quả}{105}{subsection.3.3.5}%
 \contentsline {section}{\numberline {3.4.}Triển khai trên vi điều khiển nhúng}{109}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1.}Quy trình triển khai mô hình}{110}{subsection.3.4.1}%
-\contentsline {subsubsection}{B1}{110}{subsubsection*.65}%
-\contentsline {subsubsection}{B2}{110}{subsubsection*.66}%
-\contentsline {subsubsection}{B3}{111}{subsubsection*.67}%
-\contentsline {subsubsection}{B4-B5}{112}{subsubsection*.68}%
 \contentsline {subsection}{\numberline {3.4.2.}Đánh giá hiệu suất và tài nguyên}{113}{subsection.3.4.2}%
-\contentsline {chapter}{\numberline {4}Kết luận}{115}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Kết luận}{116}{chapter.4}%
 \contentsfinish 

@@ -1,43 +1,34 @@
 \subsection*{Hướng phát triển trong thời gian tới}
 
-Ngay từ giai đoạn đầu, các mô hình học máy như Logistic Regression, Random Forest, Support Vector Machine và Gradient Boosting đã được triển khai để phân loại tư thế ngủ với độ chính xác cao (lên đến 99.6\% với GB, 98.7\% với LR). Đồng thời, tác giả cũng đã thử nghiệm mô hình mạng nơ-ron nông (NN) và triển khai thành công trên vi điều khiển Arduino Nano 33 BLE Sense, mở đường cho khả năng chạy mô hình trực tiếp trên thiết bị nhúng.
+Trong giai đoạn nghiên cứu trước, các mô hình học máy như Logistic Regression, Random Forest, Support Vector Machine và Gradient Boosting đã được áp dụng để phân loại tư thế ngủ với độ chính xác cao (lên tới 99.6\% với Gradient Boosting, 98.7\% với Logistic Regression). Đồng thời, một mô hình mạng nơ-ron nông (NN) cũng đã được triển khai thành công trên vi điều khiển Arduino Nano 33 BLE Sense, chứng minh tính khả thi của việc chạy mô hình trực tiếp trên phần cứng nhúng.
 
-Vì vậy, trong giai đoạn tiếp theo, tác giả sẽ tiếp tục áp dụng các mô hình học máy để cải thiện độ chính xác của hệ thống. Cụ thể, mô hình Logistic Regression (LR) — với ưu điểm về kích thước nhỏ và khả năng triển khai trên vi điều khiển — sẽ được tích hợp lên mạch phần cứng do nhóm tự thiết kế thay vì chỉ sử dụng bo mạch Arduino thương mại. Ngoài ra, việc sử dụng mô hình mạng nơ-ron đã được thực nghiệm trong khóa luận sẽ là cơ sở để mở rộng sang các mô hình học sâu (deep learning) nhẹ như CNN hoặc MobileNet nếu điều kiện phần cứng cho phép.
-
-Bên cạnh đó, nhóm nghiên cứu đang xây dựng mạch nguyên lý và thiết kế mạch in trên phần mềm Altium, với mục tiêu hiện thực hóa một thiết bị tích hợp đầy đủ các thành phần: cảm biến, vi điều khiển, module truyền không dây và bộ xử lý tín hiệu.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.75\linewidth]{images/macjh.png}
-    \caption{Thiết kế mạch nguyên lý trên phần mềm Altium}
-    \label{macjh}
-\end{figure}
-
-Hệ thống trong tương lai cũng sẽ được tích hợp thêm các tín hiệu sinh lý khác ngoài gia tốc, như cảm biến âm thanh, nhịp thở, độ bão hòa oxy máu,... nhằm hướng tới mục tiêu đánh giá chỉ số AHI (Apnea–Hypopnea Index) – một trong những thông số quan trọng trong chẩn đoán hội chứng ngưng thở khi ngủ (OSA).
-
-Về mặt phần mềm, ứng dụng di động hiện tại hoạt động tốt nhưng còn hạn chế khi phải mở liên tục trong suốt quá trình ghi nhận. Để cải thiện trải nghiệm người dùng, tác giả đề xuất tích hợp module Wi-Fi vào phần cứng để gửi dữ liệu trực tiếp lên server. Khi đó, thiết bị di động sẽ chỉ cần hiển thị dữ liệu qua các ứng dụng chạy nền (foreground service) mà không cần mở ứng dụng chính thường xuyên, từ đó tiết kiệm năng lượng và tiện lợi hơn cho người dùng.
-
-Về phía xây dựng tập dữ liệu, nhóm nghiên cứu đang khảo sát các phương pháp gán nhãn hiệu quả như:
+Trong giai đoạn tiếp theo, nhóm nghiên cứu sẽ tập trung vào việc:
 \begin{itemize}
-    \item Ghi hình bằng camera kết hợp đồng bộ thời gian;
-    \item Gán nhãn hành động theo khoảng thời gian cố định;
-    \item Gán nhãn trực tiếp trên ứng dụng di động thông qua nút bấm tích hợp.
+    \item \textbf{Tối ưu mô hình}: Tiếp tục khai thác Logistic Regression do ưu thế về kích thước nhỏ gọn và tốc độ suy luận, đồng thời thử nghiệm các kiến trúc học sâu nhẹ (lightweight deep learning) như CNN, MobileNet hoặc TinyML framework nếu điều kiện phần cứng cho phép;
+    \item \textbf{Phát triển phần cứng}: Tự thiết kế mạch nguyên lý và PCB trên Altium, tích hợp cảm biến, vi điều khiển, module truyền không dây và khối xử lý tín hiệu nhằm xây dựng thiết bị chuyên biệt thay vì phụ thuộc vào bo mạch thương mại;
+    \item \textbf{Mở rộng tín hiệu}: Bổ sung thêm các cảm biến sinh lý (như microphone phát hiện ngáy, cảm biến nhịp thở, nhịp tim, SpO\textsubscript{2}) để từng bước hướng tới đánh giá chỉ số AHI (Apnea–Hypopnea Index) – thước đo quan trọng trong chẩn đoán hội chứng ngưng thở khi ngủ (OSA);
+    \item \textbf{Cải tiến phần mềm}: Bổ sung kết nối Wi-Fi/BLE Mesh để dữ liệu được gửi trực tiếp lên server, hạn chế việc phụ thuộc vào ứng dụng di động phải chạy liên tục, từ đó nâng cao trải nghiệm người dùng và tiết kiệm năng lượng.
 \end{itemize}
 
-Tác giả dự kiến phát triển một tính năng hỗ trợ gán nhãn trong ứng dụng di động nhằm hỗ trợ việc xây dựng tập huấn luyện có độ tin cậy cao phục vụ huấn luyện mô hình học máy.
+Ngoài ra, một trong những ưu tiên quan trọng là \textbf{xây dựng bộ dữ liệu huấn luyện có độ tin cậy cao}. Nhóm nghiên cứu dự kiến triển khai các phương pháp gán nhãn tự động và bán tự động, bao gồm:
+\begin{itemize}
+    \item Ghi hình kết hợp đồng bộ thời gian với dữ liệu cảm biến;
+    \item Gán nhãn theo khoảng thời gian định trước;
+    \item Gán nhãn thủ công trực tiếp trên ứng dụng di động thông qua nút bấm hỗ trợ.
+\end{itemize}
+
+Ứng dụng di động trong tương lai sẽ được bổ sung tính năng gán nhãn và quản lý dữ liệu tập trung, hỗ trợ quá trình thu thập và huấn luyện mô hình.
 
 \subsection*{Kết luận định hướng}
 
-Mục tiêu dài hạn của nghiên cứu không chỉ dừng lại ở việc nhận diện tư thế ngủ, mà hướng đến phát triển một hệ thống HST (Home Sleep Testing) hoàn chỉnh phục vụ cho việc \textbf{đánh giá nguy cơ mắc hội chứng ngưng thở khi ngủ tắc nghẽn (Obstructive Sleep Apnea – OSA)}.
+Mục tiêu dài hạn của nghiên cứu không chỉ dừng lại ở việc nhận diện tư thế ngủ, mà còn hướng đến phát triển một hệ thống \textbf{Home Sleep Testing (HST)} đơn giản, chi phí thấp, có khả năng \textbf{sàng lọc nguy cơ mắc hội chứng ngưng thở khi ngủ tắc nghẽn (OSA)} ngay tại nhà.
 
-Tư thế ngủ là một trong những yếu tố quan trọng góp phần gây ra hoặc làm trầm trọng thêm tình trạng OSA, đặc biệt là ở các trường hợp OSA theo tư thế (positional OSA – pOSA). Do đó, việc nhận diện chính xác tư thế là bước nền cần thiết để xây dựng các mô hình tiên lượng hoặc gợi ý can thiệp lâm sàng.
-
-Trong giai đoạn tiếp theo, hệ thống sẽ tiếp tục được mở rộng với mục tiêu:
+Các định hướng cụ thể gồm:
 \begin{itemize}
-    \item Tích hợp thêm các loại cảm biến sinh lý như âm thanh (phát hiện ngáy), nhịp thở, nhịp tim, SpO\textsubscript{2}... để đánh giá gián tiếp các chỉ số liên quan đến ngưng thở;
-    \item Phát triển thuật toán ước lượng chỉ số AHI (Apnea–Hypopnea Index) dựa trên tổng hợp tín hiệu;
-    \item Thiết kế giao diện người dùng cho bác sĩ theo dõi từ xa và đề xuất hướng điều trị;
-    \item Tối ưu mô hình học máy (như Logistic Regression hoặc mạng nơ-ron lượng tử hóa) để chạy trực tiếp trên vi điều khiển hoặc thiết bị đeo tay.
+    \item Tích hợp đa cảm biến để giám sát đồng thời tư thế, nhịp thở, âm thanh và SpO\textsubscript{2};
+    \item Phát triển thuật toán ước lượng chỉ số AHI dựa trên dữ liệu tổng hợp;
+    \item Thiết kế giao diện giám sát từ xa dành cho bác sĩ, kết hợp đề xuất can thiệp lâm sàng;
+    \item Tối ưu và lượng tử hóa mô hình học máy để triển khai trực tiếp trên vi điều khiển hoặc thiết bị đeo tay.
 \end{itemize}
 
-Tác giả kỳ vọng rằng trong tương lai gần, sản phẩm nghiên cứu có thể đóng vai trò như một thiết bị HST đơn giản, giá thành thấp, hỗ trợ các cơ sở y tế và người bệnh trong việc sàng lọc sớm và quản lý OSA một cách chủ động tại nhà – đặc biệt tại các khu vực thiếu điều kiện tiếp cận các thiết bị PSG tiêu chuẩn.
+Với định hướng này, sản phẩm kỳ vọng trở thành một giải pháp HST gọn nhẹ, dễ tiếp cận và có tính ứng dụng cao, góp phần hỗ trợ bệnh nhân và các cơ sở y tế trong công tác \textbf{sàng lọc sớm, theo dõi và quản lý OSA} tại cộng đồng, đặc biệt ở các khu vực còn hạn chế về thiết bị PSG chuẩn.

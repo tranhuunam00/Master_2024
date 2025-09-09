@@ -642,13 +642,11 @@ Quy trình triển khai bao gồm các bước sau:
     \item \textbf{Thu thập lại dữ liệu trực tiếp trên vi điều khiển}: đảm bảo dữ liệu phản ánh đúng điều kiện hoạt động của phần cứng thực tế, tránh sai lệch do khác biệt môi trường so với giai đoạn mô phỏng.  
     \item \textbf{Huấn luyện lại mô hình}: sử dụng bộ dữ liệu thu thập mới để tinh chỉnh và tái huấn luyện, nhằm tối ưu hóa mô hình cho nền tảng phần cứng được chọn.  
     \item \textbf{Chuyển đổi mô hình sang mã C/C++}: áp dụng các công cụ biên dịch và chuyển đổi chuyên dụng để xuất mô hình dưới dạng mã nguồn có thể nhúng trực tiếp.  
-    \item \textbf{Triển khai trên chip}: nạp mã nguồn vào vi điều khiển, kiểm tra khả năng suy luận và hiệu năng thời gian thực.  
+    \item \textbf{Triển khai trên chip}: nạp mã nguồn vào vi điều khiển, bộ lọc, kiểm tra khả năng suy luận và hiệu năng thời gian thực.  
 \end{enumerate}
-\subsubsection{B1}
 
 Vi điều khiển được lựa chọn là \textbf{Arduino Nano 33 BLE Sense}, sử dụng chip \texttt{nRF52840} (ARM Cortex-M4F, 64~MHz), 1~MB flash và 256~KB RAM. Bo mạch này cũng tích hợp sẵn cảm biến gia tốc, rất phù hợp để xây dựng hệ thống nhận diện tư thế ngủ hoàn chỉnh và hoạt động độc lập.
 
-\subsubsection{B2}
 
 Qua nhiều lần triển khai thực nghiệm trực tiếp trên vi điều khiển, 
 tác giả đã rút ra một kết luận quan trọng: 
@@ -661,14 +659,13 @@ nhưng độ chính xác chỉ suy giảm ở mức rất nhỏ và hoàn toàn 
 sự đánh đổi giữa số lượng đặc trưng và hiệu năng mô hình có thể được cân bằng một cách hợp lý, 
 từ đó vừa đảm bảo tính khả thi trên phần cứng hạn chế, vừa duy trì độ tin cậy trong dự đoán.  
 
-Đặc biệt, ở \textbf{bước 2 của quy trình}, tác giả đã tiến hành \emph{thu thập lại 1.470 mẫu dữ liệu} 
+Đặc biệt, ở \textbf{bước 2 của quy trình}, tác giả đã tiến hành \emph{thu thập lại 10.430 mẫu dữ liệu} 
 trực tiếp từ thiết bị \textbf{Arduino Nano 33 BLE Sense}. 
 Khác với bộ dữ liệu mô phỏng trên máy tính, tập dữ liệu này phản ánh sát thực tế điều kiện hoạt động của phần cứng, 
 bao gồm cả đặc điểm nhiễu, độ trễ và sai số phép đo. 
 Nhờ vậy, việc huấn luyện lại mô hình trên tập dữ liệu thực nghiệm giúp tăng tính tương thích giữa mô hình và nền tảng nhúng, 
 giảm thiểu nguy cơ sai lệch do khoảng cách giữa môi trường mô phỏng và môi trường thực thi.  
 
-\subsubsection{B3}
 Trong quá trình triển khai thực tế, tác giả tiến hành hai hướng tiếp cận riêng biệt 
 tương ứng với hai mô hình đã được lựa chọn từ giai đoạn~1: \textbf{Logistic Regression (LR)} và \textbf{Neural Network (NN)}.  
 
@@ -701,7 +698,6 @@ Qua đó, luận án đã thiết lập được hai quy trình triển khai ho�
 (i) LR với mô hình tuyến tính tối giản, phù hợp với các hệ thống nhúng cực kỳ hạn chế tài nguyên;  
 (ii) NN với mô hình phi tuyến phức tạp hơn, tận dụng TFLite để cân bằng giữa độ chính xác và tốc độ suy luận.  
 
-\subsubsection{B4-B5}
 Trong bước triển khai thực tế, mô hình Logistic Regression (LR) được ánh xạ trực tiếp sang mã C/C++ 
 thông qua ba thành phần chính: (i) tệp \texttt{model.h} lưu trữ toàn bộ tham số huấn luyện (trọng số, hệ số bias, 
 giá trị chuẩn hoá); (ii) tệp \texttt{predict.h} định nghĩa cơ chế suy luận bằng phép tính tuyến tính kết hợp Softmax; 
@@ -747,20 +743,63 @@ nhờ khả năng biểu diễn phi tuyến, phù hợp cho các ứng dụng đ
 
 \subsection{Đánh giá hiệu suất và tài nguyên}
 
-
-
-
-Quá trình triển khai và kiểm thử cho kết quả như sau:
+Các thí nghiệm được tiến hành trên vi điều khiển nRF52840 và được so sánh trong điều kiện triển khai thực tế. 
+Ngoài ra, để đảm bảo tính khách quan và khả năng tái lập, toàn bộ quá trình huấn luyện mô hình, biên dịch chương trình 
+và nạp xuống vi điều khiển được thực hiện trên một máy tính xách tay có cấu hình phần cứng như sau:
 
 \begin{itemize}
-    \item \textbf{Dung lượng mô hình (flash):} khoảng 55~KB;
-    \item \textbf{Mức sử dụng RAM trong lúc suy luận:} khoảng 19.6~KB;
-    \item \textbf{Thời gian suy luận trung bình:} khoảng 17~ms/mẫu;
-    \item \textbf{Tốc độ lấy mẫu cảm biến:} 10~Hz (mỗi 100~ms);
-    \item \textbf{Dòng tiêu thụ trung bình:} 6.5~mA (hoạt động liên tục, BLE tắt).
+    \item \textbf{Bộ xử lý (CPU):} Intel(R) Core(TM) Ultra 5 226V, tốc độ xung nhịp $2.10$~GHz.
+    \item \textbf{Bộ nhớ trong (RAM):} $16.0$~GB DDR5, tốc độ $8533$~MT/s.
+    \item \textbf{Ổ lưu trữ (Storage):} SSD dung lượng $954$~GB (trong đó đã sử dụng $188$~GB).
+    \item \textbf{Card đồ họa (GPU):} Intel(R) Arc(TM) 130V, dung lượng bộ nhớ đồ hoạ $8$~GB (VRAM khả dụng $128$~MB cho hệ thống).
 \end{itemize}
 
-Kết quả cho thấy hệ thống đáp ứng tốt yêu cầu suy luận thời gian thực, bộ nhớ sử dụng nằm trong giới hạn an toàn của thiết bị, và có thể hoạt động liên tục nhiều giờ bằng pin cúc áo CR2032.
+Việc mô tả chi tiết môi trường phần cứng nhằm giúp đảm bảo tính minh bạch, 
+đồng thời cung cấp thông tin tham chiếu để các nghiên cứu sau có thể so sánh hoặc tái hiện kết quả. 
+Trong bối cảnh học máy nhúng, hiệu năng biên dịch và tốc độ nạp chương trình phụ thuộc không chỉ vào 
+kiến trúc của vi điều khiển mà còn chịu ảnh hưởng từ cấu hình máy tính host, do đó việc báo cáo chi tiết hệ thống thử nghiệm là cần thiết.
 
 
+Bảng \ref{tab:comparison_full} trình bày sự so sánh chi tiết giữa Logistic Regression (LR) và Neural Network (NN) khi triển khai trên vi điều khiển nRF52840. Ngoài các tiêu chí về dung lượng bộ nhớ và độ phức tạp, kết quả thực nghiệm còn chỉ ra sự khác biệt rất lớn về \textbf{hiệu năng suy luận}. Cụ thể, mô hình LR đạt thời gian xử lý trung bình $501~\mu s$ trên mỗi mẫu, trong khi NN mất tới $8000~\mu s$, tức là chậm hơn khoảng $16$ lần. Đây là một yếu tố quan trọng, đặc biệt trong các ứng dụng \textit{real-time} nơi độ trễ (latency) quyết định khả năng đáp ứng của hệ thống.
 
+\begin{table}[H]
+\centering
+\caption{So sánh hiệu năng Logistic Regression và Neural Network trên nRF52840}
+\label{tab:comparison_full}
+\begin{tabular}{|l|p{5cm}|p{6cm}|}
+\hline
+\textbf{Tiêu chí} & \textbf{Logistic Regression (LR)} & \textbf{Neural Network (NN)} \\ \hline
+Dung lượng Flash sử dụng & 115,208 bytes (11\%) & 363,520 bytes (36\%) \\ \hline
+Dung lượng RAM sử dụng   & 46,632 bytes (17\%)  & 60,672 bytes (23\%)  \\ \hline
+Thời gian upload         & 4.9 s (29 pages)     & 15 s (89 pages)      \\ \hline
+Độ phức tạp mô hình      & Thấp (1 lớp tuyến tính) & Trung bình -- cao (nhiều lớp fully connected) \\ \hline
+Sức mạnh biểu diễn       & Hạn chế (chỉ quan hệ tuyến tính) & Cao (biểu diễn quan hệ phi tuyến) \\ \hline
+Ổn định trên MCU         & Ổn định              & Ổn định \\ \hline
+Thời gian suy luận       & 501~$\mu s$          & 8000~$\mu s$         \\ \hline
+\end{tabular}
+\end{table}
+
+
+Kết quả cho thấy LR có ưu thế vượt trội về tốc độ và mức tiêu thụ tài nguyên, điều này khiến LR đặc biệt thích hợp cho các hệ thống nhúng giới hạn phần cứng và yêu cầu phản hồi tức thời (ví dụ: phân loại tư thế ngủ). Tuy nhiên, NN lại có khả năng khai thác tốt hơn các quan hệ phi tuyến giữa dữ liệu cảm biến, giúp tăng độ chính xác trong các bài toán phức tạp như nhận diện chuyển động liên tục hoặc phân loại đa trạng thái. 
+
+Điểm mấu chốt ở đây là \textbf{sự đánh đổi giữa tốc độ và khả năng biểu diễn}: LR nhanh và nhẹ, nhưng hạn chế về năng lực mô hình; trong khi NN tiêu tốn nhiều tài nguyên hơn, song mang lại độ chính xác cao và khả năng tổng quát hóa mạnh mẽ. Do đó, việc lựa chọn mô hình không mang tính tuyệt đối, mà cần được cân nhắc dựa trên mục tiêu ứng dụng: \textit{ưu tiên thời gian thực và tiết kiệm năng lượng} (chọn LR) hoặc \textit{ưu tiên độ chính xác và khả năng mở rộng} (chọn NN).
+
+
+\subsection*{Hướng phát triển tương lai}
+Trong tương lai, hệ thống có thể được mở rộng theo hướng \textbf{tích hợp đa cảm biến} 
+(multi-sensor fusion), thay vì chỉ dựa trên gia tốc kế đơn lẻ. 
+Cụ thể, việc bổ sung thêm các cảm biến như \textit{cảm biến nhịp tim (PPG/ECG), cảm biến SpO$_2$, 
+cảm biến hô hấp (respiratory effort), hoặc microphone áp suất âm thanh} 
+sẽ cung cấp nhiều kênh dữ liệu sinh lý hơn, từ đó hỗ trợ phân tích toàn diện về chất lượng giấc ngủ. 
+
+Mục tiêu xa hơn là hướng tới \textbf{bài toán phát hiện sớm và theo dõi ngưng thở tắc nghẽn khi ngủ (Obstructive Sleep Apnea – OSA)}. 
+Đặc trưng của OSA không chỉ thể hiện qua tư thế ngủ, mà còn gắn liền với các tín hiệu sinh lý như giảm oxy máu, 
+sự thay đổi nhịp tim, và các chu kỳ hô hấp bất thường. 
+Việc kết hợp dữ liệu tư thế ngủ với các chỉ số sinh lý học quan trọng có thể cho phép mô hình nhận diện 
+các giai đoạn ngưng thở hoặc thở nông, vốn là dấu hiệu lâm sàng đặc trưng của OSA. 
+
+Hướng nghiên cứu này cũng mở ra những thách thức về \textbf{tối ưu hoá mô hình} để đảm bảo hệ thống vẫn vận hành được 
+trên phần cứng nhúng giới hạn tài nguyên. Điều này đòi hỏi chiến lược như \textit{quantization, pruning, knowledge distillation}, 
+hoặc thậm chí triển khai các kiến trúc chuyên biệt như \textit{TinyCNN} hay \textit{RNN nhẹ} nhằm xử lý dữ liệu chuỗi thời gian đa kênh. 
+Do đó, nghiên cứu trong giai đoạn tiếp theo không chỉ tập trung vào độ chính xác mô hình, 
+mà còn cần chú trọng đến khả năng triển khai thực tiễn trong môi trường chăm sóc sức khỏe từ xa (telehealth) và thiết bị đeo thông minh (wearable devices).
