@@ -72,6 +72,8 @@ void loop() {
       }
 
       Serial.println("Running inference on 10-sample window...");
+      unsigned long t_start = micros();
+
       if (tflInterpreter->Invoke() != kTfLiteOk) {
         Serial.println("Invoke failed!");
         return;
@@ -89,6 +91,13 @@ void loop() {
           predictedIndex = i;
         }
       }
+      unsigned long t_end = micros();
+      unsigned long duration = t_end - t_start;
+      
+      Serial.print(" | Thời gian xử lý: ");
+      Serial.print(duration);
+      Serial.println(" µs");
+
 
       Serial.print("Predicted gesture: ");
       Serial.println(GESTURES[predictedIndex]);
