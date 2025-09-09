@@ -1,10 +1,10 @@
 #include "Arduino_BMI270_BMM150.h"
+
+
 #include <TensorFlowLite.h>
 #include <tensorflow/lite/micro/all_ops_resolver.h>
-#include <tensorflow/lite/micro/micro_error_reporter.h>
 #include <tensorflow/lite/micro/micro_interpreter.h>
 #include <tensorflow/lite/schema/schema_generated.h>
-#include <tensorflow/lite/version.h>
 
 #include "model.h"
 
@@ -13,7 +13,6 @@ const int FEATURE_SIZE = 3;       // aX,aY,aZ
 float windowData[WINDOW_SIZE][FEATURE_SIZE];
 int windowIndex = 0;
 
-tflite::MicroErrorReporter tflErrorReporter;
 tflite::AllOpsResolver tflOpsResolver;
 const tflite::Model* tflModel = nullptr;
 tflite::MicroInterpreter* tflInterpreter = nullptr;
@@ -43,7 +42,7 @@ void setup() {
   }
 
   static tflite::MicroInterpreter staticInterpreter(
-    tflModel, tflOpsResolver, tensorArena, tensorArenaSize, &tflErrorReporter
+    tflModel, tflOpsResolver, tensorArena, tensorArenaSize
   );
   tflInterpreter = &staticInterpreter;
   tflInterpreter->AllocateTensors();
