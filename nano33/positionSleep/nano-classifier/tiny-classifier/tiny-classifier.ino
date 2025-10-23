@@ -11,10 +11,8 @@
 #include "Arduino_BMI270_BMM150.h"
 #include <TensorFlowLite.h>
 #include <tensorflow/lite/micro/all_ops_resolver.h>
-#include <tensorflow/lite/micro/micro_error_reporter.h>
 #include <tensorflow/lite/micro/micro_interpreter.h>
 #include <tensorflow/lite/schema/schema_generated.h>
-#include <tensorflow/lite/version.h>
 
 #include "model.h"
 
@@ -23,7 +21,6 @@ const int numSamples = 119;  // Number of IMU samples per inference
 int samplesRead = numSamples;
 
 // TensorFlow Lite globals
-tflite::MicroErrorReporter tflErrorReporter;
 tflite::AllOpsResolver tflOpsResolver;
 const tflite::Model* tflModel = nullptr;
 tflite::MicroInterpreter* tflInterpreter = nullptr;
@@ -63,7 +60,7 @@ void setup() {
 
   // Initialize interpreter
   static tflite::MicroInterpreter staticInterpreter(
-      tflModel, tflOpsResolver, tensorArena, tensorArenaSize, &tflErrorReporter);
+      tflModel, tflOpsResolver, tensorArena, tensorArenaSize);
   tflInterpreter = &staticInterpreter;
 
   // Allocate memory for input/output tensors
@@ -93,6 +90,8 @@ void loop() {
   while (samplesRead < numSamples) {
     if (IMU.accelerationAvailable()) {
       IMU.readAcceleration(aX, aY, aZ);
+      Serial.println("getdata!");
+      
 
       // ✅ CHUẨN HÓA DỮ LIỆU THEO CÔNG THỨC (x + 12) / 24
       tflInputTensor->data.f[samplesRead * 3 + 0] = (aX + 12.0) / 24.0;
