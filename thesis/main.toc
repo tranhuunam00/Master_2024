@@ -6,8 +6,8 @@
 \contentsline {chapter}{Danh sách hình vẽ}{viii}{chapter*.2}%
 \contentsline {chapter}{Danh sách bảng}{ix}{chapter*.3}%
 \contentsline {chapter}{Đặt vấn đề}{1}{chapter*.4}%
-\contentsline {chapter}{\numberline {1}Tổng quan về hội chứng ngưng thở khi ngủ và các giải pháp công nghệ trong giám sát tư thế ngủ}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1.}Hội chứng ngưng thở khi ngủ}{7}{section.1.1}%
+\contentsline {chapter}{\numberline {1}Hội chứng ngưng thở khi ngủ do tắc nghẽn (OSA): Ảnh hưởng của tư thế ngủ và các tiến bộ công nghệ trong giám sát tư thế ngủ tự động}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1.}Hội chứng ngưng thở khi ngủ}{8}{section.1.1}%
 \contentsline {section}{\numberline {1.2.}Ứng dụng cảm biến gia tốc trong đánh giá tư thế ngủ của người mắc OSA tại nhà}{15}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1.}Quy trình tổng quát trong hệ thống ứng dụng AI cho đánh giá OSA và phân loại tư thế ngủ}{27}{subsection.1.2.1}%
 \contentsline {subsubsection}{Tiền xử lý dữ liệu}{29}{subsubsection*.15}%

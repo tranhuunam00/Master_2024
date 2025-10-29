@@ -12,9 +12,14 @@
   style=numeric,
   sorting=none,
   maxnames=99,
-  minnames=1
+  minnames=1,
+  language=english
 ]{biblatex}\addbibresource{refs.bib}
 \addbibresource{refs.bib}
+\DeclareFieldFormat[article]{title}{#1}
+\DeclareFieldFormat[inbook]{title}{#1}
+\DeclareFieldFormat[incollection]{title}{#1}
+
 
 \usepackage[acronym]{glossaries}
 \usepackage{placeins}
@@ -49,6 +54,8 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 \usepackage{makecell}
 \usepackage{longtable}
@@ -64,7 +71,7 @@
 \newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
 
 \renewcommand{\tablename}{Bảng}
- 
+
 
 \usepackage{xpatch}
 
@@ -76,7 +83,7 @@
 
 
 
-   
+
 
 % \renewcommand\labelitemi{--}
 
@@ -181,8 +188,6 @@
 
 \renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
 
-
-
 % \makeatletter 
 % \renewcommand\thealgorithm{\thechapter.\arabic{algorithm}} 
 % \makeatother
@@ -193,7 +198,6 @@
 
 \tableofcontents
 
-
 \renewcommand{\listfigurename}{Danh sách hình vẽ}
 \renewcommand{\listtablename}{Danh sách bảng}
 
@@ -203,9 +207,7 @@
 \listoftables
 \addcontentsline{toc}{chapter}{Danh sách bảng}
 
-
 \mainmatter
-
 
 \changefontsizes[16pt]{13pt}
 \chapter*{Đặt vấn đề}
@@ -213,15 +215,16 @@
 \thispagestyle{empty}
 \input{chapters/1-introduction}
 
-\chapter{Tổng quan về hội chứng ngưng thở khi ngủ và các giải pháp công nghệ trong giám sát tư thế ngủ}
+\chapter{Hội chứng ngưng thở khi ngủ do tắc nghẽn (OSA):
+  Ảnh hưởng của tư thế ngủ và các
+  tiến bộ công nghệ trong giám sát tư thế ngủ tự động}
 \label{chapter:1-introduction}
-
 
 \input{chapters/2-base-knowledge}
 
 % \chapter{Phương pháp kiểm thử tự động hàm Typescript sử dụng kỹ thuật kiểm thử tĩnh luồng điểu khiển }
-\chapter{XÂY DỰNG HỆ THỐNG THU THẬP DỮ LIỆU, HUẤN LUYỆN MÔ HÌNH VÀ 
-CHUẨN BỊ TRIỂN KHAI TRÊN THIẾT BỊ BIÊN.\label{the_proposed_method_section}}
+\chapter{XÂY DỰNG HỆ THỐNG THU THẬP DỮ LIỆU, HUẤN LUYỆN MÔ HÌNH VÀ
+  CHUẨN BỊ TRIỂN KHAI TRÊN THIẾT BỊ BIÊN.\label{the_proposed_method_section}}
 \input{chapters/3-proposed_solution}
 
 \chapter{KẾT QUẢ THỰC NGHIỆM VÀ ĐÁNH GIÁ}
@@ -232,22 +235,14 @@ CHUẨN BỊ TRIỂN KHAI TRÊN THIẾT BỊ BIÊN.\label{the_proposed_method_se
 \chapter{Kết luận}
 \input{chapters/5-conclusion}
 
-
 % \input{chapters/7-reference}
-
-
 
 % \appendix
 % \addcontentsline{toc}{chapter}{Phụ lục A}
 % \chapter*{Phụ lục A}
 % \input{chapters/8-phuluc}
 
-
-
 \newpage
 \printbibliography
-
-
-
 
 \end{document}
