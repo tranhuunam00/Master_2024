@@ -18,6 +18,8 @@ ba hiện tượng hô hấp chính cần được nhận diện bao gồm: ngư
 thở (hypopnea), và hiện tượng kích hoạt liên quan đến nỗ lực hô hấp
 (Respiratory Effort–Related Arousal – RERA).
 
+\subsection{Định nghĩa}
+
 Ngưng thở (Apnea) được Hiệp hội Y học Giấc ngủ Hoa Kỳ (AASM) định nghĩa là sự
 ngưng luồng khí hô hấp qua mũi và miệng trong thời gian tối thiểu 10 giây. Các
 sự kiện ngưng thở có thể kéo dài đến 30 giây hoặc hơn trong những trường hợp
@@ -50,58 +52,11 @@ tính vào chỉ số rối loạn hô hấp (Respiratory Disturbance Index - RD
 là bất thường, >15 là có ý nghĩa lâm sàng.
 
 Trong số các rối loạn hô hấp liên quan đến giấc ngủ đã đề cập, hội chứng ngưng
-thở khi ngủ do tắc nghẽn (Obstructive Sleep Apnea – OSA) là dạng phổ biến nhất
-và có tác động sâu rộng đến sức khỏe cộng đồng. Đáng chú ý, một phân nhóm quan
-trọng của OSA là ngưng thở khi ngủ có liên quan đến tư thế (positional OSA –
-pOSA), trong đó tần suất các sự kiện ngưng thở tăng rõ rệt khi người bệnh nằm
-ngửa so với các tư thế khác. Do vậy, luận văn này tập trung phân tích chuyên
-sâu về OSA và đặc biệt là pOSA, làm rõ cơ chế bệnh sinh, tiêu chí chẩn đoán và
-các chỉ số phân tầng mức độ nặng. Trên cơ sở đó, nghiên cứu đề xuất và phát
-triển một hệ thống giám sát tư thế ngủ tích hợp cảm biến gia tốc và mô hình học
-máy gọn nhẹ (TinyML), hướng tới khả năng sàng lọc OSA tại nhà bằng thiết bị đeo
-thông minh hoạt động độc lập trên nền tảng vi điều khiển.
-
-Các mức độ của hội chứng ngưng thở khi ngủ do tắc nghẽn (OSA) được đánh giá dựa
-trên chỉ số ngưng thở giảm thở (Apnea–Hypopnea Index - AHI) bằng cách chia tổng
-số lần ngưng thở và hẹp thở cho tổng số giờ đã ngủ, với mỗi sự kiện phải kéo
-dài ít nhất 10 giây Bảng~\ref{ahi} \cite{osa_summary}. Hội chứng ngưng thở khi
-ngủ tắc nghẽn tư thế (positional Obstructive Sleep Apnea – pOSA) là một dạng
-đặc biệt của OSA, trong đó mức độ nghiêm trọng của hội chứng ngưng thở chịu ảnh
-hưởng đáng kể từ tư thế nằm của bệnh nhân. Cụ thể, pOSA được xác định khi chỉ
-số AHI (Apnea–Hypopnea Index) ở tư thế nằm ngửa cao hơn đáng kể so với các tư
-thế khác, và thường gặp nhất ở bệnh nhân OSA mức độ nhẹ đến trung bình
-\cite{heinzer2018,aloweidat2023positional}. Người mắc pOSA thường có các đặc
-điểm như trẻ tuổi hơn, chỉ số khối cơ thể (BMI) thấp hơn, và mức độ OSA tổng
-thể nhẹ hơn so với nhóm bệnh nhân không thuộc dạng tư thế (non-positional OSA –
-NpOSA).
-
-Trong nhiều năm qua, các nhà nghiên cứu đã đề xuất nhiều tiêu chí khác nhau
-nhằm chẩn đoán pOSA, từ đơn giản đến phức tạp. Định nghĩa cổ điển nhất được
-giới thiệu bởi Cartwright, theo đó bệnh nhân được coi là pOSA nếu AHI ở tư thế
-nằm ngửa lớn hơn ít nhất hai lần so với AHI ở tư thế không nằm ngửa
-\cite{cartwright1984position}. Mador sau đó kế thừa định nghĩa này và bổ sung
-tiêu chí rằng AHI ở tư thế không nằm ngửa phải nhỏ hơn 5 lần/giờ, nhằm tăng
-tính đặc hiệu trong chẩn đoán \cite{mador2005prevalence}. Song song đó,
-Levendowski đề xuất một cách tiếp cận theo tỷ lệ, trong đó pOSA được xác định
-khi AHI toàn bộ lớn hơn hoặc bằng 1.5 lần AHI ở tư thế không nằm ngửa
-\cite{levendowski2015neck}. Các tiêu chí này có ưu điểm là đơn giản và dễ áp
-dụng trong lâm sàng cũng như trên thiết bị theo dõi tại nhà, nhưng có thể bỏ
-sót những trường hợp ranh giới hoặc đa yếu tố.
-
-Một hệ thống phân loại toàn diện hơn là Amsterdam Positional Obstructive Sleep
-Apnea Classification (APOC), được thiết kế để phản ánh chính xác hơn ảnh hưởng
-của tư thế đến mức độ nghiêm trọng của OSA \cite{frank2014positional}. Tiêu chí
-APOC xác định pOSA khi bệnh nhân có AHI toàn bộ lớn hơn 5 lần/giờ, đồng thời
-tổng thời gian ngủ (Total Sleep Time – TST) ở tư thế tốt nhất (Best Sleeping
-Position – BSP) và tư thế gây ra chỉ số AHI cao nhất (Worst Sleeping Position –
-WSP) đều chiếm tối thiểu 10\% TST. Ngoài ra, bệnh nhân cần thỏa mãn ít nhất một
-trong ba điều kiện sau: 01) AHI ở BSP nhỏ hơn 5; 02) AHI ở BSP thấp hơn AHI
-toàn bộ; 03) AHI ở BSP thấp hơn tối thiểu 25\% so với AHI toàn bộ trong trường
-hợp AHI toàn bộ vượt quá 40. Hơn nữa, APOC còn cho phép phân nhóm bệnh nhân
-thành ba mức độ đáp ứng điều trị: nhóm APOC-I bao gồm bệnh nhân có thể khỏi
-hoàn toàn nhờ PT; nhóm APOC-II và APOC-III bao gồm các trường hợp có cải thiện
-một phần như giảm phân loại OSA hoặc giảm chỉ số AHI sau can thiệp tư thế.
-
+thở khi ngủ do tắc nghẽn là dạng phổ biến nhất và có tác động sâu rộng đến sức
+khỏe cộng đồng. Mức độ của OSA được đánh giá dựa trên chỉ số ngưng thở giảm thở
+(Apnea–Hypopnea Index - AHI) bằng cách chia tổng số lần ngưng thở và giảm thở
+cho tổng số giờ đã ngủ, với mỗi sự kiện phải kéo dài ít nhất 10 giây
+Bảng~\ref{ahi} \cite{osa_summary}.
 \begin{table}[h!]
   \caption{\texorpdfstring{Phân loại mức độ OSA dựa trên chỉ số AHI}{Phân loại OSA}}
   \label{ahi}
@@ -121,16 +76,15 @@ một phần như giảm phân loại OSA hoặc giảm chỉ số AHI sau can t
   \end{center}
 \end{table}
 
-Ngưng thở tắc nghẽn khi ngủ thường xảy ra ở người lớn tuổi và những người thừa
-cân béo phì. Yếu tố gây ra có thể liên quan đến cấu trúc hoặc phi cấu trúc, bao
-gồm cả yếu tố di truyền. Tỷ lệ ngưng thở tắc nghẽn là từ 2\% đến 9\% ở người
-lớn. Ngưng thở tắc nghẽn khi ngủ có thể tăng gấp 4 lần ở nam giới và gấp 7 lần
-hơn ở những người béo phì (ví dụ chỉ số khối cơ thể (Body mass Index - BMI) >
-30). OSA nặng (AHI > 30/h) làm tăng nguy cơ tử vong ở nam giới trung niên.
-Nguyên nhân chủ yếu là do diện tích vòng họng hoặc khoang mũi bị thu hẹp như
-viêm xoang, các khối u, bệnh phì đại tuyến lưỡi, amydal, phì đại tuyến mỡ (đặc
-biệt ở trẻ em), béo phì hoặc đến từ các bệnh lý: tiểu đường, huyết áp cao, các
-bệnh tim mạch v.v \cite{wright1997health}. Ngoài ra, có thể đến từ thói quen
+\subsection{Nguyên nhân}
+
+Nguyên nhân chính của hội chứng OSA là do thu hẹp đường thở liên quan đến cấu
+trúc hoặc phi cấu trúc, bao gồm cả yếu tố di truyền. Vì vậy, những người cao
+tuổi, chỉ số khối cơ thể (Body mass Index - BMI) lớn, hoặc những người có tiển
+sử bị các bệnh liên quan đến tim mạch, mỡ máu , tiểu đường sẽ có nguy cơ cao bị
+mắc OSA \cite{wright1997health}. Tỷ lệ ngưng thở tắc nghẽn là từ 2\% đến 9\% ở
+người lớn. Ngưng thở tắc nghẽn khi ngủ có thể tăng gấp 4 lần ở nam giới và gấp
+7 lần hơn ở những người béo phì với BMI > 30. Ngoài ra, có thể đến từ thói quen
 không lành mạnh của con người như là sử dụng các chất kích thích, hút thuốc,
 ngáy khi ngủ \cite{reason_osa}\cite{reasonOsa}. Bên cạnh đó, các yếu tố không
 giải phẫu như hoạt động kém của cơ giãn họng, ngưỡng thức giấc thấp và sự điều
@@ -138,122 +92,145 @@ hòa hô hấp không ổn định cũng góp phần quan trọng vào cơ chế
 tương tác giữa các yếu tố này tạo nên tính đa dạng trong biểu hiện và mức độ
 nặng của OSA.
 
+\subsection{Ảnh hướng của tư thế ngủ}
+
+Đặc biệt, tư thế ngủ cũng là nguyên nhân có mối liên hệ chặt chẽ với mức độ nghiêm trọng của hội chứng OSA. Ở
+tư thế nằm ngửa, tác động của trọng lực lên các cấu trúc mô mềm vùng hầu họng
+làm tăng nguy cơ xẹp tắc đường thở trên, làm gia tăng tần suất các sự kiện
+ngưng thở và giảm thở. Hội chứng ngưng thở khi ngủ tắc nghẽn tư thế (positional
+Obstructive Sleep Apnea – pOSA) là một thể đặc biệt của OSA, trong đó mức độ
+nghiêm trọng của rối loạn hô hấp phụ thuộc đáng kể vào tư thế ngủ của bệnh
+nhân. Về mặt chẩn đoán, pOSA được xác định khi chỉ số ngưng thở – giảm thở
+(Apnea–Hypopnea Index, AHI) trong tư thế nằm ngửa cao hơn rõ rệt so với các tư
+thế khác, thường gặp ở bệnh nhân OSA mức độ nhẹ đến trung bình
+\cite{heinzer2018,aloweidat2023positional}.
+
+Các nhà nghiên cứu đã đề xuất nhiều tiêu chí khác nhau nhằm chẩn đoán pOSA, từ
+đơn giản đến phức tạp. Định nghĩa cổ điển nhất được giới thiệu bởi Cartwright,
+theo đó bệnh nhân được coi là pOSA nếu AHI ở tư thế nằm ngửa lớn hơn ít nhất
+hai lần so với AHI ở tư thế không nằm ngửa \cite{cartwright1984position}. Mador
+sau đó kế thừa định nghĩa này và bổ sung tiêu chí rằng AHI ở tư thế không nằm
+ngửa phải nhỏ hơn 5 lần/giờ, nhằm tăng tính đặc hiệu trong chẩn đoán
+\cite{mador2005prevalence}. Song song đó, Levendowski đề xuất một cách tiếp cận
+theo tỷ lệ, trong đó pOSA được xác định khi AHI toàn bộ lớn hơn hoặc bằng 1.5
+lần AHI ở tư thế không nằm ngửa \cite{levendowski2015neck}. Một phương pháp
+phân loại với các bệnh nhân có chỉ số AHI cao là Amsterdam Positional
+Obstructive Sleep Apnea Classification (APOC) \cite{frank2014positional}. Tiêu
+chí APOC xác định pOSA khi bệnh nhân có AHI toàn bộ lớn hơn 5 lần/giờ, đồng
+thời tổng thời gian ngủ (Total Sleep Time – TST) ở tư thế tốt nhất (Best
+Sleeping Position – BSP) và tư thế gây ra chỉ số AHI cao nhất (Worst Sleeping
+Position – WSP) đều chiếm tối thiểu 10\% TST. Qua đó, chia làm ba nhóm nhóm
+APOC-I bao gồm bệnh nhân có thể khỏi hoàn toàn nhờ thay đổi tư thế; nhóm
+APOC-II là không phụ thuộc vào tư thế và APOC-III có phụ thuộc một phần.
+
+\subsection{Ảnh hưởng của OSA}
+Ngưng thở khi ngủ có thể gây ra những hậu quả đáng kể về thần kinh, tim mạch và
+chuyển hóa. OSA là nguyên nhân y khoa hàng đầu gây ra tình trạng buồn ngủ quá
+mức vào ban ngày. Tình trạng buồn ngủ quá mức làm tăng nguy cơ bị tai nạn ô tô,
+khó khăn trong công việc và rối loạn chức năng tình dục
+\cite{flemons1997quality}. Tình trạng hạ oxy trong máu về đêm lặp đi lặp lại và
+gián đoạn giấc ngủ có làm tăng nguy cơ mắc các bệnh lý, bao gồm suy tim, bệnh
+động mạch vành, và các loạn nhịp khác, bệnh gan nhiễm mỡ liên quan đến rối loạn
+chuyển hóa và đột quỵ \cite{ wright1997health,Zinchuk2018,
+  young1997population}.
+\subsection{Chẩn đoán OSA}
 Phần lớn bệnh nhân mắc hội chứng ngưng thở khi ngủ tắc nghẽn (\gls{OSA}) không
 tự nhận thức được các rối loạn hô hấp xảy ra trong lúc ngủ. Điều này đặc biệt
 đúng với những người sống hoặc ngủ một mình, do thiếu sự quan sát từ bên ngoài.
 Đáng lưu ý, hơn 80\% các trường hợp OSA được phát hiện ở những bệnh nhân mắc
 các bệnh lý liên quan đến béo phì như tiểu đường, bệnh thận, rối loạn lipid
-máu, v.v.~\cite{wright1997health}. Hội chứng OSA ảnh hưởng nghiêm trọng đến
-chất lượng cuộc sống. Những hệ lụy thường gặp bao gồm: suy giảm trí nhớ, giảm
-tỉnh táo, dễ cáu gắt, trầm cảm, đau đầu và giảm khả năng tập
-trung~\cite{flemons1997quality}. Các tác động này làm giảm hiệu suất làm việc,
-gây rối loạn trong các mối quan hệ xã hội và làm tăng nguy cơ tai nạn giao
-thông. Một nghiên cứu bởi Mooe và cộng sự~\cite{mooe1996sleep} thực hiện trên
-nam giới bị bệnh mạch vành (Coronary Artery Disease – CAD) cho thấy có tới 37\%
-bệnh nhân có chỉ số AHI vượt quá 10. Trong khi đó, nghiên cứu của Young và cộng
-sự (1997) đã phát hiện rằng chỉ số AHI tăng tỉ lệ thuận với huyết áp tâm thu và
-tâm trương, với mức ý nghĩa lần lượt là $p=0.003$ và
-$p=0.01$~\cite{young1997population}.
+máu.
 
 Trong điều kiện hiện tại, đa số bệnh nhân nghi ngờ mắc hội chứng ngưng thở tắc
 nghẽn khi ngủ được khám bới bs chuyên khoa Tai Mũi Họng và bác sĩ chuyên gia về
 ngủ ngáy. Khám tổng quát kết hợp khai thác bệnh sử liên quan, sử dụng các thang
 điểm đánh giá buồn ngủ và nguy cơ ngưng thở khi ngủ, như Epworth Sleepiness
-Scale, STOP-BANG (đã được dịch sang tiếng Việt) được chấp thuận tại Việt Nam
-như một phương án sáng lọc bệnh nhân OSA. hoặc có thể khám nội soi Tai Mũi Họng
-để tìm nguyên nhân. Vì đa số các trường hợp ngáy, ngưng thở khi ngủ là do tắc
-nghẽn ngoại biên, nguyên nhân từ Mũi – Họng – Màn hầu , VA và amidan, và những
+Scale, STOP-BANG được chấp thuận tại Việt Nam như một phương án sáng lọc bệnh
+nhân OSA hoặc có thể khám nội soi Tai Mũi Họng để tìm nguyên nhân. Vì đa số các
+trường hợp ngáy, ngưng thở khi ngủ nguyên nhân từ mũi, họng, amidan, và những
 bất thường về hàm mặt khác. Việc đánh giá ngưng thở khi ngủ bắt đầu thường bắt
 đầu bằng một khảo sát giấc ngủ toàn diện, bao gồm khai thác bệnh sử liên quan
 đến các triệu chứng lâm sàng đặc trưng, sau đó tiến hành đánh giá khách quan
-thông qua đa ký giấc ngủ (PSG)
-\cite{diagnosis_osa}\cite{medical2006polysomnography}. Phương pháp do dùng đa
-ký giấc ngủ (Polysomnography) với sự giám sát của các bác sĩ chuyên môn được
-coi là tiêu chuẩn vàng trong chẩn đoán chứng ngưng thở khi ngủ.
+thông qua đa ký giấc ngủ (Polysomnography - PSG)
+\cite{diagnosis_osa}\cite{medical2006polysomnography}.
 
-Polysomnography là một phương pháp ghi đa kênh liên tục trong suốt một đêm, bao
-gồm nhiều thông số sinh lý nhằm đánh giá toàn diện hoạt động hô hấp và thần
-kinh khi ngủ. Các thành phần chính trong một đánh giá polysomnography bao gồm:
-điện não đồ (EEG) để ghi lại hoạt động điện của não; điện cơ ký (EMG) nhằm đo
-trương lực cơ, đặc biệt là ở cằm và chân; điện động mắt (EOG) để theo dõi
-chuyển động của nhãn cầu, giúp xác định các giai đoạn của giấc ngủ; và điện tâm
-đồ (ECG) để theo dõi hoạt động điện của tim. Bên cạnh đó, quá trình đo cũng bao
-gồm theo dõi độ bão hòa oxy trong máu (SpO$_2$), đo lưu lượng khí thở qua mũi
-và miệng, đánh giá nỗ lực hô hấp thông qua chuyển động của ngực và bụng, đo áp
-lực khí thở qua mũi, và ghi nhận cường độ tiếng ngáy. Tư thế ngủ là một tín
-hiệu quan trọng trong polysomnography (PSG), đặc biệt có giá trị trong chẩn
-đoán và phân loại hội chứng ngưng thở khi ngủ tắc nghẽn phụ thuộc tư thế
-(positional OSA – pOSA). Trong quá trình ghi đa ký giấc ngủ, việc theo dõi liên
-tục tư thế cơ thể giúp xác định mối liên hệ giữa tư thế nằm (như nằm ngửa, nằm
-nghiêng hoặc nằm sấp) với tần suất và mức độ nghiêm trọng của các rối loạn hô
-hấp. Tập hợp các thông số này cho phép bác sĩ chẩn đoán chính xác hội chứng
-ngưng thở khi ngủ tắc nghẽn (OSA).
+Phương pháp do dùng đa ký giấc ngủ với sự giám sát của các bác sĩ chuyên môn
+được coi là tiêu chuẩn vàng trong chẩn đoán chứng ngưng thở khi ngủ. PSG là một
+phương pháp ghi đa kênh liên tục trong suốt một đêm, bao gồm nhiều thông số
+sinh lý nhằm đánh giá toàn diện hoạt động hô hấp và thần kinh khi ngủ. Các
+thành phần chính trong một đánh giá polysomnography bao gồm: điện não đồ (EEG)
+để ghi lại hoạt động điện của não; điện cơ ký (EMG) nhằm đo trương lực cơ, đặc
+biệt là ở cằm và chân; điện động mắt (EOG) để theo dõi chuyển động của nhãn
+cầu, giúp xác định các giai đoạn của giấc ngủ; và điện tâm đồ (ECG) để theo dõi
+hoạt động điện của tim. Bên cạnh đó, quá trình đo cũng bao gồm theo dõi độ bão
+hòa oxy trong máu (SpO$_2$), đo lưu lượng khí thở qua mũi và miệng, đánh giá nỗ
+lực hô hấp thông qua chuyển động của ngực và bụng, đo áp lực khí thở qua mũi,
+và ghi nhận cường độ tiếng ngáy. Tư thế ngủ là một tín hiệu quan trọng trong
+polysomnography (PSG), đặc biệt có giá trị trong chẩn đoán và phân loại hội
+chứng ngưng thở khi ngủ tắc nghẽn phụ thuộc tư thế (positional OSA – pOSA).
+Trong quá trình ghi đa ký giấc ngủ, việc theo dõi liên tục tư thế cơ thể giúp
+xác định mối liên hệ giữa tư thế nằm với tần suất và mức độ nghiêm trọng của
+các rối loạn hô hấp. Tập hợp các thông số này sẽ được lưu trữ, cho phép bác sĩ
+chẩn đoán chính xác hội chứng ngưng thở khi ngủ tắc nghẽn (OSA).
 
 Một trong những hạn chế của phương pháp đánh giá sử dụng (\gls{PSG}) là sự bất
-tiện, chi phí cao và khả năng phổ biến thấp, nhất là đối với phần lớn người
-bệnh có thu nhập thấp. Việc yêu cầu bệnh nhân phải lưu trú qua đêm tại cơ sở y
-tế, cùng với việc gắn nhiều thiết bị theo dõi sinh lý lên cơ thể, không chỉ gây
-cảm giác khó chịu mà còn tiềm ẩn nguy cơ ảnh hưởng đến chất lượng và tính chính
-xác của dữ liệu thu thập được. Chính những bất cập này đã thúc đẩy sự phát
-triển của các thiết bị theo dõi giấc ngủ ngoài trung tâm (Out-of-Center
-devices) hay còn gọi là thiết bị kiểm tra giấc ngủ tại nhà (Home Sleep Test –
-HST). Những thiết bị này thường được thiết kế với số lượng cảm biến tối giản
-hơn so với PSG truyền thống, đồng thời tích hợp các thuật toán phân tích tự
-động – được xử lý trực tiếp trên thiết bị hoặc thông qua phần mềm chuyên dụng –
-nhằm hỗ trợ chẩn đoán ngưng thở khi ngủ do tắc nghẽn (OSA) một cách thuận tiện
-và tiết kiệm hơn. Những thông số SCOPERA được coi là cơ sở để xây dựng thiết bị
-HST trong đó giấc ngủ (Sleep - S), tim mạch (Cardiovascular - C), oxi trong máu
-(Oximetry - O), cố gắng thở (Effort - E), luồng không khí lưu thông
+tiện, chi phí cao, thời gian chờ, nhất là đối với phần lớn người bệnh có thu
+nhập thấp. Việc yêu cầu bệnh nhân phải lưu trú qua đêm tại cơ sở y tế, cùng với
+việc gắn nhiều thiết bị theo dõi sinh lý lên cơ thể có thể một phần nào làm sai
+lệnh so với hàng ngày. Theo khảo sát của chính tác giả, rất nhiều ca thu thập
+bị ngắt quãng tín hiệu, hoặc thiếu hẳn một số tín hiệu. Tuy nhiên, thực tế với
+kinh nghiệm của mình các bác sĩ có những phương pháp để nhận dạng bất thường từ
+đặc trưng tín hiệu - đây chính là ý tưởng để triển khai các bài toán học máy.
+Chính những bất cập này đã thúc đẩy sự phát triển của các thiết bị theo dõi
+giấc ngủ ngoài trung tâm (Out-of-Center devices) hay còn gọi là thiết bị kiểm
+tra giấc ngủ tại nhà (Home Sleep Test – HST). Những thiết bị này thường được
+thiết kế với số lượng cảm biến tối giản hơn so với PSG truyền thống, đồng thời
+tích hợp các thuật toán phân tích tự động – được xử lý trực tiếp trên thiết bị
+hoặc thông qua phần mềm chuyên dụng – nhằm hỗ trợ chẩn đoán OSA một cách thuận
+tiện và tiết kiệm hơn. Nhưng thông số SCOPERA được coi là cơ sở để xây dựng
+thiết bị HST trong đó giấc ngủ (Sleep - S), tim mạch (Cardiovascular - C), oxi
+trong máu (Oximetry - O), cố gắng thở (Effort - E), luồng không khí lưu thông
 (Respiratory - R), âm thở (Audio - A).
 
-Thiết bị đeo hỗ trợ theo dõi giấc ngủ (wearable Health Sleep Technology – HST)
-đang trở thành một xu hướng chủ đạo trong nghiên cứu và ứng dụng lâm sàng nhờ
-khả năng thu thập liên tục dữ liệu sinh lý một cách không xâm lấn, thuận tiện
-và có thể triển khai tại nhà. Dựa trên đặc điểm hình thái và vị trí gắn trên cơ
-thể, các thiết bị này có thể được phân thành các nhóm: vòng tay (bracelet), đai
-ngực (chest band), miếng dán (adhesive patch), tai nghe (headset), nhẫn thông
-minh (ring), v.v. Các thiết bị này có thể là sản phẩm thương mại sẵn có hoặc
-được thiết kế riêng cho mục đích nghiên cứu.
+\section{Công nghệ trong đánh giá OSA và phân loại tư thế ngủ}
 
-\begin{table}[htbp]
-  \centering
-  \caption{Phân loại thiết bị đeo trong phát hiện OSA và tài liệu tham khảo liên quan}
-  \label{tab:wearable_types}
-  \begin{tabular}{|p{5.5cm}|p{7.5cm}|}
-    \hline
-    \textbf{Loại thiết bị đeo} & \textbf{Tài liệu tham khảo}                                                                                                          \\
-    \hline
-    Vòng tay (Bracelet)        & \cite{jeon2020realtime}, \cite{shen2022mtcnn} \cite{e3hst} \cite{osa_sanchez2025}                                                    \\
-    \hline
-    Đai ngực (Chest band)      & \cite{svmHSt2017}, \cite{chen2024hdc} \cite{e3hst} \cite{osa_sanchez2025}                                                            \\
-    \hline
-    Miếng dán (Adhesive patch) & \cite{Vu2025SleepPosition}, \cite{yeo2022resnet}, \cite{yeo2022respiratory}, \cite{p_3} \cite{osa_sanchez2025}                       \\
-    \hline
-    Dạng khác                  & \cite{Sleep_Posture_Detection}, \cite{hst_wear_paper} \cite{osa_sanchez2025} \cite{hstSurvey} \cite{hst_paper} \cite{hst_wear_paper} \\
-    \hline
-  \end{tabular}
-\end{table}
+Như đã trình bày ở phần trước, xu hướng sử dụng các thiết bị HST trước khi đánh
+giá chính xác bằng PSG đang gia tăng đáng kể bởi sử tiện dụng, chi phí thấp. Về
+mặt kỹ thuật, các thiết bị hiện đại thường dựa trên việc thu thập và phân tích
+các tín hiệu sinh lý như hô hấp, nhịp tim, độ bão hòa oxy máu và gia tốc ba
+trục . Dữ liệu thu được được xử lý thông qua các mô hình toán học hoặc thuật
+toán học máy, cho phép đánh giá mức độ OSA cũng như phân loại tư thế ngủ với độ
+chính xác cao. Cách tiếp cận này là nền tảng cho xu hướng phát triển các hệ
+thống đánh giá OSA thông minh, có khả năng hoạt động theo thời gian thực và
+không phụ thuộc vào kết nối internet.
 
-Jeon và cộng sự \cite{jeon2020realtime} đã đề xuất một hệ thống chẩn đoán và dự
-đoán hội chứng ngưng thở khi ngủ dựa trên thiết bị đeo. Nghiên cứu giới thiệu
-hệ thống chỉ sử dụng một thiết bị đeo duy nhất – Sleep Care Kit (SCK) – có khả
-năng đo các thông số như nhịp thở, độ bão hòa oxy, nhịp tim và gia tốc ba trục.
-Thiết bị được đeo ở cổ tay, đảm bảo tiếp xúc trực tiếp với da để thu thập tín
-hiệu sinh lý một cách chính xác. Sau một giai đoạn học ban đầu, hệ thống tiến
-hành phân tích mối tương quan giữa nhịp tim và gia tốc ba trục nhằm dự đoán
-nguy cơ ngưng thở khi ngủ. Trong nghiên cứu \cite{chen2024hdc}, Chen và cộng sự
-sử dụng thiết bị đeo dạng vòng tay thu tín hiệu PPG để phát hiện ngưng thở khi
-ngủ ở 100 tình nguyện viên. Thiết bị được thiết kế tối ưu về bộ nhớ, độ trễ và
-năng lượng, phù hợp triển khai trên các hệ thống tính toán giới hạn. Dữ liệu
-thu được được đồng bộ với PSG nhằm đảm bảo độ chính xác, đồng thời hướng tới
-ứng dụng giám sát dài hạn tại nhà. Trong các nghiên cứu \cite{yeo2022resnet,
-  yeo2022respiratory}, Yeo và cộng sự sử dụng thiết bị dán T-REX TR100A để ghi
-điện tâm đồ (ECG) một kênh từ vùng bụng trên. Thiết bị được dán trực tiếp lên
-da, đảm bảo tiếp xúc ổn định và tín hiệu thu nhận chính xác, giúp theo dõi liên
-tục và hạn chế nguy cơ bị bong tróc trong quá trình sử dụng. Một thiết bị HST
-dạng miếng dán cổ đã được phát triển, tích hợp cảm biến gia tốc ba trục
-LIS2DH12 và vi điều khiển nRF5232, cho phép truyền dữ liệu không dây qua
-Bluetooth Low Energy (BLE) với tần số lấy mẫu 100~Hz
+\subsection{Công nghệ trong đánh giá OSA}
+
+Thiết bị đeo hỗ trợ theo dõi giấc ngủ đang trở thành một xu hướng chủ đạo trong
+nghiên cứu và ứng dụng lâm sàng nhờ khả năng thu thập liên tục dữ liệu sinh lý
+một cách không xâm lấn, thuận tiện và có thể triển khai tại nhà. Dựa trên đặc
+điểm hình thái và vị trí gắn trên cơ thể, các thiết bị này có thể được phân
+thành các nhóm: vòng tay, đai ngực, miếng dán, tai nghe, nhẫn thông minh Bảng
+\ref{tab:wearable_types}.
+
+Jeon và cộng sự \cite{jeon2020realtime} Nghiên cứu sử dụng thiết bị đeo Sleep
+Care Kit gắn ở ngực để thu thập các tín hiệu nhịp tim, gia tốc ba trục, hô hấp
+và nồng độ oxy trong máu. Các mô hình Gaussian Naive Bayes, Artificial Neural
+Network và k-Nearest Neighbor được huấn luyện nhằm phân loại trạng thái hô hấp
+– ngưng thở. Kết quả cho thấy mô hình KNN đạt độ chính xác 95\% và thời gian xử
+lý 640~$\mu$s, đáp ứng yêu cầu chẩn đoán OSA theo thời gian thực. Trong nghiên
+cứu \cite{chen2024hdc}, Chen và cộng sự sử dụng thiết bị đeo dạng vòng tay thu
+tín hiệu PPG để phát hiện ngưng thở khi ngủ ở 100 tình nguyện viên. Thiết bị
+được thiết kế tối ưu về bộ nhớ, độ trễ và năng lượng, phù hợp triển khai trên
+các hệ thống tính toán giới hạn. Dữ liệu thu được được đồng bộ với PSG nhằm đảm
+bảo độ chính xác, đồng thời hướng tới ứng dụng giám sát dài hạn tại nhà. Trong
+các nghiên cứu \cite{yeo2022resnet, yeo2022respiratory}, Yeo và cộng sự sử dụng
+thiết bị dán T-REX TR100A để ghi điện tâm đồ (ECG) một kênh từ vùng bụng trên.
+Thiết bị được dán trực tiếp lên da, đảm bảo tiếp xúc ổn định và tín hiệu thu
+nhận chính xác, giúp theo dõi liên tục và hạn chế nguy cơ bị bong tróc trong
+quá trình sử dụng. Một thiết bị HST dạng miếng dán cổ đã được phát triển, tích
+hợp cảm biến gia tốc ba trục LIS2DH12 và vi điều khiển nRF5232, cho phép truyền
+dữ liệu không dây qua Bluetooth Low Energy (BLE) với tần số lấy mẫu 100~Hz
 \cite{Sleep_Posture_Detection}. Thiết bị có kích thước nhỏ gọn
 (\textasciitilde3207~mm\textsuperscript{3}), được dán trực tiếp lên vùng cổ
 bằng băng dính hai mặt, giúp đảm bảo tiếp xúc ổn định với da. Thiết kế này cho
@@ -275,6 +252,25 @@ truyền thống \cite{domingues2024sleep}. Một hướng nghiên cứu khác l
 dụng cảm biến gia tốc đặt dưới đệm giường để ghi dao động do cử động ngực khi
 thở. Kết quả cho thấy thuật toán phát hiện ngưng thở đạt độ chính xác, độ đặc
 hiệu và độ nhạy lần lượt là 94.6\%, 95.3\% và 93.7\% \cite{Boiko2023}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Phân loại thiết bị đeo trong phát hiện OSA. tư thế ngủ}
+  \label{tab:wearable_types}
+  \begin{tabular}{|p{5.5cm}|p{7.5cm}|}
+    \hline
+    \textbf{Loại thiết bị đeo} & \textbf{Tài liệu tham khảo}                                                                                                          \\
+    \hline
+    Vòng tay                   & \cite{jeon2020realtime}, \cite{shen2022mtcnn} \cite{e3hst} \cite{osa_sanchez2025}                                                    \\
+    \hline
+    Đai ngực                   & \cite{svmHSt2017}, \cite{chen2024hdc} \cite{e3hst} \cite{osa_sanchez2025}                                                            \\
+    \hline
+    Miếng dán                  & \cite{Vu2025SleepPosition}, \cite{yeo2022resnet}, \cite{yeo2022respiratory}, \cite{p_3} \cite{osa_sanchez2025}                       \\
+    \hline
+    Dạng khác                  & \cite{Sleep_Posture_Detection}, \cite{hst_wear_paper} \cite{osa_sanchez2025} \cite{hstSurvey} \cite{hst_paper} \cite{hst_wear_paper} \\
+    \hline
+  \end{tabular}
+\end{table}
 
 Tuy nhiên, một rào cản lớn cho việc triển khai HST trên diện rộng vẫn nằm ở chi
 phí. Theo báo cáo tổng quan \cite{hst_review}, giá trung bình của một thiết bị
