@@ -125,103 +125,126 @@ def calculate_accelerometer_features(x_list, y_list, z_list, window_size=20):
 
 def calculate_accelerometer_fft_features(x_list, y_list, z_list, window_size=20, keep_dc=False):
     """
-    Tính các đặc trưng miền tần số từ các cửa sổ x_list/y_list/z_list.
-    - Sử dụng rfft để lấy n_freq = window_size//2 + 1 hệ số (với tín hiệu thực).
-    - Mặc định loại bỏ thành phần DC (keep_dc=False). Nếu muốn giữ DC, set keep_dc=True.
-    Trả về DataFrame features_fft.
+    Tính 29 đặc trưng miền tần số từ các cửa sổ x_list/y_list/z_list (F1 features)
+    - Sử dụng rfft (FFT thực) để lấy n_freq = window_size//2 + 1 hệ số.
+    - Loại bỏ thành phần DC nếu keep_dc=False.
+    - Trả về DataFrame gồm 29 cột đúng chuẩn: mean, min, maxmin_diff, median, IQR,
+      above_mean, peak_count, kurtosis, energy, avg_result_accl_fft, sma_fft.
     """
+
     nfft = window_size
-    # số hệ số rfft (bao gồm DC)
     n_bins = nfft // 2 + 1
 
-    # Tính phổ (magnitude) cho mỗi cửa sổ, dùng rfft (trả về n_bins).
-    # Loại bỏ DC nếu keep_dc=False (bắt đầu từ idx 1)
+    # FFT magnitude cho mỗi trục
     x_fft_list = [np.abs(np.fft.rfft(x, n=nfft)) for x in x_list]
     y_fft_list = [np.abs(np.fft.rfft(y, n=nfft)) for y in y_list]
     z_fft_list = [np.abs(np.fft.rfft(z, n=nfft)) for z in z_list]
 
+    # Bỏ DC component nếu cần
     if not keep_dc:
-        # bỏ phần tử thứ 0 (DC)
-        x_fft_list = [arr[1:] for arr in x_fft_list]  # length n_bins-1
-        y_fft_list = [arr[1:] for arr in y_fft_list]
-        z_fft_list = [arr[1:] for arr in z_fft_list]
+        x_fft_list = [a[1:] for a in x_fft_list]
+        y_fft_list = [a[1:] for a in y_fft_list]
+        z_fft_list = [a[1:] for a in z_fft_list]
         nb = n_bins - 1
     else:
         nb = n_bins
 
-    # Bắt đầu tính đặc trưng bằng list comprehension (theo từng cửa sổ)
+    # ======= BẮT ĐẦU TÍNH 29 ĐẶC TRƯNG =======
     features = {
-        'x_mean_fft':    [arr.mean() for arr in x_fft_list],
-        'y_mean_fft':    [arr.mean() for arr in y_fft_list],
-        'z_mean_fft':    [arr.mean() for arr in z_fft_list],
+        # 1–3. Mean FFT
+        'x_mean_fft': [np.mean(a) for a in x_fft_list],
+        'y_mean_fft': [np.mean(a) for a in y_fft_list],
+        'z_mean_fft': [np.mean(a) for a in z_fft_list],
 
-        'x_std_fft':     [arr.std(ddof=0) for arr in x_fft_list],
-        'y_std_fft':     [arr.std(ddof=0) for arr in y_fft_list],
-        'z_std_fft':     [arr.std(ddof=0) for arr in z_fft_list],
+        # 4–6. Min FFT
+        'x_min_fft': [np.min(a) for a in x_fft_list],
+        'y_min_fft': [np.min(a) for a in y_fft_list],
+        'z_min_fft': [np.min(a) for a in z_fft_list],
 
-        'x_aad_fft':     [np.mean(np.abs(arr - arr.mean())) for arr in x_fft_list],
-        'y_aad_fft':     [np.mean(np.abs(arr - arr.mean())) for arr in y_fft_list],
-        'z_aad_fft':     [np.mean(np.abs(arr - arr.mean())) for arr in z_fft_list],
+        # 7–9. Max–Min Difference FFT
+        'x_maxmin_diff_fft': [np.max(a) - np.min(a) for a in x_fft_list],
+        'y_maxmin_diff_fft': [np.max(a) - np.min(a) for a in y_fft_list],
+        'z_maxmin_diff_fft': [np.max(a) - np.min(a) for a in z_fft_list],
 
-        'x_min_fft':     [arr.min() for arr in x_fft_list],
-        'y_min_fft':     [arr.min() for arr in y_fft_list],
-        'z_min_fft':     [arr.min() for arr in z_fft_list],
+        # 10–12. Median FFT
+        'x_median_fft': [np.median(a) for a in x_fft_list],
+        'y_median_fft': [np.median(a) for a in y_fft_list],
+        'z_median_fft': [np.median(a) for a in z_fft_list],
 
-        'x_max_fft':     [arr.max() for arr in x_fft_list],
-        'y_max_fft':     [arr.max() for arr in y_fft_list],
-        'z_max_fft':     [arr.max() for arr in z_fft_list],
+        # 13–15. IQR FFT
+        'x_IQR_fft': [np.percentile(a, 75) - np.percentile(a, 25) for a in x_fft_list],
+        'y_IQR_fft': [np.percentile(a, 75) - np.percentile(a, 25) for a in y_fft_list],
+        'z_IQR_fft': [np.percentile(a, 75) - np.percentile(a, 25) for a in z_fft_list],
 
-        'x_median_fft':  [np.median(arr) for arr in x_fft_list],
-        'y_median_fft':  [np.median(arr) for arr in y_fft_list],
-        'z_median_fft':  [np.median(arr) for arr in z_fft_list],
+        # 16–18. Above mean count FFT
+        'x_above_mean_fft': [np.sum(a > np.mean(a)) for a in x_fft_list],
+        'y_above_mean_fft': [np.sum(a > np.mean(a)) for a in y_fft_list],
+        'z_above_mean_fft': [np.sum(a > np.mean(a)) for a in z_fft_list],
 
-        'x_mad_fft':     [np.median(np.abs(arr - np.median(arr))) for arr in x_fft_list],
-        'y_mad_fft':     [np.median(np.abs(arr - np.median(arr))) for arr in y_fft_list],
-        'z_mad_fft':     [np.median(np.abs(arr - np.median(arr))) for arr in z_fft_list],
+        # 19–21. Peak count FFT
+        'x_peak_count_fft': [len(find_peaks(a)[0]) for a in x_fft_list],
+        'y_peak_count_fft': [len(find_peaks(a)[0]) for a in y_fft_list],
+        'z_peak_count_fft': [len(find_peaks(a)[0]) for a in z_fft_list],
 
-        'x_IQR_fft':     [np.percentile(arr, 75) - np.percentile(arr, 25) for arr in x_fft_list],
-        'y_IQR_fft':     [np.percentile(arr, 75) - np.percentile(arr, 25) for arr in y_fft_list],
-        'z_IQR_fft':     [np.percentile(arr, 75) - np.percentile(arr, 25) for arr in z_fft_list],
+        # 22–24. Kurtosis FFT
+        'x_kurtosis_fft': [stats.kurtosis(a) for a in x_fft_list],
+        'y_kurtosis_fft': [stats.kurtosis(a) for a in y_fft_list],
+        'z_kurtosis_fft': [stats.kurtosis(a) for a in z_fft_list],
 
-        'x_above_mean_fft': [np.sum(arr > arr.mean()) for arr in x_fft_list],
-        'y_above_mean_fft': [np.sum(arr > arr.mean()) for arr in y_fft_list],
-        'z_above_mean_fft': [np.sum(arr > arr.mean()) for arr in z_fft_list],
-
-        'x_peak_count_fft': [len(find_peaks(arr)[0]) for arr in x_fft_list],
-        'y_peak_count_fft': [len(find_peaks(arr)[0]) for arr in y_fft_list],
-        'z_peak_count_fft': [len(find_peaks(arr)[0]) for arr in z_fft_list],
-
-        'x_skewness_fft': [stats.skew(arr) for arr in x_fft_list],
-        'y_skewness_fft': [stats.skew(arr) for arr in y_fft_list],
-        'z_skewness_fft': [stats.skew(arr) for arr in z_fft_list],
-
-        'x_kurtosis_fft': [stats.kurtosis(arr) for arr in x_fft_list],
-        'y_kurtosis_fft': [stats.kurtosis(arr) for arr in y_fft_list],
-        'z_kurtosis_fft': [stats.kurtosis(arr) for arr in z_fft_list],
+        # 25–27. Energy FFT (chuẩn hóa theo nb)
+        'x_energy_fft': [np.sum(a**2) / float(nb) for a in x_fft_list],
+        'y_energy_fft': [np.sum(a**2) / float(nb) for a in y_fft_list],
+        'z_energy_fft': [np.sum(a**2) / float(nb) for a in z_fft_list],
     }
 
-    # energy: tổng bình phương magnitude chia cho số bins (nb)
-    features['x_energy_fft'] = [
-        np.sum(arr**2) / float(nb) for arr in x_fft_list]
-    features['y_energy_fft'] = [
-        np.sum(arr**2) / float(nb) for arr in y_fft_list]
-    features['z_energy_fft'] = [
-        np.sum(arr**2) / float(nb) for arr in z_fft_list]
-
-    # avg resultant in freq domain: mean of sqrt(x^2 + y^2 + z^2) across frequency bins
+    # 28. Average resultant FFT (mean of sqrt(x^2+y^2+z^2))
     features['avg_result_accl_fft'] = [
         np.mean(np.sqrt(xf**2 + yf**2 + zf**2))
         for xf, yf, zf in zip(x_fft_list, y_fft_list, z_fft_list)
     ]
 
-    # sma_fft: sum of absolute magnitudes across 3 axes divided by nb
+    # 29. Signal Magnitude Area (SMA)
     features['sma_fft'] = [
         (np.sum(np.abs(xf)) + np.sum(np.abs(yf)) + np.sum(np.abs(zf))) / float(nb)
         for xf, yf, zf in zip(x_fft_list, y_fft_list, z_fft_list)
     ]
 
+    # ======= HOÀN THIỆN =======
     features_fft = pd.DataFrame(features)
-    # thêm cột số bins để dễ kiểm tra/debug nếu cần
-    features_fft['n_fft_bins'] = nb
+    features_fft['n_fft_bins'] = nb  # thêm để debug, có thể bỏ
 
     return features_fft
+
+
+def create_training_data_NN_like_micro(data, window_size=10, step_size=5):
+    """
+    Tạo dữ liệu dạng interleaved giống như tflInputTensor của thiết bị:
+    [x1, y1, z1, x2, y2, z2, ..., xN, yN, zN]
+    """
+    total_list_NN = []
+    train_labels_NN = []
+
+    for i in range(0, len(data) - window_size + 1, step_size):
+        window = data.iloc[i: i + window_size]
+
+        # Bỏ qua nếu trong cửa sổ có nhiều nhãn
+        if window['activity'].nunique() > 1:
+            continue
+
+        # Lấy mảng x,y,z
+        x = window['x'].values
+        y = window['y'].values
+        z = window['z'].values
+
+        # Tạo mảng xen kẽ: x1,y1,z1,x2,y2,z2,...
+        interleaved = np.empty(window_size * 3, dtype=np.float32)
+        interleaved[0::3] = x
+        interleaved[1::3] = y
+        interleaved[2::3] = z
+
+        total_list_NN.append(interleaved)
+        train_labels_NN.append(window['activity'].iloc[0])
+
+    print(
+        f"Created {len(total_list_NN)} windows × {window_size} samples (interleaved format)")
+    return np.array(total_list_NN), np.array(train_labels_NN)
