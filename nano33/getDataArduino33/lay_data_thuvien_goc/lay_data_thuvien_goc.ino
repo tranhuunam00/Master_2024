@@ -67,13 +67,16 @@ void loop() {
   float dx = abs(imu.data.accelX - prevX);
   float dy = abs(imu.data.accelY - prevY);
   float dz = abs(imu.data.accelZ - prevZ);
-  if (dx > 0.08 || dy > 0.08 || dz > 0.08) {
+  if (dx > 0.02 || dy > 0.02 || dz > 0.02) {
 
-    Serial.print(imu.data.accelX, 5);
+    Serial.print(imu.data.accelX, 2);
     Serial.print(',');
-    Serial.print(imu.data.accelY, 5);
+    Serial.print(imu.data.accelY, 2);
     Serial.print(',');
-    Serial.println(imu.data.accelZ, 5);
+    Serial.println(imu.data.accelZ, 2);
+    prevX = imu.data.accelX;
+    prevY = imu.data.accelY;
+    prevZ = imu.data.accelZ;
   }
   delay(100);
 }

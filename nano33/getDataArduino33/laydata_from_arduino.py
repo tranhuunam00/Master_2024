@@ -2,7 +2,7 @@ import serial
 import time
 
 # === CẤU HÌNH ===
-PORT = 'COM3'         # Cổng COM của Arduino
+PORT = 'COM4'         # Cổng COM của Arduino
 BAUD_RATE = 115200    # Giống như trong Serial.begin()
 FILENAME = "4.csv"  # File CSV xuất ra
 # ✅ Nhãn tư thế (có thể đổi: 1 = nằm ngửa, 2 = trái, 3 = phải, 4 = sấp)
