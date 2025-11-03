@@ -69,6 +69,10 @@ def train_LR(train, test, labelTrain, labelTest):
     X_train = scaler.transform(train)
     X_test = scaler.transform(test)
 
+    print("🔍 Mẫu dòng đầu tiên (sau fit scaler):")
+    print(train.iloc[0])
+    print("🔍 Ma trận sau khi chuẩn hóa:")
+    print(X_train[:3])
     lr = LogisticRegression(
         C=5,
         max_iter=10,

@@ -1,5 +1,8 @@
 from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
+import joblib
+import os
+import numpy as np
 
 
 def optimize_RF(train, labelTrain):
@@ -48,6 +51,7 @@ def optimize_LR(train, test, labelTrain, labelTest):
     scaler = StandardScaler()
     start = time.time()
     scaler.fit(train)
+
     end = time.time()
     print(f"⏱ Training time (scaler fit): {end - start:.4f}s")
 
@@ -320,3 +324,48 @@ def optimize_NN_raw(train, test, labelTrain, labelTest):
     plt.show()
 
     return best_nn
+
+
+def get_model_size_kb(model, scaler, name):
+    """Lưu model & (nếu có) scaler, tính dung lượng và số tham số"""
+    model_path = f"{name}_model.pkl"
+    joblib.dump(model, model_path)
+    model_kb = os.path.getsize(model_path) / 1024
+
+    total_kb = model_kb
+    scaler_kb = 0
+
+    # 🔹 Lưu scaler nếu có
+    if scaler is not None:
+        scaler_path = f"{name}_scaler.pkl"
+        joblib.dump(scaler, scaler_path)
+        scaler_kb = os.path.getsize(scaler_path) / 1024
+        total_kb += scaler_kb
+
+    # 🔹 In kích thước
+    print(f"📦 {name}: Model = {model_kb:.2f} KB | Scaler = {scaler_kb:.2f} KB | Total = {total_kb:.2f} KB")
+
+    # 🔹 Nếu là mô hình tuyến tính (LR, SVM)
+    if hasattr(model, "coef_"):
+        n_params = np.prod(model.coef_.shape) + len(model.intercept_)
+        print(f"🔢  → Số tham số huấn luyện: {n_params}")
+
+    # 🔹 Nếu là mô hình cây (RF, GB)
+    elif hasattr(model, "estimators_"):
+        try:
+            n_nodes = 0
+            for est in model.estimators_:
+                # GradientBoosting có thể là mảng 2D các cây con
+                if isinstance(est, (list, np.ndarray)):
+                    for sub_est in est:
+                        if hasattr(sub_est, "tree_"):
+                            n_nodes += sub_est.tree_.node_count
+                else:
+                    if hasattr(est, "tree_"):
+                        n_nodes += est.tree_.node_count
+            print(f"🌲  → Tổng số nút trong mô hình cây: {n_nodes}")
+        except Exception as e:
+            print(f"⚠️  Không thể đếm số nút (lý do: {e})")
+
+    print("-" * 70)
+    return total_kb
