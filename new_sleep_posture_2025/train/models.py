@@ -185,7 +185,7 @@ def train_NN_raw(train, test, labelTrain, labelTest):
         optimizer=opt, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
     start = time.time()
-    model.fit(train, labelTrain, batch_size=32, epochs=20, verbose=1)
+    model.fit(train, labelTrain, batch_size=16, epochs=20, verbose=1)
     print(f"⏱ Training time: {time.time() - start:.2f}s")
 
     loss, acc = model.evaluate(test, labelTest, verbose=0)
