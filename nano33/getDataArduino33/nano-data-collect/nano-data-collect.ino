@@ -53,7 +53,7 @@ void loop() {
 
   // Đọc dữ liệu từ cảm biến
   if (bmi2_get_sensor_data(&sensor_data, 1, &bmi270.dev) == BMI2_OK) {
-    float ax = sensor_data.acc.x * 4.0 / 32768.0; // Quy đổi về đơn vị g (±4g)
+    float ax = sensor_data.acc.x * 4.0 / 32768.0;
     float ay = sensor_data.acc.y * 4.0 / 32768.0;
     float az = sensor_data.acc.z * 4.0 / 32768.0;
 

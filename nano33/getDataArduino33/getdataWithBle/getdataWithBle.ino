@@ -1,7 +1,9 @@
 
-// #include <Arduino_LSM9DS1.h>
-#include "Arduino_BMI270_BMM150.h"
 #include <ArduinoBLE.h>
+#include <Wire.h>
+#include "SparkFun_BMI270_Arduino_Library.h"
+
+
 
 
 const char* deviceServiceUuid = "19b10000-e8f2-537e-4f6c-d104768a1214";
@@ -13,17 +15,15 @@ BLECharacteristic accelerometerCharacteristic(
   BLERead | BLEWrite | BLENotify,
   9, 3
 );
+BMI270 imu;
 
 void setup() {
   Serial.begin(9600);
 
   Serial.println("Started");
 
-  if (!IMU.begin()) {
-    Serial.println("Failed to initialize IMU!");
-    while (1)
-      ;
-  }
+  Wire1.begin();
+  
 
   if (!BLE.begin()) {
     Serial.println("- Starting Bluetooth® Low Energy module failed!");
@@ -31,8 +31,8 @@ void setup() {
       ;
   }
 
-  BLE.setLocalName("Arduino Nano 33 BLE (Peripheral) Cua Nam");
-  BLE.setDeviceName("Arduino Nano 33 BLE (Peripheral) Cua Nam");
+  BLE.setLocalName("Master_2025_BLE");
+  BLE.setDeviceName("Master_2025_BLE");
 
 
   BLE.setAdvertisedService(accelerometerService);
@@ -47,16 +47,57 @@ void setup() {
   Serial.println("Nano 33 BLE (Peripheral Device)");
   Serial.println(" ");
 
-  Serial.print("Accelerometer sample rate = ");
-  Serial.print(IMU.accelerationSampleRate());
-  Serial.println(" Hz");
-  Serial.println();
-  Serial.println("Acceleration in G's");
-  Serial.println("X\tY\tZ");
+  if (imu.beginI2C(BMI2_I2C_PRIM_ADDR, Wire1) != BMI2_OK) {
+    Serial.println("Error: BMI270 not detected!");
+    while (1);
+  }
+
+  struct bmi2_sens_config config;
+  config.type = BMI2_ACCEL;
+  config.cfg.acc.odr = BMI2_ACC_ODR_12_5HZ;
+  config.cfg.acc.range = BMI2_ACC_RANGE_2G;
+  config.cfg.acc.bwp = BMI2_ACC_NORMAL_AVG4;
+  config.cfg.acc.filter_perf = BMI2_POWER_OPT_MODE;
+
+  if (imu.setConfig(config) == BMI2_OK)
+    Serial.println("Accelerometer configured successfully!");
+  else
+    Serial.println("Failed to configure accelerometer!");
+
+  delay(200);
+
+  //--- Đọc lại cấu hình ---
+  if (imu.getConfig(&config) == BMI2_OK) {
+    Serial.println("Current Accelerometer Config:");
+    Serial.print("  Range setting = ");
+    switch (config.cfg.acc.range) {
+      case BMI2_ACC_RANGE_2G:  Serial.println("±2g"); break;
+      case BMI2_ACC_RANGE_4G:  Serial.println("±4g"); break;
+      case BMI2_ACC_RANGE_8G:  Serial.println("±8g"); break;
+      case BMI2_ACC_RANGE_16G: Serial.println("±16g"); break;
+      default: Serial.println("Unknown"); break;
+    }
+
+    Serial.print("  ODR setting = ");
+    switch (config.cfg.acc.odr) {
+      case BMI2_ACC_ODR_0_78HZ: Serial.println("0.78 Hz"); break;
+      case BMI2_ACC_ODR_1_56HZ: Serial.println("1.56 Hz"); break;
+      case BMI2_ACC_ODR_3_12HZ: Serial.println("3.12 Hz"); break;
+      case BMI2_ACC_ODR_6_25HZ: Serial.println("6.25 Hz"); break;
+      case BMI2_ACC_ODR_12_5HZ: Serial.println("12.5 Hz"); break;
+      case BMI2_ACC_ODR_25HZ:   Serial.println("25 Hz"); break;
+      case BMI2_ACC_ODR_50HZ:   Serial.println("50 Hz"); break;
+      case BMI2_ACC_ODR_100HZ:  Serial.println("100 Hz"); break;
+      default: Serial.println("Unknown"); break;
+    }
+  } else {
+    Serial.println("Failed to read accelerometer config!");
+  }
 }
 
+static float x, y, z;
+
 void loop() {
-  float x, y, z;
   BLEDevice central = BLE.central();
   Serial.println("- Discovering central device...");
   delay(500);
@@ -68,8 +109,12 @@ void loop() {
     Serial.println(" ");
 
     while (central.connected()) {
-      if (IMU.accelerationAvailable()) {
-        IMU.readAcceleration(x, y, z);
+      imu.getSensorData();
+      imu.getSensorData();
+      x = imu.data.accelX;
+      y = imu.data.accelY;
+      z = imu.data.accelZ;
+
 
         Serial.print(x);
         Serial.print('\t');
@@ -97,7 +142,7 @@ void loop() {
 
 
         accelerometerCharacteristic.writeValue(accelData, sizeof(accelData)); 
-      }
+      
 
       delay(100);  // Điều chỉnh tốc độ gửi Notify
     }
