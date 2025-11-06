@@ -1,10 +1,10 @@
-Nhiều nghiên cứu đã tập trung phát triển các hệ thống theo dõi tư thế ngủ dựa
-trên đa dạng công nghệ cảm biến. Các phương pháp này trải rộng từ cảm biến tiếp
-xúc trực tiếp đến hệ thống đo không tiếp xúc, cụ thể gồm: Tấm dẫn điện với các
-điện cực ECG sắp xếp tại giường để nhận tín hiệu sinh lý và áp lực cơ thể
-\cite{Lee2013_12ecg} Cảm biến áp suất dưới nệm đo phân bố lực tiếp xúc toàn
-thân \cite{Nam2016_mattre, Enayati2018_mattre}. Camera hồng ngoại ghi hình ban
-đêm không cần chiếu sáng, nhận dạng tư thế bằng thị giác máy
+Các nghiên cứu hiện nay đã đang tập trung phát triển các hệ thống theo dõi tư
+thế ngủ dựa trên đa dạng công nghệ cảm biến. Các phương pháp này trải rộng từ
+cảm biến tiếp xúc trực tiếp đến hệ thống đo không tiếp xúc, cụ thể gồm: Tấm dẫn
+điện với các điện cực ECG sắp xếp tại giường để nhận tín hiệu sinh lý và áp lực
+cơ thể \cite{Lee2013_12ecg} Cảm biến áp suất dưới nệm đo phân bố lực tiếp xúc
+toàn thân \cite{Nam2016_mattre, Enayati2018_mattre}. Camera hồng ngoại ghi hình
+ban đêm không cần chiếu sáng, nhận dạng tư thế bằng thị giác máy
 \cite{Mohammadi2019_camera, Tam2021_camera}.
 
 Các thiết bị đeo sử dụng tín hiệu đo lường quán tính (Inertial Measurement Unit
@@ -60,7 +60,7 @@ Tuy nhiên, các công trình hiện có chưa xem xét đầy đủ việc phâ
 bắt đầu giấc ngủ hoặc phát hiện sớm thay đổi tư thế. Đồng thời, việc lựa chọn
 tập đặc trưng và mô hình học máy phù hợp cho dữ liệu từ một cảm biến gia tốc
 duy nhất đặt tại vùng cổ – vị trí có khả năng phản ánh biến thiên tư thế của
-thân trên vẫn chưa được nghiên cứu hệ thống.
+vẫn chưa được nghiên cứu cụ thể.
 
 Đặc biệt, tại Việt Nam cho đến nay chưa có công bố khoa học nào tập
 trung vào bài toán nhận dạng tư thế ngủ dựa hoàn toàn trên dữ liệu
@@ -72,22 +72,18 @@ thấp, có khả năng xử lý cục bộ, hướng tới ứng dụng trong s
 hỗ trợ chẩn đoán sớm hội chứng ngưng thở tắc nghẽn khi ngủ (OSA).
 
 Qua đó, luận văn này tập trung làm rõ các đặc trưng của dữ liệu cảm biến gia
-tốc khi được đặt tại vùng cổ, đồng thời đề xuất và đánh giá các mô hình học máy
-phù hợp nhằm tối ưu cho việc triển khai trên các thiết bị tính toán biên (edge
-devices). Trên cơ sở đó, luận văn xây dựng một hệ thống hoàn chỉnh gồm phần
-cứng đeo được kích thước nhỏ gọn, chi phí thấp; phần mềm thu thập và lưu trữ dữ
-liệu; cùng với mô-đun xử lý và phân loại tư thế ngủ tích hợp trực tiếp trên vi
-điều khiển.
+tốc khi được đặt tại vùng cổ, đồng thời đi sâu tìm hiểu các đặc trưng dữ liệu
+cảm biến gia tốc và đánh giá các mô hình học máy phù hợp nhằm tối ưu cho việc
+triển khai trên các thiết bị tính toán biên (edge devices). Trên cơ sở đó, luận
+văn xây dựng một hệ thống hoàn chỉnh gồm phần cứng đeo được kích thước nhỏ gọn,
+chi phí thấp; phần mềm thu thập và lưu trữ dữ liệu; cùng với mô-đun xử lý và
+phân loại tư thế ngủ tích hợp trực tiếp trên vi điều khiển. Mặc dù chưa tích
+hợp chức năng sàng lọc hội chứng ngưng thở tắc nghẽn khi ngủ (OSA), kết quả
+nghiên cứu này tạo nền tảng kỹ thuật tiềm năng cho các ứng dụng trong tương
+lai, đặc biệt trong việc hỗ trợ đánh giá nguy cơ pOSA (positional OSA) dựa trên
+tư thế ngủ và xu hướng thay đổi tư thế trong suốt giấc ngủ.
 
-Hệ thống được thiết kế hướng tới độ chính xác cao, độ trễ thấp và khả năng hoạt
-động độc lập, cho phép người dùng có thể ghi nhận và phân loại tư thế ngủ tại
-nhà một cách thuận tiện. Mặc dù chưa tích hợp chức năng sàng lọc hội chứng
-ngưng thở tắc nghẽn khi ngủ (OSA), kết quả nghiên cứu này tạo nền tảng kỹ thuật
-tiềm năng cho các ứng dụng trong tương lai, đặc biệt trong việc hỗ trợ đánh giá
-nguy cơ pOSA (positional OSA) dựa trên tư thế ngủ và xu hướng thay đổi tư thế
-trong suốt giấc ngủ.
-
-Mục tiêu cụ thể của khóa luận gồm: 01) Nghiên cứu, đề xuất hệ thống phần cứng
+Mục tiêu cụ thể của luân văn gồm: 01) Nghiên cứu, đề xuất hệ thống phần cứng
 phục vụ đo lường, thu thập, xử lý tín hiệu gia tốc kèm với hiệu năng phù hợp
 cho việc triển khai mô hình học máy tại biên trong bài toán phân loại tư thế
 ngủ ở người; 02) Nghiên cứu, đề xuất những mô hình học máy thích hợp trong việc
