@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1762444726.04078 "main.bcf" "main.bbl" "main" 1762445669.45353 0
-  "main.bcf" 1762445668 121531 b5706eee47edd2dfd5016f017702bb7b "pdflatex"
+["biber main"] 1762444726.04078 "main.bcf" "main.bbl" "main" 1762445799.53833 0
+  "main.bcf" 1762445798 121531 b5706eee47edd2dfd5016f017702bb7b "pdflatex"
   "refs.bib" 1762440187 72141 976ad145abd61230096cb647adb65aea ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1762445655.52717 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1762445669.4549 0
+["pdflatex"] 1762445785.6151 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1762445799.53993 0
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761721282 170669 580f60f86b494b149fd13be17089526f ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1753283835 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1753323483 13254313 89e2afc147c36950f3366f1142cce13c ""
@@ -284,7 +284,7 @@
   "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" 1762440187 6396 19b8af93c06047680b7c3adc9c1567f4 ""
   "chapters/0-coverpage.tex" 1762414454 10587 534f47eb683aeed61103b890eeb1d9f6 ""
   "chapters/1-introduction.tex" 1762440456 9063 9a53f091c93c07d54e8b039edc8fc05c ""
-  "chapters/2-base-knowledge.tex" 1762445654 145076 397883341f3b3dee3c60574e8c678cc2 ""
+  "chapters/2-base-knowledge.tex" 1762445784 145027 85d16967e95e422ea7f58db46459d409 ""
   "chapters/3-proposed_solution.tex" 1757317831 111136 d949c9fafd6c79c9363a503f0f5fe992 ""
   "chapters/4-experiment.tex" 1762335714 62598 e6193f857f02fbe14e1cbd84775b9663 ""
   "chapters/5-conclusion.tex" 1757432414 4224 8de95f0c78474360cde1ff9a18ba4780 ""
@@ -335,14 +335,14 @@
   "images/thucnghiem.png" 1753256028 411269 f32107c69e826a62b7003a15ef6ffb29 ""
   "images/tuthe_osa.png" 1762440761 101703 ad3a6c9d02aca19e18d277a69bd52ae5 ""
   "images/vitri_co.png" 1762443391 129340 184f6133557167661d5ac27fd98fe482 ""
-  "main.aux" 1762445667 51579 8e058fcca261b6439094e6dfb22b0798 "pdflatex"
+  "main.aux" 1762445798 51579 8e058fcca261b6439094e6dfb22b0798 "pdflatex"
   "main.bbl" 1762444731 218105 e0f840d80264d7586976d107a1816bd5 "biber main"
-  "main.lof" 1762445668 6821 ce7a6cbcb5b94425f8c9e2f917841810 "pdflatex"
-  "main.lot" 1762445668 2079 6974979e2abcd72651babb8a4a84a54c "pdflatex"
-  "main.out" 1762445667 9804 9b7077439aca18b276d2a70172bb44cd "pdflatex"
-  "main.run.xml" 1762445668 2268 f918a72198252e4ff2cbedb9e5121b21 "pdflatex"
+  "main.lof" 1762445798 6821 ce7a6cbcb5b94425f8c9e2f917841810 "pdflatex"
+  "main.lot" 1762445798 2079 6974979e2abcd72651babb8a4a84a54c "pdflatex"
+  "main.out" 1762445798 9804 9b7077439aca18b276d2a70172bb44cd "pdflatex"
+  "main.run.xml" 1762445798 2268 f918a72198252e4ff2cbedb9e5121b21 "pdflatex"
   "main.tex" 1762440187 6396 19b8af93c06047680b7c3adc9c1567f4 ""
-  "main.toc" 1762445668 5107 153b67165ed3a3423e0e9c1199f7e03c "pdflatex"
+  "main.toc" 1762445798 5107 153b67165ed3a3423e0e9c1199f7e03c "pdflatex"
   "setting/bkthesis.sty" 1753256024 967 af4f61477f3f023e14bc982890f87805 ""
   "src/glossaries.tex" 1753407326 777 adc527e2093778beb062eccbb5f56229 ""
   (generated)
