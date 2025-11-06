@@ -1,55 +1,51 @@
 
 Trong chương này, tác giả trình bày tổng quan về hội chứng ngưng thở khi ngủ do
 tắc nghẽn (OSA), phân tích ảnh hưởng của tư thế ngủ đối với mức độ nghiêm trọng
-của OSA và dạng ngưng thở khi ngủ phụ thuộc tư thế (pOSA). Tiếp đó, chương tập
-trung làm rõ cơ sở khoa học cho việc phát triển các thiết bị theo dõi giấc ngủ
-và thiết bị HST (Home Sleep Test), nhận dạng tư thế ngủ tự động. Cuối cùng, tác
-giả đưa ra xu hướng ứng dụng trí tuệ nhân tạo (AI) và điện toán biên (Edge
-Computing) trong phân tích dữ liệu sinh lý và nhận dạng tư thế ngủ tự động, qua
-đó đặt nền tảng cho các hướng nghiên cứu và triển khai kỹ thuật được trình bày
-trong những chương tiếp theo.
+của OSA và dạng ngưng thở khi ngủ phụ thuộc tư thế (Position OSA - pOSA). Tiếp
+đó, chương tập trung làm rõ cơ sở khoa học cho việc phát triển các thiết bị
+theo dõi giấc ngủ và thiết bị HST (Home Sleep Test), phân loại tư thế ngủ. Cuối
+cùng, tác giả đưa ra xu hướng ứng dụng trí tuệ nhân tạo (AI) và điện toán biên
+(Edge Computing) trong thu thập, phân tích dữ liệu sinh lý và phân loại tư thế
+ngủ, qua đó đặt nền tảng cho các hướng nghiên cứu và triển khai kỹ thuật được
+trình bày trong những chương tiếp theo.
 \section{Hội chứng ngưng thở khi ngủ}
 
 Trong lĩnh vực nghiên cứu các rối loạn hô hấp liên quan đến giấc ngủ, việc
 chuẩn hóa và định nghĩa chính xác các kiểu sự kiện hô hấp giúp đảm bảo tính
-nhất quán trong chẩn đoán, hỗ trợ phân tầng nguy cơ và lựa chọn phương pháp
-điều trị phù hợp. Theo tiêu chuẩn chấm điểm của AASM \cite{berry2012scoring},
-ba hiện tượng hô hấp chính cần được nhận diện bao gồm: ngưng thở (apnea), giảm
-thở (hypopnea), và hiện tượng kích hoạt liên quan đến nỗ lực hô hấp
-(Respiratory Effort–Related Arousal – RERA).
+nhất quán trong chẩn đoán, phân lớp nguy cơ và lựa chọn phương pháp điều trị
+phù hợp. Theo tiêu chuẩn của Hiệp hội Y học Giấc ngủ Hoa Kỳ (AASM)
+\cite{berry2012scoring}, ba hiện tượng hô hấp chính cần được nhận diện bao gồm:
+ngưng thở (apnea), giảm thở (hypopnea), và hiện tượng kích hoạt liên quan đến
+nỗ lực hô hấp (Respiratory Effort–Related Arousal – RERA).
 
 \subsection{Định nghĩa}
 
-Ngưng thở (Apnea) được Hiệp hội Y học Giấc ngủ Hoa Kỳ (AASM) định nghĩa là sự
-ngưng luồng khí hô hấp qua mũi và miệng trong thời gian tối thiểu 10 giây. Các
-sự kiện ngưng thở có thể kéo dài đến 30 giây hoặc hơn trong những trường hợp
-nặng. Có ba dạng chính của hội chứng ngưng thở khi ngủ \cite{ThaySYOSA}: ngưng
-thở tắc nghẽn, ngưng thở trung ương, Ngưng thở hỗn hợp. Trong đó: 01)Ngưng thở
-khi ngủ do tắc nghẽn (Obstructive Sleep Apnea – OSA) là dạng phổ biến nhất, xảy
-ra khi các cơ vùng họng giãn ra và làm tắc đường thở, cản trở không khí đi vào
-phổi \cite{osa_summary}; 02)Ngưng thở khi ngủ do trung ương (Central Sleep
-Apnea – CSA) là tình trạng não không gửi tín hiệu đúng đến các cơ kiểm soát hô
-hấp \cite{eckert2007csa}. 03)Ngưng thở hỗn hợp (Mixed Apnea) là sự kết hợp của
-cả hai yếu tố: giai đoạn đầu của sự kiện không có nỗ lực hô hấp (giống CSA),
-sau đó xuất hiện nỗ lực hô hấp (giống OSA). Dạng này thường xuất hiện ở những
-bệnh nhân OSA nặng.
+Ngưng thở (Apnea) được AASM định nghĩa là sự ngưng luồng khí hô hấp qua mũi và
+miệng trong thời gian tối thiểu 10 giây gây giảm nồng độ oxy trong máu. Các sự
+kiện ngưng thở có thể kéo dài đến 30 giây hoặc hơn trong những trường hợp nặng.
+Có ba dạng chính của hội chứng ngưng thở khi ngủ \cite{ThaySYOSA}: ngưng thở
+tắc nghẽn, ngưng thở trung ương, ngưng thở hỗn hợp. Trong đó: 01)Ngưng thở khi
+ngủ do tắc nghẽn OSA là sự hẹp hoặc tắc nghẽn một phần hay toàn bộ đường hô hấp
+trên, bao gồm vùng mũi họng, hầu họng \cite{osa_summary}; 02)Ngưng thở khi ngủ
+do trung ương (Central Sleep Apnea – CSA) là tình trạng não không gửi tín hiệu
+đúng đến các cơ kiểm soát hô hấp \cite{eckert2007csa}. 03)Ngưng thở hỗn hợp
+(Mixed Apnea) là sự kết hợp của cả hai yếu tố. Dạng này thường xuất hiện ở
+những bệnh nhân OSA nặng.
 
-Giảm thở (Hypopnea) với hai mức tiêu chuẩn đánh giá: 01) Tiêu chuẩn khuyến
-nghị: một sự kiện được xác định là hypopnea nếu thỏa mãn đồng thời ba điều
-kiện: (i) biên độ tín hiệu luồng khí giảm $\geq 30$\% so với nền trước sự kiện,
-đo bằng cảm biến áp lực mũi hoặc thiết bị CPAP; (ii) thời gian giảm tín hiệu
-kéo dài $\geq 10$ giây; và (iii) kèm theo giảm độ bão hòa oxy $\geq 3$\%
-và/hoặc gây kích hoạt điện não (arousal); 02) Tiêu chuẩn chấp nhận được
-(Acceptable): tương tự như trên, tuy nhiên yêu cầu giảm độ bão hòa oxy phải đạt
-từ 4\% trở lên.
+Giảm thở (hypopnea) phản ánh sự giảm một phần của lưu lượng khí qua đường hô
+hấp trên mà không dẫn đến ngừng thở hoàn toàn. Theo AASM sự kiện giảm thở được
+xác định khi biên độ tín hiệu luồng khí thường đo bằng cảm biến áp lực mũi hoặc
+tín hiệu lưu lượng khí của thiết bị CPAP giảm ít nhất 30\% so với giá trị nền
+trước sự kiện, kéo dài tối thiểu 10 giây, và đi kèm với hiện tượng giảm độ bão
+hòa oxy từ 3\% trở lên hoặc xuất hiện kích hoạt điện não.
 
-RERA là sự kiện gia tăng nỗ lực hô hấp kéo dài $\geq 10$ giây, gây đánh thức
-khỏi giấc ngủ nhưng không đủ tiêu chí của apnea hoặc hypopnea. 01) Phương pháp
-tiêu chuẩn để đo là đo áp lực thực quản, tuy nhiên khó áp dụng do gây khó chịu
-cho bệnh nhân. 02) Phương án thay thế đáng tin cậy là dùng ống thông mũi kết
-hợp cảm biến áp lực, cho kết quả tương đương về mặt lâm sàng. 03) RERA được
-tính vào chỉ số rối loạn hô hấp (Respiratory Disturbance Index - RDI); RDI >5
-là bất thường, >15 là có ý nghĩa lâm sàng.
+RERA theo AASM là sự kiện gia tăng nỗ lực hô hấp kéo dài $\geq 10$ giây, gây
+đánh thức khỏi giấc ngủ nhưng không đủ tiêu chí của apnea hoặc hypopnea. 01)
+Phương pháp tiêu chuẩn để đo là đo áp lực thực quản, tuy nhiên khó áp dụng do
+gây khó chịu cho bệnh nhân. 02) Phương án thay thế đáng tin cậy là dùng ống
+thông mũi kết hợp cảm biến áp lực, cho kết quả tương đương về mặt lâm sàng. 03)
+RERA được tính vào chỉ số rối loạn hô hấp (Respiratory Disturbance Index -
+RDI); RDI >5 là bất thường, >15 là có ý nghĩa lâm sàng.
 
 Trong số các rối loạn hô hấp liên quan đến giấc ngủ đã đề cập, hội chứng ngưng
 thở khi ngủ do tắc nghẽn là dạng phổ biến nhất và có tác động sâu rộng đến sức
@@ -78,140 +74,169 @@ Bảng~\ref{ahi} \cite{osa_summary}.
 
 \subsection{Nguyên nhân}
 
-Nguyên nhân chính của hội chứng OSA là do thu hẹp đường thở liên quan đến cấu
-trúc hoặc phi cấu trúc, bao gồm cả yếu tố di truyền. Vì vậy, những người cao
-tuổi, chỉ số khối cơ thể (Body mass Index - BMI) lớn, hoặc những người có tiển
-sử bị các bệnh liên quan đến tim mạch, mỡ máu , tiểu đường sẽ có nguy cơ cao bị
-mắc OSA \cite{wright1997health}. Tỷ lệ ngưng thở tắc nghẽn là từ 2\% đến 9\% ở
-người lớn. Ngưng thở tắc nghẽn khi ngủ có thể tăng gấp 4 lần ở nam giới và gấp
-7 lần hơn ở những người béo phì với BMI > 30. Ngoài ra, có thể đến từ thói quen
-không lành mạnh của con người như là sử dụng các chất kích thích, hút thuốc,
-ngáy khi ngủ \cite{reason_osa}\cite{reasonOsa}. Bên cạnh đó, các yếu tố không
-giải phẫu như hoạt động kém của cơ giãn họng, ngưỡng thức giấc thấp và sự điều
-hòa hô hấp không ổn định cũng góp phần quan trọng vào cơ chế bệnh sinh. Sự
-tương tác giữa các yếu tố này tạo nên tính đa dạng trong biểu hiện và mức độ
-nặng của OSA.
+Nguyên nhân của OSA có bản chất đa yếu tố và phức tạp, phản ánh sự tương tác
+chặt chẽ giữa các yếu tố giải phẫu và sinh lý chức năng của đường hô hấp trên.
+Các nguyên nhân nền tảng này không đồng nhất giữa các cá thể và thường thể hiện
+sự kết hợp khác nhau về mức độ ảnh hưởng của từng yếu tố. Về mặt giải phẫu, hẹp
+hoặc giảm độ vững của cấu trúc đường hô hấp trên là yếu tố tiên quyết. Những
+bất thường như vòm khẩu hẹp, lưỡi to, phì đại amidan, vách mũi lệch, xương hàm
+nhỏ hoặc tụt sau, cùng phân bố mỡ vùng cổ tăng (vòng cổ lớn, béo phì trung
+tâm), đều làm giảm tiết diện đường thở và tăng khả năng xẹp trong thì hít vào
+\cite{Young2004_nguyen_nhan}.
 
-\subsection{Ảnh hướng của tư thế ngủ}
-
-Đặc biệt, tư thế ngủ cũng là nguyên nhân có mối liên hệ chặt chẽ với mức độ nghiêm trọng của hội chứng OSA. Ở
-tư thế nằm ngửa, tác động của trọng lực lên các cấu trúc mô mềm vùng hầu họng
-làm tăng nguy cơ xẹp tắc đường thở trên, làm gia tăng tần suất các sự kiện
-ngưng thở và giảm thở. Hội chứng ngưng thở khi ngủ tắc nghẽn tư thế (positional
-Obstructive Sleep Apnea – pOSA) là một thể đặc biệt của OSA, trong đó mức độ
-nghiêm trọng của rối loạn hô hấp phụ thuộc đáng kể vào tư thế ngủ của bệnh
-nhân. Về mặt chẩn đoán, pOSA được xác định khi chỉ số ngưng thở – giảm thở
-(Apnea–Hypopnea Index, AHI) trong tư thế nằm ngửa cao hơn rõ rệt so với các tư
-thế khác, thường gặp ở bệnh nhân OSA mức độ nhẹ đến trung bình
-\cite{heinzer2018,aloweidat2023positional}.
-
-Các nhà nghiên cứu đã đề xuất nhiều tiêu chí khác nhau nhằm chẩn đoán pOSA, từ
-đơn giản đến phức tạp. Định nghĩa cổ điển nhất được giới thiệu bởi Cartwright,
-theo đó bệnh nhân được coi là pOSA nếu AHI ở tư thế nằm ngửa lớn hơn ít nhất
-hai lần so với AHI ở tư thế không nằm ngửa \cite{cartwright1984position}. Mador
-sau đó kế thừa định nghĩa này và bổ sung tiêu chí rằng AHI ở tư thế không nằm
-ngửa phải nhỏ hơn 5 lần/giờ, nhằm tăng tính đặc hiệu trong chẩn đoán
-\cite{mador2005prevalence}. Song song đó, Levendowski đề xuất một cách tiếp cận
-theo tỷ lệ, trong đó pOSA được xác định khi AHI toàn bộ lớn hơn hoặc bằng 1.5
-lần AHI ở tư thế không nằm ngửa \cite{levendowski2015neck}. Một phương pháp
-phân loại với các bệnh nhân có chỉ số AHI cao là Amsterdam Positional
-Obstructive Sleep Apnea Classification (APOC) \cite{frank2014positional}. Tiêu
-chí APOC xác định pOSA khi bệnh nhân có AHI toàn bộ lớn hơn 5 lần/giờ, đồng
-thời tổng thời gian ngủ (Total Sleep Time – TST) ở tư thế tốt nhất (Best
-Sleeping Position – BSP) và tư thế gây ra chỉ số AHI cao nhất (Worst Sleeping
-Position – WSP) đều chiếm tối thiểu 10\% TST. Qua đó, chia làm ba nhóm nhóm
-APOC-I bao gồm bệnh nhân có thể khỏi hoàn toàn nhờ thay đổi tư thế; nhóm
-APOC-II là không phụ thuộc vào tư thế và APOC-III có phụ thuộc một phần.
+Về chức năng thần kinh – cơ, trong giấc ngủ, trương lực cơ duy trì độ mở của
+đường hô hấp trên suy giảm, làm tăng xu hướng xẹp hầu. Sự mất cân bằng giữa lực
+mở do cơ giãn và lực đóng do áp lực âm trong lồng ngực khi hít vào dẫn đến tắc
+nghẽn tạm thời. Ngoài ra, yếu tố điều hòa trung ương và đáp ứng sinh lý cũng là
+yếu tố đáng kể. Một số người bệnh có ngưỡng kích hoạt hô hấp cao, mức
+$\mathrm{CO_2}$ kích thích thấp, hoặc dao động điều hòa thần kinh không ổn định
+khiến quá trình kiểm soát hô hấp trong ngủ dễ rơi vào chu kỳ tắc nghẽn, thức
+ngắn, tái thông khí lặp lại. Các yếu tố nguy cơ được ghi nhận bao gồm: béo phì,
+giới nam, tuổi trung niên đến cao tuổi, hút thuốc lá, uống rượu trước ngủ, mãn
+kinh ở nữ giới, nghẹt mũi mạn tính, và yếu tố di truyền
+\cite{Spicuzza2015_nguyen_nhan, reason_osa, reasonOsa}.
 
 \subsection{Ảnh hưởng của OSA}
-Ngưng thở khi ngủ có thể gây ra những hậu quả đáng kể về thần kinh, tim mạch và
-chuyển hóa. OSA là nguyên nhân y khoa hàng đầu gây ra tình trạng buồn ngủ quá
-mức vào ban ngày. Tình trạng buồn ngủ quá mức làm tăng nguy cơ bị tai nạn ô tô,
-khó khăn trong công việc và rối loạn chức năng tình dục
-\cite{flemons1997quality}. Tình trạng hạ oxy trong máu về đêm lặp đi lặp lại và
-gián đoạn giấc ngủ có làm tăng nguy cơ mắc các bệnh lý, bao gồm suy tim, bệnh
-động mạch vành, và các loạn nhịp khác, bệnh gan nhiễm mỡ liên quan đến rối loạn
-chuyển hóa và đột quỵ \cite{ wright1997health,Zinchuk2018,
-  young1997population}.
-\subsection{Chẩn đoán OSA}
+Theo nghiên cứu của Benjafield và cộng sự \cite{Benjafield2019}, ước tính có
+gần một tỷ người trên toàn cầu đang mắc hội chứng ngưng thở tắc nghẽn khi ngủ
+(Obstructive Sleep Apnea – OSA). Tại Việt Nam, theo GS.TS.BS. Dương Quý Sỹ, tỷ
+lệ mắc OSA ở người trưởng thành chiếm khoảng 8,5\% dân số
+\cite{nguoimacOSA_VN}. OSA được xem là một rối loạn hô hấp trong giấc ngủ có
+ảnh hưởng sâu rộng tới sức khỏe thể chất lẫn tinh thần, và là nguyên nhân y
+khoa hàng đầu gây ra tình trạng buồn ngủ quá mức vào ban ngày (Excessive
+Daytime Sleepiness – EDS).
+
+Một phân tích gộp được thực hiện bởi Salari và cộng sự \cite{Salari2025} trên
+15 nghiên cứu với tổng cộng 42.924 đối tượng cho thấy tỷ lệ EDS ở bệnh nhân OSA
+trên toàn cầu đạt 39,9\%. Tình trạng buồn ngủ quá mức này làm gia tăng đáng kể
+nguy cơ tai nạn giao thông, suy giảm năng suất lao động, và rối loạn chức năng
+tình dục \cite{flemons1997quality}.
+
+Hơn nữa, tình trạng giảm oxy máu tái diễn trong khi ngủ cùng với sự gián đoạn
+chu kỳ giấc ngủ được chứng minh có liên quan mật thiết đến nhiều bệnh lý mạn
+tính như suy tim, bệnh động mạch vành, rối loạn nhịp tim, gan nhiễm mỡ do rối
+loạn chuyển hóa, và đột quỵ
+\cite{wright1997health,Zinchuk2018,young1997population}. Nghiên cứu quy mô lớn
+của Xia Wang và cộng sự với 25.760 người tham gia cho thấy, khi chỉ số
+ngưng–giảm thở (Apnea–Hypopnea Index, AHI) tăng thêm mỗi 10 đơn vị, nguy cơ mắc
+bệnh tim mạch tăng tương ứng 17\% \cite{Wang2013_tim}. GS.TS.BS. Dương Quý Sỹ
+và cộng sự đã khảo sát 524 trẻ em mắc rối loạn tăng động giảm chú ý (Attention
+Deficit Hyperactivity Disorder - ADHD) tại Bệnh viện Nhi Trung ương Việt Nam
+\cite{ThaySUCHildren}. Kết quả cho thấy tỷ lệ mắc (OSA) ở nhóm này là 23.3\%,
+trong đó chủ yếu ở mức độ trung bình đến nặng. Nghiên cứu cũng đồng thời xác
+định mối tương quan đáng kể giữa mức độ nghiêm trọng của OSA và các triệu chứng
+mất tập trung, tăng động, rối loạn hành vi, lo âu và trầm cảm.
+
+\subsection{Tư thế ngủ và liên hệ với OSA}
+Tư thế ngủ giữ vai trò thiết yếu trong việc duy trì sức khỏe tổng thể và chất
+lượng giấc ngủ, bên cạnh các yếu tố khác như thời lượng, môi trường và thói
+quen ngủ. Nhiều nghiên cứu đã chỉ ra rằng tư thế nằm có thể ảnh hưởng trực tiếp
+đến hoạt động của hệ hô hấp, tim mạch và hệ cơ – xương, đặc biệt là cột sống
+\cite{Cary2021_tu_the_ngủ}. Trong hội chứng ngưng thở tắc nghẽn khi ngủ , tư
+thế ngủ được xem là một yếu tố quan trọng quyết định mức độ nghiêm trọng của
+bệnh. Các nghiên cứu cho thấy, nhiều bệnh nhân OSA có tần suất ngưng thở và
+giảm thở cao hơn rõ rệt khi nằm ngửa so với khi nằm nghiêng. Nguyên nhân chủ
+yếu là do tác động của trọng lực lên các cấu trúc mô mềm vùng hầu họng, làm
+tăng xu hướng xẹp tắc đường thở trên và dẫn đến sự gia tăng của các sự kiện hô
+hấp bất thường. Hiện tượng này được gọi là OSA phụ thuộc tư thế (positional
+OSA, pOSA) \cite{heinzer2018,aloweidat2023positional}.
+
+Để chẩn đoán pOSA, nhiều tiêu chí khác nhau đã được đề xuất, từ các phương pháp đơn
+giản đến phức tạp hơn. Định nghĩa kinh điển nhất do Cartwright (1984) đưa ra cho
+rằng bệnh nhân được xem là mắc pOSA khi chỉ số ngưng thở – giảm thở (AHI)
+ở tư thế nằm ngửa cao hơn ít nhất hai lần so với AHI ở tư thế không nằm
+ngửa \cite{cartwright1984position}. Tiếp đó, Mador (2005) đã mở rộng định
+nghĩa này bằng cách bổ sung tiêu chí rằng AHI ở tư thế không nằm ngửa phải
+nhỏ hơn 5 lần/giờ nhằm tăng tính đặc hiệu cho chẩn đoán \cite{mador2005prevalence}.
+Levendowski (2015) lại đề xuất một cách tiếp cận theo tỷ lệ, trong đó
+pOSA được xác định khi AHI toàn bộ lớn hơn hoặc bằng 1.5 lần AHI ở tư thế
+không nằm ngửa \cite{levendowski2015neck}.
+Ngoài ra, Frank và cộng sự (2014) đã giới thiệu Amsterdam Positional
+Obstructive Sleep Apnea Classification (APOC) – một hệ thống phân loại
+dành cho các bệnh nhân có chỉ số AHI cao \cite{frank2014positional}.
+Theo tiêu chí APOC, bệnh nhân được xác định mắc pOSA khi có AHI toàn
+bộ > 5 lần/giờ, đồng thời tổng thời gian ngủ (Total Sleep Time – TST)
+ở tư thế tốt nhất (Best Sleeping Position – BSP) và tư thế xấu nhất
+(Worst Sleeping Position – WSP) đều chiếm ít nhất 10\% TST.
+Hệ thống này chia bệnh nhân thành ba nhóm: APOC-I (có thể khỏi hoàn
+toàn nhờ thay đổi tư thế ngủ), APOC-II (không phụ thuộc tư thế),
+và APOC-III (phụ thuộc tư thế một phần).
+
+Từ các nghiên cứu trên, có thể thấy việc hiểu rõ mối liên hệ giữa tư thế ngủ và
+sự ổn định của đường thở trên không chỉ giúp cải thiện khả năng chẩn đoán mà
+còn mở ra hướng điều trị không xâm lấn đầy tiềm năng – đó là liệu pháp huấn
+luyện thay đổi tư thế ngủ, nhằm giảm mức độ tắc nghẽn và cải thiện chất lượng
+giấc ngủ ở bệnh nhân OSA.
+
+\section{Công nghệ trong chẩn đoán OSA và phân loại tư thế ngủ}
+
+\subsection{Đa ký giấc ngủ}
 Phần lớn bệnh nhân mắc hội chứng ngưng thở khi ngủ tắc nghẽn (\gls{OSA}) không
-tự nhận thức được các rối loạn hô hấp xảy ra trong lúc ngủ. Điều này đặc biệt
-đúng với những người sống hoặc ngủ một mình, do thiếu sự quan sát từ bên ngoài.
-Đáng lưu ý, hơn 80\% các trường hợp OSA được phát hiện ở những bệnh nhân mắc
-các bệnh lý liên quan đến béo phì như tiểu đường, bệnh thận, rối loạn lipid
-máu.
+tự nhận biết được các rối loạn hô hấp xảy ra trong khi ngủ
+\cite{Gottlieb2020_psg}. Hiện tượng này đặc biệt phổ biến ở những người sống
+hoặc ngủ một mình, do thiếu sự quan sát từ bên ngoài.
 
-Trong điều kiện hiện tại, đa số bệnh nhân nghi ngờ mắc hội chứng ngưng thở tắc
-nghẽn khi ngủ được khám bới bs chuyên khoa Tai Mũi Họng và bác sĩ chuyên gia về
-ngủ ngáy. Khám tổng quát kết hợp khai thác bệnh sử liên quan, sử dụng các thang
-điểm đánh giá buồn ngủ và nguy cơ ngưng thở khi ngủ, như Epworth Sleepiness
-Scale, STOP-BANG được chấp thuận tại Việt Nam như một phương án sáng lọc bệnh
-nhân OSA hoặc có thể khám nội soi Tai Mũi Họng để tìm nguyên nhân. Vì đa số các
-trường hợp ngáy, ngưng thở khi ngủ nguyên nhân từ mũi, họng, amidan, và những
-bất thường về hàm mặt khác. Việc đánh giá ngưng thở khi ngủ bắt đầu thường bắt
-đầu bằng một khảo sát giấc ngủ toàn diện, bao gồm khai thác bệnh sử liên quan
-đến các triệu chứng lâm sàng đặc trưng, sau đó tiến hành đánh giá khách quan
-thông qua đa ký giấc ngủ (Polysomnography - PSG)
-\cite{diagnosis_osa}\cite{medical2006polysomnography}.
+Trong điều kiện lâm sàng hiện nay, phần lớn bệnh nhân nghi ngờ mắc OSA được
+thăm khám bởi bác sĩ chuyên khoa Tai Mũi Họng và bác sĩ chuyên sâu về giấc ngủ.
+Quy trình thăm khám bao gồm khai thác bệnh sử, đánh giá các yếu tố nguy cơ và
+sử dụng những thang điểm sàng lọc như Epworth Sleepiness Scale hoặc STOP-BANG –
+các công cụ được chấp thuận tại Việt Nam nhằm xác định sớm khả năng mắc OSA.
+Ngoài ra, bác sĩ có thể tiến hành nội soi Tai Mũi Họng để tìm nguyên nhân gây
+hẹp đường thở trên, chẳng hạn như phì đại amidan, lệch vách ngăn, hay bất
+thường vùng hàm mặt.
 
-Phương pháp do dùng đa ký giấc ngủ với sự giám sát của các bác sĩ chuyên môn
-được coi là tiêu chuẩn vàng trong chẩn đoán chứng ngưng thở khi ngủ. PSG là một
-phương pháp ghi đa kênh liên tục trong suốt một đêm, bao gồm nhiều thông số
-sinh lý nhằm đánh giá toàn diện hoạt động hô hấp và thần kinh khi ngủ. Các
-thành phần chính trong một đánh giá polysomnography bao gồm: điện não đồ (EEG)
-để ghi lại hoạt động điện của não; điện cơ ký (EMG) nhằm đo trương lực cơ, đặc
-biệt là ở cằm và chân; điện động mắt (EOG) để theo dõi chuyển động của nhãn
-cầu, giúp xác định các giai đoạn của giấc ngủ; và điện tâm đồ (ECG) để theo dõi
-hoạt động điện của tim. Bên cạnh đó, quá trình đo cũng bao gồm theo dõi độ bão
-hòa oxy trong máu (SpO$_2$), đo lưu lượng khí thở qua mũi và miệng, đánh giá nỗ
-lực hô hấp thông qua chuyển động của ngực và bụng, đo áp lực khí thở qua mũi,
-và ghi nhận cường độ tiếng ngáy. Tư thế ngủ là một tín hiệu quan trọng trong
-polysomnography (PSG), đặc biệt có giá trị trong chẩn đoán và phân loại hội
-chứng ngưng thở khi ngủ tắc nghẽn phụ thuộc tư thế (positional OSA – pOSA).
-Trong quá trình ghi đa ký giấc ngủ, việc theo dõi liên tục tư thế cơ thể giúp
-xác định mối liên hệ giữa tư thế nằm với tần suất và mức độ nghiêm trọng của
-các rối loạn hô hấp. Tập hợp các thông số này sẽ được lưu trữ, cho phép bác sĩ
-chẩn đoán chính xác hội chứng ngưng thở khi ngủ tắc nghẽn (OSA).
+Các đánh giá thường bắt đầu bằng khảo sát giấc ngủ toàn diện, bao gồm thu thập
+bệnh sử liên quan đến các triệu chứng đặc trưng, sau đó tiến hành ghi nhận
+khách quan bằng đa ký giấc ngủ (Polysomnography – PSG) \cite{diagnosis_osa,
+  medical2006polysomnography}. Phương pháp PSG, khi được thực hiện dưới sự giám
+sát của bác sĩ chuyên môn, được xem là tiêu chuẩn vàng trong chẩn đoán hội
+chứng ngưng thở khi ngủ. Đây là một kỹ thuật ghi đa kênh liên tục trong suốt
+một đêm, cho phép theo dõi đồng thời nhiều thông số sinh lý phản ánh toàn diện
+hoạt động thần kinh và hô hấp trong giấc ngủ.
 
-Một trong những hạn chế của phương pháp đánh giá sử dụng (\gls{PSG}) là sự bất
-tiện, chi phí cao, thời gian chờ, nhất là đối với phần lớn người bệnh có thu
-nhập thấp. Việc yêu cầu bệnh nhân phải lưu trú qua đêm tại cơ sở y tế, cùng với
-việc gắn nhiều thiết bị theo dõi sinh lý lên cơ thể có thể một phần nào làm sai
-lệnh so với hàng ngày. Theo khảo sát của chính tác giả, rất nhiều ca thu thập
-bị ngắt quãng tín hiệu, hoặc thiếu hẳn một số tín hiệu. Tuy nhiên, thực tế với
-kinh nghiệm của mình các bác sĩ có những phương pháp để nhận dạng bất thường từ
-đặc trưng tín hiệu - đây chính là ý tưởng để triển khai các bài toán học máy.
-Chính những bất cập này đã thúc đẩy sự phát triển của các thiết bị theo dõi
-giấc ngủ ngoài trung tâm (Out-of-Center devices) hay còn gọi là thiết bị kiểm
-tra giấc ngủ tại nhà (Home Sleep Test – HST). Những thiết bị này thường được
-thiết kế với số lượng cảm biến tối giản hơn so với PSG truyền thống, đồng thời
-tích hợp các thuật toán phân tích tự động – được xử lý trực tiếp trên thiết bị
-hoặc thông qua phần mềm chuyên dụng – nhằm hỗ trợ chẩn đoán OSA một cách thuận
-tiện và tiết kiệm hơn. Nhưng thông số SCOPERA được coi là cơ sở để xây dựng
-thiết bị HST trong đó giấc ngủ (Sleep - S), tim mạch (Cardiovascular - C), oxi
-trong máu (Oximetry - O), cố gắng thở (Effort - E), luồng không khí lưu thông
-(Respiratory - R), âm thở (Audio - A).
+Một hệ thống PSG điển hình bao gồm: điện não đồ (EEG) để ghi hoạt động điện của
+não; điện cơ đồ (EMG) nhằm đo trương lực cơ; điện động nhãn cầu (EOG) để xác
+định giai đoạn ngủ thông qua chuyển động mắt; và điện tâm đồ (ECG) để giám sát
+hoạt động tim. Bên cạnh đó, các cảm biến ghi nhận độ bão hòa oxy trong máu
+(SpO\textsubscript{2}), lưu lượng khí thở qua mũi và miệng, nỗ lực hô hấp thông
+qua chuyển động ngực và bụng, áp lực đường thở qua mũi, và cường độ tiếng ngáy
+\cite{psg_paper, kushida2005psg}.
 
-\section{Công nghệ trong đánh giá OSA và phân loại tư thế ngủ}
+Trong số các tín hiệu này, tư thế ngủ là một thông số đặc biệt quan trọng, góp
+phần xác định thể bệnh positional OSA (pOSA). Theo dõi liên tục tư thế cơ thể
+trong quá trình PSG cho phép xác định mối tương quan giữa tư thế nằm và mức độ
+nghiêm trọng của rối loạn hô hấp. Các thông số thu được sau đêm ghi PSG được
+tổng hợp và phân tích, giúp bác sĩ đưa ra chẩn đoán chính xác về tình trạng
+ngưng thở khi ngủ tắc nghẽn.
 
-Như đã trình bày ở phần trước, xu hướng sử dụng các thiết bị HST trước khi đánh
-giá chính xác bằng PSG đang gia tăng đáng kể bởi sử tiện dụng, chi phí thấp. Về
-mặt kỹ thuật, các thiết bị hiện đại thường dựa trên việc thu thập và phân tích
-các tín hiệu sinh lý như hô hấp, nhịp tim, độ bão hòa oxy máu và gia tốc ba
-trục . Dữ liệu thu được được xử lý thông qua các mô hình toán học hoặc thuật
-toán học máy, cho phép đánh giá mức độ OSA cũng như phân loại tư thế ngủ với độ
-chính xác cao. Cách tiếp cận này là nền tảng cho xu hướng phát triển các hệ
-thống đánh giá OSA thông minh, có khả năng hoạt động theo thời gian thực và
-không phụ thuộc vào kết nối internet.
+Tuy nhiên, phương pháp PSG vẫn tồn tại nhiều hạn chế trong thực tế. Việc yêu
+cầu bệnh nhân lưu trú qua đêm tại cơ sở y tế, gắn nhiều điện cực và cảm biến
+trên cơ thể không chỉ gây bất tiện mà còn có thể làm sai lệch hành vi ngủ tự
+nhiên. Chi phí cao, thời gian chờ đợi dài, cùng tỷ lệ thu tín hiệu gián đoạn
+hoặc nhiễu cũng là những trở ngại thường gặp. Kinh nghiệm thực tế cho thấy,
+trong nhiều trường hợp, bác sĩ có thể đưa ra nhận định dựa trên một tập nhỏ
+kênh tín hiệu còn nguyên vẹn, từ đó gợi mở hướng ứng dụng các mô hình học máy
+(machine learning) nhằm tự động hóa quá trình nhận dạng.
 
-\subsection{Công nghệ trong đánh giá OSA}
+\subsection{Thiết bị theo dõi OSA tại nhà}
 
-Thiết bị đeo hỗ trợ theo dõi giấc ngủ đang trở thành một xu hướng chủ đạo trong
-nghiên cứu và ứng dụng lâm sàng nhờ khả năng thu thập liên tục dữ liệu sinh lý
-một cách không xâm lấn, thuận tiện và có thể triển khai tại nhà. Dựa trên đặc
-điểm hình thái và vị trí gắn trên cơ thể, các thiết bị này có thể được phân
-thành các nhóm: vòng tay, đai ngực, miếng dán, tai nghe, nhẫn thông minh Bảng
-\ref{tab:wearable_types}.
+Những bất cập trên đã thúc đẩy sự phát triển của các thiết bị theo dõi giấc ngủ
+ngoài trung tâm (Out-of-Center Sleep Testing Devices), còn gọi là thiết bị kiểm
+tra giấc ngủ tại nhà (Home Sleep Test – HST). Các thiết bị HST được thiết kế
+với số lượng cảm biến tối giản hơn so với PSG, đồng thời tích hợp thuật toán xử
+lý và phân tích tín hiệu tự động – được thực thi trực tiếp trên thiết bị hoặc
+thông qua phần mềm hỗ trợ – nhằm mang lại giải pháp chẩn đoán OSA thuận tiện và
+kinh tế hơn.
+
+Một trong những cấu phần cơ bản khi phát triển hệ thống HST là khung SCOPERA,
+bao gồm sáu nhóm thông số chính: Sleep (S) – giấc ngủ, Cardiovascular (C) – tim
+mạch, Oximetry (O) – độ bão hòa oxy, Effort (E) – nỗ lực hô hấp, Respiratory
+flow (R) – lưu lượng khí hô hấp, và Audio (A) – âm thanh thở. Khung SCOPERA
+đóng vai trò là nền tảng cho việc xây dựng và chuẩn hóa các thiết bị HST thế hệ
+mới, hướng tới mục tiêu chẩn đoán sớm OSA bằng phương pháp ít xâm lấn và có thể
+triển khai rộng rãi trong cộng đồng. Dựa trên đặc điểm hình thái và vị trí gắn
+trên cơ thể, các thiết bị này có thể được phân thành các nhóm: vòng tay, đai
+ngực, miếng dán, tai nghe, nhẫn thông minh Bảng \ref{tab:wearable_types}.
 
 Jeon và cộng sự \cite{jeon2020realtime} Nghiên cứu sử dụng thiết bị đeo Sleep
 Care Kit gắn ở ngực để thu thập các tín hiệu nhịp tim, gia tốc ba trục, hô hấp

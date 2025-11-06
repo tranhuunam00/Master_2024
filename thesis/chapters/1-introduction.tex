@@ -1,26 +1,112 @@
-OSA là một rối loạn hô hấp khi ngủ do sự hẹp hoặc tắc nghẽn một phần hay toàn
-bộ đường hô hấp trên, bao gồm vùng mũi họng, hầu họng hoặc cả hai. Tình trạng
-này được đặc trưng bởi các cơn ngưng thở hoặc giảm thở ngắn, lặp đi lặp lại
-trong khi ngủ, gây gián đoạn giấc ngủ do thức giấc thường xuyên và dẫn đến giảm
-oxy máu từng đợt. Tỷ lệ hiện mắc OSA tại Việt Nam ước tính khoảng 8,5\%
-\cite{nguoimacOSA_VN}. OSA hiện được công nhận là một yếu tố có nguy cơ độc lập
-đối với nhiều bệnh lý liên quan đến tim mạch, đặc biệt là tăng huyết áp. Ngoài
-ra, hội chứng này còn có mối liên hệ đáng kể với các nguy cơ như tai nạn giao
-thông, tai nạn lao động dẫn đến làm gia tăng gánh nặng kinh tế xã
-hội\cite{osa_bike}\cite{Marin2005}. Đáng chú ý, tình trạng ngưng thở khi ngủ
-kéo dài và không được phát hiện, điều trị có thể ảnh hưởng nghiêm trọng đến sức
-khỏe gây ra rối loạn nhịp tim và một trong những nguyên nhân gây đột tử
-\cite{sumarry_osa}. Theo PSG.TS Nguyễn Thy Khuê, Hội Y học Giấc ngủ Việt Nam,
-ngưng thở khi ngủ còn là một trong nhưng dấu hiệu rõ ràng của bệnh đái tháo
-đường, bệnh thận. OSA được phát hiện ở hơn 20\% người bệnh đái tháo đường và
-làm trầm trọng thêm các rối loạn chuyển hóa, đặc biệt là đái tháo đường type 2.
-Trong một nghiên cứu tiêu biểu tại Việt Nam, GS.TS.BS. Dương Quý Sỹ và cộng sự
-đã khảo sát 524 trẻ em mắc rối loạn tăng động giảm chú ý (Attention Deficit
-Hyperactivity Disorder - ADHD) tại Bệnh viện Nhi Trung ương Việt Nam
-\cite{ThaySUCHildren}. Kết quả cho thấy tỷ lệ mắc (OSA) ở nhóm này là 23.3\%,
-trong đó chủ yếu ở mức độ trung bình đến nặng. Nghiên cứu cũng đồng thời xác
-định mối tương quan đáng kể giữa mức độ nghiêm trọng của OSA và các triệu chứng
-mất tập trung, tăng động, rối loạn hành vi, lo âu và trầm cảm.
+Nhiều nghiên cứu đã tập trung phát triển các hệ thống theo dõi tư thế ngủ dựa
+trên đa dạng công nghệ cảm biến. Các phương pháp này trải rộng từ cảm biến tiếp
+xúc trực tiếp đến hệ thống đo không tiếp xúc, cụ thể gồm: Tấm dẫn điện với các
+điện cực ECG sắp xếp tại giường để nhận tín hiệu sinh lý và áp lực cơ thể
+\cite{Lee2013_12ecg} Cảm biến áp suất dưới nệm đo phân bố lực tiếp xúc toàn
+thân \cite{Nam2016_mattre, Enayati2018_mattre}. Camera hồng ngoại ghi hình ban
+đêm không cần chiếu sáng, nhận dạng tư thế bằng thị giác máy
+\cite{Mohammadi2019_camera, Tam2021_camera}.
+
+Các thiết bị đeo sử dụng tín hiệu đo lường quán tính (Inertial Measurement Unit
+- IMU) được đặt đa vị trí trên cơ thể nổi lên như cách tiếp cận nhỏ gọn, thuận
+tiện. Trong nghiên cứu \cite{Jeng_osa}, tác giả đã đề xuất hệ thống iSleePost
+sử dụng cảm biến gia tốc đeo ở cổ tay có độ chính xác lên tới 85\% trong việc
+nhận dạng các tư thế ngủ bằng các phương pháp học máy. Một thiết bị đeo khác có
+tên MORFEA được gắn phía trên mũi đã được đề xuất trong một nghiên cứu, với mục
+tiêu chính là sàng lọc tại nhà các rối loạn hô hấp liên quan đến giấc ngủ
+\cite{Manoni2020_posture}. Thiết bị này tích hợp cảm biến gia tốc ba trục để
+phân tích chuyển động, trong đó tư thế ngủ được ước lượng dựa trên góc xoay và
+độ nghiêng của đầu, so sánh với bảng điều kiện tham chiếu định sẵn. Tuy nhiên,
+tư thế nằm sấp không được xem xét do vị trí gắn thiết bị trên mũi. Một nghiên
+cứu gần đây giới thiệu hệ thống NAPPA - tã thông minh được thiết kế để theo dõi
+nhịp thở và tư thế của trẻ sơ sinh trong khi ngủ trưa, tích hợp cảm biến gia
+tốc và con quay hồi chuyển để ước lượng tư thế ngủ \cite{Ranta2021_ta}. Tuy
+nhiên, phương pháp và kết quả phát hiện tư thế ngủ chi tiết không được công bố
+
+Các nghiên cứu sử dụng duy nhất một cảm biến gia tốc cũng cho thấy tiềm năng
+trong việc phân loại tư thế ngủ. Nghiên cứu sử dụng cảm biến gia tốc dạng miếng
+dán (patch-type accelerometer) cho thấy độ chính xác tổng thể đạt 99,16\% khi
+cảm biến được gắn ở bên trái ngực, với các điều kiện định sẵn theo ba trục X,
+Y, Z \cite{Yoon2015_posture}. Tuy nhiên, không có tư thế nằm sấp được ghi nhận
+trong nghiên cứu này. Nhóm tác giả Vũ Hoàng Diệu đã nghiên cứu phát triển thiết
+bị đeo sử dụng một cảm biến gia tốc duy nhất, áp dụng mô hình học sâu AnpoNet
+(1D-CNN + LSTM) để phân loại 12 tư thế ngủ với độ chính xác 94,67\%, hỗ trợ
+theo dõi giấc ngủ tại nhà cho bệnh nhân trào ngược dạ dày (GERD)
+\cite{Vu2025SleepPosition}. Đối với nghiên cứu \cite{abdulsadig2023}, tác giả
+sử dụng một cảm biến gia tốc đặt ở cổ để phát hiện tư thế ngủ tự động, đánh giá
+ba mô hình (DT, ET, LSTM-NN) và cho thấy rằng với tần số lấy mẫu chỉ 5Hz và cửa
+sổ 1 giây, các mô hình vẫn đạt độ chính xác > 98\% (F1-score trung bình
+0,945–0,975), trong đó cây quyết định (Decision Tree) có hiệu năng và mức tiêu
+thụ bộ nhớ tối ưu nhất. Nhóm tác giả trong nghiên cứu \cite{Ferrer_osa} phát
+triển ứng dụng SleepPos với độ chính xác tổng thể 98,2\%, nhưng độ nhạy với tư
+thế nằm sấp chỉ đạt 38,9\%, khiến hệ thống không phù hợp cho nhóm người có nguy
+cơ cao với tư thế này; thêm vào đó, thiết kế phần cứng cồng kềnh làm giảm tính
+thoải mái và độ tin cậy khi sử dụng hằng ngày. Nghiên cứu trên 89 bệnh nhân sử
+dụng cảm biến Clebre gắn tại hõm ức tích hợp gia tốc kế 3 trục cho thấy độ
+chính xác 96,9–98,6\% trong phát hiện tư thế ngủ, khẳng định hõm ức là vị trí
+tối ưu cho cảm biến đeo cổ \cite{Kukwa2022_xuong_uc_co}.
+
+Hầu hết các nghiên cứu về đánh giá tư thế ngủ đều đưa ra những phương pháp toàn
+diện sử dụng các mô hình học máy, kết hợp nhiều loại cảm biến khác nhau như cảm
+biến quán tính, cảm biến sinh lý, hoặc cảm biến áp suất nhằm thu thập dữ liệu
+đa chiều về trạng thái của cơ thể. Một số nghiên cứu đã chứng minh tính khả thi
+của việc sử dụng duy nhất một cảm biến gia tốc trong nhận dạng tư thế ngủ, đạt
+được độ chính xác cao khi kết hợp với các mô hình học máy. Các kết quả này cho
+thấy hướng tiếp cận đơn cảm biến hoàn toàn có thể thay thế cho hệ thống đa cảm
+biến truyền thống trong các bài toán phân loại tư thế ngủ.
+
+Tuy nhiên, các công trình hiện có chưa xem xét đầy đủ việc phân biệt trạng thái
+“đã nằm” hay “chưa nằm” – một yếu tố nền tảng để xác định chính xác giai đoạn
+bắt đầu giấc ngủ hoặc phát hiện sớm thay đổi tư thế. Đồng thời, việc lựa chọn
+tập đặc trưng và mô hình học máy phù hợp cho dữ liệu từ một cảm biến gia tốc
+duy nhất đặt tại vùng cổ – vị trí có khả năng phản ánh biến thiên tư thế của
+thân trên vẫn chưa được nghiên cứu hệ thống.
+
+Đặc biệt, tại Việt Nam cho đến nay chưa có công bố khoa học nào tập
+trung vào bài toán nhận dạng tư thế ngủ dựa hoàn toàn trên dữ liệu
+cảm biến gia tốc và được triển khai trực tiếp trên phần cứng
+hạn chế tài nguyên, như các vi điều khiển sử dụng trong ứng dụng
+Edge AI hoặc TinyML. Khoảng trống này đặt ra yêu cầu cần thiết cho
+việc phát triển một hệ thống giám sát tư thế ngủ đơn giản, chi phí
+thấp, có khả năng xử lý cục bộ, hướng tới ứng dụng trong sàng lọc và
+hỗ trợ chẩn đoán sớm hội chứng ngưng thở tắc nghẽn khi ngủ (OSA).
+
+Qua đó, luận văn này tập trung làm rõ các đặc trưng của dữ liệu cảm biến gia
+tốc khi được đặt tại vùng cổ, đồng thời đề xuất và đánh giá các mô hình học máy
+phù hợp nhằm tối ưu cho việc triển khai trên các thiết bị tính toán biên (edge
+devices). Trên cơ sở đó, luận văn xây dựng một hệ thống hoàn chỉnh gồm phần
+cứng đeo được kích thước nhỏ gọn, chi phí thấp; phần mềm thu thập và lưu trữ dữ
+liệu; cùng với mô-đun xử lý và phân loại tư thế ngủ tích hợp trực tiếp trên vi
+điều khiển.
+
+Hệ thống được thiết kế hướng tới độ chính xác cao, độ trễ thấp và khả năng hoạt
+động độc lập, cho phép người dùng có thể ghi nhận và phân loại tư thế ngủ tại
+nhà một cách thuận tiện. Mặc dù chưa tích hợp chức năng sàng lọc hội chứng
+ngưng thở tắc nghẽn khi ngủ (OSA), kết quả nghiên cứu này tạo nền tảng kỹ thuật
+tiềm năng cho các ứng dụng trong tương lai, đặc biệt trong việc hỗ trợ đánh giá
+nguy cơ pOSA (positional OSA) dựa trên tư thế ngủ và xu hướng thay đổi tư thế
+trong suốt giấc ngủ.
+
+Mục tiêu cụ thể của khóa luận gồm: 01) Nghiên cứu, đề xuất hệ thống phần cứng
+phục vụ đo lường, thu thập, xử lý tín hiệu gia tốc kèm với hiệu năng phù hợp
+cho việc triển khai mô hình học máy tại biên trong bài toán phân loại tư thế
+ngủ ở người; 02) Nghiên cứu, đề xuất những mô hình học máy thích hợp trong việc
+phân loại tư thế ngủ ở người dựa trên những đặc trưng của tín hiệu gia tốc được
+trích xuất từ bộ dữ liệu cảm biến do nhóm nghiên cứu thu thập; 03) Chuẩn
+hóa,thực thi, đánh giá mô hình học máy trên vi điều khiển Nordic nRF52840, nhằm
+kiểm chứng hoạt động thực tế của hệ thống nhận dạng tư thế ngủ tại biên;
+
+Cấu trúc luận văn được trình bày trong bốn chương chính như sau:
+
+\noindent\textbf{Chương 1:} Tổng quan OSA, tư thế ngủ và công nghệ liên quan
+
+\noindent\textbf{Chương 2:} Hệ thống thu thập và xử lý tín hiệu cảm biến.
+
+\noindent\textbf{Chương 3:} Trích xuất đặc trưng và mô hình học máy.
+
+\noindent\textbf{Chương 4:} Kết quả và đánh giá.
+
+-----------------------
 
 Tư thế ngủ được xem là một trong những yếu tố quan trọng có thể làm trầm trọng
 thêm tình trạng ngưng thở khi ngủ, đặc biệt là ở tư thế nằm ngửa. Dạng đặc biệt
@@ -33,24 +119,6 @@ chiếm tới khoảng 50\% trong tổng số bệnh nhân OSA \cite{sabil2020}.
 này nhấn mạnh rằng tư thế ngủ có ảnh hưởng sinh lý rõ rệt đến mức độ xẹp của
 đường hô hấp trên, đặc biệt ở tư thế nằm ngửa, làm gia tăng nguy cơ tắc nghẽn
 đường thở.
-
-Việc chẩn đoán (OSA) hiện nay chủ yếu được thực hiện thông qua hai phương pháp:
-đa ký giấc ngủ (Polysomnography – PSG) và thiết bị kiểm tra giấc ngủ tại nhà
-(Home Sleep Test – HST). Trong đó, PSG được xem là tiêu chuẩn vàng trong việc
-đánh giá OSA. Nó thường được thực hiện tại bệnh viện hoặc trung tâm giấc ngủ.
-Thông thường, bệnh nhân sẽ được yêu cầu đến vào buổi tối để trung tâm có thể
-ghi lại và theo dõi giấc ngủ ban đêm của bệnh nhân. Đôi khi, PSG được thực hiện
-vào ban ngày để phù hợp với những người làm việc theo ca, những người đã quen
-với việc ngủ ban ngày. Quá trình đo PSG phải được thực hiện dưới sự giám sát
-trực tiếp của bác sỹ chuyên ngành giấc ngủ hoặc kĩ thuật viên có chuyên
-môn\cite{psg_paper}\cite{kushida2005psg}. Trong khi bạn ngủ, kỹ thuật viên sẽ
-theo dõi sóng não, chuyển động mắt, nhịp tim, nhịp thở, nồng độ oxy trong máu,
-tư thế và chuyển động cơ thể, tiếng ngáy và các tiếng ồn khác mà bạn có thể
-phát ra khi ngủ. Tất cả các phép đo này sẽ được ghi lại trên biểu đồ. Trong quá
-trình nghiên cứu, kỹ thuật viên có thể yêu cầu bạn sử dụng máy thở áp lực dương
-(PAP) nếu bạn có dấu hiệu ngưng thở khi ngủ. PAP là một thiết bị mặt nạ cung
-cấp không khí với mức oxy phù hợp thông qua miệng hoặc ống mũi để hỗ trợ trong
-trường hợp khó thở.
 
 Mặc dù PSG vẫn giữ vai trò là phương pháp tham chiếu trong chẩn đoán và theo
 dõi chất lượng giấc ngủ cũng như các rối loạn liên quan, nhưng việc triển khai
@@ -158,32 +226,4 @@ liệu đa kênh phức tạp, mô hình tính toán nặng, hoặc cần xử l
 máy chủ. Điều này gây hạn chế khi triển khai thực tế tại nhà hoặc trên thiết bị
 đeo. Hơn nữa, vẫn còn thiếu các giải pháp tích hợp đầy đủ từ thu thập, xử lý,
 đến phân loại tín hiệu ngay trên vi điều khiển với độ trễ thấp và khả năng hoạt
-động độc lập không cần kết nối mạng. Qua đó, luận văn này đề xuất một hướng
-tiếp cận sử dụng TinyML tại biên, nhằm xây dựng một hệ thống theo dõi tư thế
-ngủ, có tiềm năng hỗ trợ sàng lọc pOSA theo thời gian thực. Thiết bị được thiết
-kế theo hướng đeo được, nhỏ gọn, chi phí thấp, cho phép ghi nhận và phân loại
-chính xác các tư thế ngủ: nằm ngửa, nằm sấp, nằm nghiêng trái và phải. Hệ thống
-tích hợp khả năng thu thập – xử lý – phân loại ngay trên vi điều khiển, hướng
-tới độ chính xác cao, độ trễ thấp và khả năng triển khai tại nhà với chi phí
-hợp lý. Tuy chưa thực hiện chức năng sàng lọc OSA, hệ thống được xây dựng như
-một nền tảng kỹ thuật tiềm năng, phục vụ cho các nghiên cứu ứng dụng trong
-tương lai, đặc biệt là hỗ trợ đánh giá nguy cơ pOSA dựa trên tư thế ngủ.
-
-Mục tiêu cụ thể của khóa luận gồm: 01) Nghiên cứu, đề xuất hệ thống phần cứng
-phục vụ đo lường, thu thập, xử lý tín hiệu gia tốc kèm với hiệu năng phù hợp
-cho việc triển khai mô hình học máy tại biên trong bài toán phân loại tư thế
-ngủ ở người; 02) Nghiên cứu, đề xuất những mô hình học máy thích hợp trong việc
-phân loại tư thế ngủ ở người dựa trên những đặc trưng của tín hiệu gia tốc được
-trích xuất từ bộ dữ liệu cảm biến do nhóm nghiên cứu thu thập; 03) Chuẩn
-hóa,thực thi, đánh giá mô hình học máy trên vi điều khiển Nordic nRF52840, nhằm
-kiểm chứng hoạt động thực tế của hệ thống nhận dạng tư thế ngủ tại biên;
-
-Cấu trúc luận văn được trình bày trong ba chương chính như sau:
-
-\noindent\textbf{Chương 1:} Hội chứng ngưng thở khi ngủ do tắc nghẽn (OSA): Ảnh hưởng của tư thế ngủ và các tiến bộ công nghệ trong giám sát tư thế ngủ tự động
-
-\noindent\textbf{Chương 2:} Xây dựng hệ thống thu thập dữ liệu, huấn luyện,
-đánh giá
-mô hình học máy.
-
-\noindent\textbf{Chương 3:} Xây dựng phần cứng, triển khai tại biên.
+động độc lập không cần kết nối mạng.

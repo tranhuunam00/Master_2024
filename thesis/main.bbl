@@ -518,153 +518,648 @@
       \verb 10.1007/s40675-020-00197-5
       \endverb
     \endentry
-    \entry{osa_bike}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=57de5b19abdda5c2813127f873006cdb}{%
-           family={S},
-           familyi={S\bibinitperiod},
-           given={Tregear},
-           giveni={T\bibinitperiod}}}%
-        {{hash=2f40c6366b574fa9d987cacb704eceb8}{%
-           family={J},
-           familyi={J\bibinitperiod},
-           given={Reston},
-           giveni={R\bibinitperiod}}}%
-        {{hash=a8d8d0a07ee560673a9e71f2a9049dc5}{%
-           family={K},
-           familyi={K\bibinitperiod},
-           given={Schoelles},
-           giveni={S\bibinitperiod}}}%
-        {{hash=f5c3b0f82ac0471a1e7719a8e734c649}{%
-           family={B},
-           familyi={B\bibinitperiod},
-           given={Phillips},
-           giveni={P\bibinitperiod}}}%
+    \entry{Lee2013_12ecg}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=c7e776bd4e764704a60d4e95760fea8e}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={H.\bibnamedelimi J.},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=555dfe5d4da8653f4085beb4de4aef88}{%
+           family={Hwang},
+           familyi={H\bibinitperiod},
+           given={S.\bibnamedelimi H.},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=58af86b4bd9a0bc53e782fe9fa23d7da}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={S.\bibnamedelimi M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=567c0e27e522f706e07b02506c65f9a3}{%
+           family={Lim},
+           familyi={L\bibinitperiod},
+           given={Y.\bibnamedelimi G.},
+           giveni={Y\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=ee8b8c9db3b427e6b45f8be197993e1b}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={K.\bibnamedelimi S.},
+           giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
       }
-      \strng{namehash}{459501dc88b0d9229f0751dac1f0cf3c}
-      \strng{fullhash}{459501dc88b0d9229f0751dac1f0cf3c}
-      \strng{fullhashraw}{459501dc88b0d9229f0751dac1f0cf3c}
-      \strng{bibnamehash}{459501dc88b0d9229f0751dac1f0cf3c}
-      \strng{authorbibnamehash}{459501dc88b0d9229f0751dac1f0cf3c}
-      \strng{authornamehash}{459501dc88b0d9229f0751dac1f0cf3c}
-      \strng{authorfullhash}{459501dc88b0d9229f0751dac1f0cf3c}
-      \strng{authorfullhashraw}{459501dc88b0d9229f0751dac1f0cf3c}
+      \strng{namehash}{ad4d964b382ea8ee8b7ad38dc9e8d2c9}
+      \strng{fullhash}{ad4d964b382ea8ee8b7ad38dc9e8d2c9}
+      \strng{fullhashraw}{ad4d964b382ea8ee8b7ad38dc9e8d2c9}
+      \strng{bibnamehash}{ad4d964b382ea8ee8b7ad38dc9e8d2c9}
+      \strng{authorbibnamehash}{ad4d964b382ea8ee8b7ad38dc9e8d2c9}
+      \strng{authornamehash}{ad4d964b382ea8ee8b7ad38dc9e8d2c9}
+      \strng{authorfullhash}{ad4d964b382ea8ee8b7ad38dc9e8d2c9}
+      \strng{authorfullhashraw}{ad4d964b382ea8ee8b7ad38dc9e8d2c9}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{J Clin Sleep Med}
-      \field{month}{12}
+      \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
       \field{number}{6}
-      \field{title}{Obstructive sleep apnea and risk of motor vehicle crash: systematic review and meta-analysis}
-      \field{volume}{5}
-      \field{year}{2009}
-      \field{pages}{573\bibrangedash 581}
+      \field{title}{Estimation of body postures on bed using unconstrained ECG measurements}
+      \field{volume}{17}
+      \field{year}{2013}
+      \field{pages}{985\bibrangedash 993}
       \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/JBHI.2013.2252911
+      \endverb
     \endentry
-    \entry{Marin2005}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=f1864077d2ecdbc49b054c5be2d976ce}{%
-           family={JM},
-           familyi={J\bibinitperiod},
-           given={Marin},
-           giveni={M\bibinitperiod}}}%
-        {{hash=b43db9dad7bdaa70e536eed4b75d2c8a}{%
-           family={SJ},
-           familyi={S\bibinitperiod},
-           given={Carrizo},
-           giveni={C\bibinitperiod}}}%
-        {{hash=1b69c362cc7afb9585b11f88d0c55a48}{%
-           family={E},
-           familyi={E\bibinitperiod},
-           given={Vicente},
-           giveni={V\bibinitperiod}}}%
-        {{hash=79909254fb266090b06231ff69a86061}{%
-           family={AG},
-           familyi={A\bibinitperiod},
-           given={Agusti},
-           giveni={A\bibinitperiod}}}%
+    \entry{Nam2016_mattre}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=e24b9f5a78fd5ea3499537d645940d7f}{%
+           family={Nam},
+           familyi={N\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=03f38c879ca0bc9f1dcbada69ea0519a}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a38fe2282e0ae708270c02346a36d08f}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
       }
-      \strng{namehash}{cec821a8616b9325dbeabd3a2540a3ad}
-      \strng{fullhash}{cec821a8616b9325dbeabd3a2540a3ad}
-      \strng{fullhashraw}{cec821a8616b9325dbeabd3a2540a3ad}
-      \strng{bibnamehash}{cec821a8616b9325dbeabd3a2540a3ad}
-      \strng{authorbibnamehash}{cec821a8616b9325dbeabd3a2540a3ad}
-      \strng{authornamehash}{cec821a8616b9325dbeabd3a2540a3ad}
-      \strng{authorfullhash}{cec821a8616b9325dbeabd3a2540a3ad}
-      \strng{authorfullhashraw}{cec821a8616b9325dbeabd3a2540a3ad}
+      \strng{namehash}{026a51dc8a8ec4517162f1974f1eff03}
+      \strng{fullhash}{026a51dc8a8ec4517162f1974f1eff03}
+      \strng{fullhashraw}{026a51dc8a8ec4517162f1974f1eff03}
+      \strng{bibnamehash}{026a51dc8a8ec4517162f1974f1eff03}
+      \strng{authorbibnamehash}{026a51dc8a8ec4517162f1974f1eff03}
+      \strng{authornamehash}{026a51dc8a8ec4517162f1974f1eff03}
+      \strng{authorfullhash}{026a51dc8a8ec4517162f1974f1eff03}
+      \strng{authorfullhashraw}{026a51dc8a8ec4517162f1974f1eff03}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Lancet}
-      \field{month}{3}
-      \field{number}{9464}
-      \field{title}{Long-term cardiovascular outcomes in men with obstructive sleep apnoea-hypopnoea with or without treatment with continuous positive airway pressure: an observational study}
-      \field{volume}{365}
-      \field{year}{2005}
-      \field{pages}{1046\bibrangedash 1053}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1016/S0140-6736(05)71141-7
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1016/S0140-6736(05)71141-7
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1016/S0140-6736(05)71141-7
-      \endverb
+      \field{journaltitle}{Sensors}
+      \field{number}{5}
+      \field{title}{Sleep monitoring based on a tri-axial accelerometer and a pressure sensor}
+      \field{volume}{16}
+      \field{year}{2016}
+      \field{pages}{750}
+      \range{pages}{1}
     \endentry
-    \entry{sumarry_osa}{online}{}{}
+    \entry{Enayati2018_mattre}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=4ee76179a6c43fb64c94afda668b65ad}{%
+           family={Enayati},
+           familyi={E\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=51121e36016969e1236484b8c0638c52}{%
+           family={Skubic},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=50db7ff9cdc432454dfba18aa947f3ea}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=07d5b9f420df1099c929b554fe4125eb}{%
+           family={Popescu},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=789bbcc25da2be9ca4fd5218cf51dd90}{%
+           family={Farahani},
+           familyi={F\bibinitperiod},
+           given={N.\bibnamedelimi Z.},
+           giveni={N\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{7bb5df0b35497a0b5a7e8a51dd1c1fdf}
+      \strng{fullhash}{7bb5df0b35497a0b5a7e8a51dd1c1fdf}
+      \strng{fullhashraw}{7bb5df0b35497a0b5a7e8a51dd1c1fdf}
+      \strng{bibnamehash}{7bb5df0b35497a0b5a7e8a51dd1c1fdf}
+      \strng{authorbibnamehash}{7bb5df0b35497a0b5a7e8a51dd1c1fdf}
+      \strng{authornamehash}{7bb5df0b35497a0b5a7e8a51dd1c1fdf}
+      \strng{authorfullhash}{7bb5df0b35497a0b5a7e8a51dd1c1fdf}
+      \strng{authorfullhashraw}{7bb5df0b35497a0b5a7e8a51dd1c1fdf}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Available at \url{https://www.msdmanuals.com/vi-vn}}
-      \field{title}{Ngưng thở khi ngủ do tắc nghẽn (OSA)}
-      \field{year}{2022}
+      \field{booktitle}{Proceedings of the 40th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)}
+      \field{month}{7}
+      \field{title}{Sleep posture classification using bed sensor data and neural networks}
+      \field{year}{2018}
+      \field{pages}{461\bibrangedash 465}
+      \range{pages}{5}
     \endentry
-    \entry{ThaySUCHildren}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=c8b8569c2145f3757920210d35638e68}{%
-           family={Nguyen-Thi-Phuong},
-           familyi={N\bibinithyphendelim T\bibinithyphendelim P\bibinitperiod},
-           given={Mai},
-           giveni={M\bibinitperiod}}}%
-        {{hash=76991c1d4355db1c9951f0006ef832aa}{%
-           family={Nguyen-Thi-Thanh},
-           familyi={N\bibinithyphendelim T\bibinithyphendelim T\bibinitperiod},
-           given={Mai},
-           giveni={M\bibinitperiod}}}%
-        {{hash=fd71d94593d9e2e4fd7a28093d92d46a}{%
-           family={Nguyen-Thi-Dieu},
-           familyi={N\bibinithyphendelim T\bibinithyphendelim D\bibinitperiod},
-           given={Thuy},
-           giveni={T\bibinitperiod}}}%
-        {{hash=22e451049def6b25343e2347e8657556}{%
-           family={Duong-Quy},
-           familyi={D\bibinithyphendelim Q\bibinitperiod},
+    \entry{Mohammadi2019_camera}{inproceedings}{}{}
+      \name{author}{6}{}{%
+        {{hash=0a29a7e7cb3947032c2c168cb4e20f81}{%
+           family={Mohammadi},
+           familyi={M\bibinitperiod},
+           given={S.\bibnamedelimi M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=bd4f33d7d797b52e9d113ea164e4fd2d}{%
+           family={Kouchaki},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=13d13b7dcfe57b1229ff1035a86ef3a9}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2cc3272b8b91c950a567f3d3ac9131ba}{%
+           family={Dijk},
+           familyi={D\bibinitperiod},
+           given={D.-J.},
+           giveni={D\bibinithyphendelim J\bibinitperiod}}}%
+        {{hash=aa95c363fb514bcb984edc256be345ef}{%
+           family={Hilton},
+           familyi={H\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5372e4c4f5af59816b239a75467fd038}{%
+           family={Wells},
+           familyi={W\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0b1b2f7eccdc4e02e4f8a73601bab30}
+      \strng{fullhash}{c0b1b2f7eccdc4e02e4f8a73601bab30}
+      \strng{fullhashraw}{c0b1b2f7eccdc4e02e4f8a73601bab30}
+      \strng{bibnamehash}{c0b1b2f7eccdc4e02e4f8a73601bab30}
+      \strng{authorbibnamehash}{c0b1b2f7eccdc4e02e4f8a73601bab30}
+      \strng{authornamehash}{c0b1b2f7eccdc4e02e4f8a73601bab30}
+      \strng{authorfullhash}{c0b1b2f7eccdc4e02e4f8a73601bab30}
+      \strng{authorfullhashraw}{c0b1b2f7eccdc4e02e4f8a73601bab30}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 41st Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)}
+      \field{month}{7}
+      \field{title}{Two-step deep learning for estimating human sleep pose occluded by bed covers}
+      \field{year}{2019}
+      \field{pages}{3115\bibrangedash 3118}
+      \range{pages}{4}
+    \endentry
+    \entry{Tam2021_camera}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=3bcf8a659bce4886812ec84c9dca76c9}{%
+           family={Tam},
+           familyi={T\bibinitperiod},
+           given={A.\bibnamedelimi Y.-C.},
+           giveni={A\bibinitperiod\bibinitdelim Y\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=f44cd8dad5dc44221af42832df6bcedb}{%
+           family={So},
+           familyi={S\bibinitperiod},
+           given={B.\bibnamedelimi P.-H.},
+           giveni={B\bibinitperiod\bibinitdelim P\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=08887aa9dcf8374fadd03f471b793973}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={T.\bibnamedelimi T.-C.},
+           giveni={T\bibinitperiod\bibinitdelim T\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=9e1cf28f6f2dd72ee68d983e23adcf87}{%
+           family={Cheung},
+           familyi={C\bibinitperiod},
+           given={A.\bibnamedelimi K.-Y.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=6e5b751f1979304db4601bdc96398c25}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={D.\bibnamedelimi W.-C.},
+           giveni={D\bibinitperiod\bibinitdelim W\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=f9c271089d296f63e9cd3c485be13d7e}{%
+           family={Cheung},
+           familyi={C\bibinitperiod},
+           given={J.\bibnamedelimi C.-W.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinithyphendelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c915cd0a906c0ad746134894fc253d7}
+      \strng{fullhash}{9c915cd0a906c0ad746134894fc253d7}
+      \strng{fullhashraw}{9c915cd0a906c0ad746134894fc253d7}
+      \strng{bibnamehash}{9c915cd0a906c0ad746134894fc253d7}
+      \strng{authorbibnamehash}{9c915cd0a906c0ad746134894fc253d7}
+      \strng{authornamehash}{9c915cd0a906c0ad746134894fc253d7}
+      \strng{authorfullhash}{9c915cd0a906c0ad746134894fc253d7}
+      \strng{authorfullhashraw}{9c915cd0a906c0ad746134894fc253d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{month}{8}
+      \field{number}{16}
+      \field{title}{A blanket accommodative sleep posture classification system using an infrared depth camera: A deep learning approach with synthetic augmentation of blanket conditions}
+      \field{volume}{21}
+      \field{year}{2021}
+      \field{pages}{5553}
+      \range{pages}{1}
+    \endentry
+    \entry{Jeng_osa}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=f03df1a723e721b81e34564015f45bdb}{%
+           family={Jeng.\bibnamedelimi P.-Y.},
+           familyi={J\bibinitperiod\bibinitdelim P\bibinithyphendelim Y\bibinitperiod},
+           given={Hu.\bibnamedelimi C.-J.\& Wu.\bibnamedelimi D.\bibnamedelimi A},
+           giveni={H\bibinitperiod\bibinitdelim C\bibinithyphendelim J\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           suffix={Wang.\bibnamedelimi L.-C.},
+           suffixi={W\bibinitperiod\bibinitdelim L\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{f03df1a723e721b81e34564015f45bdb}
+      \strng{fullhash}{f03df1a723e721b81e34564015f45bdb}
+      \strng{fullhashraw}{f03df1a723e721b81e34564015f45bdb}
+      \strng{bibnamehash}{f03df1a723e721b81e34564015f45bdb}
+      \strng{authorbibnamehash}{f03df1a723e721b81e34564015f45bdb}
+      \strng{authornamehash}{f03df1a723e721b81e34564015f45bdb}
+      \strng{authorfullhash}{f03df1a723e721b81e34564015f45bdb}
+      \strng{authorfullhashraw}{f03df1a723e721b81e34564015f45bdb}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{title}{A Wrist Sensor Sleep Posture Monitoring System: An Automatic Labeling Approach}
+      \field{year}{2021}
+      \verb{doi}
+      \verb /10.3390/s21010258
+      \endverb
+    \endentry
+    \entry{Manoni2020_posture}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=0476dd0e938d7c165a2ddf5b1737e76a}{%
+           family={Manoni},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6aea280a0b331983917d8f6a17ba2a8e}{%
+           family={Loreti},
+           familyi={L\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c834955f0b9cbac0beba3b2d3b583bb7}{%
+           family={Radicioni},
+           familyi={R\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=2f0dda1bb02715318254e9d8b40c4377}{%
+           family={Pellegrino},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2a1557af480fdff2ae84bf1c2ea0f9f7}{%
+           family={De\bibnamedelima Torre},
+           familyi={D\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=5f3da3318fd139133f9ed2efdad40b45}{%
+           family={Gumiero},
+           familyi={G\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ddd971e7f73bafcfb1ace4e5218ad328}{%
+           family={Halicki},
+           familyi={H\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8ac5a6398c47bfebfe4371da84acd2d1}{%
+           family={Palange},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=7dd983e9fc6ae30d65e346816f5885b8}{%
+           family={Irrera},
+           familyi={I\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{406f352d527444383b9efa6e4d2dcd65}
+      \strng{fullhash}{406f352d527444383b9efa6e4d2dcd65}
+      \strng{fullhashraw}{406f352d527444383b9efa6e4d2dcd65}
+      \strng{bibnamehash}{406f352d527444383b9efa6e4d2dcd65}
+      \strng{authorbibnamehash}{406f352d527444383b9efa6e4d2dcd65}
+      \strng{authornamehash}{406f352d527444383b9efa6e4d2dcd65}
+      \strng{authorfullhash}{406f352d527444383b9efa6e4d2dcd65}
+      \strng{authorfullhashraw}{406f352d527444383b9efa6e4d2dcd65}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{month}{12}
+      \field{number}{24}
+      \field{title}{A new wearable system for home sleep apnea testing, screening, and classification}
+      \field{volume}{20}
+      \field{year}{2020}
+      \field{pages}{7014}
+      \range{pages}{1}
+    \endentry
+    \entry{Ranta2021_ta}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=7a21dafcd69f7ac583f4ced4b12ca245}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c203cb1463131ea572bf7c9a030e2ceb}{%
+           family={Ilén},
+           familyi={I\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a209ab9deb7a14e3afd1c74b0a3a54ef}{%
+           family={Palmu},
+           familyi={P\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=6e87bf583103a09ac2e998bc7592036e}{%
+           family={Salama},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3c0da6b953bd9e24bfb5a99b91098e17}{%
+           family={Roienko},
+           familyi={R\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+        {{hash=abcea9725065469c23b2439d9bb60353}{%
+           family={Vanhatalo},
+           familyi={V\bibinitperiod},
            given={S.},
            giveni={S\bibinitperiod}}}%
       }
-      \strng{namehash}{6cc62492d23cf18ee0bb92a5bbd8d661}
-      \strng{fullhash}{6cc62492d23cf18ee0bb92a5bbd8d661}
-      \strng{fullhashraw}{6cc62492d23cf18ee0bb92a5bbd8d661}
-      \strng{bibnamehash}{6cc62492d23cf18ee0bb92a5bbd8d661}
-      \strng{authorbibnamehash}{6cc62492d23cf18ee0bb92a5bbd8d661}
-      \strng{authornamehash}{6cc62492d23cf18ee0bb92a5bbd8d661}
-      \strng{authorfullhash}{6cc62492d23cf18ee0bb92a5bbd8d661}
-      \strng{authorfullhashraw}{6cc62492d23cf18ee0bb92a5bbd8d661}
+      \strng{namehash}{764138b1920e28af304d52f0e67c7930}
+      \strng{fullhash}{764138b1920e28af304d52f0e67c7930}
+      \strng{fullhashraw}{764138b1920e28af304d52f0e67c7930}
+      \strng{bibnamehash}{764138b1920e28af304d52f0e67c7930}
+      \strng{authorbibnamehash}{764138b1920e28af304d52f0e67c7930}
+      \strng{authornamehash}{764138b1920e28af304d52f0e67c7930}
+      \strng{authorfullhash}{764138b1920e28af304d52f0e67c7930}
+      \strng{authorfullhashraw}{764138b1920e28af304d52f0e67c7930}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Pulmonary therapy}
-      \field{month}{1}
-      \field{title}{Prevalence of Obstructive Sleep Apnea in Vietnamese Children with Attention Deficit Hyperactivity Disorder (ADHD)}
-      \field{volume}{11}
+      \field{journaltitle}{Acta Paediatrica}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{An openly available wearable, a diaper cover, monitors infant’s respiration and position during rest and sleep}
+      \field{volume}{110}
+      \field{year}{2021}
+      \field{pages}{2766\bibrangedash 2771}
+      \range{pages}{6}
+    \endentry
+    \entry{Yoon2015_posture}{inproceedings}{}{}
+      \name{author}{9}{}{%
+        {{hash=563786886eac8548ac4e28503ad0f0c2}{%
+           family={Yoon},
+           familyi={Y\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=9a82ea67fbc933eedf8e4dd3cf3bda18}{%
+           family={Hwang},
+           familyi={H\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8102d52e246f02a4a3eba975c37fdb53}{%
+           family={Jung},
+           familyi={J\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4c83e612ca6179605e076be7f68a2296}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c74da368d4bb135aeae83552585b8994}{%
+           family={Joo},
+           familyi={J\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=85fcf48fa88ed022498fd4cdce676041}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1d50c5d908fe9ead398d6448f784be74}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=77fdb2978cf2125316c77873c91aa324}{%
+           family={Jeong},
+           familyi={J\bibinitperiod},
+           given={D.-U.},
+           giveni={D\bibinithyphendelim U\bibinitperiod}}}%
+        {{hash=37cd18950ba152a40e401e3e26f4506e}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{c61f2813be0bba9ddf757d3ec66a294f}
+      \strng{fullhash}{c61f2813be0bba9ddf757d3ec66a294f}
+      \strng{fullhashraw}{c61f2813be0bba9ddf757d3ec66a294f}
+      \strng{bibnamehash}{c61f2813be0bba9ddf757d3ec66a294f}
+      \strng{authorbibnamehash}{c61f2813be0bba9ddf757d3ec66a294f}
+      \strng{authornamehash}{c61f2813be0bba9ddf757d3ec66a294f}
+      \strng{authorfullhash}{c61f2813be0bba9ddf757d3ec66a294f}
+      \strng{authorfullhashraw}{c61f2813be0bba9ddf757d3ec66a294f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 37th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)}
+      \field{month}{8}
+      \field{title}{Estimation of sleep posture using a patch-type accelerometer based device}
+      \field{year}{2015}
+      \field{pages}{4942\bibrangedash 4945}
+      \range{pages}{4}
+    \endentry
+    \entry{Vu2025SleepPosition}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=f15f452e83192021a095e89872dd63a4}{%
+           family={HD},
+           familyi={H\bibinitperiod},
+           given={Vu},
+           giveni={V\bibinitperiod}}}%
+        {{hash=cea9824888e79d7734bdd120c95b5853}{%
+           family={DN},
+           familyi={D\bibinitperiod},
+           given={Tran},
+           giveni={T\bibinitperiod}}}%
+        {{hash=483102be49a55c0d654bc9aaa571e37d}{%
+           family={HH},
+           familyi={H\bibinitperiod},
+           given={Pham},
+           giveni={P\bibinitperiod}}}%
+        {{hash=53dcd71e5a19552b929c5a1d38577cd9}{%
+           family={DD},
+           familyi={D\bibinitperiod},
+           given={Pham},
+           giveni={P\bibinitperiod}}}%
+        {{hash=803af89939beb6ecc0d89c7e8cc5cc71}{%
+           family={KL},
+           familyi={K\bibinitperiod},
+           given={Can},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a33ac5f175cb5373674be5a4149563d9}{%
+           family={TH},
+           familyi={T\bibinitperiod},
+           given={Dao},
+           giveni={D\bibinitperiod}}}%
+        {{hash=62cc1cf9fb5b843d17c5f2550ff99a32}{%
+           family={DT},
+           familyi={D\bibinitperiod},
+           given={Tran},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{18ca756802db400472cbc71c008086bc}
+      \strng{fullhash}{18ca756802db400472cbc71c008086bc}
+      \strng{fullhashraw}{18ca756802db400472cbc71c008086bc}
+      \strng{bibnamehash}{18ca756802db400472cbc71c008086bc}
+      \strng{authorbibnamehash}{18ca756802db400472cbc71c008086bc}
+      \strng{authornamehash}{18ca756802db400472cbc71c008086bc}
+      \strng{authorfullhash}{18ca756802db400472cbc71c008086bc}
+      \strng{authorfullhashraw}{18ca756802db400472cbc71c008086bc}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sleep Breath}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{Human sleep position classification using a lightweight model and acceleration data}
+      \field{volume}{29}
       \field{year}{2025}
+      \field{pages}{95}
+      \range{pages}{1}
       \verb{doi}
-      \verb 10.1007/s41030-024-00286-8
+      \verb 10.1007/s11325-025-03247-w
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s11325-025-03247-w
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s11325-025-03247-w
+      \endverb
+    \endentry
+    \entry{abdulsadig2023}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=fcd26a176896693d54f34c891f26170a}{%
+           family={Abdulsadig},
+           familyi={A\bibinitperiod},
+           given={R.S.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1737d70def95d213714fb1c04844787c}{%
+           family={Rodriguez-Villegas},
+           familyi={R\bibinithyphendelim V\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{fullhash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{fullhashraw}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{bibnamehash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{authorbibnamehash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{authornamehash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{authorfullhash}{813c9cde4601ad286eb7996fbda01d8a}
+      \strng{authorfullhashraw}{813c9cde4601ad286eb7996fbda01d8a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{Sleep posture monitoring using a single neck-situated accelerometer: A proof-of-concept}
+      \field{volume}{11}
+      \field{year}{2023}
+      \field{pages}{17693\bibrangedash 17706}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2023.3246266
+      \endverb
+    \endentry
+    \entry{Ferrer_osa}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=221e95a7e254dca76c65699c6b1ad7ab}{%
+           family={Ferrer-Lluis\bibnamedelima I},
+           familyi={F\bibinithyphendelim L\bibinitperiod\bibinitdelim I\bibinitperiod},
+           given={Montserrat\bibnamedelimb JM\bibnamedelimb \& Jané\bibnamedelima R},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim \\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim R\bibinitperiod},
+           suffix={Castillo-Escario\bibnamedelima Y},
+           suffixi={C\bibinithyphendelim E\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{221e95a7e254dca76c65699c6b1ad7ab}
+      \strng{fullhash}{221e95a7e254dca76c65699c6b1ad7ab}
+      \strng{fullhashraw}{221e95a7e254dca76c65699c6b1ad7ab}
+      \strng{bibnamehash}{221e95a7e254dca76c65699c6b1ad7ab}
+      \strng{authorbibnamehash}{221e95a7e254dca76c65699c6b1ad7ab}
+      \strng{authornamehash}{221e95a7e254dca76c65699c6b1ad7ab}
+      \strng{authorfullhash}{221e95a7e254dca76c65699c6b1ad7ab}
+      \strng{authorfullhashraw}{221e95a7e254dca76c65699c6b1ad7ab}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{title}{SleepPos App: An Automated Smartphone Application for Angle Based High Resolution Sleep Position Monitoring and Treatment}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.3390/s21134531
+      \endverb
+    \endentry
+    \entry{Kukwa2022_xuong_uc_co}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=7922fb1e2363a1734add2f190b76fcad}{%
+           family={Kukwa},
+           familyi={K\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=b29786fdc674f740186f3b1f989c8b06}{%
+           family={Lis},
+           familyi={L\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3b5a3505b68592c0578b53c9c541348c}{%
+           family={Łaba},
+           familyi={Ł\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4ba45536e8358560b9624097461f4c55}{%
+           family={Mitchell},
+           familyi={M\bibinitperiod},
+           given={R.\bibnamedelimi B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=f27ef25d634336d31ff304efc3734044}{%
+           family={Młyńczak},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{2c7cbd03e29c88103282c713d0f8ccb2}
+      \strng{fullhash}{2c7cbd03e29c88103282c713d0f8ccb2}
+      \strng{fullhashraw}{2c7cbd03e29c88103282c713d0f8ccb2}
+      \strng{bibnamehash}{2c7cbd03e29c88103282c713d0f8ccb2}
+      \strng{authorbibnamehash}{2c7cbd03e29c88103282c713d0f8ccb2}
+      \strng{authornamehash}{2c7cbd03e29c88103282c713d0f8ccb2}
+      \strng{authorfullhash}{2c7cbd03e29c88103282c713d0f8ccb2}
+      \strng{authorfullhashraw}{2c7cbd03e29c88103282c713d0f8ccb2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Diagnostics}
+      \field{number}{5}
+      \field{title}{Sleep Position Detection with a Wireless Audio-Motion Sensor—A Validation Study}
+      \field{volume}{12}
+      \field{year}{2022}
+      \field{pages}{1195}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/diagnostics12051195
       \endverb
     \endentry
     \entry{heinzer2018}{article}{}{}
@@ -698,8 +1193,8 @@
       \strng{authornamehash}{bcc80422e219397daa646fd5add8534f}
       \strng{authorfullhash}{bcc80422e219397daa646fd5add8534f}
       \strng{authorfullhashraw}{bcc80422e219397daa646fd5add8534f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1389-9457}
@@ -788,8 +1283,8 @@
       \strng{authornamehash}{1c9e0b422a53e22a1696a180ed760d64}
       \strng{authorfullhash}{1c9e0b422a53e22a1696a180ed760d64}
       \strng{authorfullhashraw}{1c9e0b422a53e22a1696a180ed760d64}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{J Clin Sleep Med}
@@ -808,137 +1303,6 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.5664/jcsm.8752
-      \endverb
-    \endentry
-    \entry{psg_paper}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=eb75654ff5c334b4aefa26f389fe9640}{%
-           family={Markun},
-           familyi={M\bibinitperiod},
-           given={Sampa},
-           giveni={S\bibinitperiod},
-           suffix={L.C.},
-           suffixi={L\bibinitperiod}}}%
-      }
-      \strng{namehash}{eb75654ff5c334b4aefa26f389fe9640}
-      \strng{fullhash}{eb75654ff5c334b4aefa26f389fe9640}
-      \strng{fullhashraw}{eb75654ff5c334b4aefa26f389fe9640}
-      \strng{bibnamehash}{eb75654ff5c334b4aefa26f389fe9640}
-      \strng{authorbibnamehash}{eb75654ff5c334b4aefa26f389fe9640}
-      \strng{authornamehash}{eb75654ff5c334b4aefa26f389fe9640}
-      \strng{authorfullhash}{eb75654ff5c334b4aefa26f389fe9640}
-      \strng{authorfullhashraw}{eb75654ff5c334b4aefa26f389fe9640}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Curr Sleep Medicine}
-      \field{title}{Clinician-Focused Overview and Developments in Polysomnography}
-      \field{year}{2020}
-      \verb{doi}
-      \verb https://doi.org/10.1007/s40675-020-00197-5
-      \endverb
-    \endentry
-    \entry{kushida2005psg}{article}{}{}
-      \name{author}{15}{}{%
-        {{hash=0e481dc149d224878521dd7ceeb1bdba}{%
-           family={Kushida},
-           familyi={K\bibinitperiod},
-           given={C.A.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=e71eebb92b9e3cbbcf7c021e33d5bb71}{%
-           family={Littner},
-           familyi={L\bibinitperiod},
-           given={M.R.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=2cfdae22e121f53427f6ca98f620f061}{%
-           family={Morgenthaler},
-           familyi={M\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
-        {{hash=f02dfb59a4882d8441c9b7b6711eb679}{%
-           family={Alessi},
-           familyi={A\bibinitperiod},
-           given={C.A.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=e2b0e7f8ba23371bed04e487a96cd028}{%
-           family={Bailey},
-           familyi={B\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=41d0393e51129d6330c55b24ead979bd}{%
-           family={Coleman},
-           familyi={C\bibinitperiod},
-           given={J.\bibnamedelimi Jr},
-           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-        {{hash=6f1c8578e8a13401454792ade6f2bc99}{%
-           family={Friedman},
-           familyi={F\bibinitperiod},
-           given={L.},
-           giveni={L\bibinitperiod}}}%
-        {{hash=c8d4a7ae08981c556971ca08d6b701f2}{%
-           family={Hirshkowitz},
-           familyi={H\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=634592f7a720ec802952f9725d0af70d}{%
-           family={Kapen},
-           familyi={K\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=d60583cde39d3554f09f99a0ea1b35fb}{%
-           family={Kramer},
-           familyi={K\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=8cfdb18c46d8a872ec2318bfdfa3f4b1}{%
-           family={Lee-Chiong},
-           familyi={L\bibinithyphendelim C\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
-        {{hash=f9d207034c57b2a1216b9f0e9675f958}{%
-           family={Loube},
-           familyi={L\bibinitperiod},
-           given={D.L.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=5d6281280317120264aa0a8a8f522145}{%
-           family={Owens},
-           familyi={O\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=2ce341028abf4c4a875c3523548bf51e}{%
-           family={Pancer},
-           familyi={P\bibinitperiod},
-           given={J.P.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=96dbf61f2ad60ed13c432b9d3f8c18be}{%
-           family={Wise},
-           familyi={W\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{111aca9e0bdacbcd6fd32a34992b53d6}
-      \strng{fullhash}{111aca9e0bdacbcd6fd32a34992b53d6}
-      \strng{fullhashraw}{111aca9e0bdacbcd6fd32a34992b53d6}
-      \strng{bibnamehash}{111aca9e0bdacbcd6fd32a34992b53d6}
-      \strng{authorbibnamehash}{111aca9e0bdacbcd6fd32a34992b53d6}
-      \strng{authornamehash}{111aca9e0bdacbcd6fd32a34992b53d6}
-      \strng{authorfullhash}{111aca9e0bdacbcd6fd32a34992b53d6}
-      \strng{authorfullhashraw}{111aca9e0bdacbcd6fd32a34992b53d6}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Sleep}
-      \field{month}{4}
-      \field{number}{4}
-      \field{title}{Practice parameters for the indications for polysomnography and related procedures: an update for 2005}
-      \field{volume}{28}
-      \field{year}{2005}
-      \field{pages}{499\bibrangedash 521}
-      \range{pages}{23}
-      \verb{doi}
-      \verb 10.1093/sleep/28.4.499
       \endverb
     \endentry
     \entry{e3hst}{article}{}{}
@@ -967,8 +1331,8 @@
       \strng{authornamehash}{da23caae76eb08b330d66b7e398fff55}
       \strng{authorfullhash}{da23caae76eb08b330d66b7e398fff55}
       \strng{authorfullhashraw}{da23caae76eb08b330d66b7e398fff55}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Frontiers in Neurology}
@@ -1217,8 +1581,8 @@
       \strng{authornamehash}{46dbfde3e9f9d33fc9460a74d007497f}
       \strng{authorfullhash}{46dbfde3e9f9d33fc9460a74d007497f}
       \strng{authorfullhashraw}{46dbfde3e9f9d33fc9460a74d007497f}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Issue on Information and Communications Technology}
@@ -1267,8 +1631,8 @@
       \strng{authornamehash}{bc58642bb0ad5c0ff52b2965484e9fe4}
       \strng{authorfullhash}{bc58642bb0ad5c0ff52b2965484e9fe4}
       \strng{authorfullhashraw}{bc58642bb0ad5c0ff52b2965484e9fe4}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1573-689X}
@@ -1313,8 +1677,8 @@
       \strng{authornamehash}{49b85f8f54cf2345acda6dcb2a8806e3}
       \strng{authorfullhash}{49b85f8f54cf2345acda6dcb2a8806e3}
       \strng{authorfullhashraw}{49b85f8f54cf2345acda6dcb2a8806e3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Applied Mathematics and Data Science}
@@ -1373,8 +1737,8 @@
       \strng{authornamehash}{fdb1997d1a11a6bdddbc91e539b6e584}
       \strng{authorfullhash}{fdb1997d1a11a6bdddbc91e539b6e584}
       \strng{authorfullhashraw}{fdb1997d1a11a6bdddbc91e539b6e584}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2079-6374}
@@ -1416,8 +1780,8 @@
       \strng{authornamehash}{4c67d5268f413e83454c8adc14ab43c3}
       \strng{authorfullhash}{4c67d5268f413e83454c8adc14ab43c3}
       \strng{authorfullhashraw}{4c67d5268f413e83454c8adc14ab43c3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0885-6125}
@@ -1459,8 +1823,8 @@
       \strng{authornamehash}{bd5aa4c9f1fa99ed38dd819bd9f42961}
       \strng{authorfullhash}{bd5aa4c9f1fa99ed38dd819bd9f42961}
       \strng{authorfullhashraw}{bd5aa4c9f1fa99ed38dd819bd9f42961}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Multiple Classifier Systems}
@@ -1502,8 +1866,8 @@
       \strng{authornamehash}{a054707c9aa64157a2614f2ce866ffaf}
       \strng{authorfullhash}{a054707c9aa64157a2614f2ce866ffaf}
       \strng{authorfullhashraw}{a054707c9aa64157a2614f2ce866ffaf}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0921-7126}
@@ -1716,74 +2080,6 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.3390/e26100817
-      \endverb
-    \endentry
-    \entry{Vu2025SleepPosition}{article}{}{}
-      \name{author}{7}{}{%
-        {{hash=f15f452e83192021a095e89872dd63a4}{%
-           family={HD},
-           familyi={H\bibinitperiod},
-           given={Vu},
-           giveni={V\bibinitperiod}}}%
-        {{hash=cea9824888e79d7734bdd120c95b5853}{%
-           family={DN},
-           familyi={D\bibinitperiod},
-           given={Tran},
-           giveni={T\bibinitperiod}}}%
-        {{hash=483102be49a55c0d654bc9aaa571e37d}{%
-           family={HH},
-           familyi={H\bibinitperiod},
-           given={Pham},
-           giveni={P\bibinitperiod}}}%
-        {{hash=53dcd71e5a19552b929c5a1d38577cd9}{%
-           family={DD},
-           familyi={D\bibinitperiod},
-           given={Pham},
-           giveni={P\bibinitperiod}}}%
-        {{hash=803af89939beb6ecc0d89c7e8cc5cc71}{%
-           family={KL},
-           familyi={K\bibinitperiod},
-           given={Can},
-           giveni={C\bibinitperiod}}}%
-        {{hash=a33ac5f175cb5373674be5a4149563d9}{%
-           family={TH},
-           familyi={T\bibinitperiod},
-           given={Dao},
-           giveni={D\bibinitperiod}}}%
-        {{hash=62cc1cf9fb5b843d17c5f2550ff99a32}{%
-           family={DT},
-           familyi={D\bibinitperiod},
-           given={Tran},
-           giveni={T\bibinitperiod}}}%
-      }
-      \strng{namehash}{18ca756802db400472cbc71c008086bc}
-      \strng{fullhash}{18ca756802db400472cbc71c008086bc}
-      \strng{fullhashraw}{18ca756802db400472cbc71c008086bc}
-      \strng{bibnamehash}{18ca756802db400472cbc71c008086bc}
-      \strng{authorbibnamehash}{18ca756802db400472cbc71c008086bc}
-      \strng{authornamehash}{18ca756802db400472cbc71c008086bc}
-      \strng{authorfullhash}{18ca756802db400472cbc71c008086bc}
-      \strng{authorfullhashraw}{18ca756802db400472cbc71c008086bc}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Sleep Breath}
-      \field{month}{2}
-      \field{number}{1}
-      \field{title}{Human sleep position classification using a lightweight model and acceleration data}
-      \field{volume}{29}
-      \field{year}{2025}
-      \field{pages}{95}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1007/s11325-025-03247-w
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1007/s11325-025-03247-w
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1007/s11325-025-03247-w
       \endverb
     \endentry
     \entry{ray2021tinyml}{article}{}{}
@@ -2052,8 +2348,8 @@
       \strng{authornamehash}{e47095134feba1df0185a53bb171548c}
       \strng{authorfullhash}{e47095134feba1df0185a53bb171548c}
       \strng{authorfullhashraw}{e47095134feba1df0185a53bb171548c}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Personalized Medicine}
@@ -2085,8 +2381,8 @@
       \strng{authornamehash}{a717c46b01cd86b8b8bb7a1a6249ac6b}
       \strng{authorfullhash}{a717c46b01cd86b8b8bb7a1a6249ac6b}
       \strng{authorfullhashraw}{a717c46b01cd86b8b8bb7a1a6249ac6b}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nature and Science of Sleep}
@@ -2127,8 +2423,8 @@
       \strng{authornamehash}{6a25e388b7422dc5b27ce356ec0d3e71}
       \strng{authorfullhash}{6a25e388b7422dc5b27ce356ec0d3e71}
       \strng{authorfullhashraw}{6a25e388b7422dc5b27ce356ec0d3e71}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0012-3692}
@@ -2144,58 +2440,46 @@
       \verb 10.1378/chest.06.2287
       \endverb
     \endentry
-    \entry{wright1997health}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=085638ce2d004b105f106fca49a7c8e7}{%
-           family={Wright},
-           familyi={W\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=550fd3e73cfc4a4e6a97f8012b8b4d56}{%
-           family={Johns},
-           familyi={J\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-        {{hash=787aff22391f166f54cd50ebfe8c4a4d}{%
-           family={Watt},
-           familyi={W\bibinitperiod},
-           given={I.},
-           giveni={I\bibinitperiod}}}%
-        {{hash=5cbd4260f9a6ac37c36d9db7e200baac}{%
-           family={Melville},
-           familyi={M\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=ad08c66e5028d0b644374961ad4a5ff6}{%
-           family={Sheldon},
+    \entry{Spicuzza2015_nguyen_nhan}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=7d63774ce3aae41aac4a1233cc1d39cf}{%
+           family={Spicuzza},
            familyi={S\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=4f74d7618fa5f69b0f35c1c28d10ab02}{%
+           family={Caruso},
+           familyi={C\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=59b3a480684d93168b0bc2abf92cf68c}{%
+           family={Di\bibnamedelima Maria},
+           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
       }
-      \strng{namehash}{843b205e47ef5cab8c3297e759067b13}
-      \strng{fullhash}{843b205e47ef5cab8c3297e759067b13}
-      \strng{fullhashraw}{843b205e47ef5cab8c3297e759067b13}
-      \strng{bibnamehash}{843b205e47ef5cab8c3297e759067b13}
-      \strng{authorbibnamehash}{843b205e47ef5cab8c3297e759067b13}
-      \strng{authornamehash}{843b205e47ef5cab8c3297e759067b13}
-      \strng{authorfullhash}{843b205e47ef5cab8c3297e759067b13}
-      \strng{authorfullhashraw}{843b205e47ef5cab8c3297e759067b13}
+      \strng{namehash}{2d271add5ac1778615f735aa276aa8d1}
+      \strng{fullhash}{2d271add5ac1778615f735aa276aa8d1}
+      \strng{fullhashraw}{2d271add5ac1778615f735aa276aa8d1}
+      \strng{bibnamehash}{2d271add5ac1778615f735aa276aa8d1}
+      \strng{authorbibnamehash}{2d271add5ac1778615f735aa276aa8d1}
+      \strng{authornamehash}{2d271add5ac1778615f735aa276aa8d1}
+      \strng{authorfullhash}{2d271add5ac1778615f735aa276aa8d1}
+      \strng{authorfullhashraw}{2d271add5ac1778615f735aa276aa8d1}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{BMJ}
-      \field{number}{7084}
-      \field{title}{Health effects of obstructive sleep apnoea and the effectiveness of continuous positive airways pressure: a systematic review of the research evidence}
-      \field{volume}{314}
-      \field{year}{1997}
-      \field{pages}{851\bibrangedash 858}
-      \range{pages}{8}
-      \verb{urlraw}
-      \verb http://www.ncbi.nlm.nih.gov/pubmed/9093094
-      \endverb
-      \verb{url}
-      \verb http://www.ncbi.nlm.nih.gov/pubmed/9093094
+      \field{journaltitle}{Therapeutic Advances in Chronic Disease}
+      \field{month}{9}
+      \field{number}{5}
+      \field{title}{Obstructive sleep apnoea syndrome and its management}
+      \field{volume}{6}
+      \field{year}{2015}
+      \field{pages}{273\bibrangedash 285}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1177/2040622315590318
       \endverb
     \endentry
     \entry{reason_osa}{article}{}{}
@@ -2296,6 +2580,307 @@
       \verb 10.2147/NSS.S124657
       \endverb
     \endentry
+    \entry{flemons1997quality}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=3fb6003e03fbc7bc41bff2ca00f09e65}{%
+           family={Flemons},
+           familyi={F\bibinitperiod},
+           given={W.\bibnamedelimi W.},
+           giveni={W\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=2ffed7245f839f0448b97e39701496af}{%
+           family={Tsai},
+           familyi={T\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{c1de7e1edc4e81669e8f536b37a7d129}
+      \strng{fullhash}{c1de7e1edc4e81669e8f536b37a7d129}
+      \strng{fullhashraw}{c1de7e1edc4e81669e8f536b37a7d129}
+      \strng{bibnamehash}{c1de7e1edc4e81669e8f536b37a7d129}
+      \strng{authorbibnamehash}{c1de7e1edc4e81669e8f536b37a7d129}
+      \strng{authornamehash}{c1de7e1edc4e81669e8f536b37a7d129}
+      \strng{authorfullhash}{c1de7e1edc4e81669e8f536b37a7d129}
+      \strng{authorfullhashraw}{c1de7e1edc4e81669e8f536b37a7d129}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Allergy and Clinical Immunology}
+      \field{number}{2}
+      \field{title}{Quality of life consequences of sleep-disordered breathing}
+      \field{volume}{99}
+      \field{year}{1997}
+      \field{pages}{S750\bibrangedash S756}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1016/s0091-6749(97)70123-4
+      \endverb
+    \endentry
+    \entry{wright1997health}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=085638ce2d004b105f106fca49a7c8e7}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=550fd3e73cfc4a4e6a97f8012b8b4d56}{%
+           family={Johns},
+           familyi={J\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=787aff22391f166f54cd50ebfe8c4a4d}{%
+           family={Watt},
+           familyi={W\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=5cbd4260f9a6ac37c36d9db7e200baac}{%
+           family={Melville},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ad08c66e5028d0b644374961ad4a5ff6}{%
+           family={Sheldon},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{843b205e47ef5cab8c3297e759067b13}
+      \strng{fullhash}{843b205e47ef5cab8c3297e759067b13}
+      \strng{fullhashraw}{843b205e47ef5cab8c3297e759067b13}
+      \strng{bibnamehash}{843b205e47ef5cab8c3297e759067b13}
+      \strng{authorbibnamehash}{843b205e47ef5cab8c3297e759067b13}
+      \strng{authornamehash}{843b205e47ef5cab8c3297e759067b13}
+      \strng{authorfullhash}{843b205e47ef5cab8c3297e759067b13}
+      \strng{authorfullhashraw}{843b205e47ef5cab8c3297e759067b13}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{BMJ}
+      \field{number}{7084}
+      \field{title}{Health effects of obstructive sleep apnoea and the effectiveness of continuous positive airways pressure: a systematic review of the research evidence}
+      \field{volume}{314}
+      \field{year}{1997}
+      \field{pages}{851\bibrangedash 858}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb http://www.ncbi.nlm.nih.gov/pubmed/9093094
+      \endverb
+      \verb{url}
+      \verb http://www.ncbi.nlm.nih.gov/pubmed/9093094
+      \endverb
+    \endentry
+    \entry{Zinchuk2018}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=6d2b882535a8f4b1b1e9f1604e54ad9c}{%
+           family={AV},
+           familyi={A\bibinitperiod},
+           given={Zinchuk},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=606f5da2307d6ff35bcbfd258bb82dc9}{%
+           family={S},
+           familyi={S\bibinitperiod},
+           given={Jeon},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f479b2bfcb9c3adcb2695d556490f22f}{%
+           family={BB},
+           familyi={B\bibinitperiod},
+           given={Koo},
+           giveni={K\bibinitperiod}}}%
+        {{hash=61b40132eb6af6c3315d5b265d0bb9ea}{%
+           family={X},
+           familyi={X\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=648e538828db61516e0082362e9f5a77}{%
+           family={DM},
+           familyi={D\bibinitperiod},
+           given={Bravata},
+           giveni={B\bibinitperiod}}}%
+        {{hash=150bb0f1cada454f6d4f6467232f4e88}{%
+           family={L},
+           familyi={L\bibinitperiod},
+           given={Qin},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=c943d1220d10346f021612a3373dcdd4}{%
+           family={HK},
+           familyi={H\bibinitperiod},
+           given={Yaggi},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ffea0d1c33f97d4ac576c46718962e1}
+      \strng{fullhash}{2ffea0d1c33f97d4ac576c46718962e1}
+      \strng{fullhashraw}{2ffea0d1c33f97d4ac576c46718962e1}
+      \strng{bibnamehash}{2ffea0d1c33f97d4ac576c46718962e1}
+      \strng{authorbibnamehash}{2ffea0d1c33f97d4ac576c46718962e1}
+      \strng{authornamehash}{2ffea0d1c33f97d4ac576c46718962e1}
+      \strng{authorfullhash}{2ffea0d1c33f97d4ac576c46718962e1}
+      \strng{authorfullhashraw}{2ffea0d1c33f97d4ac576c46718962e1}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Thorax}
+      \field{number}{5}
+      \field{title}{Polysomnographic phenotypes and their cardiovascular implications in obstructive sleep apnoea}
+      \field{volume}{73}
+      \field{year}{2018}
+      \field{pages}{472\bibrangedash 480}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1136/thoraxjnl-2017-210431
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1136/thoraxjnl-2017-210431
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1136/thoraxjnl-2017-210431
+      \endverb
+    \endentry
+    \entry{young1997population}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=251b883de10fca4329c7e5db2211a376}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1305161ab777edfcca94ce9d7e29db9c}{%
+           family={Peppard},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=84c4423d7caff298d261f30b95145e59}{%
+           family={Palta},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f87671ef7276a613707a52c77a6b88be}{%
+           family={Hla},
+           familyi={H\bibinitperiod},
+           given={K.\bibnamedelimi M.},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b15d1adac6a244d2eed5aca83f243544}{%
+           family={Finn},
+           familyi={F\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=7bf7ed2b9277e956877ef99ec1a1fdf6}{%
+           family={Morgan},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5174801cdecb336b72a3abafc23ade8f}{%
+           family={Skatrud},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{d0db6fa6f31a635ab9941f057b57f9c4}
+      \strng{fullhash}{d0db6fa6f31a635ab9941f057b57f9c4}
+      \strng{fullhashraw}{d0db6fa6f31a635ab9941f057b57f9c4}
+      \strng{bibnamehash}{d0db6fa6f31a635ab9941f057b57f9c4}
+      \strng{authorbibnamehash}{d0db6fa6f31a635ab9941f057b57f9c4}
+      \strng{authornamehash}{d0db6fa6f31a635ab9941f057b57f9c4}
+      \strng{authorfullhash}{d0db6fa6f31a635ab9941f057b57f9c4}
+      \strng{authorfullhashraw}{d0db6fa6f31a635ab9941f057b57f9c4}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Archives of Internal Medicine}
+      \field{title}{Population based study of sleep disordered breathing as a risk factor for hypertension}
+      \field{volume}{157}
+      \field{year}{1997}
+      \field{pages}{1746\bibrangedash 1752}
+      \range{pages}{7}
+    \endentry
+    \entry{ThaySUCHildren}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=c8b8569c2145f3757920210d35638e68}{%
+           family={Nguyen-Thi-Phuong},
+           familyi={N\bibinithyphendelim T\bibinithyphendelim P\bibinitperiod},
+           given={Mai},
+           giveni={M\bibinitperiod}}}%
+        {{hash=76991c1d4355db1c9951f0006ef832aa}{%
+           family={Nguyen-Thi-Thanh},
+           familyi={N\bibinithyphendelim T\bibinithyphendelim T\bibinitperiod},
+           given={Mai},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fd71d94593d9e2e4fd7a28093d92d46a}{%
+           family={Nguyen-Thi-Dieu},
+           familyi={N\bibinithyphendelim T\bibinithyphendelim D\bibinitperiod},
+           given={Thuy},
+           giveni={T\bibinitperiod}}}%
+        {{hash=22e451049def6b25343e2347e8657556}{%
+           family={Duong-Quy},
+           familyi={D\bibinithyphendelim Q\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{6cc62492d23cf18ee0bb92a5bbd8d661}
+      \strng{fullhash}{6cc62492d23cf18ee0bb92a5bbd8d661}
+      \strng{fullhashraw}{6cc62492d23cf18ee0bb92a5bbd8d661}
+      \strng{bibnamehash}{6cc62492d23cf18ee0bb92a5bbd8d661}
+      \strng{authorbibnamehash}{6cc62492d23cf18ee0bb92a5bbd8d661}
+      \strng{authornamehash}{6cc62492d23cf18ee0bb92a5bbd8d661}
+      \strng{authorfullhash}{6cc62492d23cf18ee0bb92a5bbd8d661}
+      \strng{authorfullhashraw}{6cc62492d23cf18ee0bb92a5bbd8d661}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pulmonary therapy}
+      \field{month}{1}
+      \field{title}{Prevalence of Obstructive Sleep Apnea in Vietnamese Children with Attention Deficit Hyperactivity Disorder (ADHD)}
+      \field{volume}{11}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1007/s41030-024-00286-8
+      \endverb
+    \endentry
+    \entry{Cary2021_tu_the_ngủ}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=19880ac14a462468abf00bce2998b658}{%
+           family={Cary},
+           familyi={C\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=83ff37113dc6915ea1c9331289cd5757}{%
+           family={Jacques},
+           familyi={J\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4248dd39bde4ce302f2fa5ac7f4514e9}{%
+           family={Briffa},
+           familyi={B\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{fullhash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{fullhashraw}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{bibnamehash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{authorbibnamehash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{authornamehash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{authorfullhash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{authorfullhashraw}{d4159c2fb33da16548a4583acd7cf055}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PLoS One}
+      \field{month}{11}
+      \field{note}{Erratum in: PLoS One. 2024 Jul 2;19(7):e0306662. doi: 10.1371/journal.pone.0306662.}
+      \field{number}{11}
+      \field{title}{Examining relationships between sleep posture, waking spinal symptoms and quality of sleep: A cross sectional study}
+      \field{volume}{16}
+      \field{year}{2021}
+      \field{pages}{e0260582}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0260582
+      \endverb
+    \endentry
     \entry{aloweidat2023positional}{article}{}{}
       \name{author}{5}{}{%
         {{hash=e1660d7801061520caa2a0edbf0b4e77}{%
@@ -2332,8 +2917,8 @@
       \strng{authornamehash}{4060d59d3cf9e31d174e564b57bba9c1}
       \strng{authorfullhash}{4060d59d3cf9e31d174e564b57bba9c1}
       \strng{authorfullhashraw}{4060d59d3cf9e31d174e564b57bba9c1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Respir Med}
@@ -2373,8 +2958,8 @@
       \strng{authorfullhash}{e3a5573a93f7a024d9a26c708a9b762a}
       \strng{authorfullhashraw}{e3a5573a93f7a024d9a26c708a9b762a}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0161-8105}
@@ -2436,8 +3021,8 @@
       \strng{authornamehash}{d44903cf4f645d6cbb65477649db208b}
       \strng{authorfullhash}{d44903cf4f645d6cbb65477649db208b}
       \strng{authorfullhashraw}{d44903cf4f645d6cbb65477649db208b}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0012-3692}
@@ -2489,8 +3074,8 @@
       \strng{authornamehash}{c2f3e0ea8f4d7299927d031bd605732a}
       \strng{authorfullhash}{c2f3e0ea8f4d7299927d031bd605732a}
       \strng{authorfullhashraw}{c2f3e0ea8f4d7299927d031bd605732a}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1387-1307}
@@ -2558,8 +3143,8 @@
       \strng{authornamehash}{c287160ab6769879fc04348aa8f01bc1}
       \strng{authorfullhash}{c287160ab6769879fc04348aa8f01bc1}
       \strng{authorfullhashraw}{c287160ab6769879fc04348aa8f01bc1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1520-9512}
@@ -2581,165 +3166,42 @@
       \verb https://doi.org/10.1007/s11325-014-1022-9
       \endverb
     \endentry
-    \entry{flemons1997quality}{article}{}{}
+    \entry{Gottlieb2020_psg}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=3fb6003e03fbc7bc41bff2ca00f09e65}{%
-           family={Flemons},
-           familyi={F\bibinitperiod},
-           given={W.\bibnamedelimi W.},
-           giveni={W\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-        {{hash=2ffed7245f839f0448b97e39701496af}{%
-           family={Tsai},
-           familyi={T\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{c1de7e1edc4e81669e8f536b37a7d129}
-      \strng{fullhash}{c1de7e1edc4e81669e8f536b37a7d129}
-      \strng{fullhashraw}{c1de7e1edc4e81669e8f536b37a7d129}
-      \strng{bibnamehash}{c1de7e1edc4e81669e8f536b37a7d129}
-      \strng{authorbibnamehash}{c1de7e1edc4e81669e8f536b37a7d129}
-      \strng{authornamehash}{c1de7e1edc4e81669e8f536b37a7d129}
-      \strng{authorfullhash}{c1de7e1edc4e81669e8f536b37a7d129}
-      \strng{authorfullhashraw}{c1de7e1edc4e81669e8f536b37a7d129}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Allergy and Clinical Immunology}
-      \field{number}{2}
-      \field{title}{Quality of life consequences of sleep-disordered breathing}
-      \field{volume}{99}
-      \field{year}{1997}
-      \field{pages}{S750\bibrangedash S756}
-      \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1016/s0091-6749(97)70123-4
-      \endverb
-    \endentry
-    \entry{Zinchuk2018}{article}{}{}
-      \name{author}{7}{}{%
-        {{hash=6d2b882535a8f4b1b1e9f1604e54ad9c}{%
-           family={AV},
-           familyi={A\bibinitperiod},
-           given={Zinchuk},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=606f5da2307d6ff35bcbfd258bb82dc9}{%
-           family={S},
-           familyi={S\bibinitperiod},
-           given={Jeon},
-           giveni={J\bibinitperiod}}}%
-        {{hash=f479b2bfcb9c3adcb2695d556490f22f}{%
-           family={BB},
-           familyi={B\bibinitperiod},
-           given={Koo},
-           giveni={K\bibinitperiod}}}%
-        {{hash=61b40132eb6af6c3315d5b265d0bb9ea}{%
-           family={X},
-           familyi={X\bibinitperiod},
-           given={Yan},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=648e538828db61516e0082362e9f5a77}{%
-           family={DM},
-           familyi={D\bibinitperiod},
-           given={Bravata},
-           giveni={B\bibinitperiod}}}%
-        {{hash=150bb0f1cada454f6d4f6467232f4e88}{%
-           family={L},
-           familyi={L\bibinitperiod},
-           given={Qin},
-           giveni={Q\bibinitperiod}}}%
-        {{hash=c943d1220d10346f021612a3373dcdd4}{%
-           family={HK},
-           familyi={H\bibinitperiod},
-           given={Yaggi},
-           giveni={Y\bibinitperiod}}}%
-      }
-      \strng{namehash}{2ffea0d1c33f97d4ac576c46718962e1}
-      \strng{fullhash}{2ffea0d1c33f97d4ac576c46718962e1}
-      \strng{fullhashraw}{2ffea0d1c33f97d4ac576c46718962e1}
-      \strng{bibnamehash}{2ffea0d1c33f97d4ac576c46718962e1}
-      \strng{authorbibnamehash}{2ffea0d1c33f97d4ac576c46718962e1}
-      \strng{authornamehash}{2ffea0d1c33f97d4ac576c46718962e1}
-      \strng{authorfullhash}{2ffea0d1c33f97d4ac576c46718962e1}
-      \strng{authorfullhashraw}{2ffea0d1c33f97d4ac576c46718962e1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Thorax}
-      \field{number}{5}
-      \field{title}{Polysomnographic phenotypes and their cardiovascular implications in obstructive sleep apnoea}
-      \field{volume}{73}
-      \field{year}{2018}
-      \field{pages}{472\bibrangedash 480}
-      \range{pages}{9}
-      \verb{doi}
-      \verb 10.1136/thoraxjnl-2017-210431
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1136/thoraxjnl-2017-210431
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1136/thoraxjnl-2017-210431
-      \endverb
-    \endentry
-    \entry{young1997population}{article}{}{}
-      \name{author}{7}{}{%
-        {{hash=251b883de10fca4329c7e5db2211a376}{%
-           family={Young},
-           familyi={Y\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
-        {{hash=1305161ab777edfcca94ce9d7e29db9c}{%
-           family={Peppard},
+        {{hash=08c6a069537bd472800f16e9bfc25734}{%
+           family={Gottlieb},
+           familyi={G\bibinitperiod},
+           given={D.\bibnamedelimi J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=7bd407cc0a0287d0c594616979868ad6}{%
+           family={Punjabi},
            familyi={P\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=84c4423d7caff298d261f30b95145e59}{%
-           family={Palta},
-           familyi={P\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=f87671ef7276a613707a52c77a6b88be}{%
-           family={Hla},
-           familyi={H\bibinitperiod},
-           given={K.\bibnamedelimi M.},
-           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=b15d1adac6a244d2eed5aca83f243544}{%
-           family={Finn},
-           familyi={F\bibinitperiod},
-           given={L.},
-           giveni={L\bibinitperiod}}}%
-        {{hash=7bf7ed2b9277e956877ef99ec1a1fdf6}{%
-           family={Morgan},
-           familyi={M\bibinitperiod},
-           given={B.},
-           giveni={B\bibinitperiod}}}%
-        {{hash=5174801cdecb336b72a3abafc23ade8f}{%
-           family={Skatrud},
-           familyi={S\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
+           given={N.\bibnamedelimi M.},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
       }
-      \strng{namehash}{d0db6fa6f31a635ab9941f057b57f9c4}
-      \strng{fullhash}{d0db6fa6f31a635ab9941f057b57f9c4}
-      \strng{fullhashraw}{d0db6fa6f31a635ab9941f057b57f9c4}
-      \strng{bibnamehash}{d0db6fa6f31a635ab9941f057b57f9c4}
-      \strng{authorbibnamehash}{d0db6fa6f31a635ab9941f057b57f9c4}
-      \strng{authornamehash}{d0db6fa6f31a635ab9941f057b57f9c4}
-      \strng{authorfullhash}{d0db6fa6f31a635ab9941f057b57f9c4}
-      \strng{authorfullhashraw}{d0db6fa6f31a635ab9941f057b57f9c4}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \strng{namehash}{faf8bb5378d89bf97b89278dec9e0b98}
+      \strng{fullhash}{faf8bb5378d89bf97b89278dec9e0b98}
+      \strng{fullhashraw}{faf8bb5378d89bf97b89278dec9e0b98}
+      \strng{bibnamehash}{faf8bb5378d89bf97b89278dec9e0b98}
+      \strng{authorbibnamehash}{faf8bb5378d89bf97b89278dec9e0b98}
+      \strng{authornamehash}{faf8bb5378d89bf97b89278dec9e0b98}
+      \strng{authorfullhash}{faf8bb5378d89bf97b89278dec9e0b98}
+      \strng{authorfullhashraw}{faf8bb5378d89bf97b89278dec9e0b98}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Archives of Internal Medicine}
-      \field{title}{Population based study of sleep disordered breathing as a risk factor for hypertension}
-      \field{volume}{157}
-      \field{year}{1997}
-      \field{pages}{1746\bibrangedash 1752}
-      \range{pages}{7}
+      \field{journaltitle}{JAMA}
+      \field{month}{4}
+      \field{number}{14}
+      \field{title}{Diagnosis and Management of Obstructive Sleep Apnea: A Review}
+      \field{volume}{323}
+      \field{year}{2020}
+      \field{pages}{1389\bibrangedash 1400}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1001/jama.2020.3514
+      \endverb
     \endentry
     \entry{diagnosis_osa}{article}{}{}
       \name{author}{1}{}{%
@@ -2757,8 +3219,8 @@
       \strng{authornamehash}{3f8c486465a6448cb7425caffd053628}
       \strng{authorfullhash}{3f8c486465a6448cb7425caffd053628}
       \strng{authorfullhashraw}{3f8c486465a6448cb7425caffd053628}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Mo Med}
@@ -2779,8 +3241,8 @@
       \strng{authornamehash}{878242b1d88b33537351b3227a94d21c}
       \strng{authorfullhash}{878242b1d88b33537351b3227a94d21c}
       \strng{authorfullhashraw}{878242b1d88b33537351b3227a94d21c}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Ontario Health Technology Assessment Series}
@@ -2791,6 +3253,137 @@
       \field{year}{2006}
       \field{pages}{1\bibrangedash 38}
       \range{pages}{38}
+    \endentry
+    \entry{psg_paper}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=eb75654ff5c334b4aefa26f389fe9640}{%
+           family={Markun},
+           familyi={M\bibinitperiod},
+           given={Sampa},
+           giveni={S\bibinitperiod},
+           suffix={L.C.},
+           suffixi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{eb75654ff5c334b4aefa26f389fe9640}
+      \strng{fullhash}{eb75654ff5c334b4aefa26f389fe9640}
+      \strng{fullhashraw}{eb75654ff5c334b4aefa26f389fe9640}
+      \strng{bibnamehash}{eb75654ff5c334b4aefa26f389fe9640}
+      \strng{authorbibnamehash}{eb75654ff5c334b4aefa26f389fe9640}
+      \strng{authornamehash}{eb75654ff5c334b4aefa26f389fe9640}
+      \strng{authorfullhash}{eb75654ff5c334b4aefa26f389fe9640}
+      \strng{authorfullhashraw}{eb75654ff5c334b4aefa26f389fe9640}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Curr Sleep Medicine}
+      \field{title}{Clinician-Focused Overview and Developments in Polysomnography}
+      \field{year}{2020}
+      \verb{doi}
+      \verb https://doi.org/10.1007/s40675-020-00197-5
+      \endverb
+    \endentry
+    \entry{kushida2005psg}{article}{}{}
+      \name{author}{15}{}{%
+        {{hash=0e481dc149d224878521dd7ceeb1bdba}{%
+           family={Kushida},
+           familyi={K\bibinitperiod},
+           given={C.A.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e71eebb92b9e3cbbcf7c021e33d5bb71}{%
+           family={Littner},
+           familyi={L\bibinitperiod},
+           given={M.R.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2cfdae22e121f53427f6ca98f620f061}{%
+           family={Morgenthaler},
+           familyi={M\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f02dfb59a4882d8441c9b7b6711eb679}{%
+           family={Alessi},
+           familyi={A\bibinitperiod},
+           given={C.A.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e2b0e7f8ba23371bed04e487a96cd028}{%
+           family={Bailey},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=41d0393e51129d6330c55b24ead979bd}{%
+           family={Coleman},
+           familyi={C\bibinitperiod},
+           given={J.\bibnamedelimi Jr},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6f1c8578e8a13401454792ade6f2bc99}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=c8d4a7ae08981c556971ca08d6b701f2}{%
+           family={Hirshkowitz},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=634592f7a720ec802952f9725d0af70d}{%
+           family={Kapen},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d60583cde39d3554f09f99a0ea1b35fb}{%
+           family={Kramer},
+           familyi={K\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8cfdb18c46d8a872ec2318bfdfa3f4b1}{%
+           family={Lee-Chiong},
+           familyi={L\bibinithyphendelim C\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f9d207034c57b2a1216b9f0e9675f958}{%
+           family={Loube},
+           familyi={L\bibinitperiod},
+           given={D.L.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5d6281280317120264aa0a8a8f522145}{%
+           family={Owens},
+           familyi={O\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2ce341028abf4c4a875c3523548bf51e}{%
+           family={Pancer},
+           familyi={P\bibinitperiod},
+           given={J.P.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=96dbf61f2ad60ed13c432b9d3f8c18be}{%
+           family={Wise},
+           familyi={W\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{111aca9e0bdacbcd6fd32a34992b53d6}
+      \strng{fullhash}{111aca9e0bdacbcd6fd32a34992b53d6}
+      \strng{fullhashraw}{111aca9e0bdacbcd6fd32a34992b53d6}
+      \strng{bibnamehash}{111aca9e0bdacbcd6fd32a34992b53d6}
+      \strng{authorbibnamehash}{111aca9e0bdacbcd6fd32a34992b53d6}
+      \strng{authornamehash}{111aca9e0bdacbcd6fd32a34992b53d6}
+      \strng{authorfullhash}{111aca9e0bdacbcd6fd32a34992b53d6}
+      \strng{authorfullhashraw}{111aca9e0bdacbcd6fd32a34992b53d6}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sleep}
+      \field{month}{4}
+      \field{number}{4}
+      \field{title}{Practice parameters for the indications for polysomnography and related procedures: an update for 2005}
+      \field{volume}{28}
+      \field{year}{2005}
+      \field{pages}{499\bibrangedash 521}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1093/sleep/28.4.499
+      \endverb
     \endentry
     \entry{jeon2020realtime}{inproceedings}{}{}
       \name{author}{3}{}{%
@@ -2821,8 +3414,8 @@
       \strng{authornamehash}{532cecd5ce1205c04ff6ebc39ce5c666}
       \strng{authorfullhash}{532cecd5ce1205c04ff6ebc39ce5c666}
       \strng{authorfullhashraw}{532cecd5ce1205c04ff6ebc39ce5c666}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2020 IEEE International Conference on Pervasive Computing and Communications Workshops (PerCom Workshops)}
@@ -2891,8 +3484,8 @@
       \strng{authornamehash}{b5dfdb6a62e5f646d6c929258be57c19}
       \strng{authorfullhash}{b5dfdb6a62e5f646d6c929258be57c19}
       \strng{authorfullhashraw}{b5dfdb6a62e5f646d6c929258be57c19}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0018-9294}
@@ -2956,8 +3549,8 @@
       \strng{authorfullhash}{eaecec87ac18a59eef124bc64c268b75}
       \strng{authorfullhashraw}{eaecec87ac18a59eef124bc64c268b75}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2168-2194}
@@ -3025,8 +3618,8 @@
       \strng{authorfullhash}{eaecec87ac18a59eef124bc64c268b75}
       \strng{authorfullhashraw}{eaecec87ac18a59eef124bc64c268b75}
       \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2168-2194}
@@ -3088,8 +3681,8 @@
       \strng{authornamehash}{ef6092e358e19deb3bea7aaf09dfcae4}
       \strng{authorfullhash}{ef6092e358e19deb3bea7aaf09dfcae4}
       \strng{authorfullhashraw}{ef6092e358e19deb3bea7aaf09dfcae4}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
@@ -3132,8 +3725,8 @@
       \strng{authornamehash}{f3599d3428e3ad9c219993532b02cd65}
       \strng{authorfullhash}{f3599d3428e3ad9c219993532b02cd65}
       \strng{authorfullhashraw}{f3599d3428e3ad9c219993532b02cd65}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Scientific Reports}
@@ -3183,8 +3776,8 @@
       \strng{authornamehash}{2c71f3a846fd1696fb4f2bf24f46a520}
       \strng{authorfullhash}{2c71f3a846fd1696fb4f2bf24f46a520}
       \strng{authorfullhashraw}{2c71f3a846fd1696fb4f2bf24f46a520}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Procedia Computer Science}
@@ -3244,8 +3837,8 @@
       \strng{authornamehash}{bdfa3dd16ba45d5144c147e0e90737ff}
       \strng{authorfullhash}{bdfa3dd16ba45d5144c147e0e90737ff}
       \strng{authorfullhashraw}{bdfa3dd16ba45d5144c147e0e90737ff}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2327-4662}
@@ -3284,8 +3877,8 @@
       \strng{authornamehash}{48f79b05f205b66a7a472d9c897adaff}
       \strng{authorfullhash}{48f79b05f205b66a7a472d9c897adaff}
       \strng{authorfullhashraw}{48f79b05f205b66a7a472d9c897adaff}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
@@ -3294,8 +3887,8 @@
       \field{year}{2020}
     \endentry
     \entry{hst_review}{online}{}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{month}{11}
       \field{note}{Available at \url{https://sleepreviewmag.com/sleep-diagnostics/home-testing/home-apnea-testing/hst-devices-guide/}}
@@ -3320,8 +3913,8 @@
       \strng{authornamehash}{03942d124c8b59712d0e078c8fd43a82}
       \strng{authorfullhash}{03942d124c8b59712d0e078c8fd43a82}
       \strng{authorfullhashraw}{03942d124c8b59712d0e078c8fd43a82}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
@@ -3349,8 +3942,8 @@
       \strng{authornamehash}{e8dea7fe6c9f761ef6da7ef8dca01524}
       \strng{authorfullhash}{e8dea7fe6c9f761ef6da7ef8dca01524}
       \strng{authorfullhashraw}{e8dea7fe6c9f761ef6da7ef8dca01524}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE International Conference}
@@ -3375,8 +3968,8 @@
       \strng{authornamehash}{6e9a9b71d6092f029936a4a589e3fd47}
       \strng{authorfullhash}{6e9a9b71d6092f029936a4a589e3fd47}
       \strng{authorfullhashraw}{6e9a9b71d6092f029936a4a589e3fd47}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Eur J Med Res}
@@ -3408,8 +4001,8 @@
       \strng{authornamehash}{e08adc721a3c3f843c5de3d6157be292}
       \strng{authorfullhash}{e08adc721a3c3f843c5de3d6157be292}
       \strng{authorfullhashraw}{e08adc721a3c3f843c5de3d6157be292}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Access}
@@ -3435,8 +4028,8 @@
       \strng{authornamehash}{a8caaca36fdb129112d8e8ee71c89c56}
       \strng{authorfullhash}{a8caaca36fdb129112d8e8ee71c89c56}
       \strng{authorfullhashraw}{a8caaca36fdb129112d8e8ee71c89c56}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ISRN Otolaryngol}
@@ -3458,8 +4051,8 @@
       \strng{authornamehash}{ecd8c1e5f9b83b58ff126143f8e65992}
       \strng{authorfullhash}{ecd8c1e5f9b83b58ff126143f8e65992}
       \strng{authorfullhashraw}{ecd8c1e5f9b83b58ff126143f8e65992}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ISRN Otolaryngol}
@@ -3511,8 +4104,8 @@
       \strng{authornamehash}{42ad3c5964206517c10f4de156d90bc0}
       \strng{authorfullhash}{42ad3c5964206517c10f4de156d90bc0}
       \strng{authorfullhashraw}{42ad3c5964206517c10f4de156d90bc0}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies}
@@ -3550,42 +4143,13 @@
       \strng{authornamehash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
       \strng{authorfullhash}{5531b34b6b41f1cf8aa7d4f05792b9e2}
       \strng{authorfullhashraw}{5531b34b6b41f1cf8aa7d4f05792b9e2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sleep and Biological Rhythms}
       \field{title}{Monitoring sleep with a smartphone accelerometer}
       \field{year}{2012}
-    \endentry
-    \entry{Ferrer_osa}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=221e95a7e254dca76c65699c6b1ad7ab}{%
-           family={Ferrer-Lluis\bibnamedelima I},
-           familyi={F\bibinithyphendelim L\bibinitperiod\bibinitdelim I\bibinitperiod},
-           given={Montserrat\bibnamedelimb JM\bibnamedelimb \& Jané\bibnamedelima R},
-           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim \\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim R\bibinitperiod},
-           suffix={Castillo-Escario\bibnamedelima Y},
-           suffixi={C\bibinithyphendelim E\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-      }
-      \strng{namehash}{221e95a7e254dca76c65699c6b1ad7ab}
-      \strng{fullhash}{221e95a7e254dca76c65699c6b1ad7ab}
-      \strng{fullhashraw}{221e95a7e254dca76c65699c6b1ad7ab}
-      \strng{bibnamehash}{221e95a7e254dca76c65699c6b1ad7ab}
-      \strng{authorbibnamehash}{221e95a7e254dca76c65699c6b1ad7ab}
-      \strng{authornamehash}{221e95a7e254dca76c65699c6b1ad7ab}
-      \strng{authorfullhash}{221e95a7e254dca76c65699c6b1ad7ab}
-      \strng{authorfullhashraw}{221e95a7e254dca76c65699c6b1ad7ab}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Sensors}
-      \field{title}{SleepPos App: An Automated Smartphone Application for Angle Based High Resolution Sleep Position Monitoring and Treatment}
-      \field{year}{2021}
-      \verb{doi}
-      \verb 10.3390/s21134531
-      \endverb
     \endentry
     \entry{Acce}{article}{}{}
       \name{author}{1}{}{%
@@ -3605,8 +4169,8 @@
       \strng{authornamehash}{09b7aa725365a54cb71e52eb0f3a720e}
       \strng{authorfullhash}{09b7aa725365a54cb71e52eb0f3a720e}
       \strng{authorfullhashraw}{09b7aa725365a54cb71e52eb0f3a720e}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Computer and Communications}
@@ -3644,8 +4208,8 @@
       \strng{authornamehash}{0d98fd7774692414a8c9537560b8a88a}
       \strng{authorfullhash}{0d98fd7774692414a8c9537560b8a88a}
       \strng{authorfullhashraw}{0d98fd7774692414a8c9537560b8a88a}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Hội nghị toàn quốc lần thứ 6 về tự động hoá (VICA6)}
@@ -3673,8 +4237,8 @@
       \strng{authornamehash}{ee51fd682f7ae907a9e1d9d32daaedec}
       \strng{authorfullhash}{ee51fd682f7ae907a9e1d9d32daaedec}
       \strng{authorfullhashraw}{ee51fd682f7ae907a9e1d9d32daaedec}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Conference on Biomedical Engineering in Vietnam}
@@ -3709,8 +4273,8 @@
       \strng{authornamehash}{31ef70e6705156db613b1509885d2b91}
       \strng{authorfullhash}{31ef70e6705156db613b1509885d2b91}
       \strng{authorfullhashraw}{31ef70e6705156db613b1509885d2b91}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
@@ -3775,8 +4339,8 @@
       \strng{authornamehash}{bbd746e66fec67f1fac5b88c9f6933a1}
       \strng{authorfullhash}{bbd746e66fec67f1fac5b88c9f6933a1}
       \strng{authorfullhashraw}{bbd746e66fec67f1fac5b88c9f6933a1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2076-3417}
@@ -3813,8 +4377,8 @@
       \strng{authornamehash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
       \strng{authorfullhash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
       \strng{authorfullhashraw}{45f5df5515dbc3f650fa4dd7ab4fc93e}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Transactions of the ASME--Journal of Basic Engineering}
@@ -4049,41 +4613,6 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.3390/mi13111880
-      \endverb
-    \endentry
-    \entry{abdulsadig2023}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=fcd26a176896693d54f34c891f26170a}{%
-           family={Abdulsadig},
-           familyi={A\bibinitperiod},
-           given={R.S.},
-           giveni={R\bibinitperiod}}}%
-        {{hash=1737d70def95d213714fb1c04844787c}{%
-           family={Rodriguez-Villegas},
-           familyi={R\bibinithyphendelim V\bibinitperiod},
-           given={E.},
-           giveni={E\bibinitperiod}}}%
-      }
-      \strng{namehash}{813c9cde4601ad286eb7996fbda01d8a}
-      \strng{fullhash}{813c9cde4601ad286eb7996fbda01d8a}
-      \strng{fullhashraw}{813c9cde4601ad286eb7996fbda01d8a}
-      \strng{bibnamehash}{813c9cde4601ad286eb7996fbda01d8a}
-      \strng{authorbibnamehash}{813c9cde4601ad286eb7996fbda01d8a}
-      \strng{authornamehash}{813c9cde4601ad286eb7996fbda01d8a}
-      \strng{authorfullhash}{813c9cde4601ad286eb7996fbda01d8a}
-      \strng{authorfullhashraw}{813c9cde4601ad286eb7996fbda01d8a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Access}
-      \field{title}{Sleep posture monitoring using a single neck-situated accelerometer: A proof-of-concept}
-      \field{volume}{11}
-      \field{year}{2023}
-      \field{pages}{17693\bibrangedash 17706}
-      \range{pages}{14}
-      \verb{doi}
-      \verb 10.1109/ACCESS.2023.3246266
       \endverb
     \endentry
     \entry{vu2023}{inproceedings}{}{}
