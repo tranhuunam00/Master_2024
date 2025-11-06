@@ -168,8 +168,14 @@ còn mở ra hướng điều trị không xâm lấn đầy tiềm năng – đ
 luyện thay đổi tư thế ngủ, nhằm giảm mức độ tắc nghẽn và cải thiện chất lượng
 giấc ngủ ở bệnh nhân OSA.
 
-\section{Công nghệ trong chẩn đoán OSA và phân loại tư thế ngủ}
+\section{Công nghệ trong chẩn đoán OSA và phân loại tư thế ngủ}\
 
+Với sự phát triển vượt bậc của công nghệ chế tạo cảm biến, vi xử lý và các
+thuật toán học máy dựa trên dữ liệu thu nhận từ các thiết bị này, việc chẩn
+đoán hội chứng ngưng thở khi ngủ tắc nghẽn (OSA) và phân loại tư thế ngủ đã đạt
+được những bước tiến đáng kể. Các hệ thống hiện nay có xu hướng thu nhỏ kích
+thước thiết bị, mở rộng khả năng ứng dụng thực tế và giảm đáng kể chi phí triển
+khai, tạo tiền đề cho việc giám sát giấc ngủ cá nhân hóa ngay tại nhà.
 \subsection{Đa ký giấc ngủ}
 Phần lớn bệnh nhân mắc hội chứng ngưng thở khi ngủ tắc nghẽn (\gls{OSA}) không
 tự nhận biết được các rối loạn hô hấp xảy ra trong khi ngủ
@@ -220,140 +226,153 @@ kênh tín hiệu còn nguyên vẹn, từ đó gợi mở hướng ứng dụng
 
 \subsection{Thiết bị theo dõi OSA tại nhà}
 
-Những bất cập trên đã thúc đẩy sự phát triển của các thiết bị theo dõi giấc ngủ
-ngoài trung tâm (Out-of-Center Sleep Testing Devices), còn gọi là thiết bị kiểm
-tra giấc ngủ tại nhà (Home Sleep Test – HST). Các thiết bị HST được thiết kế
-với số lượng cảm biến tối giản hơn so với PSG, đồng thời tích hợp thuật toán xử
-lý và phân tích tín hiệu tự động – được thực thi trực tiếp trên thiết bị hoặc
-thông qua phần mềm hỗ trợ – nhằm mang lại giải pháp chẩn đoán OSA thuận tiện và
-kinh tế hơn.
+Những hạn chế về chi phí, sự bất tiện và tính khả thi của đa ký giấc ngủ (PSG)
+trong điều kiện lâm sàng đã thúc đẩy sự phát triển của các thiết bị theo dõi
+giấc ngủ ngoài trung tâm (Out-of-Center Sleep Testing Devices – OCST), hay còn
+gọi là thiết bị kiểm tra giấc ngủ tại nhà (Home Sleep Test – HST). Các hệ thống
+HST được thiết kế với mục tiêu giảm thiểu số lượng cảm biến nhưng vẫn đảm bảo
+độ chính xác chẩn đoán thông qua việc tích hợp các thuật toán xử lý tín hiệu
+tiên tiến và mô hình học máy. Nhờ đó, các thiết bị có khả năng tự động thu
+nhận, phân tích và phân loại các thông số sinh lý đặc trưng cho hội chứng ngưng
+thở khi ngủ, có thể được thực thi trực tiếp trên phần cứng nhúng hoặc thông qua
+ứng dụng hỗ trợ trên điện thoại di động.
 
-Một trong những cấu phần cơ bản khi phát triển hệ thống HST là khung SCOPERA,
-bao gồm sáu nhóm thông số chính: Sleep (S) – giấc ngủ, Cardiovascular (C) – tim
-mạch, Oximetry (O) – độ bão hòa oxy, Effort (E) – nỗ lực hô hấp, Respiratory
-flow (R) – lưu lượng khí hô hấp, và Audio (A) – âm thanh thở. Khung SCOPERA
-đóng vai trò là nền tảng cho việc xây dựng và chuẩn hóa các thiết bị HST thế hệ
-mới, hướng tới mục tiêu chẩn đoán sớm OSA bằng phương pháp ít xâm lấn và có thể
-triển khai rộng rãi trong cộng đồng. Dựa trên đặc điểm hình thái và vị trí gắn
-trên cơ thể, các thiết bị này có thể được phân thành các nhóm: vòng tay, đai
-ngực, miếng dán, tai nghe, nhẫn thông minh Bảng \ref{tab:wearable_types}.
+Một trong những khung chuẩn được sử dụng rộng rãi trong quá trình phát triển
+các hệ thống HST là mô hình \textbf{SCOPERA}, bao gồm sáu nhóm thông số cốt
+lõi: \textit{Sleep (S)} – đặc trưng giấc ngủ; \textit{Cardiovascular (C)} –
+hoạt động tim mạch; \textit{Oximetry (O)} – độ bão hòa oxy; \textit{Effort (E)}
+– nỗ lực hô hấp; \textit{Respiratory flow (R)} – lưu lượng khí hô hấp; và
+\textit{Audio (A)} – âm thanh thở.
 
-Jeon và cộng sự \cite{jeon2020realtime} Nghiên cứu sử dụng thiết bị đeo Sleep
-Care Kit gắn ở ngực để thu thập các tín hiệu nhịp tim, gia tốc ba trục, hô hấp
-và nồng độ oxy trong máu. Các mô hình Gaussian Naive Bayes, Artificial Neural
-Network và k-Nearest Neighbor được huấn luyện nhằm phân loại trạng thái hô hấp
-– ngưng thở. Kết quả cho thấy mô hình KNN đạt độ chính xác 95\% và thời gian xử
-lý 640~$\mu$s, đáp ứng yêu cầu chẩn đoán OSA theo thời gian thực. Trong nghiên
-cứu \cite{chen2024hdc}, Chen và cộng sự sử dụng thiết bị đeo dạng vòng tay thu
-tín hiệu PPG để phát hiện ngưng thở khi ngủ ở 100 tình nguyện viên. Thiết bị
-được thiết kế tối ưu về bộ nhớ, độ trễ và năng lượng, phù hợp triển khai trên
-các hệ thống tính toán giới hạn. Dữ liệu thu được được đồng bộ với PSG nhằm đảm
-bảo độ chính xác, đồng thời hướng tới ứng dụng giám sát dài hạn tại nhà. Trong
-các nghiên cứu \cite{yeo2022resnet, yeo2022respiratory}, Yeo và cộng sự sử dụng
-thiết bị dán T-REX TR100A để ghi điện tâm đồ (ECG) một kênh từ vùng bụng trên.
-Thiết bị được dán trực tiếp lên da, đảm bảo tiếp xúc ổn định và tín hiệu thu
-nhận chính xác, giúp theo dõi liên tục và hạn chế nguy cơ bị bong tróc trong
-quá trình sử dụng. Một thiết bị HST dạng miếng dán cổ đã được phát triển, tích
-hợp cảm biến gia tốc ba trục LIS2DH12 và vi điều khiển nRF5232, cho phép truyền
-dữ liệu không dây qua Bluetooth Low Energy (BLE) với tần số lấy mẫu 100~Hz
-\cite{Sleep_Posture_Detection}. Thiết bị có kích thước nhỏ gọn
-(\textasciitilde3207~mm\textsuperscript{3}), được dán trực tiếp lên vùng cổ
-bằng băng dính hai mặt, giúp đảm bảo tiếp xúc ổn định với da. Thiết kế này cho
-phép ghi nhận chính xác các tư thế ngủ phổ biến như nằm ngửa, nằm nghiêng và
-nằm sấp, phù hợp với mục tiêu theo dõi tại nhà và hỗ trợ đánh giá nguy cơ mắc
-pOSA. Nghiên cứu\cite{svmHSt2017} chứng minh rằng tín hiệu chuyển động ngực
-(Thoracic movement signal - THO) và bụng (Abdominal movement signal - ABD), thu
-từ các dải piezoelectric đeo được, có thể được sử dụng hiệu quả để phân loại
-các dạng rối loạn thở khi ngủ thông qua mô hình thuật toán SVM. Kết quả cho
-thấy khi kết hợp cả hai tín hiệu, độ chính xác phân loại đạt trung bình 81.8\%,
-khẳng định tiềm năng ứng dụng của phương pháp này trong sàng lọc và theo dõi
-OSA tại nhà hoặc trong lâm sàng. Gần đây, Domingues và cộng sự (2024) xây dựng
-một mô hình mạng nơ-ron nhân tạo dựa trên dữ liệu từ máy đo (SpO$_2$), cấm biến
-gia tốc và ghi âm tiếng ngáy của hệ thống Biologix, nhằm dự đoán chính xác
-trạng thái ngủ. Kết quả cho thấy mô hình này có khả nâng cao độ chính xác trong
-chẩn đoán ngưng thở khi ngủ tại nhà, tiệm cận với tiêu chuẩn của đa ký giấc ngủ
-truyền thống \cite{domingues2024sleep}. Một hướng nghiên cứu khác là cảm biến
-đặt dưới nệm giường. Tác giả Andrei Boiko và cộng sự đánh giá hệ thống phát sử
-dụng cảm biến gia tốc đặt dưới đệm giường để ghi dao động do cử động ngực khi
-thở. Kết quả cho thấy thuật toán phát hiện ngưng thở đạt độ chính xác, độ đặc
-hiệu và độ nhạy lần lượt là 94.6\%, 95.3\% và 93.7\% \cite{Boiko2023}.
+Dựa trên hình thái cấu trúc và vị trí gắn trên cơ thể, các thiết bị HST có thể
+được phân thành các nhóm chính như: vòng tay, đai ngực, miếng dán, tai nghe và
+nhẫn thông minh (Bảng~\ref{tab:wearable_types}).
 
-\begin{table}[htbp]
-  \centering
-  \caption{Phân loại thiết bị đeo trong phát hiện OSA. tư thế ngủ}
-  \label{tab:wearable_types}
-  \begin{tabular}{|p{5.5cm}|p{7.5cm}|}
-    \hline
-    \textbf{Loại thiết bị đeo} & \textbf{Tài liệu tham khảo}                                                                                                          \\
-    \hline
-    Vòng tay                   & \cite{jeon2020realtime}, \cite{shen2022mtcnn} \cite{e3hst} \cite{osa_sanchez2025}                                                    \\
-    \hline
-    Đai ngực                   & \cite{svmHSt2017}, \cite{chen2024hdc} \cite{e3hst} \cite{osa_sanchez2025}                                                            \\
-    \hline
-    Miếng dán                  & \cite{Vu2025SleepPosition}, \cite{yeo2022resnet}, \cite{yeo2022respiratory}, \cite{p_3} \cite{osa_sanchez2025}                       \\
-    \hline
-    Dạng khác                  & \cite{Sleep_Posture_Detection}, \cite{hst_wear_paper} \cite{osa_sanchez2025} \cite{hstSurvey} \cite{hst_paper} \cite{hst_wear_paper} \\
-    \hline
-  \end{tabular}
+\begin{table}[htbp] \centering \caption{Phân loại thiết bị đeo trong phát hiện OSA. tư thế ngủ} \label{tab:wearable_types}
+  \begin{tabular}{|p{5.5cm}|p{7.5cm}|} \hline
+    \textbf{Loại thiết bị đeo} & \textbf{Tài liệu tham khảo}                                                           \\
+    \hline Vòng tay            & \cite{e3hst,osa_sanchez2025, shen2022mtcnn, jeon2020realtime,}                        \\
+    \hline Đai ngực            & \cite{e3hst, osa_sanchez2025, svmHSt2017, chen2024hdc}                                \\
+    \hline Miếng dán           & \cite{osa_sanchez2025, yeo2022resnet, yeo2022respiratory, p_3}                        \\
+    \hline Dạng khác           & \cite{hstSurvey, hst_paper, hst_wear_paper, osa_sanchez2025, Sleep_Posture_Detection} \\
+    \hline\end{tabular}
 \end{table}
 
-Tuy nhiên, một rào cản lớn cho việc triển khai HST trên diện rộng vẫn nằm ở chi
-phí. Theo báo cáo tổng quan \cite{hst_review}, giá trung bình của một thiết bị
-HST khoảng 2300 USD – vượt quá khả năng chi trả của đại đa số bệnh nhân, đặc
-biệt ở các nước có thu nhập trung bình – thấp. Do đó, việc tối ưu hóa chi phí,
-giảm số lượng cảm biến và đơn giản hóa quy trình sử dụng vẫn là các mục tiêu
-cấp thiết.
+Nghiên cứu của Jeon và cộng sự \cite{jeon2020realtime} sử dụng thiết bị đeo
+\textit{Sleep Care Kit} gắn ở ngực để thu nhận tín hiệu nhịp tim, gia tốc ba
+trục, hô hấp và SpO$_2$. Các mô hình Gaussian Naive Bayes, Artificial Neural
+Network và k-Nearest Neighbor được huấn luyện nhằm phân loại trạng thái hô hấp
+và phát hiện ngưng thở, trong đó mô hình KNN đạt độ chính xác 95\% và thời gian
+xử lý chỉ 640~$\mu$s – đáp ứng tiêu chí chẩn đoán OSA theo thời gian thực.
+Tương tự, Chen và cộng sự \cite{chen2024hdc} phát triển thiết bị vòng tay ghi
+tín hiệu PPG trên 100 đối tượng tình nguyện, tối ưu về bộ nhớ, độ trễ và năng
+lượng, đồng thời đồng bộ dữ liệu với PSG để đảm bảo độ tin cậy, hướng tới ứng
+dụng giám sát dài hạn tại nhà.
 
-Hiện nay, đã có nhiều nghiên cứu và sản phẩm thương mại được phát triển nhằm
-mục đích theo dõi tư thế ngủ. Trong đó, iSleePost là một hệ thống thiết bị đeo
-được phát triển bởi Po-Yuan Jeng và cộng sự \cite{Jeng}, gồm hai thiết bị đeo
-độc lập sử dụng cảm biến gia tốc để theo dõi và phân loại tư thế ngủ. Trong đó,
-một thiết bị được đeo ở cổ tay nhằm ghi nhận chuyển động, còn thiết bị thứ hai
-được gắn ở ngực để thu thập nhãn tư thế một cách tự động phục vụ huấn luyện mô
-hình. Dữ liệu từ cổ tay được xử lý bằng kỹ thuật cửa sổ trượt để trích xuất đặc
-trưng, sau đó ánh xạ với tư thế cơ thể dựa trên dữ liệu từ thiết bị ngực. Một
-hướng tiếp cận khác, Zhang và cộng sự sử dụng duy nhất một thiết bị đeo gắn ở
-ngực, có tích hợp cảm biến gia tốc ba trục, để theo dõi cả tư thế ngủ và các
-chỉ số sinh lý như nhịp tim và nhịp thở \cite{Zhang_osa}. Trong nghiên cứu được
-thực hiện trên 7 tình nguyện viên khỏe mạnh trong điều kiện phòng lab, hệ thống
-sử dụng bộ phân loại tuyến tính (LDA) để nhận diện bốn tư thế ngủ phổ biến
-trong trạng thái tĩnh, kết hợp với thuật toán phát hiện chuyển động hiệu quả
-nhằm phân biệt giữa tư thế tĩnh và vận động. Một hệ thống thiết bị đeo theo dõi
-tư thế ngủ (Wearable Sleep System – WSS), được Kwasnicki và cộng sự phát triển
-với thiết kế riêng biệt, gồm các cảm biến đeo trên mỗi cánh tay và vùng ngực,
-kết nối không dây với bộ xử lý trung tâm (trong nghiên cứu là máy tính xách
-tay) thông qua bộ thu phát sóng vô tuyến \cite{kwasnicki2018}. Nền tảng phần
-cứng của hệ thống sử dụng bộ vi xử lý tiêu thụ điện năng cực thấp TI MSP430,
-kết hợp với mô-đun truyền thông không dây Chipcon CC2420, cùng pin Li-ion
-polymer nhẹ. Mỗi nút cảm biến được tích hợp cảm biến gia tốc ba trục ADXL330,
-con quay hồi chuyển số ITG-3200, và cảm biến từ trường ba trục HMC5843. Toàn bộ
-mô-đun có kích thước 20×30×17 mm, trọng lượng 10 g. Trong nghiên cứu của Asma
-Channa và cộng sự \cite{Channa_osa}, một hệ thống theo dõi tư thế ngủ dựa trên
-công nghệ Internet vạn vật (IoT) đã được đề xuất, sử dụng hai thảm cảm biến áp
-lực thương mại để thu thập dữ liệu từ 13 người tham gia ở các tư thế ngủ khác
-nhau. Dữ liệu được xử lý bằng nhiều thuật toán học máy giám sát, trong đó các
-mô hình như Weighted KNN và Linear SVM đạt độ chính xác nhận dạng tư thế lên
-tới 98,7\%.
+Yeo và cộng sự \cite{yeo2022resnet, yeo2022respiratory} triển khai thiết bị dán
+\textit{T-REX TR100A} để ghi điện tâm đồ (ECG) một kênh tại vùng bụng trên.
+Thiết bị dán trực tiếp lên da, đảm bảo tiếp xúc ổn định và tín hiệu chính xác,
+giúp ghi liên tục trong thời gian dài mà không gây khó chịu cho người sử dụng.
+Bên cạnh đó, nghiên cứu \cite{svmHSt2017} chỉ ra rằng các tín hiệu chuyển động
+ngực (THO) và bụng (ABD) thu từ dải cảm biến áp điện có thể được khai thác hiệu
+quả trong phân loại rối loạn hô hấp khi ngủ bằng mô hình SVM, đạt độ chính xác
+trung bình 81.8%.
 
-Các nghiên cứu hiện nay đã phát triển nhiều hệ thống theo dõi tư thế ngủ với độ
-chính xác cao, sử dụng đa dạng nền tảng như thiết bị đeo tích hợp cảm biến gia
-tốc, PPG, ECG hoặc thảm cảm biến áp lực. Nhiều hệ thống đã chứng minh hiệu quả
-trong việc phân loại tư thế ngủ và ghi nhận các chỉ số sinh lý liên quan đến
-hội chứng ngưng thở khi ngủ tắc nghẽn (OSA).
+Ngoài ra, Domingues và cộng sự (2024) đề xuất một mô hình mạng nơ-ron nhân tạo
+sử dụng dữ liệu từ SpO$_2$, cảm biến gia tốc và âm thanh ngáy của hệ thống
+Biologix, cho kết quả tiệm cận độ chính xác của PSG truyền thống
+\cite{domingues2024sleep}. Hướng tiếp cận khác được Boiko và cộng sự
+\cite{Boiko2023} phát triển dựa trên cảm biến gia tốc đặt dưới nệm giường, ghi
+nhận dao động do chuyển động ngực trong quá trình hô hấp. Hệ thống này đạt độ
+chính xác 94.6\%, độ đặc hiệu 95.3\% và độ nhạy 93.7\%, khẳng định tiềm năng
+ứng dụng của cảm biến thụ động trong phát hiện ngưng thở khi ngủ mà không cần
+thiết bị đeo trực tiếp lên cơ thể.
 
-Tuy nhiên, để đáp ứng yêu cầu triển khai thực tế tại nhà, các giải pháp cần
-được tiếp tục hoàn thiện theo hướng tối giản phần cứng, giảm số lượng cảm biến,
-đồng thời tối ưu mô hình học máy cho nền tảng tính toán giới hạn (TinyML). Việc
-xây dựng một quy trình thu thập và xử lý dữ liệu rõ ràng, có thể lặp lại, cũng
-đóng vai trò quan trọng trong việc đảm bảo tính ổn định và khả năng áp dụng
-rộng rãi.
+Nhìn chung, các hệ thống HST thế hệ mới đang chuyển dịch từ kiến trúc đám mây
+sang kiến trúc tại biên, tích hợp khả năng học máy. Điều này không chỉ nâng cao
+tính riêng tư và độ tin cậy của dữ liệu, mà còn mở đường cho các thiết bị chẩn
+đoán OSA cá nhân hóa, nhỏ gọn và có khả năng triển khai đại trà trong thực hành
+y học giấc ngủ hiện đại.
+
+\subsection{Thiết bị phân loại tư thế ngủ}
+
+Hiện nay, đã có nhiều nghiên cứu tập trung phát triển các hệ thống theo dõi tư
+thế ngủ phục vụ chẩn đoán và hỗ trợ điều trị hội chứng ngưng thở khi ngủ (OSA).
+Hầu hết các hướng tiếp cận ban đầu đều sử dụng nhiều loại cảm biến như cảm biến
+áp lực, camera RGB/hồng ngoại hoặc hệ thống đeo đa điểm, nhằm ghi nhận toàn bộ
+chuyển động cơ thể trong khi ngủ. Chẳng hạn, Asma Channa và cộng sự
+\cite{Channa_osa} đã phát triển hệ thống theo dõi tư thế ngủ sử dụng hai thảm
+cảm biến áp lực để thu thập dữ liệu từ 13 người tham gia, với các thuật toán
+học máy như Weighted KNN và Linear SVM cho độ chính xác tới 98,7\%. Tương tự,
+Xi Xu và cộng sự \cite{xu2024classification} đề xuất mô hình stacking kết hợp
+ba thuật toán mạnh (XGBoost, SVM, DNDT), tối ưu hóa bằng Bayesian optimization
+và gán trọng số theo entropy weighting, đạt độ chính xác 94,48\% trên dữ liệu
+áp suất từ nệm khí.
+
+Các nghiên cứu sử dụng camera RGB hoặc hồng ngoại cũng cho kết quả ấn tượng
+trong môi trường có kiểm soát. Ví dụ, Khan và cộng sự
+\cite{KHAN20241729_camera} ứng dụng kết hợp camera RGB và camera nhiệt, huấn
+luyện mô hình VGG16 và ResNet50, đạt độ chính xác 99\% khi sử dụng kỹ thuật hợp
+nhất dữ liệu. Mahvash và cộng sự \cite{Mahvash_camera} tiếp tục mở rộng hướng
+nghiên cứu này bằng cách sử dụng camera hồng ngoại 2D, kết hợp học sâu với mô
+hình ResNet-152, cho kết quả accuracy = 95.1\%, f1-score = 94.9\% và kappa =
+92.2\%, vượt trội hơn cảm biến PSG truyền thống. Ngoài ra, một hướng tiếp cận
+không tiếp xúc khác sử dụng cảm biến radar sóng milimet cũng được đề xuất để
+nhận dạng tư thế ngủ. Phương pháp này khai thác chiến lược học tương tác giữa
+thông tin ngắn hạn và dài hạn nhằm tăng tính ổn định của mô hình, qua ba giai
+đoạn: tách trạng thái chuyển động, phân loại ba tư thế ngủ cơ bản (nằm ngửa,
+nằm nghiêng, nằm sấp) và nhận dạng bảy chuyển đổi tư thế theo thời gian thực.
+Kết quả cho thấy hệ thống đạt độ chính xác 91\% trong nhận dạng tư thế và
+83.7\% trong phát hiện chuyển tư thế, với ưu điểm nổi bật về khả năng bảo vệ
+quyền riêng tư và độ ổn định tín hiệu. Nhealthóm Yunyoung Nam và cộng sự cũng
+đã tích hợp hệ thống thu thập, phân tích sử dụng một cảm biến gia tốc ba trục
+và một cảm biến áp suất để giám sát chất lượng giấc ngủ tư thế ngủ, trạng thái
+ngủ, giai đoạn ngủ (REM và chu kỳ giai đoạn ngủ không REM)
+\cite{hst_pressure_paper}. Tại Việt Nam, nhóm nghiên cứu của Giáo sư Lê Tiến
+Thường, trường đại học Bách Khoa TP Hồ Chí Minh đã sử dụng cảm biến gia tốc
+MPU6050 cùng với vi xử lý ESP32 nhằm ghi nhận hơi thở và nhịp tim của bệnh nhân
+OSA thông qua rung động, và dòng chảy của động mạch và tĩnh mạch ở cổ
+\cite{thuong_wear_paper}.
+
+Tuy nhiên, các hệ thống trên đều có hạn chế về tính phức tạp phần cứng, yêu cầu
+nhiều cảm biến, khó áp dụng trong điều kiện thực tế tại nhà. Vì vậy, xu hướng
+nghiên cứu gần đây tập trung vào việc tối giản phần cứng, đặc biệt là sử dụng
+duy nhất một cảm biến gia tốc để nhận dạng tư thế ngủ.
+
+Trong hướng này, Jeng và cộng sự \cite{Jeng_osa} phát triển hệ thống iSleePost
+gồm hai cảm biến gia tốc đeo ở cổ tay và ngực để ánh xạ chuyển động và nhãn tư
+thế, với độ chính xác trung bình 0.82–0.84. Zhang và cộng sự \cite{Zhang_osa}
+tiến thêm một bước khi chỉ sử dụng một cảm biến gia tốc ba trục gắn ở ngực, kết
+hợp bộ phân loại tuyến tính (LDA), cho phép nhận dạng bốn tư thế ngủ cơ bản và
+phát hiện chuyển động hiệu quả. Một số thiết kế khác như Wearable Sleep System
+(WSS) \cite{kwasnicki2018} hoặc thiết bị HST dạng miếng dán cổ
+\cite{Sleep_Posture_Detection} cũng tận dụng cảm biến gia tốc ba trục để đạt độ
+chính xác cao (trên 97\%) trong nhận dạng tư thế ngủ.
+
+Nghiên cứu \cite{abdulsadig2023}, tác giả tập trung vào nhận dạng tư thế ngủ tự
+động bằng cảm biến gia tốc đơn gắn tại vùng cổ, vị trí thuận lợi cho việc kết
+hợp theo dõi đa thông số sinh lý trong các ứng dụng y tế như OSA hoặc động
+kinh. Ba mô hình được thử nghiệm gồm Decision Tree (DT), Extra-Trees (ET) và
+LSTM Neural Network (LSTM-NN), nhằm đánh giá hiệu năng trong điều kiện giới hạn
+về năng lượng và bộ nhớ của thiết bị đeo. Kết quả cho thấy chỉ với tần số lấy
+mẫu 5 Hz và cửa sổ 1 s, các mô hình vẫn đạt độ chính xác trung bình > 98\% và
+f1-score lần lượt 0.945, 0.975, 0.965, trong đó mô hình DT có ưu thế về tốc độ
+dự đoán (0.8 ms) và dung lượng nhỏ (1.765 KB), phù hợp triển khai trên các
+thiết bị IoT công suất thấp. Đặc biệt, tác giả Vũ Hoàng Diệu và cộng sự
+\cite{Vu2025SleepPosition} đã chứng minh khả năng của một hệ thống đơn cảm biến
+gia tốc trong nhận dạng đến 12 tư thế ngủ phục vụ bệnh nhân GERD, sử dụng mô
+hình AnpoNet kết hợp 1D-CNN và LSTM, đạt độ chính xác 94,67\% và f1-score
+92,94\%. Kết quả này cho thấy cảm biến gia tốc đơn không chỉ đảm bảo độ chính
+xác cao mà còn mang lại sự tiện lợi, chi phí thấp và khả năng triển khai thực
+tế.
 
 Bám sát định hướng này, luận văn đề xuất một hệ thống sử dụng duy nhất một cảm
-biến gia tốc dán dưới hõm ức để phát hiện các tư thế ngủ liên quan đến OSA.
-Trên cơ sở dữ liệu thu được, mô hình học máy nhẹ sẽ được xây dựng và tối ưu,
-hướng tới việc phát triển thiết bị IoT nhỏ gọn, chi phí thấp, có khả năng ước
-lượng chỉ số AHI – phục vụ cho sàng lọc và theo dõi OSA tại nhà một cách hiệu
-quả.
+biến gia tốc gắn dưới hõm ức để phát hiện các tư thế ngủ liên quan đến OSA. Dữ
+liệu thu được sẽ được xử lý qua các bước tiền xử lý, trích xuất đặc trưng và
+huấn luyện mô hình học máy nhẹ, hướng tới việc phát triển thiết bị IoT nhỏ gọn,
+tiêu thụ năng lượng thấp và có khả năng ước lượng chỉ số AHI. Cách tiếp cận này
+kỳ vọng góp phần hiện thực hóa việc sàng lọc và theo dõi OSA tại nhà một cách
+hiệu quả, tiện lợi và có chi phí thấp.
 
 \section{Ứng dụng cảm biến gia tốc trong đánh giá tư thế ngủ của người mắc OSA tại nhà}
 
