@@ -494,69 +494,26 @@ thống nhận diện tư thế trong ứng dụng y sinh. Đặc biệt, thuậ
 hợp thêm các cảm biến khác như cảm biến âm thanh (microphone) hoặc cảm biến
 nhiệt độ, phục vụ cho các mục tiêu mở rộng trong các nghiên cứu tiếp theo
 
-\begin{table}[htbp]
-  \centering
-  \caption{So sánh ưu và nhược điểm của các vị trí gắn cảm biến gia tốc trong theo dõi tư thế ngủ}
-  \label{tab:sensor_position}
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{|p{3cm}|p{5.2cm}|p{6.2cm}|}
-    \hline
-    \textbf{Vị trí}                                                      & \textbf{Ưu điểm} & \textbf{Nhược điểm} \\
-    \hline
-    \textbf{Cổ tay}                                                      &
-    - Dễ đeo, quen thuộc (giống đồng hồ, vòng tay).
-    - Thuận tiện cho người dùng tự gắn.                                  &
-    - Chịu nhiều chuyển động ngoài ý muốn của tay.
-    - Tín hiệu kém đại diện cho tư thế toàn thân.                                                                 \\
-    \hline
-    \textbf{Trán}                                                        &
-    - Có thể cố định bằng băng quấn đầu.
-    - Ít bị ảnh hưởng bởi quần áo hay chăn phủ.                          &
-    - Không phản ánh chính xác trục cơ thể.
-    - Gây khó chịu, ảnh hưởng thẩm mỹ và giấc ngủ.                                                                \\
-    \hline
-    \textbf{Ngực}                                                        &
-    - Gần trung tâm thân người, phản ánh tương đối hướng trọng lực.
-    - Thuận lợi để kết hợp với dây đeo ngực (chest strap).               &
-    - Có nguy cơ xô lệch khi nằm nghiêng.
-    - Có thể gây khó chịu khi nằm sấp.                                                                            \\
-    \hline
-    \textbf{Cổ}                                                          &
-    - Ổn định hình học, gần trục trung tâm cơ thể.
-    - Phản ánh chính xác hướng trọng lực và tư thế toàn thân.
-    - Ít chịu ảnh hưởng từ chuyển động tay/chân.
-    - Thuận lợi để tích hợp thêm cảm biến (âm thanh, nhiệt độ, SpO$_2$). &
-    - Yêu cầu thiết kế miếng dán/thiết bị đeo chuyên dụng để cố định đúng vị trí.                                 \\
-    \hline
-  \end{tabular}
-\end{table}
-
 Xuất phát từ các phân tích nêu trên, nghiên cứu này lựa chọn thiết kế một thiết
-bị đeo tiếp xúc sử dụng cảm biến gia tốc ba trục, được gắn tạivùng cổ.
-(Hình~\ref{position_sensor}). Bảng~\ref{tab:sensor_position} dưới đây so sánh
-ưu và nhược điểm của các vị trí gắn cảm biến gia tốc thường gặp.
+bị đeo tiếp xúc sử dụng cảm biến gia tốc ba trục, được gắn tại vùng cổ.
 
 Sau khi xác định được vị trí gắn tối ưu, bước tiếp theo là làm rõ cơ sở nguyên
 lý đo lường của cảm biến, nhằm lý giải vì sao thiết bị này có thể phản ánh
 chính xác tư thế cơ thể trong khi ngủ.
 
-\subsection*{nguyên lý cảm biến gia tốc}
+\subsection*{Nguyên lý cảm biến gia tốc}
 
 Cảm biến gia tốc là một thiết bị đo lường có khả năng phát hiện và ghi nhận gia
-tốc – tức là sự thay đổi vận tốc theo thời gian – của một vật thể trong không
-gian ba chiều. Với ưu điểm nhỏ gọn, tiêu thụ năng lượng thấp và chi phí hợp lý,
-cảm biến gia tốc được ứng dụng rộng rãi trong nhiều lĩnh vực như điện tử tiêu
-dùng, ô tô, công nghiệp, và đặc biệt là y học, trong các thiết bị theo dõi hoạt
-động và giấc ngủ.
+tốc theo thời gian. Với ưu điểm nhỏ gọn, tiêu thụ năng lượng thấp và chi phí
+hợp lý, cảm biến gia tốc được ứng dụng rộng rãi trong nhiều lĩnh vực như điện
+tử tiêu dùng, ô tô, công nghiệp, trong các thiết bị theo dõi hoạt động và giấc
+ngủ.
 
-Tuy nhiên, giới hạn của cảm biến gia tốc là việc nhận diện tư thế phụ thuộc
-mạnh vào vị trí gắn cảm biến. Một cảm biến đặt sai vị trí hoặc xoay lệch trục
-có thể làm sai lệch hoàn toàn kết quả phân loại. Hơn nữa, gia tốc kế không cung
-cấp thông tin về các chỉ số sinh lý như $\mathrm{SpO_2}$, nhịp thở hay nhịp
-tim, vì vậy để chẩn đoán toàn diện OSA, cần tích hợp thêm các cảm biến khác
-hoặc kết hợp với các mô hình suy luận (inference models) để bù đắp cho thiếu
-sót này.
+Hiện nay, có 3 dạng chính của cảm biến gia tốc MEMS (Micro-Electro-Mechanical
+Systems) là kiểu điện trở áp, kiểu điện dung và kiểu áp điện.
+
+Đầu tiên, cảm biến MEMS điện trở áp ra đời sớm nhất, có cấu tạo gồm một khối
+dầm bằng vật liệu có tính điện trở áp, kèm theo một khối quán tính (mass).
 
 Nguyên lý hoạt động của cảm biến gia tốc dựa trên \textbf{Định luật II Newton}:
 
