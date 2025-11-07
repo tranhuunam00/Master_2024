@@ -3989,6 +3989,120 @@
       \verb 10.1109/TENCON.2018.8650389
       \endverb
     \endentry
+    \entry{Roebuck2014_sleepSignals}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=74314fa3c686108e25cd26be27f01f9d}{%
+           family={Roebuck},
+           familyi={R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8fc2038c76cef0ba7fc37573384a9b55}{%
+           family={Monasterio},
+           familyi={M\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=3185a20c41611ec44a784b2f58c687c8}{%
+           family={Gederi},
+           familyi={G\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=352813c8aab682157a6c58a6975d4d77}{%
+           family={Osipov},
+           familyi={O\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=55adf3902551231b803660baa159e01c}{%
+           family={Behar},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1214ec23c31be84845664ce650da3d2e}{%
+           family={Malhotra},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=64f2ab1a1c3e508c4b05126a17e44511}{%
+           family={Penzel},
+           familyi={P\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=64d9b681752cb2efd5d76ea61d4013e8}{%
+           family={Clifford},
+           familyi={C\bibinitperiod},
+           given={G.\bibnamedelimi D.},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{d46c29c990c5ecd7143b427d9046ed28}
+      \strng{fullhash}{d46c29c990c5ecd7143b427d9046ed28}
+      \strng{fullhashraw}{d46c29c990c5ecd7143b427d9046ed28}
+      \strng{bibnamehash}{d46c29c990c5ecd7143b427d9046ed28}
+      \strng{authorbibnamehash}{d46c29c990c5ecd7143b427d9046ed28}
+      \strng{authornamehash}{d46c29c990c5ecd7143b427d9046ed28}
+      \strng{authorfullhash}{d46c29c990c5ecd7143b427d9046ed28}
+      \strng{authorfullhashraw}{d46c29c990c5ecd7143b427d9046ed28}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physiological Measurement}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{A Review of Signals Used in Sleep Analysis}
+      \field{volume}{35}
+      \field{year}{2014}
+      \field{pages}{R1\bibrangedash R57}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1088/0967-3334/35/1/R1
+      \endverb
+    \endentry
+    \entry{Pan2020_sleepMonitoring}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=85084f9d52f1c63ebbfff6036e3201c1}{%
+           family={Pan},
+           familyi={P\bibinitperiod},
+           given={Q.},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=799a2c9954123c02713c4281081f9758}{%
+           family={Brulin},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=acfc1eedaf433a8c16ec94078766551e}{%
+           family={Campo},
+           familyi={C\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9476a008eb922d667568f5b2f7dfb8a}
+      \strng{fullhash}{c9476a008eb922d667568f5b2f7dfb8a}
+      \strng{fullhashraw}{c9476a008eb922d667568f5b2f7dfb8a}
+      \strng{bibnamehash}{c9476a008eb922d667568f5b2f7dfb8a}
+      \strng{authorbibnamehash}{c9476a008eb922d667568f5b2f7dfb8a}
+      \strng{authornamehash}{c9476a008eb922d667568f5b2f7dfb8a}
+      \strng{authorfullhash}{c9476a008eb922d667568f5b2f7dfb8a}
+      \strng{authorfullhashraw}{c9476a008eb922d667568f5b2f7dfb8a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{JMIR Biomedical Engineering}
+      \field{number}{1}
+      \field{title}{Current Status and Future Challenges of Sleep Monitoring Systems: Systematic Review}
+      \field{volume}{5}
+      \field{year}{2020}
+      \field{pages}{e20921}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.2196/20921
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.2196/20921
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.2196/20921
+      \endverb
+    \endentry
     \entry{Sang}{article}{}{}
       \name{author}{1}{}{%
         {{hash=ee51fd682f7ae907a9e1d9d32daaedec}{%
@@ -4157,6 +4271,139 @@
       \field{volume}{82}
       \field{year}{1960}
     \endentry
+    \entry{Cuadrado2021_kalman}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=41b707d2294b763458e2fa44e3208058}{%
+           family={Cuadrado},
+           familyi={C\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9b75df057b774824c36dfa4974b36b2e}{%
+           family={Michaud},
+           familyi={M\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=00f32d2cfd9950a85035f4d3c0592a2d}{%
+           family={Lugrís},
+           familyi={L\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod}}}%
+        {{hash=1366a24dfbbacdb684b1328f79656102}{%
+           family={Pérez\bibnamedelima Soto},
+           familyi={P\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{26b452248eff9881f7715a556d259ca1}
+      \strng{fullhash}{26b452248eff9881f7715a556d259ca1}
+      \strng{fullhashraw}{26b452248eff9881f7715a556d259ca1}
+      \strng{bibnamehash}{26b452248eff9881f7715a556d259ca1}
+      \strng{authorbibnamehash}{26b452248eff9881f7715a556d259ca1}
+      \strng{authornamehash}{26b452248eff9881f7715a556d259ca1}
+      \strng{authorfullhash}{26b452248eff9881f7715a556d259ca1}
+      \strng{authorfullhashraw}{26b452248eff9881f7715a556d259ca1}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{2}
+      \field{title}{Using Accelerometer Data to Tune the Parameters of an Extended Kalman Filter for Optical Motion Capture: Preliminary Application to Gait Analysis}
+      \field{volume}{21}
+      \field{year}{2021}
+      \field{pages}{427}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s21020427
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.3390/s21020427
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3390/s21020427
+      \endverb
+    \endentry
+    \entry{Abbasi_filter}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=2f293dfd8ac17c3b04d6e0187271f084}{%
+           family={Abbasi\bibnamedelima Kesbi},
+           familyi={A\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Reza},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f32f1a847125918f3e8ea20105243b23}{%
+           family={Nikfarjam},
+           familyi={N\bibinitperiod},
+           given={Alireza},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{cf333f30a5515dcdfca28707680bb639}
+      \strng{fullhash}{cf333f30a5515dcdfca28707680bb639}
+      \strng{fullhashraw}{cf333f30a5515dcdfca28707680bb639}
+      \strng{bibnamehash}{cf333f30a5515dcdfca28707680bb639}
+      \strng{authorbibnamehash}{cf333f30a5515dcdfca28707680bb639}
+      \strng{authornamehash}{cf333f30a5515dcdfca28707680bb639}
+      \strng{authorfullhash}{cf333f30a5515dcdfca28707680bb639}
+      \strng{authorfullhashraw}{cf333f30a5515dcdfca28707680bb639}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Electronics Letters}
+      \field{month}{01}
+      \field{title}{Denoising MEMS Accelerometer Sensors Based on L2-Norm Total Variation Algorithm}
+      \field{volume}{53}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.1049/el.2016.3811
+      \endverb
+    \endentry
+    \entry{Lepot2017_interpolation}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=48a4e6b680ba570f5b2ff98038548d34}{%
+           family={Lepot},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=da5606bcf78de474beb3334c0498ee10}{%
+           family={Aubin},
+           familyi={A\bibinitperiod},
+           given={J.-B.},
+           giveni={J\bibinithyphendelim B\bibinitperiod}}}%
+        {{hash=5cef10e51d00fe03708ea9e8851d7a33}{%
+           family={Clemens},
+           familyi={C\bibinitperiod},
+           given={F.\bibnamedelimi H.\bibnamedelimi L.\bibnamedelimi R.},
+           giveni={F\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{ee68599fd138467a0de54f6a06171867}
+      \strng{fullhash}{ee68599fd138467a0de54f6a06171867}
+      \strng{fullhashraw}{ee68599fd138467a0de54f6a06171867}
+      \strng{bibnamehash}{ee68599fd138467a0de54f6a06171867}
+      \strng{authorbibnamehash}{ee68599fd138467a0de54f6a06171867}
+      \strng{authornamehash}{ee68599fd138467a0de54f6a06171867}
+      \strng{authorfullhash}{ee68599fd138467a0de54f6a06171867}
+      \strng{authorfullhashraw}{ee68599fd138467a0de54f6a06171867}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Water}
+      \field{number}{10}
+      \field{title}{Interpolation in Time Series: An Introductive Overview of Existing Methods, Their Performance Criteria and Uncertainty Assessment}
+      \field{volume}{9}
+      \field{year}{2017}
+      \field{pages}{796}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/w9100796
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.3390/w9100796
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3390/w9100796
+      \endverb
+    \endentry
     \entry{zou2024mbtcn}{article}{}{}
       \name{author}{2}{}{%
         {{hash=b96ad380f16252e8af65f57335baab97}{%
@@ -4296,8 +4543,8 @@
       \strng{authornamehash}{624c27f9c47f31d02c0731e26924f873}
       \strng{authorfullhash}{624c27f9c47f31d02c0731e26924f873}
       \strng{authorfullhashraw}{624c27f9c47f31d02c0731e26924f873}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0924-4247}
@@ -4336,419 +4583,60 @@
       \strng{authornamehash}{71d04e64b6c0a297ef4bcdbc5a530ef2}
       \strng{authorfullhash}{71d04e64b6c0a297ef4bcdbc5a530ef2}
       \strng{authorfullhashraw}{71d04e64b6c0a297ef4bcdbc5a530ef2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arxiv}
       \field{title}{Classifying Human Activities using Machine Learning and Deep Learning Techniques}
       \field{year}{2019}
     \endentry
-    \entry{genuer2020random}{inbook}{}{}
-      \name{author}{2}{}{%
-        {{hash=05196db441147377ec9d0ea11f3138f2}{%
-           family={Genuer},
-           familyi={G\bibinitperiod},
-           given={Robin},
-           giveni={R\bibinitperiod}}}%
-        {{hash=d7b212299d0eaf6202a16da1297418f4}{%
-           family={Poggi},
-           familyi={P\bibinitperiod},
-           given={Jean-Michel},
-           giveni={J\bibinithyphendelim M\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{49b85f8f54cf2345acda6dcb2a8806e3}
-      \strng{fullhash}{49b85f8f54cf2345acda6dcb2a8806e3}
-      \strng{fullhashraw}{49b85f8f54cf2345acda6dcb2a8806e3}
-      \strng{bibnamehash}{49b85f8f54cf2345acda6dcb2a8806e3}
-      \strng{authorbibnamehash}{49b85f8f54cf2345acda6dcb2a8806e3}
-      \strng{authornamehash}{49b85f8f54cf2345acda6dcb2a8806e3}
-      \strng{authorfullhash}{49b85f8f54cf2345acda6dcb2a8806e3}
-      \strng{authorfullhashraw}{49b85f8f54cf2345acda6dcb2a8806e3}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Applied Mathematics and Data Science}
-      \field{title}{{Random Forests}}
-      \field{year}{2020}
-      \field{pages}{33\bibrangedash 55}
-      \range{pages}{23}
-      \verb{doi}
-      \verb 10.1007/978-3-030-56485-8_3
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1007/978-3-030-56485-8_3
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1007/978-3-030-56485-8_3
-      \endverb
-    \endentry
-    \entry{wang2023ml_wearable}{article}{}{}
-      \name{author}{6}{}{%
-        {{hash=0dc2afa9c7a87d4fd4ae435542d8474a}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Shukun},
-           giveni={S\bibinitperiod}}}%
-        {{hash=8950f2bc0ad478c90b18700bd7d5c1d4}{%
-           family={Xuan},
-           familyi={X\bibinitperiod},
-           given={Wenping},
-           giveni={W\bibinitperiod}}}%
-        {{hash=595c81490ca8c33be12b388a7d8f0f38}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={Dan},
-           giveni={D\bibinitperiod}}}%
-        {{hash=28aa5e4b66ee78162017f27b0b9d360b}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Yun},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=42f6181eb67b9a39e475722f47481a53}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={Rui},
-           giveni={R\bibinitperiod}}}%
-        {{hash=74d63b549a34b642ad5d624a0889dd46}{%
-           family={He},
-           familyi={H\bibinitperiod},
-           given={Ming},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{fdb1997d1a11a6bdddbc91e539b6e584}
-      \strng{fullhash}{fdb1997d1a11a6bdddbc91e539b6e584}
-      \strng{fullhashraw}{fdb1997d1a11a6bdddbc91e539b6e584}
-      \strng{bibnamehash}{fdb1997d1a11a6bdddbc91e539b6e584}
-      \strng{authorbibnamehash}{fdb1997d1a11a6bdddbc91e539b6e584}
-      \strng{authornamehash}{fdb1997d1a11a6bdddbc91e539b6e584}
-      \strng{authorfullhash}{fdb1997d1a11a6bdddbc91e539b6e584}
-      \strng{authorfullhashraw}{fdb1997d1a11a6bdddbc91e539b6e584}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{2079-6374}
-      \field{journaltitle}{Biosensors}
-      \field{number}{4}
-      \field{title}{Machine Learning Assisted Wearable Wireless Device for Sleep Apnea Syndrome Diagnosis}
-      \field{volume}{13}
-      \field{year}{2023}
-      \field{pages}{483}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.3390/bios13040483
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.3390/bios13040483
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.3390/bios13040483
-      \endverb
-    \endentry
-    \entry{parbat2024multiscale}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=d95418bfe811d978a0ddda1afac1d067}{%
-           family={Parbat},
-           familyi={P\bibinitperiod},
-           given={Debanjan},
-           giveni={D\bibinitperiod}}}%
-        {{hash=b8ed60a7f73499f138548e5c3a0fbc1d}{%
-           family={Chakraborty},
-           familyi={C\bibinitperiod},
-           given={Monisha},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{93fda8c1ba4a89e8649a394319d05e09}
-      \strng{fullhash}{93fda8c1ba4a89e8649a394319d05e09}
-      \strng{fullhashraw}{93fda8c1ba4a89e8649a394319d05e09}
-      \strng{bibnamehash}{93fda8c1ba4a89e8649a394319d05e09}
-      \strng{authorbibnamehash}{93fda8c1ba4a89e8649a394319d05e09}
-      \strng{authornamehash}{93fda8c1ba4a89e8649a394319d05e09}
-      \strng{authorfullhash}{93fda8c1ba4a89e8649a394319d05e09}
-      \strng{authorfullhashraw}{93fda8c1ba4a89e8649a394319d05e09}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{1746-8094}
-      \field{journaltitle}{Biomedical Signal Processing and Control}
-      \field{title}{Multiscale Entropy Analysis of Single Lead ECG and ECG Derived Respiration for AI-Based Prediction of Sleep Apnea Events}
-      \field{volume}{87}
-      \field{year}{2024}
-      \field{pages}{105444}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/j.bspc.2023.105444
-      \endverb
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/S1746809423008777
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/S1746809423008777
-      \endverb
-    \endentry
-    \entry{cortes1995svm}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=17acda211a651e90e228f1776ee07818}{%
-           family={Cortes},
-           familyi={C\bibinitperiod},
-           given={Corinna},
-           giveni={C\bibinitperiod}}}%
-        {{hash=c2b3e05872463585b4be6aab10d10d63}{%
-           family={Vapnik},
-           familyi={V\bibinitperiod},
-           given={Vladimir},
-           giveni={V\bibinitperiod}}}%
-      }
-      \strng{namehash}{4c67d5268f413e83454c8adc14ab43c3}
-      \strng{fullhash}{4c67d5268f413e83454c8adc14ab43c3}
-      \strng{fullhashraw}{4c67d5268f413e83454c8adc14ab43c3}
-      \strng{bibnamehash}{4c67d5268f413e83454c8adc14ab43c3}
-      \strng{authorbibnamehash}{4c67d5268f413e83454c8adc14ab43c3}
-      \strng{authornamehash}{4c67d5268f413e83454c8adc14ab43c3}
-      \strng{authorfullhash}{4c67d5268f413e83454c8adc14ab43c3}
-      \strng{authorfullhashraw}{4c67d5268f413e83454c8adc14ab43c3}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{0885-6125}
-      \field{journaltitle}{Machine Learning}
-      \field{number}{3}
-      \field{title}{Support-Vector Networks}
-      \field{volume}{20}
-      \field{year}{1995}
-      \field{pages}{273\bibrangedash 297}
-      \range{pages}{25}
-      \verb{doi}
-      \verb 10.1007/BF00994018
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1007/BF00994018
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1007/BF00994018
-      \endverb
-    \endentry
-    \entry{cunningham2007knn}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=473cbefdfad5417120c3c0880a06e90a}{%
-           family={Cunningham},
-           familyi={C\bibinitperiod},
-           given={Padraig},
-           giveni={P\bibinitperiod}}}%
-        {{hash=c6e5917dc907bbc9ef3d755f3357ec72}{%
-           family={Delany},
-           familyi={D\bibinitperiod},
-           given={Sarah},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{bd5aa4c9f1fa99ed38dd819bd9f42961}
-      \strng{fullhash}{bd5aa4c9f1fa99ed38dd819bd9f42961}
-      \strng{fullhashraw}{bd5aa4c9f1fa99ed38dd819bd9f42961}
-      \strng{bibnamehash}{bd5aa4c9f1fa99ed38dd819bd9f42961}
-      \strng{authorbibnamehash}{bd5aa4c9f1fa99ed38dd819bd9f42961}
-      \strng{authornamehash}{bd5aa4c9f1fa99ed38dd819bd9f42961}
-      \strng{authorfullhash}{bd5aa4c9f1fa99ed38dd819bd9f42961}
-      \strng{authorfullhashraw}{bd5aa4c9f1fa99ed38dd819bd9f42961}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Multiple Classifier Systems}
-      \field{title}{k-Nearest Neighbour Classifiers}
-      \field{volume}{54}
-      \field{year}{2007}
-      \verb{doi}
-      \verb 10.1145/3459665
-      \endverb
-    \endentry
-    \entry{chen2016xgboost}{inproceedings}{}{}
-      \name{author}{2}{}{%
-        {{hash=48461ccdf50ba5a54e29a354aa734c0b}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={Tianqi},
-           giveni={T\bibinitperiod}}}%
-        {{hash=c9ab8ac486d7f85ac914b1a8e51e512b}{%
-           family={Guestrin},
-           familyi={G\bibinitperiod},
-           given={Carlos},
-           giveni={C\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {ACM}%
-      }
-      \strng{namehash}{f79ceb030bcf791e5521f87ac6ada03b}
-      \strng{fullhash}{f79ceb030bcf791e5521f87ac6ada03b}
-      \strng{fullhashraw}{f79ceb030bcf791e5521f87ac6ada03b}
-      \strng{bibnamehash}{f79ceb030bcf791e5521f87ac6ada03b}
-      \strng{authorbibnamehash}{f79ceb030bcf791e5521f87ac6ada03b}
-      \strng{authornamehash}{f79ceb030bcf791e5521f87ac6ada03b}
-      \strng{authorfullhash}{f79ceb030bcf791e5521f87ac6ada03b}
-      \strng{authorfullhashraw}{f79ceb030bcf791e5521f87ac6ada03b}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD '16)}
-      \field{title}{XGBoost: A Scalable Tree Boosting System}
-      \field{year}{2016}
-      \field{pages}{785\bibrangedash 794}
-      \range{pages}{10}
-      \verb{doi}
-      \verb 10.1145/2939672.2939785
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1145/2939672.2939785
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1145/2939672.2939785
-      \endverb
-    \endentry
-    \entry{tharwat2017lda}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=8db62a7cd281329eb4a66a0b4b986be8}{%
-           family={Tharwat},
-           familyi={T\bibinitperiod},
-           given={Alaa},
-           giveni={A\bibinitperiod}}}%
-        {{hash=9fab9e6f4249dd9aff22032242c41d52}{%
-           family={Gaber},
-           familyi={G\bibinitperiod},
-           given={Tarek},
-           giveni={T\bibinitperiod}}}%
-        {{hash=d0f993d955521efb78a5d0a7adc94066}{%
-           family={Ibrahim},
-           familyi={I\bibinitperiod},
-           given={Abdelhameed},
-           giveni={A\bibinitperiod}}}%
-        {{hash=31264f56eaa77c0e956e16889e3d450f}{%
-           family={Hassanien},
-           familyi={H\bibinitperiod},
-           given={Aboul\bibnamedelima Ella},
-           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-      }
-      \strng{namehash}{a054707c9aa64157a2614f2ce866ffaf}
-      \strng{fullhash}{a054707c9aa64157a2614f2ce866ffaf}
-      \strng{fullhashraw}{a054707c9aa64157a2614f2ce866ffaf}
-      \strng{bibnamehash}{a054707c9aa64157a2614f2ce866ffaf}
-      \strng{authorbibnamehash}{a054707c9aa64157a2614f2ce866ffaf}
-      \strng{authornamehash}{a054707c9aa64157a2614f2ce866ffaf}
-      \strng{authorfullhash}{a054707c9aa64157a2614f2ce866ffaf}
-      \strng{authorfullhashraw}{a054707c9aa64157a2614f2ce866ffaf}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{0921-7126}
-      \field{journaltitle}{AI Communications}
-      \field{number}{2}
-      \field{title}{Linear Discriminant Analysis: A Detailed Tutorial}
-      \field{volume}{30}
-      \field{year}{2017}
-      \field{pages}{169\bibrangedash 190}
-      \range{pages}{22}
-      \verb{doi}
-      \verb 10.3233/AIC-170729
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.3233/AIC-170729
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.3233/AIC-170729
-      \endverb
-    \endentry
-    \entry{ji2022airline}{article}{}{}
-      \true{moreauthor}
-      \true{morelabelname}
+    \entry{RAJESH2021104199_wavelet}{article}{}{}
       \name{author}{3}{}{%
-        {{hash=eeb2c41db93152a44216f8b8004404ab}{%
-           family={Ji},
-           familyi={J\bibinitperiod},
-           given={Xinyu},
-           giveni={X\bibinitperiod}}}%
-        {{hash=5d568355191aa81631bf2236775b0181}{%
-           family={Rao},
+        {{hash=41fd2be18e8cf9617b7c8347cc1ede70}{%
+           family={Rajesh},
            familyi={R\bibinitperiod},
-           given={Zhihao},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=68036e0ba555e586a3d9cc3dd2cda6e0}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Weijie},
-           giveni={W\bibinitperiod}}}%
+           given={Kandala.N.V.P.S.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=24f5bed407572e90bb749b8b72ace7be}{%
+           family={Dhuli},
+           familyi={D\bibinitperiod},
+           given={Ravindra},
+           giveni={R\bibinitperiod}}}%
+        {{hash=41c5834cbe5d5911297faad9069c32cb}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={T.\bibnamedelimi Sunil},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
       }
-      \strng{namehash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{fullhash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{fullhashraw}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{bibnamehash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{authorbibnamehash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{authornamehash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{authorfullhash}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \strng{authorfullhashraw}{6acb35716a3037364fa6cce5ae4b5c3a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \strng{namehash}{1171707936423de40af733ec525bbb94}
+      \strng{fullhash}{1171707936423de40af733ec525bbb94}
+      \strng{fullhashraw}{1171707936423de40af733ec525bbb94}
+      \strng{bibnamehash}{1171707936423de40af733ec525bbb94}
+      \strng{authorbibnamehash}{1171707936423de40af733ec525bbb94}
+      \strng{authornamehash}{1171707936423de40af733ec525bbb94}
+      \strng{authorfullhash}{1171707936423de40af733ec525bbb94}
+      \strng{authorfullhashraw}{1171707936423de40af733ec525bbb94}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Micromachines (Basel)}
-      \field{number}{11}
-      \field{title}{Airline Point-of-Care System on Seat Belt for Hybrid Physiological Signal Monitoring}
-      \field{volume}{13}
-      \field{year}{2022}
+      \field{issn}{0010-4825}
+      \field{journaltitle}{Computers in Biology and Medicine}
+      \field{title}{Obstructive sleep apnea detection using discrete wavelet transform-based statistical features}
+      \field{volume}{130}
+      \field{year}{2021}
+      \field{pages}{104199}
+      \range{pages}{1}
       \verb{doi}
-      \verb 10.3390/mi13111880
+      \verb https://doi.org/10.1016/j.compbiomed.2020.104199
       \endverb
       \verb{urlraw}
-      \verb https://doi.org/10.3390/mi13111880
+      \verb https://www.sciencedirect.com/science/article/pii/S0010482520305308
       \endverb
       \verb{url}
-      \verb https://doi.org/10.3390/mi13111880
+      \verb https://www.sciencedirect.com/science/article/pii/S0010482520305308
       \endverb
-    \endentry
-    \entry{ray2021tinyml}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=37f6b94ff52303cf740e5df3c9a5f074}{%
-           family={Ray},
-           familyi={R\bibinitperiod},
-           given={Partha\bibnamedelima Pratim},
-           giveni={P\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-      }
-      \strng{namehash}{37f6b94ff52303cf740e5df3c9a5f074}
-      \strng{fullhash}{37f6b94ff52303cf740e5df3c9a5f074}
-      \strng{fullhashraw}{37f6b94ff52303cf740e5df3c9a5f074}
-      \strng{bibnamehash}{37f6b94ff52303cf740e5df3c9a5f074}
-      \strng{authorbibnamehash}{37f6b94ff52303cf740e5df3c9a5f074}
-      \strng{authornamehash}{37f6b94ff52303cf740e5df3c9a5f074}
-      \strng{authorfullhash}{37f6b94ff52303cf740e5df3c9a5f074}
-      \strng{authorfullhashraw}{37f6b94ff52303cf740e5df3c9a5f074}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{1319-1578}
-      \field{journaltitle}{Journal of King Saud University - Computer and Information Sciences}
-      \field{number}{4}
-      \field{title}{A review on TinyML: State-of-the-art and prospects}
-      \field{volume}{34}
-      \field{year}{2022}
-      \field{pages}{1595\bibrangedash 1623}
-      \range{pages}{29}
-      \verb{doi}
-      \verb https://doi.org/10.1016/j.jksuci.2021.11.019
-      \endverb
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/S1319157821003335
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/S1319157821003335
-      \endverb
-      \keyw{TinyML,IoT,Edge intelligence,Energy efficient AI,Resource constrained intelligence,Embedded AI}
     \endentry
     \entry{vu2023}{inproceedings}{}{}
       \name{author}{6}{}{%
@@ -4794,8 +4682,8 @@
       \strng{authornamehash}{8a7f9fd334f56d5ad3464f653f5cb38d}
       \strng{authorfullhash}{8a7f9fd334f56d5ad3464f653f5cb38d}
       \strng{authorfullhashraw}{8a7f9fd334f56d5ad3464f653f5cb38d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE Statistical Signal Processing Workshop (SSP)}
@@ -4847,6 +4735,74 @@
       \range{pages}{1}
       \verb{doi}
       \verb 10.1038/s41598-023-44567-9
+      \endverb
+    \endentry
+    \entry{HE2024e31839_posture}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=b1e65676798f40335e32acbf70445b20}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Chunhua},
+           giveni={C\bibinitperiod}}}%
+        {{hash=faf4ca11005caf4092a4c90c8c3be40b}{%
+           family={Fang},
+           familyi={F\bibinitperiod},
+           given={Zewen},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=9d09eebdb884b0d33e8da934b113e451}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Shuibin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=da533b270cb6bbaafa6f4d6dde03991c}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Heng},
+           giveni={H\bibinitperiod}}}%
+        {{hash=401ca2bd26efef0780e002acac0d290c}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Xiaoping},
+           giveni={X\bibinitperiod}}}%
+        {{hash=6da0fde4f72db9a16934c955f64921c6}{%
+           family={Wen},
+           familyi={W\bibinitperiod},
+           given={Yangxing},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9e64200d79576d3ec7c60503300f6d55}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Juze},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f87597725a2a29eda75cedf2f2c324cd}
+      \strng{fullhash}{f87597725a2a29eda75cedf2f2c324cd}
+      \strng{fullhashraw}{f87597725a2a29eda75cedf2f2c324cd}
+      \strng{bibnamehash}{f87597725a2a29eda75cedf2f2c324cd}
+      \strng{authorbibnamehash}{f87597725a2a29eda75cedf2f2c324cd}
+      \strng{authornamehash}{f87597725a2a29eda75cedf2f2c324cd}
+      \strng{authorfullhash}{f87597725a2a29eda75cedf2f2c324cd}
+      \strng{authorfullhashraw}{f87597725a2a29eda75cedf2f2c324cd}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2405-8440}
+      \field{journaltitle}{Heliyon}
+      \field{number}{11}
+      \field{title}{A smart detection method for sleep posture based on a flexible sleep monitoring belt and vital sign signals}
+      \field{volume}{10}
+      \field{year}{2024}
+      \field{pages}{e31839}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.heliyon.2024.e31839
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2405844024078708
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2405844024078708
       \endverb
     \endentry
     \entry{gomes2021}{article}{}{}
@@ -4903,54 +4859,6 @@
       \verb{doi}
       \verb 10.3390/s21041214
       \endverb
-    \endentry
-    \entry{dao2022}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=e0301ecbab0c3f3fb8b79f3ac46e636c}{%
-           family={Dao},
-           familyi={D\bibinitperiod},
-           given={T.-H.},
-           giveni={T\bibinithyphendelim H\bibinitperiod}}}%
-        {{hash=aea966e967cb2d80336eef0b57faaabd}{%
-           family={Hoang},
-           familyi={H\bibinitperiod},
-           given={H.-Y.},
-           giveni={H\bibinithyphendelim Y\bibinitperiod}}}%
-        {{hash=65b9c0fe78c26537d7eea08f18de456d}{%
-           family={Hoang},
-           familyi={H\bibinitperiod},
-           given={V.-N.},
-           giveni={V\bibinithyphendelim N\bibinitperiod}}}%
-        {{hash=b9ea5eee42f6708f978aa8f7cca7136f}{%
-           family={Tran},
-           familyi={T\bibinitperiod},
-           given={D.-T.},
-           giveni={D\bibinithyphendelim T\bibinitperiod}}}%
-        {{hash=68a61b0d6f69edf38c7993789b61f061}{%
-           family={Tran},
-           familyi={T\bibinitperiod},
-           given={D.-N.},
-           giveni={D\bibinithyphendelim N\bibinitperiod}}}%
-      }
-      \strng{namehash}{758071539d36588763a0b86a93c05495}
-      \strng{fullhash}{758071539d36588763a0b86a93c05495}
-      \strng{fullhashraw}{758071539d36588763a0b86a93c05495}
-      \strng{bibnamehash}{758071539d36588763a0b86a93c05495}
-      \strng{authorbibnamehash}{758071539d36588763a0b86a93c05495}
-      \strng{authornamehash}{758071539d36588763a0b86a93c05495}
-      \strng{authorfullhash}{758071539d36588763a0b86a93c05495}
-      \strng{authorfullhashraw}{758071539d36588763a0b86a93c05495}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{EAI Endorsed Transactions on Industrial Networks and Intelligent Systems}
-      \field{number}{4}
-      \field{title}{Human activity recognition system for moderate performance microcontroller using accelerometer data and random forest algorithm}
-      \field{volume}{9}
-      \field{year}{2022}
-      \field{pages}{e4\bibrangedash e4}
-      \range{pages}{-1}
     \endentry
     \entry{souza2017}{article}{}{}
       \name{author}{2}{}{%
@@ -5270,6 +5178,49 @@
       \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=360300
       \endverb
     \endentry
+    \entry{cortes1995svm}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=17acda211a651e90e228f1776ee07818}{%
+           family={Cortes},
+           familyi={C\bibinitperiod},
+           given={Corinna},
+           giveni={C\bibinitperiod}}}%
+        {{hash=c2b3e05872463585b4be6aab10d10d63}{%
+           family={Vapnik},
+           familyi={V\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c67d5268f413e83454c8adc14ab43c3}
+      \strng{fullhash}{4c67d5268f413e83454c8adc14ab43c3}
+      \strng{fullhashraw}{4c67d5268f413e83454c8adc14ab43c3}
+      \strng{bibnamehash}{4c67d5268f413e83454c8adc14ab43c3}
+      \strng{authorbibnamehash}{4c67d5268f413e83454c8adc14ab43c3}
+      \strng{authornamehash}{4c67d5268f413e83454c8adc14ab43c3}
+      \strng{authorfullhash}{4c67d5268f413e83454c8adc14ab43c3}
+      \strng{authorfullhashraw}{4c67d5268f413e83454c8adc14ab43c3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0885-6125}
+      \field{journaltitle}{Machine Learning}
+      \field{number}{3}
+      \field{title}{Support-Vector Networks}
+      \field{volume}{20}
+      \field{year}{1995}
+      \field{pages}{273\bibrangedash 297}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1007/BF00994018
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/BF00994018
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/BF00994018
+      \endverb
+    \endentry
     \entry{breiman2001random}{article}{}{}
       \name{author}{1}{}{%
         {{hash=132b7100417675d55d5d4d8b244f7a34}{%
@@ -5308,6 +5259,49 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1023/A:1010933404324
+      \endverb
+    \endentry
+    \entry{chen2016xgboost}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=48461ccdf50ba5a54e29a354aa734c0b}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Tianqi},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c9ab8ac486d7f85ac914b1a8e51e512b}{%
+           family={Guestrin},
+           familyi={G\bibinitperiod},
+           given={Carlos},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{f79ceb030bcf791e5521f87ac6ada03b}
+      \strng{fullhash}{f79ceb030bcf791e5521f87ac6ada03b}
+      \strng{fullhashraw}{f79ceb030bcf791e5521f87ac6ada03b}
+      \strng{bibnamehash}{f79ceb030bcf791e5521f87ac6ada03b}
+      \strng{authorbibnamehash}{f79ceb030bcf791e5521f87ac6ada03b}
+      \strng{authornamehash}{f79ceb030bcf791e5521f87ac6ada03b}
+      \strng{authorfullhash}{f79ceb030bcf791e5521f87ac6ada03b}
+      \strng{authorfullhashraw}{f79ceb030bcf791e5521f87ac6ada03b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD '16)}
+      \field{title}{XGBoost: A Scalable Tree Boosting System}
+      \field{year}{2016}
+      \field{pages}{785\bibrangedash 794}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/2939672.2939785
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2939672.2939785
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2939672.2939785
       \endverb
     \endentry
     \entry{jain1996}{article}{}{}
@@ -5404,7 +5398,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{Jeng}
 \endrefsection
 \endinput
 
