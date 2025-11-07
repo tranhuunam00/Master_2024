@@ -2,17 +2,18 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {1.1}{\ignorespaces Phân loại mức độ OSA dựa trên chỉ số AHI}}{6}{table.caption.6}%
 \contentsline {table}{\numberline {1.2}{\ignorespaces Phân loại thiết bị đeo trong phát hiện OSA. tư thế ngủ}}{12}{table.caption.10}%
-\contentsline {table}{\numberline {1.3}{\ignorespaces Các bước chính trong hệ thống ứng dụng AI cho phân tích tư thế ngủ và hỗ trợ chẩn đoán OSA}}{27}{table.caption.19}%
-\contentsline {table}{\numberline {1.4}{\ignorespaces Hiệu quả mô hình học máy và khả năng triển khai biên trong nhận diện tư thế ngủ}}{36}{table.caption.23}%
+\contentsline {table}{\numberline {1.3}{\ignorespaces So sánh đặc tính giữa ba loại cảm biến gia tốc MEMS}}{25}{table.caption.19}%
+\contentsline {table}{\numberline {1.4}{\ignorespaces Các bước chính trong bài toán sử dụng học máy trên biên}}{27}{table.caption.20}%
+\contentsline {table}{\numberline {1.5}{\ignorespaces Hiệu quả mô hình học máy và khả năng triển khai biên trong nhận diện tư thế ngủ}}{36}{table.caption.25}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Các nhóm chức năng chính của ứng dụng}}{69}{table.caption.40}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Các nhóm chức năng chính của ứng dụng}}{68}{table.caption.42}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}}{99}{table.caption.60}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}}{102}{table.caption.65}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Các mô hình học máy và siêu tham số sử dụng trong nghiên cứu}}{104}{table.caption.66}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Độ chính xác phân loại của các mô hình trong 8 kịch bản}}{105}{table.caption.67}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Kích thước mô hình (KB) trong 8 kịch bản}}{107}{table.caption.69}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces So sánh hiệu năng Logistic Regression và Neural Network trên nRF52840}}{114}{table.caption.70}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}}{98}{table.caption.62}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}}{101}{table.caption.67}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Các mô hình học máy và siêu tham số sử dụng trong nghiên cứu}}{103}{table.caption.68}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Độ chính xác phân loại của các mô hình trong 8 kịch bản}}{104}{table.caption.69}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Kích thước mô hình (KB) trong 8 kịch bản}}{106}{table.caption.71}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces So sánh hiệu năng Logistic Regression và Neural Network trên nRF52840}}{113}{table.caption.72}%
 \addvspace {10\p@ }
 \contentsfinish 
 \contentsfinish 

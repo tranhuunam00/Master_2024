@@ -1,29 +1,29 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
-[85] biber-MSWIN64:342> INFO - === 
-[119] Biber.pm:421> INFO - Reading 'main.bcf'
-[219] Biber.pm:1002> INFO - Found 110 citekeys in bib section 0
-[229] Biber.pm:4487> INFO - Processing section 0
-[236] Biber.pm:4678> INFO - Looking for bibtex file 'refs.bib' for section 0
-[312] bibtex.pm:1713> INFO - LaTeX decoding ...
-[441] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
-[866] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[866] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'variable = shifted' with 'variable = non-ignorable'
-[866] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'vi-VN'
-[924] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[993] bbl.pm:779> INFO - Output to main.bbl
-[994] Biber.pm:132> WARN - legacy month field 'Feb' in entry 'eckert2007csa' is not an integer - this will probably not sort properly.
-[994] Biber.pm:132> WARN - legacy month field 'jan' in entry 'ThaySUCHildren' is not an integer - this will probably not sort properly.
-[994] Biber.pm:132> WARN - legacy month field 'June' in entry 'frank2014positional' is not an integer - this will probably not sort properly.
-[994] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_LFTi\8fe4c9854184545302f21ebf0d47516c_20248.utf8, line 790, warning: undefined macro "March"
-[994] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_LFTi\8fe4c9854184545302f21ebf0d47516c_20248.utf8, line 929, warning: undefined macro "July"
-[994] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_LFTi\8fe4c9854184545302f21ebf0d47516c_20248.utf8, line 936, warning: undefined macro "July"
-[994] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_LFTi\8fe4c9854184545302f21ebf0d47516c_20248.utf8, line 960, warning: undefined macro "February"
-[994] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_LFTi\8fe4c9854184545302f21ebf0d47516c_20248.utf8, line 1011, warning: undefined macro "July"
-[994] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_LFTi\8fe4c9854184545302f21ebf0d47516c_20248.utf8, line 1019, warning: undefined macro "July"
-[995] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_LFTi\8fe4c9854184545302f21ebf0d47516c_20248.utf8, line 1026, warning: undefined macro "July"
-[995] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_LFTi\8fe4c9854184545302f21ebf0d47516c_20248.utf8, line 1102, warning: undefined macro "November"
-[995] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_LFTi\8fe4c9854184545302f21ebf0d47516c_20248.utf8, line 1773, warning: 1 characters of junk seen at toplevel
-[995] Biber.pm:132> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[995] Biber.pm:132> WARN - I didn't find a database entry for 'Jeng' (section 0)
-[995] Biber.pm:134> INFO - WARNINGS: 14
+[170] biber-MSWIN64:342> INFO - === 
+[252] Biber.pm:421> INFO - Reading 'main.bcf'
+[501] Biber.pm:1002> INFO - Found 116 citekeys in bib section 0
+[549] Biber.pm:4487> INFO - Processing section 0
+[577] Biber.pm:4678> INFO - Looking for bibtex file 'refs.bib' for section 0
+[666] bibtex.pm:1713> INFO - LaTeX decoding ...
+[990] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
+[2359] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2359] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2359] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'vi-VN'
+[2520] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[2684] bbl.pm:779> INFO - Output to main.bbl
+[2685] Biber.pm:132> WARN - legacy month field 'Feb' in entry 'eckert2007csa' is not an integer - this will probably not sort properly.
+[2685] Biber.pm:132> WARN - legacy month field 'jan' in entry 'ThaySUCHildren' is not an integer - this will probably not sort properly.
+[2685] Biber.pm:132> WARN - legacy month field 'June' in entry 'frank2014positional' is not an integer - this will probably not sort properly.
+[2685] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_CGHQ\8fe4c9854184545302f21ebf0d47516c_9824.utf8, line 880, warning: undefined macro "March"
+[2685] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_CGHQ\8fe4c9854184545302f21ebf0d47516c_9824.utf8, line 1019, warning: undefined macro "July"
+[2685] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_CGHQ\8fe4c9854184545302f21ebf0d47516c_9824.utf8, line 1026, warning: undefined macro "July"
+[2685] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_CGHQ\8fe4c9854184545302f21ebf0d47516c_9824.utf8, line 1050, warning: undefined macro "February"
+[2686] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_CGHQ\8fe4c9854184545302f21ebf0d47516c_9824.utf8, line 1101, warning: undefined macro "July"
+[2686] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_CGHQ\8fe4c9854184545302f21ebf0d47516c_9824.utf8, line 1109, warning: undefined macro "July"
+[2686] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_CGHQ\8fe4c9854184545302f21ebf0d47516c_9824.utf8, line 1116, warning: undefined macro "July"
+[2686] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_CGHQ\8fe4c9854184545302f21ebf0d47516c_9824.utf8, line 1192, warning: undefined macro "November"
+[2686] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\ADMIN\AppData\Local\Temp\biber_tmp_CGHQ\8fe4c9854184545302f21ebf0d47516c_9824.utf8, line 1863, warning: 1 characters of junk seen at toplevel
+[2686] Biber.pm:132> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[2686] Biber.pm:132> WARN - I didn't find a database entry for 'Jeng' (section 0)
+[2686] Biber.pm:134> INFO - WARNINGS: 14

@@ -507,226 +507,278 @@ Cảm biến gia tốc là một thiết bị đo lường có khả năng phát
 tốc theo thời gian. Với ưu điểm nhỏ gọn, tiêu thụ năng lượng thấp và chi phí
 hợp lý, cảm biến gia tốc được ứng dụng rộng rãi trong nhiều lĩnh vực như điện
 tử tiêu dùng, ô tô, công nghiệp, trong các thiết bị theo dõi hoạt động và giấc
-ngủ.
+ngủ \cite{Santoso2015_mems_accelerometer_apply,
+  Szermer2025_mems_accelerometer_apply}.
 
-Hiện nay, có 3 dạng chính của cảm biến gia tốc MEMS (Micro-Electro-Mechanical
-Systems) là kiểu điện trở áp, kiểu điện dung và kiểu áp điện.
+Hiện nay, có 3 dạng chính của cảm biến gia tốc vi cơ điện tử
+(Micro-Electro-Mechanical Systems - MEMS) là kiểu điện trở áp, kiểu điện dung
+và kiểu áp điện \cite{Shi2023_mems_accelerometer}.
 
-Đầu tiên, cảm biến MEMS điện trở áp ra đời sớm nhất, có cấu tạo gồm một khối
-dầm bằng vật liệu có tính điện trở áp, kèm theo một khối quán tính (mass).
+\subsubsection*{Cảm biến gia tốc MEMS điện trở áp}
 
-Nguyên lý hoạt động của cảm biến gia tốc dựa trên \textbf{Định luật II Newton}:
-
-\begin{equation}
-  F = ma
-\end{equation}
-
-Trong đó, $F$ là lực tác động lên một khối lượng $m$, tạo ra gia tốc $a$. Trong
-cấu trúc vi cơ điện tử (MEMS) của cảm biến gia tốc, một khối lượng nhỏ được
-treo bằng các thanh đàn hồi. Khi cảm biến chịu tác động gia tốc, khối lượng này
-dịch chuyển, gây ra sự thay đổi về đặc tính điện, chẳng hạn như: 01) thay đổi
-điện dung trong cảm biến kiểu điện dung (capacitive type); 02) thay đổi điện
-tích do hiệu ứng áp điện trong cảm biến kiểu áp điện (piezoelectric type); và
-03) thay đổi điện áp trong các cảm biến điện trở áp (piezoresistive type).
-
-Cấu trúc của cảm biến gia tốc MEMS bao gồm một khối lượng vi mô được gắn với hệ
-thống lò xo vi cơ. Khi có gia tốc tác động, khối lượng này dịch chuyển so với
-vị trí cân bằng ban đầu, gây ra sự biến dạng trong hệ lò xo. Theo định luật
-Hooke, lực đàn hồi sinh ra bởi sự biến dạng này được xác định bởi:
-
-\begin{equation}
-  F = k \cdot \Delta l
-\end{equation}
-
-kết hợp với phương trình Newton ta thu được:
-
-\begin{equation}
-  a = \frac{k \cdot \Delta l}{m}
-\end{equation}
-
-Điều này cho thấy: gia tốc có thể được xác định gián tiếp thông qua
-độ biến dạng $\Delta l$ của phần tử đàn hồi – yếu tố có thể đo được
-bằng các cảm biến vật lý (điện dung, áp điện, áp điện trở).
-Đây là cơ sở vật lý cho toàn bộ hoạt động của các cảm biến gia
-tốc hiện đại.
-
-Tín hiệu điện sinh ra từ quá trình này được khuếch đại và số hóa để xử lý trong
-các ứng dụng khác nhau. Chính khả năng chuyển đổi giữa năng lượng cơ học và
-điện học giúp cảm biến gia tốc hoạt động hiệu quả trong việc ghi nhận các trạng
-thái động học của vật thể, bao gồm: 01) dịch chuyển tuyến tính (linear
-movement), 02) góc nghiêng (tilt), 03) rung động (vibration), và 04) va chạm
-(shock) hoặc rơi tự do (free fall). Trong lĩnh vực y sinh, đặc biệt là trong
-nghiên cứu giấc ngủ và hội chứng ngưng thở khi ngủ (OSA), cảm biến gia tốc
-không chỉ giúp xác định tư thế ngủ (supine, prone, lateral) mà còn ghi nhận các
-dao động nhỏ trong lồng ngực do hô hấp – yếu tố gián tiếp giúp phát hiện bất
-thường hô hấp như hypopnea hoặc apnea.
-
-Một điểm đặc biệt trong ứng dụng là \textbf{hệ trục tọa độ trong cảm biến}. Khi
-cảm biến được gắn trên cơ thể, trục $z$ thường hướng vuông góc với mặt phẳng
-ngang và sẽ ghi nhận gia tốc trọng trường. Ở trạng thái tĩnh, trục $z$ đo được
-giá trị gần bằng $g = 9.81, \mathrm{m/s^2}$. Điều này không chỉ giúp hiệu chuẩn
-cảm biến mà còn cung cấp thông tin định hướng không gian – yếu tố thiết yếu để
-phân biệt các tư thế ngủ dựa trên định hướng của trục trọng lực. Nhờ khả năng
-tích hợp dễ dàng vào các thiết bị đeo (vòng tay, miếng dán, nhẫn), cảm biến gia
-tốc trở thành thành phần cốt lõi trong các hệ thống theo dõi không xâm lấn, hỗ
-trợ hiệu quả cho việc sàng lọc và đánh giá OSA tại nhà hoặc trong môi trường
-lâm sàng.
 \begin{figure}[!ht]
   \centering
-  % 		\setlength{\abovecaptionskip}{1pt plus 3pt minus 2pt}
-  \includegraphics[width=\textwidth]{images/acce.png}
-  \vspace*{-7mm}
-  \caption{Nguyên lý cơ bản của cảm biến gia tốc}
-  \label{acce}
+  \includegraphics[width=0.75\textwidth, keepaspectratio]{images/giatoc_ap_dien_tro.png}
+  \vspace*{-5mm}
+  \caption{(a) Sơ đồ bố trí tổng thể của cảm biến gia tốc điện trở áp
+    (b) Cấu trúc mặt cắt qua khối trọng và dầm
+    (c) Cầu Wheatstone đo gia tốc trục X
+    (d) Cầu Wheatstone đo gia tốc trục Y
+    (e) Cầu Wheatstone đo gia tốc trục Z.}
+  \label{position_sensor}
 \end{figure}
 
-Như minh họa trong Hình~\ref{acce}, khi cảm biến gia tốc chịu tác động từ một
-chuyển động, khối gia trọng (proof mass) sẽ dịch chuyển, làm lò xo kết nối bị
-biến dạng.
+Đầu tiên, cảm biến MEMS điện trở áp ra đời sớm nhất, có cấu tạo gồm một khối
+dầm bằng vật liệu có tính điện trở áp, kèm theo một khối trọng (mass) và
+khung đỡ \cite{Song2018_mems_accelerometer}.
+Bề mặt trên của khối trọng, các dầm và khung nằm trên cùng một mặt phẳng,
+đảm bảo tính đối xứng cấu trúc và khả năng tương thích cao với quy trình
+chế tạo vi cơ điện tử (MEMS).
+Khi cảm biến chịu tác động của gia tốc ngoài, ứng suất cơ học
+xuất hiện tại vùng đầu dầm, dẫn đến sự thay đổi điện trở của các
+phần tử này. Các điện trở piezo-resistive được bố trí và
+liên kết một cách tối ưu để tạo thành ba cầu Wheatstone độc lập,
+tương ứng với việc phát hiện các thành phần gia tốc theo ba trục vuông góc X, Y và Z,
 
-Trong khuôn khổ luận văn này, tác giả tập trung tìm hiểu và ứng dụng cảm biến
-gia tốc được chế tạo dựa trên công nghệ vi cơ điện tử (Micro-Electro-Mechanical
-Systems – MEMS). Đây là một công nghệ tiên tiến cho phép tích hợp các thành
-phần phần cứng siêu nhỏ và linh kiện điện tử ngay trên cùng một chip bán dẫn,
-với kích thước cấu trúc có thể dưới 10 micromet. Một trong những ưu điểm nổi
-bật của cảm biến gia tốc MEMS là khả năng tích hợp trực tiếp lên bo mạch in
-(Printed Circuit Board – PCB), qua đó giảm thiểu thể tích chiếm dụng, tiết kiệm
-chi phí sản xuất và đơn giản hóa thiết kế hệ thống nhúng. Nhờ đó, công nghệ này
-đặc biệt phù hợp cho các ứng dụng trong thiết bị đeo cá nhân, điện thoại di
-động, và các hệ thống theo dõi sức khỏe thế hệ mới.
+Trong mỗi cầu Wheatstone, sự thay đổi điện trở vi sai được chuyển đổi trực tiếp
+thành tín hiệu điện áp đầu ra, cho phép cảm biến biến đổi biến dạng cơ học
+thành tín hiệu điện tương ứng. Dựa trên đặc tính hình học và sự đối xứng của
+cấu trúc, mô hình toán học của cảm biến có thể được chia thành hai trường hợp
+chính: (1) Gia tốc tác dụng theo phương vuông góc với mặt phẳng (trục Z); (2)
+Gia tốc tác dụng trong mặt phẳng (trục X hoặc Y).
 
-Dựa trên nguyên lý chuyển đổi dao động cơ học thành tín hiệu điện, cảm biến gia
-tốc MEMS được chia thành ba loại chính, mỗi loại ứng dụng một cơ chế vật lý
-riêng biệt \cite{Acce, cambien}:
+\subsubsection*{Cảm biến gia tốc MEMS áp điện}
 
-\begin{enumerate}
-  \item \textbf{Cảm biến gia tốc kiểu điện dung (Capacitive Accelerometers)}:
+Cảm biến gia tốc được cấu tạo gồm hai phần chính
+\cite{Li2018_mems_accelerometer}: (1)Dầm đàn hồi– là một dầm silicon có một đầu
+cố định và đầu còn lại tự do mang trọng (mass block). Khi có gia tốc tác động,
+khối lượng này tạo ra lực quán tính khiến dầm bị uốn cong, sinh ra ứng suất cơ
+học trên bề mặt dầm. Các thông số hình học cơ bản bao gồm: chiều dài dầm ($L$),
+chiều rộng ($b$), độ dày ($h$), chiều rộng khối lượng ($d$) và độ dày khối
+lượng ($t$); (2)Cấu trúc áp điện – gồm ba lớp vật liệu xếp chồng theo thứ tự:
+lớp điện cực dưới thường bằng bạch kim/titan, lớp màng áp điện thường bằng
+Li-doped ZnO, và lớp điện cực trên thường bằng nhôm.
 
-        Đây là loại cảm biến phổ biến nhất trong các thiết bị điện tử tiêu dùng như điện thoại thông minh, vòng đeo tay sức khỏe và các hệ thống theo dõi chuyển động đeo được. Nguyên lý hoạt động của cảm biến dựa trên sự thay đổi điện dung giữa các bản cực trong cấu trúc tụ điện khi khối gia trọng (\textit{proof mass}) dịch chuyển dưới tác động của gia tốc.
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.75\textwidth, keepaspectratio]{images/giatoc_ap_dien.png}
+  \vspace*{-5mm}
+  \caption{Cấu trúc cơ bản của cám biến MEMS áp điện: (a) mặt trên (b) mặt dưới}
+  \label{giatoc_ap_dien}
+\end{figure}
 
-        Khi có gia tốc tác động, khối lượng vi mô được treo bằng hệ lò xo vi cơ (MEMS
-        spring system) sẽ dịch chuyển, làm thay đổi khoảng cách giữa các bản cực. Biến
-        thiên điện dung này được ghi nhận thông qua mạch đo điện dung nhạy, sau đó được
-        khuếch đại và chuyển đổi thành tín hiệu điện tỷ lệ với gia tốc. Ưu điểm chính
-        bao gồm: độ nhạy cao ở vùng tần số thấp, kích thước nhỏ, tiêu thụ năng lượng
-        thấp và khả năng tích hợp tốt vào các hệ thống nhúng. Loại cảm biến này đặc
-        biệt phù hợp với các ứng dụng theo dõi tư thế và chuyển động chậm.
+\noindent
+Khi chịu tác dụng của lực ngoài $F$, dầm công xôn bị biến dạng đàn hồi.
+Theo phân tích cơ học dầm và lý thuyết biến dạng nhỏ \cite{Hao2013_mems_accelerometer},
+ứng suất dọc $\sigma_l$ xuất hiện trên bề mặt dầm theo phương trục $x$ được biểu diễn như sau:
 
-        \begin{figure}[H]
-          \centering
-          \includegraphics[width=0.7\textwidth]{images/diendung.png}
-          \vspace*{-7mm}
-          \caption{Cấu trúc cảm biến gia tốc điện dung}
-          \label{acce_mems}
-        \end{figure}
+\begin{equation}
+  \sigma_l = \sigma_1 = \frac{6 F L}{b h^2}
+\end{equation}
 
-  \item \textbf{Cảm biến gia tốc kiểu áp điện trở (Piezoresistive Accelerometers)}:
+\noindent
+Dựa trên hiệu ứng áp điện thuận,
+hai bề mặt trên và dưới của màng áp điện ZnO pha tạp Li
+lần lượt mang điện tích dương và âm theo phương trục $z$.
+Lượng điện tích cảm ứng $q_3$ được xác định bởi công thức:
 
-        Loại cảm biến này hoạt động dựa trên hiện tượng thay đổi điện trở của vật liệu
-        bán dẫn khi chịu ứng suất cơ học – còn gọi là hiệu ứng áp điện trở. Các phần tử
-        cảm biến thường được gắn trực tiếp lên thanh dầm (cantilever) nối với khối gia
-        trọng. Khi có gia tốc, sự biến dạng cơ học của thanh dầm làm thay đổi điện trở
-        của phần tử cảm biến.
+\begin{equation}
+  q_3 = d_{31} \sigma_1
+\end{equation}
 
-        Để tăng độ nhạy và khả năng khuếch đại tín hiệu, cấu trúc cảm biến thường được tích hợp trong mạch cầu Wheatstone, giúp tăng cường tỷ số tín hiệu trên nhiễu (Signal-to-Noise Ratio – SNR).
+\noindent
+Trong đó, $d_{31}$ là hệ số áp điện,
+và $\sigma_1$ là ứng suất pháp tuyến theo phương $x$.
+Theo định nghĩa, điện dung $C$ giữa hai điện cực trên và dưới của cấu trúc áp điện được xác định bởi:
 
-        \begin{figure}[H]
-          \centering
-          \includegraphics[width=\textwidth]{images/acce_aptro.png}
-          \vspace*{-7mm}
-          \caption{Cấu trúc cảm biến áp điện trở}
-          \label{acce_aptro}
-        \end{figure}
+\begin{equation}
+  C = \frac{q_3}{V}
+\end{equation}
 
-        Ưu điểm chính của cảm biến áp điện trở là khả năng hoạt động
-        ổn định trong môi trường nhiệt độ cao hoặc điều kiện công nghiệp khắc nghiệt.
-        Tuy nhiên, chúng tiêu thụ nhiều năng lượng hơn và kém nhạy hơn
-        với chuyển động biên độ nhỏ, do đó ít phù hợp với các ứng dụng
-        theo dõi sinh lý học dài hạn như tư thế ngủ.
+\noindent
+với $V$ là điện áp đầu ra giữa hai điện cực của màng áp điện.
+Từ các quan hệ trên, điện áp đầu ra có thể được biểu diễn theo dạng:
 
-  \item \textbf{Cảm biến gia tốc kiểu áp điện (Piezoelectric Accelerometers)}:
+\begin{equation}
+  V = \frac{d_{31} \cdot 6 m L}{b h^2 C} \cdot a
+\end{equation}
 
-        Dựa trên hiệu ứng áp điện, cảm biến kiểu này sử dụng các vật liệu như thạch anh
-        hoặc gốm sứ có khả năng tạo ra điện tích khi bị biến dạng (nén hoặc kéo). Lượng
-        điện tích sinh ra tỉ lệ thuận với lực cơ học tác động lên cảm biến.
+\noindent
+Kết hợp với định nghĩa độ nhạy của cảm biến,
+ta có biểu thức:
 
-        \begin{figure}[H]
-          \centering
-          \includegraphics[width=\textwidth]{images/acce_apdien.png}
-          \vspace*{-7mm}
-          \caption{Cấu trúc cảm biến áp điện}
-          \label{acce_apdien}
-        \end{figure}
+\begin{equation}
+  S = \frac{V}{a} = \frac{d_{31} \cdot 6 m L}{b h^2 C}
+\end{equation}
 
-        Cảm biến kiểu áp điện có ưu điểm nổi bật là khối lượng nhẹ, tốc độ phản hồi
-        nhanh, và dải tần hoạt động rất rộng (có thể lên tới hàng MHz). Chúng thường
-        được ứng dụng trong đo rung động chính xác, giám sát kết cấu, và phân tích chấn
-        động ngắn hạn trong môi trường khắc nghiệt.
+\subsubsection*{Cảm biến gia tốc MEMS điện dung}
+Cảm biến gia tốc điện dung được gồm ba khối chức năng chính:
+khối trọng, hệ dầm đàn hồi và cụm lược điện cực \cite{Wang2022_mems_accelerometer}.
+Khối trọng là phần trung tâm của cảm biến, dao động khi có gia tốc tác động.
+Các dầm có nhiệm vụ đỡ và liên kết khối lượng này,
+đồng thời cho phép chuyển động đàn hồi trong giới hạn thiết kế.
+Cụm lược ghép (assembly combs)  được sử dụng để căn chỉnh trong quá trình chế tạo,
+trong khi cụm lược kích thích (drive combs) tạo dao động cưỡng bức cho khối lượng quán tính trong các thí nghiệm đo đáp ứng.
+Cụm lược đo (sense combs) đảm nhiệm chức năng phát hiện độ dịch chuyển của khối lượng thông qua sự thay đổi điện dung giữa các ngón điện cực.
 
-        Tuy cảm biến áp điện có độ nhạy cao với rung động nhanh và tần số cao, nhưng
-        chúng không phù hợp để đo gia tốc tĩnh hoặc chuyển động chậm kéo dài – vốn là
-        đặc trưng của bài toán theo dõi tư thế ngủ. Nguyên nhân là vì cảm biến này
-        không phản hồi với lực không đổi như trọng lực, do điện tích tạo ra bị rò dần
-        theo thời gian. Bên cạnh đó, tín hiệu đầu ra có trở kháng rất cao, dễ suy hao,
-        đòi hỏi bộ khuếch đại điện tích chuyên dụng, làm tăng độ phức tạp, kích thước
-        và tiêu thụ năng lượng của hệ thống. Những yếu tố này khiến cảm biến áp điện
-        không phù hợp để tích hợp vào thiết bị đeo cá nhân dùng trong theo dõi OSA tại
-        nhà.
-\end{enumerate}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.75\textwidth, keepaspectratio]{images/giatoc_diendung.png}
+  \vspace*{-5mm}
+  \caption{Sơ đồ thiết kế cơ bản của cảm biến MEMS điện dung}
+  \label{giatoc_diendung}
+\end{figure}
 
-Trong khuôn khổ luận văn này, cảm biến gia tốc MEMS kiểu điện dung được lựa
-chọn làm phần tử cảm biến trung tâm cho hệ thống theo dõi tư thế ngủ kéo dài,
-trên cơ sở đánh giá đa chiều cả về đặc trưng tín hiệu, yêu cầu hệ thống, lẫn
-khả năng triển khai thực tế.
+Các cụm lược kích thích và cụm lược ghép có cấu trúc tương tự nhau, chỉ khác về
+số lượng các ngón điện cực. Trong phần đo tín hiệu, cảm biến sử dụng hai cụm
+lược đo (sense combs 1 và sense combs 2) được mắc theo cấu hình vi sai. Khi cảm
+biến dịch chuyển dọc theo trục $x$, điện dung của sense combs 1 giảm, trong khi
+điện dung của sense combs 2 tăng. Hai tín hiệu điện dung biến thiên ngược pha
+này giúp tăng hệ số khuếch đại vi sai và loại bỏ nhiễu chế độ chung, nhờ đó cải
+thiện đáng kể độ nhạy và độ ổn định của cảm biến điện dung.
 
-Thứ nhất, từ góc độ \textit{đặc trưng tín hiệu}, bài toán nhận diện tư thế ngủ
-yêu cầu hệ thống có khả năng ghi nhận chính xác các chuyển động biên độ nhỏ,
-xảy ra chậm rãi trong thời gian dài (ví dụ như quá trình xoay người khi ngủ
-hoặc chuyển từ nằm ngửa sang nghiêng). Đây là điều kiện lý tưởng cho cảm biến
-điện dung MEMS – vốn có độ nhạy cao trong vùng tần số thấp (DC đến vài chục
-Hz), cho phép nhận diện rõ ràng sự thay đổi hướng trọng lực tác động lên trục
-cảm biến. Không giống như cảm biến áp điện, vốn chỉ phản hồi với dao động nhanh
-và không ghi nhận được trạng thái tĩnh, cảm biến điện dung cho phép theo dõi
-liên tục tư thế cơ thể với độ ổn định tín hiệu cao, phù hợp với đặc điểm sinh
-lý của giấc ngủ.
+\begin{figure}[H]
+  \centering
+  \[
+    \text{Tác động đầu vào}
+    \;\xrightarrow[\text{Gây ra dịch chuyển }x]{}
+    \;
+    \text{Thay đổi điện dung }(\Delta C)
+    \;\xrightarrow[\text{Mạch xử lý tín hiệu}]{}
+    \;
+    \text{Điện áp ra}
+  \]
+  \caption{Quá trình biến đổi tín hiệu trong cảm biến điện dung.}
+  \label{fig:signal_flow}
+\end{figure}
 
-Thứ hai, về \textit{yêu cầu hệ thống}, thiết bị theo dõi tư thế ngủ tại nhà cần
-đảm bảo ba yếu tố: (i) tiêu thụ năng lượng thấp để hoạt động xuyên đêm bằng
-pin; (ii) kích thước nhỏ gọn để đeo thoải mái mà không ảnh hưởng đến giấc ngủ;
-và (iii) khả năng tích hợp lên vi điều khiển nhúng (như dòng ARM Cortex-M) nhằm
-xử lý tín hiệu tại chỗ mà không cần truyền tải liên tục về máy chủ. Cảm biến
-điện dung MEMS đáp ứng hoàn toàn các yêu cầu này: tiêu thụ năng lượng ở mức vài
-µA, kích thước thường chỉ vài mm$^2$, và tín hiệu đầu ra dạng điện áp hoặc giao
-tiếp I\textsuperscript{2}C/SPI – thuận tiện cho việc kết nối với hệ thống nhúng
-tiêu chuẩn.
+Tín hiệu đầu vào là một đại lượng vật lý cần đo (ví dụ: gia tốc, áp suất, vị
+trí), tác động lên cảm biến điện dung và gây ra sự dịch chuyển cơ học $x$ giữa
+các bản cực của tụ điện. Sự dịch chuyển này làm thay đổi điện dung $\Delta C$
+của cảm biến. Biến thiên điện dung $\Delta C$ này được mạch xử lý tín hiệu
+(signal conditioning circuit) chuyển đổi thành điện áp đầu ra $V_{\text{out}}$.
 
-Thứ ba, xét về \textit{tính khả thi triển khai}, cảm biến điện dung MEMS có chi
-phí sản xuất và tích hợp thấp hơn rõ rệt so với các loại cảm biến dùng hiệu ứng
-áp điện hoặc áp điện trở, vốn yêu cầu mạch xử lý tín hiệu chuyên biệt (như
-khuếch đại điện tích hoặc cầu đo điện trở chính xác). Hơn nữa, loại cảm biến
-này có độ phổ biến cao trong chuỗi cung ứng linh kiện, dễ dàng tìm thấy các
-model tối ưu (như LIS3DH, ADXL345, MMA8451Q\ldots) với đầy đủ tài liệu kỹ
-thuật, thư viện lập trình và driver mã nguồn mở – giúp rút ngắn thời gian phát
-triển, tăng tính linh hoạt và khả năng tái sử dụng của hệ thống.
+\textbf{Nguyên lý kích thích và chuyển đổi C–V trong cảm biến điện dung MEMS}
 
-Cuối cùng, việc sử dụng cảm biến điện dung không chỉ đảm bảo độ chính xác đo
-lường trong môi trường thử nghiệm mà còn mang lại độ tin cậy và tính thực tiễn
-cao khi triển khai ở quy mô cộng đồng. Thiết kế hệ thống đơn giản, tiêu thụ
-điện năng thấp, dễ chế tạo và mở rộng – đây là những yếu tố then chốt trong các
-giải pháp y học số (digital health) hướng tới phòng ngừa sớm và giám sát cá
-nhân hoá tại nhà.
+Dựa trên nguyên lý cảm ứng điện dung vi sai, hai tụ điện cảm biến có điện dung
+lần lượt được xác định bởi \cite{Tirupathi2018_mems_accelerometer}:
+
+\begin{equation}
+  C_1 = C_0 + \Delta C,
+  \qquad
+  C_2 = C_0 - \Delta C
+\end{equation}
+
+\noindent
+Trong đó, $C_0$ là điện dung danh định khi không có gia tốc tác động,
+và $\Delta C$ là phần biến thiên điện dung phát sinh do dịch chuyển cơ học của khối trọng dưới tác dụng của gia tốc.
+
+\noindent
+Tín hiệu kích thích được áp dụng lên hai tụ có dạng sóng vuông vi sai $\pm V_p$,
+gọi là điện áp kích thích.
+Sự dịch chuyển cơ học $x$ gây ra biến thiên điện dung $\Delta C$ được chuyển đổi thành tín hiệu điện thông qua
+mạch khuếch đại điện tích
+hoạt động theo nguyên lý bảo toàn điện tích:
+
+\begin{equation}
+  Q = C_f \, V_{\text{out}}
+\end{equation}
+
+\noindent
+Trong đó, $Q$ là điện tích tích lũy tại nút khuếch đại,
+$C_f$ là điện dung phản hồi của op-amp,
+và $V_{\text{out}}$ là điện áp đầu ra của mạch.
+
+\noindent
+Sau quá trình giải điều chế  trong hai pha $\varphi_1$ và $\varphi_2$,
+hai nhánh đầu ra vi sai của mạch được xác định bởi:
+
+\begin{equation}
+  V_{\text{out}+} = V_{\text{cm}} + \frac{4 \, \Delta C}{C_f} \, V_p,
+  \qquad
+  V_{\text{out}-} = V_{\text{cm}} - \frac{4 \, \Delta C}{C_f} \, V_p
+\end{equation}
+
+\noindent
+với $V_{\text{cm}}$ là điện áp chế độ chung ,
+$V_p$ là biên độ của tín hiệu kích thích.
+
+\noindent
+Khi lấy hiệu hai đầu ra vi sai, điện áp hữu ích của cảm biến được xác định như sau:
+
+\begin{equation}
+  V_{\text{out}} = V_{\text{out}+} - V_{\text{out}-} = \frac{8\,\Delta C}{C_f}\,V_p
+\end{equation}
+
+\noindent
+Trong đó, $\Delta C$ biểu thị mức độ biến dạng cơ học của phần tử cảm biến (do gia tốc, áp suất hoặc lực),
+$C_f$ quyết định độ khuếch đại của mạch (giá trị $C_f$ càng nhỏ thì độ khuếch đại càng lớn),
+và $V_p$ là biên độ kích thích tỉ lệ thuận với biên độ điện áp đầu ra.
+
+\noindent
+Từ công thức~(4), có thể thấy rằng điện áp vi sai đầu ra $V_{\text{out}}$
+tỉ lệ tuyến tính với biến thiên điện dung $\Delta C$,
+tỉ lệ thuận với điện áp kích thích $V_p$,
+và tỉ lệ nghịch với điện dung phản hồi $C_f$.
+
+\noindent
+Dạng tổng quát của mối quan hệ này có thể được biểu diễn gọn hơn như sau:
+
+\begin{equation}
+  V_{\text{out}} = K \cdot \frac{\Delta C}{C_f} \, V_p
+\end{equation}
+
+\noindent
+với $K = 8$ là \textbf{hệ số khuếch đại hiệu dụng} (\textit{effective gain factor})
+phụ thuộc vào cấu hình vi sai và mạch lấy mẫu–giữ (\textit{sample–hold circuit}).
+
+\begin{table}[H]
+  \centering
+  \caption{ So sánh đặc tính giữa ba loại cảm biến gia tốc MEMS}
+  \label{tab:so_sanh_cam_bien_MEMS}
+  \renewcommand{\arraystretch}{1.25}
+  \fontsize{9pt}{11pt}\selectfont
+  \begin{tabular}{|p{4cm}|p{3.4cm}|p{3.4cm}|p{3.4cm}|}
+    \hline
+    \textbf{Tham số}                      & \textbf{Áp điện}                     & \textbf{Áp điện trở}                 & \textbf{Điện dung}                                                 \\ \hline
+
+    \textbf{Đáp ứng DC}                   & Kém – không đo được tín hiệu tĩnh    & Tốt – đo được tín hiệu tĩnh          & Tốt – đo được tín hiệu tĩnh và chậm                                \\ \hline
+
+    \textbf{Trở kháng}                    & Cao                                  & Thấp                                 & Cao                                                                \\ \hline
+
+    \textbf{Mức tín hiệu}                 & Cao – tạo điện áp trực tiếp          & Thấp – cần khuếch đại cầu Wheatstone & Trung bình – phụ thuộc vào biến thiên điện dung và mạch khuếch đại \\ \hline
+
+    \textbf{Hiệu chuẩn tĩnh}              & Kém                                  & Tốt                                  & Tốt                                                                \\ \hline
+
+    \textbf{Độ nhạy}                      & Cao                                  & Thấp                                 & Cao                                                                \\ \hline
+
+    \textbf{Thiết kế giảm chấn}           & Kém – khó kiểm soát tắt dần          & Tốt – dễ điều chỉnh                  & Tốt – điều khiển được qua cấu trúc MEMS                            \\ \hline
+
+    \textbf{Giá thành}                    & Cao – vật liệu và chế tạo phức tạp   & Thấp – tương thích công nghệ CMOS    & Cao – yêu cầu mạch xử lý phức tạp                                  \\ \hline
+
+    \textbf{Đo xung dài ($>$10 ms)}       & Kém – chỉ đo tín hiệu dao động nhanh & Tốt                                  & Tốt                                                                \\ \hline
+
+    \textbf{Độ nhạy với ứng suất lắp đặt} & Cao – dễ sai lệch do biến dạng       & Thấp                                 & Thấp – cấu trúc vi sai cân bằng                                    \\ \hline
+
+    \textbf{Độ phức tạp của mạch}         & Đơn giản – xuất điện áp trực tiếp    & Đơn giản – cầu Wheatstone            & Phức tạp – cần mạch khuếch đại vi sai, điều chế–giải điều chế      \\ \hline
+  \end{tabular}
+\end{table}
+
+Dựa vào Bảng~\ref{tab:so_sanh_cam_bien_MEMS} trong khuôn khổ luận văn này, cảm
+biến gia tốc MEMS kiểu điện dung được lựa chọn làm phần tử cảm biến trung tâm
+cho hệ thống theo dõi tư thế ngủ kéo dài, trên cơ sở đánh giá đa chiều cả về
+đặc trưng tín hiệu, yêu cầu hệ thống, lẫn khả năng triển khai thực tế.
 
 \textbf{Tóm lại}, việc lựa chọn cảm biến điện dung MEMS không đơn thuần là một quyết định kỹ thuật thuần tuý, mà còn phản ánh một giải pháp có tính cân bằng giữa hiệu quả đo lường, khả năng tích hợp phần cứng, và chiến lược mở rộng ứng dụng lâm sàng theo hướng chi phí thấp. Đây là một trong những nguyên tắc then chốt trong xu hướng đổi mới công nghệ y tế cộng đồng hiện đại – nơi mà tính khả thi triển khai và khả năng mở rộng đóng vai trò không kém phần quan trọng so với độ chính xác kỹ thuật.
 
 \vspace{1em}
 
-Nhìn chung, việc chẩn đoán hội chứng ngưng thở khi ngủ – đặc biệt là thể ngưng
-thở tắc nghẽn phụ thuộc tư thế (positional OSA – pOSA) – đòi hỏi một hệ thống
-giám sát liên tục, có khả năng thu thập dữ liệu sinh lý trong thời gian dài,
-nhận diện chính xác tư thế ngủ, và đưa ra cảnh báo kịp thời trong môi trường
-sinh hoạt tự nhiên tại nhà. Những yêu cầu này không chỉ giới hạn ở độ chính xác
-mô hình, mà còn mở rộng tới tiêu chí về tính gọn nhẹ, tiết kiệm năng lượng, và
-dễ triển khai trên nền tảng vi điều khiển hoặc thiết bị đeo.
+Nhìn chung, việc xác định tư thế ngủ để phục vụ việc chẩn đoán hội chứng ngưng
+thở khi ngủ đòi hỏi một hệ thống giám sát liên tục, có khả năng thu thập dữ
+liệu sinh lý trong thời gian dài trong môi trường sinh hoạt tự nhiên tại nhà.
+Những yêu cầu này không chỉ giới hạn ở độ chính xác mô hình, mà còn mở rộng tới
+tiêu chí về tính gọn nhẹ, tiết kiệm năng lượng, và dễ triển khai trên nền tảng
+vi điều khiển hoặc thiết bị đeo.
 
 Trong bối cảnh đó, các mô hình học máy trở thành công cụ thiết yếu để khai thác
 dữ liệu cảm biến. Chúng không chỉ cho phép phân loại tư thế với độ chính xác
@@ -736,97 +788,118 @@ thí nghiệm đến ứng dụng thực tiễn tại nhà, đánh dấu sự gi
 giấc ngủ truyền thống và trí tuệ nhân tạo ứng dụng – một lĩnh vực đang phát
 triển mạnh mẽ trong thập niên gần đây \cite{osa_sanchez2025}.
 
-\subsection{Quy trình tổng quát trong hệ thống ứng dụng AI cho đánh
-  giá OSA và phân loại tư thế ngủ}
+\subsection{Học máy trong phân loại tư thế ngủ}
+
+Hiện nay, trí tuệ nhân tạo (AI) đã và đang len lỏi vào hầu hết các lĩnh vực của
+đời sống, đặc biệt là trong các thiết bị y tế tại nhà. Việc ứng dụng các kỹ
+thuật học máy (machine learning) không chỉ giúp nâng cao hiệu suất xử lý, giảm
+chi phí vận hành, mà còn đảm bảo tính ổn định và độ lặp lại cao, đồng thời giảm
+thiểu sự can thiệp trực tiếp của con người.
+
+Với lượng dữ liệu phong phú và liên tục được thu thập từ các cảm biến sinh học,
+học máy trở thành công cụ thiết yếu để phân tích và khai thác hiệu quả các dòng
+dữ liệu này, giúp đưa ra quyết định nhanh chóng và chính xác.
+
+Đặc biệt, trong bối cảnh các thiết bị theo dõi sức khỏe tại nhà yêu cầu kích thước nhỏ gọn,
+tính di động cao, và không phụ thuộc vào kết nối Internet,
+thì học máy tại biên (Edge Machine Learning) nổi lên như một
+giải pháp tối ưu vừa mang lại khả năng tính toán mạnh mẽ,
+vừa dễ dàng triển khai trên các phần cứng có giới hạn tài nguyên.
+
+Chính vì những lý do đó, tác giả lựa chọn hướng nghiên cứu và phát triển học
+máy tại biên cho đề tài này.
+
+Bảng~\ref{tab:pipeline_steps} trình bày tổng quan quy trình triển khai một bài
+toán học máy.
+
 \begin{table}[htbp]
   \centering
-  \caption{Các bước chính trong hệ thống ứng dụng AI cho phân tích tư thế ngủ và hỗ trợ chẩn đoán OSA}
+  \caption{Các bước chính trong bài toán sử dụng học máy trên biên}
   \label{tab:pipeline_steps}
   \small
   \renewcommand{\arraystretch}{1.2}
   \begin{tabular}{|c|p{3.8cm}|p{9.2cm}|}
     \hline
-    \textbf{STT} & \textbf{Giai đoạn}                                                             & \textbf{Mô tả tổng quát}                                                                                                                         \\
+    \textbf{STT} & \textbf{Giai đoạn}                      & \textbf{Mô tả tổng quát}                                                                                                             \\
     \hline
-    1            & \textbf{Thu thập tín hiệu} \newline (Data Acquisition)                         & Ghi nhận tín hiệu từ cảm biến như gia tốc ba trục, PPG, ECG hoặc áp lực. Thiết bị đeo nhỏ gọn, truyền dữ liệu qua BLE, tốc độ lấy mẫu 10–100 Hz. \\
+    1            & \textbf{Thu thập tín hiệu}              & Ghi nhận tín hiệu từ cảm biến, xử lý  và lưu trữ.                                                                                    \\
     \hline
-    2            & \textbf{Tiền xử lý tín hiệu} \newline (Preprocessing)                          & Lọc nhiễu (notch, bandpass), loại bỏ trôi nền, phân đoạn theo cửa sổ thời gian. Mục tiêu là làm sạch và ổn định dữ liệu đầu vào.                 \\
+    2            & \textbf{Tiền xử lý}                     & Lọc nhiễu, phân đoạn theo cửa sổ thời gian, thống kê dữ liệu.                                                                        \\
     \hline
-    3            & \textbf{Trích xuất đặc trưng} \newline (Feature Extraction)                    & Tính toán các đặc trưng thời gian (mean, std, energy...) và tần số (FFT, wavelet), đại diện cho nội dung sinh lý trong từng đoạn tín hiệu.       \\
+    3            & \textbf{Trích xuất đặc trưng}           & Tính toán các đặc trưng thời gian, tần số - đại diện cho nội dung sinh lý trong từng đoạn tín hiệu.                                  \\
     \hline
-    4            & \textbf{Lựa chọn và huấn luyện mô hình} \newline (Model Selection \& Training) & Lựa chọn thuật toán học máy (SVM, RF, LR, NN nhẹ) phù hợp với bài toán phân loại tư thế và/hoặc đánh giá OSA.                                    \\
+    4            & \textbf{Lựa chọn và huấn luyện mô hình} & Lựa chọn thuật toán học máy phuù hợp với bài toán.                                                                                   \\
     \hline
-    5            & \textbf{Đánh giá hiệu năng} \newline (Evaluation)                              & Sử dụng các chỉ số đánh giá mô hình như Accuracy, Precision, Recall, F1-Score, AUC, confusion matrix.                                            \\
+    5            & \textbf{Đánh giá hiệu năng}             & Sử dụng các chỉ số đánh giá mô hình như Accuracy, Precision, Recall, F1-Score, AUC, confusion matrix.                                \\
     \hline
-    6            & \textbf{Tối ưu mô hình} \newline (Model Optimization)                          & Ứng dụng kỹ thuật pruning, quantization (8-bit) để giảm kích thước và độ phức tạp mô hình nhằm phục vụ triển khai biên.                          \\
+    6            & \textbf{Tối ưu mô hình}                 & Ứng dụng kỹ thuật cắt tỉa (pruning), lượng tử (quantization) để giảm kích thước và độ phức tạp mô hình nhằm phục vụ triển khai biên. \\
     \hline
-    7            & \textbf{Triển khai thực tế} \newline (Deployment)                              & Triển khai mô hình trên vi điều khiển (MCU) hỗ trợ TinyML, tích hợp trong thiết bị đeo nhằm theo dõi tư thế ngủ và ước lượng AHI tại nhà.        \\
+    7            & \textbf{Triển khai thực tế}             & Triển khai mô hình trên vi điều khiển, đánh giá và tái huấn luyện                                                                    \\
     \hline
   \end{tabular}
 \end{table}
 
-Quy trình này có thể được điều chỉnh tùy theo loại tín hiệu đầu vào và mục tiêu
-phân tích cụ thể (nhận diện tư thế, phát hiện ngưng thở, theo dõi nhịp
-thở,...). Tuy nhiên, nguyên tắc cơ bản là đảm bảo tín hiệu đầu vào chất lượng
-cao và mô hình đủ nhẹ để triển khai thực tế (xem
-Bảng~\ref{tab:pipeline_steps}).
+Quy trình này có thể được điều chỉnh linh hoạt tùy theo loại tín hiệu đầu vào
+và mục tiêu phân tích cụ thể, chẳng hạn như nhận diện tư thế ngủ, phát hiện
+ngưng thở hay theo dõi nhịp hô hấp. Tuy nhiên, nguyên tắc cốt lõi vẫn là đảm
+bảo tín hiệu đầu vào có chất lượng cao và mô hình học máy đủ nhẹ để triển khai
+trong thực tế.
 
-\textbf{Thu thập tín hiệu} là bước đầu tiên và đóng vai trò nền tảng
-trong toàn bộ quy trình phân tích tư thế ngủ, chẩn đoán hội chứng ngưng
-thở khi ngủ (OSA) bằng trí tuệ nhân tạo. Trong các hệ thống theo dõi tại
-nhà (HST), quá trình này được thực hiện thông qua các thiết bị đeo hoặc
-cảm biến gắn ngoài, với mục tiêu ghi nhận liên tục các tín hiệu sinh
-lý phản ánh hoạt động hô hấp, tuần hoàn và chuyển động cơ thể trong
-suốt giấc ngủ.
-Tín hiệu được ghi nhận có thể bao gồm: gia tốc ba trục nhằm phát hiện
-chuyển động và tư thế nằm; tín hiệu PPG để đo nhịp tim và độ bão hòa oxy;
-tín hiệu ECG để đánh giá hoạt động điện tim; hoặc tín hiệu từ cảm biến hô
-hấp, cảm biến áp lực gắn trên giường để xác định tư thế ngủ qua phân
-bố trọng lực. Tuỳ vào mục tiêu nghiên cứu và cấu hình thiết bị, các tín
-hiệu này được lấy mẫu với tần số phù hợp, thường dao động từ 10 Hz đến
-500 Hz \cite{Sleep_Posture_Detection, Jeng, Zhang_osa, Ferrer_osa, Sang, osa_sanchez2025}.
-Một trong những yêu cầu quan trọng của bước thu thập là đảm bảo tính
-ổn định và chất lượng của dữ liệu. Các cảm biến cần được gắn chắc chắn
-tại những vị trí tối ưu, chẳng hạn như vùng ngực, cổ tay hoặc hõm ức,
-để giảm thiểu nhiễu do chuyển động và duy trì tiếp xúc ổn định trong
-suốt quá trình theo dõi. Ngoài ra, hệ thống cũng cần đảm bảo khả năng
-lưu trữ hoặc truyền dữ liệu hiệu quả thông qua các giao thức không dây
-như Bluetooth Low Energy (BLE) hoặc Wi-Fi \cite{thuong_wear_paper, hst_wear_paper}.
-Trong một số nghiên cứu gần đây, các hệ thống HST hiện đại đã sử dụng
-vi điều khiển công suất thấp tích hợp cảm biến gia tốc, cho phép truyền
-dữ liệu liên tục với mức tiêu thụ năng lượng tối ưu. Ví dụ, trong nghiên
-cứu \cite{Sleep_Posture_Detection}, thiết bị dán cổ tích hợp cảm biến gia
-tốc LIS2DH12 và vi điều khiển nRF5232 đã được sử dụng để thu tín hiệu ở
-tần số 100 Hz và truyền không dây qua BLE, đảm bảo dữ liệu ổn định và
-chính xác trong điều kiện thực tế tại nhà.
+\textbf{Phần tiếp theo tác giả sẽ tập trung phân tích quy trình triển khai nêu trên vào
+  bài toán phân loại tư thế ngủ và đánh giá OSA.}
 
-Chất lượng của dữ liệu thu được trong bước này ảnh hưởng trực tiếp đến hiệu quả
-của toàn bộ hệ thống. Do đó, quá trình thu thập tín hiệu cần được thiết kế sao
-cho vừa đáp ứng được yêu cầu về độ chính xác sinh lý, vừa đảm bảo tính khả thi
-khi triển khai lâu dài trong môi trường ngoài lâm sàng. Tuy nhiên, trong nhiều
-nghiên cứu hiện nay, cấu trúc phần mềm cho quá trình thu thập và lưu trữ dữ
-liệu vẫn chưa được trình bày một cách đầy đủ và thống nhất. Các yếu tố như kiến
-trúc hệ thống (ứng dụng di động, web, hay máy chủ trung tâm), giao thức truyền
-thông (MQTT, HTTP), phương thức lưu trữ (cục bộ, cloud, hoặc cơ sở dữ liệu liên
-kết), cũng như các vấn đề liên quan đến mã hóa – bảo mật dữ liệu sức khỏe – và
-tuân thủ quy định của cơ quan chuyên môn (chuẩn HIPAA, GDPR, hoặc quy định y tế
-quốc gia) thường chưa được đề cập rõ ràng. Những yếu tố này có thể ảnh hưởng
-đến khả năng mở rộng, tích hợp, và ứng dụng thực tiễn của hệ thống trong môi
-trường chăm sóc sức khỏe tại nhà.
+\subsubsection{Thu thập tín hiệu}
 
-\subsubsection{Tiền xử lý dữ liệu}
+Là bước đầu tiên và đóng vai trò nền tảng trong toàn bộ quy trình tiếp đó. Các
+tín hiệu được ghi nhận có thể bao gồm tín hiệu gia tốc ba trục để phát hiện
+chuyển động và tư thế nằm; tín hiệu PPG dùng để đo nhịp tim và độ bão hòa oxy
+trong máu; tín hiệu ECG phản ánh hoạt động điện học của tim; hoặc các tín hiệu
+hô hấp và áp lực từ cảm biến gắn trên giường, giúp xác định tư thế ngủ thông
+qua phân bố trọng lực và các tín hiệu bổ sung khác. Tùy theo dạng dữ liệu thu
+thập và cấu hình thiết bị, các tín hiệu này được lấy mẫu với tần số phù hợp
+\cite{Sleep_Posture_Detection, Jeng_osa, Zhang_osa, Ferrer_osa, Sang,
+  osa_sanchez2025}.
 
-\textbf{Tiền xử lý dữ liệu} là một giai đoạn quan trọng nhằm cải thiện
-chất lượng tín hiệu, chuẩn hóa định dạng đầu vào và đảm bảo tính đồng
-nhất của dữ liệu trước khi đưa vào mô hình học máy. Các kỹ thuật tiền xử
-lý phổ biến bao gồm lọc tín hiệu (filtering), nội suy (interpolation),
-chuẩn hóa dữ liệu (normalization), phân đoạn tín hiệu (Segmentation – Epoch Creation).
+Một yêu cầu then chốt của bước này là đảm bảo tính ổn định và chất lượng dữ
+liệu. Các cảm biến cần được gắn cố định tại các vị trí tối ưu, chẳng hạn như
+vùng ngực, cổ tay hoặc hõm ức, nhằm giảm nhiễu chuyển động và duy trì tiếp xúc
+ổn định trong suốt quá trình theo dõi.
+
+Ngoài ra, hệ thống cũng cần đảm bảo khả năng lưu trữ và truyền dữ liệu hiệu quả
+thông qua các giao thức không dây tiết kiệm năng lượng như Bluetooth Low Energy
+(BLE) hoặc Wi-Fi \cite{thuong_wear_paper, hst_wear_paper,
+  Sleep_Posture_Detection}.
+
+Chất lượng dữ liệu thu được trong bước này ảnh hưởng trực tiếp đến hiệu quả của
+toàn bộ hệ thống học máy. Do đó, quy trình thu thập tín hiệu cần được thiết kế
+sao cho vừa đảm bảo độ chính xác sinh lý, vừa duy trì tính khả thi khi triển
+khai lâu dài trong môi trường ngoài lâm sàng.
+
+Tuy nhiên, trong nhiều nghiên cứu hiện nay, kiến trúc phần mềm cho quá trình
+thu thập và lưu trữ dữ liệu vẫn chưa được mô tả một cách đầy đủ và thống nhất.
+Các yếu tố như:
+\begin{itemize}
+  \item Kiến trúc hệ thống: ứng dụng di động, nền tảng web hoặc máy chủ trung tâm;
+  \item Giao thức truyền thông: MQTT, HTTP;
+  \item Phương thức lưu trữ dữ liệu: cục bộ, đám mây (cloud) hoặc cơ sở dữ liệu liên
+        kết;
+  \item Các vấn đề liên quan đến mã hóa, bảo mật dữ liệu sức khỏe và tuân thủ quy định
+        chuyên ngành (chuẩn HIPAA, GDPR hoặc quy định y tế quốc gia).
+\end{itemize}
+
+Việc thiếu chuẩn hóa trong các yếu tố trên có thể ảnh hưởng đáng kể đến khả
+năng mở rộng, tích hợp và ứng dụng thực tiễn của hệ thống trong môi trường chăm
+sóc sức khỏe tại nhà. Chính vì vậy, luận văn này tập trung giải quyết những hạn
+chế đó, hướng đến xây dựng một quy trình thu thập và quản lý tín hiệu sinh học
+thống nhất, bảo mật và sẵn sàng cho triển khai thực tế.
+
+\subsubsection{Tiền xử lý}
 
 \textbf{Lọc tín hiệu} là bước đầu tiên trong tiền xử lý nhằm loại bỏ nhiễu khỏi
 các tín hiệu sinh lý như EEG, ECG, EMG, $\mathrm{SpO_2}$ và gia tốc.
 Các loại nhiễu thường gặp bao gồm: nhiễu điện lưới (50–60 Hz),
-chuyển động cơ thể (motion artifacts), nhiễu tần số cao và trôi đường
-cơ sở (baseline drift) \cite{rossi2023sleep, sheta2021osa }.
+chuyển động cơ thể, nhiễu tần số cao và trôi đường
+cơ sở \cite{rossi2023sleep, sheta2021osa}.
 Trong nghiên cứu của Sheta và cộng sự \cite{sheta2021osa}, tác giả đã sử
 dụng bộ lọc notch IIR bậc hai nhằm loại bỏ nhiễu điện lưới 60~Hz khỏi
 tín hiệu ECG — vốn là loại nhiễu phổ biến gây khó khăn cho việc phân
@@ -894,7 +967,11 @@ chuẩn hóa hoặc làm mượt được áp dụng trong từng đoạn để 
 hất lượng dữ liệu đầu vào cho mô hình học máy
 \cite{Sleep_Posture_Detection, Vu2025SleepPosition, HOANG2025116309, zou2024mbtcn, osa_sanchez2025}.
 
-Tóm lại, tiền xử lý tín hiệu không chỉ giúp nâng cao chất lượng dữ liệu mà còn
+\textbf{Phân tích dữ liệu} là bước thống kê lại nhưng dữ liệu mình đã thu
+thập bao gồm các yếu tố như: độ cân bằng, độ lặp, các giá trị null/NaN, hay các
+thống kê khác theo yêu cầu bài toán
+
+Tóm lại, phân tích dữ liệu không chỉ giúp nâng cao chất lượng dữ liệu mà còn
 đảm bảo tính nhất quán đầu vào cho hệ thống học máy. Việc lựa chọn kỹ thuật
 tiền xử lý cần phù hợp với đặc điểm của từng loại tín hiệu và mục tiêu phân
 tích cụ thể.
@@ -903,11 +980,10 @@ tích cụ thể.
 \textbf{Trích xuất đặc trưng} là một bước quan trọng nhằm biến đổi dữ liệu cảm biến
 thô thành tập hợp các đặc trưng có ý nghĩa, phản ánh các mẫu hình sinh lý
 liên quan đến mục đích của nghiên cứu. Quá trình này giúp làm nổi bật
-những thông tin cốt lõi từ tín hiệu sinh học như ECG, PPG,
-$\mathrm{SpO_2}$, gia tốc hay tín hiệu hô hấp, phục vụ cho các mô hình
-học máy trong việc phân loại tư thế ngủ hoặc phát hiện hội chứng ngưng
-thở khi ngủ (OSA) \cite{hstSurvey, HOANG2025116309, Channa_osa, Uday, Sang}.
-Các đặc trưng thường được sử dụng bao gồm biến thiên
+những thông tin cốt lõi từ tín hiệu sinh học.
+
+Đối với phân loại tư thế ngủ hoặc phát hiện hội chứng ngưng
+thở khi ngủ (OSA) \cite{hstSurvey, HOANG2025116309, Channa_osa, Uday, Sang}, các đặc trưng thường được sử dụng bao gồm biến thiên
 nhịp tim (HRV), khoảng RR, biên độ sóng R từ tín hiệu ECG; các chỉ số
 thống kê, tần số và entropy từ tín hiệu $\mathrm{SpO_2}$; hoặc các đặc
 trưng phi tuyến và miền tần số như năng lượng phổ, thông số Hjorth từ EEG.
@@ -938,17 +1014,6 @@ AI chính xác và đánh giá mức độ nghiêm trọng của OSA một cách
 Tùy theo thiết kế nghiên cứu, nhãn có thể được gán thủ công dựa trên
 chuyên gia hoặc tự động đồng bộ với thiết bị tham chiếu như
 camera, hệ thống PSG.
-
-\textbf{Phát hiện đỉnh (peak detection)} là kỹ thuật thường được áp dụng
-để trích xuất thông tin từ tín hiệu dạng sóng, đặc biệt là ECG và PPG.
-Trong các nghiên cứu về OSA, đỉnh sóng R từ ECG thường được xác định
-để tính toán HRV, sử dụng các thuật toán như Pan–Tompkins, Hamilton
-hoặc ngưỡng thích nghi (adaptive threshold) \cite{osa_sanchez2025}. Với tín hiệu PPG,
-đỉnh tâm thu được phát hiện thông qua các thuật toán lặp hoặc
-wavelet nhị phân để xác định các khoảng thời gian giữa hai đỉnh
-(peak-to-peak intervals). Kỹ thuật này giúp nâng cao độ chính xác
-trong việc phát hiện các thay đổi sinh lý, góp phần cải thiện năng
-lực chẩn đoán tự động OSA trong các hệ thống ứng dụng trí tuệ nhân tạo.
 
 \subsubsection{Lựa chọn và huấn luyện mô hình}
 Các kỹ thuật học máy và kiến trúc mạng nơ-ron nhân tạo đã được ứng dụng hiệu

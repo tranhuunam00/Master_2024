@@ -3604,73 +3604,390 @@
       \verb https://doi.org/10.1186/s40001-018-0326-9
       \endverb
     \endentry
-    \entry{Acce}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=09b7aa725365a54cb71e52eb0f3a720e}{%
-           family={Niu},
+    \entry{Santoso2015_mems_accelerometer_apply}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=660c31a38e04e88c985078992cca0277}{%
+           family={Santoso},
+           familyi={S\bibinitperiod},
+           given={Didik\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=cac191d7d0ccd5adb8f251ef2e255d7c}{%
+           family={Maryanto},
+           familyi={M\bibinitperiod},
+           given={Sukir},
+           giveni={S\bibinitperiod}}}%
+        {{hash=690c71861c0cc26ae4d52edc55b56d68}{%
+           family={Nadhir},
            familyi={N\bibinitperiod},
-           given={Liqing\bibnamedelimb \& Xu\bibnamedelimb và\bibnamedelimb cộng\bibnamedelima sự},
-           giveni={L\bibinitperiod\bibinitdelim \\bibinitperiod\bibinitdelim X\bibinitperiod\bibinitdelim v\bibinitperiod\bibinitdelim c\bibinitperiod\bibinitdelim s\bibinitperiod},
-           suffix={Weimeng\bibnamedelimb \&\bibnamedelima Fang},
-           suffixi={W\bibinitperiod\bibinitdelim \\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+           given={Ahmad},
+           giveni={A\bibinitperiod}}}%
       }
-      \strng{namehash}{09b7aa725365a54cb71e52eb0f3a720e}
-      \strng{fullhash}{09b7aa725365a54cb71e52eb0f3a720e}
-      \strng{fullhashraw}{09b7aa725365a54cb71e52eb0f3a720e}
-      \strng{bibnamehash}{09b7aa725365a54cb71e52eb0f3a720e}
-      \strng{authorbibnamehash}{09b7aa725365a54cb71e52eb0f3a720e}
-      \strng{authornamehash}{09b7aa725365a54cb71e52eb0f3a720e}
-      \strng{authorfullhash}{09b7aa725365a54cb71e52eb0f3a720e}
-      \strng{authorfullhashraw}{09b7aa725365a54cb71e52eb0f3a720e}
+      \strng{namehash}{910453c9a1c9b1ecb51e62caccac9a79}
+      \strng{fullhash}{910453c9a1c9b1ecb51e62caccac9a79}
+      \strng{fullhashraw}{910453c9a1c9b1ecb51e62caccac9a79}
+      \strng{bibnamehash}{910453c9a1c9b1ecb51e62caccac9a79}
+      \strng{authorbibnamehash}{910453c9a1c9b1ecb51e62caccac9a79}
+      \strng{authornamehash}{910453c9a1c9b1ecb51e62caccac9a79}
+      \strng{authorfullhash}{910453c9a1c9b1ecb51e62caccac9a79}
+      \strng{authorfullhashraw}{910453c9a1c9b1ecb51e62caccac9a79}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Computer and Communications}
-      \field{title}{Summary of Research Status and Application of MEMS Accelerometers}
-      \field{year}{2018}
+      \field{journaltitle}{TELKOMNIKA (Telecommunication Computing Electronics and Control)}
+      \field{month}{06}
+      \field{title}{Application of Single MEMS-accelerometer to Measure 3-axis Vibrations and 2-axis Tilt-Angle Simultaneously}
+      \field{volume}{13}
+      \field{year}{2015}
+      \field{pages}{442}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.12928/telkomnika.v13i2.1490
+      \endverb
     \endentry
-    \entry{cambien}{inproceedings}{}{}
-      \name{author}{4}{}{%
-        {{hash=9096f853cd0599f8c48f497c40859cf6}{%
-           family={Tran},
-           familyi={T\bibinitperiod},
-           given={Duc-Tan},
-           giveni={D\bibinithyphendelim T\bibinitperiod}}}%
-        {{hash=aa117bd635e9e00409a4d7382165ac10}{%
-           family={Nguyen},
+    \entry{Szermer2025_mems_accelerometer_apply}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=49b0e4bc55aaf3e09685743b186c174c}{%
+           family={Szermer},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b2d3fc2f1291af25f18c0764846536b7}{%
+           family={Nazdrowicz},
            familyi={N\bibinitperiod},
-           given={Thuy},
-           giveni={T\bibinitperiod}}}%
-        {{hash=348e4a458cc1dbdef4f8f72abddc4c32}{%
-           family={Chu\bibnamedelima Duc},
-           familyi={C\bibinitperiod\bibinitdelim D\bibinitperiod},
-           given={Trinh},
-           giveni={T\bibinitperiod}}}%
-        {{hash=b1d780c7c9694b56ad05f5afaf7ba6f9}{%
-           family={Hung},
-           familyi={H\bibinitperiod},
-           given={Vu},
-           giveni={V\bibinitperiod}}}%
+           given={J.},
+           giveni={J\bibinitperiod}}}%
       }
-      \strng{namehash}{0d98fd7774692414a8c9537560b8a88a}
-      \strng{fullhash}{0d98fd7774692414a8c9537560b8a88a}
-      \strng{fullhashraw}{0d98fd7774692414a8c9537560b8a88a}
-      \strng{bibnamehash}{0d98fd7774692414a8c9537560b8a88a}
-      \strng{authorbibnamehash}{0d98fd7774692414a8c9537560b8a88a}
-      \strng{authornamehash}{0d98fd7774692414a8c9537560b8a88a}
-      \strng{authorfullhash}{0d98fd7774692414a8c9537560b8a88a}
-      \strng{authorfullhashraw}{0d98fd7774692414a8c9537560b8a88a}
+      \strng{namehash}{c60b41a6a245a7addf81991e37c1651b}
+      \strng{fullhash}{c60b41a6a245a7addf81991e37c1651b}
+      \strng{fullhashraw}{c60b41a6a245a7addf81991e37c1651b}
+      \strng{bibnamehash}{c60b41a6a245a7addf81991e37c1651b}
+      \strng{authorbibnamehash}{c60b41a6a245a7addf81991e37c1651b}
+      \strng{authornamehash}{c60b41a6a245a7addf81991e37c1651b}
+      \strng{authorfullhash}{c60b41a6a245a7addf81991e37c1651b}
+      \strng{authorfullhashraw}{c60b41a6a245a7addf81991e37c1651b}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Hội nghị toàn quốc lần thứ 6 về tự động hoá (VICA6)}
-      \field{month}{01}
-      \field{title}{Cảm biến gia tốc MEMS kiểu tụ: So sánh kết quả mô phỏng và thực nghiệm}
-      \field{year}{2005}
-      \field{pages}{465\bibrangedash 470}
-      \range{pages}{6}
+      \field{journaltitle}{Electronics}
+      \field{number}{15}
+      \field{title}{Study on Comb-Drive MEMS Acceleration Sensor Used for Medical Purposes: Monitoring of Balance Disorders}
+      \field{volume}{14}
+      \field{year}{2025}
+      \field{pages}{3033}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/electronics14153033
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.3390/electronics14153033
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3390/electronics14153033
+      \endverb
+    \endentry
+    \entry{Shi2023_mems_accelerometer}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=94f439f0527cf3964c3273d60c4cebab}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=99b9a60607967ccae4682a367cc91dde}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e5ce14a369df03f8953ae6fdbe0edb8c}{%
+           family={Kang},
+           familyi={K\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=6c72831a314bee50d394cb3af13fb87b}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=30c3519915a07c272d6fd946f3eaa35a}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f28ab363a1309d536e9c16372b11c274}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=6d35c20fa2d9e29476d1a61dc33b39ad}{%
+           family={Pang},
+           familyi={P\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=cc4aadc875d7abdbaf96dfa4a83d8b77}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce37c2aa12e12a40220fc2fd8c5136c8}
+      \strng{fullhash}{ce37c2aa12e12a40220fc2fd8c5136c8}
+      \strng{fullhashraw}{ce37c2aa12e12a40220fc2fd8c5136c8}
+      \strng{bibnamehash}{ce37c2aa12e12a40220fc2fd8c5136c8}
+      \strng{authorbibnamehash}{ce37c2aa12e12a40220fc2fd8c5136c8}
+      \strng{authornamehash}{ce37c2aa12e12a40220fc2fd8c5136c8}
+      \strng{authorfullhash}{ce37c2aa12e12a40220fc2fd8c5136c8}
+      \strng{authorfullhashraw}{ce37c2aa12e12a40220fc2fd8c5136c8}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Micromachines (Basel)}
+      \field{month}{8}
+      \field{number}{8}
+      \field{title}{High-Sensitivity Piezoelectric MEMS Accelerometer for Vector Hydrophones}
+      \field{volume}{14}
+      \field{year}{2023}
+      \field{pages}{1598}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/mi14081598
+      \endverb
+    \endentry
+    \entry{Song2018_mems_accelerometer}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=4bbe95135cfb1c65bb1b27ee02401466}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c4631c75fd513e16e66190ad6ef02dd7}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=95c40ddfdd2cb0ac5a1ef74bb71692f3}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=180f7aa8100dc9dcb5e9d3fb4a2bbeab}{%
+           family={Xue},
+           familyi={X\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=13414502df57d59c82c59a065c752294}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a3e3720ded5d56ef6dd866dd0a76d54}
+      \strng{fullhash}{1a3e3720ded5d56ef6dd866dd0a76d54}
+      \strng{fullhashraw}{1a3e3720ded5d56ef6dd866dd0a76d54}
+      \strng{bibnamehash}{1a3e3720ded5d56ef6dd866dd0a76d54}
+      \strng{authorbibnamehash}{1a3e3720ded5d56ef6dd866dd0a76d54}
+      \strng{authornamehash}{1a3e3720ded5d56ef6dd866dd0a76d54}
+      \strng{authorfullhash}{1a3e3720ded5d56ef6dd866dd0a76d54}
+      \strng{authorfullhashraw}{1a3e3720ded5d56ef6dd866dd0a76d54}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{11}
+      \field{title}{A Mathematical Model of a Piezo-Resistive Eight-Beam Three-Axis Accelerometer with Simulation and Experimental Validation}
+      \field{volume}{18}
+      \field{year}{2018}
+      \field{pages}{3641}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s18113641
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.3390/s18113641
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3390/s18113641
+      \endverb
+    \endentry
+    \entry{Li2018_mems_accelerometer}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=0ee6724aae227dcac2949962d898b300}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b2ff85d118c95088c7ca004045563aa8}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=08bb98eb39a06d370925f97c54be6938}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=66d548e0e670e107fc4a80dc0c3825b3}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=978df13d2feae2e4c81cb8e1f7e77adf}{%
+           family={Ai},
+           familyi={A\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=5db8f29a8121e7cb1fd16dd6512e5194}{%
+           family={Wen},
+           familyi={W\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{d9a2733125f0d04fc73d49d829992b3d}
+      \strng{fullhash}{d9a2733125f0d04fc73d49d829992b3d}
+      \strng{fullhashraw}{d9a2733125f0d04fc73d49d829992b3d}
+      \strng{bibnamehash}{d9a2733125f0d04fc73d49d829992b3d}
+      \strng{authorbibnamehash}{d9a2733125f0d04fc73d49d829992b3d}
+      \strng{authornamehash}{d9a2733125f0d04fc73d49d829992b3d}
+      \strng{authorfullhash}{d9a2733125f0d04fc73d49d829992b3d}
+      \strng{authorfullhashraw}{d9a2733125f0d04fc73d49d829992b3d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Micromachines}
+      \field{number}{4}
+      \field{title}{Fabrication Technology and Characteristics Research of the Acceleration Sensor Based on Li-Doped ZnO Piezoelectric Thin Films}
+      \field{volume}{9}
+      \field{year}{2018}
+      \field{pages}{178}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/mi9040178
+      \endverb
+    \endentry
+    \entry{Hao2013_mems_accelerometer}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=82da009389422a94804724e402f8ce5b}{%
+           family={Hao},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi Y.},
+           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=a6504c69eedad6abda2dbe9318147d47}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{3582d094f8a721f57edc985066b44f9e}
+      \strng{fullhash}{3582d094f8a721f57edc985066b44f9e}
+      \strng{fullhashraw}{3582d094f8a721f57edc985066b44f9e}
+      \strng{bibnamehash}{3582d094f8a721f57edc985066b44f9e}
+      \strng{authorbibnamehash}{3582d094f8a721f57edc985066b44f9e}
+      \strng{authornamehash}{3582d094f8a721f57edc985066b44f9e}
+      \strng{authorfullhash}{3582d094f8a721f57edc985066b44f9e}
+      \strng{authorfullhashraw}{3582d094f8a721f57edc985066b44f9e}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advanced Materials Research}
+      \field{title}{Mechanics analysis of cantilever beam with uniform load}
+      \field{volume}{675}
+      \field{year}{2013}
+      \field{pages}{98\bibrangedash 102}
+      \range{pages}{5}
+    \endentry
+    \entry{Wang2022_mems_accelerometer}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=466ce84bc5093e2ec73b823c573ad026}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=3460f2f2ddb96dc43a13c39349f841df}{%
+           family={Hao},
+           familyi={H\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=13ccffa8fb1a9b606fa3ce4e5854867a}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=f7e4b292f855ec93eb0c0e63e9add8f8}{%
+           family={Zu},
+           familyi={Z\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a8777b15050065e44890631e4970c0ae}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=701500fa4f83c75c8ce39152916ce4e4}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{84199ddcd607230274bbcf1f922ce712}
+      \strng{fullhash}{84199ddcd607230274bbcf1f922ce712}
+      \strng{fullhashraw}{84199ddcd607230274bbcf1f922ce712}
+      \strng{bibnamehash}{84199ddcd607230274bbcf1f922ce712}
+      \strng{authorbibnamehash}{84199ddcd607230274bbcf1f922ce712}
+      \strng{authornamehash}{84199ddcd607230274bbcf1f922ce712}
+      \strng{authorfullhash}{84199ddcd607230274bbcf1f922ce712}
+      \strng{authorfullhashraw}{84199ddcd607230274bbcf1f922ce712}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Micromachines}
+      \field{number}{3}
+      \field{title}{Design of a Capacitive MEMS Accelerometer with Softened Beams}
+      \field{volume}{13}
+      \field{year}{2022}
+      \field{pages}{459}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/mi13030459
+      \endverb
+    \endentry
+    \entry{Tirupathi2018_mems_accelerometer}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=6de188366ccc18512b062913ec4157eb}{%
+           family={Tirupathi},
+           familyi={T\bibinitperiod},
+           given={Rakesh},
+           giveni={R\bibinitperiod}}}%
+        {{hash=3273299d6c239bb1f8874fa4b0754ae3}{%
+           family={Kar},
+           familyi={K\bibinitperiod},
+           given={Sougata},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d9b7eb4555183028a246e2ccad0b7fa5}
+      \strng{fullhash}{d9b7eb4555183028a246e2ccad0b7fa5}
+      \strng{fullhashraw}{d9b7eb4555183028a246e2ccad0b7fa5}
+      \strng{bibnamehash}{d9b7eb4555183028a246e2ccad0b7fa5}
+      \strng{authorbibnamehash}{d9b7eb4555183028a246e2ccad0b7fa5}
+      \strng{authornamehash}{d9b7eb4555183028a246e2ccad0b7fa5}
+      \strng{authorfullhash}{d9b7eb4555183028a246e2ccad0b7fa5}
+      \strng{authorfullhashraw}{d9b7eb4555183028a246e2ccad0b7fa5}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{A Differential Output Switched Capacitor based Capacitive Sensor Interfacing Circuit}
+      \field{year}{2018}
+      \field{pages}{0565\bibrangedash 0569}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/TENCON.2018.8650389
+      \endverb
     \endentry
     \entry{Sang}{article}{}{}
       \name{author}{1}{}{%
@@ -3690,8 +4007,8 @@
       \strng{authornamehash}{ee51fd682f7ae907a9e1d9d32daaedec}
       \strng{authorfullhash}{ee51fd682f7ae907a9e1d9d32daaedec}
       \strng{authorfullhashraw}{ee51fd682f7ae907a9e1d9d32daaedec}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Conference on Biomedical Engineering in Vietnam}
@@ -3726,8 +4043,8 @@
       \strng{authornamehash}{31ef70e6705156db613b1509885d2b91}
       \strng{authorfullhash}{31ef70e6705156db613b1509885d2b91}
       \strng{authorfullhashraw}{31ef70e6705156db613b1509885d2b91}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
@@ -3792,8 +4109,8 @@
       \strng{authornamehash}{bbd746e66fec67f1fac5b88c9f6933a1}
       \strng{authorfullhash}{bbd746e66fec67f1fac5b88c9f6933a1}
       \strng{authorfullhashraw}{bbd746e66fec67f1fac5b88c9f6933a1}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2076-3417}
@@ -3830,8 +4147,8 @@
       \strng{authornamehash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
       \strng{authorfullhash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
       \strng{authorfullhashraw}{45f5df5515dbc3f650fa4dd7ab4fc93e}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Transactions of the ASME--Journal of Basic Engineering}
@@ -4051,8 +4368,8 @@
       \strng{authornamehash}{49b85f8f54cf2345acda6dcb2a8806e3}
       \strng{authorfullhash}{49b85f8f54cf2345acda6dcb2a8806e3}
       \strng{authorfullhashraw}{49b85f8f54cf2345acda6dcb2a8806e3}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Applied Mathematics and Data Science}
@@ -4111,8 +4428,8 @@
       \strng{authornamehash}{fdb1997d1a11a6bdddbc91e539b6e584}
       \strng{authorfullhash}{fdb1997d1a11a6bdddbc91e539b6e584}
       \strng{authorfullhashraw}{fdb1997d1a11a6bdddbc91e539b6e584}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2079-6374}
@@ -4239,8 +4556,8 @@
       \strng{authornamehash}{bd5aa4c9f1fa99ed38dd819bd9f42961}
       \strng{authorfullhash}{bd5aa4c9f1fa99ed38dd819bd9f42961}
       \strng{authorfullhashraw}{bd5aa4c9f1fa99ed38dd819bd9f42961}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Multiple Classifier Systems}
