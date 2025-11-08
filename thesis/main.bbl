@@ -4922,128 +4922,6 @@
       \field{volume}{7}
       \field{year}{2016}
     \endentry
-    \entry{arm_cortex_m_comparison}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=36316c1e52871093ff2bef1f938bf36b}{%
-           family={Ltd.},
-           familyi={L\bibinitperiod},
-           given={Arm},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{36316c1e52871093ff2bef1f938bf36b}
-      \strng{fullhash}{36316c1e52871093ff2bef1f938bf36b}
-      \strng{fullhashraw}{36316c1e52871093ff2bef1f938bf36b}
-      \strng{bibnamehash}{36316c1e52871093ff2bef1f938bf36b}
-      \strng{authorbibnamehash}{36316c1e52871093ff2bef1f938bf36b}
-      \strng{authornamehash}{36316c1e52871093ff2bef1f938bf36b}
-      \strng{authorfullhash}{36316c1e52871093ff2bef1f938bf36b}
-      \strng{authorfullhashraw}{36316c1e52871093ff2bef1f938bf36b}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: April 6, 2025}
-      \field{title}{Arm Cortex-M Processor Comparison Table}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://developer.arm.com/documentation/102787/latest/
-      \endverb
-      \verb{url}
-      \verb https://developer.arm.com/documentation/102787/latest/
-      \endverb
-    \endentry
-    \entry{cortexM4}{online}{}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labeltitlesource}{title}
-      \field{note}{Available at \url{https://developer.arm.com/Processors/Cortex-M4}}
-      \field{title}{Cortex-M4}
-    \endentry
-    \entry{electronics11162545}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=ef835faa2f355499d8be8b7098fcd306}{%
-           family={Lucan\bibnamedelima Orășan},
-           familyi={L\bibinitperiod\bibinitdelim O\bibinitperiod},
-           given={Ioan},
-           giveni={I\bibinitperiod}}}%
-        {{hash=b4b0eb0d94502f491133e709c9067c80}{%
-           family={Seiculescu},
-           familyi={S\bibinitperiod},
-           given={Ciprian},
-           giveni={C\bibinitperiod}}}%
-        {{hash=d374d74eddc91a139822a9be6dc77b05}{%
-           family={Căleanu},
-           familyi={C\bibinitperiod},
-           given={Cătălin\bibnamedelima Daniel},
-           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \strng{namehash}{ba542c4a5e77388f02eeef30dddc2ac9}
-      \strng{fullhash}{ba542c4a5e77388f02eeef30dddc2ac9}
-      \strng{fullhashraw}{ba542c4a5e77388f02eeef30dddc2ac9}
-      \strng{bibnamehash}{ba542c4a5e77388f02eeef30dddc2ac9}
-      \strng{authorbibnamehash}{ba542c4a5e77388f02eeef30dddc2ac9}
-      \strng{authornamehash}{ba542c4a5e77388f02eeef30dddc2ac9}
-      \strng{authorfullhash}{ba542c4a5e77388f02eeef30dddc2ac9}
-      \strng{authorfullhashraw}{ba542c4a5e77388f02eeef30dddc2ac9}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{2079-9292}
-      \field{journaltitle}{Electronics}
-      \field{number}{16}
-      \field{title}{A Brief Review of Deep Neural Network Implementations for ARM Cortex-M Processor}
-      \field{volume}{11}
-      \field{year}{2022}
-      \verb{doi}
-      \verb 10.3390/electronics11162545
-      \endverb
-      \verb{urlraw}
-      \verb https://www.mdpi.com/2079-9292/11/16/2545
-      \endverb
-      \verb{url}
-      \verb https://www.mdpi.com/2079-9292/11/16/2545
-      \endverb
-    \endentry
-    \entry{applicationCortexM4}{inproceedings}{}{}
-      \name{author}{3}{}{%
-        {{hash=5cb4c0eec359d38ac400abceb2d1c5ca}{%
-           family={Chaturvedi},
-           familyi={C\bibinitperiod},
-           given={Pradyumn},
-           giveni={P\bibinitperiod}}}%
-        {{hash=bb49e119a6fb42dd3af8c0f52c524a7c}{%
-           family={Mulla},
-           familyi={M\bibinitperiod},
-           given={Mahmadasraf},
-           giveni={M\bibinitperiod}}}%
-        {{hash=74b89985f711d1659f887f5a150107ef}{%
-           family={Patro},
-           familyi={P\bibinitperiod},
-           given={Siba},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{e07c1a7ce9a74cf95ac7f9b89b4b5ab7}
-      \strng{fullhash}{e07c1a7ce9a74cf95ac7f9b89b4b5ab7}
-      \strng{fullhashraw}{e07c1a7ce9a74cf95ac7f9b89b4b5ab7}
-      \strng{bibnamehash}{e07c1a7ce9a74cf95ac7f9b89b4b5ab7}
-      \strng{authorbibnamehash}{e07c1a7ce9a74cf95ac7f9b89b4b5ab7}
-      \strng{authornamehash}{e07c1a7ce9a74cf95ac7f9b89b4b5ab7}
-      \strng{authorfullhash}{e07c1a7ce9a74cf95ac7f9b89b4b5ab7}
-      \strng{authorfullhashraw}{e07c1a7ce9a74cf95ac7f9b89b4b5ab7}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{12}
-      \field{title}{Power Electronics Laboratory Education using ARM Cortex M4 32-bit Microcontroller}
-      \field{year}{2018}
-      \field{pages}{1\bibrangedash 6}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.1109/PEDES.2018.8707575
-      \endverb
-    \endentry
     \entry{nrf52840}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=af5e4455ba6301bed1741b8796304f18}{%
@@ -5067,42 +4945,154 @@
       \field{title}{nRF52840 – Advanced Bluetooth 5, Thread and Zigbee multiprotocol SoC}
       \field{year}{2025}
     \endentry
+    \entry{Nordic2021_tinyml}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=352a7dc6b3bb9969e19f0d298749f3cc}{%
+           family={Semiconductor},
+           familyi={S\bibinitperiod},
+           given={Nordic},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{352a7dc6b3bb9969e19f0d298749f3cc}
+      \strng{fullhash}{352a7dc6b3bb9969e19f0d298749f3cc}
+      \strng{fullhashraw}{352a7dc6b3bb9969e19f0d298749f3cc}
+      \strng{bibnamehash}{352a7dc6b3bb9969e19f0d298749f3cc}
+      \strng{authorbibnamehash}{352a7dc6b3bb9969e19f0d298749f3cc}
+      \strng{authornamehash}{352a7dc6b3bb9969e19f0d298749f3cc}
+      \strng{authorfullhash}{352a7dc6b3bb9969e19f0d298749f3cc}
+      \strng{authorfullhashraw}{352a7dc6b3bb9969e19f0d298749f3cc}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://blog.nordicsemi.com/getconnected/tiny-machine-learning-now-more-accessible-for-non-expert-developers}}
+      \field{note}{Accessed: 2025-11-07}
+      \field{title}{Tiny Machine Learning Now More Accessible for Non-Expert Developers}
+      \field{year}{2021}
+    \endentry
+    \entry{Wang2018_slidingwindow}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=394d641a0626e0504be74152c455899d}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=34eb0d3545d5a6175d27a342936002b1}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Q.},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=9a75ee293f2555f40976345739087998}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=8c0d8d495d30364a6fdc14d3ee19f5b7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=bd478291134e5efdbf172615f331fec0}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0c12ae96450bf90f74282991aa068345}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{9990b0cff8efea70f01b6902e12eff5b}
+      \strng{fullhash}{9990b0cff8efea70f01b6902e12eff5b}
+      \strng{fullhashraw}{9990b0cff8efea70f01b6902e12eff5b}
+      \strng{bibnamehash}{9990b0cff8efea70f01b6902e12eff5b}
+      \strng{authorbibnamehash}{9990b0cff8efea70f01b6902e12eff5b}
+      \strng{authornamehash}{9990b0cff8efea70f01b6902e12eff5b}
+      \strng{authorfullhash}{9990b0cff8efea70f01b6902e12eff5b}
+      \strng{authorfullhashraw}{9990b0cff8efea70f01b6902e12eff5b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{6}
+      \field{title}{Impact of Sliding Window Length in Indoor Human Motion Modes and Pose Pattern Recognition Based on Smartphone Sensors}
+      \field{volume}{18}
+      \field{year}{2018}
+      \field{pages}{1965}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s18061965
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.3390/s18061965
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3390/s18061965
+      \endverb
+    \endentry
+    \entry{BLE_compare}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=164b2735bf8754088a8779fa43be28af}{%
+           family={Al-Shareeda},
+           familyi={A\bibinithyphendelim S\bibinitperiod},
+           given={Mahmood},
+           giveni={M\bibinitperiod}}}%
+        {{hash=490c92da35e4223539e226ea7d263bee}{%
+           family={Ali},
+           familyi={A\bibinitperiod},
+           given={Murtaja},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fc398e03865b95d6fa56f4e0eaf16bce}{%
+           family={Manickam},
+           familyi={M\bibinitperiod},
+           given={Selvakumar},
+           giveni={S\bibinitperiod}}}%
+        {{hash=def2da19ac072f629f49607a2eb0a8d7}{%
+           family={Karuppayah},
+           familyi={K\bibinitperiod},
+           given={Shankar},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a177e57e790ef8fd3cc8dbd098334a1}
+      \strng{fullhash}{4a177e57e790ef8fd3cc8dbd098334a1}
+      \strng{fullhashraw}{4a177e57e790ef8fd3cc8dbd098334a1}
+      \strng{bibnamehash}{4a177e57e790ef8fd3cc8dbd098334a1}
+      \strng{authorbibnamehash}{4a177e57e790ef8fd3cc8dbd098334a1}
+      \strng{authornamehash}{4a177e57e790ef8fd3cc8dbd098334a1}
+      \strng{authorfullhash}{4a177e57e790ef8fd3cc8dbd098334a1}
+      \strng{authorfullhashraw}{4a177e57e790ef8fd3cc8dbd098334a1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Indonesian Journal of Electrical Engineering and Computer Science}
+      \field{month}{08}
+      \field{title}{Bluetooth low energy for internet of things: review, challenges, and open issues}
+      \field{volume}{31}
+      \field{year}{2023}
+      \field{pages}{1182\bibrangedash 1189}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.11591/ijeecs.v31.i2.pp1182-1189
+      \endverb
+    \endentry
+    \entry{BluetoothSIG2019_Core5}{misc}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.bluetooth.com/wp-content/uploads/2019/03/Bluetooth_5-FINAL.pdf}}
+      \field{note}{Version 1.1.1, Revision Date 13 January 2025}
+      \field{title}{Bluetooth® Core 5.0 – Feature Enhancements}
+      \field{year}{2019}
+    \endentry
     \entry{BLE}{online}{}{}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{note}{Available at \url{https://www.bluetooth.com/bluetooth-resources/bluetooth-core-specification-version-5-3-feature-enhancements/}}
       \field{title}{Bluetooth® Core Specification Version 5.3 Feature Enhancements}
-    \endentry
-    \entry{ada_overview}{online}{}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labeltitlesource}{title}
-      \field{note}{Available at \url{https://learn.adafruit.com/introducing-circuit-playground/overview}}
-      \field{title}{Introducing Circuit Playground}
-    \endentry
-    \entry{nano33ble}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=ee5bced252ab77ec8d633c1afda7c5da}{%
-           family={{Arduino}},
-           familyi={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{ee5bced252ab77ec8d633c1afda7c5da}
-      \strng{fullhash}{ee5bced252ab77ec8d633c1afda7c5da}
-      \strng{fullhashraw}{ee5bced252ab77ec8d633c1afda7c5da}
-      \strng{bibnamehash}{ee5bced252ab77ec8d633c1afda7c5da}
-      \strng{authorbibnamehash}{ee5bced252ab77ec8d633c1afda7c5da}
-      \strng{authornamehash}{ee5bced252ab77ec8d633c1afda7c5da}
-      \strng{authorfullhash}{ee5bced252ab77ec8d633c1afda7c5da}
-      \strng{authorfullhashraw}{ee5bced252ab77ec8d633c1afda7c5da}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://docs.arduino.cc/hardware/nano-33-ble-sense/}}
-      \field{note}{Accessed: 2025-07-28}
-      \field{title}{Nano 33 BLE Sense – Datasheet and Hardware Overview}
-      \field{year}{2025}
     \endentry
     \entry{allan}{article}{}{}
       \name{author}{2}{}{%

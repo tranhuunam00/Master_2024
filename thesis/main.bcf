@@ -2531,32 +2531,27 @@
     <bcf:citekey order="107" intorder="1">vu2023</bcf:citekey>
     <bcf:citekey order="108" intorder="1">gomes2021</bcf:citekey>
     <bcf:citekey order="109" intorder="1">souza2017</bcf:citekey>
-    <bcf:citekey order="110" intorder="1">vu2023</bcf:citekey>
-    <bcf:citekey order="111" intorder="1">Boiko2023</bcf:citekey>
-    <bcf:citekey order="112" intorder="1">Sleep_Posture_Detection</bcf:citekey>
-    <bcf:citekey order="113" intorder="1">p_1</bcf:citekey>
-    <bcf:citekey order="114" intorder="1">kwasnicki2018</bcf:citekey>
-    <bcf:citekey order="115" intorder="1">p_3</bcf:citekey>
-    <bcf:citekey order="116" intorder="1">Sleep_Posture_Detection</bcf:citekey>
-    <bcf:citekey order="116" intorder="2">abdulsadig2023</bcf:citekey>
-    <bcf:citekey order="117" intorder="1">vu2023</bcf:citekey>
-    <bcf:citekey order="118" intorder="1">arm_cortex_m_comparison</bcf:citekey>
-    <bcf:citekey order="119" intorder="1">cortexM4</bcf:citekey>
-    <bcf:citekey order="120" intorder="1">electronics11162545</bcf:citekey>
-    <bcf:citekey order="121" intorder="1">applicationCortexM4</bcf:citekey>
-    <bcf:citekey order="122" intorder="1">nrf52840</bcf:citekey>
-    <bcf:citekey order="123" intorder="1">BLE</bcf:citekey>
-    <bcf:citekey order="124" intorder="1">ada_overview</bcf:citekey>
-    <bcf:citekey order="125" intorder="1">nano33ble</bcf:citekey>
-    <bcf:citekey order="126" intorder="1">allan</bcf:citekey>
-    <bcf:citekey order="127" intorder="1">allan</bcf:citekey>
-    <bcf:citekey order="128" intorder="1">kalman</bcf:citekey>
-    <bcf:citekey order="129" intorder="1">cramer2002logistic</bcf:citekey>
-    <bcf:citekey order="130" intorder="1">cortes1995svm</bcf:citekey>
-    <bcf:citekey order="131" intorder="1">breiman2001random</bcf:citekey>
-    <bcf:citekey order="132" intorder="1">chen2016xgboost</bcf:citekey>
-    <bcf:citekey order="133" intorder="1">jain1996</bcf:citekey>
-    <bcf:citekey order="134" intorder="1">lecun2015deep</bcf:citekey>
+    <bcf:citekey order="110" intorder="1">p_1</bcf:citekey>
+    <bcf:citekey order="111" intorder="1">kwasnicki2018</bcf:citekey>
+    <bcf:citekey order="112" intorder="1">p_3</bcf:citekey>
+    <bcf:citekey order="113" intorder="1">Sleep_Posture_Detection</bcf:citekey>
+    <bcf:citekey order="113" intorder="2">abdulsadig2023</bcf:citekey>
+    <bcf:citekey order="114" intorder="1">vu2023</bcf:citekey>
+    <bcf:citekey order="115" intorder="1">nrf52840</bcf:citekey>
+    <bcf:citekey order="116" intorder="1">Nordic2021_tinyml</bcf:citekey>
+    <bcf:citekey order="117" intorder="1">Wang2018_slidingwindow</bcf:citekey>
+    <bcf:citekey order="118" intorder="1">BLE_compare</bcf:citekey>
+    <bcf:citekey order="119" intorder="1">BluetoothSIG2019_Core5</bcf:citekey>
+    <bcf:citekey order="120" intorder="1">BLE</bcf:citekey>
+    <bcf:citekey order="121" intorder="1">allan</bcf:citekey>
+    <bcf:citekey order="122" intorder="1">allan</bcf:citekey>
+    <bcf:citekey order="123" intorder="1">kalman</bcf:citekey>
+    <bcf:citekey order="124" intorder="1">cramer2002logistic</bcf:citekey>
+    <bcf:citekey order="125" intorder="1">cortes1995svm</bcf:citekey>
+    <bcf:citekey order="126" intorder="1">breiman2001random</bcf:citekey>
+    <bcf:citekey order="127" intorder="1">chen2016xgboost</bcf:citekey>
+    <bcf:citekey order="128" intorder="1">jain1996</bcf:citekey>
+    <bcf:citekey order="129" intorder="1">lecun2015deep</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -1,24 +1,157 @@
 
-\section{Phần cứng thực nghiệm \label{section_overview_propsed_method}}
-Trong thiết kế hệ thống giám sát tư thế ngủ, quá trình lựa chọn phần cứng được xây dựng theo một lộ trình rõ ràng:
+\section{Nghiên cứu, phát triển phần cứng \label{section_overview_propsed_method}}
 
-\begin{enumerate}
-    \item \textbf{Xác định mục tiêu}: Hệ thống cần đạt độ chính xác cao trong phân loại tư thế ngủ, tiêu thụ năng lượng thấp để hoạt động suốt đêm, đồng thời có khả năng triển khai mô hình TinyML trực tiếp trên thiết bị đeo.
-    \item \textbf{Lựa chọn cảm biến}: Dựa trên đặc tính chuyển động chậm – biên độ nhỏ trong giấc ngủ, cảm biến gia tốc số với độ nhạy cao, dải đo hẹp và khả năng tích hợp tốt được ưu tiên.
-    \item \textbf{Lựa chọn vi xử lý}: Trên cơ sở yêu cầu về xử lý tín hiệu thời gian thực và triển khai mô hình học máy nhẹ, dòng ARM Cortex-M4 được chọn nhờ sự cân bằng giữa hiệu năng, năng lượng và hỗ trợ thư viện DSP/TinyML.
-    \item \textbf{Lựa chọn kit phát triển}: Sau khi xác định được cảm biến và vi xử lý, bước cuối cùng là chọn nền tảng phần cứng cụ thể. Luận văn sử dụng hai kit: (i) bo Adafruit Playground với nRF52840 + LIS3DH để thu thập dữ liệu và huấn luyện mô hình; (ii) Arduino Nano 33 BLE Sense để triển khai mô hình tối ưu trên thiết bị đeo thực tế.
-    \item \textbf{Nghiên cứu và thiết kế phần cứng riêng}: Bên cạnh việc sử dụng kit thương mại nhằm rút ngắn quá trình thử nghiệm, luận văn cũng hướng tới việc chế tạo bo mạch chuyên dụng tích hợp cảm biến và vi xử lý đã chọn. Mục tiêu là tạo ra nguyên mẫu thiết bị đeo có kích thước nhỏ gọn, tối ưu năng lượng, đáp ứng chuẩn y sinh và sẵn sàng cho các nghiên cứu mở rộng trong tương lai.
-\end{enumerate}
+Trong phần này, tác giả sẽ trình bày các nội dung bao gồm: nghiên cứu, lựa chọn
+vi điều khiển và cảm biến phù hợp; từ đó tiến hành thiết kế sơ đồ nguyên lý, mô
+phỏng mạch 3D và hoàn thiện sản phẩm.
 
-Cách tiếp cận này đảm bảo hệ thống phần cứng vừa có tính thực tiễn trong giai
-đoạn thử nghiệm, vừa có tính định hướng dài hạn trong phát triển sản phẩm hoàn
-chỉnh, từ đó tạo cơ sở cho việc chuyển giao công nghệ và ứng dụng lâm sàng
+\subsection{Vi xử lý}
+
+Với sự phát triển vượt bậc và đa dạng của công nghệ thiết kế và chế tạo, có rất
+nhiều cấu hình phần cứng được nhiều nhóm tác giả lựa chọn phù hợp với các mục
+đích khác nhau. Trong đó, \cite{p_1} các tác giả đã sử dụng máy tính đơn
+Raspberry Pi kết hợp các điện trở cảm biến lực để phát hiện 4 tư thế ngủ với sự
+lấy nhãn từ video theo dõi người bệnh trong suốt quá trình lấy mẫu. Tác giả
+Kwasnicki và cộng sự đã phát triển hệ thống ngủ có thể đeo sử dụng bộ xử lý
+công suất thấp TI MSP430 và mô-đun RF Chipcon CC2420 cho truyền thông không dây
+kết hợp với cảm biến gia tốc 3 trục ADXL330, con quay hồi chuyển InvenSense
+ITG-3200 xác định 99.5\% chính xác 4 tư thế ngủ \cite{kwasnicki2018}. Nhóm của
+tác giả I.Yun đã phát triển thiết bị theo dõi tư thế ngủ của trẻ nhỏ sử dụng vi
+xử lý ATmega328P-PU kết hợp cảm biến gia tốc ADXL335, Bluetooth được đặt trên
+bụng \cite{p_3}. Từ đó, giảm thiếu đáng kể mức tiêu thụ năng lượng và vẫn giữ
+nguyên độ chính xác nhưng khá bất tiện cho trẻ nhỏ. Trong nghiên cứu của
+Abdulsadig và cộng sự, hệ thống thu thập dữ liệu được xây dựng dựa trên một bo
+mạch tùy chỉnh tích hợp vi điều khiển nRF5232 (Nordic Semiconductor) tích hợp
+Bluetooth Low Energy (BLE). Vi điều khiển này đảm nhiệm đồng thời cả việc lấy
+mẫu dữ liệu từ cảm biến gia tốc ba trục LIS2DH12 (STMicroelectronics) với tần
+số 100 Hz và truyền dữ liệu không dây theo thời gian thực
+\cite{Sleep_Posture_Detection, abdulsadig2023}. Trong nghiên cứu của tác giả Vũ
+Hoàng Diệu , mô-đun ESP32 được lựa chọn làm đơn vị xử lý trung tâm nhờ tích hợp
+bộ vi điều khiển hiệu năng cao, kết nối không dây Wi-Fi và khả năng mở rộng
+linh hoạt \cite{vu2023}. Với thiết kế nhỏ gọn, chi phí hợp lý và mức tiêu thụ
+điện năng thấp, ESP32 đáp ứng tốt yêu cầu của hệ thống thu thập dữ liệu tư thế
+ngủ theo thời gian thực. Thiết bị không chỉ cho phép truyền dữ liệu trực tiếp
+lên máy chủ hoặc nền tảng đám mây thông qua Wi-Fi, mà còn hỗ trợ lưu trữ cục bộ
+trên thẻ nhớ microSD, đảm bảo tính liên tục và an toàn dữ liệu trong điều kiện
+mất kết nối mạng.
+
+Qua phân tích các nghiên cứu trên có thể thấy rằng phần lớn các cấu hình phần
+cứng có kích thước vẫn còn lớn (> 5cm), hoặc gặp giới hạn trong khả năng tích
+hợp mô hình học máy tại thiết bị. Do đó, tác giả quyết định lựa chọn vi điều
+khiển nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với các lý do sau:
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/NRF52840-QFA_SPL.jpg}
+    \caption{Nordic NRF52840}
+    \label{Nordic}
+\end{figure}
+
+nRF52840 tích hợp bộ giao thức không dây Bluetooth năng lượng thấp (Bluetooth
+Low Energy - BLE) hoạt động ở băng tần 2.4 GHz và bộ xử lý trung tâm Arm
+Cortex-M4F chạy ở xung nhịp 64 MHz, kèm bộ xử lý dấu phẩy động (FPU). Vi xử lý
+này được trang bị bộ nhớ 1 MB Flash và 256 KB RAM . Hệ thống bảo mật tích hợp
+đầy đủ, bao gồm các tính năng mã hóa phần cứng, đáp ứng yêu cầu về bảo vệ dữ
+liệu. Ngoài khả năng hoạt động trong dải điện áp rộng từ +1.7 V đến +5.5 V
+(tương thích với nguồn pin và USB), nRF52840 còn cung cấp các giao tiếp ngoại
+vi phong phú: hai giao diện I2C, bốn SPI chủ (master), ba SPI tớ (slave), bốn
+kênh điều chế xung (PWM) hỗ trợ EasyDMA, cùng với bộ định thời 32-bit, phù hợp
+cho các ứng dụng đòi hỏi xử lý thời gian thực chính xác.
+
+Đặc biệt, nRF52840 có
+một hệ sinh thái phần mềm đi kèm, bao gồm bộ công cụ phát triển (SDK) của Nordic Semiconductor và nền tảng TensorFlow Lite for Microcontrollers, giúp rút ngắn thời gian phát triển và triển khai hệ
+thống TinyML giúp rút ngắn đáng kể thời gian triển khai các mô hình TinyML trực tiếp lên chip \cite{Nordic2021_tinyml}.
+Hiện nay, nRF52840 cũng tích hợp trong nhiều bộ kit phát triển thương mại  phổ biến,
+như Adafruit Circuit Playground Bluefruit,
+SparkFun Pro nRF52840 Mini,
+Seeed Studio XIAO
+.
+Các bộ kit này cung cấp tài nguyên phần cứng và thư viện mã nguồn mở phong phú,
+hỗ trợ kết nối BLE, USB, GPIO, SPI, I²C, cùng khả năng lập trình trực
+tiếp qua môi trường Arduino IDE, PlatformIO hoặc Zephyr RTOS.
+Nhờ đó, nRF52840 trở nên phổ biến trong các nghiên cứu và dự án về IoT,
+thiết bị đeo thông minh và học máy biên (Edge AI).
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[height=4cm]{images/Seeed.jpg}
+        \caption*{(a) Seeed Studio XIAO
+        }
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[height=4cm]{images/adafruit.jpg}
+        \caption*{(b) Adafruit Circuit Playground Bluefruit}
+    \end{minipage}
+    \caption{Một số bộ kit phát triển dựa trên vi điều khiển Nordic nRF52840}
+    \label{fig:nrf52840_devkits}
+\end{figure}
+
+% Kiến trúc ARM có nhiều dòng vi xử lý khác nhau, được phát triển và nâng cấp
+% liên tục nhằm đáp ứng nhu cầu đa dạng trong lĩnh vực công nghệ nhúng. Trong đó,
+% dòng Cortex-M thuộc kiến trúc ARMv7 đã trở thành nền tảng phổ biến cho các hệ
+% thống nhúng sử dụng vi điều khiển nhờ vào hiệu suất cao, khả năng mở rộng và
+% mức tiêu thụ năng lượng tối ưu. Dòng Cortex-M bao gồm nhiều phiên bản như
+% Cortex-M0, Cortex-M0+, Cortex-M1, Cortex-M3, Cortex-M4 và Cortex-M7, mỗi phiên
+% bản được thiết kế để phục vụ cho các mức độ yêu cầu hiệu năng khác nhau
+% \cite{arm_cortex_m_comparison}. Các vi xử lý thuộc họ Cortex-M chủ yếu được ứng
+% dụng trong các hệ thống nhúng thời gian thực, nơi yêu cầu sự cân bằng giữa hiệu
+% suất xử lý, tiêu thụ năng lượng và chi phí. Một số vi xử lý ARM khác, không
+% thuộc họ Cortex-M, được sử dụng trong các thiết bị hiệu suất cao như điện thoại
+% thông minh và máy tính bảng, vốn yêu cầu cấu hình phần cứng mạnh hơn và khả
+% năng xử lý đa tác vụ cao hơn. Theo tài liệu \cite{cortexM4}, vi xử lý Cortex-M4
+% là một bộ xử lý 32-bit sử dụng kiến trúc tập lệnh rút gọn (RISC), được xây dựng
+% theo kiến trúc Harvard, trong đó bus dữ liệu và bus lệnh được tách biệt nhằm
+% tối ưu hiệu suất truy xuất bộ nhớ. Vi xử lý này hỗ trợ đầy đủ cả tập lệnh
+% Thumb-1 (16-bit) và Thumb-2 (hỗn hợp 16/32-bit), mang lại sự linh hoạt trong mã
+% hóa lệnh và tiết kiệm không gian bộ nhớ chương trình.
+
+% Về hiệu năng, Cortex-M4 đạt từ 1,25 đến 1,95 DMIPS/MHz (Dhrystone Million
+% Instructions Per Second per MHz), cho thấy khả năng xử lý hiệu quả trong các
+% ứng dụng nhúng yêu cầu độ chính xác và độ phản hồi thời gian thực cao. Bên cạnh
+% đó, vi xử lý hỗ trợ tối đa 240 tín hiệu ngắt, bao gồm cả ngắt không thể bị chặn
+% (Non-Maskable Interrupts - NMI), cùng khả năng cấu hình từ 8 đến 256 mức ưu
+% tiên ngắt, giúp hệ thống hoạt động ổn định trong môi trường có nhiều sự kiện
+% cạnh tranh đồng thời. Ngoài ra, hiện nay ứng dụng trí tuệ nhân tạo (AI) tại
+% thiết bị biên (Edge AI) đang ngày càng phổ biến, đặc biệt trong các lĩnh vực
+% như nhà thông minh, thiết bị đeo, giám sát an ninh và công nghiệp 4.0. Với khả
+% năng xử lý tín hiệu số (DSP) và hỗ trợ các mạng nơ-ron nhỏ gọn, các vi xử lý
+% Cortex-M, đặc biệt là dòng Cortex-M4, đang được khai thác để triển khai các mô
+% hình học sâu nhẹ (tinyML) ngay trên vi điều khiển
+% \cite{electronics11162545}\cite{applicationCortexM4}.
+
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{images/cortexM4.png}
+%     \caption{Thành phần chính của vi điều khiển Cortex-M4}
+%     \label{cortexM4}
+% \end{figure}
+
+% Kết nối bus được mô tả trong Hình~\ref{cortexM4} cho phép truyền dữ liệu đồng
+% thời trên nhiều bus khác nhau, đồng thời cung cấp khả năng quản lý truyền dữ
+% liệu hiệu quả, chẳng hạn như sử dụng bộ đệm ghi và điều khiển hướng bit hoạt
+% động (bit-banding). Hệ thống cũng có thể bao gồm các cầu bus (bus bridges) nhằm
+% kết nối nhiều loại bus vào một mạng duy nhất sử dụng chung không gian bộ nhớ.
+% Ngoài ra, bộ xử lý được trang bị hệ thống hỗ trợ gỡ lỗi tích hợp, bao gồm khả
+% năng kiểm soát gỡ lỗi, thiết lập điểm ngắt (breakpoint) chương trình và điểm
+% theo dõi dữ liệu (watchpoint). Khi xảy ra sự kiện gỡ lỗi, hệ thống có thể tạm
+% dừng trạng thái hoạt động của lõi xử lý để phục vụ việc phân tích và xử lý lỗi.
+
+% Bên cạnh đó, kiến trúc Cortex-M4 tích hợp Bộ điều khiển ngắt vectored lồng nhau
+% (Nested Vectored Interrupt Controller - NVIC) với khả năng hỗ trợ lên đến 240
+% tín hiệu yêu cầu ngắt, bao gồm cả ngắt không chắn được (NMI). NVIC hỗ trợ xử lý
+% ngắt lồng nhau một cách tự động bằng cách so sánh mức ưu tiên giữa các yêu cầu
+% ngắt với mức ưu tiên hiện tại đang được xử lý.
+
+% Đối với các ứng dụng yêu cầu tiết kiệm năng lượng, hệ thống còn được trang bị bộ đánh thức ngắt (Wake-up Interrupt Controller - WIC), cho phép đưa bộ vi điều khiển vào chế độ nghỉ bằng cách tắt hầu hết các thành phần không cần thiết, đồng thời duy trì khả năng đánh thức hệ thống khi phát hiện một yêu cầu ngắt. Ngoài ra, cơ chế bảo vệ bộ nhớ cũng được tích hợp nhằm đảm bảo an toàn cho hệ thống, ví dụ như chỉ cho phép truy cập đọc tại một số vùng bộ nhớ hoặc ngăn người dùng truy cập vào các vùng dữ liệu đặc quyền của hệ điều hành hoặc ứng dụng hệ thống.
+
 \subsection{Cảm biến \label{section_overview_propsed_method}}
 
 Trong quá trình ngủ, các chuyển động thân thể chủ yếu là chuyển động chậm, với
-biên độ nhỏ và không mang tính đột ngột. Các chuyển động thân thể chủ yếu mang
-tính chậm và thường xảy ra trong giai đoạn ngủ không chuyển động mắt nhanh
-(NREM), khi cơ thể có khả năng tự do thay đổi tư thế. Ngược lại, trong giai
+biên độ nhỏ và ít mang tính đột ngột \cite{Wang2018_slidingwindow}. Trong giai
 đoạn ngủ REM, hiện tượng ức chế trương lực cơ khiến cơ thể gần như bất động. Do
 đó, việc ghi nhận chính xác các thay đổi tư thế ngủ đòi hỏi cảm biến có độ nhạy
 cao, khả năng phân giải tốt và ổn định với nhiễu nền thấp. Như đã trình bày
@@ -27,316 +160,45 @@ trong Chương I, các cảm biến gia tốc MEMS sử dụng nguyên lý đi�
 điểm nổi bật là kích thước nhỏ gọn, tiêu thụ năng lượng thấp, tần số lấy mẫu
 phù hợp và đặc biệt là độ nhạy cao với chuyển động cường độ thấp.
 
-Trong nghiên cứu của Vu và cộng sự (2023), dữ liệu tư thế ngủ được thu thập
-thông qua một thiết bị đeo đặt tại vùng bụng của người tham gia. Thiết bị này
-tích hợp cảm biến gia tốc ba trục ADXL345, bộ điều khiển ESP8266 và pin
-Lithium, tất cả được đóng gói trong một hộp nhựa nhỏ gọn \cite{vu2023}. Trong
-nghiên cứu của Boiko và cộng sự, cảm biến gia tốc ba trục ADXL355z được sử dụng
-để thu nhận tín hiệu hô hấp từ vùng ngực và bụng, với tần số lấy mẫu 62 Hz. Đây
-là cảm biến có độ nhiễu thấp, độ trôi nhiệt nhỏ và phù hợp với các ứng dụng y
-sinh. Trước đó, dòng cảm biến này cũng đã được ứng dụng thành công trong các
-phép đo tim–phổi \cite{Boiko2023}. Dữ liệu từ ADXL355z được đối chiếu với tín
-hiệu chuẩn thu từ dây đeo hô hấp của hệ thống SOMNO HD eco PSG, nhằm đảm bảo độ
-chính xác trong đánh giá tín hiệu sinh lý trong khi ngủ. Trong nghiên cứu của
-Abdulsadig và cộng sự, dữ liệu gia tốc được thu thập bằng bo mạch điện tử thiết
-kế riêng tích hợp cảm biến gia tốc ba trục LIS2DH12 (STMicroelectronics) và vi
-điều khiển nRF5232 (Nordic Semiconductor) \cite{Sleep_Posture_Detection}.
+Sau khi đã khảo sát, cảm biến gia tốc Bosch BMI270 được lựa chọn cho hệ thống
+nhận diện tư thế ngủ với cái lý do sau:
 
-Việc lựa chọn cảm biến gia tốc phù hợp đòi hỏi phải cân nhắc đồng thời nhiều
-yếu tố kỹ thuật nhằm đảm bảo độ chính xác đo lường, khả năng tích hợp phần cứng
-và tính khả thi khi triển khai thực tế trong thiết bị đeo.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.75\textwidth, keepaspectratio]{images/BMi270.png}
+    \vspace*{-5mm}
+    \caption{Bosch BMI270}
+    \label{Bosch_BMI270}
+\end{figure}
 
-\textbf{Dải đo động (Full-Scale Range):}
-
-Một trong những tham số quan trọng hàng đầu trong thiết kế hệ thống đo lường là
-\textit{dải đo động} (full-scale range) của cảm biến gia tốc. Đối với bài toán
-giám sát tư thế ngủ, các chuyển động của cơ thể thường diễn ra chậm và có biên
-độ thấp – chủ yếu dưới $1g$, tương ứng với các thao tác xoay người hoặc thay
-đổi tư thế nhẹ nhàng trong khi ngủ. Vì vậy, lựa chọn dải đo nhỏ như $\pm2g$
-hoặc $\pm4g$ là hợp lý nhằm tối ưu hoá độ phân giải của cảm biến.
-
-Về mặt kỹ thuật, độ phân giải của cảm biến phụ thuộc trực tiếp vào dải đo và số
-bit của bộ chuyển đổi tín hiệu nội bộ. Chẳng hạn, với cảm biến có độ phân giải
-16-bit và dải đo $\pm2g$, độ phân giải lý thuyết đạt được sẽ vào khoảng:
-\[
-    \frac{2 \times 2g}{2^{16}} \approx 0.000061g/\text{LSB}
-\]
-Ngược lại, nếu mở rộng dải đo lên đến $\pm16g$, độ phân giải bị giảm xuống còn:
-\[
-    \frac{2 \times 16g}{2^{16}} \approx 0.000488g/\text{LSB}
-\]
-Sự suy giảm độ phân giải này có thể khiến cảm biến bỏ sót các dao động vi mô
-đặc trưng, làm ảnh hưởng đến hiệu quả phân loại tư thế hoặc phát hiện các
-chuyển động nhẹ trong trạng thái ngủ.
-
-Từ đó, có thể thấy rằng việc lựa chọn dải đo động phù hợp là yếu tố then chốt
-trong tối ưu hiệu năng của hệ thống. Việc đặt dải đo quá lớn để “bao phủ toàn
-bộ biên độ có thể xảy ra” sẽ dẫn đến lãng phí độ phân giải và giảm độ nhạy
-trong các tình huống thực tế vốn không yêu cầu dải đo rộng. Do đó, việc lựa
-chọn dải đo $\pm2g$ là lựa chọn ưu tiên trong hệ thống theo dõi tư thế ngủ với
-yêu cầu chính xác cao và chuyển động cường độ thấp.
-
-\textbf{Tín hiệu đầu ra (Analog vs. Digital):}
-
-Một trong những tiêu chí quan trọng trong thiết kế hệ thống cảm biến nhúng là
-lựa chọn loại tín hiệu đầu ra – giữa cảm biến đầu ra tương tự (\textit{analog
-    output}) và cảm biến đầu ra số (\textit{digital output}). Trong khuôn khổ hệ
-thống theo dõi tư thế ngủ, cảm biến kỹ thuật số được ưu tiên vì nhiều lợi thế
-vượt trội về tính ổn định, khả năng tích hợp và đơn giản hóa mạch xử lý tín
-hiệu. Trước hết, cảm biến đầu ra số không yêu cầu bổ sung bộ chuyển đổi tương
-tự–số (ADC) rời. Trong khi cảm biến analog cần mạch ADC để số hóa tín hiệu
-trước khi xử lý, cảm biến digital thực hiện trực tiếp quá trình này trong nội
-bộ mạch tích hợp. Điều này giúp giảm đáng kể độ phức tạp trong thiết kế phần
-cứng, tiết kiệm diện tích PCB, và giảm chi phí linh kiện. Hơn nữa, tín hiệu
-tương tự dễ bị suy giảm do nhiễu điện từ, đặc biệt khi truyền qua dây dẫn dài
-hoặc trong môi trường nhiễu cao như hệ thống đeo gần cơ thể người. Ngược lại,
-tín hiệu số được truyền dưới dạng xung nhịp nhị phân có khả năng chống nhiễu
-tốt hơn, đảm bảo độ chính xác trong truyền dẫn và làm tăng độ tin cậy của hệ
-thống. Ngoài ra, các cảm biến kỹ thuật số hiện đại thường tích hợp sẵn các khối
-chức năng bổ trợ như: bộ lọc thông thấp phần cứng (hardware low-pass filter)
-giúp loại bỏ nhiễu tần số cao, bộ đệm FIFO (\textit{first-in-first-out}) để
-giảm yêu cầu đọc dữ liệu liên tục từ MCU, và thậm chí cả bộ hiệu chuẩn nội tại
-tự động (auto-calibration unit). Những tính năng này góp phần giảm đáng kể khối
-lượng tính toán cần thiết từ phía vi điều khiển, từ đó tiết kiệm năng lượng hệ
-thống và cải thiện hiệu suất vận hành, đặc biệt trong các ứng dụng thời gian
-thực và nền tảng tính toán giới hạn như thiết bị đeo.
-
-\textbf{Chuẩn giao tiếp (Communication Interface):}
-
-Xét về yếu tố giao tiếp giữa cảm biến và vi điều khiển, chuẩn
-\texttt{I\textsuperscript{2}C} được lựa chọn là phương án tối ưu cho hệ thống
-theo dõi tư thế ngủ. Ưu điểm lớn nhất của \texttt{I\textsuperscript{2}C} nằm ở
-thiết kế đơn giản – chỉ yêu cầu hai đường tín hiệu (SCL và SDA) cho toàn bộ
-giao tiếp dữ liệu. Điều này giúp tiết kiệm số chân phần cứng trên vi điều khiển
-và đặc biệt phù hợp trong các thiết bị đeo cá nhân, nơi không gian mạch in
-(PCB) và tài nguyên cổng GPIO đều rất hạn chế. Trong khi đó, chuẩn \texttt{SPI}
-dù có ưu điểm về tốc độ truyền dữ liệu cao hơn và khả năng truyền song song
-hiệu quả, lại đòi hỏi ít nhất bốn dây kết nối (SCLK, MISO, MOSI, CS) và thường
-tiêu tốn nhiều chân vi điều khiển hơn. Hơn nữa, với đặc thù của bài toán giám
-sát tư thế ngủ – vốn không yêu cầu tốc độ truyền dữ liệu cao do tín hiệu thay
-đổi chậm và tần số lấy mẫu thấp (chỉ từ 25–50 Hz) – thì lợi thế của
-\texttt{SPI} không thực sự cần thiết. Từ các phân tích trên, có thể kết luận
-rằng \texttt{I\textsuperscript{2}C} là giao thức phù hợp nhất cho hệ thống,
-không chỉ đảm bảo khả năng truyền dữ liệu ổn định mà còn giúp đơn giản hóa
-thiết kế phần cứng, giảm thiểu mức tiêu thụ năng lượng và diện tích PCB – những
-yếu tố then chốt trong thiết kế thiết bị đeo có kích thước và tài nguyên hạn
+Thứ nhất, độ chính xác và dải đo linh hoạt: BMI270 tích hợp gia tốc kế ba trục
+16-bit với các dải đo tùy chọn ±2g, ±4g, ±8g và ±16g, cho phép ghi nhận chính
+xác các chuyển động chậm và biên độ nhỏ trong khi ngủ. Độ phân giải cao giúp
+cảm biến phát hiện được cả những thay đổi nhỏ trong tư thế cơ thể, đặc biệt
+quan trọng trong các giai đoạn ngủ sâu hoặc REM khi hoạt động cơ gần như bị ức
 chế.
 
-\textbf{Tần số lấy mẫu (Sampling Rate):}
+Thứ hai, mức tiêu thụ năng lượng thấp và khả năng hoạt động ổn định: cảm biến
+tiêu thụ trung bình chỉ khoảng 685 µA khi hoạt động toàn phần, đồng thời được
+trang bị bộ quản lý năng lượng tích hợp (PMU) hỗ trợ nhiều chế độ tiết kiệm
+điện khác nhau. Điều này cho phép thiết bị hoạt động lâu dài trên nền tảng phần
+cứng công suất thấp mà không ảnh hưởng đến hiệu năng đo.
 
-Các chuyển động liên quan đến thay đổi tư thế khi ngủ thường mang tính chậm
-rãi, diễn ra trong thời gian dài và chủ yếu xuất hiện trong giai đoạn ngủ không
-chuyển động mắt nhanh (NREM). Khác với các ứng dụng đo rung động công nghiệp
-hoặc phát hiện va chạm – vốn đòi hỏi tần số lấy mẫu cao (trên 100~Hz) để ghi
-nhận các thay đổi nhanh, thì bài toán phân loại tư thế ngủ chỉ yêu cầu theo dõi
-các chuyển động có tần số thấp, thường nằm trong khoảng dưới 1–2~Hz. Theo định
-lý Nyquist, để thu thập chính xác các tín hiệu có tần số tối đa
-$f_\mathrm{max}$, hệ thống cần lấy mẫu ở tần số tối thiểu là $2f_\mathrm{max}$.
-Với giả định biên độ dao động tư thế xảy ra ở dải tần 0.3–3~Hz, tần số lấy mẫu
-10~Hz là đủ để đảm bảo không xảy ra hiện tượng aliasing và vẫn ghi nhận được
-đầy đủ thông tin về các thay đổi tư thế theo thời gian. Ngoài ra, việc lựa chọn
-mức 10~Hz mang lại nhiều lợi ích thiết thực cho hệ thống nhúng: giúp giảm lưu
-lượng dữ liệu đầu ra, tiết kiệm bộ nhớ lưu trữ, giảm tần suất đánh thức vi điều
-khiển, từ đó tối ưu thời lượng pin – yếu tố then chốt trong các thiết bị đeo
-theo dõi giấc ngủ hoạt động liên tục suốt đêm.
+Thứ ba, tốc độ lấy mẫu và thời gian đáp ứng nhanh: BMI270 hỗ trợ tốc độ lấy mẫu
+(ODR) 0.7Hz - 1.6 kHz cho gia tốc kế, phù hợp bài toán phân loại giấc ngủ yêu
+cần tần số lấy mẫu thấp ~ 10Hz.
 
-\textbf{Tiêu thụ điện năng} là một trong những yếu tố then chốt trong thiết kế hệ thống giám sát tư thế ngủ, đặc biệt khi mục tiêu là triển khai trên thiết bị đeo hoạt động liên tục suốt đêm mà không gây phiền toái cho người dùng. Do đó, cảm biến cần hỗ trợ chế độ \textit{ultra-low power}, với mức dòng tiêu thụ dưới 10~$\mu$A ở chế độ chờ (\textit{standby}) hoặc khi vận hành ở tần số thấp. Khả năng tiết kiệm năng lượng này không chỉ kéo dài thời lượng pin, mà còn giảm thiểu yêu cầu về dung lượng pin và trọng lượng thiết bị, qua đó nâng cao trải nghiệm sử dụng và mức độ chấp nhận của người dùng trong môi trường thực tế.
+Thứ tư, khả năng chống nhiễu và hiệu chuẩn tự động: cảm biến có cơ chế bù sai
+số và bù độ nhạy theo thời gian thực, giúp giảm sai lệch khi hoạt động lâu dài.
+Tính năng bù sai lệch cho gia tốc kế đảm bảo độ ổn định cao của dữ liệu đo.
 
-Ngoài ra, cảm biến được lựa chọn cũng cần đảm bảo \textbf{kích thước vật lý nhỏ
-    gọn} để dễ dàng tích hợp vào các PCB có không gian hạn chế. Việc tích hợp sẵn
-các tính năng hỗ trợ như bộ phát hiện chuyển động (\textit{motion detection}),
-bộ lọc phần cứng (\textit{hardware filtering}) hay tự hiệu chỉnh
-(\textit{auto-calibration}) cũng là những lợi thế quan trọng. Các chức năng này
-giúp giảm độ phức tạp của hệ thống tổng thể, tiết kiệm tài nguyên xử lý trên vi
-điều khiển, đồng thời cải thiện khả năng phản hồi thời gian thực của hệ thống,
-đặc biệt trong các ứng dụng yêu cầu xử lý tại chỗ như \textit{TinyML} trên
-thiết bị đeo.
-
-Từ các phân tích trên, có thể xác định rằng cảm biến gia tốc lý tưởng cho bài
-toán giám sát tư thế ngủ cần thỏa mãn đồng thời các tiêu chí: dải đo động nhỏ
-(từ $\pm2g$ đến $\pm4g$), đầu ra kỹ thuật số để đơn giản hóa phần cứng và giảm
-nhiễu, hỗ trợ giao tiếp qua giao thức \texttt{I\textsuperscript{2}C} để tiết
-kiệm chân kết nối, tiêu thụ năng lượng cực thấp nhằm duy trì hoạt động liên tục
-suốt đêm, và có khả năng tích hợp cao nhằm giảm tải tính toán cho hệ thống vi
-điều khiển.
-
-Dựa trên các tiêu chí trên, luận văn lựa chọn hai dòng cảm biến tiêu biểu do
-hãng \textbf{STMicroelectronics} sản xuất là \textbf{LIS3DH} và
-\textbf{LSM6DS3} để triển khai thực nghiệm. Đây là hai cảm biến phổ biến trong
-các thiết bị đeo và ứng dụng IoT y sinh nhờ sự cân bằng tốt giữa hiệu năng, độ
-ổn định và tính khả thi triển khai thực tế.
-
-Cả hai cảm biến đều đáp ứng các yêu cầu kỹ thuật sau:
-
-\begin{itemize}
-    \item Hỗ trợ dải đo động từ $\pm2g$ đến $\pm16g$, cho phép linh hoạt cấu hình theo
-          nhu cầu đo lường, với độ phân giải từ 12 đến 16 bit.
-    \item Tín hiệu đầu ra dạng số (digital), hỗ trợ giao tiếp qua
-          \texttt{I\textsuperscript{2}C} và \texttt{SPI}, tương thích với đa số vi điều
-          khiển phổ biến.
-    \item Hỗ trợ chế độ tiết kiệm năng lượng (\textit{ultra-low power}), với mức tiêu thụ
-          dòng dưới 10~$\mu$A trong các chế độ nghỉ hoặc đo chu kỳ thấp.
-    \item Có khả năng lập trình ngưỡng phát hiện chuyển động, tích hợp bộ lọc thông thấp
-          và bộ đệm tín hiệu nội bộ, giúp giảm tải xử lý phần mềm.
-    \item Kích thước vật lý nhỏ gọn (khoảng 3×3~mm), dễ tích hợp trên PCB của thiết bị
-          đeo cá nhân.
-\end{itemize}
-
-Trong đó, cảm biến \textbf{LIS3DH} nổi bật nhờ cấu hình linh hoạt, độ nhạy tốt
-và đã được ứng dụng hiệu quả trong nhiều nghiên cứu theo dõi chuyển động chậm
-và phân loại tư thế ngủ. Trong khi đó, cảm biến \textbf{LSM6DS3} là một cảm
-biến kết hợp (IMU – Inertial Measurement Unit), tích hợp thêm con quay hồi
-chuyển (gyroscope), cung cấp khả năng mở rộng nghiên cứu trong tương lai như
-nhận diện vi chuyển động hoặc phân tích tư thế ba chiều chi tiết hơn.
-
-Vì vậy, cả hai cảm biến được đưa vào thử nghiệm nhằm đánh giá toàn diện các yếu
-tố gồm: độ nhạy, mức độ nhiễu, khả năng nhận diện tư thế và mức tiêu thụ năng
-lượng trong điều kiện thực tế sử dụng tại nhà. Hình~\ref{lis} minh họa hình
-dạng thực tế và sơ đồ chân kết nối của cảm biến \textbf{LIS3DH}.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/lis.png}
-    \caption{Cảm biến gia tốc LIS3DH và sơ đồ chân kết nối}
-    \label{lis}
-\end{figure}
-
-\subsection{Vi xử lý}
-
-Với sự phát triển vượt bậc và đa dạng của công nghệ chế tạo, có rất nhiều cấu
-hình phần cứng được nhiều nhóm tác giả lựa chọn phù hợp với các mục đích khác
-nhau. Trong đó, \cite{p_1} các tác giả đã sử dụng máy tính đơn Raspberry Pi kết
-hợp các điện trở cảm biến lực để phát hiện 4 tư thế ngủ với sự lấy nhãn từ
-video theo dõi người bệnh trong suốt quá trình lấy mẫu. Kwasnicki và cộng sự đã
-phát triển hệ thống ngủ có thể đeo (wearable sleep system) sử dụng bộ xử lý
-công suất thấp TI MSP430 và mô-đun RF Chipcon CC2420 cho truyền thông không dây
-kết hợp với cảm biến gia tốc 3 trục ADXL330, con quay hồi chuyển InvenSense
-ITG-3200, Honeywell HMC5843 để đo từ trường xác định 99.5\% chính xác 4 tư thế
-ngủ \cite{kwasnicki2018}. Tuy nhiên, các thiết bị vẫn yêu cầu một nguồn nặng
-lượng khiến cho tính liên tục bị hạn chế đáng kể. I.Yun và cộng sự đã phát
-triển thiết bị theo dõi tư thế ngủ của trẻ nhỏ sử dụng vi xử lý ATmega328P-PU
-cùng module Bluetooth kết hợp cảm biến gia tốc ADXL335 được đặt trên bụng đã
-nhưng lựa chọn về mặt cấu hình thiết bị và chế tạo ra mạch cung cấp năng lượng
-cho những thành phần cần thiết \cite{p_3}. Từ đó, giảm thiếu đáng kể mức tiêu
-thụ năng lượng và vẫn giữ nguyên độ chính xác nhưng khá bất tiện cho trẻ nhỏ.
-Trong nghiên cứu của Abdulsadig và cộng sự, hệ thống thu thập dữ liệu được xây
-dựng dựa trên một bo mạch tùy chỉnh tích hợp vi điều khiển nRF5232 (Nordic
-Semiconductor) – một SoC thuộc dòng ARM Cortex-M4F, hỗ trợ truyền thông không
-dây thông qua giao thức Bluetooth Low Energy (BLE). Vi điều khiển này đảm nhiệm
-đồng thời cả việc lấy mẫu dữ liệu từ cảm biến gia tốc ba trục LIS2DH12
-(STMicroelectronics) với tần số 100 Hz và truyền dữ liệu không dây theo thời
-gian thực \cite{Sleep_Posture_Detection, abdulsadig2023}. Trong nghiên cứu của
-Vũ Hoàng Diệu và cộng sự, mô-đun ESP32 được lựa chọn làm đơn vị xử lý trung tâm
-nhờ tích hợp bộ vi điều khiển hiệu năng cao, kết nối không dây Wi-Fi và khả
-năng mở rộng linh hoạt \cite{vu2023}. Với thiết kế nhỏ gọn, chi phí hợp lý và
-mức tiêu thụ điện năng thấp, ESP32 đáp ứng tốt yêu cầu của hệ thống thu thập dữ
-liệu tư thế ngủ theo thời gian thực. Thiết bị không chỉ cho phép truyền dữ liệu
-trực tiếp lên máy chủ hoặc nền tảng đám mây thông qua Wi-Fi, mà còn hỗ trợ lưu
-trữ cục bộ trên thẻ nhớ microSD, đảm bảo tính liên tục và an toàn dữ liệu trong
-điều kiện mất kết nối mạng.
-
-Tuy nhiên, qua phân tích các nghiên cứu trên có thể thấy rằng phần lớn các cấu
-hình phần cứng hiện tại hoặc có chi phí triển khai cao, hoặc tiêu tốn năng
-lượng, hoặc gặp giới hạn trong khả năng tích hợp mô hình học máy tại thiết bị.
-Do đó, việc lựa chọn một kiến trúc vi xử lý vừa đảm bảo hiệu suất xử lý tín
-hiệu sinh lý thời gian thực, vừa tối ưu năng lượng và có khả năng triển khai mô
-hình TinyML là cần thiết. Trong số các kiến trúc hiện nay, dòng ARM Cortex-M4
-nổi bật nhờ tính cân bằng giữa hiệu năng, mức tiêu thụ năng lượng thấp và khả
-năng hỗ trợ xử lý tín hiệu số, phù hợp với các hệ thống đeo được trong theo dõi
-tư thế ngủ.
-
-Kiến trúc ARM có nhiều dòng vi xử lý khác nhau, được phát triển và nâng cấp
-liên tục nhằm đáp ứng nhu cầu đa dạng trong lĩnh vực công nghệ nhúng. Trong đó,
-dòng Cortex-M thuộc kiến trúc ARMv7 đã trở thành nền tảng phổ biến cho các hệ
-thống nhúng sử dụng vi điều khiển nhờ vào hiệu suất cao, khả năng mở rộng và
-mức tiêu thụ năng lượng tối ưu. Dòng Cortex-M bao gồm nhiều phiên bản như
-Cortex-M0, Cortex-M0+, Cortex-M1, Cortex-M3, Cortex-M4 và Cortex-M7, mỗi phiên
-bản được thiết kế để phục vụ cho các mức độ yêu cầu hiệu năng khác nhau
-\cite{arm_cortex_m_comparison}. Các vi xử lý thuộc họ Cortex-M chủ yếu được ứng
-dụng trong các hệ thống nhúng thời gian thực, nơi yêu cầu sự cân bằng giữa hiệu
-suất xử lý, tiêu thụ năng lượng và chi phí. Một số vi xử lý ARM khác, không
-thuộc họ Cortex-M, được sử dụng trong các thiết bị hiệu suất cao như điện thoại
-thông minh và máy tính bảng, vốn yêu cầu cấu hình phần cứng mạnh hơn và khả
-năng xử lý đa tác vụ cao hơn. Theo tài liệu \cite{cortexM4}, vi xử lý Cortex-M4
-là một bộ xử lý 32-bit sử dụng kiến trúc tập lệnh rút gọn (RISC), được xây dựng
-theo kiến trúc Harvard, trong đó bus dữ liệu và bus lệnh được tách biệt nhằm
-tối ưu hiệu suất truy xuất bộ nhớ. Vi xử lý này hỗ trợ đầy đủ cả tập lệnh
-Thumb-1 (16-bit) và Thumb-2 (hỗn hợp 16/32-bit), mang lại sự linh hoạt trong mã
-hóa lệnh và tiết kiệm không gian bộ nhớ chương trình.
-
-Về hiệu năng, Cortex-M4 đạt từ 1,25 đến 1,95 DMIPS/MHz (Dhrystone Million
-Instructions Per Second per MHz), cho thấy khả năng xử lý hiệu quả trong các
-ứng dụng nhúng yêu cầu độ chính xác và độ phản hồi thời gian thực cao. Bên cạnh
-đó, vi xử lý hỗ trợ tối đa 240 tín hiệu ngắt, bao gồm cả ngắt không thể bị chặn
-(Non-Maskable Interrupts – NMI), cùng khả năng cấu hình từ 8 đến 256 mức ưu
-tiên ngắt, giúp hệ thống hoạt động ổn định trong môi trường có nhiều sự kiện
-cạnh tranh đồng thời. Ngoài ra, hiện nay ứng dụng trí tuệ nhân tạo (AI) tại
-thiết bị biên (Edge AI) đang ngày càng phổ biến, đặc biệt trong các lĩnh vực
-như nhà thông minh, thiết bị đeo, giám sát an ninh và công nghiệp 4.0. Với khả
-năng xử lý tín hiệu số (DSP) và hỗ trợ các mạng nơ-ron nhỏ gọn, các vi xử lý
-Cortex-M, đặc biệt là dòng Cortex-M4, đang được khai thác để triển khai các mô
-hình học sâu nhẹ (tinyML) ngay trên vi điều khiển
-\cite{electronics11162545}\cite{applicationCortexM4}.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/cortexM4.png}
-    \caption{Thành phần chính của vi điều khiển Cortex-M4}
-    \label{cortexM4}
-\end{figure}
-
-Kết nối bus được mô tả trong Hình~\ref{cortexM4} cho phép truyền dữ liệu đồng
-thời trên nhiều bus khác nhau, đồng thời cung cấp khả năng quản lý truyền dữ
-liệu hiệu quả, chẳng hạn như sử dụng bộ đệm ghi và điều khiển hướng bit hoạt
-động (bit-banding). Hệ thống cũng có thể bao gồm các cầu bus (bus bridges) nhằm
-kết nối nhiều loại bus vào một mạng duy nhất sử dụng chung không gian bộ nhớ.
-Ngoài ra, bộ xử lý được trang bị hệ thống hỗ trợ gỡ lỗi tích hợp, bao gồm khả
-năng kiểm soát gỡ lỗi, thiết lập điểm ngắt (breakpoint) chương trình và điểm
-theo dõi dữ liệu (watchpoint). Khi xảy ra sự kiện gỡ lỗi, hệ thống có thể tạm
-dừng trạng thái hoạt động của lõi xử lý để phục vụ việc phân tích và xử lý lỗi.
-
-Bên cạnh đó, kiến trúc Cortex-M4 tích hợp Bộ điều khiển ngắt vectored lồng nhau
-(Nested Vectored Interrupt Controller – NVIC) với khả năng hỗ trợ lên đến 240
-tín hiệu yêu cầu ngắt, bao gồm cả ngắt không chắn được (NMI). NVIC hỗ trợ xử lý
-ngắt lồng nhau một cách tự động bằng cách so sánh mức ưu tiên giữa các yêu cầu
-ngắt với mức ưu tiên hiện tại đang được xử lý.
-
-Đối với các ứng dụng yêu cầu tiết kiệm năng lượng, hệ thống còn được trang bị bộ đánh thức ngắt (Wake-up Interrupt Controller – WIC), cho phép đưa bộ vi điều khiển vào chế độ nghỉ bằng cách tắt hầu hết các thành phần không cần thiết, đồng thời duy trì khả năng đánh thức hệ thống khi phát hiện một yêu cầu ngắt. Ngoài ra, cơ chế bảo vệ bộ nhớ cũng được tích hợp nhằm đảm bảo an toàn cho hệ thống, ví dụ như chỉ cho phép truy cập đọc tại một số vùng bộ nhớ hoặc ngăn người dùng truy cập vào các vùng dữ liệu đặc quyền của hệ điều hành hoặc ứng dụng hệ thống.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/NRF52840-QFA_SPL.jpg}
-    \caption{Nordic Semiconductor NRF52840}
-    \label{Nordic}
-\end{figure}
-Sau quá trình khảo sát và so sánh các dòng vi xử lý phổ biến, tác giả
-lựa chọn nRF52840 (Nordic Semiconductor) làm nền tảng phần cứng cho hệ
-thống đề xuất, nhờ vào các ưu điểm nổi bật như kích thước nhỏ,
-tiêu thụ năng lượng thấp và tích hợp sẵn giao tiếp Bluetooth Low Energy
-(BLE). Đây là vi xử lý cao cấp nhất trong dòng nRF52, thuộc loại hệ thống
-trên một vi mạch (System-on-Chip – SoC), được thiết kế chuyên biệt cho
-các ứng dụng không dây tầm ngắn và tiết kiệm năng lượng \cite{nrf52840}.
-
-\textbf{nRF52840} tích hợp bộ thu phát đa giao thức hoạt động ở băng tần 2.4 GHz
-và bộ xử lý trung tâm Arm Cortex-M4F chạy ở xung nhịp 64 MHz,
-kèm bộ xử lý dấu phẩy động (FPU). Vi xử lý này được trang bị bộ nhớ
-1 MB Flash và 256 KB RAM, hỗ trợ chuẩn Bluetooth 5.3 cùng khả năng giao
-tiếp đa giao thức (multiprotocol), cho phép cải thiện tốc độ, phạm vi
-truyền và độ tin cậy của kết nối không dây. Hệ thống bảo mật tích hợp
-đầy đủ, bao gồm các tính năng mã hóa phần cứng, đáp ứng yêu cầu khắt khe
-về bảo vệ dữ liệu. Ngoài khả năng hoạt động trong dải điện áp rộng
-từ +1.7 V đến +5.5 V (tương thích với nguồn pin và USB), nRF52840 còn
-cung cấp các giao tiếp ngoại vi phong phú: tối đa hai giao diện I2C,
-bốn SPI master, ba SPI slave, bốn kênh PWM hỗ trợ EasyDMA, cùng với
-năm bộ định thời 32-bit, phù hợp cho các ứng dụng đòi hỏi xử lý thời
-gian thực chính xác. Tất cả các đặc điểm trên khiến nRF52840 trở thành
-lựa chọn lý tưởng cho các hệ thống nhúng đeo được tích hợp AI nhẹ và
-kết nối không dây thông minh.
-
-Ngoài ra, nRF52840 hỗ trợ một hệ sinh thái phần mềm mạnh mẽ, bao gồm SDK của
-Nordic và nền tảng TensorFlow Lite for Microcontrollers, giúp rút ngắn thời
-gian phát triển và triển khai hệ thống TinyML. Thiết bị còn sở hữu khả năng
-quản lý năng lượng linh hoạt, tương thích tốt với nguồn pin hoặc USB.
+Cuối cùng, tích hợp phần cứng thông minh được Google chứng nhận tương thích với
+hệ điều hành Wear OS và hỗ trợ phát hiện chuyển động tự động: BMI270 có khả
+năng phát hiện các trạng thái như phát hiện có chuyển động (any motion), không
+có chuyển động (no motion) hoặc di chuyển các thiết bị đeo ở cổ tay (wrist wear
+wakeup). Các tính năng này có thể được tận dụng để giảm tải tính toán cho bộ vi
+điều khiển, chỉ kích hoạt mô hình học máy khi có thay đổi tư thế đáng kể, qua
+đó tiết kiệm năng lượng và tăng tuổi thọ pin
 
 \subsection{Bluetooth năng lượng thấp}
 
@@ -345,24 +207,20 @@ thiết bị đeo sử dụng pin, Bluetooth Low Energy (BLE) được lựa ch�
 kết nối không dây chính trong hệ thống phần cứng. So với các giao thức khác,
 BLE tỏ ra vượt trội nhờ mức tiêu thụ năng lượng rất thấp, tốc độ khởi tạo kết
 nối nhanh và khả năng tương thích rộng rãi với hầu hết các thiết bị di động
-hiện nay.
+hiện nay \cite{BLE_compare}.
 
-Ngược lại, các công nghệ truyền thông không dây khác đều bộc lộ những hạn chế
-khó khắc phục trong bối cảnh thiết bị theo dõi giấc ngủ cá nhân. Wi-Fi, tuy có
-ưu thế về băng thông và khả năng truy cập trực tiếp Internet, lại tiêu thụ năng
-lượng cao và mất nhiều thời gian để khởi tạo kết nối, điều này đi ngược với yêu
-cầu tiết kiệm pin và hoạt động liên tục của thiết bị đeo cỡ nhỏ. Bluetooth cổ
-điển (BR/EDR), vốn được thiết kế cho các ứng dụng truyền tải dữ liệu dung lượng
-lớn như âm thanh, cũng đòi hỏi năng lượng cao hơn nhiều so với BLE, trong khi
-hệ thống theo dõi tư thế ngủ chỉ cần trao đổi các gói dữ liệu nhỏ giọt. ZigBee,
-mặc dù hiệu quả trong các mạng cảm biến nhà thông minh nhờ cấu trúc mesh, lại
-thiếu sự hỗ trợ trên điện thoại thông minh và đòi hỏi gateway riêng, gây bất
-tiện cho mô hình thiết bị cá nhân. Trong khi đó, LoRa/LoRaWAN nổi bật với khả
-năng truyền xa và tiết kiệm năng lượng, nhưng tốc độ dữ liệu rất thấp (chỉ vài
-kbps), không thể đáp ứng yêu cầu truyền tải gần thời gian thực trong giám sát
-giấc ngủ.
+Các công nghệ truyền thông không dây khác đều bộc lộ những hạn chế đối với
+thiết bị phân loại tư thế ngủ. Wi-Fi, có ưu thế về băng thông, lại tiêu thụ
+năng lượng cao và phụ thuộc vào internet. Bluetooth cổ điển, vốn được thiết kế
+cho các ứng dụng truyền tải dữ liệu dung lượng lớn như âm thanh, cũng đòi hỏi
+năng lượng cao hơn nhiều so với BLE. ZigBee, hiệu quả trong các mạng cảm biến
+nhà thông minh nhờ cấu trúc lưới (mesh), lại thiếu sự hỗ trợ trên điện thoại
+thông minh và đòi hỏi gateway riêng. Ngoài ra, phù hợp với nRF52840
 
-\textbf{Tóm lại}, so với các giao thức không dây khác, BLE đạt sự cân bằng tối ưu giữa năng lượng, tốc độ, độ trễ và tính phổ biến. Đây là cơ sở để luận văn lựa chọn BLE làm chuẩn kết nối chính, bảo đảm vừa duy trì độ chính xác của dữ liệu cảm biến, vừa kéo dài thời lượng pin, đồng thời tạo thuận lợi cho việc triển khai thực tế trên quy mô cộng đồng.
+Ngoài ra, BLE còn tương thích hoàn toàn với vi điều khiển nRF52840 đã chọn ở
+phần trên. Nhờ sự kết hợp này, hệ thống có thể duy trì khả năng truyền dữ liệu
+ổn định, tiết kiệm năng lượng, và đáp ứng tốt yêu cầu hoạt động liên tục trong
+quá trình giám sát tư thế ngủ.
 
 \begin{figure}[htbp]
     \centering
@@ -371,38 +229,25 @@ giấc ngủ.
     \label{ble}
 \end{figure}
 
+\subsubsection*{Các thành phần, chức năng}
+
 BLE là giao thức kết nối không dây được thiết kế chuyên biệt cho các ứng dụng
 năng lượng thấp, hoạt động ở băng tần ISM 2.4 GHz, hỗ trợ thông lượng ứng dụng
-lên đến 1.4 Mbps. Với ưu thế tiêu thụ năng lượng tối thiểu nhưng vẫn đảm bảo
-tốc độ truyền phù hợp, BLE đặc biệt thích hợp cho các thiết bị y sinh hoạt động
-liên tục bằng pin có dung lượng hạn chế. BLE hiện được hỗ trợ phổ biến trên hầu
-hết các hệ điều hành như iOS, Android, macOS, Windows 10 và Linux, cũng như
-trong các thiết bị di động hiện đại.
+lên đến 1.4 Mbps \cite{BluetoothSIG2019_Core5}. BLE hiện được hỗ trợ phổ biến
+trên hầu hết các hệ điều hành như iOS, Android, macOS, Windows 10 và Linux,
+cũng như trong các thiết bị di động hiện đại.
 
 Về mặt bảo mật, BLE tích hợp các cơ chế mã hóa và xác thực nhằm đảm bảo tính bí
-mật, toàn vẹn và riêng tư của dữ liệu truyền qua mạng. Công nghệ này đã trở
-thành một phần tiêu chuẩn trong hầu hết các thiết bị di động hiện đại như
-smartphone, máy tính bảng, và laptop, đồng thời được hỗ trợ đầy đủ trên các hệ
-điều hành phổ biến bao gồm iOS, Android, macOS, Windows 10 và Linux. Bluetooth
-5 là bước phát triển đột phá tiếp theo kể từ khi BLE được giới thiệu trong
-chuẩn Bluetooth 4.0, mang đến hàng loạt cải tiến đáng kể giúp mở rộng phạm vi
-ứng dụng và nâng cao hiệu suất hệ thống. Một trong những cải tiến nổi bật là
-chế độ 2 Mbps, cho phép tăng gấp đôi tốc độ truyền lý thuyết, tương ứng với
-thông lượng thực tế lên đến 1.4 Mbps. Quan trọng hơn, chế độ này còn giúp giảm
-đáng kể mức tiêu thụ năng lượng – cụ thể là giảm một nửa năng lượng tiêu thụ
-trên mỗi bit dữ liệu – từ đó kéo dài thời gian hoạt động của thiết bị hoặc cho
-phép sử dụng các nguồn năng lượng nhỏ và chi phí thấp hơn \cite{BLE}.
-
-Bên cạnh đó, tính năng Advertising Extensions (mở rộng quảng cáo) đã cách mạng
-hóa cơ chế phát sóng của BLE. Các gói quảng cáo giờ đây có thể chứa lượng dữ
-liệu gấp 8 lần so với phiên bản trước, cho phép truyền tải các khối dữ liệu lớn
-hơn mà không cần thiết lập kết nối ngay lập tức. Đồng thời, các gói quảng cáo
-có thể được xâu chuỗi để tạo thành các tập tin quảng cáo phức hợp. Tính năng
-lựa chọn kênh được tối ưu hóa giúp tăng cường độ ổn định và khả năng chống
-nhiễu trong các môi trường có mật độ thiết bị cao. Đặc biệt, chế độ Long Range
-mở rộng đáng kể phạm vi truyền thông của BLE, cho phép các thiết bị duy trì kết
-nối trong toàn bộ không gian của một ngôi nhà thông minh hoặc trong các ứng
-dụng IoT công nghiệp quy mô vừa và nhỏ.
+mật, toàn vẹn và riêng tư của dữ liệu truyền qua mạng. Bluetooth 5 là bước phát
+triển đột phá tiếp theo kể từ khi BLE được giới thiệu trong chuẩn Bluetooth
+4.0, mang đến hàng loạt cải tiến đáng kể giúp mở rộng phạm vi ứng dụng và nâng
+cao hiệu suất hệ thống. Quan trọng hơn, chế độ này còn giúp giảm đáng kể mức
+tiêu thụ năng lượng - cụ thể là giảm một nửa năng lượng tiêu thụ trên mỗi bit
+dữ liệu - từ đó kéo dài thời gian hoạt động của thiết bị hoặc cho phép sử dụng
+các nguồn năng lượng nhỏ và chi phí thấp hơn \cite{BLE}. Đặc biệt, chế độ Long
+Range mở rộng đáng kể phạm vi truyền thông của BLE, cho phép các thiết bị duy
+trì kết nối trong toàn bộ không gian của nhà thông minh hoặc trong các ứng dụng
+IoT công nghiệp quy mô vừa và nhỏ.
 
 \begin{figure}[htbp]
     \centering
@@ -411,12 +256,12 @@ dụng IoT công nghiệp quy mô vừa và nhỏ.
     \label{gatt}
 \end{figure}
 
-BLE tổ chức logic giao tiếp dựa trên mô hình GATT (Generic Attribute Profile).
-GATT quy định cách hai thiết bị BLE trao đổi dữ liệu thông qua các đơn vị
-logic: dịch vụ (services) và đặc tính (characteristics). Giao thức nền tảng là
-Attribute Protocol (ATT) – nơi mỗi đặc tính được định danh bằng UUID 16-bit
-hoặc 128-bit, với quyền truy cập như chỉ đọc, chỉ ghi, hoặc hỗ trợ thông báo
-(notify).
+BLE tổ chức logic giao tiếp dựa trên mô hình hồ sơ thuộc tính tổng quá (Generic
+Attribute Profile - GATT). GATT quy định cách hai thiết bị BLE trao đổi dữ liệu
+thông qua các đơn vị logic: dịch vụ (services) và đặc tính (characteristics).
+Giao thức nền tảng là Attribute Protocol (ATT). Mỗi dịch vụ, đặc tính được định
+danh bằng mã định danh duy nhất (UUID) 16-bit hoặc 128-bit, với quyền truy cập
+như chỉ đọc, chỉ ghi, hoặc hỗ trợ thông báo.
 
 Một điểm quan trọng trong mô hình GATT là tính kết nối độc quyền: tại một thời
 điểm, thiết bị ngoại vi chỉ có thể duy trì một kết nối duy nhất với thiết bị
@@ -424,72 +269,18 @@ trung tâm. Khi kết nối được thiết lập, thiết bị ngừng quảng
 chế khả năng kết nối đồng thời từ nhiều thiết bị.
 
 Ngoài ra, vi xử lý nRF52840 còn hỗ trợ Bluetooth Mesh, cho phép thiết lập mạng
-lưới nhiều-nút (many-to-many), sử dụng BLE làm lớp truyền tải vật lý. Mỗi nút
-trong mạng có thể đóng vai trò chuyển tiếp (relay), cho phép dữ liệu lan truyền
-đến các vùng rộng hơn theo mô hình phân tán – phù hợp với các ứng dụng IoT quy
-mô lớn như nhà thông minh, chiếu sáng công nghiệp hoặc giám sát phân tán. Trong
-mạng Mesh, các gói dữ liệu có thể được đóng gói qua advertising packet hoặc qua
-các giao tiếp GATT tùy tình huống sử dụng.
+lưới nhiều nút (many-to-many), sử dụng BLE làm lớp truyền tải vật lý. Mỗi nút
+trong mạng có thể đóng vai trò chuyển tiếp, cho phép dữ liệu lan truyền đến các
+vùng rộng hơn theo mô hình phân tán - phù hợp với các ứng dụng IoT quy mô lớn
+như nhà thông minh, chiếu sáng công nghiệp hoặc giám sát phân tán. Trong mạng
+Mesh, các gói dữ liệu có thể được đóng gói (advertising packet) hoặc qua các
+giao tiếp GATT tùy tình huống sử dụng.
 
-Các profile BLE là tập hợp các dịch vụ được chuẩn hóa bởi Bluetooth SIG hoặc
-định nghĩa tùy chỉnh, ví dụ như dịch vụ UART tùy chỉnh gồm hai đặc tính RX và
-TX, tương ứng với kênh nhận và truyền.
+\subsection{Thiết kế sơ đồ nguyên lý}
 
-\subsection{Thiết bị thực nghiệm}
+-------
 
-Việc lựa chọn nền tảng phần cứng thử nghiệm có ý nghĩa quyết định đối với toàn
-bộ nghiên cứu, bởi nó không chỉ ảnh hưởng đến độ tin cậy của dữ liệu và khả
-năng huấn luyện mô hình mà còn định hình hướng phát triển thiết bị trong các
-giai đoạn tiếp theo. Sau khi xác định được loại cảm biến và vi xử lý phù hợp,
-luận văn triển khai song song hai nền tảng kit thương mại nhằm đáp ứng hai mục
-tiêu khác nhau: thu thập dữ liệu huấn luyện và đánh giá khả năng triển khai mô
-hình học máy nhẹ trên thiết bị đeo thực tế.
-
-Việc sử dụng đồng thời hai nền tảng mang lại ý nghĩa khoa học quan trọng. Một
-mặt, nó giúp kiểm chứng mô hình trên các điều kiện phần cứng khác nhau qua đó
-làm rõ khả năng tổng quát hóa và tính ổn định của hệ thống. Mặt khác, cách tiếp
-cận này tránh được sự lệ thuộc vào một cấu hình duy nhất, chứng minh rằng mô
-hình có thể tái triển khai và thích ứng trên nhiều nền tảng phần cứng cùng họ
-vi xử lý. Nhờ đó, nghiên cứu không chỉ dừng lại ở việc xây dựng một nguyên mẫu
-cụ thể, mà còn góp phần khẳng định tính khả chuyển và độ tin cậy của giải pháp
-trong các ứng dụng thực tiễn lâu dài.
-
-Thứ nhất, bộ kit \textit{Adafruit Playground} được lựa chọn cho giai đoạn thu
-thập dữ liệu và thực nghiệm sơ bộ. Kit này tích hợp sẵn cảm biến gia tốc MEMS
-LIS3DH, cho phép đo gia tốc theo ba trục không gian (X, Y, Z) với độ chính xác
-cao. Cảm biến được kết nối với vi điều khiển thông qua giao thức SPI, trong đó
-chân chọn thiết bị (CS) được gán tại chân số 8 và đầu ra ngắt (IRQ) tại chân số
-7 (IRQ \#4). Theo cấu trúc bố trí tiêu chuẩn, trục X được định hướng theo chiều
-giắc USB, trục Y hướng sang bên trái, trong khi trục Z vuông góc với mặt phẳng
-thiết bị. Với chi phí chỉ khoảng 25 USD/kit \cite{ada_overview}, nền tảng này
-mang lại sự cân bằng hợp lý giữa tính kinh tế và độ tin cậy, cho phép triển
-khai nhanh chóng hệ thống thu thập dữ liệu trong giai đoạn đầu.
-
-Thứ hai, để kiểm chứng tính khả thi trong triển khai mô hình tối ưu và đánh giá
-hiệu năng thực tế của hệ thống đeo, luận văn sử dụng thêm bo mạch
-\textit{Arduino Nano 33 BLE Sense}. Đây là nền tảng hiện đại dựa trên vi xử lý
-nRF52840 (ARM Cortex-M4F), hỗ trợ Bluetooth Low Energy (BLE) và tích hợp sẵn
-nhiều cảm biến (IMU, microphone, nhiệt độ, độ ẩm, \ldots). Đặc biệt, bo mạch
-này tương thích trực tiếp với \textit{TensorFlow Lite for Microcontrollers}
-\cite{nano33ble}, nhờ đó có thể triển khai và đánh giá trực tiếp các mô hình
-TinyML trong môi trường nhúng.
-
-Đáng chú ý, bên cạnh việc tận dụng các bộ kit thương mại, nhóm nghiên cứu
-đồng thời phát triển một phiên bản mạch phần cứng tùy chỉnh dựa trên những
-phân tích ở các chương trước. Hướng tiếp cận này vừa bảo đảm tiến độ triển
-khai trong giai đoạn thử nghiệm, vừa đặt nền tảng cho việc xây dựng một
-thiết bị nhúng chuyên dụng, tối ưu hơn về chi phí, hiệu năng và khả năng
-tích hợp trong các ứng dụng giám sát tư thế ngủ và hỗ trợ chẩn đoán ngưng
-thở tắc nghẽn khi ngủ.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/detail_ada.png}
-    \caption{Cấu trúc các thành phần trên Circuit Playground}
-    \label{detail_ada}
-\end{figure}
-
-\section{Hệ thống thu thập, xử lý, lưu trữ dữ liệu}
+\section{Hệ thống phần mềm}
 Phần này trình bày tổng quan kiến trúc hệ thống bao gồm: lập trình firmware
 trên vi điều khiển để thu thập dữ liệu cảm biến, thiết kế ứng dụng di động làm
 cầu nối giữa phần cứng và hệ thống đám mây, cùng với backend và cơ sở dữ liệu
@@ -567,7 +358,7 @@ Trong cấu trúc dịch vụ, hệ thống định nghĩa một dịch vụ ch�
 đơn vị \texttt{m/s\textsuperscript{2}}) và gia tốc góc (\texttt{UUID 0x2744},
 đơn vị \texttt{rad/s\textsuperscript{2}}). Mặc dù phần cứng hỗ trợ thu thập
 song song nhiều loại dữ liệu cảm biến, khoá luận này tập trung vào tín hiệu gia
-tốc tuyến tính – loại dữ liệu được coi là trực quan nhất để phân loại tư thế
+tốc tuyến tính - loại dữ liệu được coi là trực quan nhất để phân loại tư thế
 ngủ, đồng thời giảm độ phức tạp của mô hình TinyML trong giai đoạn thử nghiệm.
 
 Cách tiếp cận này chứng minh rằng việc lựa chọn đúng nền tảng và thư viện không
@@ -680,7 +471,7 @@ chuẩn theo hai hướng: (i) loại bỏ sai số hệ thống cố hữu, và
     \label{allan}
 \end{figure}
 
-\textbf{Phân tích sai số ngẫu nhiên.} Bên cạnh sai số hệ thống, cảm biến còn chịu ảnh hưởng của nhiễu ngẫu nhiên mà không thể loại bỏ bằng hiệu chuẩn tĩnh. Để đánh giá các thành phần này, tác giả sử dụng phương pháp phương sai Allan \cite{allan}, một công cụ kinh điển trong phân tích ổn định tín hiệu và được ứng dụng rộng rãi trong lĩnh vực quán tính học. Phương pháp này cho phép phân tách và định lượng các loại nhiễu như nhiễu trắng (white noise), trôi ngẫu nhiên (random walk), và nhiễu lượng tử (quantization noise), dựa trên độ dốc đặc trưng ở từng miền thời gian trong biểu đồ log–log.
+\textbf{Phân tích sai số ngẫu nhiên.} Bên cạnh sai số hệ thống, cảm biến còn chịu ảnh hưởng của nhiễu ngẫu nhiên mà không thể loại bỏ bằng hiệu chuẩn tĩnh. Để đánh giá các thành phần này, tác giả sử dụng phương pháp phương sai Allan \cite{allan}, một công cụ kinh điển trong phân tích ổn định tín hiệu và được ứng dụng rộng rãi trong lĩnh vực quán tính học. Phương pháp này cho phép phân tách và định lượng các loại nhiễu như nhiễu trắng (white noise), trôi ngẫu nhiên (random walk), và nhiễu lượng tử (quantization noise), dựa trên độ dốc đặc trưng ở từng miền thời gian trong biểu đồ log-log.
 
 Trong thí nghiệm, cảm biến được cố định trong môi trường nhiệt độ ổn định, hoạt
 động ở tần số lấy mẫu 10 Hz và dải đo $\pm 2g$, thu được tổng cộng 1.211.210
@@ -742,11 +533,11 @@ phần:
 
 \textbf{Thiết bị nhúng (device):} cảm biến gia tốc trên kit thu nhận tín hiệu thô, được vi xử lý xử lý sơ bộ và truyền qua giao thức \textit{Bluetooth Low Energy (BLE)}.
 
-\textbf{Kết nối BLE – Ứng dụng di động:} ứng dụng trên điện thoại thông minh thiết lập liên kết BLE để nhận dữ liệu theo thời gian thực. Bên cạnh việc hiển thị trực quan tín hiệu trên màn hình, ứng dụng còn cho phép người dùng cấu hình tham số thiết bị (tần số lấy mẫu, thời lượng ghi, định dạng dữ liệu).
+\textbf{Kết nối BLE - Ứng dụng di động:} ứng dụng trên điện thoại thông minh thiết lập liên kết BLE để nhận dữ liệu theo thời gian thực. Bên cạnh việc hiển thị trực quan tín hiệu trên màn hình, ứng dụng còn cho phép người dùng cấu hình tham số thiết bị (tần số lấy mẫu, thời lượng ghi, định dạng dữ liệu).
 
-\textbf{Ứng dụng – Máy chủ (server):} dữ liệu cảm biến được đồng bộ về server qua kết nối Internet. Server lưu trữ dữ liệu trong cơ sở dữ liệu quan hệ và cung cấp giao diện quản lý thí nghiệm, gắn nhãn dữ liệu và phân quyền truy cập.
+\textbf{Ứng dụng - Máy chủ (server):} dữ liệu cảm biến được đồng bộ về server qua kết nối Internet. Server lưu trữ dữ liệu trong cơ sở dữ liệu quan hệ và cung cấp giao diện quản lý thí nghiệm, gắn nhãn dữ liệu và phân quyền truy cập.
 
-\textbf{Xuất dữ liệu – Định dạng CSV:} để phục vụ cho giai đoạn phân tích và huấn luyện, hệ thống cho phép xuất dữ liệu dưới dạng chuẩn CSV. Dữ liệu này bao gồm chuỗi tín hiệu thô, nhãn tư thế, và siêu dữ liệu (thời gian, ID thiết bị, thông số cấu hình).
+\textbf{Xuất dữ liệu - Định dạng CSV:} để phục vụ cho giai đoạn phân tích và huấn luyện, hệ thống cho phép xuất dữ liệu dưới dạng chuẩn CSV. Dữ liệu này bao gồm chuỗi tín hiệu thô, nhãn tư thế, và siêu dữ liệu (thời gian, ID thiết bị, thông số cấu hình).
 
 \textbf{Huấn luyện mô hình học máy:} dữ liệu CSV sau khi được làm sạch và tiền xử lý được đưa vào pipeline huấn luyện mô hình (Python/Scikit-learn/TensorFlow). Các mô hình được đánh giá ngoại tuyến (offline) trước khi lựa chọn phương án tối ưu để triển khai trên thiết bị nhúng.
 
@@ -851,7 +642,7 @@ các công cụ hỗ trợ đánh giá y học lâm sàng ban đầu nhằm ph�
 lọc và phân loại nguy cơ mắc hội chứng ngưng thở khi ngủ (OSA). Trong đó, ba
 thành phần quan trọng được triển khai bao gồm:
 
-\noindent\textbf{01)} Bộ câu hỏi \textbf{STOP-BANG}: Đây là một bảng sàng lọc lâm sàng được sử dụng phổ biến trong y học giấc ngủ để đánh giá nguy cơ mắc OSA. Dữ liệu từ bảng này được lưu trữ cùng với dữ liệu cảm biến và đóng vai trò như đầu vào bổ sung cho các mô hình học máy dự đoán chỉ số AHI (Apnea–Hypopnea Index).
+\noindent\textbf{01)} Bộ câu hỏi \textbf{STOP-BANG}: Đây là một bảng sàng lọc lâm sàng được sử dụng phổ biến trong y học giấc ngủ để đánh giá nguy cơ mắc OSA. Dữ liệu từ bảng này được lưu trữ cùng với dữ liệu cảm biến và đóng vai trò như đầu vào bổ sung cho các mô hình học máy dự đoán chỉ số AHI (Apnea-Hypopnea Index).
 
 \vspace{0.5em}
 \noindent\textbf{02)} Thang điểm \textbf{Epworth Sleepiness Scale (ESS)}: Tác giả triển khai thêm bảng câu hỏi ESS nhằm đánh giá mức độ buồn ngủ ban ngày của người dùng. Thang điểm này giúp phát hiện tình trạng buồn ngủ quá mức và có thể hỗ trợ phân tầng nguy cơ trong mô hình phân loại rối loạn giấc ngủ.
@@ -1078,7 +869,7 @@ giấc ngủ thông minh, hỗ trợ sàng lọc và chẩn đoán hội chứng
 Hình~\ref{hocmay_time} trình bày phân bố thời gian tương đối giữa các công đoạn
 trong quá trình triển khai một dự án học máy thực tế. Dữ liệu trong biểu đồ cho
 thấy rằng phần lớn thời gian không nằm ở bước huấn luyện mô hình, mà được dành
-cho các công việc tiền xử lý dữ liệu – chiếm đến hơn 60\% tổng thời gian. Cụ
+cho các công việc tiền xử lý dữ liệu - chiếm đến hơn 60\% tổng thời gian. Cụ
 thể, hai hoạt động tốn thời gian nhất là \textbf{làm sạch dữ liệu} và
 \textbf{gán nhãn dữ liệu}, mỗi hoạt động chiếm 25\% tổng thời lượng thực hiện.
 Tiếp theo là \textbf{bổ sung dữ liệu} (15\%) và \textbf{phân tích dữ liệu}
@@ -1103,7 +894,7 @@ tác giả đi sâu vào phân tích các thuật toán học máy đã được
 chọn, đặc điểm cấu trúc của từng mô hình, cũng như hiệu quả của chúng trong bối
 cảnh bài toán sử dụng dữ liệu cảm biến gia tốc ba trục.
 
-\textbf{Hồi quy Logistic (Logistic Regression – LR)} là một trong những thuật toán
+\textbf{Hồi quy Logistic (Logistic Regression - LR)} là một trong những thuật toán
 cơ bản và phổ biến nhất trong học máy, đặc biệt phù hợp với các
 bài toán phân loại nhị phân. Về mặt cấu trúc, LR tương tự như hồi
 quy tuyến tính ở chỗ sử dụng tổ hợp tuyến tính giữa các đặc trưng
@@ -1139,7 +930,7 @@ chính xác có thể thấp hơn một số mô hình phức tạp hơn như Ra
 Gradient Boosting, LR vẫn đảm bảo hiệu năng chấp nhận được trong bối cảnh hệ
 thống nhúng giới hạn tài nguyên.
 
-\textbf{Máy vector hỗ trợ (Support Vector Machine – SVM)} là một thuật
+\textbf{Máy vector hỗ trợ (Support Vector Machine - SVM)} là một thuật
 toán học có giám sát, đặc biệt hiệu quả cho các bài toán phân loại nhị
 phân với biên ranh giới rõ ràng \cite{cortes1995svm}. Ý tưởng chính của SVM là tìm kiếm một
 \textbf{mặt siêu phẳng (hyperplane)} trong không gian đặc trưng để phân
@@ -1149,8 +940,8 @@ là lớn nhất.
 Trong không gian hai chiều, mặt siêu phẳng tương ứng với một đường thẳng; trong
 không gian ba chiều, đó là một mặt phẳng; và trong không gian nhiều chiều hơn,
 nó là một siêu mặt phẳng tổng quát. SVM chọn mặt siêu phẳng sao cho khoảng cách
-(margin) từ nó đến các điểm dữ liệu gần nhất của mỗi lớp – gọi là
-\textbf{support vectors} – là tối đa. Bài toán tối ưu hóa trong SVM có thể biểu
+(margin) từ nó đến các điểm dữ liệu gần nhất của mỗi lớp - gọi là
+\textbf{support vectors} - là tối đa. Bài toán tối ưu hóa trong SVM có thể biểu
 diễn như sau:
 
 \begin{equation}
@@ -1184,7 +975,7 @@ kích thước tập dữ liệu, điều này làm cho SVM trở nên khó tri�
 hệ thống có tài nguyên hạn chế hoặc yêu cầu thời gian thực, như thiết bị nhúng
 hoặc biên.
 
-Một khái niệm quan trọng trong SVM là \textbf{biên (margin)} – khoảng cách giữa
+Một khái niệm quan trọng trong SVM là \textbf{biên (margin)} - khoảng cách giữa
 mặt siêu phẳng và các điểm dữ liệu gần nhất thuộc hai lớp. Mặt siêu phẳng tối
 ưu là mặt phẳng có biên lớn nhất, và chỉ những điểm nằm gần sát biên mới ảnh
 hưởng đến việc xác định mặt siêu phẳng, được gọi là \textbf{các vector hỗ trợ
@@ -1226,7 +1017,7 @@ Cả hai chiến lược OvO và OvR đều giúp mở rộng SVM từ mô hình
 thành phân loại đa lớp hiệu quả, nhưng mỗi phương pháp đều có ưu và nhược điểm
 riêng về thời gian huấn luyện, độ phức tạp tính toán và hiệu năng phân loại.
 
-\textbf{Rừng ngẫu nhiên (Random Forest – RF)} là một mô hình học có
+\textbf{Rừng ngẫu nhiên (Random Forest - RF)} là một mô hình học có
 giám sát thuộc nhóm thuật toán tổ hợp (ensemble learning),
 được xây dựng dựa trên nền tảng của
 \textbf{Cây quyết định (Decision Tree)} \cite{breiman2001random}.
@@ -1260,7 +1051,7 @@ Do các cây trong Random Forest được huấn luyện trên những tập d�
 thuộc tính khác nhau, mỗi cây đơn lẻ có thể có sai số lớn (high bias hoặc
 underfitting). Tuy nhiên, việc tổng hợp kết quả của nhiều cây giúp giảm phương
 sai (variance), cải thiện khả năng tổng quát hoá. Nhờ đó, Random Forest đạt
-được sự cân bằng giữa bias và variance – một trong những đặc điểm lý tưởng của
+được sự cân bằng giữa bias và variance - một trong những đặc điểm lý tưởng của
 mô hình học máy tốt.
 
 Một đặc điểm quan trọng khác là \textbf{tính ổn định} của RF đối với nhiễu và
@@ -1275,12 +1066,12 @@ tiếp trong môi trường hạn chế tài nguyên như các vi điều khiể
 chiếu mạnh về độ chính xác, nhưng chưa phải là lựa chọn phù hợp cho triển khai
 biên (TinyML).
 
-\textbf{Học tăng cường (Gradient Boosting – GB)} là một phương pháp học
+\textbf{Học tăng cường (Gradient Boosting - GB)} là một phương pháp học
 có giám sát thuộc nhóm thuật toán tổ hợp (ensemble learning),
-trong đó nhiều mô hình yếu (weak learners) – thường là các cây quyết định có độ sâu nông –
+trong đó nhiều mô hình yếu (weak learners) - thường là các cây quyết định có độ sâu nông -
 được kết hợp theo cách tuần tự để tạo thành một mô hình mạnh hơn \cite{chen2016xgboost}.
 
-Khác với Random Forest – nơi các cây được xây dựng song song và độc lập –
+Khác với Random Forest - nơi các cây được xây dựng song song và độc lập -
 Gradient Boosting xây dựng mô hình theo từng bước lặp (iteration), mỗi cây tiếp
 theo được huấn luyện để sửa lỗi còn lại từ mô hình trước đó. Cụ thể, tại mỗi
 vòng lặp $t$, mô hình hiện tại $F_t(x)$ được cập nhật bằng cách cộng thêm một
@@ -1313,11 +1104,11 @@ hạn chế tài nguyên. Thay vào đó, mô hình này được sử dụng đ
 hiệu năng tham chiếu (baseline) trong môi trường huấn luyện trên máy chủ hoặc
 máy tính cá nhân.
 
-\textbf{Mạng nơ-ron nhân tạo (Artificial Neural Network – ANN)} là một
+\textbf{Mạng nơ-ron nhân tạo (Artificial Neural Network - ANN)} là một
 mô hình học sâu mô phỏng cấu trúc hoạt động của hệ thần kinh sinh học,
 trong đó các nơ-ron nhân tạo (artificial neurons) được tổ chức thành nhiều
 lớp (layers) và kết nối với nhau qua các trọng số (weights) \cite{jain1996}.
-Trong nghiên cứu này, tác giả sử dụng kiến trúc \textbf{Multilayer Perceptron (MLP)} –
+Trong nghiên cứu này, tác giả sử dụng kiến trúc \textbf{Multilayer Perceptron (MLP)} -
 một loại mạng nơ-ron đơn giản gồm ít nhất ba lớp: lớp đầu vào (input layer),
 một hoặc nhiều lớp ẩn (hidden layers) và lớp đầu ra (output layer).
 
