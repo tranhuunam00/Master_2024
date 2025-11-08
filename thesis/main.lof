@@ -14,36 +14,49 @@
 \contentsline {figure}{\numberline {1.12}{\ignorespaces Quá trình biến đổi tín hiệu trong cảm biến điện dung.}}{23}{figure.caption.18}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Nordic NRF52840}}{36}{figure.caption.26}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Một số bộ kit phát triển dựa trên vi điều khiển Nordic nRF52840}}{37}{figure.caption.27}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Bosch BMI270}}{38}{figure.caption.28}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Các kiểu kết nối không dây trong họ chip nRF52}}{40}{figure.caption.29}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Cấu trúc của GATT}}{41}{figure.caption.30}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Lưu đồ luồng gửi thông tin BLE}}{48}{figure.caption.35}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Minh hoạ kết quả phân tích đường cong Allan}}{49}{figure.caption.36}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Biểu đồ phương sai Allan của trục X}}{49}{figure.caption.37}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Minh hoạ kết quả phân tích đường cong Allan}}{51}{figure.caption.38}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Biểu đồ phương sai Allan của trục X}}{51}{figure.caption.39}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Kết quả bộ lọc Kalman cho dữ liệu trục X của cảm biến gia tốc}}{53}{figure.caption.40}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Cấu trúc kiến trúc BLoC trong ứng dụng Flutter}}{56}{figure.caption.42}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Mô hình tích hợp giữa mạng cảm biến và cấu trúc dữ liệu đám mây}}{60}{figure.caption.45}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}}{64}{figure.caption.46}%
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Phân bố thời gian thực hiện đối với dự án học máy}}{65}{figure.caption.47}%
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Minh họa mặt siêu phẳng phân tách hai lớp trong SVM}}{68}{figure.caption.48}%
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-One}}{69}{figure.caption.49}%
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-Rest}}{69}{figure.caption.50}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Các tính năng Nordic nRF52840}}{37}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Một số bộ kit phát triển dựa trên vi điều khiển Nordic nRF52840}}{38}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Sơ đồ khối Nordic NRF52840}}{39}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Bosch BMI270}}{40}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Sơ đồ khối Bosch BMI270}}{41}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Sơ đồ chân Bosch BMI270}}{42}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Các kiểu kết nối không dây trong họ chip nRF52}}{43}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Cấu trúc của GATT}}{44}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces U-blox NINA-B306}}{46}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Sơ đồ khối U-blox NINA-B306}}{47}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Sơ đồ chân U-blox NINA-B306}}{48}{figure.caption.38}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces STM MP34DT06J}}{49}{figure.caption.40}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Sơ đồ khối IC MP2322GQH, dải đầu vào 3V–22V, dòng tải tối đa 1A, hiệu suất cao, tần số chuyển mạch 1.25MHz (Monolithic Power Systems)}}{49}{figure.caption.42}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Sơ đồ nguyên lý}}{51}{figure.caption.44}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Bố trí mạch in hai mặt của bo mạch: (a) lớp trên; (b) lớp dưới}}{52}{figure.caption.45}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Mô hình mạch 3D: (a) lớp trên; (b) lớp dưới}}{52}{figure.caption.46}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Mạch hoàn chỉnh}}{53}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Lưu đồ luồng gửi thông tin BLE}}{58}{figure.caption.52}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Minh hoạ kết quả phân tích đường cong Allan}}{59}{figure.caption.53}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Biểu đồ phương sai Allan của trục X}}{60}{figure.caption.54}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Minh hoạ kết quả phân tích đường cong Allan}}{61}{figure.caption.55}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Biểu đồ phương sai Allan của trục X}}{62}{figure.caption.56}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Kết quả bộ lọc Kalman cho dữ liệu trục X của cảm biến gia tốc}}{64}{figure.caption.57}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Cấu trúc kiến trúc BLoC trong ứng dụng Flutter}}{68}{figure.caption.59}%
+\contentsline {figure}{\numberline {2.26}{\ignorespaces Mô hình tích hợp giữa mạng cảm biến và cấu trúc dữ liệu đám mây}}{70}{figure.caption.62}%
+\contentsline {figure}{\numberline {2.27}{\ignorespaces Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}}{75}{figure.caption.63}%
+\contentsline {figure}{\numberline {2.28}{\ignorespaces Phân bố thời gian thực hiện đối với dự án học máy}}{76}{figure.caption.64}%
+\contentsline {figure}{\numberline {2.29}{\ignorespaces Minh họa mặt siêu phẳng phân tách hai lớp trong SVM}}{79}{figure.caption.65}%
+\contentsline {figure}{\numberline {2.30}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-One}}{80}{figure.caption.66}%
+\contentsline {figure}{\numberline {2.31}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-Rest}}{80}{figure.caption.67}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Hệ thống thử nghiệm: (a) vị trí đặt thiết bị cảm biến; (b) minh hoạ thực nghiệm thực tế trong tư thế nằm.}}{75}{figure.caption.51}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Giao diện chức năng đăng ký và đăng nhập}}{76}{figure.caption.52}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Giao diện trang chủ}}{76}{figure.caption.53}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Giao diện màn hình danh sách BLE và chi tiết các dịch vụ kết nối với phần cứng}}{77}{figure.caption.54}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Giao diện chức năng chatbot và bộ câu hỏi tầm soát}}{78}{figure.caption.55}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Giao diện hiển thị dữ liệu gia tốc ba trục}}{79}{figure.caption.57}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Mô phỏng thực nghiệm thực tế}}{80}{figure.caption.58}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Phân bố dữ liệu cảm biến theo ba trục $x$, $y$, $z$ ứng với các tư thế ngủ khác nhau.}}{82}{figure.caption.59}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Phân bố số lượng mẫu trong tập huấn luyện theo từng tư thế.}}{83}{figure.caption.60}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Ma trận tương quan giữa các đặc trưng trích xuất. Cường độ màu thể hiện hệ số tương quan Pearson. Màu đỏ là tương quan dương mạnh, xanh là tương quan âm mạnh, xám là không tương quan.}}{87}{figure.caption.64}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Phân tích giá trị SHAP nhằm xác định tầm quan trọng của các đặc trưng trong mô hình phân loại tư thế ngủ. Các đặc trưng từ trục $z$ chiếm ưu thế về mức ảnh hưởng đến đầu ra mô hình.}}{89}{figure.caption.65}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Ma trận nhầm lẫn (confusion matrix) của năm mô hình phân loại trong kịch bản S1. GB và RF cho kết quả chính xác cao nhất. Mô hình NN được huấn luyện trực tiếp trên dữ liệu thô.}}{93}{figure.caption.69}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Hệ thống thử nghiệm: (a) vị trí đặt thiết bị cảm biến; (b) minh hoạ thực nghiệm thực tế trong tư thế nằm.}}{86}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Giao diện chức năng đăng ký và đăng nhập}}{87}{figure.caption.69}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Giao diện trang chủ}}{87}{figure.caption.70}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Giao diện màn hình danh sách BLE và chi tiết các dịch vụ kết nối với phần cứng}}{88}{figure.caption.71}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Giao diện chức năng chatbot và bộ câu hỏi tầm soát}}{89}{figure.caption.72}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Giao diện hiển thị dữ liệu gia tốc ba trục}}{90}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Mô phỏng thực nghiệm thực tế}}{91}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Phân bố dữ liệu cảm biến theo ba trục $x$, $y$, $z$ ứng với các tư thế ngủ khác nhau.}}{93}{figure.caption.76}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Phân bố số lượng mẫu trong tập huấn luyện theo từng tư thế.}}{94}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Ma trận tương quan giữa các đặc trưng trích xuất. Cường độ màu thể hiện hệ số tương quan Pearson. Màu đỏ là tương quan dương mạnh, xanh là tương quan âm mạnh, xám là không tương quan.}}{98}{figure.caption.81}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Phân tích giá trị SHAP nhằm xác định tầm quan trọng của các đặc trưng trong mô hình phân loại tư thế ngủ. Các đặc trưng từ trục $z$ chiếm ưu thế về mức ảnh hưởng đến đầu ra mô hình.}}{100}{figure.caption.82}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Ma trận nhầm lẫn (confusion matrix) của năm mô hình phân loại trong kịch bản S1. GB và RF cho kết quả chính xác cao nhất. Mô hình NN được huấn luyện trực tiếp trên dữ liệu thô.}}{104}{figure.caption.86}%
 \addvspace {10\p@ }
 \contentsfinish 
 \contentsfinish 

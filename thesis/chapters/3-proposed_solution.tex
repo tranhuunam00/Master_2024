@@ -6,6 +6,7 @@ vi điều khiển và cảm biến phù hợp; từ đó tiến hành thiết k
 phỏng mạch 3D và hoàn thiện sản phẩm.
 
 \subsection{Vi xử lý}
+\label{subsec:vi_xu_ly}
 
 Với sự phát triển vượt bậc và đa dạng của công nghệ thiết kế và chế tạo, có rất
 nhiều cấu hình phần cứng được nhiều nhóm tác giả lựa chọn phù hợp với các mục
@@ -47,6 +48,13 @@ khiển nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với các
     \label{Nordic}
 \end{figure}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{images/nrf52840_feature.png}
+    \caption{Các tính năng Nordic nRF52840}
+    \label{Nornrf52840_featuredic}
+\end{figure}
+
 nRF52840 tích hợp bộ giao thức không dây Bluetooth năng lượng thấp (Bluetooth
 Low Energy - BLE) hoạt động ở băng tần 2.4 GHz và bộ xử lý trung tâm Arm
 Cortex-M4F chạy ở xung nhịp 64 MHz, kèm bộ xử lý dấu phẩy động (FPU). Vi xử lý
@@ -57,6 +65,13 @@ liệu. Ngoài khả năng hoạt động trong dải điện áp rộng từ +1
 vi phong phú: hai giao diện I2C, bốn SPI chủ (master), ba SPI tớ (slave), bốn
 kênh điều chế xung (PWM) hỗ trợ EasyDMA, cùng với bộ định thời 32-bit, phù hợp
 cho các ứng dụng đòi hỏi xử lý thời gian thực chính xác.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{images/nrf52840_schematic.png}
+    \caption{Sơ đồ khối Nordic NRF52840}
+    \label{nrf52840_schematic}
+\end{figure}
 
 Đặc biệt, nRF52840 có
 một hệ sinh thái phần mềm đi kèm, bao gồm bộ công cụ phát triển (SDK) của Nordic Semiconductor và nền tảng TensorFlow Lite for Microcontrollers, giúp rút ngắn thời gian phát triển và triển khai hệ
@@ -149,6 +164,7 @@ thiết bị đeo thông minh và học máy biên (Edge AI).
 % Đối với các ứng dụng yêu cầu tiết kiệm năng lượng, hệ thống còn được trang bị bộ đánh thức ngắt (Wake-up Interrupt Controller - WIC), cho phép đưa bộ vi điều khiển vào chế độ nghỉ bằng cách tắt hầu hết các thành phần không cần thiết, đồng thời duy trì khả năng đánh thức hệ thống khi phát hiện một yêu cầu ngắt. Ngoài ra, cơ chế bảo vệ bộ nhớ cũng được tích hợp nhằm đảm bảo an toàn cho hệ thống, ví dụ như chỉ cho phép truy cập đọc tại một số vùng bộ nhớ hoặc ngăn người dùng truy cập vào các vùng dữ liệu đặc quyền của hệ điều hành hoặc ứng dụng hệ thống.
 
 \subsection{Cảm biến \label{section_overview_propsed_method}}
+\label{subsec:cam_bien}
 
 Trong quá trình ngủ, các chuyển động thân thể chủ yếu là chuyển động chậm, với
 biên độ nhỏ và ít mang tính đột ngột \cite{Wang2018_slidingwindow}. Trong giai
@@ -199,6 +215,22 @@ có chuyển động (no motion) hoặc di chuyển các thiết bị đeo ở c
 wakeup). Các tính năng này có thể được tận dụng để giảm tải tính toán cho bộ vi
 điều khiển, chỉ kích hoạt mô hình học máy khi có thay đổi tư thế đáng kể, qua
 đó tiết kiệm năng lượng và tăng tuổi thọ pin
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.75\textwidth, keepaspectratio]{images/bmi270_block.png}
+    \vspace*{-5mm}
+    \caption{Sơ đồ khối Bosch BMI270}
+    \label{bmi270_block}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth, keepaspectratio]{images/bmi270_pin.png}
+    \vspace*{-5mm}
+    \caption{Sơ đồ chân Bosch BMI270}
+    \label{bmi270_pin}
+\end{figure}
 
 \subsection{Bluetooth năng lượng thấp}
 
@@ -276,9 +308,192 @@ như nhà thông minh, chiếu sáng công nghiệp hoặc giám sát phân tán
 Mesh, các gói dữ liệu có thể được đóng gói (advertising packet) hoặc qua các
 giao tiếp GATT tùy tình huống sử dụng.
 
-\subsection{Thiết kế sơ đồ nguyên lý}
+\subsection{Thiết kế mạch nguyên lý}
 
--------
+Sau khi đã lựa chọn được vi điều khiển, cảm biến của hệ thống phần cứng phân
+loại tư thế ngủ. Trong phần này, tác giả sẽ trình bày về thiết kế sơ đồ nguyên
+lý cho mạch thông qua những câu hỏi: Các thành phần trong cần thiết để phục vụ
+cho bài toán phân loại tư thế ngủ là gì? Chúng được kết nối với nhau như thế
+nào? và chi tiết từng thành phần đó là gì?
+
+Qua các câu hỏi đó, tác giả từng bước nghiên cứu và hoàn thiện thiết kế sơ đồ
+nguyên lý.
+
+\subsubsection*{Mục tiêu}
+
+Bám sát vào yêu cầu đã trình bày từ các phần trước là phần cứng nhỏ gọn, tính
+di dộng cao, tiêu thụ năng lượng ít, giá thành phù hợp tác giả đã nghiên cứu và
+đưa ra hệ thống cần các thành phần sau: 01) Khối điều khiển: có chức năng xử lý
+toàn bộ logic trong mạch, kết nối được với các thiết bị khác như điện thoại
+thông qua BLE và đặc biệt, đủ hiệu năng để triển khai các mô hình học máy. 02)
+Khối cảm biến: có nhiệm vụ thu thập dữ liệu sinh lý bao gồm 2 cảm biến chính là
+gia tốc (đã được trình bày các phần trên) và thêm cảm biến âm thanh để phục vụ
+bài toán xác định tiếng ngáy của nhóm. 03) Khối nguồn: có nhiệm vụ ổn áp về
+đúng dải điện áp tương thích, lọc nhiễu, bảo vệ dòng 04) Khối nạp và gỡ lỗi: có
+nhiệm vụ nạp mã chương trình vào vi điều khiển 05) Khối hiển thị: có nhiệm vụ
+đưa ra thông báo khi có phát hiện bất thường. Kích thước của mạch là hình tròn,
+có đường kính không quá 4cm. Đây chính là những mục tiêu điểm tiên quyết để coi
+là đạt được mục tiêu trong phần này.
+
+\subsubsection{Khối điều khiển}
+
+Với yêu cầu quan trọng đối điều khiển thì vi điều khiển nRF52840 được chọn hoàn
+toàn có thể đáp ứng các tiêu trí đã nêu trong phần~\ref{subsec:vi_xu_ly} để làm
+vi điều khiển của mạch. Tuy nhiên để đáp ứng đủ các yêu cầu của khối điều khiển
+thì vẫn đang thiếu các thành phần như khối thu phát tín hiệu vô tuyến bao gồm
+ăng ten, mạch phối hợp trở khánh, bộ dao động tinh thể và bộ đếm định thời nhằm
+duy trì hoạt động ổn định trong các chế độ năng lượng thấp.
+
+Sau khi tìm hiểu, tác giả quyết định lựa chọn module U-blox NINA-B306 để đảm
+nhiệm các nhiệm vụ của khối điều khiển \cite{uBlox2019_NINA_B3}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/ninab306.png}
+    \caption{U-blox NINA-B306}
+    \label{ninab306}
+\end{figure}
+
+Mô-đun NINA-B306 được phát triển dựa trên vi điều khiển Nordic nRF52840, tích
+hợp ăng-ten PCB nội bộ được cấp phép từ Abracon ngay trên bảng mạch của mô-đun.
+Ngoài ra, NINA-B306 được thiết kế với dải điện áp hoạt động chuẩn hóa từ 1.7 V
+đến 3.6 V, thấp hơn so với giới hạn tối đa 5.5 V của vi điều khiển nRF52840,
+nhằm tối ưu hiệu suất năng lượng.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{images/ninab306_block.png}
+    \caption{Sơ đồ khối U-blox NINA-B306}
+    \label{ninab306_block}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{images/ninab306_pin.png}
+    \caption{Sơ đồ chân U-blox NINA-B306}
+    \label{ninab306_pin}
+\end{figure}
+
+\subsubsection{Khối cảm biến}
+Như đã đề cập chi tiết ở phần~\ref{subsec:cam_bien}, cảm biến gia tốc Bosch
+BMi270 được lựa chọn để thu thập tín hiệu gia tốc cho bài toán phân loại tư thế
+ngủ.
+
+Ngoài ra, việc hướng tới việc xác định chứng ngưng thở khi ngủ OSA thì nhóm có
+bổ sung thêm cảm biến âm thanh STMicroelectronics MP34DT06J. Cảm biến MP34DT06J
+là microphone MEMS kỹ thuật số định hướng đa hướng có kích thước siêu nhỏ gọn
+và tiêu thụ năng lượng thấp. Ngoài ra MP34DT06J là cảm biến số có tỷ lệ tín
+hiệu trên nhiễu (SNR) 64 dB và độ nhạy -26 dBFS ± 1 dB, đảm bảo chất lượng thu
+âm ổn định. Thiết bị được đóng gói theo chuẩn SMD top-port, có che chắn EMI
+(Electromagnetic Interference), và được đảm bảo hoạt động ổn định trong dải
+nhiệt độ mở rộng từ –40 °C đến +85 °C và kèm thêm điện áp đầu vào 1.8V hoàn
+toàn phù hợp với các thông số của vi điều khiển.
+
+Tuy nhiên, trong khuôn khổ luận văn này tác giả không đề cập sâu vào cảm biến
+này để tập trung tối đa vào dữ liệu cảm biến gia tốc cho bài toán phân loại tư
+thế ngủ.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/mp34DT06J.png}
+    \caption{STM MP34DT06J}
+    \label{mp34DT06J}
+\end{figure}
+
+\subsubsection{Khối nguồn, nạp và gỡ lỗi, hiển thị}
+Ba khối chức năng này được thiết kế nhằm đảm bảo sự ổn định và khả năng vận
+hành tin cậy của toàn bộ hệ thống phần cứng.
+
+Đối với khối nguồn, hệ thống được xác định có hai nguồn cung cấp chính
+gồm nguồn từ cổng USB và nguồn từ pin Li-Polymer. Điện áp đầu vào của
+toàn mạch được xác định ở mức 3.3 V để tương thích với các linh kiện và
+vi điều khiển. Sau khi nghiên cứu, tác giả sử dụng bộ chuyển đổi hạ áp
+(step-down converter) tích hợp mạch điều khiển MP2322GQH,
+cho phép giảm điện áp đầu vào từ 5 V (USB) hoặc 3.7 V (pin Li-Polymer)
+xuống mức ổn định 3.3 V với hiệu suất cao.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{images/MP2322GQH.png}
+    \caption{Sơ đồ khối IC MP2322GQH, dải đầu vào 3V–22V, dòng tải tối đa 1A, hiệu suất cao, tần số chuyển mạch 1.25MHz (Monolithic Power Systems)}
+    \label{fig:MP2322GQH}
+\end{figure}
+
+Bên cạnh đó, nguồn USB còn được bổ sung các thành phần hỗ trợ như diode bảo vệ
+ngược dòng, tụ lọc nhiễu cao tần và bù tín hiệu, cùng điện trở xả tĩnh điện,
+nhằm đảm bảo an toàn và giảm nhiễu điện từ trong quá trình vận hành.
+
+Đối với khối hiển thị, hệ thống sử dụng bốn đèn LED khác màu bố trí tại rìa của mạch, có nhiệm vụ thông báo kết quả tư thế được phân loại, trạng thái hoạt động của hệ thống như nguồn, kết nối, truyền dữ liệu hoặc lỗi, giúp người dùng và kỹ sư dễ dàng theo dõi tình trạng thiết bị.
+
+Với khối nạp và gỡ lỗi, tác giả triển khai hai phương thức nạp bao gồm: (1) Qua
+Serial Wire Debug (SWD); (2) Cơ chế Bootloader thông qua kết nối USB. Sự kết
+hợp này giúp nâng cao tính linh hoạt và khả năng mở rộng trong quá trình phát
+triển phần mềm, đồng thời giảm thiểu thời gian thử nghiệm.
+
+\subsubsection{Mạch nguyên lý}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{images/schematic.png}
+    \caption{Sơ đồ nguyên lý}
+    \label{fig:schematic}
+\end{figure}
+
+Sau khi xác định các linh kiện, các yêu cầu về điện áp, kiểu dữ liệu đầu vào,
+đầu ra của các thành phần kể trên, tác giả tiến hành vẽ nguyên lý mạch thông
+qua phần mềm Altium Designer.
+
+Mạch được thiết kế hình tròn kích thước đường kính 3cm, 2 lớp đúng với định
+hướng của nhóm.
+
+Kết quả được thể hiện tại Hình~\ref{fig:schematic}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/pcd_dong_top.png}
+        \label{fig:pcb_dong_top}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/pcb_dong_bottom.png}
+        \label{fig:pcb_dong_bottom}
+    \end{subfigure}
+    \caption{Bố trí mạch in hai mặt của bo mạch: (a) lớp trên; (b) lớp dưới}
+    \label{fig:pcb_dong}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/pcb_3d_top.png}
+        \label{fig:pcb_3d_top}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/pcb_3d_bottom.png}
+        \label{fig:pcb_3d_bottom}
+    \end{subfigure}
+    \caption{Mô hình mạch 3D: (a) lớp trên; (b) lớp dưới}
+    \label{fig:pcb_3d}
+\end{figure}
+
+Sau khi hoàn thiện thiết kế, tác giả thực hiện đặt in mạch, hàn lắp các linh
+kiện theo sơ đồ nguyên lý, và tiến hành kiểm tra hoạt động của các khối chức
+năng trên bo mạch để đánh giá tính ổn định và độ tin cậy của hệ thống.
+
+Hình~\ref{fig:mach} là kết quả mạch đã hoàn thiện.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{images/mach.png}
+    \caption{Mạch hoàn chỉnh}
+    \label{fig:mach}
+\end{figure}
+
+\newpage
 
 \section{Hệ thống phần mềm}
 Phần này trình bày tổng quan kiến trúc hệ thống bao gồm: lập trình firmware

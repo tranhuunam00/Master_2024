@@ -2543,15 +2543,16 @@
     <bcf:citekey order="118" intorder="1">BLE_compare</bcf:citekey>
     <bcf:citekey order="119" intorder="1">BluetoothSIG2019_Core5</bcf:citekey>
     <bcf:citekey order="120" intorder="1">BLE</bcf:citekey>
-    <bcf:citekey order="121" intorder="1">allan</bcf:citekey>
+    <bcf:citekey order="121" intorder="1">uBlox2019_NINA_B3</bcf:citekey>
     <bcf:citekey order="122" intorder="1">allan</bcf:citekey>
-    <bcf:citekey order="123" intorder="1">kalman</bcf:citekey>
-    <bcf:citekey order="124" intorder="1">cramer2002logistic</bcf:citekey>
-    <bcf:citekey order="125" intorder="1">cortes1995svm</bcf:citekey>
-    <bcf:citekey order="126" intorder="1">breiman2001random</bcf:citekey>
-    <bcf:citekey order="127" intorder="1">chen2016xgboost</bcf:citekey>
-    <bcf:citekey order="128" intorder="1">jain1996</bcf:citekey>
-    <bcf:citekey order="129" intorder="1">lecun2015deep</bcf:citekey>
+    <bcf:citekey order="123" intorder="1">allan</bcf:citekey>
+    <bcf:citekey order="124" intorder="1">kalman</bcf:citekey>
+    <bcf:citekey order="125" intorder="1">cramer2002logistic</bcf:citekey>
+    <bcf:citekey order="126" intorder="1">cortes1995svm</bcf:citekey>
+    <bcf:citekey order="127" intorder="1">breiman2001random</bcf:citekey>
+    <bcf:citekey order="128" intorder="1">chen2016xgboost</bcf:citekey>
+    <bcf:citekey order="129" intorder="1">jain1996</bcf:citekey>
+    <bcf:citekey order="130" intorder="1">lecun2015deep</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

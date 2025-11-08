@@ -5094,6 +5094,29 @@
       \field{note}{Available at \url{https://www.bluetooth.com/bluetooth-resources/bluetooth-core-specification-version-5-3-feature-enhancements/}}
       \field{title}{Bluetooth® Core Specification Version 5.3 Feature Enhancements}
     \endentry
+    \entry{uBlox2019_NINA_B3}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7e495cb2772f0a7af75bb7ec361df8e5}{%
+           family={AG},
+           familyi={A\bibinitperiod},
+           prefix={u-blox},
+           prefixi={u\bibinithyphendelim b\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e495cb2772f0a7af75bb7ec361df8e5}
+      \strng{fullhash}{7e495cb2772f0a7af75bb7ec361df8e5}
+      \strng{fullhashraw}{7e495cb2772f0a7af75bb7ec361df8e5}
+      \strng{bibnamehash}{7e495cb2772f0a7af75bb7ec361df8e5}
+      \strng{authorbibnamehash}{7e495cb2772f0a7af75bb7ec361df8e5}
+      \strng{authornamehash}{7e495cb2772f0a7af75bb7ec361df8e5}
+      \strng{authorfullhash}{7e495cb2772f0a7af75bb7ec361df8e5}
+      \strng{authorfullhashraw}{7e495cb2772f0a7af75bb7ec361df8e5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://content.u-blox.com/sites/default/files/NINA-B3_DataSheet_UBX-17052099.pdf}}
+      \field{title}{NINA-B3 Series – Stand-alone Bluetooth® 5 Low Energy Modules Data Sheet (Document No. UBX-17052099)}
+    \endentry
     \entry{allan}{article}{}{}
       \name{author}{2}{}{%
         {{hash=07bfef80bf5c3943c2825d75bf68cd6b}{%
