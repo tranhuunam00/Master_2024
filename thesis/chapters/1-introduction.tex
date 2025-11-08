@@ -1,10 +1,10 @@
 Các nghiên cứu hiện nay đã đang tập trung phát triển các hệ thống theo dõi tư
-thế ngủ dựa trên đa dạng công nghệ cảm biến. Các phương pháp này trải rộng từ
-cảm biến tiếp xúc trực tiếp đến hệ thống đo không tiếp xúc, cụ thể gồm: Tấm dẫn
-điện với các điện cực ECG sắp xếp tại giường để nhận tín hiệu sinh lý và áp lực
-cơ thể \cite{Lee2013_12ecg} Cảm biến áp suất dưới nệm đo phân bố lực tiếp xúc
-toàn thân \cite{Nam2016_mattre, Enayati2018_mattre}. Camera hồng ngoại ghi hình
-ban đêm không cần chiếu sáng, nhận dạng tư thế bằng thị giác máy
+thế ngủ dựa trên đa dạng công nghệ cảm biến. Các phương pháp này trải rộng giữa
+tiếp xúc và không tiếp xúc, cụ thể gồm: Tấm dẫn điện với các điện cực ECG đặt
+tại giường thu thập tín hiệu nhịp tim để phân loại tư thế ngủ
+\cite{Lee2013_12ecg}. Cảm biến áp suất dưới nệm đo phân bố lực tiếp xúc toàn
+thân \cite{Nam2016_mattre, Enayati2018_mattre}. Camera hồng ngoại ghi hình ban
+đêm không cần chiếu sáng, nhận dạng tư thế bằng thị giác máy
 \cite{Mohammadi2019_camera, Tam2021_camera}.
 
 Các thiết bị đeo sử dụng tín hiệu đo lường quán tính (Inertial Measurement Unit
@@ -12,48 +12,44 @@ Các thiết bị đeo sử dụng tín hiệu đo lường quán tính (Inertia
 tiện. Trong nghiên cứu \cite{Jeng_osa}, tác giả đã đề xuất hệ thống iSleePost
 sử dụng cảm biến gia tốc đeo ở cổ tay có độ chính xác lên tới 85\% trong việc
 nhận dạng các tư thế ngủ bằng các phương pháp học máy. Một thiết bị đeo khác có
-tên MORFEA được gắn phía trên mũi đã được đề xuất trong một nghiên cứu, với mục
-tiêu chính là sàng lọc tại nhà các rối loạn hô hấp liên quan đến giấc ngủ
-\cite{Manoni2020_posture}. Thiết bị này tích hợp cảm biến gia tốc ba trục để
-phân tích chuyển động, trong đó tư thế ngủ được ước lượng dựa trên góc xoay và
-độ nghiêng của đầu, so sánh với bảng điều kiện tham chiếu định sẵn. Tuy nhiên,
-tư thế nằm sấp không được xem xét do vị trí gắn thiết bị trên mũi. Một nghiên
-cứu gần đây giới thiệu hệ thống NAPPA - tã thông minh được thiết kế để theo dõi
-nhịp thở và tư thế của trẻ sơ sinh trong khi ngủ trưa, tích hợp cảm biến gia
-tốc và con quay hồi chuyển để ước lượng tư thế ngủ \cite{Ranta2021_ta}. Tuy
-nhiên, phương pháp và kết quả phát hiện tư thế ngủ chi tiết không được công bố
+tên MORFEA được gắn phía trên mũi \cite{Manoni2020_posture}. Thiết bị này tích
+hợp cảm biến gia tốc ba trục để phân tích chuyển động, trong đó tư thế ngủ được
+ước lượng dựa trên góc xoay và độ nghiêng của đầu, so sánh với bảng điều kiện
+tham chiếu định sẵn. Tuy nhiên, tư thế nằm sấp không được xem xét do vị trí gắn
+thiết bị trên mũi. Một nghiên cứu gần đây giới thiệu hệ thống NAPPA - tã thông
+minh được thiết kế để theo dõi nhịp thở và tư thế của trẻ sơ sinh trong khi ngủ
+trưa, tích hợp cảm biến gia tốc và con quay hồi chuyển \cite{Ranta2021_ta}. Tuy
+nhiên, trong nghiên cứu này, phương pháp và kết quả phát hiện tư thế ngủ chi
+tiết không được công bố
 
 Các nghiên cứu sử dụng duy nhất một cảm biến gia tốc cũng cho thấy tiềm năng
 trong việc phân loại tư thế ngủ. Nghiên cứu sử dụng cảm biến gia tốc dạng miếng
-dán (patch-type accelerometer) cho thấy độ chính xác tổng thể đạt 99,16\% khi
-cảm biến được gắn ở bên trái ngực, với các điều kiện định sẵn theo ba trục X,
-Y, Z \cite{Yoon2015_posture}. Tuy nhiên, không có tư thế nằm sấp được ghi nhận
-trong nghiên cứu này. Nhóm tác giả Vũ Hoàng Diệu đã nghiên cứu phát triển thiết
-bị đeo sử dụng một cảm biến gia tốc duy nhất, áp dụng mô hình học sâu AnpoNet
-(1D-CNN + LSTM) để phân loại 12 tư thế ngủ với độ chính xác 94,67\%, hỗ trợ
-theo dõi giấc ngủ tại nhà cho bệnh nhân trào ngược dạ dày (GERD)
-\cite{Vu2025SleepPosition}. Đối với nghiên cứu \cite{abdulsadig2023}, tác giả
-sử dụng một cảm biến gia tốc đặt ở cổ để phát hiện tư thế ngủ tự động, đánh giá
-ba mô hình (DT, ET, LSTM) và cho thấy rằng với tần số lấy mẫu chỉ 5Hz và cửa sổ
-1 giây, các mô hình vẫn đạt độ chính xác > 98\% (F1-score trung bình
-0,945-0,975), trong đó cây quyết định (Decision Tree) có hiệu năng và mức tiêu
-thụ bộ nhớ tối ưu nhất. Nhóm tác giả trong nghiên cứu \cite{Ferrer_osa} phát
-triển ứng dụng SleepPos với độ chính xác tổng thể 98,2\%, nhưng độ nhạy với tư
-thế nằm sấp chỉ đạt 38,9\%, khiến hệ thống không phù hợp cho nhóm người có nguy
-cơ cao với tư thế này; thêm vào đó, thiết kế phần cứng cồng kềnh làm giảm tính
-thoải mái và độ tin cậy khi sử dụng hằng ngày. Nghiên cứu trên 89 bệnh nhân sử
-dụng cảm biến Clebre gắn tại hõm ức tích hợp gia tốc kế 3 trục cho thấy độ
-chính xác 96,9-98,6\% trong phát hiện tư thế ngủ, khẳng định hõm ức là vị trí
-tối ưu cho cảm biến đeo cổ \cite{Kukwa2022_xuong_uc_co}.
+dán cho thấy độ chính xác tổng thể đạt 99,16\% khi cảm biến được gắn ở bên trái
+ngực, với các điều kiện định sẵn theo ba trục X, Y, Z \cite{Yoon2015_posture}.
+Tuy nhiên, không có tư thế nằm sấp được ghi nhận trong nghiên cứu này. Nhóm tác
+giả Vũ Hoàng Diệu đã nghiên cứu phát triển thiết bị đeo sử dụng một cảm biến
+gia tốc duy nhất, áp dụng mô hình học sâu AnpoNet (1D-CNN + LSTM) để phân loại
+12 tư thế ngủ với độ chính xác 94,67\%, hỗ trợ theo dõi giấc ngủ tại nhà cho
+bệnh nhân trào ngược dạ dày \cite{Vu2025SleepPosition}. Đối với nghiên cứu
+\cite{abdulsadig2023}, tác giả sử dụng một cảm biến gia tốc đặt ở cổ, đánh giá
+qua ba mô hình (DT, ET, LSTM) dựa trên tần số lấy mẫu 5Hz và cửa sổ 1 giây, đạt
+độ chính xác > 98\% (F1-score trung bình 0,945-0,975), trong đó cây quyết định
+(Decision Tree) có hiệu năng và mức tiêu thụ bộ nhớ tối ưu nhất. Nhóm tác giả
+trong nghiên cứu \cite{Ferrer_osa} phát triển ứng dụng SleepPos với độ chính
+xác tổng thể 98,2\%, nhưng độ nhạy với tư thế nằm sấp chỉ đạt 38,9\%. Thêm vào
+đó, thiết kế phần cứng cồng kềnh làm giảm tính thoải mái. Nghiên cứu trên 89
+bệnh nhân sử dụng cảm biến gắn tại hõm ức tích hợp gia tốc kế 3 trục cho thấy
+độ chính xác 96.9-98.6\% trong phát hiện tư thế ngủ, khẳng định hõm ức là vị
+trí tối ưu cho cảm biến đeo cổ \cite{Kukwa2022_xuong_uc_co}.
 
 Hầu hết các nghiên cứu về đánh giá tư thế ngủ đều đưa ra những phương pháp toàn
 diện sử dụng các mô hình học máy, kết hợp nhiều loại cảm biến khác nhau như cảm
-biến quán tính, cảm biến sinh lý, hoặc cảm biến áp suất nhằm thu thập dữ liệu
-đa chiều về trạng thái của cơ thể. Một số nghiên cứu đã chứng minh tính khả thi
-của việc sử dụng duy nhất một cảm biến gia tốc trong nhận dạng tư thế ngủ, đạt
-được độ chính xác cao khi kết hợp với các mô hình học máy. Các kết quả này cho
-thấy hướng tiếp cận đơn cảm biến hoàn toàn có thể thay thế cho hệ thống đa cảm
-biến truyền thống trong các bài toán phân loại tư thế ngủ.
+biến quán tính, cảm biến liên quan sinh lý, hoặc cảm biến áp suất nhằm thu thập
+dữ liệu đa chiều. Một số nghiên cứu đã chứng minh tính khả thi của việc sử dụng
+duy nhất một cảm biến gia tốc trong nhận dạng tư thế ngủ, đạt được độ chính xác
+cao khi kết hợp với các mô hình học máy. Các kết quả này cho thấy hướng tiếp
+cận đơn cảm biến hoàn toàn có thể thay thế cho hệ thống đa cảm biến truyền
+thống trong các bài toán phân loại tư thế ngủ.
 
 Tuy nhiên, các công trình hiện có chưa xem xét đầy đủ việc phân biệt trạng thái
 “đã nằm” hay “chưa nằm” - một yếu tố nền tảng để xác định chính xác giai đoạn
@@ -65,8 +61,7 @@ vẫn chưa được nghiên cứu cụ thể.
 Đặc biệt, tại Việt Nam cho đến nay chưa có công bố khoa học nào tập
 trung vào bài toán nhận dạng tư thế ngủ dựa hoàn toàn trên dữ liệu
 cảm biến gia tốc và được triển khai trực tiếp trên phần cứng
-hạn chế tài nguyên, như các vi điều khiển sử dụng trong ứng dụng
-Edge AI hoặc TinyML. Khoảng trống này đặt ra yêu cầu cần thiết cho
+hạn chế tài nguyên. Khoảng trống này đặt ra yêu cầu cần thiết cho
 việc phát triển một hệ thống giám sát tư thế ngủ đơn giản, chi phí
 thấp, có khả năng xử lý cục bộ, hướng tới ứng dụng trong sàng lọc và
 hỗ trợ chẩn đoán sớm hội chứng ngưng thở tắc nghẽn khi ngủ (OSA).
@@ -74,14 +69,13 @@ hỗ trợ chẩn đoán sớm hội chứng ngưng thở tắc nghẽn khi ng�
 Qua đó, luận văn này tập trung làm rõ các đặc trưng của dữ liệu cảm biến gia
 tốc khi được đặt tại vùng cổ, đồng thời đi sâu tìm hiểu các đặc trưng dữ liệu
 cảm biến gia tốc và đánh giá các mô hình học máy phù hợp nhằm tối ưu cho việc
-triển khai trên các thiết bị tính toán biên (edge devices). Trên cơ sở đó, luận
-văn xây dựng một hệ thống hoàn chỉnh gồm phần cứng đeo được kích thước nhỏ gọn,
-chi phí thấp; phần mềm thu thập và lưu trữ dữ liệu; cùng với mô-đun xử lý và
-phân loại tư thế ngủ tích hợp trực tiếp trên vi điều khiển. Mặc dù chưa tích
-hợp chức năng sàng lọc hội chứng ngưng thở tắc nghẽn khi ngủ (OSA), kết quả
-nghiên cứu này tạo nền tảng kỹ thuật tiềm năng cho các ứng dụng trong tương
-lai, đặc biệt trong việc hỗ trợ đánh giá nguy cơ pOSA (positional OSA) dựa trên
-tư thế ngủ và xu hướng thay đổi tư thế trong suốt giấc ngủ.
+triển khai trên các thiết bị tính toán biên. Trên cơ sở đó, luận văn sẽ xây
+dựng một hệ thống hoàn chỉnh gồm phần cứng đeo được kích thước nhỏ gọn, chi phí
+thấp; phần mềm thu thập và lưu trữ dữ liệu; cùng với mô-đun xử lý và phân loại
+tư thế ngủ tích hợp trực tiếp trên vi điều khiển. Mặc dù chưa tích hợp chức
+năng sàng lọc hội chứng ngưng thở tắc nghẽn khi ngủ (OSA), kết quả nghiên cứu
+này tạo nền tảng kỹ thuật tiềm năng cho các ứng dụng trong tương lai, đặc biệt
+trong việc hỗ trợ đánh giá nguy cơ pOSA (positional OSA) dựa trên tư thế ngủ.
 
 Mục tiêu cụ thể của luân văn gồm: 01) Nghiên cứu, đề xuất hệ thống phần cứng
 phục vụ đo lường, thu thập, xử lý tín hiệu gia tốc kèm với hiệu năng phù hợp

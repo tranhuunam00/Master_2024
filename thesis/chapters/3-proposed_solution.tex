@@ -11,35 +11,32 @@ phỏng mạch 3D và hoàn thiện sản phẩm.
 Với sự phát triển vượt bậc và đa dạng của công nghệ thiết kế và chế tạo, có rất
 nhiều cấu hình phần cứng được nhiều nhóm tác giả lựa chọn phù hợp với các mục
 đích khác nhau. Trong đó, \cite{p_1} các tác giả đã sử dụng máy tính đơn
-Raspberry Pi kết hợp các điện trở cảm biến lực để phát hiện 4 tư thế ngủ với sự
-lấy nhãn từ video theo dõi người bệnh trong suốt quá trình lấy mẫu. Tác giả
-Kwasnicki và cộng sự đã phát triển hệ thống ngủ có thể đeo sử dụng bộ xử lý
-công suất thấp TI MSP430 và mô-đun RF Chipcon CC2420 cho truyền thông không dây
-kết hợp với cảm biến gia tốc 3 trục ADXL330, con quay hồi chuyển InvenSense
-ITG-3200 xác định 99.5\% chính xác 4 tư thế ngủ \cite{kwasnicki2018}. Nhóm của
-tác giả I.Yun đã phát triển thiết bị theo dõi tư thế ngủ của trẻ nhỏ sử dụng vi
-xử lý ATmega328P-PU kết hợp cảm biến gia tốc ADXL335, Bluetooth được đặt trên
-bụng \cite{p_3}. Từ đó, giảm thiếu đáng kể mức tiêu thụ năng lượng và vẫn giữ
-nguyên độ chính xác nhưng khá bất tiện cho trẻ nhỏ. Trong nghiên cứu của
-Abdulsadig và cộng sự, hệ thống thu thập dữ liệu được xây dựng dựa trên một bo
-mạch tùy chỉnh tích hợp vi điều khiển nRF5232 (Nordic Semiconductor) tích hợp
-Bluetooth Low Energy (BLE). Vi điều khiển này đảm nhiệm đồng thời cả việc lấy
-mẫu dữ liệu từ cảm biến gia tốc ba trục LIS2DH12 (STMicroelectronics) với tần
-số 100 Hz và truyền dữ liệu không dây theo thời gian thực
-\cite{Sleep_Posture_Detection, abdulsadig2023}. Trong nghiên cứu của tác giả Vũ
-Hoàng Diệu , mô-đun ESP32 được lựa chọn làm đơn vị xử lý trung tâm nhờ tích hợp
-bộ vi điều khiển hiệu năng cao, kết nối không dây Wi-Fi và khả năng mở rộng
-linh hoạt \cite{vu2023}. Với thiết kế nhỏ gọn, chi phí hợp lý và mức tiêu thụ
-điện năng thấp, ESP32 đáp ứng tốt yêu cầu của hệ thống thu thập dữ liệu tư thế
-ngủ theo thời gian thực. Thiết bị không chỉ cho phép truyền dữ liệu trực tiếp
-lên máy chủ hoặc nền tảng đám mây thông qua Wi-Fi, mà còn hỗ trợ lưu trữ cục bộ
-trên thẻ nhớ microSD, đảm bảo tính liên tục và an toàn dữ liệu trong điều kiện
-mất kết nối mạng.
+Raspberry Pi để phát hiện 4 tư thế ngủ với sự lấy nhãn từ video theo dõi người
+bệnh trong suốt quá trình lấy mẫu. Tác giả Kwasnicki và cộng sự đã sử dụng bộ
+xử lý công suất thấp TI MSP430 và mô-đun RF Chipcon CC2420 cho truyền thông
+không dây kết hợp với cảm biến gia tốc 3 trục ADXL330, con quay hồi chuyển đạt
+được 99.5\% độ chính xác \cite{kwasnicki2018}. Nhóm của tác giả I.Yun đã phát
+triển thiết bị theo dõi tư thế ngủ của trẻ nhỏ sử dụng vi xử lý ATmega328P-PU
+kết hợp cảm biến gia tốc ADXL335 được đặt trên bụng \cite{p_3}. Trong nghiên
+cứu của Abdulsadig và cộng sự, hệ thống thu thập dữ liệu được xây dựng dựa trên
+một bo mạch tùy chỉnh tích hợp vi điều khiển nRF5232 ( tích hợp Bluetooth Low
+Energy (BLE). Vi điều khiển này đảm nhiệm đồng thời cả việc lấy mẫu dữ liệu từ
+cảm biến gia tốc ba trục LIS2DH12 với tần số 100 Hz và truyền dữ liệu không dây
+theo thời gian thực \cite{Sleep_Posture_Detection, abdulsadig2023}. Trong
+nghiên cứu của tác giả Vũ Hoàng Diệu , mô-đun ESP32 được lựa chọn làm đơn vị xử
+lý trung tâm nhờ tích hợp bộ vi điều khiển hiệu năng cao, kết nối không dây
+Wi-Fi và khả năng mở rộng linh hoạt \cite{vu2023}. Với thiết kế nhỏ gọn, chi
+phí hợp lý và mức tiêu thụ điện năng thấp, ESP32 đáp ứng tốt yêu cầu của hệ
+thống thu thập dữ liệu tư thế ngủ theo thời gian thực. Thiết bị không chỉ cho
+phép truyền dữ liệu trực tiếp lên máy chủ hoặc nền tảng đám mây thông qua
+Wi-Fi, mà còn hỗ trợ lưu trữ cục bộ trên thẻ nhớ microSD, đảm bảo tính liên tục
+trong điều kiện mất kết nối mạng.
 
 Qua phân tích các nghiên cứu trên có thể thấy rằng phần lớn các cấu hình phần
 cứng có kích thước vẫn còn lớn (> 5cm), hoặc gặp giới hạn trong khả năng tích
-hợp mô hình học máy tại thiết bị. Do đó, tác giả quyết định lựa chọn vi điều
-khiển nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với các lý do sau:
+hợp mô hình học máy tại thiết bị. Do đó, sau khi nghiên cứu, tác giả quyết định
+lựa chọn vi điều khiển nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với
+các lý do sau:
 
 \begin{figure}
     \centering
@@ -55,12 +52,11 @@ khiển nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với các
     \label{Nornrf52840_featuredic}
 \end{figure}
 
-nRF52840 tích hợp bộ giao thức không dây Bluetooth năng lượng thấp (Bluetooth
-Low Energy - BLE) hoạt động ở băng tần 2.4 GHz và bộ xử lý trung tâm Arm
-Cortex-M4F chạy ở xung nhịp 64 MHz, kèm bộ xử lý dấu phẩy động (FPU). Vi xử lý
-này được trang bị bộ nhớ 1 MB Flash và 256 KB RAM . Hệ thống bảo mật tích hợp
-đầy đủ, bao gồm các tính năng mã hóa phần cứng, đáp ứng yêu cầu về bảo vệ dữ
-liệu. Ngoài khả năng hoạt động trong dải điện áp rộng từ +1.7 V đến +5.5 V
+nRF52840 tích hợp bộ giao thức không dây Bluetooth năng lượng thấp hoạt động ở
+băng tần 2.4 GHz và bộ xử lý trung tâm Arm Cortex-M4F chạy ở xung nhịp 64 MHz,
+kèm bộ xử lý dấu phẩy động (FPU). Vi xử lý này được trang bị bộ nhớ 1 MB Flash
+và 256 KB RAM phù hợp để triển khai các mô hình cho bài toán phân loại tư thế
+ngủ. Ngoài khả năng hoạt động trong dải điện áp rộng từ +1.7 V đến +5.5 V
 (tương thích với nguồn pin và USB), nRF52840 còn cung cấp các giao tiếp ngoại
 vi phong phú: hai giao diện I2C, bốn SPI chủ (master), ba SPI tớ (slave), bốn
 kênh điều chế xung (PWM) hỗ trợ EasyDMA, cùng với bộ định thời 32-bit, phù hợp
@@ -74,18 +70,18 @@ cho các ứng dụng đòi hỏi xử lý thời gian thực chính xác.
 \end{figure}
 
 Đặc biệt, nRF52840 có
-một hệ sinh thái phần mềm đi kèm, bao gồm bộ công cụ phát triển (SDK) của Nordic Semiconductor và nền tảng TensorFlow Lite for Microcontrollers, giúp rút ngắn thời gian phát triển và triển khai hệ
-thống TinyML giúp rút ngắn đáng kể thời gian triển khai các mô hình TinyML trực tiếp lên chip \cite{Nordic2021_tinyml}.
-Hiện nay, nRF52840 cũng tích hợp trong nhiều bộ kit phát triển thương mại  phổ biến,
+một hệ sinh thái phần mềm đi kèm, bao gồm bộ công cụ phát triển (SDK) của Nordic Semiconductor
+và nền tảng TensorFlow Lite for Microcontrollers, giúp rút ngắn thời gian phát triển và triển khai hệ
+thống TinyML trực tiếp lên chip \cite{Nordic2021_tinyml}.
+Hiện nay, nRF52840 cũng tích hợp trong nhiều bộ kit phát triển thương mại,
 như Adafruit Circuit Playground Bluefruit,
 SparkFun Pro nRF52840 Mini,
-Seeed Studio XIAO
-.
-Các bộ kit này cung cấp tài nguyên phần cứng và thư viện mã nguồn mở phong phú,
+Seeed Studio XIAO.
+Các bộ kit này cung cấp tài nguyên phần cứng và thư viện mã nguồn mở,
 hỗ trợ kết nối BLE, USB, GPIO, SPI, I²C, cùng khả năng lập trình trực
 tiếp qua môi trường Arduino IDE, PlatformIO hoặc Zephyr RTOS.
-Nhờ đó, nRF52840 trở nên phổ biến trong các nghiên cứu và dự án về IoT,
-thiết bị đeo thông minh và học máy biên (Edge AI).
+Nhờ đó, nRF52840 càng trở nên phổ biến trong các nghiên cứu và dự án về IoT,
+thiết bị đeo thông minh và học máy tại biên.
 
 \begin{figure}[H]
     \centering
@@ -168,16 +164,15 @@ thiết bị đeo thông minh và học máy biên (Edge AI).
 
 Trong quá trình ngủ, các chuyển động thân thể chủ yếu là chuyển động chậm, với
 biên độ nhỏ và ít mang tính đột ngột \cite{Wang2018_slidingwindow}. Trong giai
-đoạn ngủ REM, hiện tượng ức chế trương lực cơ khiến cơ thể gần như bất động. Do
-đó, việc ghi nhận chính xác các thay đổi tư thế ngủ đòi hỏi cảm biến có độ nhạy
-cao, khả năng phân giải tốt và ổn định với nhiễu nền thấp. Như đã trình bày
-trong Chương I, các cảm biến gia tốc MEMS sử dụng nguyên lý điện dung hiện đang
-được ứng dụng rộng rãi trong giám sát tư thế và chuyển động khi ngủ nhờ vào đặc
-điểm nổi bật là kích thước nhỏ gọn, tiêu thụ năng lượng thấp, tần số lấy mẫu
-phù hợp và đặc biệt là độ nhạy cao với chuyển động cường độ thấp.
+đoạn ngủ REM, cơ thể gần như bất động. Do đó, việc ghi nhận chính xác các thay
+đổi tư thế ngủ đòi hỏi cảm biến có độ nhạy cao. Như đã trình bày trong Chương
+I, các cảm biến gia tốc MEMS sử dụng nguyên lý điện dung hiện đang được ứng
+dụng rộng rãi trong giám sát tư thế và chuyển động khi ngủ nhờ vào đặc điểm nổi
+bật là tần số lấy mẫu phù hợp và đặc biệt là độ nhạy cao với mọi loại chuyển
+động.
 
 Sau khi đã khảo sát, cảm biến gia tốc Bosch BMI270 được lựa chọn cho hệ thống
-nhận diện tư thế ngủ với cái lý do sau:
+nhận diện tư thế ngủ với các lý do sau:
 
 \begin{figure}[!ht]
     \centering
@@ -188,33 +183,32 @@ nhận diện tư thế ngủ với cái lý do sau:
 \end{figure}
 
 Thứ nhất, độ chính xác và dải đo linh hoạt: BMI270 tích hợp gia tốc kế ba trục
-16-bit với các dải đo tùy chọn ±2g, ±4g, ±8g và ±16g, cho phép ghi nhận chính
-xác các chuyển động chậm và biên độ nhỏ trong khi ngủ. Độ phân giải cao giúp
-cảm biến phát hiện được cả những thay đổi nhỏ trong tư thế cơ thể, đặc biệt
-quan trọng trong các giai đoạn ngủ sâu hoặc REM khi hoạt động cơ gần như bị ức
-chế.
+độ phân giải cao 16-bit với các dải đo linh hoạt ±2g, ±4g, ±8g và ±16g, cho
+phép ghi nhận chính xác cả chuyển động chậm và biên độ nhỏ trong khi ngủ.
 
 Thứ hai, mức tiêu thụ năng lượng thấp và khả năng hoạt động ổn định: cảm biến
-tiêu thụ trung bình chỉ khoảng 685 µA khi hoạt động toàn phần, đồng thời được
-trang bị bộ quản lý năng lượng tích hợp (PMU) hỗ trợ nhiều chế độ tiết kiệm
-điện khác nhau. Điều này cho phép thiết bị hoạt động lâu dài trên nền tảng phần
-cứng công suất thấp mà không ảnh hưởng đến hiệu năng đo.
+tiêu thụ trung bình chỉ khoảng 685 µA khi hoạt động bình thường, đồng thời được
+trang bị bộ quản lý năng lượng tích hợp hỗ trợ nhiều chế độ tiết kiệm điện khác
+nhau. Điều này cho phép thiết bị hoạt động lâu dài trên nền tảng phần cứng công
+suất thấp mà không ảnh hưởng đến hiệu năng đo.
 
 Thứ ba, tốc độ lấy mẫu và thời gian đáp ứng nhanh: BMI270 hỗ trợ tốc độ lấy mẫu
-(ODR) 0.7Hz - 1.6 kHz cho gia tốc kế, phù hợp bài toán phân loại giấc ngủ yêu
-cần tần số lấy mẫu thấp ~ 10Hz.
+(ODR) từ 0.7Hz đến 1.6 kHz cho gia tốc kế, phù hợp bài toán phân loại giấc ngủ
+yêu cầu tần số lấy mẫu thấp ~ 10Hz.
 
 Thứ tư, khả năng chống nhiễu và hiệu chuẩn tự động: cảm biến có cơ chế bù sai
 số và bù độ nhạy theo thời gian thực, giúp giảm sai lệch khi hoạt động lâu dài.
 Tính năng bù sai lệch cho gia tốc kế đảm bảo độ ổn định cao của dữ liệu đo.
+Ngoài ra, cảm biến còn tích hợp thêm bộ lọc thông thấp.
 
-Cuối cùng, tích hợp phần cứng thông minh được Google chứng nhận tương thích với
-hệ điều hành Wear OS và hỗ trợ phát hiện chuyển động tự động: BMI270 có khả
-năng phát hiện các trạng thái như phát hiện có chuyển động (any motion), không
-có chuyển động (no motion) hoặc di chuyển các thiết bị đeo ở cổ tay (wrist wear
-wakeup). Các tính năng này có thể được tận dụng để giảm tải tính toán cho bộ vi
-điều khiển, chỉ kích hoạt mô hình học máy khi có thay đổi tư thế đáng kể, qua
-đó tiết kiệm năng lượng và tăng tuổi thọ pin
+Cuối cùng, tích hợp tính năng thông minh được lập trình trong các thanh ghi
+riêng được Google chứng nhận tương thích với hệ điều hành Wear OS và hỗ trợ
+phát hiện chuyển động tự động: BMI270 có khả năng phát hiện các trạng thái như
+phát hiện có chuyển động (any motion), không có chuyển động (no motion) hoặc di
+chuyển các thiết bị đeo ở cổ tay (wrist wear wakeup). Các tính năng này có thể
+được tận dụng để giảm tải tính toán cho bộ vi điều khiển, chỉ kích hoạt mô hình
+học máy khi có thay đổi tư thế đáng kể, qua đó tiết kiệm năng lượng và tăng
+tuổi thọ pin
 
 \begin{figure}[!ht]
     \centering
@@ -235,24 +229,24 @@ wakeup). Các tính năng này có thể được tận dụng để giảm tả
 \subsection{Bluetooth năng lượng thấp}
 
 Với mục tiêu tối ưu hóa năng lượng và đảm bảo khả năng hoạt động lâu dài cho
-thiết bị đeo sử dụng pin, Bluetooth Low Energy (BLE) được lựa chọn làm chuẩn
-kết nối không dây chính trong hệ thống phần cứng. So với các giao thức khác,
-BLE tỏ ra vượt trội nhờ mức tiêu thụ năng lượng rất thấp, tốc độ khởi tạo kết
-nối nhanh và khả năng tương thích rộng rãi với hầu hết các thiết bị di động
-hiện nay \cite{BLE_compare}.
+thiết bị đeo sử dụng pin, BLE được lựa chọn làm chuẩn kết nối không dây chính
+trong hệ thống phần cứng. So với các giao thức khác, BLE tỏ ra vượt trội nhờ
+mức tiêu thụ năng lượng rất thấp, tốc độ khởi tạo kết nối nhanh và khả năng
+tương thích rộng rãi với hầu hết các thiết bị di động hiện nay
+\cite{BLE_compare}.
 
 Các công nghệ truyền thông không dây khác đều bộc lộ những hạn chế đối với
 thiết bị phân loại tư thế ngủ. Wi-Fi, có ưu thế về băng thông, lại tiêu thụ
 năng lượng cao và phụ thuộc vào internet. Bluetooth cổ điển, vốn được thiết kế
 cho các ứng dụng truyền tải dữ liệu dung lượng lớn như âm thanh, cũng đòi hỏi
 năng lượng cao hơn nhiều so với BLE. ZigBee, hiệu quả trong các mạng cảm biến
-nhà thông minh nhờ cấu trúc lưới (mesh), lại thiếu sự hỗ trợ trên điện thoại
-thông minh và đòi hỏi gateway riêng. Ngoài ra, phù hợp với nRF52840
+nhà thông minh nhờ cấu trúc lưới, lại thiếu sự hỗ trợ trên điện thoại và đòi
+hỏi gateway riêng.
 
-Ngoài ra, BLE còn tương thích hoàn toàn với vi điều khiển nRF52840 đã chọn ở
-phần trên. Nhờ sự kết hợp này, hệ thống có thể duy trì khả năng truyền dữ liệu
-ổn định, tiết kiệm năng lượng, và đáp ứng tốt yêu cầu hoạt động liên tục trong
-quá trình giám sát tư thế ngủ.
+Ngoài ra, BLE còn được hỗ trợ trên vi điều khiển nRF52840 đã chọn ở phần trên.
+Nhờ sự kết hợp này, hệ thống có thể duy trì khả năng truyền dữ liệu ổn định,
+tiết kiệm năng lượng, và đáp ứng tốt yêu cầu hoạt động liên tục trong quá trình
+giám sát tư thế ngủ.
 
 \begin{figure}[htbp]
     \centering
@@ -266,20 +260,18 @@ quá trình giám sát tư thế ngủ.
 BLE là giao thức kết nối không dây được thiết kế chuyên biệt cho các ứng dụng
 năng lượng thấp, hoạt động ở băng tần ISM 2.4 GHz, hỗ trợ thông lượng ứng dụng
 lên đến 1.4 Mbps \cite{BluetoothSIG2019_Core5}. BLE hiện được hỗ trợ phổ biến
-trên hầu hết các hệ điều hành như iOS, Android, macOS, Windows 10 và Linux,
-cũng như trong các thiết bị di động hiện đại.
+trên hầu hết các hệ điều hành như iOS, Android, macOS, Windows và Linux, cũng
+như trong các thiết bị di động hiện đại.
 
 Về mặt bảo mật, BLE tích hợp các cơ chế mã hóa và xác thực nhằm đảm bảo tính bí
-mật, toàn vẹn và riêng tư của dữ liệu truyền qua mạng. Bluetooth 5 là bước phát
-triển đột phá tiếp theo kể từ khi BLE được giới thiệu trong chuẩn Bluetooth
-4.0, mang đến hàng loạt cải tiến đáng kể giúp mở rộng phạm vi ứng dụng và nâng
-cao hiệu suất hệ thống. Quan trọng hơn, chế độ này còn giúp giảm đáng kể mức
-tiêu thụ năng lượng - cụ thể là giảm một nửa năng lượng tiêu thụ trên mỗi bit
-dữ liệu - từ đó kéo dài thời gian hoạt động của thiết bị hoặc cho phép sử dụng
-các nguồn năng lượng nhỏ và chi phí thấp hơn \cite{BLE}. Đặc biệt, chế độ Long
-Range mở rộng đáng kể phạm vi truyền thông của BLE, cho phép các thiết bị duy
-trì kết nối trong toàn bộ không gian của nhà thông minh hoặc trong các ứng dụng
-IoT công nghiệp quy mô vừa và nhỏ.
+mật, toàn vẹn của dữ liệu. Bluetooth 5 là bước phát triển đột phá tiếp theo kể
+từ khi BLE được giới thiệu trong chuẩn Bluetooth 4.0, mang đến hàng loạt cải
+tiến đáng kể giúp mở rộng phạm vi ứng dụng và nâng cao hiệu suất hệ thống. Quan
+trọng hơn, chế độ này còn giúp giảm đáng kể mức tiêu thụ năng lượng. Từ đó kéo
+dài thời gian hoạt động của thiết bị hoặc cho phép sử dụng các nguồn năng lượng
+nhỏ hơn \cite{BLE}. Đặc biệt, chế độ Long Range mở rộng đáng kể phạm vi truyền
+thông của BLE, cho phép các thiết bị duy trì kết nối trong toàn bộ không gian
+trong nhà.
 
 \begin{figure}[htbp]
     \centering
@@ -301,12 +293,9 @@ trung tâm. Khi kết nối được thiết lập, thiết bị ngừng quảng
 chế khả năng kết nối đồng thời từ nhiều thiết bị.
 
 Ngoài ra, vi xử lý nRF52840 còn hỗ trợ Bluetooth Mesh, cho phép thiết lập mạng
-lưới nhiều nút (many-to-many), sử dụng BLE làm lớp truyền tải vật lý. Mỗi nút
-trong mạng có thể đóng vai trò chuyển tiếp, cho phép dữ liệu lan truyền đến các
-vùng rộng hơn theo mô hình phân tán - phù hợp với các ứng dụng IoT quy mô lớn
-như nhà thông minh, chiếu sáng công nghiệp hoặc giám sát phân tán. Trong mạng
-Mesh, các gói dữ liệu có thể được đóng gói (advertising packet) hoặc qua các
-giao tiếp GATT tùy tình huống sử dụng.
+lưới nhiều nút. Mỗi nút trong mạng có thể đóng vai trò chuyển tiếp, cho phép dữ
+liệu lan truyền đến các vùng rộng hơn theo mô hình phân tán. Điều này phù hợp
+với các ứng dụng IoT quy mô đa cảm biến đặt tại nhiều nơi khác nhau.
 
 \subsection{Thiết kế mạch nguyên lý}
 

@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1762598799.17457 "main.bcf" "main.bbl" "main" 1762599482.10363 0
-  "main.bcf" 1762599480 120548 c1a9ecf6c13be441ae8334395c020bf4 "pdflatex"
+["biber main"] 1762598799.17457 "main.bcf" "main.bbl" "main" 1762619109.96709 0
+  "main.bcf" 1762619108 120548 c1a9ecf6c13be441ae8334395c020bf4 "pdflatex"
   "refs.bib" 1762592627 80744 e07f8c50e13d64d91c6a0c0167881adb ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1762599464.52555 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1762599482.10479 0
+["pdflatex"] 1762619092.23615 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1762619109.96822 0
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761721282 170669 580f60f86b494b149fd13be17089526f ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1753283835 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1753323483 13254313 89e2afc147c36950f3366f1142cce13c ""
@@ -283,9 +283,9 @@
   "C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" 1762588149 6325 4f47704b6a5021381cd4df435f5e1615 ""
   "chapters/0-coverpage.tex" 1762588149 10559 38914d87bb60362198dfff7d1129370f ""
-  "chapters/1-introduction.tex" 1762588149 9052 771064bafc5ded688f11cff967af61ff ""
-  "chapters/2-base-knowledge.tex" 1762588172 82696 98f2aff00eeab5a717336853a1e055d9 ""
-  "chapters/3-proposed_solution.tex" 1762599463 101157 faf78e56688f1f5aec0f3ad517607595 ""
+  "chapters/1-introduction.tex" 1762612986 8376 edf3a96bcc9ee5515e38a6d0c3e1e2b6 ""
+  "chapters/2-base-knowledge.tex" 1762618043 76587 7f7c1c07b5cf96a81d99eba60cd5acf7 ""
+  "chapters/3-proposed_solution.tex" 1762619084 99747 1c83fb082435728582991731280277c4 ""
   "chapters/4-experiment.tex" 1762335714 62598 e6193f857f02fbe14e1cbd84775b9663 ""
   "chapters/5-conclusion.tex" 1757432414 4224 8de95f0c78474360cde1ff9a18ba4780 ""
   "chapters/examples/arduino.tex" 1753256024 1165 6b71b2ca9bc8d0e9aa878851c948a635 ""
@@ -349,14 +349,14 @@
   "images/thucnghiem.png" 1753256028 411269 f32107c69e826a62b7003a15ef6ffb29 ""
   "images/tuthe_osa.png" 1762440761 101703 ad3a6c9d02aca19e18d277a69bd52ae5 ""
   "images/vitri_co.png" 1762443391 129340 184f6133557167661d5ac27fd98fe482 ""
-  "main.aux" 1762599480 56312 451e20176e02726b64b59f6df68a5556 "pdflatex"
+  "main.aux" 1762619108 56306 5da22b4a16e7654344935e4373ba9b7c "pdflatex"
   "main.bbl" 1762598803 230718 4baed66de998cfdee4400260e8cb5a7c "biber main"
-  "main.lof" 1762599480 8608 d1a9ef1e0a23c991d6e286e6b9cc4792 "pdflatex"
-  "main.lot" 1762599480 1980 a09977aefe316b492c2302258cb3afa0 "pdflatex"
-  "main.out" 1762599480 9133 ea68b7035912edf051e0e6c0548e66e0 "pdflatex"
-  "main.run.xml" 1762599480 2268 456211433cb673c754af192d4ef1bf89 "pdflatex"
+  "main.lof" 1762619108 8607 f93842cd84d70b8c024a9a323965370e "pdflatex"
+  "main.lot" 1762619108 1979 b71198663c7d3707b567f8650826ab6e "pdflatex"
+  "main.out" 1762619108 9133 ea68b7035912edf051e0e6c0548e66e0 "pdflatex"
+  "main.run.xml" 1762619108 2268 456211433cb673c754af192d4ef1bf89 "pdflatex"
   "main.tex" 1762588149 6325 4f47704b6a5021381cd4df435f5e1615 ""
-  "main.toc" 1762599480 5364 227a7b919b05b5c302757d6c7263894b "pdflatex"
+  "main.toc" 1762619108 5362 38edd67681b1eb0e29dfc93cf0ff6745 "pdflatex"
   "setting/bkthesis.sty" 1753256024 967 af4f61477f3f023e14bc982890f87805 ""
   "src/glossaries.tex" 1753407326 777 adc527e2093778beb062eccbb5f56229 ""
   (generated)
