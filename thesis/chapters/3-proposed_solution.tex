@@ -668,11 +668,17 @@ giả chú ý như là bảo mật thông tin, thời gian phản hồi hệ th�
 \end{table}
 
 \subsubsection*{Kiến trúc phần mềm}
-Ứng dụng sử dụng mô hình \textbf{BLoC (Business Logic Component)} để tách biệt giao diện
-người dùng và logic xử lý. BLoC hoạt động dựa trên nguyên tắc nhận sự
-kiện đầu vào và trả về trạng thái phù hợp, giúp quản lý luồng dữ liệu
-hiệu quả. Cấu trúc tổng thể của kiến trúc BLoC gồm ba lớp chính được mô
-tả trong Hình~\ref{flutter}.
+Ứng dụng di động được viết bằng ngôn ngữ DART trên nền tảng Flutter.
+Vì sao lại chọn Dart mà không phải là các ngôn ngữ thuần túy như Java hay
+Swift? Nói chung, tác giả chọn Dart trên nền tảng Flutter lý do chính là có thể
+tạo ra hai phiên bản trên Android và IOS trên cùng một bộ mã chương trình.
+Ngoài ra, việc khởi tạo dự án nhanh, cú pháp thân thiện với người lập trình
+hơn, kèm cộng đồng đông đảo làm giảm đáng kể thời gian phát triển.
+
+Để ứng dụng dễ kiểm thử và nâng cấp, tác giả tìm hiểu và lựa chọn nguyên tắc thiết kế
+BLoC. Nó hoạt động dựa trên nguyên tắc nhận sự kiện đầu vào từ giao diện gồm trạng thái và dữ liệu đầu vào, xử lý trong khối BLOC như gọi lên máy chủ trung tâm
+và trả lại dữ liệu. Qua đó, luồng dữ liệu trở nên rõ ràng. Cấu trúc tổng thể của kiến trúc
+BLoC gồm ba lớp chính được mô tả trong Hình~\ref{flutter}.
 
 \begin{figure}[htbp]
     \centering
@@ -681,7 +687,49 @@ tả trong Hình~\ref{flutter}.
     \label{flutter}
 \end{figure}
 
+Mã nguồn của toàn bộ ứng dụng di động tác giả sẽ để dưới phần mục lục. Còn
+trong khuôn khổ luận văn nay, tác giả sẽ giải thích chức năng chính là kết nối
+phần cứng, hiển thị và chuyển dữ liệu lên máy chủ trung tâm.
+
+\newpage
+
+\textbf{Đầu tiên, kết nối và nhận dữ liệu BLE}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+            every node/.style={font=\footnotesize, align=center},
+            process/.style={rectangle, draw, rounded corners,
+                    minimum width=4cm, minimum height=1cm,
+                    fill=blue!10, inner sep=5pt},
+            arrow/.style={->, thick}
+        ]
+        \matrix[column sep=0mm, row sep=0.7cm] {
+            \node[process] (init) {Yêu cầu cấp quyền Bluetooth từ thiết bị thật};                 \\
+            \node[process] (finding) {Tìm kiểm các thiết bị BLE ngoại vi};                        \\
+            \node[process] (connect) {Thiết lập kết nối với phần cứng qua tên Master\_2025\_BLE}; \\
+            \node[process] (choosing) {Chọn đúng dịch vụ và đặc trưng theo UUID};                 \\
+            \node[process] (notify) {Bắn tín hiệu theo dõi};
+            \node[process] (present) {Hiển thị dữ liệu và đẩy lên máy chủ trung tâm};             \\
+        };
+
+        \foreach \i/\j in {init/finding, finding/connect, connect/choosing, choosing/notify, notify/present}
+        \draw[arrow] (\i) -- (\j);
+    \end{tikzpicture}
+    \caption{Sơ đồ kết nối và nhận dữ liệu của ứng dụng di động}
+    \label{fig:mobile_ble}
+\end{figure}
+
 \input{chapters/examples/flutter_ble}
+
+Mã~\ref{flutterBle} thể hiện: từ kết nối BLE, truy xuất đặc tính gia tốc, đọc
+giá trị nhị phân thô từ thiết bị, đến việc chuẩn hoá và gửi dữ liệu lên
+backend. Trong đoạn mã này, dữ liệu dạng \texttt{Uint8List} nhận từ cảm biến
+được tách và chuyển đổi thành ba thành phần tương ứng với ba trục gia tốc. Dữ
+liệu sau khi được xử lý sẽ được đóng gói theo định dạng \texttt{JSON} và gửi
+đến máy chủ thông qua phương thức POST, sử dụng thư viện \texttt{http} trong
+Flutter.
+
 \input{chapters/examples/format_data_ble.tex}
 
 Sau khi kết nối BLE được thiết lập thành công, ứng dụng truy xuất đối tượng đặc
@@ -693,14 +741,6 @@ gắn nhãn thời gian thực.
 
 Quá trình xử lý này được thực hiện trong một vòng lặp có kiểm soát độ trễ ngắn
 nhằm đảm bảo khả năng cập nhật liên tục nhưng vẫn tối ưu hiệu suất hệ thống.
-
-Mã~\ref{flutterBle} minh hoạ toàn bộ quy trình xử lý: từ kết nối BLE, truy xuất
-đặc tính gia tốc, đọc giá trị nhị phân thô từ thiết bị, đến việc chuẩn hoá và
-gửi dữ liệu lên backend. Trong đoạn mã này, dữ liệu dạng \texttt{Uint8List}
-nhận từ cảm biến được tách và chuyển đổi thành ba thành phần tương ứng với ba
-trục gia tốc. Dữ liệu sau khi được xử lý sẽ được đóng gói theo định dạng
-\texttt{JSON} và gửi đến máy chủ thông qua phương thức POST, sử dụng thư viện
-\texttt{http} trong Flutter.
 
 Định dạng dữ liệu BLE được chuẩn hoá như trong Mã~\ref{format_ble},
 với trường \texttt{"value"} là chuỗi liên tục các
