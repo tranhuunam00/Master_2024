@@ -485,55 +485,24 @@ Hình~\ref{fig:mach} là kết quả mạch đã hoàn thiện.
 \newpage
 
 \section{Hệ thống phần mềm}
-Phần này trình bày tổng quan kiến trúc hệ thống bao gồm: lập trình firmware
-trên vi điều khiển để thu thập dữ liệu cảm biến, thiết kế ứng dụng di động làm
-cầu nối giữa phần cứng và hệ thống đám mây, cùng với backend và cơ sở dữ liệu
-lưu trữ phục vụ huấn luyện mô hình. Nội dung cũng đề cập đến các yêu cầu chức
-năng, phi chức năng và thiết kế hệ thống ở mức cao nhằm đảm bảo khả năng triển
-khai thực tế và mở rộng trong tương lai.
+Phần này trình bày tổng quan kiến trúc hệ thống phần mềm bao gồm: lập trình
+phần cứng để đọc giá trị cảm biến, cấu hình BE ; phát triển ứng dụng di động
+làm cầu nối giữa phần cứng và hệ thống đám mây, cùng với máy chủ và cơ sở dữ
+liệu lưu trữ dữ liệu. Nội dung cũng đề cập đến các yêu cầu chức năng, phi chức
+năng và thiết kế hệ thống ở mức cao nhằm đảm bảo khả năng triển khai thực tế và
+mở rộng trong tương lai.
 
-\subsection{Lập trình vi xử lý}
+\subsection{Lập trình phần cứng}
 
-Mục tiêu của phần lập trình không chỉ dừng lại ở việc xây dựng các đoạn mã điều
-khiển cơ bản, mà còn hướng đến việc tận dụng tối đa hệ sinh thái thư viện và
-framework đã được cộng đồng kiểm chứng. Cách tiếp cận này giúp rút ngắn đáng kể
-thời gian phát triển, giảm thiểu rủi ro sai sót khi lập trình ở mức thanh ghi
-thấp, đồng thời bảo đảm tính ổn định và khả năng mở rộng của hệ thống trong các
-giai đoạn triển khai tiếp theo.
-
-Quá trình phát triển phần mềm được thực hiện trên nền tảng \textit{Arduino
-    IDE}, kết hợp hai thư viện chính: \texttt{Adafruit Circuit Playground} (cho bo
-Adafruit Playground) và \texttt{Arduino\_LSM9DS1}/\texttt{ArduinoBLE} (cho bo
-Arduino Nano 33 BLE Sense). Việc sử dụng các thư viện này không chỉ đơn giản
-hóa thao tác giao tiếp với cảm biến và quản lý tín hiệu, mà còn tạo điều kiện
-tương thích trực tiếp với \textit{TensorFlow Lite for Microcontrollers}, giúp
-rút ngắn đáng kể giai đoạn triển khai TinyML trên thiết bị.
+Ở giai đoạn này, tác giả tiến hành lập trình phần cứng bằng cách sử dụng các framework và thư viện do hãng cung cấp.
+Cách tiếp cận này cho phép khai thác hầu hết các phương thức tương tác với phần cứng, đồng thời giúp rút ngắn đáng kể thời gian phát triển và giảm thiểu sai sót trong quá trình lập trình.
+Tuy nhiên, để có thể kiểm soát toàn diện các chức năng của hệ thống cũng như tối ưu hóa mức tiêu thụ năng lượng, trong tương lai tác giả dự định sẽ chuyển sang phương pháp lập trình ở mức thanh ghi.
 
 \subsubsection{Cấu hình vi xử lý và cảm biến}
-
-Trước khi tích hợp kết nối không dây, hệ thống được thiết lập các thông số hoạt
-động của vi xử lý và cảm biến dựa trên định hướng tối ưu năng lượng và đảm bảo
-chất lượng dữ liệu đã phân tích ở các chương trước. Mục tiêu của giai đoạn này
-là duy trì thời lượng pin dài trên thiết bị đeo, đồng thời vẫn thu được dữ liệu
-gia tốc đủ chính xác để phục vụ huấn luyện mô hình nhận diện tư thế ngủ.
-
-Cụ thể, vi xử lý nRF52840 được vận hành ở chế độ tiết kiệm năng lượng trong
-trạng thái chờ, và chỉ chuyển sang xử lý khi nhận tín hiệu ngắt từ cảm biến.
-Cảm biến gia tốc MEMS LIS3DH (trên Adafruit Playground) và IMU tích hợp (trên
-Arduino Nano 33 BLE Sense) được cấu hình với tần số lấy mẫu 10 Hz và dải đo
-±2g. Thiết lập này được lựa chọn vì:
-
-Tần số 10 Hz đủ để ghi nhận chuyển động chậm và biến đổi tư thế trong khi ngủ,
-đồng thời giúp giảm thiểu khối lượng dữ liệu cần xử lý và lưu trữ.
-
-Dải đo ±2g cung cấp độ nhạy cao, phù hợp với các chuyển động mức thấp của cơ
-thể khi thay đổi tư thế, đồng thời hạn chế tiêu thụ năng lượng hơn so với các
-dải đo rộng hơn.
-
-Ngoài ra, cảm biến được cấu hình sử dụng ngắt dữ liệu (INT pin), tức là chỉ khi
-có mẫu mới trong thanh ghi thì tín hiệu ngắt mới được gửi tới vi xử lý. Cách
-tiếp cận này cho phép vi xử lý duy trì trạng thái ngủ phần lớn thời gian, chỉ
-thức dậy để đọc dữ liệu cần thiết, từ đó giảm đáng kể mức tiêu thụ năng lượng.
+Bước đầu tiên để giao tiếp với phần cứng, tác giả lựa chọn phương án thông qua
+USB và Bootloader. Bootloader của Arduino Nano được nạp vào vi điều khiển bằng
+giao thức Serial Wire Debug (SWD), cho phép thiết lập môi trường lập trình ban
+đầu và hỗ trợ việc tải chương trình trực tiếp từ máy tính thông qua cổng USB.
 
 \subsubsection{Cấu hình BLE}
 
