@@ -720,86 +720,66 @@ phần cứng, hiển thị và chuyển dữ liệu lên máy chủ trung tâm.
     \label{fig:mobile_ble}
 \end{figure}
 
+Sau khi tìm hiểu, tác giả chọn thư viện flutter\_blue\_plus làm nền tảng để kết
+nối BLE từ ứng dụng di động đến phần cứng \cite{flutter_blue_plus}. Nó hỗ trợ
+các phương thức gồm quét, kết nối, đọc/ghi đặc tính và nhận thông báo từ thiết
+bị BLE trên Android, iOS, macOS, Linux và web. Ngoài ra nó không có thêmphụ
+thuộc ngoài Flutter, và được thiết kế cho vai trò BLE trung tâm (không hỗ trợ
+Bluetooth cổ điển như HC-05). Plugin miễn phí cho cá nhân, tổ chức nhỏ, và phi
+lợi nhuận; các công ty trên 50 nhân viên cần mua bản quyền để sử dụng thương
+mại.
+
+\input{chapters/examples/ble_scan.tex}
+
+Mã nguồn~\ref{lst:ble_scan} trình bày quy trình quét và kết nối thiết bị ngoại
+vi BLE trong Flutter dựa trên thư viện flutter\_blue\_plus. Hàm onScanPressed()
+mục đích quét thiết bị đang khả dụng thông qua dịch vụ mức pin (Battery Level)
+có UUID là 180F. Khi này BLoc nhận trạng thái quét, thực hiện quét và trả về
+danh sách mảng các thiết bị bao gồm tên hiển thị, địa chỉ MAC. Hàm
+onStopPressed() dừng quá trình quét, còn onConnectPressed() thiết lập kết nối
+với thiết bị được chọn và chuyển đến màn hình điều khiển chi tiết.
+
 \input{chapters/examples/flutter_ble}
 
-Mã~\ref{flutterBle} thể hiện: từ kết nối BLE, truy xuất đặc tính gia tốc, đọc
-giá trị nhị phân thô từ thiết bị, đến việc chuẩn hoá và gửi dữ liệu lên
-backend. Trong đoạn mã này, dữ liệu dạng \texttt{Uint8List} nhận từ cảm biến
-được tách và chuyển đổi thành ba thành phần tương ứng với ba trục gia tốc. Dữ
-liệu sau khi được xử lý sẽ được đóng gói theo định dạng \texttt{JSON} và gửi
-đến máy chủ thông qua phương thức POST, sử dụng thư viện \texttt{http} trong
-Flutter.
+Mã nguồn~\ref{flutterBle} trình bày cách ứng dụng hoạt động khi người dùng chọn
+đúng BLE của phần cứng. Cụ thể, StreamBuilder được sử dụng để lắng nghe các
+thay đổi của device.services, cho phép hệ thống phản ứng tức thời khi thiết bị
+BLE truyền lên các dịch vụ khả dụng. Quá trình so khớp UUID giữa dịch vụ thực
+tế đã cài đặt ở phần cứng và hằng số định nghĩa (ACCLEROMETER\_SERVICE,
+ACCLEROMETER\_CHARACTION) trên ứng dụng di động cho phép xác thực logic nhằm
+đảm bảo rằng ứng dụng chỉ giao tiếp với dịch vụ và đặc tính cảm biến hợp lệ.
+
+Sau khi đã khớp các thành phần BLE, ứng dụng di động có thêm nút ấn "lấy thông
+tin" khi này ứng dụng di động sẽ gửi 1 yêu cầu theo dõi đến phần cứng. Như đoạn
+mã~\ref{lst:ble_bmi270} vi điều khiển lắng nghe được hành động theo dõi sẽ lập
+tức gửi các gói tin lên lại ứng dụng di dộng theo cấu trúc đã xác lập.
+
+Đến đây, tác giả đã \textbf{hoàn thành quy trình kết nối và nhận dữ liệu từ phần cứng}.
+Tiếp theo, tác giả sẽ trình bày việc dữ liệu được đóng gói và chuyển lên phần máy chủ trung tâm.
+
+Ngoài dữ liệu 3 trục x, y, z, tác giả xác định tập dữ liệu cần lưu thêm thời
+gian tạo và giá trị ID của người đang dùng. Việc này đảm bảo việc minh bạch, dễ
+đối chiếu và phân tích, mô phỏng lại giá trị cảm biến theo chuỗi thời gian. Mã
+nguồn~\ref{format_ble} mô tả việc tối ưu hóa đẩy dữ liệu HTTP theo lô giúp giảm
+tải phía máy chủ trung tâm. Điều này tăng tính mở rộng lên hàng trăm thiết bị
+hoặc giá trị cảm biến khác đẩy lên cùng 1 thời điểm.
 
 \input{chapters/examples/format_data_ble.tex}
 
-Sau khi kết nối BLE được thiết lập thành công, ứng dụng truy xuất đối tượng đặc
-tính cảm biến (characteristic instance) và liên tục gửi yêu cầu đọc
-(\texttt{read}) đến vi điều khiển. Thiết bị phản hồi bằng cách trả về dữ liệu
-cảm biến dưới dạng mảng \texttt{UInt8}. Các giá trị này được ứng dụng giải mã,
-chuyển đổi sang dạng số thực tương ứng với gia tốc trên ba trục (X, Y, Z), và
-gắn nhãn thời gian thực.
+Một điểm đáng lưu ý nữa, tác giả kết hợp cùng GS.TS. Dương Quý Sỹ phát triển
+thêm tính năng \textbf{chatbot y học giấc ngủ} dựa trên kỹ thuật
+\textbf{Retrieval-Augmented Generation (RAG)}. Chatbot này được xây dựng từ cơ
+sở dữ liệu gồm hơn 2000 câu hỏi và câu trả lời chuyên sâu liên quan đến giấc
+ngủ được biên tập bởi GS.TS Dương Quý Sỹ, bao gồm cả tài liệu lâm sàng, nghiên
+cứu khoa học và các hướng dẫn thực hành. Người dùng có thể đặt câu hỏi tự nhiên
+như “Tôi có nên lo nếu ngủ ngáy liên tục?” hoặc “STOP-BANG > 5 có ý nghĩa gì?”,
+và chatbot sẽ phản hồi dựa trên kiến thức được truy xuất từ tài liệu nền và
+được tổng hợp lại bằng mô hình ngôn ngữ.
 
-Quá trình xử lý này được thực hiện trong một vòng lặp có kiểm soát độ trễ ngắn
-nhằm đảm bảo khả năng cập nhật liên tục nhưng vẫn tối ưu hiệu suất hệ thống.
-
-Định dạng dữ liệu BLE được chuẩn hoá như trong Mã~\ref{format_ble},
-với trường \texttt{"value"} là chuỗi liên tục các
-giá trị cảm biến (phân tách bằng ký tự đặc biệt) và trường
-\texttt{"customer"} để định danh người dùng.
-
-Việc tối ưu hóa cả quá trình đọc BLE và đẩy dữ liệu HTTP theo lô như vậy giúp
-giảm độ trễ, tránh tình trạng nghẽn băng thông, đồng thời vẫn đảm bảo độ chính
-xác và toàn vẹn của dữ liệu cảm biến.
-
-Ngoài các chức năng thu thập và truyền dữ liệu cảm biến, ứng dụng còn tích hợp
-các công cụ hỗ trợ đánh giá y học lâm sàng ban đầu nhằm phục vụ cho việc sàng
-lọc và phân loại nguy cơ mắc hội chứng ngưng thở khi ngủ (OSA). Trong đó, ba
-thành phần quan trọng được triển khai bao gồm:
-
-\noindent\textbf{01)} Bộ câu hỏi \textbf{STOP-BANG}: Đây là một bảng sàng lọc lâm sàng được sử dụng phổ biến trong y học giấc ngủ để đánh giá nguy cơ mắc OSA. Dữ liệu từ bảng này được lưu trữ cùng với dữ liệu cảm biến và đóng vai trò như đầu vào bổ sung cho các mô hình học máy dự đoán chỉ số AHI (Apnea-Hypopnea Index).
-
-\vspace{0.5em}
-\noindent\textbf{02)} Thang điểm \textbf{Epworth Sleepiness Scale (ESS)}: Tác giả triển khai thêm bảng câu hỏi ESS nhằm đánh giá mức độ buồn ngủ ban ngày của người dùng. Thang điểm này giúp phát hiện tình trạng buồn ngủ quá mức và có thể hỗ trợ phân tầng nguy cơ trong mô hình phân loại rối loạn giấc ngủ.
-
-\vspace{0.5em}
-\noindent\textbf{03)} Đánh giá \textbf{BMI (Body Mass Index)}: BMI được tự động tính toán dựa trên chiều cao và cân nặng người dùng nhập vào. Chỉ số này đóng vai trò là một trong các yếu tố nguy cơ chính trong chẩn đoán OSA, đặc biệt khi kết hợp cùng STOP-BANG.
-
-Ngoài ra, nhằm cải thiện trải nghiệm người dùng và hỗ trợ trả lời câu hỏi liên
-quan đến giấc ngủ, tác giả phát triển thêm tính năng \textbf{chatbot y học giấc
-    ngủ} dựa trên kỹ thuật \textbf{Retrieval-Augmented Generation (RAG)}. Chatbot
-này được xây dựng từ cơ sở dữ liệu gồm hơn 2000 câu hỏi và câu trả lời chuyên
-sâu liên quan đến giấc ngủ được biên tập bởi GS.TS Dương Quý Sỹ, bao gồm cả tài
-liệu lâm sàng, nghiên cứu khoa học và các hướng dẫn thực hành. Người dùng có
-thể đặt câu hỏi tự nhiên như “Tôi có nên lo nếu ngủ ngáy liên tục?” hoặc
-“STOP-BANG > 5 có ý nghĩa gì?”, và chatbot sẽ phản hồi dựa trên kiến thức được
-truy xuất từ tài liệu nền và được tổng hợp lại bằng mô hình ngôn ngữ.
-
-Hệ thống RAG kết hợp khả năng truy vấn ngữ nghĩa từ tập văn bản lớn (document
-retrieval) và khả năng sinh văn bản linh hoạt từ mô hình ngôn ngữ lớn (LLM), từ
-đó cung cấp các câu trả lời chính xác, có căn cứ và dễ hiểu cho người dùng
-không chuyên.
-
-\textbf{Tính năng quản lý người dùng} cũng được mở rộng. Người dùng có thể
-tạo tài khoản một lần và sử dụng lại trong các lần đăng nhập sau. Cơ chế này
-giúp rút ngắn thao tác, đồng thời vẫn đảm bảo tính bảo mật và khả năng khôi
-phục dữ liệu khi quên tài khoản hoặc mật khẩu. Dữ liệu người dùng
-(câu hỏi, chỉ số BMI, lịch sử cảm biến) được liên kết thống nhất qua một
-ID định danh duy nhất, hỗ trợ tốt cho việc phân tích, theo dõi tiến triển
-và huấn luyện mô hình học máy cá nhân hoá trong tương lai.
-
-Có thể thấy rằng, việc đáp ứng đầy đủ các \textbf{yêu cầu chức năng} mới chỉ
-đảm bảo hệ thống thực hiện được các nhiệm vụ cốt lõi đã đề ra, chẳng hạn như
-thu thập dữ liệu, hiển thị tín hiệu hay quản lý hồ sơ người dùng. Tuy nhiên,
-trong bối cảnh triển khai thực tiễn, điều này là chưa đủ. Một hệ thống có thể
-hoạt động đúng chức năng nhưng sẽ nhanh chóng trở nên khó sử dụng hoặc thậm chí
-thất bại nếu thiếu đi các \textbf{yêu cầu phi chức năng} quan trọng. Những yêu
-cầu này bao gồm độ tin cậy khi vận hành liên tục trong môi trường thực tế, tính
-bảo mật nhằm bảo vệ dữ liệu y tế nhạy cảm, khả năng mở rộng để thích ứng với số
-lượng người dùng tăng dần, cũng như hiệu năng xử lý để đảm bảo dữ liệu được
-truyền tải theo thời gian thực. Do đó, chỉ khi cả hai nhóm yêu cầu được quan
-tâm song song và được tích hợp hài hòa ngay từ giai đoạn thiết kế, hệ thống mới
-vừa đáp ứng đúng mục tiêu nghiên cứu, vừa có tính khả thi và bền vững khi ứng
-dụng trong y tế lâm sàng và cộng đồng.
+Từ những phân tích nêu trên, tác giả chuẩn hóa được các bước cơ bản để từ dữ
+liệu ở phần cứng đến lưu trữ trên máy chủ đám mây. Đây cũng chính là các bước
+của hệ thống điện toán đám mây khi mọi dữ liệu, mô hình tính toán sẽ cùng một
+nơi trên 1 hệ thống phần cứng mạnh mẽ.
 
 \subsection{Thiết kế và xây dựng hệ thống lưu trữ}
 \begin{figure}[htbp]
