@@ -5117,40 +5117,30 @@
       \field{howpublished}{\url{https://content.u-blox.com/sites/default/files/NINA-B3_DataSheet_UBX-17052099.pdf}}
       \field{title}{NINA-B3 Series – Stand-alone Bluetooth® 5 Low Energy Modules Data Sheet (Document No. UBX-17052099)}
     \endentry
-    \entry{allan}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=07bfef80bf5c3943c2825d75bf68cd6b}{%
-           family={M.\bibnamedelimi B.\bibnamedelimi Marinov},
-           familyi={M\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim M\bibinitperiod},
-           given={N.\bibnamedelimi Djermanova},
-           giveni={N\bibinitperiod\bibinitdelim D\bibinitperiod},
-           suffix={B.\bibnamedelimi Ganev},
-           suffixi={B\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-        {{hash=891ffd14062d28579fb4276ee26b7a16}{%
-           family={Tashev},
-           familyi={T\bibinitperiod},
-           given={T.\bibnamedelimi D.},
-           giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+    \entry{SparkFun_BMI270_Library}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=2477a7f608e55ef703217df840d0d3df}{%
+           family={Electronics},
+           familyi={E\bibinitperiod},
+           given={SparkFun},
+           giveni={S\bibinitperiod}}}%
       }
-      \strng{namehash}{867a7e9de871b383da1309528c603985}
-      \strng{fullhash}{867a7e9de871b383da1309528c603985}
-      \strng{fullhashraw}{867a7e9de871b383da1309528c603985}
-      \strng{bibnamehash}{867a7e9de871b383da1309528c603985}
-      \strng{authorbibnamehash}{867a7e9de871b383da1309528c603985}
-      \strng{authornamehash}{867a7e9de871b383da1309528c603985}
-      \strng{authorfullhash}{867a7e9de871b383da1309528c603985}
-      \strng{authorfullhashraw}{867a7e9de871b383da1309528c603985}
+      \strng{namehash}{2477a7f608e55ef703217df840d0d3df}
+      \strng{fullhash}{2477a7f608e55ef703217df840d0d3df}
+      \strng{fullhashraw}{2477a7f608e55ef703217df840d0d3df}
+      \strng{bibnamehash}{2477a7f608e55ef703217df840d0d3df}
+      \strng{authorbibnamehash}{2477a7f608e55ef703217df840d0d3df}
+      \strng{authornamehash}{2477a7f608e55ef703217df840d0d3df}
+      \strng{authorfullhash}{2477a7f608e55ef703217df840d0d3df}
+      \strng{authorfullhashraw}{2477a7f608e55ef703217df840d0d3df}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE XXVIII International Scientific Conference Electronics (ET)}
-      \field{title}{Analysis of Sensors Noise Performance Using Allan Deviation}
-      \field{volume}{7}
-      \field{year}{2019}
-      \verb{doi}
-      \verb 10.1109/ET.2019.8878552.
-      \endverb
+      \field{howpublished}{\url{https://github.com/sparkfun/SparkFun_BMI270_Arduino_Library}}
+      \field{note}{Accessed: 2025-11-09}
+      \field{title}{SparkFun BMI270 Arduino Library — Driver for the Bosch BMI270 6-DoF IMU}
+      \field{year}{2023}
     \endentry
     \entry{cramer2002logistic}{report}{}{}
       \name{author}{1}{}{%

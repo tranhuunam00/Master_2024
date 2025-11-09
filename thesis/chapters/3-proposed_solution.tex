@@ -305,8 +305,7 @@ lý cho mạch thông qua những câu hỏi: Các thành phần trong cần thi
 cho bài toán phân loại tư thế ngủ là gì? Chúng được kết nối với nhau như thế
 nào? và chi tiết từng thành phần đó là gì?
 
-Qua các câu hỏi đó, tác giả từng bước nghiên cứu và hoàn thiện thiết kế sơ đồ
-nguyên lý.
+Từ đó, tác giả từng bước nghiên cứu và hoàn thiện thiết kế sơ đồ nguyên lý.
 
 \subsubsection*{Mục tiêu}
 
@@ -495,7 +494,7 @@ mở rộng trong tương lai.
 \subsection{Lập trình phần cứng}
 
 Ở giai đoạn này, tác giả tiến hành lập trình phần cứng bằng cách sử dụng các framework và thư viện do hãng cung cấp.
-Cách tiếp cận này cho phép khai thác hầu hết các phương thức tương tác với phần cứng, đồng thời giúp rút ngắn đáng kể thời gian phát triển và giảm thiểu sai sót trong quá trình lập trình.
+Cách tiếp cận này cho phép khai thác hầu hết các phương thức tương tác với phần cứng, cộng đồng hỗ trợ lớn đồng thời giúp rút ngắn đáng kể thời gian phát triển và giảm thiểu sai sót trong quá trình lập trình.
 Tuy nhiên, để có thể kiểm soát toàn diện các chức năng của hệ thống cũng như tối ưu hóa mức tiêu thụ năng lượng, trong tương lai tác giả dự định sẽ chuyển sang phương pháp lập trình ở mức thanh ghi.
 
 \subsubsection{Cấu hình vi xử lý và cảm biến}
@@ -504,233 +503,149 @@ USB và Bootloader. Bootloader của Arduino Nano được nạp vào vi điều
 giao thức Serial Wire Debug (SWD), cho phép thiết lập môi trường lập trình ban
 đầu và hỗ trợ việc tải chương trình trực tiếp từ máy tính thông qua cổng USB.
 
+Việc đọc các giá trị cảm biến thông qua thư viện SparkFun BMI270 Arduino
+Library \cite{SparkFun_BMI270_Library}. Đây là thư viện mã nguồn mở do SparkFun
+phát triển đóng vai trò như một lớp trừu tượng, cho phép vi điều khiển giao
+tiếp trực tiếp với cảm biến Bosch BMI270. Thư viện cung cấp đầy đủ các hàm để
+cấu hình dải đo, tần số lẫy mẫu và chế độ năng lượng tiêu thụ.
+
+\input{chapters/examples/cauhinh_accelerometer.tex}
+
+Phần cấu hình được thể hiện trong mã nguồn~\ref{lst:cauhinh_accelerometer} Việc
+gọi hàm \texttt{imu.beginI2C()} nhằm thiết lập kênh truyền
+I\textsuperscript{2}C và xác nhận sự hiện diện của thiết bị. Tần số lấy mẫu
+được đặt ở 12,5 Hz và dải đo ở mức ±2g nhằm tối ưu độ phân giải cho các dao
+động nhỏ khi ngủ ở người. Việc thiết lập cấu hình qua hàm \texttt{setConfig()}
+và xác thực lại bằng \texttt{getConfig()} thể hiện nguyên tắc kiểm chứng hai
+chiều nhằm chắc chắn các cấu hình đã được đặt trên phần cứng.
+
+\newpage
+
 \subsubsection{Cấu hình BLE}
 
-Trong quá trình khởi tạo (\texttt{setup()}), hệ thống thực hiện cấu hình các
-thành phần cốt lõi của giao thức Bluetooth Low Energy (BLE), bao gồm: tạo bản
-tin quảng bá (advertising), thiết lập cơ chế kết nối/ngắt kết nối, cũng như
-định nghĩa cấu trúc dịch vụ và đặc tính theo mô hình \gls{GATT}. Điểm mạnh của
-BLE là cho phép thiết bị đeo duy trì mức tiêu thụ năng lượng cực thấp trong khi
-vẫn bảo đảm tốc độ truyền dữ liệu cảm biến đủ nhanh để phục vụ các ứng dụng
-thời gian thực. Đây là một yêu cầu quan trọng trong các thiết bị y tế đeo
-người, vốn cần hoạt động liên tục trong nhiều giờ hoặc nhiều ngày chỉ với một
-pin nhỏ. Quy trình này được minh họa trong Hình~\ref{flowBLE}.
+Quá trình khởi tạo, kết nối và truyền lên thiết bị trung tâm bao gồm các bước
+sau: bao gồm: tạo bản tin quảng bá (advertising), thiết lập cơ chế kết nối/ngắt
+kết nối, cũng như định nghĩa UUID của dịch vụ và đặc tính theo mô hình
+\gls{GATT}.
 
-Trong đoạn mã~\ref{arduinoBLE}, hàm \texttt{startAdv()} đảm nhiệm cấu hình
-quảng bá BLE cho thiết bị. Quá trình này bao gồm: thiết lập cờ kết nối tổng
-quát, chèn thông tin công suất truyền (Tx Power), thêm UUID của dịch vụ tư thế
-(\texttt{positionService}) và tên thiết bị vào gói quảng bá. Đặc biệt, các
-thông số quảng bá được cấu hình theo khuyến nghị của Apple (20~ms ở chế độ
-nhanh, 152.5~ms ở chế độ chậm, chuyển đổi sau 30 giây), nhằm đảm bảo mức độ
-tương thích tối đa với hệ sinh thái iOS. Cách cấu hình này giúp thiết bị duy
-trì trạng thái “luôn sẵn sàng” để ghép nối, nhưng không tiêu tốn năng lượng quá
-mức.
+\input{chapters/examples/cauhinh_ble.tex}
 
-Trong cấu trúc dịch vụ, hệ thống định nghĩa một dịch vụ chính với UUID
-\texttt{0x1821}, kèm theo hai đặc tính cảm biến: gia tốc (\texttt{UUID 0x2713},
-đơn vị \texttt{m/s\textsuperscript{2}}) và gia tốc góc (\texttt{UUID 0x2744},
-đơn vị \texttt{rad/s\textsuperscript{2}}). Mặc dù phần cứng hỗ trợ thu thập
-song song nhiều loại dữ liệu cảm biến, khoá luận này tập trung vào tín hiệu gia
-tốc tuyến tính - loại dữ liệu được coi là trực quan nhất để phân loại tư thế
-ngủ, đồng thời giảm độ phức tạp của mô hình TinyML trong giai đoạn thử nghiệm.
+\usetikzlibrary{positioning}
 
-Cách tiếp cận này chứng minh rằng việc lựa chọn đúng nền tảng và thư viện không
-chỉ giải quyết nhu cầu trước mắt (truyền dữ liệu ổn định, tiết kiệm pin) mà còn
-mở ra khả năng tích hợp lâu dài với các hệ thống phân tích dữ liệu trên di động
-hoặc đám mây, phù hợp với hướng phát triển thiết bị chăm sóc sức khoẻ thông
-minh theo chuẩn công nghiệp.
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+            every node/.style={font=\footnotesize, align=center},
+            process/.style={rectangle, draw, rounded corners,
+                    minimum width=4cm, minimum height=1cm,
+                    fill=blue!10, inner sep=5pt},
+            arrow/.style={->, thick}
+        ]
+        \matrix[column sep=0mm, row sep=0.7cm] {
+            \node[process] (init) {Khởi tạo BLE \& BMI270};                                                \\
+            \node[process] (config) {Cấu hình cảm biến \\ ODR = 12.5 Hz, Range = $\pm$2g}; \\
+            \node[process] (connect) {Kết nối thiết bị trung tâm qua BLE};                                 \\
+            \node[process] (send) {Đọc \& gửi dữ liệu $x$, $y$, $z$};       \\
+            \node[process] (loop) {Lặp chu kỳ 100 ms};                                                     \\
+        };
 
-\input{chapters/examples/arduino}
-\input{chapters/examples/senDataBle}
-Ngoài các thao tác khởi tạo dịch vụ, thư viện BLE của Adafruit còn cung cấp các phương thức cấu hình đặc tính (\textit{characteristics}) nhằm kiểm soát hành vi và bảo mật của kết nối BLE.
+        \foreach \i/\j in {init/config, config/connect, connect/send, send/loop}
+        \draw[arrow] (\i) -- (\j);
+    \end{tikzpicture}
+    \caption{Sơ đồ tóm tắt quy trình hoạt động BLE–BMI270 của đoạn mã nguồn~\ref{lst:ble_bmi270}}
+    \label{fig:ble_bmi270_shortflow}
+\end{figure}
 
-Cụ thể, phương thức \texttt{setProperties} cho phép cấu hình quyền truy cập của
-đặc tính, với các lựa chọn phổ biến như:
+Thứ nhất, khởi tạo BLE, kích hoạt truyền thông BLE với tên hiển thị là
+Master\_2025\_BLE, thiết lập cấu trúc dịch vụ GATT với hai UUID cho service và
+characteristic. Trong đó characteristic được phép đọc, ghi và phát tín hiệu.
 
-\begin{description}
-    \item[\texttt{CHR\_PROPS\_BROADCAST}] phát sóng đặc tính (bit 0)
-    \item[\texttt{CHR\_PROPS\_READ}] cho phép thiết bị đọc (bit 1)
-    \item[\texttt{CHR\_PROPS\_WRITE\_WO\_RESP}] ghi không cần phản hồi (bit 2)
-    \item[\texttt{CHR\_PROPS\_WRITE}] ghi với phản hồi (bit 3)
-    \item[\texttt{CHR\_PROPS\_NOTIFY}] gửi thông báo không xác nhận (bit 4)
-    \item[\texttt{CHR\_PROPS\_INDICATE}] gửi thông báo có xác nhận (bit 5)
-\end{description}
+Thứ hai, khởi tạo cảm biến BMI270 và cấu hình.
 
-Ngoài ra, một số phương thức bổ trợ khác bao gồm:
+Thứ ba, tạo kết nối với thiết bị trung tâm, khi tín hiệu quảng bá được phản
+hồi. Sau khi kết nối thành công, phần cứng lấy được thông tin của thiết bị
+trung tâm ở đây là ứng dụng điện thoại. Đây một bước xác thực cần thiết để chỉ
+cho phép thiết bị trung tâm nào được lập trình sẵn.
 
-\begin{description}
-    \item[\texttt{setPermission}] thiết lập quyền truy cập và mức độ bảo mật (ví dụ: không cần xác thực, cần mã hoá, v.v.)
-    \item[\texttt{setFixedLen}] xác định độ dài cố định của dữ liệu truyền
-\end{description}
+Thứ tư, thu nhận dữ liệu cảm biến ba trục (x, y, z) từ BMI270. Các giá trị gia
+tốc được đọc và chuẩn hóa trước khi truyền. Việc chuẩn hóa ở đây gồm tách dấu
+và phần nguyên - phần thập phân để giảm kích thước gói tin mà vẫn đảm bảo độ
+chính xác khi tái lập lại.
+
+Cuối cùng, truyền dữ liệu định dạng byte qua BLE thông qua characteristic đã
+định nghĩa. Mỗi gói tin gồm chín byte chứa đầy đủ thông tin về hướng và biên độ
+gia tốc trên ba trục, được gửi chu kỳ 100 ms, bảo đảm tốc độ lấy mẫu ổn định
+(10 Hz) phục vụ phân tích tư thế trong thời gian thực.
+
+Việc chuẩn hóa 5 giai đoạn này có ưu điểm có thể bóc tách cho mục đích khác
+nhau, tối ưu cho từng giai đoạn. Việc này để bảo code mạch lạc và dễ bảo trì.
+
+\subsubsection{Lọc nhiễu bằng bộ lọc Kalman}
+
+Trong phần phân tích các bộ lọc cũng như từ thực nghiệm tác giả thấy, khi có
+những chuyển động đột ngột gia tốc cao có gây ra sai lệnh giá trị thu được.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{images/sendBleFlow.png}
-    \caption{Lưu đồ luồng gửi thông tin BLE}
-    \label{sendBleFlow}
+    \includegraphics[width=1\textwidth]{images/z_kalman.png}
+    \caption{So sánh tín hiệu trục Z trước và sau lọc Kalman}
+    \label{fig:z_kalman}
 \end{figure}
 
-Luồng xử lý dữ liệu BLE được minh hoạ tại Hình~\ref{sendBleFlow}. Sau khi thu
-nhận dữ liệu cảm biến, thiết bị kiểm tra trạng thái kết nối BLE. Nếu kết nối
-hợp lệ, nó sẽ tiếp tục lắng nghe hành động đọc từ phía thiết bị trung tâm. Dữ
-liệu sau đó được làm tròn đến hai chữ số thập phân và mã hoá thành ba byte:
-byte đầu tiên lưu dấu, byte thứ hai chứa hai chữ số đầu, và byte cuối là hai
-chữ số cuối của giá trị gia tốc. Chuỗi dữ liệu này được gửi qua BLE theo đặc
-tính đã định nghĩa trước đó.
+Hình~\ref{fig:z_kalman} trình bày so sánh tín hiệu gia tốc thu được trên trục Z
+giữa hai trạng thái: dữ liệu thô và dữ liệu sau khi qua bộ lọc Kalman. Có thể
+quan sát thấy, trong vùng được khoanh tròn, tín hiệu thô (đường màu xanh) xuất
+hiện một giá trị đột biến âm với biên độ lớn, thể hiện hiện tượng trôi tín hiệu
+tạm thời do nhiễu cảm biến hoặc rung động ngoài mong muốn.
 
-\subsection{Hiệu chuẩn cảm biến}
-Việc thu nhận và tiền xử lý dữ liệu là bước quan trọng trong các hệ đo lường.
-Mặc dù cảm biến thường được hiệu chuẩn từ nhà sản xuất, nhưng vẫn cần được hiệu
-chuẩn lại trong môi trường đo thực tế để cải thiện hiệu năng và giảm thiểu sai
-số. Các sai số này được chia thành hai loại chính: (i) sai số hệ thống (mặc
-định) và (ii) sai số ngẫu nhiên.
+Sau khi áp dụng bộ lọc Kalman, đường tín hiệu (đường màu cam) trở nên mượt hơn
+và ổn định, đồng thời loại bỏ được phần lớn sai lệch ngắn hạn. Kết quả này
+chứng tỏ bộ lọc Kalman không chỉ thực hiện vai trò giảm nhiễu mà còn có khả
+năng ước lượng trạng thái thật của hệ thống thông qua mô hình dự đoán – cập
+nhật liên tục. Việc lọc này đặc biệt quan trọng trong bối cảnh dữ liệu thu từ
+cảm biến gia tốc dùng cho nhận diện tư thế ngủ, bởi vì sai số đột biến dù chỉ
+trong một khoảng ngắn cũng có thể dẫn đến phân loại sai tư thế trong mô hình
+học máy.
 
-\textbf{Hiệu chuẩn sai số hệ thống.} Tác giả sử dụng gia tốc trọng trường
-để hiệu chuẩn cảm biến theo hướng tĩnh. Khi xoay cảm biến sao cho một
-trục hướng lên vuông góc với mặt phẳng nằm ngang, giá trị đo được
-là $-1g$; khi hướng xuống dưới, giá trị là $+1g$. Bằng cách xoay cảm
-biến lần lượt qua sáu vị trí tĩnh tương ứng với các hướng trục chính,
-có thể xác định được các điểm chuẩn, từ đó nội suy để xác định giá
-trị $0g$ một cách chính xác và đáng tin cậy.
+Ngoài ra, vùng sai lệch này cũng cho thấy hạn chế của tín hiệu thô khi cảm biến
+được gắn trên cơ thể người, nơi dao động nhỏ do hô hấp, chuyển động tự nhiên
+hoặc thay đổi điểm đặt có thể gây ra nhiễu. Việc sử dụng Kalman giúp hiệu
+chỉnh, đảm bảo giá trị đo được bám sát quỹ đạo thật của chuyển động. Tuy nhiên,
+bộ lọc Kalman có thể làm giảm giá trị biên tại các đỉnh. Vấn đề này được tác
+giả xem xét không ảnh hưởng nhiều đến toàn bộ bài toán phân loại tư thế ngủ. Lý
+do là vì bộ đặc trưng không sử dụng trực tiếp các giá trị đỉnh này mà là một
+cửa sổ mẫu và các thống kê trong cửa sổ đó.
+
+\subsection{Phần mềm thu thập, lưu trữ}
+
+Phần mềm trong nghiên cứu này không chỉ đơn thuần là công cụ trực quan hoá dữ
+liệu cảm biến, mà còn được thiết kế như một mắt xích trọng yếu trong toàn bộ
+quy trình từ thu thập, truyền tải, lưu trữ, cho đến huấn luyện và triển khai mô
+hình học máy. Cách tiếp cận này đảm bảo rằng dữ liệu thu nhận từ môi trường
+thực tế được xử lý nhất quán, có khả năng tái sử dụng và dễ dàng tích hợp với
+các hệ thống khác.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{images/allan.png}
-    \caption{Minh hoạ kết quả phân tích đường cong Allan}
-    \label{allan}
+    \includegraphics[width=1\textwidth]{images/architecture_software.png}
+    \caption{Kiến trúc tổng thể của hệ thống}
+    \label{fig:architecture_software}
 \end{figure}
+Hình~\ref{fig:architecture_software} mô tả tổng quan các thành phần cần thiết trong luận văn và kết nối giữa chúng.
+Để đưa ra kết quả phân loại tư thế ngủ dữ liệu từ cảm biến có thể có 2 hướng đi. Thứ nhất, dữ liệu từ cảm biến thông qua vi điều khiển đẩy lên ứng dụng di động
+(BLE) sau đó được lưu trữ hoặc được suy luận trên máy chủ đám mây rồi trả về kết quả tại ứng dụng di động.
+Thứ hai. dữ liệu từ cảm biến sau khi được đọc từ vi điều khiển thì được suy luận ngay tại biên và hiển thị kết quả thông qua các con đèn led.
+Cả 2 cách đều được tác giả nghiên cứu và triển khai trong luận văn này.
 
-\textbf{Phân tích sai số ngẫu nhiên.} Tác giả sử dụng phương sai Allan
-để phân tích các thành phần nhiễu trong dữ liệu cảm biến \cite{allan}.
-Đây là phương pháp phân tích miền thời gian phổ biến nhằm đánh giá độ
-ổn định tần số và định lượng các loại nhiễu khác nhau như nhiễu trắng,
-trôi ngẫu nhiên, và nhiễu lượng tử. Biểu đồ Allan log-log cho phép nhận
-diện các thành phần nhiễu thông qua độ dốc của từng đoạn đường cong.
+\subsubsection{Ứng dụng di dộng}
+Được coi như 1 cổng kết nối (gateway) trong điện toán đám mây
+có nhiệm vụ gom các tín hiệu từ cảm biến gia tốc hoặc có thể mở
+rộng đa cảm biến khác, hiển thị chúng theo thời gian thực và chuyển
+lên máy chủ đám mây.
 
-Trong thử nghiệm, cảm biến được đặt cố định trong phòng ở điều kiện nhiệt độ ổn
-định, với tần số lấy mẫu 10 Hz, thu được tổng cộng 1.211.210 mẫu. Kết quả biểu
-diễn trong Hình~\ref{allan_real} cho thấy nhiễu chiếm ưu thế là nhiễu lượng tử
-(quantization noise), đặc trưng bởi hệ số góc tương ứng trong đồ thị.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{images/allan_real.png}
-    \caption{Biểu đồ phương sai Allan của trục X}
-    \label{allan_real}
-\end{figure}
-\subsection{Hiệu chuẩn cảm biến}
-
-Trong bất kỳ hệ thống đo lường nào, chất lượng dữ liệu đầu vào quyết định trực
-tiếp đến hiệu năng xử lý và độ tin cậy của kết quả đầu ra. Các mô hình học máy,
-đặc biệt trong bối cảnh nhúng với tài nguyên hạn chế, rất nhạy cảm với sai số
-và nhiễu. Do đó, hiệu chuẩn cảm biến không chỉ là bước kỹ thuật đơn thuần mà
-còn mang ý nghĩa khoa học quan trọng: nó đảm bảo rằng dữ liệu thu thập được
-phản ánh đúng hiện tượng vật lý, hạn chế tối đa sai lệch hệ thống và định lượng
-rõ ràng các yếu tố ngẫu nhiên, qua đó nâng cao khả năng tổng quát hóa của mô
-hình.
-
-Mặc dù các cảm biến thương mại thường được nhà sản xuất hiệu chuẩn ở mức cơ
-bản, nhưng sự khác biệt về môi trường, cách gắn lắp, và độ trôi theo thời gian
-vẫn tạo ra những sai lệch đáng kể. Trong nghiên cứu này, cảm biến được hiệu
-chuẩn theo hai hướng: (i) loại bỏ sai số hệ thống cố hữu, và (ii) phân tích,
-định lượng các thành phần nhiễu ngẫu nhiên.
-
-\textbf{Hiệu chuẩn sai số hệ thống.} Sai số hệ thống bao gồm độ lệch offset, sai số độ nhạy và sai số giao thoa trục (cross-axis). Để hiệu chỉnh, tác giả sử dụng gia tốc trọng trường như một tín hiệu chuẩn có giá trị tuyệt đối ổn định. Khi đặt cảm biến ở trạng thái tĩnh và xoay lần lượt để các trục X, Y, Z hướng lên hoặc xuống vuông góc với mặt phẳng ngang, giá trị lý tưởng phải là $\pm1g$. Bằng cách đo tại sáu vị trí này, có thể xác định được đường cong đặc trưng của từng trục, từ đó hiệu chỉnh offset (xác định $0g$ chính xác) và scale factor (tuyến tính hóa độ nhạy). Cách tiếp cận này đảm bảo rằng dữ liệu đầu ra từ mỗi trục gia tốc bám sát hiện tượng vật lý, hạn chế tối đa sự sai lệch tích lũy khi tích hợp dữ liệu trong các thuật toán phân loại.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{images/allan.png}
-    \caption{Minh hoạ kết quả phân tích đường cong Allan}
-    \label{allan}
-\end{figure}
-
-\textbf{Phân tích sai số ngẫu nhiên.} Bên cạnh sai số hệ thống, cảm biến còn chịu ảnh hưởng của nhiễu ngẫu nhiên mà không thể loại bỏ bằng hiệu chuẩn tĩnh. Để đánh giá các thành phần này, tác giả sử dụng phương pháp phương sai Allan \cite{allan}, một công cụ kinh điển trong phân tích ổn định tín hiệu và được ứng dụng rộng rãi trong lĩnh vực quán tính học. Phương pháp này cho phép phân tách và định lượng các loại nhiễu như nhiễu trắng (white noise), trôi ngẫu nhiên (random walk), và nhiễu lượng tử (quantization noise), dựa trên độ dốc đặc trưng ở từng miền thời gian trong biểu đồ log-log.
-
-Trong thí nghiệm, cảm biến được cố định trong môi trường nhiệt độ ổn định, hoạt
-động ở tần số lấy mẫu 10 Hz và dải đo $\pm 2g$, thu được tổng cộng 1.211.210
-mẫu liên tục. Kết quả biểu diễn trong Hình~\ref{allan_real} cho thấy thành phần
-nhiễu trội là nhiễu lượng tử, thể hiện bằng độ dốc $-1$ trong miền thời gian
-ngắn của đồ thị Allan. Phát hiện này có ý nghĩa thực tiễn: do dữ liệu chủ yếu
-chịu ảnh hưởng bởi nhiễu lượng tử, các phương pháp lọc tuyến tính đơn giản (như
-trung bình trượt hoặc bộ lọc thông thấp bậc thấp) là đủ để cải thiện chất lượng
-tín hiệu, thay vì phải áp dụng các kỹ thuật lọc phức tạp vốn tiêu tốn tài
-nguyên xử lý.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{images/allan_real.png}
-    \caption{Biểu đồ phương sai Allan của trục X}
-    \label{allan_real}
-\end{figure}
-
-Việc hiệu chuẩn cảm biến theo hai bước nêu trên giúp hệ thống đạt được hai mục
-tiêu quan trọng: (i) loại bỏ sai số hệ thống để dữ liệu phản ánh trung thực
-hiện tượng vật lý, và (ii) định lượng đặc tính nhiễu nhằm lựa chọn phương pháp
-lọc tối ưu, cân bằng giữa chất lượng tín hiệu và tiêu thụ năng lượng. Quan
-trọng hơn, quá trình này nâng cao độ tin cậy của toàn bộ nghiên cứu: mô hình
-học máy được huấn luyện trên dữ liệu chuẩn hóa, ít sai lệch, từ đó tăng khả
-năng tổng quát khi áp dụng trên các thiết bị đeo thực tế khác nhau. Nhờ vậy,
-nghiên cứu không chỉ dừng lại ở việc xây dựng một nguyên mẫu, mà còn khẳng định
-được giá trị khoa học ở mức cao hơn: dữ liệu và mô hình có khả năng tái sử
-dụng, mở rộng và thích ứng trong nhiều bối cảnh ứng dụng khác nhau.
-
-\textbf{Lọc nhiễu bằng bộ lọc Kalman.}
-Để xử lý nhiễu trong dữ liệu cảm biến, đặc biệt là nhiễu trắng và nhiễu lượng tử vốn chiếm ưu thế theo phân tích Allan, tác giả lựa chọn bộ lọc Kalman \cite{kalman}. Khác với các bộ lọc số cổ điển như trung bình trượt hoặc bộ lọc thông thấp FIR/IIR chỉ đơn thuần làm trơn tín hiệu, Kalman là một bộ lọc đệ quy dựa trên lý thuyết ước lượng Bayes. Nó có khả năng ước lượng trạng thái tối ưu của hệ thống từ chuỗi quan sát bị nhiễu, đồng thời duy trì khả năng thích ứng theo thời gian mà không cần lưu trữ toàn bộ dữ liệu lịch sử.
-
-\textbf{Lý do lựa chọn Kalman.} So với moving average (dễ gây trễ tín hiệu) hay Butterworth low-pass (cần bậc lọc cao, tốn tài nguyên), Kalman phù hợp hơn cho hệ thống nhúng vì ba lý do: (i) hoạt động theo cơ chế cập nhật đệ quy, tiết kiệm bộ nhớ và chi phí tính toán; (ii) cho phép cân bằng động giữa độ tin cậy của mô hình và tín hiệu đo; (iii) hiệu quả đặc biệt với dữ liệu nhiễu trắng và nhiễu lượng tử, vốn đã được xác định chiếm ưu thế. Điều này giúp tín hiệu sau lọc vừa mượt, vừa bảo toàn các đặc trưng quan trọng để phân loại tư thế ngủ.
-
-\textbf{Lựa chọn tham số.} Trong bộ lọc Kalman, ma trận hiệp phương sai quá trình ($Q$) và đo lường ($R$) được xác định từ thực nghiệm. Với dữ liệu cảm biến ở tần số lấy mẫu 10 Hz, $R$ được ước lượng dựa trên phương sai nhiễu trắng từ phân tích Allan, trong khi $Q$ được chọn nhỏ hơn nhằm giả định trạng thái hệ thống thay đổi chậm theo thời gian (phù hợp với chuyển động cơ thể khi ngủ). Ma trận $P$ ban đầu được đặt gần bằng $R$ để phản ánh độ tin cậy trung bình ở giai đoạn khởi tạo, sau đó được cập nhật động theo từng bước lặp.
-
-\textbf{Kết quả thực nghiệm.} Sau khi áp dụng bộ lọc Kalman trực tiếp tại vi điều khiển, tín hiệu đầu ra trở nên mượt và ổn định hơn, loại bỏ phần lớn dao động tức thời do nhiễu mà không gây trễ đáng kể. Hình~\ref{kalman} minh họa dữ liệu trục X trước và sau lọc, cho thấy biên độ dao động được làm giảm trong khi các biến thiên chính của tư thế vẫn được giữ nguyên. Kết quả này chứng tỏ Kalman không chỉ cải thiện chất lượng dữ liệu mà còn giúp duy trì đặc tính động học quan trọng, đảm bảo độ chính xác cho giai đoạn phân loại mô hình TinyML.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{images/kalman.png}
-    \caption{Kết quả bộ lọc Kalman cho dữ liệu trục X của cảm biến gia tốc}
-    \label{kalman}
-\end{figure}
-
-\subsection{Xây dựng phần mềm ứng dụng}
-
-Phần mềm ứng dụng trong nghiên cứu này không chỉ đơn thuần là công cụ trực quan
-hoá dữ liệu cảm biến, mà còn được thiết kế như một mắt xích trọng yếu trong
-toàn bộ pipeline từ thu thập, truyền tải, lưu trữ, cho đến huấn luyện và triển
-khai mô hình học máy. Cách tiếp cận này đảm bảo rằng dữ liệu thu nhận từ môi
-trường thực tế được xử lý nhất quán, có khả năng tái sử dụng và dễ dàng tích
-hợp với các framework học máy phổ biến. So với các hệ thống Home Sleep Testing
-(HST) thương mại thường đóng kín và khó tùy biến, ứng dụng của chúng tôi đặt
-trọng tâm vào tính mở, khả năng cấu hình, và khả năng mở rộng để đáp ứng yêu
-cầu của cả nghiên cứu học thuật lẫn triển khai lâm sàng. Trong giai đoạn đầu,
-kiến trúc phân tầng được xây dựng nhằm tách biệt rõ chức năng của từng thành
-phần:
-
-\textbf{Thiết bị nhúng (device):} cảm biến gia tốc trên kit thu nhận tín hiệu thô, được vi xử lý xử lý sơ bộ và truyền qua giao thức \textit{Bluetooth Low Energy (BLE)}.
-
-\textbf{Kết nối BLE - Ứng dụng di động:} ứng dụng trên điện thoại thông minh thiết lập liên kết BLE để nhận dữ liệu theo thời gian thực. Bên cạnh việc hiển thị trực quan tín hiệu trên màn hình, ứng dụng còn cho phép người dùng cấu hình tham số thiết bị (tần số lấy mẫu, thời lượng ghi, định dạng dữ liệu).
-
-\textbf{Ứng dụng - Máy chủ (server):} dữ liệu cảm biến được đồng bộ về server qua kết nối Internet. Server lưu trữ dữ liệu trong cơ sở dữ liệu quan hệ và cung cấp giao diện quản lý thí nghiệm, gắn nhãn dữ liệu và phân quyền truy cập.
-
-\textbf{Xuất dữ liệu - Định dạng CSV:} để phục vụ cho giai đoạn phân tích và huấn luyện, hệ thống cho phép xuất dữ liệu dưới dạng chuẩn CSV. Dữ liệu này bao gồm chuỗi tín hiệu thô, nhãn tư thế, và siêu dữ liệu (thời gian, ID thiết bị, thông số cấu hình).
-
-\textbf{Huấn luyện mô hình học máy:} dữ liệu CSV sau khi được làm sạch và tiền xử lý được đưa vào pipeline huấn luyện mô hình (Python/Scikit-learn/TensorFlow). Các mô hình được đánh giá ngoại tuyến (offline) trước khi lựa chọn phương án tối ưu để triển khai trên thiết bị nhúng.
-
-Cách tiếp cận phân tầng này đảm bảo rằng dữ liệu được thu thập từ môi trường
-thực tế được lưu trữ một cách nhất quán, có thể tái sử dụng và dễ dàng tích hợp
-vào các framework học máy phổ biến. Đồng thời, nó tạo điều kiện cho việc mở
-rộng hệ thống: sau giai đoạn huấn luyện, mô hình tối ưu có thể được đưa ngược
-trở lại ứng dụng để kiểm chứng trong thời gian thực trên thiết bị.
-
-\textbf{Các công nghệ và thành phần sử dụng được tóm tắt như sau:}
-
-Ứng dụng được xây dựng bằng ngôn ngữ lập trình \texttt{Dart} và phát triển trên
-nền tảng \texttt{Flutter}, cho phép triển khai hiệu quả trên hệ điều hành
-\texttt{Android}. Về mặt giao tiếp phần cứng, ứng dụng sử dụng chuẩn
-\textit{Bluetooth Low Energy (BLE)} nhằm tối ưu hóa tiêu thụ năng lượng và
-bảo đảm kết nối ổn định giữa thiết bị và điện thoại di động.
-Các chức năng chính của ứng dụng bao gồm: thiết lập kết nối với thiết bị đeo,
-thu nhận dữ liệu cảm biến, hiển thị tín hiệu theo thời gian thực, lưu trữ dữ liệu
-có cấu trúc, đồng thời hỗ trợ cá nhân hóa trải nghiệm người dùng thông qua các
-tùy chọn cấu hình và quản lý hồ sơ cá nhân.
+Dựa trên yêu cầu bài toán, tác giả xác định được các yêu cầu của phần mềm như
+Bảng~\ref{tab:app_features}. Ngoài ra, các yêu cầu phi chức năng cũng được tác
+giả chú ý như là bảo mật thông tin, thời gian phản hồi hệ thống.
 
 \begin{table}[htbp]
     \centering
@@ -738,33 +653,19 @@ tùy chọn cấu hình và quản lý hồ sơ cá nhân.
     \label{tab:app_features}
     \begin{tabularx}{\textwidth}{|l|l|X|}
         \hline
-        \textbf{Nhóm} & \textbf{Chức năng}              & \textbf{Mô tả}                                                                   \\ \hline
-        \multirow{3}{*}{Bảo mật}
-                      & Đăng ký                         & Người dùng đăng kí thông tin và được gửi xác thực qua email                      \\ \cline{2-3}
-                      & Đăng nhập                       & Sử dụng tài khoản mật khẩu đã được đăng ký để đăng nhập vào hệ thống             \\ \cline{2-3}
-                      & Quên mật khẩu                   & Lấy lại tài khoản của người dùng                                                 \\ \hline
-        \multirow{3}{*}{Chức năng chung}
-                      & Kết nối Bluetooth               & Kết nối ứng dụng với phần cứng thông qua BLE                                     \\ \cline{2-3}
-                      & Chọn cảm biến                   & Lựa chọn cảm biến như (gia tốc, âm thanh, \ldots)                                \\ \cline{2-3}
-                      & Câu hỏi STOPBANG                & Trả lời câu hỏi STOP BANG để đánh giá OSA và hiển thị lịch sử các lần trả lời    \\ \cline{2-3}
-                      & Theo dõi thông tin từ cảm biến  & Dữ liệu thời gian thực thông qua màn hình giao diện và có đánh giá về tư thế ngủ \\ \cline{2-3}
-                      & Chatbot y tế                    & Chatbot xây dựng trên bộ câu hỏi 2000 câu về y học giấc ngủ và công nghệ RAG     \\ \hline
-        \multirow{3}{*}{Cá nhân hóa}
-                      & Đổi thông tin cá nhân, mật khẩu & Sửa đổi thông tin cá nhân trên ứng dụng                                          \\ \cline{2-3}
-                      & Thêm người dùng phụ             & Thêm người dùng phụ ví dụ trong cùng 1 gia đình                                  \\ \cline{2-3}
-                      & Đăng xuất                       & Thoát khỏi ứng dụng                                                              \\ \hline
+        \textbf{Nhóm} & \textbf{Chức năng}             & \textbf{Mô tả}                                                                \\ \hline
+        \multirow{2}{*}{Xác thực}
+                      & Đăng ký                        & Người dùng đăng kí thông tin và xác thực qua email, sđt                       \\ \cline{2-3}
+                      & Đăng nhập                      & Sử dụng tài khoản mật khẩu đã được đăng ký để đăng nhập vào hệ thống          \\ \cline{2-3}
+                      & Quên mật khẩu                  & Lấy lại tài khoản của người dùng                                              \\ \hline
+        \multirow{2}{*}{Ứng dụng}
+                      & Kết nối Bluetooth              & Kết nối ứng dụng với phần cứng thông qua BLE                                  \\ \cline{2-3}
+                      & Chọn cảm biến                  & Lựa chọn cảm biến như (gia tốc, âm thanh)                                     \\ \cline{2-3}
+                      & Câu hỏi STOPBANG, Epworth      & Trả lời câu hỏi STOP BANG để đánh giá OSA và hiển thị lịch sử các lần trả lời \\ \cline{2-3}
+                      & Theo dõi thông tin từ cảm biến & Hiển thị dữ liệu thời gian thực thông qua các biểu đồ                         \\ \cline{2-3}
+                      & Chatbot y tế                   & Chatbot xây dựng trên bộ câu hỏi 2000 câu về y học giấc ngủ và công nghệ RAG  \\ \hline                                                          \\ \hline
     \end{tabularx}
 \end{table}
-
-Ứng dụng được thiết kế xoay quanh ba nhóm chức năng chính như minh họa trong
-Bảng~\ref{tab:app_features}. Trước hết, nhóm \textbf{bảo mật} tập trung vào các thao tác
-đăng nhập, xác thực và khôi phục tài khoản, nhằm đảm bảo an toàn dữ liệu và bảo vệ quyền
-riêng tư của người dùng. Tiếp theo, nhóm \textbf{chức năng chung} bao gồm các tính năng
-cốt lõi như kết nối với thiết bị phần cứng, thu thập tín hiệu từ cảm biến và hiển thị dữ liệu
-theo thời gian thực, qua đó tạo nên cầu nối trực tiếp giữa người dùng và hệ thống nhúng.
-Cuối cùng, nhóm \textbf{cá nhân hoá} cho phép theo dõi các chỉ số sức khỏe, khai báo bảng
-hỏi STOP-BANG, cũng như lưu trữ hồ sơ người dùng, góp phần xây dựng nền tảng dữ liệu
-cá nhân phục vụ phân tích lâm sàng và huấn luyện mô hình học máy trong tương lai.
 
 \subsubsection*{Kiến trúc phần mềm}
 Ứng dụng sử dụng mô hình \textbf{BLoC (Business Logic Component)} để tách biệt giao diện

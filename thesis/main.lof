@@ -31,32 +31,29 @@
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Bố trí mạch in hai mặt của bo mạch: (a) lớp trên; (b) lớp dưới}}{50}{figure.caption.45}%
 \contentsline {figure}{\numberline {2.17}{\ignorespaces Mô hình mạch 3D: (a) lớp trên; (b) lớp dưới}}{50}{figure.caption.46}%
 \contentsline {figure}{\numberline {2.18}{\ignorespaces Mạch hoàn chỉnh}}{51}{figure.caption.47}%
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Lưu đồ luồng gửi thông tin BLE}}{56}{figure.caption.52}%
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Minh hoạ kết quả phân tích đường cong Allan}}{57}{figure.caption.53}%
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Biểu đồ phương sai Allan của trục X}}{57}{figure.caption.54}%
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Minh hoạ kết quả phân tích đường cong Allan}}{59}{figure.caption.55}%
-\contentsline {figure}{\numberline {2.23}{\ignorespaces Biểu đồ phương sai Allan của trục X}}{59}{figure.caption.56}%
-\contentsline {figure}{\numberline {2.24}{\ignorespaces Kết quả bộ lọc Kalman cho dữ liệu trục X của cảm biến gia tốc}}{61}{figure.caption.57}%
-\contentsline {figure}{\numberline {2.25}{\ignorespaces Cấu trúc kiến trúc BLoC trong ứng dụng Flutter}}{64}{figure.caption.59}%
-\contentsline {figure}{\numberline {2.26}{\ignorespaces Mô hình tích hợp giữa mạng cảm biến và cấu trúc dữ liệu đám mây}}{68}{figure.caption.62}%
-\contentsline {figure}{\numberline {2.27}{\ignorespaces Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}}{72}{figure.caption.63}%
-\contentsline {figure}{\numberline {2.28}{\ignorespaces Phân bố thời gian thực hiện đối với dự án học máy}}{73}{figure.caption.64}%
-\contentsline {figure}{\numberline {2.29}{\ignorespaces Minh họa mặt siêu phẳng phân tách hai lớp trong SVM}}{76}{figure.caption.65}%
-\contentsline {figure}{\numberline {2.30}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-One}}{77}{figure.caption.66}%
-\contentsline {figure}{\numberline {2.31}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-Rest}}{77}{figure.caption.67}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Sơ đồ tóm tắt quy trình hoạt động BLE–BMI270 của đoạn mã nguồn~\ref {lst:ble_bmi270}}}{56}{figure.caption.50}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces So sánh tín hiệu trục Z trước và sau lọc Kalman}}{57}{figure.caption.52}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Kiến trúc tổng thể của hệ thống}}{59}{figure.caption.53}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Cấu trúc kiến trúc BLoC trong ứng dụng Flutter}}{61}{figure.caption.56}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Mô hình tích hợp giữa mạng cảm biến và cấu trúc dữ liệu đám mây}}{64}{figure.caption.59}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}}{69}{figure.caption.60}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Phân bố thời gian thực hiện đối với dự án học máy}}{70}{figure.caption.61}%
+\contentsline {figure}{\numberline {2.26}{\ignorespaces Minh họa mặt siêu phẳng phân tách hai lớp trong SVM}}{73}{figure.caption.62}%
+\contentsline {figure}{\numberline {2.27}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-One}}{74}{figure.caption.63}%
+\contentsline {figure}{\numberline {2.28}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-Rest}}{74}{figure.caption.64}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Hệ thống thử nghiệm: (a) vị trí đặt thiết bị cảm biến; (b) minh hoạ thực nghiệm thực tế trong tư thế nằm.}}{83}{figure.caption.68}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Giao diện chức năng đăng ký và đăng nhập}}{84}{figure.caption.69}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Giao diện trang chủ}}{84}{figure.caption.70}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Giao diện màn hình danh sách BLE và chi tiết các dịch vụ kết nối với phần cứng}}{85}{figure.caption.71}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Giao diện chức năng chatbot và bộ câu hỏi tầm soát}}{86}{figure.caption.72}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Giao diện hiển thị dữ liệu gia tốc ba trục}}{87}{figure.caption.74}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Mô phỏng thực nghiệm thực tế}}{88}{figure.caption.75}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Phân bố dữ liệu cảm biến theo ba trục $x$, $y$, $z$ ứng với các tư thế ngủ khác nhau.}}{90}{figure.caption.76}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Phân bố số lượng mẫu trong tập huấn luyện theo từng tư thế.}}{91}{figure.caption.77}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Ma trận tương quan giữa các đặc trưng trích xuất. Cường độ màu thể hiện hệ số tương quan Pearson. Màu đỏ là tương quan dương mạnh, xanh là tương quan âm mạnh, xám là không tương quan.}}{95}{figure.caption.81}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Phân tích giá trị SHAP nhằm xác định tầm quan trọng của các đặc trưng trong mô hình phân loại tư thế ngủ. Các đặc trưng từ trục $z$ chiếm ưu thế về mức ảnh hưởng đến đầu ra mô hình.}}{97}{figure.caption.82}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Ma trận nhầm lẫn (confusion matrix) của năm mô hình phân loại trong kịch bản S1. GB và RF cho kết quả chính xác cao nhất. Mô hình NN được huấn luyện trực tiếp trên dữ liệu thô.}}{101}{figure.caption.86}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Hệ thống thử nghiệm: (a) vị trí đặt thiết bị cảm biến; (b) minh hoạ thực nghiệm thực tế trong tư thế nằm.}}{80}{figure.caption.65}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Giao diện chức năng đăng ký và đăng nhập}}{81}{figure.caption.66}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Giao diện trang chủ}}{81}{figure.caption.67}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Giao diện màn hình danh sách BLE và chi tiết các dịch vụ kết nối với phần cứng}}{82}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Giao diện chức năng chatbot và bộ câu hỏi tầm soát}}{83}{figure.caption.69}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Giao diện hiển thị dữ liệu gia tốc ba trục}}{84}{figure.caption.71}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Mô phỏng thực nghiệm thực tế}}{85}{figure.caption.72}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Phân bố dữ liệu cảm biến theo ba trục $x$, $y$, $z$ ứng với các tư thế ngủ khác nhau.}}{87}{figure.caption.73}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Phân bố số lượng mẫu trong tập huấn luyện theo từng tư thế.}}{88}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Ma trận tương quan giữa các đặc trưng trích xuất. Cường độ màu thể hiện hệ số tương quan Pearson. Màu đỏ là tương quan dương mạnh, xanh là tương quan âm mạnh, xám là không tương quan.}}{92}{figure.caption.78}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Phân tích giá trị SHAP nhằm xác định tầm quan trọng của các đặc trưng trong mô hình phân loại tư thế ngủ. Các đặc trưng từ trục $z$ chiếm ưu thế về mức ảnh hưởng đến đầu ra mô hình.}}{94}{figure.caption.79}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Ma trận nhầm lẫn (confusion matrix) của năm mô hình phân loại trong kịch bản S1. GB và RF cho kết quả chính xác cao nhất. Mô hình NN được huấn luyện trực tiếp trên dữ liệu thô.}}{98}{figure.caption.83}%
 \addvspace {10\p@ }
 \contentsfinish 
 \contentsfinish 

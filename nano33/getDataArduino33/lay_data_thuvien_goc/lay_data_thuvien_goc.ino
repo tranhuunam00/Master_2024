@@ -3,6 +3,40 @@
 
 BMI270 imu;
 
+//---------------------------------------------
+// Cấu trúc Kalman Filter 1 chiều
+//---------------------------------------------
+struct KalmanFilter {
+  float Q;   // process noise covariance
+  float R;   // measurement noise covariance
+  float x;   // estimated value
+  float P;   // estimation error covariance
+  float K;   // Kalman gain
+};
+
+void kalmanInit(KalmanFilter &kf, float Q, float R, float initValue) {
+  kf.Q = Q;
+  kf.R = R;
+  kf.x = initValue;
+  kf.P = 1.0;
+  kf.K = 0.0;
+}
+
+float kalmanUpdate(KalmanFilter &kf, float measurement) {
+  // Prediction update
+  kf.P += kf.Q;
+  // Measurement update
+  kf.K = kf.P / (kf.P + kf.R);
+  kf.x = kf.x + kf.K * (measurement - kf.x);
+  kf.P = (1 - kf.K) * kf.P;
+  return kf.x;
+}
+
+//---------------------------------------------
+// Kalman cho từng trục
+//---------------------------------------------
+KalmanFilter kfx, kfy, kfz;
+
 void setup() {
   Serial.begin(115200);
   while (!Serial);
@@ -14,7 +48,6 @@ void setup() {
     Serial.println("Error: BMI270 not detected!");
     while (1);
   }
-
   Serial.println("BMI270 connected!");
 
   //--- Cấu hình gia tốc ---
@@ -24,59 +57,35 @@ void setup() {
   config.cfg.acc.range = BMI2_ACC_RANGE_2G;
   config.cfg.acc.bwp = BMI2_ACC_NORMAL_AVG4;
   config.cfg.acc.filter_perf = BMI2_POWER_OPT_MODE;
+  imu.setConfig(config);
 
-  if (imu.setConfig(config) == BMI2_OK)
-    Serial.println("Accelerometer configured successfully!");
-  else
-    Serial.println("Failed to configure accelerometer!");
+  //--- Khởi tạo Kalman ---
+  kalmanInit(kfx, 0.02, 0.03, 0.0);
+  kalmanInit(kfy, 0.02, 0.03, 0.0);
+  kalmanInit(kfz, 0.02, 0.03, 0.0);
 
-  delay(200);
-
-  //--- Đọc lại cấu hình ---
-  if (imu.getConfig(&config) == BMI2_OK) {
-    Serial.println("Current Accelerometer Config:");
-    Serial.print("  Range setting = ");
-    switch (config.cfg.acc.range) {
-      case BMI2_ACC_RANGE_2G:  Serial.println("±2g"); break;
-      case BMI2_ACC_RANGE_4G:  Serial.println("±4g"); break;
-      case BMI2_ACC_RANGE_8G:  Serial.println("±8g"); break;
-      case BMI2_ACC_RANGE_16G: Serial.println("±16g"); break;
-      default: Serial.println("Unknown"); break;
-    }
-
-    Serial.print("  ODR setting = ");
-    switch (config.cfg.acc.odr) {
-      case BMI2_ACC_ODR_0_78HZ: Serial.println("0.78 Hz"); break;
-      case BMI2_ACC_ODR_1_56HZ: Serial.println("1.56 Hz"); break;
-      case BMI2_ACC_ODR_3_12HZ: Serial.println("3.12 Hz"); break;
-      case BMI2_ACC_ODR_6_25HZ: Serial.println("6.25 Hz"); break;
-      case BMI2_ACC_ODR_12_5HZ: Serial.println("12.5 Hz"); break;
-      case BMI2_ACC_ODR_25HZ:   Serial.println("25 Hz"); break;
-      case BMI2_ACC_ODR_50HZ:   Serial.println("50 Hz"); break;
-      case BMI2_ACC_ODR_100HZ:  Serial.println("100 Hz"); break;
-      default: Serial.println("Unknown"); break;
-    }
-  } else {
-    Serial.println("Failed to read accelerometer config!");
-  }
+  Serial.println("System ready. Printing raw vs filtered data...");
+  Serial.println("RawX,RawY,RawZ,KalX,KalY,KalZ");
 }
 
-static float prevX = 0, prevY = 0, prevZ = 0;
+//---------------------------------------------
 void loop() {
   imu.getSensorData();
-  float dx = abs(imu.data.accelX - prevX);
-  float dy = abs(imu.data.accelY - prevY);
-  float dz = abs(imu.data.accelZ - prevZ);
-  if (dx > 0.02 || dy > 0.02 || dz > 0.02) {
+  float x = imu.data.accelX;
+  float y = imu.data.accelY;
+  float z = imu.data.accelZ;
 
-    Serial.print(imu.data.accelX, 2);
-    Serial.print(',');
-    Serial.print(imu.data.accelY, 2);
-    Serial.print(',');
-    Serial.println(imu.data.accelZ, 2);
-    prevX = imu.data.accelX;
-    prevY = imu.data.accelY;
-    prevZ = imu.data.accelZ;
-  }
-  delay(100);
+  float x_kal = kalmanUpdate(kfx, x);
+  float y_kal = kalmanUpdate(kfy, y);
+  float z_kal = kalmanUpdate(kfz, z);
+
+  // In dữ liệu cho Serial Plotter / Python
+  // Serial.print(x, 3); Serial.print(",");
+  // Serial.print(y, 3); Serial.print(",");
+  Serial.print(z, 3); Serial.print(",");
+  // Serial.print(x_kal, 3); Serial.print(",");
+  // Serial.print(y_kal, 3); Serial.print(",");
+  Serial.println(z_kal, 3);
+
+  delay(100); // 10 Hz
 }

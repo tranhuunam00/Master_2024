@@ -6,14 +6,14 @@
 \contentsline {table}{\numberline {1.4}{\ignorespaces Các bước chính trong bài toán sử dụng học máy trên biên}}{26}{table.caption.20}%
 \contentsline {table}{\numberline {1.5}{\ignorespaces Hiệu quả mô hình học máy và khả năng triển khai biên trong nhận diện tư thế ngủ}}{31}{table.caption.25}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Các nhóm chức năng chính của ứng dụng}}{63}{table.caption.58}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Các nhóm chức năng chính của ứng dụng}}{60}{table.caption.55}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}}{93}{table.caption.78}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}}{96}{table.caption.83}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Các mô hình học máy và siêu tham số sử dụng trong nghiên cứu}}{98}{table.caption.84}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Độ chính xác phân loại của các mô hình trong 8 kịch bản}}{99}{table.caption.85}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Kích thước mô hình (KB) trong 8 kịch bản}}{101}{table.caption.87}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces So sánh hiệu năng Logistic Regression và Neural Network trên nRF52840}}{108}{table.caption.88}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}}{90}{table.caption.75}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}}{93}{table.caption.80}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Các mô hình học máy và siêu tham số sử dụng trong nghiên cứu}}{95}{table.caption.81}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Độ chính xác phân loại của các mô hình trong 8 kịch bản}}{96}{table.caption.82}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Kích thước mô hình (KB) trong 8 kịch bản}}{98}{table.caption.84}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces So sánh hiệu năng Logistic Regression và Neural Network trên nRF52840}}{105}{table.caption.85}%
 \addvspace {10\p@ }
 \contentsfinish 
 \contentsfinish 
