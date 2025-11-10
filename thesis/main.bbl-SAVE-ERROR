@@ -5142,43 +5142,17 @@
       \field{title}{SparkFun BMI270 Arduino Library — Driver for the Bosch BMI270 6-DoF IMU}
       \field{year}{2023}
     \endentry
-    \entry{cramer2002logistic}{report}{}{}
-      \name{author}{1}{}{%
-        {{hash=0b33b72cdad0bb7a5981e1a344c51754}{%
-           family={Cramer},
-           familyi={C\bibinitperiod},
-           given={J.\bibnamedelimi S.},
-           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Tinbergen Institute}%
-      }
-      \strng{namehash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{fullhash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{fullhashraw}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{bibnamehash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{authorbibnamehash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{authornamehash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{authorfullhash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{authorfullhashraw}{0b33b72cdad0bb7a5981e1a344c51754}
+    \entry{flutter_blue_plus}{software}{}{}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{month}{1}
-      \field{note}{Available at SSRN: \url{https://doi.org/10.2139/ssrn.360300}}
-      \field{number}{TI 2001-119/4}
-      \field{title}{The Origins of Logistic Regression}
-      \field{type}{Tinbergen Institute Discussion Paper}
-      \field{year}{2002}
-      \verb{doi}
-      \verb 10.2139/ssrn.360300
-      \endverb
+      \field{note}{Accessed: 2025-11-09}
+      \field{title}{flutter\_blue\_plus – Bluetooth Low Energy plugin for Flutter}
       \verb{urlraw}
-      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=360300
+      \verb https://pub.dev/packages/flutter_blue_plus
       \endverb
       \verb{url}
-      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=360300
+      \verb https://pub.dev/packages/flutter_blue_plus
       \endverb
     \endentry
     \entry{cortes1995svm}{article}{}{}
@@ -5223,6 +5197,16 @@
       \verb{url}
       \verb https://doi.org/10.1007/BF00994018
       \endverb
+    \endentry
+    \entry{MLCoBan2017_SVM}{misc}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://machinelearningcoban.com/2017/04/09/smv/}}
+      \field{month}{4}
+      \field{note}{Accessed: 2025-11-09}
+      \field{title}{Bài 19: Support Vector Machine}
+      \field{year}{2017}
     \endentry
     \entry{breiman2001random}{article}{}{}
       \name{author}{1}{}{%

@@ -5155,45 +5155,6 @@
       \verb https://pub.dev/packages/flutter_blue_plus
       \endverb
     \endentry
-    \entry{cramer2002logistic}{report}{}{}
-      \name{author}{1}{}{%
-        {{hash=0b33b72cdad0bb7a5981e1a344c51754}{%
-           family={Cramer},
-           familyi={C\bibinitperiod},
-           given={J.\bibnamedelimi S.},
-           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Tinbergen Institute}%
-      }
-      \strng{namehash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{fullhash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{fullhashraw}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{bibnamehash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{authorbibnamehash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{authornamehash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{authorfullhash}{0b33b72cdad0bb7a5981e1a344c51754}
-      \strng{authorfullhashraw}{0b33b72cdad0bb7a5981e1a344c51754}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{1}
-      \field{note}{Available at SSRN: \url{https://doi.org/10.2139/ssrn.360300}}
-      \field{number}{TI 2001-119/4}
-      \field{title}{The Origins of Logistic Regression}
-      \field{type}{Tinbergen Institute Discussion Paper}
-      \field{year}{2002}
-      \verb{doi}
-      \verb 10.2139/ssrn.360300
-      \endverb
-      \verb{urlraw}
-      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=360300
-      \endverb
-      \verb{url}
-      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=360300
-      \endverb
-    \endentry
     \entry{cortes1995svm}{article}{}{}
       \name{author}{2}{}{%
         {{hash=17acda211a651e90e228f1776ee07818}{%
@@ -5236,6 +5197,16 @@
       \verb{url}
       \verb https://doi.org/10.1007/BF00994018
       \endverb
+    \endentry
+    \entry{MLCoBan2017_SVM}{misc}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://machinelearningcoban.com/2017/04/09/smv/}}
+      \field{month}{4}
+      \field{note}{Accessed: 2025-11-09}
+      \field{title}{Bài 19: Support Vector Machine}
+      \field{year}{2017}
     \endentry
     \entry{breiman2001random}{article}{}{}
       \name{author}{1}{}{%
@@ -5360,57 +5331,6 @@
       \range{pages}{14}
       \verb{doi}
       \verb 10.1109/2.485891
-      \endverb
-    \endentry
-    \entry{lecun2015deep}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
-           family={LeCun},
-           familyi={L\bibinitperiod},
-           given={Yann},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=40a8e4774982146adc2688546f54efb2}{%
-           family={Bengio},
-           familyi={B\bibinitperiod},
-           given={Yoshua},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{%
-           family={Hinton},
-           familyi={H\bibinitperiod},
-           given={Geoffrey},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Nature Publishing Group}%
-      }
-      \strng{namehash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{fullhash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{fullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{bibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{authorbibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{authornamehash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{authorfullhash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{authorfullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Nature}
-      \field{month}{5}
-      \field{number}{7553}
-      \field{title}{Deep learning}
-      \field{volume}{521}
-      \field{year}{2015}
-      \field{pages}{436\bibrangedash 444}
-      \range{pages}{9}
-      \verb{doi}
-      \verb 10.1038/nature14539
-      \endverb
-      \verb{urlraw}
-      \verb https://www.nature.com/articles/nature14539
-      \endverb
-      \verb{url}
-      \verb https://www.nature.com/articles/nature14539
       \endverb
     \endentry
   \enddatalist

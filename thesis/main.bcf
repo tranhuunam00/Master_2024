@@ -2546,12 +2546,11 @@
     <bcf:citekey order="121" intorder="1">uBlox2019_NINA_B3</bcf:citekey>
     <bcf:citekey order="122" intorder="1">SparkFun_BMI270_Library</bcf:citekey>
     <bcf:citekey order="123" intorder="1">flutter_blue_plus</bcf:citekey>
-    <bcf:citekey order="124" intorder="1">cramer2002logistic</bcf:citekey>
-    <bcf:citekey order="125" intorder="1">cortes1995svm</bcf:citekey>
+    <bcf:citekey order="124" intorder="1">cortes1995svm</bcf:citekey>
+    <bcf:citekey order="125" intorder="1">MLCoBan2017_SVM</bcf:citekey>
     <bcf:citekey order="126" intorder="1">breiman2001random</bcf:citekey>
     <bcf:citekey order="127" intorder="1">chen2016xgboost</bcf:citekey>
     <bcf:citekey order="128" intorder="1">jain1996</bcf:citekey>
-    <bcf:citekey order="129" intorder="1">lecun2015deep</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
