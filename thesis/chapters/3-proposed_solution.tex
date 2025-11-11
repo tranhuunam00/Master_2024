@@ -1,5 +1,5 @@
 
-\section{Nghiên cứu, phát triển phần cứng \label{section_overview_propsed_method}}
+\section{Nghiên cứu, phát triển phần cứng }
 
 Trong phần này, tác giả sẽ trình bày các nội dung bao gồm: nghiên cứu, lựa chọn
 vi điều khiển và cảm biến phù hợp; từ đó tiến hành thiết kế sơ đồ nguyên lý, mô
@@ -159,7 +159,7 @@ thiết bị đeo thông minh và học máy tại biên.
 
 % Đối với các ứng dụng yêu cầu tiết kiệm năng lượng, hệ thống còn được trang bị bộ đánh thức ngắt (Wake-up Interrupt Controller - WIC), cho phép đưa bộ vi điều khiển vào chế độ nghỉ bằng cách tắt hầu hết các thành phần không cần thiết, đồng thời duy trì khả năng đánh thức hệ thống khi phát hiện một yêu cầu ngắt. Ngoài ra, cơ chế bảo vệ bộ nhớ cũng được tích hợp nhằm đảm bảo an toàn cho hệ thống, ví dụ như chỉ cho phép truy cập đọc tại một số vùng bộ nhớ hoặc ngăn người dùng truy cập vào các vùng dữ liệu đặc quyền của hệ điều hành hoặc ứng dụng hệ thống.
 
-\subsection{Cảm biến \label{section_overview_propsed_method}}
+\subsection{Cảm biến}
 \label{subsec:cam_bien}
 
 Trong quá trình ngủ, các chuyển động thân thể chủ yếu là chuyển động chậm, với
@@ -280,12 +280,12 @@ trong nhà.
     \label{gatt}
 \end{figure}
 
-BLE tổ chức logic giao tiếp dựa trên mô hình hồ sơ thuộc tính tổng quá (Generic
-Attribute Profile - GATT). GATT quy định cách hai thiết bị BLE trao đổi dữ liệu
-thông qua các đơn vị logic: dịch vụ (services) và đặc tính (characteristics).
-Giao thức nền tảng là Attribute Protocol (ATT). Mỗi dịch vụ, đặc tính được định
-danh bằng mã định danh duy nhất (UUID) 16-bit hoặc 128-bit, với quyền truy cập
-như chỉ đọc, chỉ ghi, hoặc hỗ trợ thông báo.
+BLE tổ chức logic giao tiếp dựa trên mô hình hồ sơ thuộc tính tổng quá
+\gls{gatt}. GATT quy định cách hai thiết bị BLE trao đổi dữ liệu thông qua các
+đơn vị logic: dịch vụ (services) và đặc tính (characteristics). Giao thức nền
+tảng là Attribute Protocol (ATT). Mỗi dịch vụ, đặc tính được định danh bằng mã
+định danh duy nhất (UUID) 16-bit hoặc 128-bit, với quyền truy cập như chỉ đọc,
+chỉ ghi, hoặc hỗ trợ thông báo.
 
 Một điểm quan trọng trong mô hình GATT là tính kết nối độc quyền: tại một thời
 điểm, thiết bị ngoại vi chỉ có thể duy trì một kết nối duy nhất với thiết bị
@@ -456,13 +456,11 @@ Kết quả được thể hiện tại Hình~\ref{fig:schematic}
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/pcb_3d_top.png}
-        \label{fig:pcb_3d_top}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/pcb_3d_bottom.png}
-        \label{fig:pcb_3d_bottom}
     \end{subfigure}
     \caption{Mô hình mạch 3D: (a) lớp trên; (b) lớp dưới}
     \label{fig:pcb_3d}
@@ -517,7 +515,7 @@ chiều nhằm chắc chắn các cấu hình đã được đặt trên phần 
 Quá trình khởi tạo, kết nối và truyền lên thiết bị trung tâm bao gồm các bước
 sau: bao gồm: tạo bản tin quảng bá (advertising), thiết lập cơ chế kết nối/ngắt
 kết nối, cũng như định nghĩa UUID của dịch vụ và đặc tính theo mô hình
-\gls{GATT}.
+\gls{gatt}.
 
 \input{chapters/examples/cauhinh_ble.tex}
 

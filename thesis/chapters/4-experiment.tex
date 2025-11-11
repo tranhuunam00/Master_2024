@@ -60,16 +60,14 @@ sẵn ở phần cứng.
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=0.3\textwidth]{images/ketqua_capquyen.jpg}
-        \label{fig:ketqua_capquyen}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=0.3\textwidth]{images/ketqua_scan.jpg}
-        \label{fig:ketqua_scan}
     \end{subfigure}
     \caption{Màn hình yêu cầu quyền truy cập Bluetooth và danh sách thiết bị đang hoạt động}
-    \label{fig:pcb_dong}
+    \label{fig:ketqua_scan}
 \end{figure}
 
 Khi chọn đọc giá trị cảm biến, ứng dụng di động sẽ tự động truy cập vào đặc
@@ -156,6 +154,33 @@ hình học máy.
 \section{Phân loại tư thế ngủ bằng học máy}
 
 \subsection{Phân tích dữ liệu}
+Sau khi hoàn thành quá trình thu thập dữ liệu của hai kịch bản, tác giả tiến
+hành phân tích các giá trị cảm biến của ba trục. Đâu tiên phân tích độ cân bằng
+dữ liệu như Hình~\ref{fig:ana_balance}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{images/ana_balance_train.png}
+        \label{fig:ana_balance_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{images/ana_balance_test.png}
+        \label{fig:ana_balance_test}
+    \end{subfigure}
+    \caption{Biểu đồ phân bố các nhãn thu được}
+    \label{fig:ana_balance}
+\end{figure}
+
+Hình~\ref{ana_balance} cho thấy phân bố dữ liệu của tập huấn luyện tương đối
+cân bằng. Còn đối với tập kiểm thử, tư thế nằm ngửa và nghiêng trái chiếm đa
+số. Qua đó, cho thấy sự phản ánh dữ liệu đúng như dự kiến của tác giả. Với bộ
+huấn luyện, các nhãn sẽ giữ ở mức cân bằng để tránh tình trạng quá khớp. Còn ở
+tập kiểm thử, các nhãn phản ánh đúng sinh lý của cá nhân khi ngủ, sẽ thường có
+những tư thế quen thuộc chứ ít khi cân bằng thời gian giữa các tư thế.
 
 \begin{figure}[htbp]
     \centering

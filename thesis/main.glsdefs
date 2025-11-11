@@ -1,0 +1,140 @@
+\glsdefs@newdocentry{osa}%
+{%
+name={\acronymfont {\glsentryshort {osa}}},%
+sort={OSA},%
+type={acronym},%
+first={OSA},%
+firstplural={OSAs},%
+text={OSA},%
+plural={OSAs},%
+description={Obstructive Sleep Apnea - Hội chứng ngưng thở khi ngủ do tắc nghẽn},%
+descriptionplural={Obstructive Sleep Apnea - Hội chứng ngưng thở khi ngủ do tắc nghẽn},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Obstructive Sleep Apnea - Hội chứng ngưng thở khi ngủ do tắc nghẽn},%
+longplural={Obstructive Sleep Apnea - Hội chứng ngưng thở khi ngủ do tắc nghẽns},%
+short={OSA},%
+shortplural={OSAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ahi}%
+{%
+name={\acronymfont {\glsentryshort {ahi}}},%
+sort={AHI},%
+type={acronym},%
+first={AHI},%
+firstplural={AHIs},%
+text={AHI},%
+plural={AHIs},%
+description={Apnea-Hypopnea Index - Chỉ số ngưng thở giảm thở},%
+descriptionplural={Apnea-Hypopnea Index - Chỉ số ngưng thở giảm thở},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Apnea-Hypopnea Index - Chỉ số ngưng thở giảm thở},%
+longplural={Apnea-Hypopnea Index - Chỉ số ngưng thở giảm thởs},%
+short={AHI},%
+shortplural={AHIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{psg}%
+{%
+name={\acronymfont {\glsentryshort {psg}}},%
+sort={PSG},%
+type={acronym},%
+first={PSG},%
+firstplural={PSGs},%
+text={PSG},%
+plural={PSGs},%
+description={Polysomnography - Đa ký giấc ngủ},%
+descriptionplural={Polysomnography - Đa ký giấc ngủ},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Polysomnography - Đa ký giấc ngủ},%
+longplural={Polysomnography - Đa ký giấc ngủs},%
+short={PSG},%
+shortplural={PSGs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ble}%
+{%
+name={\acronymfont {\glsentryshort {ble}}},%
+sort={BLE},%
+type={acronym},%
+first={BLE},%
+firstplural={BLEs},%
+text={BLE},%
+plural={BLEs},%
+description={Bluetooth Low Energy - Bluetooth năng lượng thấp},%
+descriptionplural={Bluetooth Low Energy - Bluetooth năng lượng thấp},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Bluetooth Low Energy - Bluetooth năng lượng thấp},%
+longplural={Bluetooth Low Energy - Bluetooth năng lượng thấps},%
+short={BLE},%
+shortplural={BLEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{gatt}%
+{%
+name={\acronymfont {\glsentryshort {gatt}}},%
+sort={GATT},%
+type={acronym},%
+first={GATT},%
+firstplural={GATTs},%
+text={GATT},%
+plural={GATTs},%
+description={Generic Attribute Profile - Đặc điểm cấu hình chung},%
+descriptionplural={Generic Attribute Profile - Đặc điểm cấu hình chung},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Generic Attribute Profile - Đặc điểm cấu hình chung},%
+longplural={Generic Attribute Profile - Đặc điểm cấu hình chungs},%
+short={GATT},%
+shortplural={GATTs},%
+counter={page},%
+parent={},%
+%
+}%
+

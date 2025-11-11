@@ -180,9 +180,8 @@
 \renewcommand{\thealgocf}{\thechapter.\arabic{algocf}}
 
 
-\input{src/glossaries}
 \makeglossaries
-
+\input{glossaries}
 
 
 \begin{document}
@@ -209,6 +208,9 @@
 \listoftables
 \addcontentsline{toc}{chapter}{Danh sách bảng}
 
+\glsaddall
+\printglossary[type=\acronymtype, title={Danh mục ký hiệu, viết tắt}, style=long, nonumberlist, nopostdot]
+\addcontentsline{toc}{chapter}{Danh mục ký hiệu, viết tắt}
 \mainmatter
 
 \changefontsizes[16pt]{13pt}
@@ -234,13 +236,6 @@
 \chapter{Kết luận}
 
 \input{chapters/5-conclusion}
-
-% \input{chapters/7-reference}
-
-% \appendix
-% \addcontentsline{toc}{chapter}{Phụ lục A}
-% \chapter*{Phụ lục A}
-% \input{chapters/8-phuluc}
 
 \newpage
 \printbibliography

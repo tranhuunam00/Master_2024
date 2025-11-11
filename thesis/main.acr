@@ -1,1 +1,20 @@
-\null
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{A}\relax \glsresetentrylist %
+\glossentry{ahi}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{x}}}\glsgroupskip
+\glsgroupheading{B}\relax \glsresetentrylist %
+\glossentry{ble}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{x}}}\glsgroupskip
+\glsgroupheading{G}\relax \glsresetentrylist %
+\glossentry{gatt}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{x}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{42}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{54}}}\glsgroupskip
+\glsgroupheading{O}\relax \glsresetentrylist %
+\glossentry{osa}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{x}}}\glsgroupskip
+\glsgroupheading{P}\relax \glsresetentrylist %
+\glossentry{psg}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{x}}}%
+\end{theglossary}\glossarypostamble
