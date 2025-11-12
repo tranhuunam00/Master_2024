@@ -1,34 +1,17 @@
-\subsection*{Hướng phát triển trong thời gian tới}
 
-Trong giai đoạn nghiên cứu trước, các mô hình học máy như Logistic Regression, Random Forest, Support Vector Machine và Gradient Boosting đã được áp dụng để phân loại tư thế ngủ với độ chính xác cao (lên tới 99.6\% với Gradient Boosting, 98.7\% với Logistic Regression). Đồng thời, một mô hình mạng nơ-ron nông (NN) cũng đã được triển khai thành công trên vi điều khiển Arduino Nano 33 BLE Sense, chứng minh tính khả thi của việc chạy mô hình trực tiếp trên phần cứng nhúng.
+Trong giai đoạn nghiên cứu trước, các mô hình học máy như Logistic Regression,
+Random Forest, Support Vector Machine và Gradient Boosting đã được áp dụng để
+phân loại tư thế ngủ với độ chính xác cao. Đồng thời, một mô hình mạng nơ-ron
+(ANN) cũng đã được triển khai thành công trên phần cứng của nhóm phát triển,
+chứng minh tính khả thi của việc chạy mô hình trực tiếp trên phần cứng nhúng.
 
-Trong giai đoạn tiếp theo, nhóm nghiên cứu sẽ tập trung vào việc:
-\begin{itemize}
-    \item \textbf{Tối ưu mô hình}: Tiếp tục khai thác Logistic Regression do ưu thế về kích thước nhỏ gọn và tốc độ suy luận, đồng thời thử nghiệm các kiến trúc học sâu nhẹ (lightweight deep learning) như CNN, MobileNet hoặc TinyML framework nếu điều kiện phần cứng cho phép;
-    \item \textbf{Phát triển phần cứng}: Tự thiết kế mạch nguyên lý và PCB trên Altium, tích hợp cảm biến, vi điều khiển, module truyền không dây và khối xử lý tín hiệu nhằm xây dựng thiết bị chuyên biệt thay vì phụ thuộc vào bo mạch thương mại;
-    \item \textbf{Mở rộng tín hiệu}: Bổ sung thêm các cảm biến sinh lý (như microphone phát hiện ngáy, cảm biến nhịp thở, nhịp tim, SpO\textsubscript{2}) để từng bước hướng tới đánh giá chỉ số AHI (Apnea–Hypopnea Index) – thước đo quan trọng trong chẩn đoán hội chứng ngưng thở khi ngủ (OSA);
-    \item \textbf{Cải tiến phần mềm}: Bổ sung kết nối Wi-Fi/BLE Mesh để dữ liệu được gửi trực tiếp lên server, hạn chế việc phụ thuộc vào ứng dụng di động phải chạy liên tục, từ đó nâng cao trải nghiệm người dùng và tiết kiệm năng lượng.
-\end{itemize}
+Kèm với hai mô hình đã chạy ổn định trên thiết bị phần cứng của nhóm thiết kế,
+tác giả tự đánh giá các kết quả này đã hoàn thành mục tiêu của đề tại đề ra từ
+trước.
 
-Ngoài ra, một trong những ưu tiên quan trọng là \textbf{xây dựng bộ dữ liệu huấn luyện có độ tin cậy cao}. Nhóm nghiên cứu dự kiến triển khai các phương pháp gán nhãn tự động và bán tự động, bao gồm:
-\begin{itemize}
-    \item Ghi hình kết hợp đồng bộ thời gian với dữ liệu cảm biến;
-    \item Gán nhãn theo khoảng thời gian định trước;
-    \item Gán nhãn thủ công trực tiếp trên ứng dụng di động thông qua nút bấm hỗ trợ.
-\end{itemize}
+Trong tương lại, tác giả đánh giá trên các mô hình học máy khác với bài toán tư
+thế ngủ để xác định được mô hình phù hợp nhất. Ngoài ra, việc các đặc trưng kết
+hợp cũng là một định hướng của nhóm. Không dừng lại ở đó, nhóm sẽ tối ưu thêm
+phần cứng, thêm các cảm biến để hướng tới bài toán phân loại OSA. Phần mềm sẽ
+được bổ sung các tính năng y học để trở thành công cụ cá nhân hóa.
 
-Ứng dụng di động trong tương lai sẽ được bổ sung tính năng gán nhãn và quản lý dữ liệu tập trung, hỗ trợ quá trình thu thập và huấn luyện mô hình.
-
-\subsection*{Kết luận định hướng}
-
-Mục tiêu dài hạn của nghiên cứu không chỉ dừng lại ở việc nhận diện tư thế ngủ, mà còn hướng đến phát triển một hệ thống \textbf{Home Sleep Testing (HST)} đơn giản, chi phí thấp, có khả năng \textbf{sàng lọc nguy cơ mắc hội chứng ngưng thở khi ngủ tắc nghẽn (OSA)} ngay tại nhà.
-
-Các định hướng cụ thể gồm:
-\begin{itemize}
-    \item Tích hợp đa cảm biến để giám sát đồng thời tư thế, nhịp thở, âm thanh và SpO\textsubscript{2};
-    \item Phát triển thuật toán ước lượng chỉ số AHI dựa trên dữ liệu tổng hợp;
-    \item Thiết kế giao diện giám sát từ xa dành cho bác sĩ, kết hợp đề xuất can thiệp lâm sàng;
-    \item Tối ưu và lượng tử hóa mô hình học máy để triển khai trực tiếp trên vi điều khiển hoặc thiết bị đeo tay.
-\end{itemize}
-
-Với định hướng này, sản phẩm kỳ vọng trở thành một giải pháp HST gọn nhẹ, dễ tiếp cận và có tính ứng dụng cao, góp phần hỗ trợ bệnh nhân và các cơ sở y tế trong công tác \textbf{sàng lọc sớm, theo dõi và quản lý OSA} tại cộng đồng, đặc biệt ở các khu vực còn hạn chế về thiết bị PSG chuẩn.

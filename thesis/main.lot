@@ -12,7 +12,7 @@
 \contentsline {table}{\numberline {3.1}{\ignorespaces Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}}{88}{table.caption.83}%
 \contentsline {table}{\numberline {3.2}{\ignorespaces Kết quả lựa chọn tham số cho các mô hình học máy}}{90}{table.caption.88}%
 \contentsline {table}{\numberline {3.3}{\ignorespaces Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}}{95}{table.caption.92}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces So sánh hiệu năng Logistic Regression và Neural Network trên nRF52840}}{103}{table.caption.95}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces So sánh hiệu năng LR và ANN trên nRF52840}}{103}{table.caption.97}%
 \addvspace {10\p@ }
 \contentsfinish 
 \contentsfinish 
