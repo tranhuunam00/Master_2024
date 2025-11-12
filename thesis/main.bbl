@@ -689,7 +689,57 @@
       \field{pages}{750}
       \range{pages}{1}
     \endentry
-    \entry{Mohammadi2019_camera}{inproceedings}{}{}
+    \entry{Enayati2018_mattre}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=83017c29b8a7d59be67003e988a25912}{%
+           family={Enayati},
+           familyi={E\bibinitperiod},
+           given={Moein},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e6c883d5c53997ae38a8f4a283a3b45b}{%
+           family={Skubic},
+           familyi={S\bibinitperiod},
+           given={Marjorie},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a092b8b376ba400f46270f3720ce94aa}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={James\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=e5bd6d7177a47edc71a3890585cf6be2}{%
+           family={Popescu},
+           familyi={P\bibinitperiod},
+           given={Mihail},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6b26aa1a3e91080d06ca789cb3e560dc}{%
+           family={Farahani},
+           familyi={F\bibinitperiod},
+           given={Nasibeh\bibnamedelima Zanjirani},
+           giveni={N\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{a43882f4685f70e1b1713999850f1599}
+      \strng{fullhash}{a43882f4685f70e1b1713999850f1599}
+      \strng{fullhashraw}{a43882f4685f70e1b1713999850f1599}
+      \strng{bibnamehash}{a43882f4685f70e1b1713999850f1599}
+      \strng{authorbibnamehash}{a43882f4685f70e1b1713999850f1599}
+      \strng{authornamehash}{a43882f4685f70e1b1713999850f1599}
+      \strng{authorfullhash}{a43882f4685f70e1b1713999850f1599}
+      \strng{authorfullhashraw}{a43882f4685f70e1b1713999850f1599}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 40th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)}
+      \field{title}{Sleep Posture Classification Using Bed Sensor Data and Neural Networks}
+      \field{year}{2018}
+      \field{pages}{461\bibrangedash 465}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/EMBC.2018.8512436
+      \endverb
+      \keyw{Feature extraction;Sleep apnea;Robot sensing systems;Neural networks;Monitoring;Principal component analysis;Senior citizens}
+    \endentry
+    \entry{Mohammadi2019_camera}{article}{}{}
       \name{author}{6}{}{%
         {{hash=0a29a7e7cb3947032c2c168cb4e20f81}{%
            family={Mohammadi},
@@ -947,7 +997,7 @@
       \field{pages}{2766\bibrangedash 2771}
       \range{pages}{6}
     \endentry
-    \entry{Yoon2015_posture}{inproceedings}{}{}
+    \entry{Yoon2015_posture}{article}{}{}
       \name{author}{9}{}{%
         {{hash=563786886eac8548ac4e28503ad0f0c2}{%
            family={Yoon},
@@ -2566,7 +2616,7 @@
       \verb https://doi.org/10.1109/JIOT.2022.3195777
       \endverb
     \endentry
-    \entry{jeon2020realtime}{inproceedings}{}{}
+    \entry{jeon2020realtime}{article}{}{}
       \name{author}{3}{}{%
         {{hash=d09c4028921ab104cce225110af1903a}{%
            family={Y},
@@ -3015,7 +3065,7 @@
       \field{title}{A Novel Wearable Real-Time Sleep Apnea Detection System Based on the Acceleration Sensor}
       \field{year}{2019}
     \endentry
-    \entry{Sleep_Posture_Detection}{inproceedings}{}{}
+    \entry{Sleep_Posture_Detection}{article}{}{}
       \name{author}{4}{}{%
         {{hash=423a332d6f133256b38b8c39eafc117a}{%
            family={Abdulsadig},
@@ -3908,7 +3958,7 @@
       \verb 10.3390/mi13030459
       \endverb
     \endentry
-    \entry{Tirupathi2018_mems_accelerometer}{inproceedings}{}{}
+    \entry{Tirupathi2018_mems_accelerometer}{article}{}{}
       \name{author}{2}{}{%
         {{hash=6de188366ccc18512b062913ec4157eb}{%
            family={Tirupathi},
@@ -5201,7 +5251,7 @@
       \verb https://doi.org/10.1023/A:1010933404324
       \endverb
     \endentry
-    \entry{chen2016xgboost}{inproceedings}{}{}
+    \entry{chen2016xgboost}{article}{}{}
       \name{author}{2}{}{%
         {{hash=48461ccdf50ba5a54e29a354aa734c0b}{%
            family={Chen},
@@ -5346,7 +5396,6 @@
       \keyw{Convolutional neural network,Neural network acceleration,Neural network quantization,Neural network pruning,Low-bit mathematics}
     \endentry
   \enddatalist
-  \missing{Enayati2018_mattre}
 \endrefsection
 \endinput
 

@@ -1,12 +1,11 @@
 # Fdb version 4
-["biber main"] 1762939042.89925 "main.bcf" "main.bbl" "main" 1762939125.95845 0
-  "main.bcf" 1762939124 120673 0d24c0a4e36524a98522c71c2987f6bb "pdflatex"
-  "refs.bib" 1762939041 83950 c7f8dc84d0b536aa688049e0e86b2006 ""
+["biber main"] 1762939305.72975 "main.bcf" "main.bbl" "main" 1762940050.39619 0
+  "main.bcf" 1762940049 120673 0d24c0a4e36524a98522c71c2987f6bb "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1762939101.92229 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1762939125.95937 0
+["pdflatex"] 1762940029.23155 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1762940050.39789 0
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761721282 170669 580f60f86b494b149fd13be17089526f ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1753283835 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1753323483 13254313 89e2afc147c36950f3366f1142cce13c ""
@@ -374,16 +373,16 @@
   "images/tuthe_osa.png" 1762440761 101703 ad3a6c9d02aca19e18d277a69bd52ae5 ""
   "images/vitri_co.png" 1762443391 129340 184f6133557167661d5ac27fd98fe482 ""
   "images/z_kalman.png" 1762683551 57101 e6bcaa3aaf0c8deeead9eef7f1c9c073 ""
-  "main.acr" 1762843911 2325 6f0ec215a10a05b6508450f6a22c4977 ""
-  "main.aux" 1762939124 60844 05672abb1c51de617689bc8dc89405f2 "pdflatex"
-  "main.bbl" 1762939048 229366 ef0d49832301c9f111c410bd1a8ccc80 "biber main"
+  "main.acr" 1762939256 2497 10a26935f8a6558a8c9a443a614dc976 ""
+  "main.aux" 1762940049 60929 95eb371545b7eec182c9ab6427b7d435 "pdflatex"
+  "main.bbl" 1762939989 231671 3aa44a247339554b8e79d965ab03dd5a "biber main"
   "main.glsdefs" 1762831769 3249 385e942e8001cc86b0cf55ef553a96c2 ""
-  "main.lof" 1762939124 8690 e0bfe72d294556cd53d6feab60449f8d "pdflatex"
-  "main.lot" 1762939124 1817 2bcdfdceb20ca6bbb8335021a0cd8d5b "pdflatex"
-  "main.out" 1762939124 8719 9c0498ea7cdb88275767be0d1189dd57 "pdflatex"
-  "main.run.xml" 1762939124 2268 456211433cb673c754af192d4ef1bf89 "pdflatex"
+  "main.lof" 1762940049 8690 e0bfe72d294556cd53d6feab60449f8d "pdflatex"
+  "main.lot" 1762940049 1817 2bcdfdceb20ca6bbb8335021a0cd8d5b "pdflatex"
+  "main.out" 1762940049 8719 9c0498ea7cdb88275767be0d1189dd57 "pdflatex"
+  "main.run.xml" 1762940049 2268 456211433cb673c754af192d4ef1bf89 "pdflatex"
   "main.tex" 1762939101 6133 f1a96a1ad39847517d39ab7b604536df ""
-  "main.toc" 1762939124 5803 e455d21ba35020f6ff3b7554265698f4 "pdflatex"
+  "main.toc" 1762940049 5803 e455d21ba35020f6ff3b7554265698f4 "pdflatex"
   "setting/bkthesis.sty" 1753256024 967 af4f61477f3f023e14bc982890f87805 ""
   (generated)
   "main.acn"
