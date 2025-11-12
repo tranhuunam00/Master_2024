@@ -59,12 +59,11 @@ sẵn ở phần cứng.
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=0.3\textwidth]{images/ketqua_capquyen.jpg}
+        \includegraphics[width=0.4\textwidth]{images/ketqua_capquyen.jpg}
     \end{subfigure}
-    \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=0.3\textwidth]{images/ketqua_scan.jpg}
+        \includegraphics[width=0.4\textwidth]{images/ketqua_scan.jpg}
     \end{subfigure}
     \caption{Màn hình yêu cầu quyền truy cập Bluetooth và danh sách thiết bị đang hoạt động}
     \label{fig:ketqua_scan}
@@ -162,67 +161,83 @@ dữ liệu như Hình~\ref{fig:ana_balance}.
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=0.6\textwidth]{images/ana_balance_train.png}
+        \includegraphics[width=1\textwidth]{images/ana_balance_train.png}
         \label{fig:ana_balance_train}
+        \caption{tập huấn luyện}
+
     \end{subfigure}
-    \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=0.6\textwidth]{images/ana_balance_test.png}
+        \includegraphics[width=1\textwidth]{images/ana_balance_test.png}
         \label{fig:ana_balance_test}
+        \caption{tập kiểm thử}
     \end{subfigure}
     \caption{Biểu đồ phân bố các nhãn thu được}
     \label{fig:ana_balance}
 \end{figure}
 
-Hình~\ref{ana_balance} cho thấy phân bố dữ liệu của tập huấn luyện tương đối
-cân bằng. Còn đối với tập kiểm thử, tư thế nằm ngửa và nghiêng trái chiếm đa
-số. Qua đó, cho thấy sự phản ánh dữ liệu đúng như dự kiến của tác giả. Với bộ
-huấn luyện, các nhãn sẽ giữ ở mức cân bằng để tránh tình trạng quá khớp. Còn ở
-tập kiểm thử, các nhãn phản ánh đúng sinh lý của cá nhân khi ngủ, sẽ thường có
-những tư thế quen thuộc chứ ít khi cân bằng thời gian giữa các tư thế.
+Hình~\ref{fig:ana_balance} cho thấy phân bố dữ liệu của tập huấn luyện tương
+đối cân bằng. Còn đối với tập kiểm thử, tư thế nằm ngửa và nghiêng trái chiếm
+đa số. Qua đó, cho thấy sự phản ánh dữ liệu đúng như dự kiến của tác giả. Với
+bộ huấn luyện, các nhãn sẽ giữ ở mức cân bằng để tránh tình trạng quá khớp. Còn
+ở tập kiểm thử, các nhãn phản ánh đúng sinh lý của cá nhân khi ngủ, sẽ thường
+có những tư thế nổi bật hẳn về số lượng do thói quen.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\linewidth]{images/threshhold.jpg}
-    \caption{Phân bố dữ liệu cảm biến theo ba trục $x$, $y$, $z$ ứng với các tư thế ngủ khác nhau.}
-    \label{fig:axis_distribution}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/ana_distribute_train.png}
+        \label{fig:ana_distribute_train}
+        \caption{tập huấn luyện}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/ana_distribute_test.png}
+        \label{fig:ana_distribute_test}
+        \caption{tập kiểm thử}
+    \end{subfigure}
+    \caption{Biểu đồ phân bố dữ liệu 3 trục theo các tư thế ngủ}
+    \label{fig:ana_distribute}
 \end{figure}
-Hình~\ref{fig:axis_distribution} trình bày phân tích chi tiết phân bố
-tín hiệu cảm biến theo ba trục gia tốc ứng với bốn tư thế ngủ cơ bản.
-Ở trục $x$, các phân bố tương đối biệt lập, đặc biệt giữa hai tư thế
-nằm ngửa và nằm sấp, cũng như giữa nghiêng trái và nghiêng phải.
-Điều này cho thấy trục $x$ có khả năng phân biệt tư thế tốt.
-Ngược lại, trục $y$ thể hiện mức độ chồng lấn lớn giữa các tư thế,
-dẫn đến khả năng tách biệt thấp và ít giá trị trong việc xác định tư
-thế ngủ. Đối với trục $z$, có thể quan sát được sự phân tách
-rõ ràng giữa tư thế nằm nghiêng và các tư thế dọc
-(nằm ngửa và nằm sấp), chứng tỏ vai trò quan trọng của trục $z$
-trong phân loại tư thế.
+
+Hình~\ref{fig:ana_distribute} (a) trình bày phân tích chi tiết phân bố tín hiệu
+cảm biến theo ba trục gia tốc ứng với bốn tư thế ngủ cơ bản của tập huấn luyện
+thu từ 25 tình nguyện viên. Ở trục $x$, các phân bố tương đối biệt lập, giữa
+hai tư thế nằm ngửa và nằm sấp, cũng như giữa nghiêng trái và nghiêng phải.
+Điều này cho thấy trục $x$ có khả năng phân biệt tư thế tốt. Trục $y$ thể hiện
+mức độ tương đồng giữa các tư thế, dẫn đến khả năng tách biệt thấp và ít giá
+trị trong việc xác định tư thế ngủ. Đối với trục $z$, có thể quan sát được sự
+phân tách rõ ràng giữa tư thế nằm nghiêng và các tư thế dọc (nằm ngửa và nằm
+sấp), chứng tỏ vai trò quan trọng của trục $z$ trong phân loại tư thế. Còn đối
+với Hình~\ref{fig:ana_distribute} (b), các phân bố về trung bình cũng tương
+đồng với tập huấn luyện cho thấy sự phản ánh đúng phương pháp lấy mẫu mang tính
+đúng đắn. Tuy nhiên, giải phân phối của tập kiểm thử tương đối rộng, nguyên
+nhân được suy đoán là do các tín hiệu nhiễu chưa được sàng lọc kĩ ở bước làm
+sạch dữ liệu và gắn nhãn. Đây là cũng trường hợp không hiếm gặp trong khi ngủ
+thực tế cả đêm, con người cí thể có các hoạt động khác như là đi vệ sinh hay là
+uống nước. Đây cũng là thách thức tác giả cần giải quyết phát hiện đang nằm ngủ
+hay đang không nằm.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.6\linewidth]{images/distribution actions.jpg}
-    \caption{Phân bố số lượng mẫu trong tập huấn luyện theo từng tư thế.}
-    \label{fig:countActions}
+    \centerline{\includegraphics[width=0.8\linewidth]{images/ana_distribute_z.png}}
+    \caption{Phân bố giá trị trục x của 2 tập dữ liệu}
+    \label{ana_distribute_z}
 \end{figure}
 
-Hình~\ref{fig:countActions} minh họa sự phân bố số lượng mẫu trong tập huấn
-luyện theo từng tư thế. Tư thế nằm ngửa (Back) chiếm tỷ trọng cao nhất với
-khoảng 50.000 mẫu, trong khi ba tư thế còn lại (nghiêng trái, nghiêng phải và
-nằm sấp) có số lượng tương đối cân bằng, dao động từ 30.000 đến 35.000 mẫu.
-Phân bố này phản ánh xu hướng phổ biến của tư thế nằm ngửa trong giấc ngủ tự
-nhiên, đồng thời cho thấy tầm quan trọng lâm sàng của tư thế này, đặc biệt
-trong bối cảnh hội chứng ngưng thở khi ngủ (OSA), khi tư thế nằm ngửa có thể
-làm trầm trọng tình trạng bệnh.
+Hình~\ref{ana_distribute_z} chỉ ra phân bố giá trị trục z của hai tập dữ liệu:
+huấn luyện (xanh) và kiểm thử (cam). Cho thầy, mật độ đỉnh ở hai tập dữ liệu
+khá tương đồng. Điều này cũng được chính minh ở phần trên. Tuy nhiên, có một số
+điểm khác biệt tại giá trị -0.5 của tập kiểm thử. Giá trị này rơi chủ yếu vào
+tư thế nằm nghiêng trái và nắm sập. Từ đây, tác giả phỏng đoán sẽ có nhầm lẫn
+trong suy luận giữa 2 tư thế này tại tập kiểm thử.
 
 \subsection{Xử lý và trích xuất đặc trưng}
 
 Dữ liệu cảm biến thu thập được trước tiên được xử lý khử nhiễu bằng phương pháp
-hiệu chỉnh điểm gốc (differential technique), bằng cách lấy hiệu giữa giá trị
-hiện tại và giá trị tham chiếu ban đầu trên ba trục $x$, $y$, và $z$. Sau đó,
-tín hiệu được chia thành các cửa sổ thời gian có độ dài 2 giây, với mức chồng
-lấn 50\% giữa các cửa sổ liên tiếp nhằm tăng độ mịn của chuỗi dữ liệu đầu vào.
+hiệu chỉnh điểm gốc, bằng cách lấy hiệu giữa giá trị hiện tại và giá trị tham
+chiếu ban đầu trên ba trục $x$, $y$, và $z$. Sau đó, tín hiệu được chia thành
+các cửa sổ thời gian có độ dài 2 giây, với mức chồng lấn 50\% giữa các cửa sổ.
 Chỉ những cửa sổ dữ liệu có nhãn nhất quán trong toàn bộ thời gian mới được giữ
 lại để huấn luyện mô hình. Các cửa sổ chứa nhãn không đồng nhất (nhiều hơn một
 nhãn) hoặc có biểu hiện chuyển động bất thường sẽ bị loại bỏ khỏi quá trình xử
@@ -279,16 +294,16 @@ lý tiếp theo.
 
 \subsubsection{Đặc trưng miền thời gian (T1)}\label{AA}
 
-Dữ liệu cảm biến gia tốc vốn là chuỗi thời gian, do đó các đặc trưng miền thời
-gian đóng vai trò rất quan trọng trong nhận diện tư thế ngủ. Trong nghiên cứu
-này, tác giả trích xuất tổng cộng 40 đặc trưng thống kê cho mỗi cửa sổ dữ liệu,
-trên cả ba trục $x$, $y$, $z$. Các đặc trưng bao gồm giá trị trung bình, độ
-lệch chuẩn, độ lệch tuyệt đối trung bình, giá trị lớn nhất, nhỏ nhất, hiệu số
-lớn-nhỏ nhất, trung vị, độ lệch tuyệt đối trung vị, khoảng tứ phân vị, số lượng
-giá trị âm/dương, số lượng giá trị lớn hơn trung bình, số đỉnh tín hiệu, độ
-lệch, độ nhọn, năng lượng tín hiệu, gia tốc tổng hợp và tổng độ lớn tín hiệu.
-Các đặc trưng này được lựa chọn dựa trên tính dễ tính toán, hiệu quả phân tách
-tư thế và khả năng triển khai trên vi điều khiển.
+Dữ liệu cảm biến gia tốc là dữ liệu chuỗi thời gian, do đó các đặc trưng miền
+thời gian đóng vai trò rất quan trọng trong nhận diện tư thế ngủ. Trong nghiên
+cứu này, tác giả trích xuất tổng cộng 40 đặc trưng thống kê cho mỗi cửa sổ dữ
+liệu, trên cả ba trục $x$, $y$, $z$. Các đặc trưng bao gồm giá trị trung bình,
+độ lệch chuẩn, độ lệch tuyệt đối trung bình, giá trị lớn nhất, nhỏ nhất, hiệu
+số lớn-nhỏ nhất, trung vị, độ lệch tuyệt đối trung vị, khoảng tứ phân vị, số
+lượng giá trị âm/dương, số lượng giá trị lớn hơn trung bình, số đỉnh tín hiệu,
+độ lệch, độ nhọn, năng lượng tín hiệu, gia tốc tổng hợp và tổng độ lớn tín
+hiệu. Các đặc trưng này được lựa chọn dựa trên tính dễ tính toán, hiệu quả phân
+tách tư thế và khả năng triển khai trên vi điều khiển.
 
 \subsubsection{Đặc trưng miền tần số (F1)}\label{AA}
 
@@ -298,298 +313,313 @@ Việc sử dụng đồng thời các đặc trưng từ cả hai miền thời
 tăng khả năng mô tả đặc trưng cho mô hình học máy, từ đó nâng cao hiệu quả phân
 loại tư thế ngủ trong các điều kiện khác nhau.
 
-\subsection{Kịch bản kiểm thử và lựa chọn tính năng}
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=0.8\linewidth]{images/ana_feature_time.png}}
+    \caption{Phân bố của đặc trưng trung bình, độ lệnh chuẩn và năng lượng trên miền thời gian của tập huấn luyện}
+    \label{ana_feature_time}
+\end{figure}
+
+Hình~\ref{ana_feature_time} đưa ra những ý nghĩa của ba đặc trưng miền thời
+gian. Các đặc trưng trung bình và năng lượng của 2 trục x và z cho phân bố mật
+độ tách biệt để phân bật nhóm tư thế nghiêng trái - nghiêng phải và ngửa - sấp.
+Đối bối trục y, theo đánh giá các phân bộ sẽ đa số tập trung thành cũng giống
+như đặc trưng độ lệnh chuẩn trên miền thời gian và các hai giá trị đặc trưng
+trên miền tần số Hình~\ref{ana_feature_fft}. Qua phân tích trên, tác giả càng
+tin tưởng về luận điểm rằng với tư thế ngủ, các đặc trưng miền thời gian sẽ có
+nhiều ý nghĩa hơn và trong đó cũng sẽ có những nhóm thực sự nổi bật để có thể
+phân loại tư thế ngủ.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=0.8\linewidth]{images/ana_feature_fft.png}}
+    \caption{Phân bố của đặc trưng trung bình, độ lệnh chuẩn trên miền tần số của tập huấn luyện}
+    \label{ana_feature_fft}
+\end{figure}
+\subsection{Lựa chọn tham số}
+Sau khi xác định được 69 đặc trưng cả miền thời gian và tần số, tác giả sẽ chạy
+qua các vòng lặp với các dải tham số cài đặt sẵn với 5 mô hình đã lựa chọn LR,
+RF, SVM, GB và ANN như Bảng~\ref{tab:model_results}.
+\begin{table}[htbp]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \setlength{\tabcolsep}{5pt}
+    \caption{Kết quả lựa chọn tham số cho các mô hình học máy}
+    \label{tab:model_results}
+    \small
+    \begin{tabular}{|l|p{1cm}|p{1cm}|p{7cm}|p{1.5cm}|p{1.5cm}|}
+        \hline
+        \textbf{Mô hình}                                                                                                                         & \textbf{Số tổ hợp} & \textbf{Lần thử} & \textbf{Tham số tối ưu} & \textbf{Xác thực chéo} & \textbf{Độ chính xác} \\
+        \hline
+        \textbf{RF}                                                                                                                              & 288                & 864              &
+        \raggedright\ttfamily n\_estimators=20, max\_depth=10, min\_samples\_split=2, min\_samples\_leaf=1, max\_features='sqrt', bootstrap=True &
+        \textbf{98.82}                                                                                                                           & \textbf{99.45}                                                                                                   \\
+        \hline
+        \textbf{LR}                                                                                                                              & 54                 & 162              &
+        \raggedright\ttfamily C=5, max\_iter=10, penalty='l2', solver='newton-cg'                                                                &
+        96.55                                                                                                                                    & 96.30                                                                                                            \\
+        \hline
+        \textbf{SVM}                                                                                                                             & 216                & 648              &
+        \raggedright\ttfamily C=1, kernel='linear', degree=2, gamma='scale', decision\_function\_shape='ovo'                                     &
+        96.62                                                                                                                                    & 94.06                                                                                                            \\
+        \hline
+        \textbf{GB}                                                                                                                              & 216                & 648              &
+        \raggedright\ttfamily n\_estimators=10, learning\_rate=0.1, max\_depth=4, max\_features='sqrt', subsample=0.8                            &
+        \textbf{97.51}                                                                                                                           & \textbf{99.51}                                                                                                   \\
+        \hline
+        \textbf{NN}                                                                                                                              & 32                 & 96               &
+        \raggedright\ttfamily neurons\_1=8, neurons\_2=8, learning\_rate=0.01, batch\_size=16, epochs=20                                         &
+        98.01                                                                                                                                    & 95.83                                                                                                            \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Bảng~\ref{tab:model_results} cho thấy mô hình RF và GB được đánh giá về mặt độ
+chính xác là ổn định nhất cả quá trình xác thực chéo và tập kiểm tra. Hai mô
+hình SVM và LR có độ chính xác thấp nhất trong 5 mô hình nhưng vẫn cho độ chính
+xác > 94\%. Mô hình NN được xây dựng không thông qua 69 đặc trưng mà dùng trực
+tiếp giá trị gia tốc thô với cửa số 10 mẫu (30 giá trị x, y, z) để huấn luyện
+cho kết quả ấn tượng đối với tập huấn luyện nhưng bị suy giảm so với tập kiểm
+tra. Hình~\ref{fig:ml_confuse} cũng chỉ ra rằng, đối với mô hình NN, hai tư thế
+nghiêng phải và ngửa đang bị suy luận sai. Việc này cũng được tác giả phân tích
+biểu đồ phân bố đối với trục z bên trên. Ngoài ra, SVM có những sự nhầm lẫn ở
+hai tư thế là nghiêng trái và nghiêng phải.
+
+Bên cạnh đó, tác giả cũng phân tích thêm các đặc trưng ảnh hưởng như thế nào
+đến các mô hình có tham số tốt nhất (không có ANN vì lý do ANN không dùng 69
+đặc trưng) Hình~\ref{fig:ml_shap}. Đúng với nhận định từ trước, các tính năng
+miền thời gian chiếm nhiều ý nghĩa lên mô hình đặc biệt là đặc trưng được trích
+xuất từ hai trục x, y và các đặc trưng tổng hợp từ 3 trục. Đặc trưng miền tần
+số đa phần đứng vị trí cuối cho thấy không có nhiều ý nghĩa đối với các tham số
+đã chọn.
+
+Hình~\ref{fig:ml_shap} (a) và (d) khá tương đồng về mặt ý nghĩa của các đặc
+trên lên mô hình RF và GB. Đây cũng thể xem là do 2 mô hình đều có cơ chế xây
+dựng dựa trên các cây quyết định. Hình~\ref{fig:ml_shap} (b) chỉ ra LR thì lại
+ưu tiên hơn các đặc trưng được tổng hợp từ ba trục. Còn đối với SVM
+Hình~\ref{fig:ml_shap} (b), đã xác định rõ các véc-tơ hỗ trợ nên đang tính các
+tính năng còn lại đều có giá trị 0.
+
+Ngoài ra, tác giả cũng nhận thấy có 15 đặc trưng luôn xuất hiên vị trí đầu của
+tất cả các mô hình bao gồm: "z\_median","z\_mean","x\_mean","x\_energy",
+"z\_pos\_count", "z\_neg\_count","x\_median", 'z\_energy', 'avg\_result\_accl',
+'x\_neg\_count', 'z\_std', 'x\_pos\_count',"y\_energy","y\_mean","sma",
+'y\_median'.
+
+Để hiểu sâu hơn về ý nghĩa các đặc trưng này, tác giả xây dựng 8 kịch bản để đánh giá.
+Việc này không chỉ có ý nghĩa về mặt phân tích đặc trưng và còn muốn làm rõ hơn về mặt kích thước mô hình để phù hợp triển khai lên biên.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/ml_confuse_rf.png}
+        \label{fig:ml_confuse_rf}
+        \caption{RF}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/ml_confuse_lr.png}
+        \label{fig:ml_confuse_lr}
+        \caption{LR}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/ml_confuse_nn.png}
+        \label{fig:ml_confuse_nn}
+        \caption{NN}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/ml_confuse_svm.png}
+        \label{fig:ml_confuse_svm}
+        \caption{SVM}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/ml_confuse_gb.png}
+        \label{fig:ml_confuse_gb}
+        \caption{GB}
+    \end{subfigure}
+    \caption{Ma trận nhầm lẫn của các mô hình học máy}
+    \caption*{\textit{Ghi chú:} Nhãn 0 – tư thế ngửa; 1 – nghiêng phải; 2 – nghiêng trái; 3 – sấp.}
+    \label{fig:ml_confuse}
+
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{images/ml_shap_rf.png}
+        \label{fig:ml_shap_rf}
+        \caption{RF}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/ml_shap_lr.png}
+        \label{fig:ml_shap_lr}
+        \caption{LR}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/ml_shap_svm.png}
+        \label{fig:ml_shap_svm}
+        \caption{SVM}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{images/ml_shap_gb.png}
+        \label{fig:ml_shap_gb}
+        \caption{GB}
+    \end{subfigure}
+    \caption{Ý nghĩa của các đặc trưng lên mô hình}
+    \label{fig:ml_shap}
+
+\end{figure}
+
+\newpage
+
+\subsection{Kịch bản kiểm thử}
 
 Lựa chọn đặc trưng là một bước quan trọng trong quá trình xây dựng mô hình học
 máy, giúp giảm chiều dữ liệu, cải thiện hiệu quả huấn luyện, rút ngắn thời gian
-tính toán và hạn chế hiện tượng quá khớp (overfitting). Nguyên lý chung là các
-đặc trưng hiệu quả phải có mối tương quan cao với biến mục tiêu (tư thế ngủ),
-đồng thời có mức tương quan thấp với nhau nhằm tránh dư thừa thông tin.
+tính toán và hạn chế hiện tượng quá khớp. Nguyên lý chung là các đặc trưng hiệu
+quả phải có mối tương quan cao với mục tiêu là phát hiện tư thế ngủ.
 
-\textbf{Thứ nhất}, phân tích ma trận tương quan Pearson (Hình~\ref{fig:correlation}) đã cho thấy một số cặp đặc trưng có mức tương quan rất cao, điển hình như $x_{\mathrm{std}}$ và $x_{\mathrm{aad}}$ ($r = 0.98$), hay $y_{\mathrm{std}}$ và $y_{\mathrm{aad}}$ ($r = 0.68$). Điều này gợi ý rằng có thể loại bỏ một phần các đặc trưng trùng lặp nhằm giảm độ phức tạp mô hình mà vẫn giữ được thông tin cốt lõi.
+Phân tích ma trận tương quan (Hình~\ref{fig:correlation}) đã cho thấy một số
+cặp đặc trưng có mức tương quan rất cao, điển hình như $x_{\mathrm{std}}$ và
+$x_{\mathrm{aad}}$ ($r = 0.98$), hay $y_{\mathrm{std}}$ và $y_{\mathrm{aad}}$
+($r = 0.68$). Điều này gợi ý rằng có thể loại bỏ một phần các đặc trưng trùng
+lặp nhằm giảm độ phức tạp mô hình mà vẫn giữ được thông tin cốt lõi.
+
+Kết hợp với phân tích ở phần trên tác giả chọn lựa được 8 kịch bản bao gồm thay
+đổi 3 thông số chính là: độ dài cửa sổ - độ phủ, đặc trưng miền và số lượng đặc
+trưng Bảng~\ref{tab:scenarios}.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/correlation.png}
-    \caption{Ma trận tương quan giữa các đặc trưng trích xuất. Cường độ màu thể hiện hệ số tương quan Pearson. Màu đỏ là tương quan dương mạnh, xanh là tương quan âm mạnh, xám là không tương quan.}
+    \includegraphics[width=0.7\linewidth]{images/correlation.png}
+    \caption{Ma trận tương quan giữa các đặc trưng trích xuất.}
     \label{fig:correlation}
 \end{figure}
-
-\textbf{Thứ hai}, kết quả phân tích SHAP (SHapley Additive exPlanations) ở Hình~\ref{fig:shap} chỉ ra rằng một số đặc trưng – đặc biệt là các đặc trưng miền thời gian trên trục $z$ như trung bình, năng lượng, trung vị – có ảnh hưởng vượt trội đến dự đoán của mô hình. Do đó, việc ưu tiên các đặc trưng này trong kịch bản triển khai nhẹ (TinyML) là hoàn toàn hợp lý về mặt kỹ thuật.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\linewidth]{images/shap20.jpg}
-    \caption{Phân tích giá trị SHAP nhằm xác định tầm quan trọng của các đặc trưng trong mô hình phân loại tư thế ngủ. Các đặc trưng từ trục $z$ chiếm ưu thế về mức ảnh hưởng đến đầu ra mô hình.}
-    \label{fig:shap}
-\end{figure}
-
-\textbf{Thứ ba}, để hệ thống hóa việc đánh giá vai trò của từng nhóm đặc trưng và cấu hình mô hình, tác giả đã xây dựng tám kịch bản thực nghiệm được trình bày trong Bảng~\ref{tab:scenarios}. Các kịch bản được thiết kế nhằm phản ánh đầy đủ các yếu tố cần đánh giá như loại đặc trưng (miền thời gian, tần số), mức độ tương quan, độ dài cửa sổ tín hiệu và bộ đặc trưng tối ưu hoá bằng SHAP.
 
 \begin{table}[htbp]
     \caption{Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}
     \label{tab:scenarios}
     \begin{center}
         \renewcommand{\arraystretch}{1.2}
-        \begin{tabular}{|c|p{6.1cm}|}
+        \begin{tabular}{|c|p{10cm}|}
             \hline
-            \textbf{Kịch bản} & \textbf{Mô tả}                                                                  \\
+            \textbf{Kịch bản} & \textbf{Mô tả}                                                                                                \\
             \hline
-            1                 & Sử dụng toàn bộ đặc trưng để đánh giá ảnh hưởng tổng thể đến mô hình.           \\
+            1                 & Dùng cửa sổ 20 mẫu (50\% độ phủ), với toàn bộ đặc trưng.                                                      \\
             \hline
-            2                 & Áp dụng toàn bộ đặc trưng trong miền thời gian.                                 \\
+            2                 & Dùng cửa sổ 20 mẫu (50\% độ phủ), với toàn bộ đặc trưng trong miền thời gian.                                 \\
             \hline
-            3                 & Áp dụng toàn bộ đặc trưng trong miền tần số.                                    \\
+            3                 & Dùng cửa sổ 20 mẫu (50\% độ phủ), với toàn bộ đặc trưng trong miền tần số.                                    \\
             \hline
-            4                 & Sử dụng đặc trưng miền thời gian, loại bỏ các đặc trưng có tương quan $>$ 95\%. \\
+            4                 & Dùng cửa sổ 20 mẫu (50\% độ phủ), với đặc trưng miền thời gian, loại bỏ các đặc trưng có tương quan $>$ 95\%. \\
             \hline
-            5                 & Chọn ra 11 đặc trưng quan trọng nhất theo giá trị SHAP.                         \\
+            5                 & Dùng cửa sổ 20 mẫu (50\% độ phủ), với 15 đặc trưng quan trọng nhất theo giá trị đứng đầu.                     \\
             \hline
-            6                 & Dùng cửa sổ 3 giây (50\% overlap), với 11 đặc trưng SHAP.                       \\
+            6                 & Dùng cửa sổ 30 mẫu (50\% độ phủ), với 15 đặc trưng đứng đầu.                                                  \\
             \hline
-            7                 & Dùng cửa sổ 1 giây (50\% overlap), với 11 đặc trưng SHAP.                       \\
+            7                 & Dùng cửa sổ 10 mẫu (50\% độ phủ), với 15 đặc trưng đứng đầu.                                                  \\
             \hline
-            8                 & Dùng cửa sổ 2 giây (25\% overlap), với 11 đặc trưng SHAP.                       \\
+            8                 & Dùng cửa sổ 20 mẫu (25\% độ phủ), với 15 đặc trưng đứng đầu.                                                  \\
             \hline
         \end{tabular}
     \end{center}
 \end{table}
 
-Đối với các kịch bản 5 đến 8, việc lựa chọn 11 đặc trưng được thực hiện bằng cách huấn luyện mô hình Random Forest trên toàn bộ tập đặc trưng, sau đó tính giá trị SHAP trung bình cho từng đặc trưng và chọn ra nhóm có ảnh hưởng cao nhất. Việc rút gọn đặc trưng này giúp mô hình nhẹ hơn, nhanh hơn, phù hợp với môi trường nhúng có giới hạn về bộ nhớ và tính toán.
+\newpage
 
-Các kịch bản 6 đến 8 thay đổi độ dài cửa sổ trượt (1 giây, 2 giây, 3 giây) và
-mức chồng lấn nhằm khảo sát tác động của kích thước đoạn tín hiệu đến hiệu quả
-mô hình, đồng thời phản ánh điều kiện sử dụng thực tế trong các thiết bị đeo
-(wearables) hoặc hệ thống biên (edge-AI).
-
-Với thiết kế kịch bản như trên, luận văn không chỉ đánh giá hiệu quả mô hình
-theo nhiều hướng khác nhau, mà còn hướng tới việc xác định cấu hình tối ưu giữa
-độ chính xác, chi phí tính toán và khả năng triển khai thực tiễn.
-
-\subsection{Huấn luyện mô hình}
-
-Dựa trên các phương pháp phân loại được đề cập ở các phần trước — bao gồm
-phương pháp ngưỡng, học máy và học sâu — tác giả đã lựa chọn một tập hợp đại
-diện các mô hình để tiến hành đánh giá hiệu quả trong bài toán nhận diện tư thế
-ngủ từ dữ liệu cảm biến gia tốc. Cụ thể, bốn mô hình học máy truyền thống được
-lựa chọn từ thư viện \texttt{scikit-learn} gồm: \textbf{Random Forest (RF)},
-\textbf{Logistic Regression (LR)}, \textbf{Support Vector Machine (SVM)}, và
-\textbf{Gradient Boosting (GB)}. Đây đều là các mô hình đã được chứng minh hiệu
-quả trong việc xử lý dữ liệu cảm biến có cấu trúc, đặc biệt trong các bài toán
-phân loại đa lớp.
-
-Để đảm bảo tính công bằng trong so sánh và khả năng triển khai thực tế trên vi điều khiển, các siêu tham số (hyperparameters) của từng mô hình được lựa chọn dựa trên kinh nghiệm thực tiễn trong các công trình trước và quá trình tinh chỉnh sơ bộ nhằm đạt được sự cân bằng giữa độ chính xác và độ phức tạp tính toán. Chi tiết tham số của từng mô hình được trình bày trong Bảng~\ref{tab:models}.
-
-\begin{table}[htbp]
-    \caption{Các mô hình học máy và siêu tham số sử dụng trong nghiên cứu}
-    \label{tab:models}
-    \centering
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{|l|p{9cm}|}
-        \hline
-        \textbf{Mô hình}                             & \textbf{Tham số cấu hình} \\
-        \hline
-        \textbf{Random Forest (RF)}                  &
-        Số cây quyết định: 50; \newline
-        Độ sâu tối đa: 5; \newline
-        Số đặc trưng được xét tại mỗi nút: \texttt{log2}                         \\
-        \hline
-        \textbf{Logistic Regression (LR)}            &
-        Chiến lược đa lớp: \texttt{one-vs-rest}; \newline
-        Số vòng lặp tối đa: 50; \newline
-        Hàm tối ưu: \texttt{lbfgs}                                               \\
-        \hline
-        \textbf{Support Vector Machine (SVM)}        &
-        Hàm kernel: \texttt{sigmoid}; \newline
-        Tham số điều chuẩn $C = 2$; \newline
-        Chiến lược đa lớp: \texttt{one-vs-rest}                                  \\
-        \hline
-        \textbf{Gradient Boosting (GB)}              &
-        Tốc độ học: 0.01; \newline
-        Số lượng cây tăng cường: 50; \newline
-        Độ sâu tối đa: 3; \newline
-        Số đặc trưng được chọn: \texttt{log2}                                    \\
-        \hline
-        \textbf{Mạng nơ-ron (Neural Network, Keras)} &
-        Cấu trúc: [8, 4, \textit{num\_classes}]; \newline
-        Hàm kích hoạt: \texttt{ReLU}, \texttt{ReLU}, \texttt{Softmax}; \newline
-        Thuật toán tối ưu: \texttt{Adam} (learning rate = 0.01); \newline
-        Hàm mất mát: \texttt{sparse\_categorical\_crossentropy}; \newline
-        Độ đo đánh giá: \texttt{accuracy}                                        \\
-        \hline
-    \end{tabular}
-\end{table}
-
-Ngoài các mô hình học máy, một mạng nơ-ron nhân tạo tuyến tính đơn giản
-(feedforward neural network) được xây dựng bằng thư viện
-\texttt{TensorFlow/Keras} để đại diện cho phương pháp học sâu. Mạng bao gồm hai
-lớp ẩn với số lượng nơ-ron lần lượt là 8 và 4, theo sau là một lớp đầu ra sử
-dụng hàm kích hoạt \texttt{Softmax} cho bài toán phân loại đa lớp. Các lớp ẩn
-sử dụng hàm kích hoạt \texttt{ReLU} nhằm mô hình hóa các quan hệ phi tuyến hiệu
-quả hơn. Mô hình này được tối ưu bằng thuật toán \texttt{Adam} với tốc độ học
-(learning rate) là 0.01 và được huấn luyện bằng hàm mất mát
-\texttt{sparse\_categorical\_crossentropy}, sử dụng độ đo đánh giá
-\texttt{accuracy} để phản ánh hiệu suất phân loại.
-
-Việc lựa chọn kết hợp các mô hình với mức độ phức tạp khác nhau cho phép đánh
-giá toàn diện về hiệu quả phân loại trong các điều kiện thực tế. Từ các mô hình
-cây đơn giản và dễ diễn giải, đến các mô hình mạnh hơn như Gradient Boosting
-hoặc mạng nơ-ron – nghiên cứu nhằm tìm r a giải pháp cân bằng tối ưu giữa độ
-chính xác, kích thước mô hình, tốc độ suy luận (inference latency) và mức sử
-dụng bộ nhớ, phục vụ cho các ứng dụng thực tiễn như hệ thống AI biên (Edge-AI)
-hoặc thiết bị đeo thông minh.
 \subsection{Đánh giá kết quả}
-Để đánh giá hiệu quả của các mô hình học máy và tác động của lựa
-chọn đặc trưng đầu vào, tám kịch bản thực nghiệm đã được thiết kế
-như trình bày ở các phần trước. Các kịch bản này không chỉ cho phép
-phân tích ảnh hưởng của đặc trưng, cửa sổ tín hiệu và trục cảm biến,
-mà còn hướng đến tối ưu hóa trọng số mô hình phục vụ triển khai trên
-thiết bị nhúng.
+Sau khi xác định các kịch bản, tác giả tiến hành huấn luyện trên cũng một máy
+tính và đưa ra kết quả về độ chính xác Hình~\ref{kq_8kb2}.
 
-\begin{table}[htbp]
-    \caption{Độ chính xác phân loại của các mô hình trong 8 kịch bản}
-    \label{tab:accuracy}
-    \centering
-    \renewcommand{\arraystretch}{1.1}
-    \scriptsize
-    \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
-        \hline
-        \textbf{Mô hình} & S1    & S2    & S3    & S4    & S5    & S6    & S7    & S8    \\
-        \hline
-        LR               & 0.970 & 0.970 & 0.368 & 0.970 & 0.987 & 0.990 & 0.990 & 0.987 \\
-        RF               & 0.995 & 0.996 & 0.426 & 0.994 & 0.993 & 0.993 & 0.993 & 0.991 \\
-        SVM              & 0.995 & 0.985 & 0.280 & 0.991 & 0.989 & 0.982 & 0.982 & 0.870 \\
-        GB               & 0.996 & 0.996 & 0.439 & 0.995 & 0.995 & 0.996 & 0.996 & 0.996 \\
-        NN               & 0.920 & --    & --    & --    & --    & --    & --    & --    \\
-        \hline
-    \end{tabular}
-\end{table}
+Cho thấy, kịch bản 3 (màu đỏ) là toàn bộ các đặc trưng trên miền tần số hoàn
+toàn không phù hợp để phân loại tư thế ngủ. Điều này cũng được chứng minh tại ở
+phần trên. Các mô hình RF và GB luôn cho cho độ chính xác cao nhất và ổn định
+nhất ở toàn bộ các bộ dữ liệu huấn luyện. Các kịch bản 5, 6, 7, 8 đựa trên chỉ
+15 đặc trưng có vị trí đầu hầu như không thay đổi độ chính xác nhiều. Điều này
+cho thấy, việc lựa chọn này phù hợp đối với bài toán tư thế ngủ. Trong kịch bản
+6, có độ chính xác cao nhất lên tới 99.84\% đối với mô hình GB với bộ dữ liệu
+cửa sổ 30 mẫu. Kịch bản 7 có kết quả ấn tượng nhất. Trong đó, độ chính xác các
+mô hình đều được cải thiện rõ rệt ngay cả mô hình LR và SVM. Điều này thực sự
+có ý nghĩa vì độ rộng cửa sổ có ảnh hưởng trực tiếp đến việc tính toán, thời
+gian phản hồi kết quả trên biên. Với NN như đánh giá trong phần lựa chọn tham
+số, khả năng tự trích xuất tính năng từ chỉ 2 lớp ẩn cũng đã cho kết quả đến
+98\%, nhưng giảm nhẹ ở tập kiểm tra 95.5\%.
 
-Kết quả trong Bảng~\ref{tab:accuracy} làm sáng tỏ sự khác biệt căn bản giữa các
-nhóm đặc trưng và cách tiếp cận mô hình. Trước hết, \textbf{Gradient Boosting
-    (GB)} nổi bật với hiệu năng ổn định nhất, liên tục đạt giá trị chính xác tối đa
-(0.996) trong năm kịch bản (S1, S2, S6, S7, S8). Đặc điểm này cho thấy ưu thế
-vượt trội của các phương pháp tăng cường mô hình dựa trên cây quyết định, khả
-năng khai thác tốt cả quan hệ phi tuyến và sự tương tác giữa các đặc trưng.
-\textbf{Random Forest (RF)} mặc dù có đôi chút biến thiên, nhưng vẫn duy trì độ
-chính xác vượt ngưỡng 0.99 trong hầu hết kịch bản, củng cố vai trò của các mô
-hình ensemble dựa trên bootstrap aggregation trong việc giảm phương sai và cải
-thiện khả năng tổng quát hoá.
-
-Trái lại, \textbf{Logistic Regression (LR)} và \textbf{Support Vector Machine
-    (SVM)} chỉ đạt được hiệu năng tiệm cận 0.99 trong các kịch bản sử dụng đặc
-trưng miền thời gian hoặc đặc trưng được lựa chọn bằng SHAP. Đặc biệt, ở kịch
-bản S3 – vốn chỉ khai thác đặc trưng miền tần số – cả hai mô hình này sụt giảm
-nghiêm trọng về độ chính xác (LR còn 0.368, SVM chỉ 0.280). Kết quả nhấn mạnh
-rằng các tín hiệu động học quan trọng để phân loại chủ yếu được mã hoá trong
-miền thời gian. Điều này hoàn toàn tương thích với phân tích SHAP
-(Hình~\ref{fig:shap}), khi các đặc trưng đóng góp nhiều nhất đều tập trung ở
-miền thời gian, đặc biệt trên trục $z$, nơi thể hiện rõ sự khác biệt về động
-học tư thế.
-
-Một điểm đáng chú ý khác là khi áp dụng cơ chế chọn lọc đặc trưng dựa trên
-\textbf{SHAP} (các kịch bản S5–S8), độ chính xác của các mô hình hầu như không
-suy giảm, thậm chí trong một số trường hợp còn được cải thiện nhẹ (ví dụ LR đạt
-0.990 ở S6 và S7 so với 0.970 ở S1). Điều này chứng tỏ việc loại bỏ các đặc
-trưng dư thừa và tập trung vào những đặc trưng quan trọng nhất không chỉ giúp
-giảm chiều dữ liệu mà còn hạn chế hiện tượng nhiễu, từ đó gia tăng độ khái quát
-hoá. Kết quả này có ý nghĩa thực tiễn quan trọng, vì nó cho phép duy trì hiệu
-năng phân loại cao trong khi giảm thiểu chi phí tính toán và bộ nhớ – yếu tố
-then chốt khi triển khai trên các thiết bị nhúng hoặc hệ thống IoT có tài
-nguyên hạn chế.
-
-Tóm lại, Bảng~\ref{tab:accuracy} không chỉ xác nhận ưu thế vượt trội của các mô
-hình ensemble như GB và RF, mà còn chứng minh tính hiệu quả của phương pháp
-chọn lọc đặc trưng dựa trên SHAP. Sự thất bại rõ rệt của kịch bản S3 nhấn mạnh
-rằng miền tần số không mang lại giá trị phân loại đáng kể trong trường hợp này,
-trong khi các đặc trưng miền thời gian mới là nguồn thông tin then chốt để mô
-hình học được ranh giới phân lớp một cách chính xác và bền vững.
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=0.8\linewidth]{images/kq_8kb2.png}}
+    \caption{Kết quả độ chính xác của 8 kịch bản}
+    \label{kq_8kb2}
+\end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{images/matrix (2).png}
-    \caption{Ma trận nhầm lẫn (confusion matrix) của năm mô hình
-        phân loại trong kịch bản S1. GB và RF cho kết quả chính xác
-        cao nhất. Mô hình NN được huấn luyện trực tiếp trên dữ liệu thô.}
-    \label{fig:cm_all_models}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/kq_kb7_rf_val.png}
+        \label{fig:kq_kb7_rf_val}
+        \caption{RF trên tập huấn luyện}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/kq_kb7_rf_test.png}
+        \label{fig:kq_kb7_rf_test}
+        \caption{RF trên tập kiểm thử}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/kq_kb7_lr_val.png}
+        \label{fig:kq_kb7_lr_val}
+        \caption{SVM trên tập huấn luyện}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/kq_kb7_lr_test.png}
+        \label{fig:kq_kb7_lr_test}
+        \caption{SVM trên tập kiểm thử}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/kq_kb7_svm_val.png}
+        \label{fig:kq_kb7_svm_val}
+        \caption{GB trên tập huấn luyện}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/kq_kb7_gb_test.png}
+        \label{fig:kq_kb7_gb_test}
+        \caption{GB trên tập kiểm thử}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/kq_kb7_lr_val.png}
+        \label{fig:kq_kb7_lr_val}
+        \caption{LR trên tập huấn luyện}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/kq_kb7_lr_test.png}
+        \label{fig:kq_kb7_lr_test}
+        \caption{LR trên tập kiểm thử}
+    \end{subfigure}
+    \caption{Ma trận nhầm lẫn trong kịch bản 8}
+    \label{fig:kq_kb7_confuse}
+
 \end{figure}
 
-Kết quả này nhấn mạnh vai trò then chốt của lựa chọn đặc trưng đầu vào đối với
-hiệu quả mô hình. Các kịch bản sử dụng đặc trưng đã rút gọn theo SHAP (như
-S5–S8) vừa đạt độ chính xác cao, vừa giảm số chiều dữ liệu đầu vào, qua đó hỗ
-trợ triển khai mô hình nhẹ trong môi trường nhúng. Ngược lại, các kịch bản
-thiếu chọn lọc như S3 dẫn đến hiệu suất kém.
-
-\begin{table}[htbp]
-    \caption{Kích thước mô hình (KB) trong 8 kịch bản}
-    \label{tab:modelsize}
-    \centering
-    \renewcommand{\arraystretch}{1.1}
-    \scriptsize
-    \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
-        \hline
-        \textbf{Mô hình} & S1  & S2  & S3   & S4  & S5  & S6  & S7  & S8  \\
-        \hline
-        LR               & 4   & 2   & 2    & 2   & 2   & 2   & 2   & 2   \\
-        RF               & 187 & 151 & 291  & 176 & 89  & 89  & 141 & 103 \\
-        SVM              & 315 & 232 & 3051 & 294 & 150 & 92  & 183 & 274 \\
-        GB               & 605 & 602 & 615  & 603 & 587 & 587 & 587 & 589 \\
-        NN               & 55  & --  & --   & --  & --  & --  & --  & --  \\
-        \hline
-    \end{tabular}
-\end{table}
-
-Bảng~\ref{tab:modelsize} cho thấy sự khác biệt đáng kể về kích thước giữa các
-mô hình. \textbf{Gradient Boosting (GB)} luôn duy trì dung lượng trên 580~KB
-bất kể kịch bản, cho thấy tính ổn định nhưng đồng thời cũng phản ánh hạn chế
-khi triển khai trên thiết bị nhúng có bộ nhớ giới hạn. \textbf{Random Forest
-    (RF)} có kích thước biến thiên rõ rệt (89–291~KB) phụ thuộc vào số lượng và
-loại đặc trưng đầu vào, song vẫn duy trì ở mức chấp nhận được đối với các nền
-tảng nhúng có tài nguyên trung bình.
-
-Ngược lại, \textbf{Logistic Regression (LR)} chỉ chiếm 2–4~KB, một dung lượng
-cực kỳ nhỏ, khiến mô hình này trở thành ứng viên lý tưởng trong các hệ thống vi
-điều khiển hoặc IoT cần tối ưu bộ nhớ, mặc dù độ chính xác có phần thấp hơn so
-với các mô hình ensemble. \textbf{Support Vector Machine (SVM)} thường dao động
-trong khoảng 92–315~KB, tuy nhiên ở kịch bản S3 kích thước tăng vọt lên
-3051~KB, nguyên nhân xuất phát từ số chiều đầu vào lớn và cấu trúc bộ nhớ của
-kernel. Điều này cho thấy SVM kém ổn định về mặt tài nguyên và khó kiểm soát
-khi triển khai thực tế.
-
-Đáng chú ý, \textbf{Neural Network (NN)} ở kịch bản S1 đạt độ chính xác 0.92 với dung lượng chỉ 55~KB.
-Mặc dù chưa đạt hiệu năng tối ưu, kết quả này mở ra hướng tiếp cận tiềm năng cho các ứng dụng Edge AI,
-nơi sự cân bằng giữa hiệu năng và tính gọn nhẹ được đặt lên hàng đầu.
-
-Tổng thể, Bảng~\ref{tab:modelsize} nhấn mạnh bài toán đánh đổi (trade-off) giữa
-\emph{hiệu quả dự đoán} và \emph{tài nguyên triển khai}. Trong khi RF và GB cho
-kết quả phân loại vượt trội về độ chính xác, thì LR và NN lại nổi bật nhờ kích
-thước gọn nhẹ, đặc biệt phù hợp với môi trường hạn chế tài nguyên. Sự đánh đổi
-này cho thấy rằng lựa chọn mô hình tối ưu không chỉ dựa vào độ chính xác thuần
-tuý, mà còn phụ thuộc vào yêu cầu hệ thống và ngữ cảnh triển khai cụ thể. Từ
-hai bảng kết quả có thể thấy rõ sự đánh đổi giữa \emph{hiệu năng phân loại} và
-\emph{tài nguyên triển khai}. Trong bối cảnh nghiên cứu hướng đến ứng dụng trên
-thiết bị nhúng và hệ thống IoT, các mô hình có kích thước gọn nhẹ nhưng vẫn duy
-trì độ chính xác ở mức cao cần được ưu tiên. Do đó, mặc dù \textbf{RF} và
-\textbf{GB} thể hiện hiệu năng vượt trội về mặt độ chính xác, luận án lựa chọn
-thử nghiệm chuyên sâu với \textbf{Logistic Regression (LR)} và \textbf{Neural
-    Network (NN)}. Hai mô hình này có ưu điểm quan trọng: dung lượng bộ nhớ rất nhỏ
-(2--4~KB đối với LR, 55~KB đối với NN) và khả năng triển khai thuận lợi trên vi
-điều khiển, vốn thường chỉ có vài trăm kilobyte bộ nhớ khả dụng.
-
-Một điểm cần lưu ý là các kịch bản S1–S5 được xây dựng với cửa sổ trượt 2~giây,
-trong khi các kịch bản S7 sử dụng cửa sổ 1~giây với mức chồng lấn 50\%. Kết quả
-cho thấy việc giảm độ dài cửa sổ từ 2~giây xuống 1~giây không làm suy giảm đáng
-kể độ chính xác (thậm chí trong một số trường hợp, LR và GB còn cải thiện nhẹ,
-ví dụ LR đạt 0.990 ở S7 so với 0.987 ở S5). Việc lựa chọn cửa sổ 1~giây thay vì
-2~giây có ý nghĩa thực tiễn quan trọng: nó cho phép hệ thống phản hồi nhanh
-hơn, nắm bắt kịp thời sự thay đổi tư thế, đồng thời giảm độ trễ trong nhận dạng
-– một yêu cầu thiết yếu khi triển khai trong môi trường y tế thực tế.
-
-Tóm lại, mặc dù các mô hình ensemble như RF và GB đạt hiệu năng cao nhất về mặt
-số liệu, luận án định hướng ưu tiên triển khai thử nghiệm với LR và NN kết hợp
-cửa sổ 1~giây. Đây là lựa chọn cân bằng hợp lý giữa \emph{độ chính xác},
-\emph{tính gọn nhẹ của mô hình}, và \emph{khả năng đáp ứng thời gian thực} khi
-triển khai trong các hệ thống nhúng hỗ trợ giám sát sức khỏe.
+Hình~\ref{fig:kq_kb7_confuse} minh họa ma trận nhầm lẫn giữa các mô hình. Qua
+đó cho thấy việc sử dụng các đặc trưng vị trí đầu cho kết quả thật sự hiệu quả.
+Đây cũng là điểm mới luận văn tìm ra để triển khai bài toán phân loại tư thế
+ngủ lên biên.
 
 \section{Triển khai trên vi điều khiển nhúng}
 

@@ -518,6 +518,88 @@
       \verb 10.1007/s40675-020-00197-5
       \endverb
     \endentry
+    \entry{Cary2021_tu_the_ngủ}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=19880ac14a462468abf00bce2998b658}{%
+           family={Cary},
+           familyi={C\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=83ff37113dc6915ea1c9331289cd5757}{%
+           family={Jacques},
+           familyi={J\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4248dd39bde4ce302f2fa5ac7f4514e9}{%
+           family={Briffa},
+           familyi={B\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{fullhash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{fullhashraw}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{bibnamehash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{authorbibnamehash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{authornamehash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{authorfullhash}{d4159c2fb33da16548a4583acd7cf055}
+      \strng{authorfullhashraw}{d4159c2fb33da16548a4583acd7cf055}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PLoS One}
+      \field{month}{11}
+      \field{note}{Erratum in: PLoS One. 2024 Jul 2;19(7):e0306662. doi: 10.1371/journal.pone.0306662.}
+      \field{number}{11}
+      \field{title}{Examining relationships between sleep posture, waking spinal symptoms and quality of sleep: A cross sectional study}
+      \field{volume}{16}
+      \field{year}{2021}
+      \field{pages}{e0260582}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0260582
+      \endverb
+    \endentry
+    \entry{cartwright1984position}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=e3a5573a93f7a024d9a26c708a9b762a}{%
+           family={Cartwright},
+           familyi={C\bibinitperiod},
+           given={R.\bibnamedelimi D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{e3a5573a93f7a024d9a26c708a9b762a}
+      \strng{fullhash}{e3a5573a93f7a024d9a26c708a9b762a}
+      \strng{fullhashraw}{e3a5573a93f7a024d9a26c708a9b762a}
+      \strng{bibnamehash}{e3a5573a93f7a024d9a26c708a9b762a}
+      \strng{authorbibnamehash}{e3a5573a93f7a024d9a26c708a9b762a}
+      \strng{authornamehash}{e3a5573a93f7a024d9a26c708a9b762a}
+      \strng{authorfullhash}{e3a5573a93f7a024d9a26c708a9b762a}
+      \strng{authorfullhashraw}{e3a5573a93f7a024d9a26c708a9b762a}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0161-8105}
+      \field{journaltitle}{Sleep}
+      \field{number}{2}
+      \field{title}{Effect of Sleep Position on Sleep Apnea Severity}
+      \field{volume}{7}
+      \field{year}{1984}
+      \field{pages}{110\bibrangedash 114}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1093/sleep/7.2.110
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/sleep/7.2.110
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/sleep/7.2.110
+      \endverb
+    \endentry
     \entry{Lee2013_12ecg}{article}{}{}
       \name{author}{5}{}{%
         {{hash=c7e776bd4e764704a60d4e95760fea8e}{%
@@ -1025,8 +1107,8 @@
       \strng{authornamehash}{18ca756802db400472cbc71c008086bc}
       \strng{authorfullhash}{18ca756802db400472cbc71c008086bc}
       \strng{authorfullhashraw}{18ca756802db400472cbc71c008086bc}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sleep Breath}
@@ -1068,8 +1150,8 @@
       \strng{authornamehash}{813c9cde4601ad286eb7996fbda01d8a}
       \strng{authorfullhash}{813c9cde4601ad286eb7996fbda01d8a}
       \strng{authorfullhashraw}{813c9cde4601ad286eb7996fbda01d8a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Access}
@@ -1471,8 +1553,8 @@
       \strng{authornamehash}{2d271add5ac1778615f735aa276aa8d1}
       \strng{authorfullhash}{2d271add5ac1778615f735aa276aa8d1}
       \strng{authorfullhashraw}{2d271add5ac1778615f735aa276aa8d1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Therapeutic Advances in Chronic Disease}
@@ -1518,8 +1600,8 @@
       \strng{authornamehash}{a6d4c1858cbd978df1d005444b7a6257}
       \strng{authorfullhash}{a6d4c1858cbd978df1d005444b7a6257}
       \strng{authorfullhashraw}{a6d4c1858cbd978df1d005444b7a6257}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nat Sci Sleep}
@@ -1570,8 +1652,8 @@
       \strng{authornamehash}{baf50c6e1b4590031345c424998f37d3}
       \strng{authorfullhash}{baf50c6e1b4590031345c424998f37d3}
       \strng{authorfullhashraw}{baf50c6e1b4590031345c424998f37d3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nature and Science of Sleep}
@@ -1843,49 +1925,6 @@
       \verb 10.1007/s41030-024-00286-8
       \endverb
     \endentry
-    \entry{Cary2021_tu_the_ngủ}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=19880ac14a462468abf00bce2998b658}{%
-           family={Cary},
-           familyi={C\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=83ff37113dc6915ea1c9331289cd5757}{%
-           family={Jacques},
-           familyi={J\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=4248dd39bde4ce302f2fa5ac7f4514e9}{%
-           family={Briffa},
-           familyi={B\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{d4159c2fb33da16548a4583acd7cf055}
-      \strng{fullhash}{d4159c2fb33da16548a4583acd7cf055}
-      \strng{fullhashraw}{d4159c2fb33da16548a4583acd7cf055}
-      \strng{bibnamehash}{d4159c2fb33da16548a4583acd7cf055}
-      \strng{authorbibnamehash}{d4159c2fb33da16548a4583acd7cf055}
-      \strng{authornamehash}{d4159c2fb33da16548a4583acd7cf055}
-      \strng{authorfullhash}{d4159c2fb33da16548a4583acd7cf055}
-      \strng{authorfullhashraw}{d4159c2fb33da16548a4583acd7cf055}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{PLoS One}
-      \field{month}{11}
-      \field{note}{Erratum in: PLoS One. 2024 Jul 2;19(7):e0306662. doi: 10.1371/journal.pone.0306662.}
-      \field{number}{11}
-      \field{title}{Examining relationships between sleep posture, waking spinal symptoms and quality of sleep: A cross sectional study}
-      \field{volume}{16}
-      \field{year}{2021}
-      \field{pages}{e0260582}
-      \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1371/journal.pone.0260582
-      \endverb
-    \endentry
     \entry{heinzer2018}{article}{}{}
       \name{author}{4}{}{%
         {{hash=e28cb71cea0c4df7ce0095d6b19323f5}{%
@@ -1999,45 +2038,6 @@
       \verb https://doi.org/10.1016/j.rmed.2023.107227
       \endverb
     \endentry
-    \entry{cartwright1984position}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=e3a5573a93f7a024d9a26c708a9b762a}{%
-           family={Cartwright},
-           familyi={C\bibinitperiod},
-           given={R.\bibnamedelimi D.},
-           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \strng{namehash}{e3a5573a93f7a024d9a26c708a9b762a}
-      \strng{fullhash}{e3a5573a93f7a024d9a26c708a9b762a}
-      \strng{fullhashraw}{e3a5573a93f7a024d9a26c708a9b762a}
-      \strng{bibnamehash}{e3a5573a93f7a024d9a26c708a9b762a}
-      \strng{authorbibnamehash}{e3a5573a93f7a024d9a26c708a9b762a}
-      \strng{authornamehash}{e3a5573a93f7a024d9a26c708a9b762a}
-      \strng{authorfullhash}{e3a5573a93f7a024d9a26c708a9b762a}
-      \strng{authorfullhashraw}{e3a5573a93f7a024d9a26c708a9b762a}
-      \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{0161-8105}
-      \field{journaltitle}{Sleep}
-      \field{number}{2}
-      \field{title}{Effect of Sleep Position on Sleep Apnea Severity}
-      \field{volume}{7}
-      \field{year}{1984}
-      \field{pages}{110\bibrangedash 114}
-      \range{pages}{5}
-      \verb{doi}
-      \verb 10.1093/sleep/7.2.110
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1093/sleep/7.2.110
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1093/sleep/7.2.110
-      \endverb
-    \endentry
     \entry{mador2005prevalence}{article}{}{}
       \name{author}{6}{}{%
         {{hash=2dff12f51ba7492399a0068deb236026}{%
@@ -2079,8 +2079,8 @@
       \strng{authornamehash}{d44903cf4f645d6cbb65477649db208b}
       \strng{authorfullhash}{d44903cf4f645d6cbb65477649db208b}
       \strng{authorfullhashraw}{d44903cf4f645d6cbb65477649db208b}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0012-3692}
@@ -2993,8 +2993,8 @@
       \strng{authornamehash}{cb7b56d09944206bd3cc40420cc322cd}
       \strng{authorfullhash}{cb7b56d09944206bd3cc40420cc322cd}
       \strng{authorfullhashraw}{cb7b56d09944206bd3cc40420cc322cd}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors (Basel, Switzerland)}
@@ -3027,8 +3027,8 @@
       \strng{authornamehash}{8d361ffa60c8aaed897ea4f0d26ed099}
       \strng{authorfullhash}{8d361ffa60c8aaed897ea4f0d26ed099}
       \strng{authorfullhashraw}{8d361ffa60c8aaed897ea4f0d26ed099}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Chest}
@@ -3054,8 +3054,8 @@
       \strng{authornamehash}{263645799456648a55029dd2511862c6}
       \strng{authorfullhash}{263645799456648a55029dd2511862c6}
       \strng{authorfullhashraw}{263645799456648a55029dd2511862c6}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{J Clin Sleep Med}
@@ -3093,8 +3093,8 @@
       \strng{authornamehash}{788a3f68354cbd52dfb4808074f5bdd4}
       \strng{authorfullhash}{788a3f68354cbd52dfb4808074f5bdd4}
       \strng{authorfullhashraw}{788a3f68354cbd52dfb4808074f5bdd4}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2022 44th Annual International Conference of the IEEE Engineering in Medicine \& Biology Society (EMBC)}
@@ -3386,8 +3386,8 @@
       \strng{authornamehash}{009a6e450af33b4409a65ab4a6fee5e9}
       \strng{authorfullhash}{009a6e450af33b4409a65ab4a6fee5e9}
       \strng{authorfullhashraw}{009a6e450af33b4409a65ab4a6fee5e9}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Neural Systems and Rehabilitation Engineering}
@@ -3419,8 +3419,8 @@
       \strng{authornamehash}{66f79cbf9f9824e5895f52d1378b4a88}
       \strng{authorfullhash}{66f79cbf9f9824e5895f52d1378b4a88}
       \strng{authorfullhashraw}{66f79cbf9f9824e5895f52d1378b4a88}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors (Basel)}
@@ -3976,8 +3976,8 @@
       \strng{authornamehash}{d9b7eb4555183028a246e2ccad0b7fa5}
       \strng{authorfullhash}{d9b7eb4555183028a246e2ccad0b7fa5}
       \strng{authorfullhashraw}{d9b7eb4555183028a246e2ccad0b7fa5}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{10}
@@ -4425,8 +4425,8 @@
       \strng{authornamehash}{c7a9bc6ff9925984fd480fe02f2fbb45}
       \strng{authorfullhash}{c7a9bc6ff9925984fd480fe02f2fbb45}
       \strng{authorfullhashraw}{c7a9bc6ff9925984fd480fe02f2fbb45}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2168-2194}
@@ -4497,8 +4497,8 @@
       \strng{authornamehash}{de0ec86f07e4e27f5d7b3ead94d05df6}
       \strng{authorfullhash}{de0ec86f07e4e27f5d7b3ead94d05df6}
       \strng{authorfullhashraw}{de0ec86f07e4e27f5d7b3ead94d05df6}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0018-9294}

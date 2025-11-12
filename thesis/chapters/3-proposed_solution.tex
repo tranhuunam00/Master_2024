@@ -2,7 +2,7 @@
 \section{Nghiên cứu, phát triển phần cứng }
 
 Trong phần này, tác giả sẽ trình bày các nội dung bao gồm: nghiên cứu, lựa chọn
-vi điều khiển và cảm biến phù hợp; từ đó tiến hành thiết kế sơ đồ nguyên lý, mô
+vi điều khiển và cảm biến phù hợp; từ đó tiến hành thiết kế sơ đồ mạch, mô
 phỏng mạch 3D và hoàn thiện sản phẩm.
 
 \subsection{Vi xử lý}
@@ -53,10 +53,10 @@ các lý do sau:
 \end{figure}
 
 nRF52840 tích hợp bộ giao thức không dây Bluetooth năng lượng thấp hoạt động ở
-băng tần 2.4 GHz và bộ xử lý trung tâm Arm Cortex-M4F chạy ở xung nhịp 64 MHz,
-kèm bộ xử lý dấu phẩy động (FPU). Vi xử lý này được trang bị bộ nhớ 1 MB Flash
-và 256 KB RAM phù hợp để triển khai các mô hình cho bài toán phân loại tư thế
-ngủ. Ngoài khả năng hoạt động trong dải điện áp rộng từ +1.7 V đến +5.5 V
+băng tần 2.4~GHz và bộ xử lý trung tâm Arm Cortex-M4F chạy ở xung nhịp 64~MHz,
+kèm bộ xử lý dấu phẩy động (FPU). Vi xử lý này được trang bị bộ nhớ 1~MB Flash
+và 256~kb RAM phù hợp để triển khai các mô hình cho bài toán phân loại tư thế
+ngủ. Ngoài khả năng hoạt động trong dải điện áp rộng từ +1.7~V đến +5.5~V
 (tương thích với nguồn pin và USB), nRF52840 còn cung cấp các giao tiếp ngoại
 vi phong phú: hai giao diện I2C, bốn SPI chủ (master), ba SPI tớ (slave), bốn
 kênh điều chế xung (PWM) hỗ trợ EasyDMA, cùng với bộ định thời 32-bit, phù hợp
@@ -193,8 +193,8 @@ nhau. Điều này cho phép thiết bị hoạt động lâu dài trên nền t
 suất thấp mà không ảnh hưởng đến hiệu năng đo.
 
 Thứ ba, tốc độ lấy mẫu và thời gian đáp ứng nhanh: BMI270 hỗ trợ tốc độ lấy mẫu
-(ODR) từ 0.7Hz đến 1.6 kHz cho gia tốc kế, phù hợp bài toán phân loại giấc ngủ
-yêu cầu tần số lấy mẫu thấp ~ 10Hz.
+(ODR) từ 0.7~Hz đến~1.6 kHz cho gia tốc kế, phù hợp bài toán phân loại giấc ngủ
+yêu cầu tần số lấy mẫu thấp (10~Hz).
 
 Thứ tư, khả năng chống nhiễu và hiệu chuẩn tự động: cảm biến có cơ chế bù sai
 số và bù độ nhạy theo thời gian thực, giúp giảm sai lệch khi hoạt động lâu dài.
@@ -258,7 +258,7 @@ giám sát tư thế ngủ.
 \subsubsection*{Các thành phần, chức năng}
 
 BLE là giao thức kết nối không dây được thiết kế chuyên biệt cho các ứng dụng
-năng lượng thấp, hoạt động ở băng tần ISM 2.4 GHz, hỗ trợ thông lượng ứng dụng
+năng lượng thấp, hoạt động ở băng tần ISM 2.4~GHz, hỗ trợ thông lượng ứng dụng
 lên đến 1.4 Mbps \cite{BluetoothSIG2019_Core5}. BLE hiện được hỗ trợ phổ biến
 trên hầu hết các hệ điều hành như iOS, Android, macOS, Windows và Linux, cũng
 như trong các thiết bị di động hiện đại.
@@ -297,7 +297,7 @@ lưới nhiều nút. Mỗi nút trong mạng có thể đóng vai trò chuyển
 liệu lan truyền đến các vùng rộng hơn theo mô hình phân tán. Điều này phù hợp
 với các ứng dụng IoT quy mô đa cảm biến đặt tại nhiều nơi khác nhau.
 
-\subsection{Thiết kế mạch nguyên lý}
+\subsection{Thiết kế mạch}
 
 Sau khi đã lựa chọn được vi điều khiển, cảm biến của hệ thống phần cứng phân
 loại tư thế ngủ. Trong phần này, tác giả sẽ trình bày về thiết kế sơ đồ nguyên
@@ -305,7 +305,7 @@ lý cho mạch thông qua những câu hỏi: Các thành phần trong cần thi
 cho bài toán phân loại tư thế ngủ là gì? Chúng được kết nối với nhau như thế
 nào? và chi tiết từng thành phần đó là gì?
 
-Từ đó, tác giả từng bước nghiên cứu và hoàn thiện thiết kế sơ đồ nguyên lý.
+Từ đó, tác giả từng bước nghiên cứu và hoàn thiện thiết kế sơ đồ mạch.
 
 \subsubsection*{Mục tiêu}
 
@@ -320,8 +320,8 @@ bài toán xác định tiếng ngáy của nhóm. 03) Khối nguồn: có nhi�
 đúng dải điện áp tương thích, lọc nhiễu, bảo vệ dòng 04) Khối nạp và gỡ lỗi: có
 nhiệm vụ nạp mã chương trình vào vi điều khiển 05) Khối hiển thị: có nhiệm vụ
 đưa ra thông báo khi có phát hiện bất thường. Kích thước của mạch là hình tròn,
-có đường kính không quá 4cm. Đây chính là những mục tiêu điểm tiên quyết để coi
-là đạt được mục tiêu trong phần này.
+có đường kính không quá 4~cm. Đây chính là những mục tiêu điểm tiên quyết để
+coi là đạt được mục tiêu trong phần này.
 
 \subsubsection{Khối điều khiển}
 
@@ -342,10 +342,10 @@ nhiệm các nhiệm vụ của khối điều khiển \cite{uBlox2019_NINA_B3}.
 \end{figure}
 
 Mô-đun NINA-B306 được phát triển dựa trên vi điều khiển Nordic nRF52840, tích
-hợp ăng-ten PCB nội bộ được cấp phép từ Abracon ngay trên bảng mạch của mô-đun.
-Ngoài ra, NINA-B306 được thiết kế với dải điện áp hoạt động chuẩn hóa từ 1.7 V
-đến 3.6 V, thấp hơn so với giới hạn tối đa 5.5 V của vi điều khiển nRF52840,
-nhằm tối ưu hiệu suất năng lượng.
+hợp ăng-ten PCB nội bộ được cấp phép từ Abracon ngay trên bảng mạch của mô-đun
+Hifnh~\ref{ninab306_block}. Ngoài ra, NINA-B306 được thiết kế với dải điện áp
+hoạt động chuẩn hóa từ 1.7 V đến 3.6 V, thấp hơn so với giới hạn tối đa 5.5 V
+của vi điều khiển nRF52840, nhằm tối ưu hiệu suất năng lượng.
 
 \begin{figure}[htbp]
     \centering
@@ -360,6 +360,13 @@ nhằm tối ưu hiệu suất năng lượng.
     \caption{Sơ đồ chân U-blox NINA-B306}
     \label{ninab306_pin}
 \end{figure}
+
+Sơ đồ chân thể hiện cấu trúc bố trí tối ưu với hơn 50 chân GPIO đa chức năng,
+bao gồm các kênh analog, các đường truyền debug (SWD, TRACE) và các chân nguồn
+được phân bố đối xứng, góp phần tăng cường độ ổn định tín hiệu và giảm nhiễu
+điện từ Hình~\ref{ninab306_pin}.
+
+\newpage
 
 \subsubsection{Khối cảm biến}
 Như đã đề cập chi tiết ở phần~\ref{subsec:cam_bien}, cảm biến gia tốc Bosch
@@ -380,13 +387,6 @@ Tuy nhiên, trong khuôn khổ luận văn này tác giả không đề cập s�
 này để tập trung tối đa vào dữ liệu cảm biến gia tốc cho bài toán phân loại tư
 thế ngủ.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/mp34DT06J.png}
-    \caption{STM MP34DT06J}
-    \label{mp34DT06J}
-\end{figure}
-
 \subsubsection{Khối nguồn, nạp và gỡ lỗi, hiển thị}
 Ba khối chức năng này được thiết kế nhằm đảm bảo sự ổn định và khả năng vận
 hành tin cậy của toàn bộ hệ thống phần cứng.
@@ -402,7 +402,7 @@ xuống mức ổn định 3.3 V với hiệu suất cao.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{images/MP2322GQH.png}
-    \caption{Sơ đồ khối IC MP2322GQH, dải đầu vào 3V-22V, dòng tải tối đa 1A, hiệu suất cao, tần số chuyển mạch 1.25MHz (Monolithic Power Systems)}
+    \caption{Sơ đồ khối IC MP2322GQH, dải đầu vào 3~V - 22~V, dòng tải tối đa 1~A, hiệu suất cao, tần số chuyển mạch 1.25~MHz}
     \label{fig:MP2322GQH}
 \end{figure}
 
@@ -417,19 +417,19 @@ Serial Wire Debug (SWD); (2) Cơ chế Bootloader thông qua kết nối USB. S�
 hợp này giúp nâng cao tính linh hoạt và khả năng mở rộng trong quá trình phát
 triển phần mềm, đồng thời giảm thiểu thời gian thử nghiệm.
 
-\subsubsection{Mạch nguyên lý}
+\subsubsection{Sơ đồ mạch}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1\textwidth]{images/schematic.png}
-    \caption{Sơ đồ nguyên lý}
+    \includegraphics[width=0.9\textwidth]{images/schematic.png}
+    \caption{Sơ đồ mạch}
     \label{fig:schematic}
 \end{figure}
 
 Sau khi xác định các linh kiện, các yêu cầu về điện áp, kiểu dữ liệu đầu vào,
-đầu ra của các thành phần kể trên, tác giả tiến hành vẽ nguyên lý mạch thông
-qua phần mềm Altium Designer.
+đầu ra của các thành phần kể trên, tác giả tiến hành vẽ sơ đồ mạch thông qua
+phần mềm Altium Designer.
 
-Mạch được thiết kế hình tròn kích thước đường kính 3cm, 2 lớp đúng với định
+Mạch được thiết kế hình tròn kích thước đường kính 3~cm, 2~lớp đúng với định
 hướng của nhóm.
 
 Kết quả được thể hiện tại Hình~\ref{fig:schematic}
@@ -440,14 +440,18 @@ Kết quả được thể hiện tại Hình~\ref{fig:schematic}
         \centering
         \includegraphics[width=\textwidth]{images/pcd_dong_top.png}
         \label{fig:pcb_dong_top}
+        \caption{lớp trên}
+
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/pcb_dong_bottom.png}
         \label{fig:pcb_dong_bottom}
+        \caption{lớp dưới}
+
     \end{subfigure}
-    \caption{Bố trí mạch in hai mặt của bo mạch: (a) lớp trên; (b) lớp dưới}
+    \caption{Bố trí mạch in hai mặt của bo mạch}
     \label{fig:pcb_dong}
 \end{figure}
 
@@ -456,19 +460,22 @@ Kết quả được thể hiện tại Hình~\ref{fig:schematic}
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/pcb_3d_top.png}
+        \caption{lớp trên}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
+        \caption{lớp dưới}
+
         \includegraphics[width=\textwidth]{images/pcb_3d_bottom.png}
     \end{subfigure}
-    \caption{Mô hình mạch 3D: (a) lớp trên; (b) lớp dưới}
+    \caption{Mô hình mạch 3D}
     \label{fig:pcb_3d}
 \end{figure}
 
 Sau khi hoàn thiện thiết kế, tác giả thực hiện đặt in mạch, hàn lắp các linh
-kiện theo sơ đồ nguyên lý, và tiến hành kiểm tra hoạt động của các khối chức
-năng trên bo mạch để đánh giá tính ổn định và độ tin cậy của hệ thống.
+kiện theo sơ đồ mạch, và tiến hành kiểm tra hoạt động của các khối chức năng
+trên bo mạch để đánh giá tính ổn định và độ tin cậy của hệ thống.
 
 \newpage
 

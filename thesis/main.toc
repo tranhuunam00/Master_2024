@@ -5,17 +5,17 @@
 \contentsline {chapter}{Tóm tắt}{iii}{Doc-Start}%
 \contentsline {chapter}{Danh sách hình vẽ}{ix}{chapter*.2}%
 \contentsline {chapter}{Danh sách bảng}{x}{chapter*.3}%
-\contentsline {chapter}{Danh mục ký hiệu, viết tắt}{xi}{table.0.1}%
+\contentsline {chapter}{Danh mục ký hiệu, viết tắt}{xii}{table.0.1}%
 \contentsline {chapter}{Đặt vấn đề}{1}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Tổng quan OSA, tư thế ngủ và công nghệ liên quan}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1.}Hội chứng ngưng thở khi ngủ}{4}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1.}Định nghĩa}{5}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2.}Nguyên nhân}{6}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3.}Ảnh hưởng của OSA}{7}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4.}Tư thế ngủ và liên hệ với OSA}{7}{subsection.1.1.4}%
-\contentsline {section}{\numberline {1.2.}Công nghệ trong chẩn đoán OSA và phân loại tư thế ngủ}{9}{section.1.2}%
+\contentsline {subsection}{\numberline {1.1.4.}Tư thế ngủ và liên hệ với OSA}{8}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2.}Công nghệ trong chẩn đoán OSA và phân loại tư thế ngủ}{10}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1.}Đa ký giấc ngủ}{10}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2.}Thiết bị theo dõi OSA tại nhà}{11}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.2.}Thiết bị theo dõi OSA tại nhà}{12}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {1.2.3.}Thiết bị phân loại tư thế ngủ}{14}{subsection.1.2.3}%
 \contentsline {subsection}{\numberline {1.2.4.}Cảm biến gia tốc trong đánh giá tư thế ngủ}{17}{subsection.1.2.4}%
 \contentsline {subsection}{\numberline {1.2.5.}Học máy trong phân loại OSA và tư thế ngủ}{25}{subsection.1.2.5}%
@@ -28,37 +28,37 @@
 \contentsline {subsection}{\numberline {2.1.1.}Vi xử lý}{33}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2.}Cảm biến}{36}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3.}Bluetooth năng lượng thấp}{39}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4.}Thiết kế mạch nguyên lý}{43}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.4.}Thiết kế mạch}{43}{subsection.2.1.4}%
 \contentsline {subsubsection}{Khối điều khiển}{43}{subsubsection*.37}%
-\contentsline {subsubsection}{Khối cảm biến}{44}{subsubsection*.41}%
-\contentsline {subsubsection}{Khối nguồn, nạp và gỡ lỗi, hiển thị}{47}{subsubsection*.43}%
-\contentsline {subsubsection}{Mạch nguyên lý}{48}{subsubsection*.45}%
+\contentsline {subsubsection}{Khối cảm biến}{46}{subsubsection*.41}%
+\contentsline {subsubsection}{Khối nguồn, nạp và gỡ lỗi, hiển thị}{47}{subsubsection*.42}%
+\contentsline {subsubsection}{Sơ đồ mạch}{48}{subsubsection*.44}%
 \contentsline {section}{\numberline {2.2.}Hệ thống phần mềm}{51}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1.}Lập trình phần cứng}{51}{subsection.2.2.1}%
-\contentsline {subsubsection}{Cấu hình vi xử lý và cảm biến}{51}{subsubsection*.49}%
-\contentsline {subsubsection}{Cấu hình BLE}{54}{subsubsection*.50}%
-\contentsline {subsubsection}{Lọc nhiễu bằng bộ lọc Kalman}{57}{subsubsection*.52}%
+\contentsline {subsubsection}{Cấu hình vi xử lý và cảm biến}{51}{subsubsection*.48}%
+\contentsline {subsubsection}{Cấu hình BLE}{54}{subsubsection*.49}%
+\contentsline {subsubsection}{Lọc nhiễu bằng bộ lọc Kalman}{57}{subsubsection*.51}%
 \contentsline {subsection}{\numberline {2.2.2.}Phần mềm thu thập, lưu trữ}{58}{subsection.2.2.2}%
-\contentsline {subsubsection}{Ứng dụng di dộng}{59}{subsubsection*.55}%
-\contentsline {subsubsection}{Máy chủ đám mây}{66}{subsubsection*.61}%
+\contentsline {subsubsection}{Ứng dụng di dộng}{59}{subsubsection*.54}%
+\contentsline {subsubsection}{Máy chủ đám mây}{66}{subsubsection*.60}%
 \contentsline {subsection}{\numberline {2.2.3.}Học máy trong phân loại tư thế ngủ}{70}{subsection.2.2.3}%
-\contentsline {subsubsection}{Hồi quy Logistic}{71}{subsubsection*.66}%
-\contentsline {subsubsection}{Máy vec-tơ hỗ trợ}{72}{subsubsection*.67}%
-\contentsline {subsubsection}{Rừng ngẫu nhiên}{75}{subsubsection*.71}%
-\contentsline {subsubsection}{Gradient boosting}{76}{subsubsection*.72}%
-\contentsline {subsubsection}{Mạng nơ-ron nhân tạo}{77}{subsubsection*.73}%
+\contentsline {subsubsection}{Hồi quy Logistic}{71}{subsubsection*.65}%
+\contentsline {subsubsection}{Máy vec-tơ hỗ trợ}{72}{subsubsection*.66}%
+\contentsline {subsubsection}{Rừng ngẫu nhiên}{75}{subsubsection*.70}%
+\contentsline {subsubsection}{Gradient boosting}{76}{subsubsection*.71}%
+\contentsline {subsubsection}{Mạng nơ-ron nhân tạo}{77}{subsubsection*.72}%
 \contentsline {chapter}{\numberline {3}KẾT QUẢ VÀ ĐÁNH GIÁ}{78}{chapter.3}%
 \contentsline {section}{\numberline {3.1.}Hệ thống thu thập, lưu trữ}{78}{section.3.1}%
-\contentsline {section}{\numberline {3.2.}Thu thập và gắn nhãn dữ liệu}{82}{section.3.2}%
-\contentsline {section}{\numberline {3.3.}Phân loại tư thế ngủ bằng học máy}{83}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1.}Phân tích dữ liệu}{83}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2.}Xử lý và trích xuất đặc trưng}{84}{subsection.3.3.2}%
-\contentsline {subsubsection}{Đặc trưng miền thời gian (T1)}{86}{subsubsection*.85}%
-\contentsline {subsubsection}{Đặc trưng miền tần số (F1)}{88}{subsubsection*.86}%
-\contentsline {subsection}{\numberline {3.3.3.}Kịch bản kiểm thử và lựa chọn tính năng}{88}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4.}Huấn luyện mô hình}{92}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5.}Đánh giá kết quả}{94}{subsection.3.3.5}%
-\contentsline {section}{\numberline {3.4.}Triển khai trên vi điều khiển nhúng}{97}{section.3.4}%
+\contentsline {section}{\numberline {3.2.}Thu thập và gắn nhãn dữ liệu}{81}{section.3.2}%
+\contentsline {section}{\numberline {3.3.}Phân loại tư thế ngủ bằng học máy}{84}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1.}Phân tích dữ liệu}{84}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2.}Xử lý và trích xuất đặc trưng}{86}{subsection.3.3.2}%
+\contentsline {subsubsection}{Đặc trưng miền thời gian (T1)}{87}{subsubsection*.84}%
+\contentsline {subsubsection}{Đặc trưng miền tần số (F1)}{87}{subsubsection*.85}%
+\contentsline {subsection}{\numberline {3.3.3.}Lựa chọn tham số}{90}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4.}Kịch bản kiểm thử}{94}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5.}Đánh giá kết quả}{96}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4.}Triển khai trên vi điều khiển nhúng}{98}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1.}Quy trình triển khai mô hình}{98}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2.}Đánh giá hiệu suất và tài nguyên}{102}{subsection.3.4.2}%
 \contentsline {chapter}{\numberline {4}Kết luận}{105}{chapter.4}%

@@ -183,15 +183,11 @@
 \makeglossaries
 \input{glossaries}
 
-
+\usepackage{indentfirst}
 \begin{document}
 \renewcommand{\thelstlisting}{\thechapter.\arabic{lstlisting}}
 
 \renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
-
-% \makeatletter 
-% \renewcommand\thealgorithm{\thechapter.\arabic{algorithm}} 
-% \makeatother
 
 \pagestyle{plain}
 \frontmatter
@@ -209,7 +205,7 @@
 \addcontentsline{toc}{chapter}{Danh sách bảng}
 
 \glsaddall
-\printglossary[type=\acronymtype, title={Danh mục ký hiệu, viết tắt}, style=long, nonumberlist, nopostdot]
+\printglossary[type=\acronymtype, title={Danh mục ký hiệu, viết tắt}, style=long3col, nonumberlist, nopostdot]
 \addcontentsline{toc}{chapter}{Danh mục ký hiệu, viết tắt}
 \mainmatter
 
@@ -224,15 +220,12 @@
 
 \input{chapters/2-base-knowledge}
 
-% \chapter{Phương pháp kiểm thử tự động hàm Typescript sử dụng kỹ thuật kiểm thử tĩnh luồng điểu khiển }
 \chapter{HỆ THỐNG THU THẬP, XỬ LÝ TÍN HIỆU CẢM BIẾN VÀ ĐÁNH GIÁ BẰNG MÔ HÌNH HỌC MÁY\label{the_proposed_method_section}}
 \input{chapters/3-proposed_solution}
 
 \chapter{KẾT QUẢ VÀ ĐÁNH GIÁ}
 \input{chapters/4-experiment}
 
-% \chapter{Nghiên cứu liên quan}
-% \input{chapters/4.1-related-works}
 \chapter{Kết luận}
 
 \input{chapters/5-conclusion}
