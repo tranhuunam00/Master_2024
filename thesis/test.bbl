@@ -1,0 +1,197 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{nguoimacOSA_VN}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=22e451049def6b25343e2347e8657556}{%
+           family={Duong-Quy},
+           familyi={D\bibinithyphendelim Q\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d0a6e66e45908887739a9179767c88f0}{%
+           family={Dang\bibnamedelimb Thi\bibnamedelima Mai},
+           familyi={D\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3b9d5eb287cc6d7ad3efddd4f34ead16}{%
+           family={Tran\bibnamedelima Van},
+           familyi={T\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=c35a179286779eed71b13fb8081b23dc}{%
+           family={Nguyen\bibnamedelimb Xuan\bibnamedelima Bich},
+           familyi={N\bibinitperiod\bibinitdelim X\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=df208d05753d41fc4e3b18f5aabbf1fb}{%
+           family={Hua-Huy},
+           familyi={H\bibinithyphendelim H\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=0cc79d7469e292a8a10f00fa33411040}{%
+           family={Chalumeau},
+           familyi={C\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=01808700f29604dc3ea17643b7045325}{%
+           family={Dinh-Xuan},
+           familyi={D\bibinithyphendelim X\bibinitperiod},
+           given={A.\bibnamedelimi T.},
+           giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=5482b97526343edb504b2e7ed120be61}{%
+           family={Soyez},
+           familyi={S\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b1994627db9d7a9246ee9d63d8c9eac3}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {French}%
+      }
+      \strng{namehash}{d082fee9a4107c5d27d5644e089cd1b5}
+      \strng{fullhash}{fda34e8cf094e6daa60af8de15975b2c}
+      \strng{fullhashraw}{fda34e8cf094e6daa60af8de15975b2c}
+      \strng{bibnamehash}{d082fee9a4107c5d27d5644e089cd1b5}
+      \strng{authorbibnamehash}{d082fee9a4107c5d27d5644e089cd1b5}
+      \strng{authornamehash}{d082fee9a4107c5d27d5644e089cd1b5}
+      \strng{authorfullhash}{fda34e8cf094e6daa60af8de15975b2c}
+      \strng{authorfullhashraw}{fda34e8cf094e6daa60af8de15975b2c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revue des Maladies Respiratoires}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Étude de la prévalence du syndrome d’apnées obstructives du sommeil au Vietnam [Study about the prevalence of the obstructive sleep apnoea syndrome in Vietnam]}
+      \field{volume}{35}
+      \field{year}{2018}
+      \field{pages}{14\bibrangedash 24}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/j.rmr.2017.10.006
+      \endverb
+    \endentry
+    \entry{osa_bike}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=57de5b19abdda5c2813127f873006cdb}{%
+           family={S},
+           familyi={S\bibinitperiod},
+           given={Tregear},
+           giveni={T\bibinitperiod}}}%
+        {{hash=2f40c6366b574fa9d987cacb704eceb8}{%
+           family={J},
+           familyi={J\bibinitperiod},
+           given={Reston},
+           giveni={R\bibinitperiod}}}%
+        {{hash=a8d8d0a07ee560673a9e71f2a9049dc5}{%
+           family={K},
+           familyi={K\bibinitperiod},
+           given={Schoelles},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f5c3b0f82ac0471a1e7719a8e734c649}{%
+           family={B},
+           familyi={B\bibinitperiod},
+           given={Phillips},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f23dfd4de8f0422c1df918cc8cf7cc1}
+      \strng{fullhash}{459501dc88b0d9229f0751dac1f0cf3c}
+      \strng{fullhashraw}{459501dc88b0d9229f0751dac1f0cf3c}
+      \strng{bibnamehash}{9f23dfd4de8f0422c1df918cc8cf7cc1}
+      \strng{authorbibnamehash}{9f23dfd4de8f0422c1df918cc8cf7cc1}
+      \strng{authornamehash}{9f23dfd4de8f0422c1df918cc8cf7cc1}
+      \strng{authorfullhash}{459501dc88b0d9229f0751dac1f0cf3c}
+      \strng{authorfullhashraw}{459501dc88b0d9229f0751dac1f0cf3c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{J Clin Sleep Med}
+      \field{month}{12}
+      \field{number}{6}
+      \field{title}{Obstructive sleep apnea and risk of motor vehicle crash: systematic review and meta-analysis}
+      \field{volume}{5}
+      \field{year}{2009}
+      \field{pages}{573\bibrangedash 581}
+      \range{pages}{9}
+    \endentry
+    \entry{Marin2005}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=f1864077d2ecdbc49b054c5be2d976ce}{%
+           family={JM},
+           familyi={J\bibinitperiod},
+           given={Marin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b43db9dad7bdaa70e536eed4b75d2c8a}{%
+           family={SJ},
+           familyi={S\bibinitperiod},
+           given={Carrizo},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1b69c362cc7afb9585b11f88d0c55a48}{%
+           family={E},
+           familyi={E\bibinitperiod},
+           given={Vicente},
+           giveni={V\bibinitperiod}}}%
+        {{hash=79909254fb266090b06231ff69a86061}{%
+           family={AG},
+           familyi={A\bibinitperiod},
+           given={Agusti},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{01b760469b1d336f07dd65efb226fa16}
+      \strng{fullhash}{cec821a8616b9325dbeabd3a2540a3ad}
+      \strng{fullhashraw}{cec821a8616b9325dbeabd3a2540a3ad}
+      \strng{bibnamehash}{01b760469b1d336f07dd65efb226fa16}
+      \strng{authorbibnamehash}{01b760469b1d336f07dd65efb226fa16}
+      \strng{authornamehash}{01b760469b1d336f07dd65efb226fa16}
+      \strng{authorfullhash}{cec821a8616b9325dbeabd3a2540a3ad}
+      \strng{authorfullhashraw}{cec821a8616b9325dbeabd3a2540a3ad}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Lancet}
+      \field{month}{3}
+      \field{number}{9464}
+      \field{title}{Long-term cardiovascular outcomes in men with obstructive sleep apnoea-hypopnoea with or without treatment with continuous positive airway pressure: an observational study}
+      \field{volume}{365}
+      \field{year}{2005}
+      \field{pages}{1046\bibrangedash 1053}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/S0140-6736(05)71141-7
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/S0140-6736(05)71141-7
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/S0140-6736(05)71141-7
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
