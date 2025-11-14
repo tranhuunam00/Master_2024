@@ -1,39 +1,57 @@
 import numpy as np
 from scipy.stats import mode
+import os
 
 
-def create_training_data_NN(data):
-    print("STARTING create_training_data_NN")
-    WINDOW_LENGTH = 10  # Kích thước cửa sổ
-    OVERLAP = 5
+def create_training_data_NN_like_micro(data, window_size=10, step_size=5):
+    """
+    Tạo dữ liệu dạng interleaved giống như tflInputTensor của thiết bị:
+    [x1, y1, z1, x2, y2, z2, ..., xN, yN, zN]
+    """
+    total_list_NN = []
+    train_labels_NN = []
 
-    required_columns = {'x', 'y', 'z', 'activity'}
-    if not required_columns.issubset(data.columns):
-        missing = required_columns - set(data.columns)
-        raise ValueError(f"Dữ liệu đầu vào thiếu các cột: {missing}")
+    for i in range(0, len(data) - window_size + 1, step_size):
+        window = data.iloc[i: i + window_size]
 
-    features = ['x', 'y', 'z']
-    total_list_NN = data[features].values.astype(np.float32)
-    # total_list_NN = (total_list_NN + 1.2)
+        # Bỏ qua nếu trong cửa sổ có nhiều nhãn
+        if window['activity'].nunique() > 1:
+            continue
 
-    unique_labels = np.unique(data['activity'])
-    label_mapping = {label: i for i, label in enumerate(unique_labels)}
-    data['activity_num'] = data['activity'].map(label_mapping)
+        # Lấy mảng x,y,z
+        x = window['x'].values
+        y = window['y'].values
+        z = window['z'].values
 
-    X = []
-    y = []
-    num_samples = len(data)
-    for start in range(0, num_samples - WINDOW_LENGTH + 1, OVERLAP):
-        end = start + WINDOW_LENGTH
-        window = total_list_NN[start:end]
-        window_labels = data['activity_num'].iloc[start:end]
+        # Tạo mảng xen kẽ: x1,y1,z1,x2,y2,z2,...
+        interleaved = np.empty(window_size * 3, dtype=np.float32)
+        interleaved[0::3] = x
+        interleaved[1::3] = y
+        interleaved[2::3] = z
 
-        if len(window) == WINDOW_LENGTH:
-            flattened_window = window.flatten()
-            X.append(flattened_window)
-            window_label = mode(window_labels)[0]
-            y.append(window_label)
+        total_list_NN.append(interleaved)
+        train_labels_NN.append(window['activity'].iloc[0])
 
-    X = np.array(X, dtype=np.float32)
-    y = np.array(y, dtype=np.int32)
-    return X, y
+    print(
+        f"Created {len(total_list_NN)} windows × {window_size} samples (interleaved format)")
+    return np.array(total_list_NN), np.array(train_labels_NN)
+
+
+def get_keras_model_size(model, name="NeuralNetwork"):
+    """Tính kích thước mô hình Keras (KB) và số tham số"""
+    model_path = f"{name}_model.h5"
+    model.save(model_path)  # Lưu mô hình Keras
+
+    # Tính kích thước file (KB)
+    model_kb = os.path.getsize(model_path) / 1024
+
+    # Lấy số lượng tham số huấn luyện
+    n_params = model.count_params()
+
+    print(f"📦 {name}: Model Size = {model_kb:.2f} KB")
+    print(f"🔢 Tổng số tham số huấn luyện: {n_params:,}")
+    print("-" * 70)
+
+    return model_kb, n_params
+
+# Gọi hàm sau khi huấn luyện xong
