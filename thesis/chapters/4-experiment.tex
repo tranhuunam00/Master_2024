@@ -974,3 +974,88 @@ mà còn vì khả năng duy trì độ ổn định và độ tin cậy khi đ�
 thiên tín hiệu thực. Điều này củng cố lập luận rằng ưu tiên lựa chọn mô hình
 tuyến tính tinh gọn, thay vì mạng nơ-ron quy mô nhỏ, là một hướng đi có lợi thế
 rõ rệt trong các ứng dụng theo dõi tư thế ngủ trên thiết bị đeo chi phí thấp.
+
+\subsection*{Bài toán phát hiện nằm hoặc không nằm}
+
+Sau khi triển khai thực tế trên biên, tác giác nhận thấy rằng, hiện nay hệ
+thống tại biên đang chỉ nhận dạng được 4 nhãn lần lượt ngửa, nghiêng phải,
+nghiêng trái, sấp chưa đủ đáp ứng thực tế rằng khi ngủ người bệnh có thể đứng
+lên đi lại hoặc uống nước. Qua đó tác giả mở rộng thêm bài toán xác định nằm
+hay không nằm. Đây là bài toán sàng lọc trước khi đến bài toán xác định tư thế
+ngủ. Qua đó tác giả thu thập thêm 8500 mẫu dữ liệu các hoạt động như ngồi, đi
+lại, uống nước. Tập các tư thế ngủ tác giả chọn lọc 11306 mẫu đủ các 4 tư thế
+được quy về 1 nhãn là nằm. Tác giả áp dụng nguyên các bước để đánh giá tư thế
+ngủ bao gồm độ dài cửa sổ 1s, độ phủ 50\%, 69 đặc trưng trích xuất. Qua đó mô
+hình cho kết quả lên tới 100\% phân loại 2 nhãn là nằm và không nằm và có kích
+thước mô hình là 3.8 kb.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{images/lying_lr_shap_model.png}
+        \caption{LR}
+    \end{subfigure}
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{images/lying_rf_shap.png}
+        \label{fig:lying_rf_shap}
+        \caption{RF}
+    \end{subfigure}
+
+    \caption{Biểu đồ mức độ ảnh hưởng của các đặc trưng lên mô hình với bài toán nằm hay không nằm}
+    \label{fig:lying_shap}
+
+\end{figure}
+
+Sau khi đánh giá mức độ ảnh hưởng của đặc trưng lên mô hình như
+Hình~\ref{fig:lying_shap}, tác giả chọn ra 6 đặc trưng: 'avg\_result\_accl',
+'y\_energy', 'y\_min', 'y\_mean','z\_min', 'z\_max' để huấn luyện lại mô hình
+LR. Kết quả độ chính xác có giảm 1 chút nhưng kích thước mô hình còn 1.9 kb
+Hình~\ref{fig:lying_lr}. Điều này hoàn toàn phù với tiêu chí để trải khai đa mô
+hình trên biên.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/lying_lr.png}
+        \label{fig:lying_lr}
+        \caption{dựa trên toàn bộ đặc trưng}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/lying_lr_shap.png}
+        \label{fig:lying_lr_shap}
+        \caption{dựa trên 6 tính năng vị trí đầu }
+    \end{subfigure}
+
+    \caption{Ma trận nhầm lẫn phân biệt 2 nhãn nằm và không nằm}
+
+    \label{fig:lying_lr}
+
+\end{figure}
+
+Qua đó bài toán phân loại trên biên được nâng cấp thành 3 bước chính:
+
+\usetikzlibrary{shapes.geometric, positioning}
+
+\begin{tikzpicture}[node distance=20mm, >=latex]
+
+    \node[draw] (data) {Dữ liệu cảm biến gia tốc};
+    \node[draw, right=of data] (check) {Nằm hay không?};
+    \node[draw, right=of check] (pose) {Tư thế ngủ};
+
+    \draw[->] (data) -- (check);
+    \draw[->] (check) -- node[above]{Có} (pose);
+    \draw[->] (check) -- ++(0,-1.2) node[below]{Không};
+
+\end{tikzpicture}
+
+Việc này khẳng định để thực sự đưa bài toán này vào thực tế, còn rất nhiều bước
+cần phải hiệu chỉnh để giải quyết các trường hợp thực tế. Tuy nhiên, các kết
+quả đưa ra cho thấy giải quyết phần nào bài toán phân loại tư thế ngủ tại biên
+cùng với 1 quy trình từ cảm biến đến mô hình trên biên. Với quy trình này, tác
+giả tin có thể giải quyết được hầu như các trường hợp phát sinh khác và hướng
+đến bài toán phân loại OSA.
