@@ -3,9 +3,9 @@
 \contentsline {chapter}{Lời cam đoan}{i}{Doc-Start}%
 \contentsline {chapter}{Lời cảm ơn}{ii}{Doc-Start}%
 \contentsline {chapter}{Tóm tắt}{iii}{Doc-Start}%
-\contentsline {chapter}{Danh sách hình vẽ}{x}{chapter*.2}%
-\contentsline {chapter}{Danh sách bảng}{xi}{chapter*.3}%
-\contentsline {chapter}{Danh mục ký hiệu, viết tắt}{xiii}{table.0.1}%
+\contentsline {chapter}{Danh sách hình vẽ}{ix}{chapter*.2}%
+\contentsline {chapter}{Danh sách bảng}{x}{chapter*.3}%
+\contentsline {chapter}{Danh mục ký hiệu, viết tắt}{xii}{table.0.1}%
 \contentsline {chapter}{Đặt vấn đề}{1}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Tổng quan OSA, tư thế ngủ và công nghệ liên quan}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1.}Hội chứng ngưng thở khi ngủ}{4}{section.1.1}%
@@ -62,5 +62,4 @@
 \contentsline {section}{\numberline {3.5.}Chuyển đổi mô hình}{100}{section.3.5}%
 \contentsline {section}{\numberline {3.6.}Triển khai tại biên}{101}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1.}Đánh giá hiệu suất và tài nguyên}{102}{subsection.3.6.1}%
-\contentsline {chapter}{\numberline {4}Kết luận}{104}{chapter.4}%
 \contentsfinish 

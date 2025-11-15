@@ -694,21 +694,30 @@ thư viện TensorFlow\footnote{\textit{TensorFlow} là thư viện mã nguồn 
     khiển.} - vốn không khả thi đối với các nền tảng vi điều khiển có giới hạn tài
 nguyên nghiêm ngặt về bộ nhớ (RAM = 256 KB) và bộ nhớ lưu trữ (Flash = 1 MB).
 
-Quy trình chuyển đổi mô hình được thực hiện theo sáu bước chính. Trước hết, mô
-hình ANN được huấn luyện và hiệu chỉnh. Sau đó, mô hình được chuyển đổi sang
-định dạng \textbf{TensorFlow Lite (TFLite)} bằng công cụ
-\texttt{TFLiteConverter}, giúp nén và tối ưu mô hình cho thiết bị nhúng. Mô
-hình sau chuyển đổi được lưu thành tệp nhị phân \texttt{position.tflite}, đồng
-thời kích thước được kiểm tra để đánh giá khả năng lưu trữ trên vi điều khiển.
-Cuối cùng, tệp này được chuyển đổi sang dạng mảng nhị phân trong tệp header
-(\texttt{position\_model.h}). Thông thường, đối với các mô hình học sâu muốn
-triển khai trên biên cần thông qua các bước như lượng tử hóa, cắt tỉa trọng số
-\cite{LIANG2021370_tiny}. Tuy nhiên ở bài toán phân loại tư thế ngủ đi kèm với
-kết quả trong phần trước kích thước mô hình ANN chỉ 35 kb. Con số này hoàn toàn
-có thể đẩy trực tiếp lên phần cứng nhóm đã thiết kế.
+Sau khi, mô hình ANN được huấn luyện và hiệu chỉnh. Sau đó, mô hình được chuyển
+đổi sang định dạng \textbf{TensorFlow Lite (TFLite)} bằng thư viện
+\texttt{TFLiteConverter}, giúp nén và tối ưu mô hình cho thiết bị nhúng.
 
-Toàn bộ quy trình này nhằm tối ưu mô hình và giúp hệ thống thực hiện suy luận
-trực tiếp trên vi điều khiển ARM Cortex-M4.
+Thư viện TFLiteConverter cung cấp nhiều thuộc tính điều chỉnh quan trọng ảnh
+hưởng trực tiếp đến chất lượng suy luận cũng như khả năng thu gọn mô hình. Các
+thuộc tính như optimizations cho phép lựa chọn các chiến lược tối ưu hóa toàn
+cục; representative\_dataset đóng vai trò thiết yếu trong lượng tử hóa số
+nguyên; Thư viện cũng cung cấp tùy chọn các phép toán tùy chỉnh, loại bỏ
+metadata; Phương thức trung tâm của lớp là convert(), nơi toàn bộ đồ thị
+TensorFlow được ánh xạ sang mô hình TFLite dưới dạng chuỗi byte.
+
+Trong phạm vi luận văn này, kích thước mô hình mạng nơ-ron nhân tạo (ANN) sau
+huấn luyện chỉ vào khoảng 35~kB, cho thấy chưa cần áp dụng các kỹ thuật tối ưu
+hóa mạnh như cắt tỉa trọng số hay lượng tử hóa từ định dạng \texttt{float32}
+xuống \texttt{float8}. Vì vậy, tác giả chỉ sử dụng TFLiteConverter với mục tiêu
+loại bỏ những thành phần không thiết yếu, qua đó bảo đảm mô hình giữ nguyên độ
+chính xác trong khi vẫn đáp ứng yêu cầu triển khai trên thiết bị biên.
+
+Mô hình sau chuyển đổi được lưu thành tệp nhị phân \texttt{position.tflite},
+đồng thời kích thước được kiểm tra để đánh giá khả năng lưu trữ trên vi điều
+khiển. Cuối cùng, tệp này được chuyển đổi sang dạng mảng nhị phân
+(\texttt{position\_model.h}). Toàn bộ quy trình này nhằm tối ưu mô hình và giúp
+hệ thống thực hiện suy luận trực tiếp trên vi điều khiển ARM Cortex-M4.
 
 \section{Triển khai tại biên}
 
@@ -793,6 +802,8 @@ gian thực nơi độ trễ (latency) quyết định khả năng đáp ứng c
         Dung lượng RAM sử dụng   & 46,632 bytes (17\%)               & 60,672 bytes (23\%)          \\ \hline
         Thời gian upload         & 4.9 s (29 pages)                  & 15 s (89 pages)              \\ \hline
         Thời gian suy luận       & 501~$\mu s$                       & 8000~$\mu s$                 \\ \hline
+        Kích thước mô hình       & 2.9~kb                            & 23~kb                        \\ \hline
+
     \end{tabular}
 \end{table}
 
@@ -803,4 +814,163 @@ có khả năng khai thác tốt hơn các quan hệ phi tuyến giữa dữ li�
 tăng độ chính xác trong các bài toán phức tạp như nhận diện chuyển động liên
 tục hoặc phân loại đa trạng thái.
 
-Điểm mấu chốt ở đây là \textbf{sự đánh đổi giữa tốc độ và khả năng biểu diễn}: LR nhanh và nhẹ, nhưng hạn chế về năng lực mô hình; trong khi NN tiêu tốn nhiều tài nguyên hơn, song mang lại độ chính xác cao và khả năng tổng quát hóa mạnh mẽ. Do đó, việc lựa chọn mô hình không mang tính tuyệt đối, mà cần được cân nhắc dựa trên mục tiêu ứng dụng: \textit{ưu tiên thời gian thực và tiết kiệm năng lượng} (chọn LR) hoặc \textit{ưu tiên độ chính xác và khả năng mở rộng} (chọn NN).
+Điểm mấu chốt ở đây là \textbf{sự đánh đổi giữa tốc độ và khả năng biểu diễn}:
+LR nhanh và nhẹ, nhưng hạn chế về năng lực mô hình;
+trong khi NN tiêu tốn nhiều tài nguyên hơn, song mang
+lại độ chính xác cao và khả năng tổng quát hóa mạnh mẽ.
+Do đó, việc lựa chọn mô hình không mang tính tuyệt đối,
+mà cần được cân nhắc dựa trên mục tiêu ứng dụng:
+\textit{ưu tiên thời gian thực và tiết kiệm năng lượng} (chọn LR) hoặc
+\textit{ưu tiên độ chính xác và khả năng mở rộng} (chọn NN).
+
+Để đánh giá độ chính xác của 2 mô hình đã triển khai trên biên, tác giả thiết kế mô
+hình để truyền toàn bộ dữ liệu tập kiểm
+tra vào phần cứng và nhận lại giá trị suy luận.
+Quy trình đánh giá mô hình trên vi điều khiển được tổ chức theo hai nhánh
+chính: luồng xử lý trên MCU và luồng kiểm thử trên máy tính. Phía máy tính chịu
+trách nhiệm tải dữ liệu gia tốc trong tệp CSV, tạo các cửa sổ trượt kích thước xác định,
+và lần lượt truyền từng giá trị
+(x,y,z) của mỗi cửa sổ xuống MCU thông qua giao tiếp Serial. Mỗi khi MCU nhận đủ
+N mẫu, thiết bị thực thi toàn bộ pipeline suy luận gồm trích xuất 15 đặc trưng,
+chuẩn hoá các đặc trưng theo min-max, và đưa vào mô hình đã được chuyển đổi
+sang định dạng TFLite. Kết quả phân lớp được trả về máy tính dưới dạng một số
+nguyên đại diện cho tư thế ngủ.
+
+Trên máy tính, mỗi dự đoán nhận được được so sánh với nhãn gốc của cửa sổ tương
+ứng để tính toán độ chính xác tổng thể, đồng thời xây dựng ma trận nhầm lẫn và
+bộ chỉ số đánh giá như precision, recall và F1-score. Cách tiếp cận này cho
+phép mô phỏng chính xác điều kiện triển khai thực tế trên phần cứng, từ đó kiểm
+định mức độ ổn định của mô hình sau khi chuyển đổi và tích hợp vào vi điều
+khiển ARM Cortex-M4.
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[node distance=1.7cm,>=stealth,thick]
+
+        \tikzstyle{block}=[rectangle,draw,rounded corners,
+        align=center,
+        minimum width=4cm,
+        minimum height=1.1cm]
+
+        % PC column
+        \node[block] (pc1) {Đọc dữ liệu CSV};
+        \node[block,below of=pc1] (pc2) {Tạo cửa số\\(window size, step)};
+        \node[block,below of=pc2] (pc3) {Gửi từng mẫu\\$x,y,z$ qua Serial};
+        \node[block,below of=pc3] (pc4) {Nhận dự đoán từ phần cứng};
+        \node[block,below of=pc4] (pc5) {So sánh với nhãn gốc};
+        \node[block,below of=pc5] (pc6) {Tính accuracy\\và confusion matrix};
+
+        % MCU column
+        \node[block,right=6cm of pc2] (mcu1) {Nhận dữ liệu $x,y,z$};
+        \node[block,below of=mcu1] (mcu2) {Lưu vào bộ đệm\\(đúng kích thước cửa sổ)};
+        \node[block,below of=mcu2] (mcu3) {Trích xuất 15 đặc trưng};
+        \node[block,below of=mcu3] (mcu4) {Chuẩn hoá đặc trưng};
+        \node[block,below of=mcu4] (mcu5) {Suy luận bằng\\mô hình TFLite};
+        \node[block,below of=mcu5] (mcu6) {Gửi nhãn dự đoán về PC};
+
+        % Arrows PC
+        \draw[->] (pc1) -- (pc2);
+        \draw[->] (pc2) -- (pc3);
+        \draw[->] (pc4) -- (pc5);
+        \draw[->] (pc5) -- (pc6);
+
+        % Arrow from PC to MCU
+        \draw[->] (pc3.east) -- ++(1.0,0) |- (mcu1.west);
+
+        % MCU internal arrows
+        \draw[->] (mcu1) -- (mcu2);
+        \draw[->] (mcu2) -- (mcu3);
+        \draw[->] (mcu3) -- (mcu4);
+        \draw[->] (mcu4) -- (mcu5);
+        \draw[->] (mcu5) -- (mcu6);
+
+        % Arrow from MCU back to PC
+        \draw[->] (mcu6.west) -| ++(-1.0,0) |- (pc4.east);
+
+    \end{tikzpicture}
+    \caption{Quy trình đánh giá mô hình trên MCU và đối chiếu kết quả trên PC.}
+\end{figure}
+
+\begin{table}[ht]
+    \centering
+    \caption{So sánh kết quả mô hình trên tập thử Python và khi triển khai trên MCU}
+    \begin{tabular}{lcc}
+        \hline
+        \textbf{Mục đánh giá} & \textbf{Python Benchmark}   & \textbf{MCU thực nghiệm} \\
+        \hline
+        Tổng số cửa sổ        & 12\,749                     & 12\,749                  \\[4pt]
+
+        Accuracy              & \textbf{0.9758}             & \textbf{0.8973}          \\[6pt]
+
+        Ma trận nhầm lẫn      & $\begin{bmatrix}
+                                         5495 & 190  & 86   & 4   \\
+                                         0    & 1618 & 0    & 0   \\
+                                         18   & 0    & 4852 & 0   \\
+                                         0    & 0    & 11   & 475
+                                     \end{bmatrix}$ &
+        $\begin{bmatrix}
+                 4950 & 215  & 606  & 4 \\
+                 0    & 1618 & 0    & 0 \\
+                 0    & 0    & 4870 & 0 \\
+                 0    & 0    & 484  & 2
+             \end{bmatrix}$                                                        \\[14pt]
+
+        Precision (1–4)       & 1.00, 0.89, 0.98, 0.99      & 1.00, 0.88, 0.82, 0.33   \\[6pt]
+
+        Recall (1–4)          & 0.95, 1.00, 1.00, 0.98      & 0.86, 1.00, 1.00, 0.00   \\[6pt]
+
+        F1-score (1–4)        & 0.97, 0.94, 0.99, 0.98      & 0.92, 0.94, 0.90, 0.01   \\ \hline
+    \end{tabular}
+    \label{tiny_result}
+\end{table}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/tiny_nn.png}
+        \label{fig:tiny_nn}
+        \caption{ANN}
+
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/tiny_lr.png}
+        \label{fig:tiny_lr}
+        \caption{LR}
+    \end{subfigure}
+    \caption{Ma trận nhầm lẫn của 2 mô hình triển khai trên biên}
+    \label{fig:tiny_confuse}
+\end{figure}
+
+Kết quả thực nghiệm Bảng~\ref{tiny_result} cho thấy sự khác biệt rõ rệt giữa
+Logistic Regression (LR) và mô hình Neural Network (NN) khi đánh giá trên cùng
+một tập dữ liệu gồm 12.749 cửa sổ tín hiệu. LR vẫn đạt độ chính xác 97.58\%,
+trong khi NN chỉ đạt 89.73\%. Sự chênh lệch này không chỉ phản ánh ưu thế của
+LR trong điều kiện dữ liệu được chuẩn hóa tốt, mà còn làm nổi bật tính ổn định
+của LR khi chuyển sang môi trường triển khai thực, vốn chứa nhiều bất định và
+sai số đặc trưng của thiết bị biên.
+
+Ở mô hình LR, các chỉ số precision, recall và f1-score đều duy trì ở mức cao cho cả bốn tư thế.
+Đặc biệt, tư thế Sấp — vốn là tư thế dễ nhiễu và í
+t xuất hiện — vẫn được nhận dạng với recall 0.98 và f1-score 0.98.
+Ma trận nhầm lẫn của LR cho thấy các sai lệch chủ yếu mang tính cục bộ và không gây phá vỡ biên phân lớp.
+Điều này cho thấy mô hình tuyến tính của LR, mặc dù đơn giản về mặt cấu trúc, lại tạo ra mặt phân tách tương đối bền vững đối với các biến động nhỏ trong tín hiệu gia tốc.
+
+Ngược lại, mô hình NN thể hiện sự suy giảm đáng kể về hiệu năng khi triển khai.
+Mặc dù recall của tư thế 2 và 3 vẫn ở mức tuyệt đối, mô hình gần như thất bại
+hoàn toàn với tư thế Sấp: recall bằng 0. Điều này phản ánh 1 phần độ chính xác
+đã bị suy hao trong quá trình convert và triển khai trên biên.
+
+Sự khác biệt giữa hai mô hình đặc biệt rõ trong ma trận nhầm lẫn
+Hình~\ref{fig:tiny_confuse}. Trong khi LR duy trì cấu trúc phân lớp gần như lý
+tưởng ở cả bốn tư thế, NN xuất hiện nhiều sai lệch nghiêm trọng giữa tư thế
+ngửa và nghiêng phải, và đặc biệt là không thể nhận dạng tư thế sấp. Điều này
+cho thấy LR phù hợp hơn cho tín hiệu từ cảm biến gia tốc gắn trên cơ thể.
+
+Từ các kết quả này có thể khẳng định rằng, trong bối cảnh triển khai trên các
+hệ thống TinyML, LR tỏ ra vượt trội so với NN không chỉ vì mô hình nhỏ gọn hơn
+mà còn vì khả năng duy trì độ ổn định và độ tin cậy khi đối mặt với các biến
+thiên tín hiệu thực. Điều này củng cố lập luận rằng ưu tiên lựa chọn mô hình
+tuyến tính tinh gọn, thay vì mạng nơ-ron quy mô nhỏ, là một hướng đi có lợi thế
+rõ rệt trong các ứng dụng theo dõi tư thế ngủ trên thiết bị đeo chi phí thấp.

@@ -2553,7 +2553,6 @@
     <bcf:citekey order="128" intorder="1">breiman2001random</bcf:citekey>
     <bcf:citekey order="129" intorder="1">chen2016xgboost</bcf:citekey>
     <bcf:citekey order="130" intorder="1">jain1996</bcf:citekey>
-    <bcf:citekey order="131" intorder="1">LIANG2021370_tiny</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -5336,65 +5336,6 @@
       \verb 10.1109/2.485891
       \endverb
     \endentry
-    \entry{LIANG2021370_tiny}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=4ef4e1aad69e183fbc5617b20ef392da}{%
-           family={Liang},
-           familyi={L\bibinitperiod},
-           given={Tailin},
-           giveni={T\bibinitperiod}}}%
-        {{hash=f186bba6d0207655496a75ba1021beda}{%
-           family={Glossner},
-           familyi={G\bibinitperiod},
-           given={John},
-           giveni={J\bibinitperiod}}}%
-        {{hash=1f647bb6da8304b7be380ec58eb6373a}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Lei},
-           giveni={L\bibinitperiod}}}%
-        {{hash=1139658b5365f24d4451268358171444}{%
-           family={Shi},
-           familyi={S\bibinitperiod},
-           given={Shaobo},
-           giveni={S\bibinitperiod}}}%
-        {{hash=d1d9df2f7c4822af05083f23d569eda8}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Xiaotong},
-           giveni={X\bibinitperiod}}}%
-      }
-      \strng{namehash}{344ed66cd49075943a4d89fcbeb49e5f}
-      \strng{fullhash}{344ed66cd49075943a4d89fcbeb49e5f}
-      \strng{fullhashraw}{344ed66cd49075943a4d89fcbeb49e5f}
-      \strng{bibnamehash}{344ed66cd49075943a4d89fcbeb49e5f}
-      \strng{authorbibnamehash}{344ed66cd49075943a4d89fcbeb49e5f}
-      \strng{authornamehash}{344ed66cd49075943a4d89fcbeb49e5f}
-      \strng{authorfullhash}{344ed66cd49075943a4d89fcbeb49e5f}
-      \strng{authorfullhashraw}{344ed66cd49075943a4d89fcbeb49e5f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Deep neural networks have been applied in many applications exhibiting extraordinary abilities in the field of computer vision. However, complex network architectures challenge efficient real-time deployment and require significant computation resources and energy costs. These challenges can be overcome through optimizations such as network compression. Network compression can often be realized with little loss of accuracy. In some cases accuracy may even improve. This paper provides a survey on two types of network compression: pruning and quantization. Pruning can be categorized as static if it is performed offline or dynamic if it is performed at run-time. We compare pruning techniques and describe criteria used to remove redundant computations. We discuss trade-offs in element-wise, channel-wise, shape-wise, filter-wise, layer-wise and even network-wise pruning. Quantization reduces computations by reducing the precision of the datatype. Weights, biases, and activations may be quantized typically to 8-bit integers although lower bit width implementations are also discussed including binary neural networks. Both pruning and quantization can be used independently or combined. We compare current techniques, analyze their strengths and weaknesses, present compressed network accuracy results on a number of frameworks, and provide practical guidance for compressing networks.}
-      \field{issn}{0925-2312}
-      \field{journaltitle}{Neurocomputing}
-      \field{title}{Pruning and quantization for deep neural network acceleration: A survey}
-      \field{volume}{461}
-      \field{year}{2021}
-      \field{pages}{370\bibrangedash 403}
-      \range{pages}{34}
-      \verb{doi}
-      \verb https://doi.org/10.1016/j.neucom.2021.07.045
-      \endverb
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/S0925231221010894
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/S0925231221010894
-      \endverb
-      \keyw{Convolutional neural network,Neural network acceleration,Neural network quantization,Neural network pruning,Low-bit mathematics}
-    \endentry
   \enddatalist
 \endrefsection
 \endinput

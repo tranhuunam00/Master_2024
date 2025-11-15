@@ -60,6 +60,7 @@
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Ma trận nhầm lẫn trong kịch bản 8}}{97}{figure.caption.94}%
 \contentsline {figure}{\numberline {3.18}{\ignorespaces Kết quả kết thước mô hình của 8 kịch bản (đơn vị: kb)}}{98}{figure.caption.95}%
 \contentsline {figure}{\numberline {3.19}{\ignorespaces Mức độ ảnh hưởng của số lượng mẫu đến độ chính xác mô hình LR}}{99}{figure.caption.96}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Quy trình đánh giá mô hình trên MCU và đối chiếu kết quả trên PC.}}{104}{figure.caption.98}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Ma trận nhầm lẫn của 2 mô hình triển khai trên biên}}{106}{figure.caption.100}%
 \contentsfinish 
 \contentsfinish 
