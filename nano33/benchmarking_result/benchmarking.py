@@ -123,7 +123,7 @@ def main():
                 acc_sofar = np.mean([1 if p == t else 0 for p, t in zip(
                     preds, labels[:len(preds)]) if p != -1])
                 print(
-                    f"Window {wi+1}/{len(labels)} — temp accuracy (ignoring -1) = {acc_sofar:.4f}")
+                    f"Window {wi+1}/{len(labels)} - temp accuracy (ignoring -1) = {acc_sofar:.4f}")
 
     finally:
         ser.close()

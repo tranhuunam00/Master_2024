@@ -5142,7 +5142,7 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://github.com/sparkfun/SparkFun_BMI270_Arduino_Library}}
       \field{note}{Accessed: 2025-11-09}
-      \field{title}{SparkFun BMI270 Arduino Library — Driver for the Bosch BMI270 6-DoF IMU}
+      \field{title}{SparkFun BMI270 Arduino Library- Driver for the Bosch BMI270 6-DoF IMU}
       \field{year}{2023}
     \endentry
     \entry{flutter_blue_plus}{software}{}{}

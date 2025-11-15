@@ -12,7 +12,7 @@
 //     while (1);
 //   }
 
-//   // Không cần setAccelerometerRange — mặc định đã là ±2g
+//   // Không cần setAccelerometerRange- mặc định đã là ±2g
 
 //   Serial.println("aX,aY,aZ");  // CSV header
 // }

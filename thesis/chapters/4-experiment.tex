@@ -952,14 +952,14 @@ của LR khi chuyển sang môi trường triển khai thực, vốn chứa nhi�
 sai số đặc trưng của thiết bị biên.
 
 Ở mô hình LR, các chỉ số precision, recall và f1-score đều duy trì ở mức cao cho cả bốn tư thế.
-Đặc biệt, tư thế Sấp — vốn là tư thế dễ nhiễu và í
-t xuất hiện — vẫn được nhận dạng với recall 0.98 và f1-score 0.98.
+Đặc biệt, tư thế sấp - vốn là tư thế dễ nhiễu và í
+t xuất hiện - vẫn được nhận dạng với recall 0.98 và f1-score 0.98.
 Ma trận nhầm lẫn của LR cho thấy các sai lệch chủ yếu mang tính cục bộ và không gây phá vỡ biên phân lớp.
 Điều này cho thấy mô hình tuyến tính của LR, mặc dù đơn giản về mặt cấu trúc, lại tạo ra mặt phân tách tương đối bền vững đối với các biến động nhỏ trong tín hiệu gia tốc.
 
 Ngược lại, mô hình NN thể hiện sự suy giảm đáng kể về hiệu năng khi triển khai.
 Mặc dù recall của tư thế 2 và 3 vẫn ở mức tuyệt đối, mô hình gần như thất bại
-hoàn toàn với tư thế Sấp: recall bằng 0. Điều này phản ánh 1 phần độ chính xác
+hoàn toàn với tư thế sấp: recall bằng 0. Điều này phản ánh 1 phần độ chính xác
 đã bị suy hao trong quá trình convert và triển khai trên biên.
 
 Sự khác biệt giữa hai mô hình đặc biệt rõ trong ma trận nhầm lẫn
