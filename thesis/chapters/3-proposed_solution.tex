@@ -1,13 +1,13 @@
-Dựa trên các cơ sở lý thuyết tại chương I, trong chương này, tác giả sẽ trình
+Dựa trên các cơ sở lý thuyết tại chương I, trong chương này, luận văn sẽ trình
 bày về phương pháp nghiên cứu và phát triển hệ thống thu thập, xử lý và lưu trữ
-dữ liệu cảm biến gia tốc. Từ bộ dữ liệu thu thập, tác giả sẽ tiến hành trích
-xuất đặc trưng, đề xuất mô hình học máy phù hợp và thiết lập các kịch bản để
-đánh giá các mô hình đề xuất đó.
+dữ liệu cảm biến gia tốc. Từ bộ dữ liệu thu thập, sẽ tiến hành trích xuất đặc
+trưng, đề xuất mô hình học máy phù hợp và thiết lập các kịch bản để đánh giá
+các mô hình đề xuất đó.
 \section{Nghiên cứu, phát triển phần cứng }
 
-Trong phần này, tác giả sẽ trình bày các nội dung bao gồm: nghiên cứu, lựa chọn
-vi điều khiển và cảm biến phù hợp; từ đó tiến hành thiết kế sơ đồ mạch, mô
-phỏng mạch 3D và hoàn thiện sản phẩm.
+Trong phần này sẽ có các nội dung bao gồm: nghiên cứu, lựa chọn vi điều khiển
+và cảm biến phù hợp; từ đó tiến hành thiết kế sơ đồ mạch, mô phỏng mạch 3D và
+hoàn thiện sản phẩm.
 
 \subsection{Vi xử lý}
 \label{subsec:vi_xu_ly}
@@ -18,20 +18,20 @@ nhiều cấu hình phần cứng được nhiều nhóm tác giả lựa chọn
 Raspberry Pi để phát hiện 4 tư thế ngủ với sự lấy nhãn từ video theo dõi người
 bệnh trong suốt quá trình lấy mẫu. Tác giả Kwasnicki và cộng sự đã sử dụng bộ
 xử lý công suất thấp TI MSP430 và mô-đun RF Chipcon CC2420 cho truyền thông
-không dây kết hợp với cảm biến gia tốc 3 trục ADXL330, con quay hồi chuyển đạt
+không dây kết hợp với cảm biến gia tốc ba trục ADXL330, con quay hồi chuyển đạt
 được 99.5\% độ chính xác \cite{kwasnicki2018}. Nhóm của tác giả I.Yun đã phát
 triển thiết bị theo dõi tư thế ngủ của trẻ nhỏ sử dụng vi xử lý ATmega328P-PU
 kết hợp cảm biến gia tốc ADXL335 được đặt trên bụng \cite{p_3}. Trong nghiên
 cứu của Abdulsadig và cộng sự, hệ thống thu thập dữ liệu được xây dựng dựa trên
 một bo mạch tùy chỉnh tích hợp vi điều khiển nRF5232. Vi điều khiển này đảm
 nhiệm đồng thời cả việc lấy mẫu dữ liệu từ cảm biến gia tốc ba trục LIS2DH12
-với tần số 100 Hz và truyền dữ liệu không dây theo thời gian thực
-\cite{Sleep_Posture_Detection, abdulsadig2023}. Trong nghiên cứu của tác giả Vũ
-Hoàng Diệu, mô-đun ESP32 được lựa chọn làm đơn vị xử lý trung tâm nhờ tích hợp
-bộ vi điều khiển hiệu năng cao, kết nối không dây Wi-Fi đáp ứng tốt yêu cầu của
-hệ thống thu thập dữ liệu tư thế ngủ theo thời gian thực \cite{vu2023}. Thiết
-bị không chỉ cho phép truyền dữ liệu trực tiếp lên máy chủ hoặc nền tảng đám
-mây thông qua Wi-Fi, mà còn hỗ trợ lưu trữ cục bộ trên thẻ nhớ microSD, đảm bảo
+với tần số 100 Hz và truyền dữ liệu không dây theo thời gian thực \cite{
+    abdulsadig2023, Sleep_Posture_Detection}. Trong nghiên cứu của tác giả Vũ Hoàng
+Diệu, mô-đun ESP32 được lựa chọn làm đơn vị xử lý trung tâm nhờ tích hợp bộ vi
+điều khiển hiệu năng cao, kết nối không dây Wi-Fi đáp ứng tốt yêu cầu của hệ
+thống thu thập dữ liệu tư thế ngủ theo thời gian thực \cite{vu2023}. Thiết bị
+không chỉ cho phép truyền dữ liệu trực tiếp lên máy chủ hoặc nền tảng đám mây
+thông qua Wi-Fi, mà còn hỗ trợ lưu trữ cục bộ trên thẻ nhớ microSD, đảm bảo
 tính liên tục trong điều kiện mất kết nối mạng.
 
 Qua phân tích các nghiên cứu trên có thể thấy rằng phần lớn các cấu hình phần
@@ -171,15 +171,14 @@ nhận diện tư thế ngủ với các lý do sau:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth, keepaspectratio]{images/BMi270.png}
-    \vspace*{-5mm}
+    \includegraphics[width=0.3\textwidth, keepaspectratio]{images/BMi270.png}
     \caption{Bosch BMI270}
     \label{Bosch_BMI270}
 \end{figure}
 
-Thứ nhất, độ chính xác và dải đo linh hoạt: BMI270 tích hợp gia tốc kế ba trục
-độ phân giải cao 16-bit với các dải đo linh hoạt ±2g, ±4g, ±8g và ±16g, cho
-phép ghi nhận chính xác cả chuyển động chậm và biên độ nhỏ trong khi ngủ.
+Thứ nhất, độ chính xác và dải đo linh hoạt: BMI270 tích hợp cảm biến gia tốc ba
+trục độ phân giải cao 16-bit với các dải đo linh hoạt ±2g, ±4g, ±8g và ±16g,
+cho phép ghi nhận chính xác cả chuyển động chậm và biên độ nhỏ trong khi ngủ.
 
 Thứ hai, mức tiêu thụ năng lượng thấp và khả năng hoạt động ổn định: cảm biến
 tiêu thụ trung bình chỉ khoảng 685 µA khi hoạt động bình thường, đồng thời được
@@ -188,21 +187,21 @@ nhau. Điều này cho phép thiết bị hoạt động lâu dài trên nền t
 suất thấp mà không ảnh hưởng đến hiệu năng đo.
 
 Thứ ba, tốc độ lấy mẫu và thời gian đáp ứng nhanh: BMI270 hỗ trợ tốc độ lấy mẫu
-(ODR) từ 0.7~Hz đến~1.6 kHz cho gia tốc kế, phù hợp bài toán phân loại giấc ngủ
-yêu cầu tần số lấy mẫu thấp (10~Hz).
+(ODR) từ 0.7~Hz đến~1.6 kHz cho cảm biến gia tốc, phù hợp bài toán phân loại
+giấc ngủ yêu cầu tần số lấy mẫu thấp (10~Hz).
 
 \begin{figure}[]
     \centering
     \includegraphics[width=0.75\textwidth, keepaspectratio]{images/bmi270_block.png}
-    \vspace*{-5mm}
     \caption{Sơ đồ khối Bosch BMI270}
     \label{bmi270_block}
 \end{figure}
 
 Thứ tư, khả năng chống nhiễu và hiệu chuẩn tự động: cảm biến có cơ chế bù sai
 số và bù độ nhạy theo thời gian thực, giúp giảm sai lệch khi hoạt động lâu dài.
-Tính năng bù sai lệch cho gia tốc kế đảm bảo độ ổn định cao của dữ liệu đo.
-Ngoài ra, cảm biến còn tích hợp thêm bộ lọc thông thấp Hình~\ref{bmi270_block}.
+Tính năng bù sai lệch cho cảm biến gia tốc đảm bảo độ ổn định cao của dữ liệu
+đo. Ngoài ra, cảm biến còn tích hợp thêm bộ lọc thông thấp
+Hình~\ref{bmi270_block}.
 
 Cuối cùng, tích hợp tính năng thông minh được lập trình trong các thanh ghi
 riêng được Google chứng nhận tương thích với hệ điều hành Wear OS và hỗ trợ
@@ -211,11 +210,11 @@ phát hiện có chuyển động (any motion), không có chuyển động (no 
 chuyển các thiết bị đeo ở cổ tay (wrist wear wakeup). Các tính năng này có thể
 được tận dụng để giảm tải tính toán cho bộ vi điều khiển, chỉ kích hoạt mô hình
 học máy khi có thay đổi tư thế đáng kể, qua đó tiết kiệm năng lượng và tăng
-tuổi thọ pin
+tuổi thọ pin.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.3\textwidth, keepaspectratio]{images/bmi270_pin.png}
+    \includegraphics[width=0.4\textwidth, keepaspectratio]{images/bmi270_pin.png}
     \vspace*{-5mm}
     \caption{Sơ đồ chân Bosch BMI270}
     \label{bmi270_pin}
@@ -260,11 +259,9 @@ Về mặt bảo mật, BLE tích hợp các cơ chế mã hóa và xác thực 
 mật, toàn vẹn của dữ liệu. Bluetooth 5 là bước phát triển đột phá tiếp theo kể
 từ khi BLE được giới thiệu trong chuẩn Bluetooth 4.0, mang đến hàng loạt cải
 tiến đáng kể giúp mở rộng phạm vi ứng dụng và nâng cao hiệu suất hệ thống. Quan
-trọng hơn, chế độ này còn giúp giảm đáng kể mức tiêu thụ năng lượng. Từ đó kéo
-dài thời gian hoạt động của thiết bị hoặc cho phép sử dụng các nguồn năng lượng
-nhỏ hơn \cite{BLE}. Đặc biệt, chế độ Long Range mở rộng đáng kể phạm vi truyền
-thông của BLE, cho phép các thiết bị duy trì kết nối trong toàn bộ không gian
-trong nhà.
+trọng hơn, chế độ này còn giúp giảm đáng kể mức tiêu thụ năng lượng \cite{BLE}.
+Đặc biệt, chế độ Long Range mở rộng đáng kể phạm vi truyền thông của BLE, cho
+phép các thiết bị duy trì kết nối trong toàn bộ không gian trong nhà.
 
 \begin{figure}[htbp]
     \centering
@@ -300,14 +297,14 @@ Bám sát vào yêu cầu đã trình bày từ các phần trước là phần 
 di dộng cao, tiêu thụ năng lượng ít, giá thành phù hợp tác giả đã nghiên cứu và
 đưa ra hệ thống cần các thành phần sau: 01) Khối điều khiển: có chức năng xử lý
 toàn bộ logic trong mạch, kết nối được với các thiết bị khác như điện thoại
-thông qua BLE và đặc biệt, đủ hiệu năng để triển khai các mô hình học máy. 02)
+thông qua BLE và đặc biệt, đủ hiệu năng để triển khai các mô hình học máy; 02)
 Khối cảm biến: có nhiệm vụ thu thập dữ liệu sinh lý bao gồm 2 cảm biến chính là
 gia tốc (đã được trình bày các phần trên) và thêm cảm biến âm thanh để phục vụ
-bài toán xác định tiếng ngáy của nhóm. 03) Khối nguồn: có nhiệm vụ ổn áp về
-đúng dải điện áp tương thích, lọc nhiễu, bảo vệ dòng 04) Khối nạp và gỡ lỗi: có
-nhiệm vụ nạp mã chương trình vào vi điều khiển 05) Khối hiển thị: có nhiệm vụ
-đưa ra thông báo khi có phát hiện bất thường. Kích thước của mạch là hình tròn,
-có đường kính không quá 4~cm. Đây chính là những mục tiêu điểm tiên quyết để
+bài toán xác định tiếng ngáy của nhóm; 03) Khối nguồn: có nhiệm vụ ổn áp về
+đúng dải điện áp tương thích, lọc nhiễu, bảo vệ dòng; 04) Khối nạp và gỡ lỗi:
+có nhiệm vụ nạp mã chương trình vào vi điều khiển; 05) Khối hiển thị: có nhiệm
+vụ đưa ra thông báo khi có phát hiện bất thường. Kích thước của mạch là hình
+tròn, có đường kính không quá 4~cm. Đây chính là những đầu mục tiên quyết để
 coi là đạt được mục tiêu trong phần này.
 
 \subsubsection{Khối điều khiển}
@@ -330,7 +327,7 @@ nhiệm các nhiệm vụ của khối điều khiển \cite{uBlox2019_NINA_B3}.
 
 Mô-đun NINA-B306 được phát triển dựa trên vi điều khiển Nordic nRF52840, tích
 hợp ăng-ten PCB nội bộ được cấp phép từ Abracon ngay trên bảng mạch của mô-đun
-Hifnh~\ref{ninab306_block}. Ngoài ra, NINA-B306 được thiết kế với dải điện áp
+Hình~\ref{ninab306_block}. Ngoài ra, NINA-B306 được thiết kế với dải điện áp
 hoạt động chuẩn hóa từ 1.7 V đến 3.6 V, thấp hơn so với giới hạn tối đa 5.5 V
 của vi điều khiển nRF52840, nhằm tối ưu hiệu suất năng lượng.
 
@@ -352,14 +349,14 @@ BMI270 được lựa chọn để thu thập tín hiệu gia tốc cho bài to�
 ngủ. Ngoài ra, việc hướng tới việc xác định chứng ngưng thở khi ngủ OSA thì
 nhóm có bổ sung thêm cảm biến âm thanh STMicroelectronics MP34DT06J. Cảm biến
 MP34DT06J là microphone MEMS kỹ thuật số định hướng đa hướng có kích thước siêu
-nhỏ gọn và tiêu thụ năng lượng thấp. Ngoài ra MP34DT06J là cảm biến số có tỷ lệ
-tín hiệu trên nhiễu (SNR) 64 dB và độ nhạy -26 dBFS ± 1 dB, đảm bảo chất lượng
-thu âm ổn định. Thiết bị được đóng gói theo chuẩn SMD top-port, có che chắn EMI
-(Electromagnetic Interference), và được đảm bảo hoạt động ổn định trong dải
-nhiệt độ mở rộng từ -40 °C đến +85 °C và kèm thêm điện áp đầu vào 1.8V hoàn
-toàn phù hợp với các thông số của vi điều khiển. Tuy nhiên, trong khuôn khổ
-luận văn này tác giả không đề cập sâu vào cảm biến này để tập trung tối đa vào
-dữ liệu cảm biến gia tốc cho bài toán phân loại tư thế ngủ.
+nhỏ gọn và tiêu thụ năng lượng thấp. Ngoài ra, MP34DT06J là cảm biến số có tỷ
+lệ tín hiệu trên nhiễu (SNR) 64 dB và độ nhạy -26 dBFS ± 1 dB, đảm bảo chất
+lượng thu âm ổn định. Thiết bị được đóng gói theo chuẩn SMD top-port và được
+đảm bảo hoạt động ổn định trong dải nhiệt độ mở rộng từ -40 °C đến +85 °C và
+kèm thêm điện áp đầu vào 1.8V hoàn toàn phù hợp với các thông số của vi điều
+khiển. Tuy nhiên, trong khuôn khổ luận văn này sẽ không đề cập sâu vào cảm biến
+này để tập trung tối đa vào dữ liệu cảm biến gia tốc cho bài toán phân loại tư
+thế ngủ.
 
 \subsubsection{Khối nguồn, nạp và gỡ lỗi, hiển thị}
 Ba khối chức năng này được thiết kế nhằm đảm bảo sự ổn định và khả năng vận
@@ -369,7 +366,7 @@ Li-Polymer. Điện áp đầu vào của toàn mạch được xác định ở
 thích với các linh kiện và vi điều khiển. Sau khi nghiên cứu, tác giả sử dụng
 bộ chuyển đổi hạ áp (step-down converter) tích hợp mạch điều khiển MP2322GQH,
 cho phép giảm điện áp đầu vào từ 5 V (USB) hoặc 3.7 V (pin Li-Polymer) xuống
-mức ổn định 3.3 V với hiệu suất cao Hình\ref{fig:MP2322GQH}.
+mức ổn định 3.3 V với hiệu suất cao Hình~\ref{fig:MP2322GQH}.
 
 \begin{figure}[H]
     \centering
@@ -475,12 +472,12 @@ phát triển đóng vai trò như một lớp trừu tượng, cho phép vi đi
 tiếp trực tiếp với cảm biến Bosch BMI270. Thư viện cung cấp đầy đủ các hàm để
 cấu hình dải đo, tần số lẫy mẫu và chế độ năng lượng tiêu thụ.
 
-\input{chapters/examples/cauhinh_accelerometer.tex}[H]
+\input{chapters/examples/cauhinh_accelerometer.tex}
 
-Phần cấu hình được thể hiện trong mã nguồn~\ref{lst:cauhinh_accelerometer} Việc
-gọi hàm \texttt{imu.beginI2C()} nhằm thiết lập kênh truyền
+Phần cấu hình được thể hiện trong mã nguồn~\ref{lst:cauhinh_accelerometer}.
+Việc gọi hàm \texttt{imu.beginI2C()} nhằm thiết lập kênh truyền
 I\textsuperscript{2}C và xác nhận sự hiện diện của thiết bị. Tần số lấy mẫu
-được đặt ở 12,5 Hz và dải đo ở mức ±2g nhằm tối ưu độ phân giải cho các dao
+được đặt ở 12.5 Hz và dải đo ở mức ±2g nhằm tối ưu độ phân giải cho các dao
 động nhỏ khi ngủ ở người. Việc thiết lập cấu hình qua hàm \texttt{setConfig()}
 và xác thực lại bằng \texttt{getConfig()} thể hiện nguyên tắc kiểm chứng hai
 chiều nhằm chắc chắn các cấu hình đã được đặt trên phần cứng.
@@ -488,11 +485,10 @@ chiều nhằm chắc chắn các cấu hình đã được đặt trên phần 
 \subsubsection{Cấu hình BLE}
 
 Quá trình khởi tạo, kết nối và truyền lên thiết bị trung tâm bao gồm các bước
-sau: bao gồm: tạo bản tin quảng bá (advertising), thiết lập cơ chế kết nối/ngắt
-kết nối, cũng như định nghĩa UUID của dịch vụ và đặc tính theo mô hình
-\gls{gatt}.
+sau: tạo bản tin quảng bá (advertising), thiết lập cơ chế kết nối/ngắt kết nối,
+cũng như định nghĩa UUID của dịch vụ và đặc tính theo mô hình \gls{gatt}.
 
-\input{chapters/examples/cauhinh_ble.tex}[H]
+\input{chapters/examples/cauhinh_ble.tex}
 
 \usetikzlibrary{positioning}
 
@@ -537,12 +533,12 @@ và phần nguyên - phần thập phân để giảm kích thước gói tin m�
 chính xác khi tái lập lại.
 
 Cuối cùng, truyền dữ liệu định dạng byte qua BLE thông qua characteristic đã
-định nghĩa. Mỗi gói tin gồm chín byte chứa đầy đủ thông tin về hướng và biên độ
+định nghĩa. Mỗi gói tin gồm 9 byte chứa đầy đủ thông tin về hướng và biên độ
 gia tốc trên ba trục, được gửi chu kỳ 100 ms, bảo đảm tốc độ lấy mẫu ổn định
 (10 Hz) phục vụ phân tích tư thế trong thời gian thực.
 
 Việc chuẩn hóa 5 giai đoạn này có ưu điểm có thể bóc tách cho mục đích khác
-nhau, tối ưu cho từng giai đoạn. Việc này để bảo code mạch lạc và dễ bảo trì.
+nhau, tối ưu cho từng giai đoạn, đảm bảo code mạch lạc và dễ bảo trì.
 
 \subsubsection{Lọc nhiễu bằng bộ lọc Kalman}
 
@@ -597,36 +593,41 @@ các hệ thống khác.
 \end{figure}
 Hình~\ref{fig:architecture_software} mô tả tổng quan các thành phần cần thiết trong luận văn và kết nối giữa chúng.
 Để đưa ra kết quả phân loại tư thế ngủ dữ liệu từ cảm biến có thể có 2 hướng đi. Thứ nhất, dữ liệu từ cảm biến thông qua vi điều khiển đẩy lên ứng dụng di động
-(BLE) sau đó được lưu trữ hoặc được suy luận trên máy chủ đám mây rồi trả về kết quả tại ứng dụng di động.
-Thứ hai. dữ liệu từ cảm biến sau khi được đọc từ vi điều khiển thì được suy luận ngay tại biên và hiển thị kết quả thông qua các con đèn led.
+sau đó được lưu trữ hoặc được suy luận trên máy chủ đám mây rồi trả về kết quả tại ứng dụng di động.
+Thứ hai. dữ liệu từ cảm biến sau khi được đọc từ vi điều khiển thì
+được suy luận ngay tại biên và hiển thị kết quả thông qua các chỉ báo đèn led.
 Cả 2 cách đều được tác giả nghiên cứu và triển khai trong luận văn này.
 
 \subsubsection{Ứng dụng di dộng}
-Được coi như 1 cổng kết nối trong điện toán đám mây
+Được coi như một cổng kết nối trong điện toán đám mây
 có nhiệm vụ gom các tín hiệu từ cảm biến gia tốc hoặc có thể mở
 rộng đa cảm biến khác, hiển thị chúng theo thời gian thực và chuyển
 lên máy chủ đám mây.
 Dựa trên yêu cầu bài toán, tác giả xác định được các yêu cầu của phần mềm như
 Bảng~\ref{tab:app_features}. Ngoài ra, các yêu cầu phi chức năng cũng được tác
 giả chú ý như là bảo mật thông tin, thời gian phản hồi hệ thống.
-
 \begin{table}[H]
     \centering
     \caption{Các nhóm chức năng chính của ứng dụng}
     \label{tab:app_features}
     \begin{tabularx}{\textwidth}{|l|l|X|}
         \hline
-        \textbf{Nhóm} & \textbf{Chức năng}             & \textbf{Mô tả}                                                                \\ \hline
-        \multirow{2}{*}{Xác thực}
-                      & Đăng ký                        & Người dùng đăng kí thông tin và xác thực qua email, sđt                       \\ \cline{2-3}
-                      & Đăng nhập                      & Sử dụng tài khoản mật khẩu đã được đăng ký để đăng nhập vào hệ thống          \\ \cline{2-3}
-                      & Quên mật khẩu                  & Lấy lại tài khoản của người dùng                                              \\ \hline
-        \multirow{2}{*}{Ứng dụng}
-                      & Kết nối Bluetooth              & Kết nối ứng dụng với phần cứng thông qua BLE                                  \\ \cline{2-3}
-                      & Chọn cảm biến                  & Lựa chọn cảm biến như (gia tốc, âm thanh)                                     \\ \cline{2-3}
-                      & Câu hỏi STOPBANG, Epworth      & Trả lời câu hỏi STOP BANG để đánh giá OSA và hiển thị lịch sử các lần trả lời \\ \cline{2-3}
-                      & Theo dõi thông tin từ cảm biến & Hiển thị dữ liệu thời gian thực thông qua các biểu đồ                         \\ \cline{2-3}
-                      & Chatbot y tế                   & Chatbot xây dựng trên bộ câu hỏi 2000 câu về y học giấc ngủ và công nghệ RAG  \\ \hline                                                          \\ \hline
+        \textbf{Nhóm} & \textbf{Chức năng}             & \textbf{Mô tả}                                                                               \\
+        \hline
+
+        \multirow{3}{*}{Xác thực}
+                      & Đăng ký                        & Người dùng đăng ký thông tin và xác thực qua email, số điện thoại.                           \\ \cline{2-3}
+                      & Đăng nhập                      & Sử dụng tài khoản và mật khẩu đã đăng ký để truy cập hệ thống.                               \\ \cline{2-3}
+                      & Quên mật khẩu                  & Hỗ trợ lấy lại tài khoản của người dùng.                                                     \\
+        \hline
+
+        \multirow{5}{*}{Ứng dụng}
+                      & Kết nối Bluetooth              & Kết nối ứng dụng với phần cứng thông qua BLE.                                                \\ \cline{2-3}
+                      & Chọn cảm biến                  & Lựa chọn cảm biến như gia tốc hoặc âm thanh.                                                 \\ \cline{2-3}
+                      & Câu hỏi STOP-BANG, Epworth     & Trả lời bảng câu hỏi STOP-BANG và Epworth để đánh giá nguy cơ OSA; hiển thị lịch sử trả lời. \\ \cline{2-3}
+                      & Theo dõi thông tin từ cảm biến & Hiển thị dữ liệu thời gian thực thông qua biểu đồ.                                           \\ \cline{2-3}
+                      & Chatbot y tế                   & Chatbot sử dụng tập câu hỏi y học giấc ngủ (2000 câu) và công nghệ RAG.                      \\
+        \hline
     \end{tabularx}
 \end{table}
 
@@ -649,9 +650,9 @@ BLoC gồm ba lớp chính được mô tả trong Hình~\ref{flutter}.
     \label{flutter}
 \end{figure}
 
-Mã nguồn của toàn bộ ứng dụng di động tác giả sẽ để dưới phần mục lục. Còn
-trong khuôn khổ luận văn nay, tác giả sẽ giải thích chức năng chính là kết nối
-phần cứng, hiển thị và chuyển dữ liệu lên máy chủ trung tâm.
+Mã nguồn của toàn bộ ứng dụng di động sẽ để dưới phần mục lục. Còn trong khuôn
+khổ luận văn nay sẽ giải thích chức năng chính là kết nối phần cứng, hiển thị
+và chuyển dữ liệu lên máy chủ trung tâm.
 
 \begin{figure}[H]
     \centering
@@ -678,27 +679,25 @@ phần cứng, hiển thị và chuyển dữ liệu lên máy chủ trung tâm.
     \label{fig:mobile_ble}
 \end{figure}
 
-Sau khi tìm hiểu, tác giả chọn thư viện flutter\_blue\_plus làm nền tảng để kết
-nối BLE từ ứng dụng di động đến phần cứng \cite{flutter_blue_plus}. Nó hỗ trợ
-các phương thức gồm quét, kết nối, đọc/ghi đặc tính và nhận thông báo từ thiết
-bị BLE trên Android, iOS, macOS, Linux và web. Ngoài ra nó không có thêmphụ
-thuộc ngoài Flutter, và được thiết kế cho vai trò BLE trung tâm (không hỗ trợ
-Bluetooth cổ điển như HC-05). Plugin miễn phí cho cá nhân, tổ chức nhỏ, và phi
-lợi nhuận; các công ty trên 50 nhân viên cần mua bản quyền để sử dụng thương
-mại.
+Sau khi tìm hiểu, thư viện flutter\_blue\_plus được chọn để kết nối BLE từ ứng
+dụng di động đến phần cứng \cite{flutter_blue_plus}. Nó hỗ trợ các phương thức
+gồm quét, kết nối, đọc/ghi đặc tính và nhận thông báo từ thiết bị BLE trên
+Android, iOS, macOS, Linux và web. Ngoài ra nó không có thêm phụ thuộc ngoài
+Flutter, và được thiết kế cho vai trò BLE trung tâm (không hỗ trợ Bluetooth cổ
+điển như HC-05). Đây là thư viện miễn phí cho cá nhân, tổ chức nhỏ, và phi lợi
+nhuận; các công ty trên 50 nhân viên cần mua bản quyền để sử dụng thương mại.
 
-\input{chapters/examples/ble_scan.tex}[H]
+\input{chapters/examples/ble_scan.tex}
 
 Mã nguồn~\ref{lst:ble_scan} trình bày quy trình quét và kết nối thiết bị ngoại
 vi BLE trong Flutter dựa trên thư viện flutter\_blue\_plus. Hàm onScanPressed()
-mục đích quét thiết bị đang khả dụng thông qua dịch vụ mức pin (Battery Level)
-có UUID là 180F. Khi này BLoc nhận trạng thái quét, thực hiện quét và trả về
-danh sách mảng các thiết bị bao gồm tên hiển thị, địa chỉ MAC. Hàm
-onStopPressed() dừng quá trình quét, còn onConnectPressed() thiết lập kết nối
-với thiết bị được chọn và chuyển đến màn hình điều khiển chi tiết.
+mục đích quét thiết bị đang khả dụng thông qua dịch vụ mức pin có UUID là 180F.
+Khi này BLoc nhận trạng thái quét, thực hiện quét và trả về danh sách mảng các
+thiết bị bao gồm tên hiển thị, địa chỉ MAC. Hàm onStopPressed() dừng quá trình
+quét, còn onConnectPressed() thiết lập kết nối với thiết bị được chọn và chuyển
+đến màn hình điều khiển chi tiết.
 
-\input{chapters/examples/flutter_ble}[H]
-
+\input{chapters/examples/flutter_ble}
 Mã nguồn~\ref{flutterBle} trình bày cách ứng dụng hoạt động khi người dùng chọn
 đúng BLE của phần cứng. Cụ thể, StreamBuilder được sử dụng để lắng nghe các
 thay đổi của device.services, cho phép hệ thống phản ứng tức thời khi thiết bị
@@ -707,22 +706,23 @@ tế đã cài đặt ở phần cứng và hằng số định nghĩa (ACCLEROM
 ACCLEROMETER\_CHARACTION) trên ứng dụng di động cho phép xác thực logic nhằm
 đảm bảo rằng ứng dụng chỉ giao tiếp với dịch vụ và đặc tính cảm biến hợp lệ.
 
-Sau khi đã khớp các thành phần BLE, ứng dụng di động có thêm nút ấn "lấy thông
-tin" khi này ứng dụng di động sẽ gửi 1 yêu cầu theo dõi đến phần cứng. Như đoạn
-mã~\ref{lst:ble_bmi270} vi điều khiển lắng nghe được hành động theo dõi sẽ lập
-tức gửi các gói tin lên lại ứng dụng di dộng theo cấu trúc đã xác lập.
+Sau khi đã khớp các thành phần BLE, ứng dụng di động có thêm nút ấn để lấy
+thông tin. Khi đó, ứng dụng di động sẽ gửi 1 yêu cầu theo dõi đến phần cứng.
+Như đoạn mã~\ref{lst:ble_bmi270}, vi điều khiển lắng nghe được hành động theo
+dõi sẽ lập tức gửi các gói tin lên lại ứng dụng di dộng theo cấu trúc đã xác
+lập.
 
-Đến đây, tác giả đã \textbf{hoàn thành quy trình kết nối và nhận dữ liệu từ phần cứng}.
-Tiếp theo, tác giả sẽ trình bày việc dữ liệu được đóng gói và chuyển lên phần máy chủ trung tâm.
+Đến đây, luận văn đã trình bày \textbf{hoàn thành quy trình kết nối và nhận dữ liệu từ phần cứng}.
+Tiếp theo, luận vẵn sẽ mô tả rõ các thức dữ liệu được đóng gói và chuyển lên phần máy chủ trung tâm.
 
-Ngoài dữ liệu 3 trục x, y, z, tác giả xác định tập dữ liệu cần lưu thêm thời
-gian tạo và giá trị ID của người đang dùng. Việc này đảm bảo việc minh bạch, dễ
-đối chiếu và phân tích, mô phỏng lại giá trị cảm biến theo chuỗi thời gian. Mã
+Ngoài dữ liệu 3 trục x, y, z, nhóm xác định tập dữ liệu cần lưu thêm thời gian
+tạo và giá trị ID của người đang dùng. Việc này đảm bảo việc minh bạch, dễ đối
+chiếu và phân tích, mô phỏng lại giá trị cảm biến theo chuỗi thời gian. Mã
 nguồn~\ref{format_ble} mô tả việc tối ưu hóa đẩy dữ liệu HTTP theo lô giúp giảm
 tải phía máy chủ trung tâm. Điều này tăng tính mở rộng lên hàng trăm thiết bị
 hoặc giá trị cảm biến khác đẩy lên cùng 1 thời điểm.
 
-\input{chapters/examples/format_data_ble.tex}[H]
+\input{chapters/examples/format_data_ble.tex}
 
 Một điểm đáng lưu ý nữa, tác giả kết hợp cùng GS.TS. Dương Quý Sỹ phát triển
 thêm tính năng \textbf{chatbot y học giấc ngủ} dựa trên kỹ thuật
@@ -741,15 +741,11 @@ nơi trên 1 hệ thống phần cứng mạnh mẽ.
 
 \subsubsection{Máy chủ đám mây}
 
-Trong phần này, tác giả sẽ trình bày các thành phần trong hệ thống máy chủ đám
-mây cùng với các chúng phối hợp với nhau để đưa ra phản hồi lại cho ứng dụng di
-dộng. Đầu tiên, tác giả nghiên cứu và đề xuất ba thành phần chính cho luận văn
-bao gồm hai phần chính: máy chủ xử lý, bộ nhớ đệm và cơ sở dữ liệu.
+Để giảm thời gian phát triển, toàn bộ hệ thống máy chủ được triển
+khai trển hạ tầng của Amazon Web Services (AWS) gồm 2 phần chính là máy chủ trung tâm và cơ sở dữ liệu.
 
-Để giảm thời gian phát triển, toàn bộ hệ thống máy chủ được triển khai trển hạ tầng của Amazon Web Services (AWS)
-.
-\textbf{(i) Máy chủ xử lý.}
-Có nhiệm vụ mở các kết nối (API) ra bên ngoài, nhận yêu cầu từ ứng dụng di động.
+\textbf{Máy chủ trung tâm}
+có nhiệm vụ mở các kết nối (API) ra bên ngoài, nhận yêu cầu từ ứng dụng di động.
 Tác giả lựa chọn ngôn ngữ Typescript (TS) trên nền tảng NodeJS với các lý do: 1) TS cung cấp khả năng định nghĩ kiểu dữ liệu
 cho biến, hàm. Các lỗi đó sẽ được phát hiện trong quá trình biên dịch ngay trước khi đến quá trình chạy (run time); 2) NodeJS có nhiều thư viện
 hỗ trợ bảo mật, tương tác với các thành phần khác và khả năng khởi tạo nhanh dự án.
@@ -790,9 +786,8 @@ Về mặt cấu trúc mã nguồn, hệ thống được tổ chức theo mô h
 Kiến trúc trên không chỉ đảm bảo tính tách biệt giữa các tầng xử lý mà còn giúp
 nâng cao khả năng bảo trì, kiểm thử và mở rộng trong tương lai.
 
-\textbf{(ii) Cơ sở dữ liệu}
-Với yêu cầu để lưu trữ dữ liệu người dùng cần rõ ràng cấu trúc, ràng buộc cao và dữ liệu cảm biến chủ yếu là ghi 1 lần theo chuỗi thời gian thì nên chọn cơ sở nào?
-Sau khi tìm hiểu, tác giả sẽ kiến trúc lưu trữ được thiết kế theo hướng lai,
+\textbf{Cơ sở dữ liệu} có nhiệm vụ lưu trữ dữ liệu bao gồm dữ liệu về người dùng, cảm biến.
+Sau khi tìm hiểu, nhóm chọn kiến trúc lưu trữ được thiết kế theo hướng lai,
 kết hợp cả NoSQL (MongoDB) và SQL (Postgres), nhằm tận dụng thế mạnh riêng của từng loại hình.
 
 Với đặc thù của dữ liệu cảm biến là mang tính phi cấu trúc, có tần suất cập
@@ -812,7 +807,7 @@ không chỉ tăng cường khả năng kiểm soát logic nghiệp vụ ở t�
 là yêu cầu tiên quyết để hệ thống tuân thủ các tiêu chuẩn về \textbf{an toàn và
     bảo mật thông tin y tế}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{images/flow_http.png}
     \caption{Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}
@@ -832,8 +827,7 @@ các nghiệp vụ của máy chủ trung tâm. Phần code sẽ được tác g
 mục lục.
 
 \subsection{Học máy trong phân loại tư thế ngủ}
-Học máy đóng vài trò đưa ra kêt quả dựa trên các tín hiệu gia tốc thu được.
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/hocmaytime.png}
     \caption{Phân bố khối lượng công việc với bài toán học máy phân loại tư thế ngủ trong luận văn}
@@ -843,8 +837,8 @@ Học máy đóng vài trò đưa ra kêt quả dựa trên các tín hiệu gia
 Tổng quan về các bước xây dựng hệ thống học máy cho bài toán phân loại tư thế
 ngủ đã được trình bày tại Chương~\ref{chapter:1-introduction}. Sau khi đánh
 giá, tác giả lựa chọn 4 mô hình học máy truyền thống là rừng ngẫu nhiên (Random
-forest - RF), máy vec-tơ hỗ trợ (Support vector machine - SVM), Hồi quy
-logistic (Logistic regression - LR), thuật toán tăng cường Gradient Boosting
+forest - RF), máy vec-tơ hỗ trợ (Support vector machine - SVM), hồi quy
+Logistic (Logistic regression - LR), thuật toán tăng cường Gradient Boosting
 (GB) và một mô hình mạng nơ-ron nhân tạo (Artificial Neural Network - ANN).
 
 Việc lựa chọn này, được tác giả lựa chọn dựa trên hai yếu tố là khả năng khái
@@ -872,7 +866,7 @@ RNN) hay mạng bộ nhớ dài ngắn hạn (Long Short-Term Memory - LSTM).
 Đây là thuật toán học máy có giám sát được thiết kế cho các tác vụ phân loại dựa trên các đặc trưng đầu vào.
 Về mặt cấu trúc, hồi quy Logistic làm việc dựa trên nguyên tắc của hàm sigmoid - một hàm phi tuyến
 chuyển đầu vào của nó thành xác suất thuộc về một trong hai
-lớp đối với bài toán phân loại nhị phân.
+lớp đối với bài toán phân loại nhị phân:
 
 \begin{equation}
     \sigma(z) = \frac{1}{1 + e^{-z}}, \quad \text{với } z = \mathbf{w}^T \mathbf{x} + b
@@ -881,7 +875,7 @@ lớp đối với bài toán phân loại nhị phân.
 Trong đó, $\mathbf{w}$ là vector trọng số, $\mathbf{x}$ là vector đặc trưng đầu
 vào, và $b$ là hệ số điều chỉnh (bias). Khi xác suất này vượt quá một ngưỡng
 nhất định (thông thường là $0.5$), mô hình sẽ gán nhãn cho $\mathbf{x}$ là
-thuộc lớp dương; ngược lại, nếu nhỏ hơn ngưỡng, mẫu được phân loại vào lớp âm.
+thuộc lớp dương. Ngược lại, nếu nhỏ hơn ngưỡng, mẫu được phân loại vào lớp âm.
 
 Mặc dù đơn giản và dễ triển khai, hồi quy logistic nguyên thủy chỉ phù hợp với
 các bài toán phân loại nhị phân. Để mở rộng cho bài toán phân loại đa lớp, có
@@ -911,18 +905,18 @@ biên.
 Đây là một thuật
 toán học có giám sát, đặc biệt hiệu quả cho các bài toán phân loại nhị
 phân với biên ranh giới rõ ràng \cite{cortes1995svm}. Ý tưởng chính của SVM là tìm kiếm một
-\textbf{mặt siêu phẳng (hyperplane)} trong không gian đặc trưng để phân
+\textbf{mặt siêu phẳng} trong không gian đặc trưng để phân
 chia các điểm dữ liệu thành hai lớp sao cho biên phân cách giữa các lớp
 là lớn nhất.
 
 Trong không gian hai chiều, mặt siêu phẳng tương ứng với một đường thẳng; trong
-không gian ba chiều, đó là một mặt phẳng; và trong không gian nhiều chiều hơn,
-nó là một siêu mặt phẳng tổng quát. SVM chọn mặt siêu phẳng sao cho khoảng cách
-từ nó đến các điểm dữ liệu gần nhất của mỗi lớp - gọi là \textbf{support
-    vectors} là tối đa.
+không gian ba chiều, đó là một mặt phẳng. Trong không gian nhiều chiều hơn, nó
+là một siêu mặt phẳng tổng quát. SVM chọn mặt siêu phẳng sao cho khoảng cách từ
+nó đến các điểm dữ liệu gần nhất của mỗi lớp - gọi là \textbf{support vectors}
+là tối đa.
 
 Trong không gian hai chiều, khoảng cách từ một điểm có tọa độ $(x_0, y_0)$ đến
-đường thẳng có phương trình
+đường thẳng có phương trình:
 \[
     w_1 x + w_2 y + b = 0
 \]
@@ -932,7 +926,7 @@ Trong không gian hai chiều, khoảng cách từ một điểm có tọa độ
 \end{equation}
 
 Tương tự, trong không gian ba chiều, khoảng cách từ một điểm $(x_0, y_0, z_0)$
-đến mặt phẳng có phương trình
+đến mặt phẳng có phương trình:
 \[
     w_1 x + w_2 y + w_3 z + b = 0
 \]
@@ -1124,11 +1118,11 @@ biến, đa cấu trúc.
 
 Tuy nhiên, trong khuôn khổ của nghiên cứu này, mục tiêu chính không chỉ là đạt
 độ chính xác tối đa mà còn là đánh giá ảnh hưởng của các đặc trưng trên miền
-thời gian và miền tần số đối với hiệu suất của mô hình học máy nên tác giả
-quyết định chọn LR, SVM, RF, GB, NN để tiến hành thử nghiệm. Còn tương lai, tác
-giả sẽ mở rộng với các thuật toán phức tạp hơn để đánh giá toàn diện hơn đối
-với bài toán phân loại tư thế ngủ.
+thời gian và miền tần số đối với hiệu suất của mô hình học máy nên nhóm quyết
+định chọn LR, SVM, RF, GB, NN để tiến hành thử nghiệm. Còn tương lai, nhóm sẽ
+mở rộng với các thuật toán phức tạp hơn để đánh giá toàn diện hơn đối với bài
+toán phân loại tư thế ngủ.
 
-Đến đây, tác giả đã trình bày đầy đủ phương pháp xây dựng hệ thống, bao gồm cả phần cứng, phần mềm và các mô hình học máy được lựa chọn phù hợp với bài toán phân loại tư thế ngủ.
+Đến đây, luận văn đã trình bày đầy đủ phương pháp xây dựng hệ thống, bao gồm cả phần cứng, phần mềm và các mô hình học máy được lựa chọn phù hợp với bài toán phân loại tư thế ngủ.
 Phương pháp đề xuất được đánh giá một cách toàn diện, từ cơ sở lý thuyết đến triển khai thực tế, nhằm đảm bảo tính khả thi và hiệu quả trong ứng dụng.
 Trên cơ sở đó, tác giả tiến hành phát triển, thử nghiệm và trình bày kết quả cụ thể trong chương tiếp theo.

@@ -2,17 +2,17 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {1.1}{\ignorespaces Phân loại mức độ OSA dựa trên chỉ số AHI}}{6}{table.caption.8}%
 \contentsline {table}{\numberline {1.2}{\ignorespaces Phân loại thiết bị đeo trong phát hiện OSA. tư thế ngủ}}{12}{table.caption.12}%
-\contentsline {table}{\numberline {1.3}{\ignorespaces So sánh đặc tính giữa ba loại cảm biến gia tốc MEMS}}{24}{table.caption.21}%
-\contentsline {table}{\numberline {1.4}{\ignorespaces Các bước chính trong bài toán sử dụng học máy trên biên}}{26}{table.caption.22}%
-\contentsline {table}{\numberline {1.5}{\ignorespaces Hiệu quả mô hình học máy và khả năng triển khai biên trong nhận diện tư thế ngủ}}{31}{table.caption.27}%
+\contentsline {table}{\numberline {1.3}{\ignorespaces So sánh đặc tính giữa ba loại cảm biến gia tốc MEMS}}{23}{table.caption.21}%
+\contentsline {table}{\numberline {1.4}{\ignorespaces Các bước chính trong bài toán sử dụng học máy trên biên}}{25}{table.caption.22}%
+\contentsline {table}{\numberline {1.5}{\ignorespaces Hiệu quả mô hình học máy và khả năng triển khai biên trong nhận diện tư thế ngủ}}{30}{table.caption.27}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Các nhóm chức năng chính của ứng dụng}}{57}{table.caption.53}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Mô tả các thư mục chính trong cấu trúc mã nguồn máy chủ trung tâm}}{64}{table.caption.59}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Các nhóm chức năng chính của ứng dụng}}{56}{table.caption.53}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Mô tả các thư mục chính trong cấu trúc mã nguồn máy chủ trung tâm}}{62}{table.caption.59}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}}{84}{table.caption.81}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Kết quả lựa chọn tham số cho các mô hình học máy}}{86}{table.caption.86}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}}{92}{table.caption.90}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces So sánh hiệu năng LR và ANN trên nRF52840}}{100}{table.caption.95}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces So sánh kết quả mô hình trên tập thử Python và khi triển khai trên MCU}}{102}{table.caption.97}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}}{84}{table.caption.82}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Kết quả lựa chọn tham số cho các mô hình học máy}}{87}{table.caption.86}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}}{93}{table.caption.90}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces So sánh hiệu năng LR và ANN trên nRF52840}}{101}{table.caption.95}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces So sánh kết quả mô hình trên tập thử Python và khi triển khai trên MCU}}{103}{table.caption.97}%
 \contentsfinish 
 \contentsfinish 
