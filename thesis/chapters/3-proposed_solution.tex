@@ -1,4 +1,8 @@
-
+Dựa trên các cơ sở lý thuyết tại chương I, trong chương này, tác giả sẽ trình
+bày về phương pháp nghiên cứu và phát triển hệ thống thu thập, xử lý và lưu trữ
+dữ liệu cảm biến gia tốc. Từ bộ dữ liệu thu thập, tác giả sẽ tiến hành trích
+xuất đặc trưng, đề xuất mô hình học máy phù hợp và thiết lập các kịch bản để
+đánh giá các mô hình đề xuất đó.
 \section{Nghiên cứu, phát triển phần cứng }
 
 Trong phần này, tác giả sẽ trình bày các nội dung bao gồm: nghiên cứu, lựa chọn
@@ -19,33 +23,24 @@ không dây kết hợp với cảm biến gia tốc 3 trục ADXL330, con quay 
 triển thiết bị theo dõi tư thế ngủ của trẻ nhỏ sử dụng vi xử lý ATmega328P-PU
 kết hợp cảm biến gia tốc ADXL335 được đặt trên bụng \cite{p_3}. Trong nghiên
 cứu của Abdulsadig và cộng sự, hệ thống thu thập dữ liệu được xây dựng dựa trên
-một bo mạch tùy chỉnh tích hợp vi điều khiển nRF5232 ( tích hợp Bluetooth Low
-Energy (BLE). Vi điều khiển này đảm nhiệm đồng thời cả việc lấy mẫu dữ liệu từ
-cảm biến gia tốc ba trục LIS2DH12 với tần số 100 Hz và truyền dữ liệu không dây
-theo thời gian thực \cite{Sleep_Posture_Detection, abdulsadig2023}. Trong
-nghiên cứu của tác giả Vũ Hoàng Diệu , mô-đun ESP32 được lựa chọn làm đơn vị xử
-lý trung tâm nhờ tích hợp bộ vi điều khiển hiệu năng cao, kết nối không dây
-Wi-Fi và khả năng mở rộng linh hoạt \cite{vu2023}. Với thiết kế nhỏ gọn, chi
-phí hợp lý và mức tiêu thụ điện năng thấp, ESP32 đáp ứng tốt yêu cầu của hệ
-thống thu thập dữ liệu tư thế ngủ theo thời gian thực. Thiết bị không chỉ cho
-phép truyền dữ liệu trực tiếp lên máy chủ hoặc nền tảng đám mây thông qua
-Wi-Fi, mà còn hỗ trợ lưu trữ cục bộ trên thẻ nhớ microSD, đảm bảo tính liên tục
-trong điều kiện mất kết nối mạng.
+một bo mạch tùy chỉnh tích hợp vi điều khiển nRF5232. Vi điều khiển này đảm
+nhiệm đồng thời cả việc lấy mẫu dữ liệu từ cảm biến gia tốc ba trục LIS2DH12
+với tần số 100 Hz và truyền dữ liệu không dây theo thời gian thực
+\cite{Sleep_Posture_Detection, abdulsadig2023}. Trong nghiên cứu của tác giả Vũ
+Hoàng Diệu, mô-đun ESP32 được lựa chọn làm đơn vị xử lý trung tâm nhờ tích hợp
+bộ vi điều khiển hiệu năng cao, kết nối không dây Wi-Fi đáp ứng tốt yêu cầu của
+hệ thống thu thập dữ liệu tư thế ngủ theo thời gian thực \cite{vu2023}. Thiết
+bị không chỉ cho phép truyền dữ liệu trực tiếp lên máy chủ hoặc nền tảng đám
+mây thông qua Wi-Fi, mà còn hỗ trợ lưu trữ cục bộ trên thẻ nhớ microSD, đảm bảo
+tính liên tục trong điều kiện mất kết nối mạng.
 
 Qua phân tích các nghiên cứu trên có thể thấy rằng phần lớn các cấu hình phần
-cứng có kích thước vẫn còn lớn (> 5cm), hoặc gặp giới hạn trong khả năng tích
-hợp mô hình học máy tại thiết bị. Do đó, sau khi nghiên cứu, tác giả quyết định
-lựa chọn vi điều khiển nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với
-các lý do sau:
+cứng có kích thước vẫn còn lớn hoặc gặp giới hạn trong khả năng tích hợp mô
+hình học máy tại thiết bị. Do đó, sau khi nghiên cứu, tác giả quyết định lựa
+chọn vi điều khiển nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với các
+lý do sau:
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/NRF52840-QFA_SPL.jpg}
-    \caption{Nordic NRF52840}
-    \label{Nordic}
-\end{figure}
-
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/nrf52840_feature.png}
     \caption{Các tính năng Nordic nRF52840}
@@ -60,11 +55,12 @@ ngủ. Ngoài khả năng hoạt động trong dải điện áp rộng từ +1.
 (tương thích với nguồn pin và USB), nRF52840 còn cung cấp các giao tiếp ngoại
 vi phong phú: hai giao diện I2C, bốn SPI chủ (master), ba SPI tớ (slave), bốn
 kênh điều chế xung (PWM) hỗ trợ EasyDMA, cùng với bộ định thời 32-bit, phù hợp
-cho các ứng dụng đòi hỏi xử lý thời gian thực chính xác.
+cho các ứng dụng đòi hỏi xử lý thời gian thực chính xác
+Hình~\ref{nrf52840_schematic}.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{images/nrf52840_schematic.png}
+    \includegraphics[width=0.5\textwidth]{images/nrf52840_schematic.png}
     \caption{Sơ đồ khối Nordic NRF52840}
     \label{nrf52840_schematic}
 \end{figure}
@@ -166,15 +162,14 @@ Trong quá trình ngủ, các chuyển động thân thể chủ yếu là chuy�
 biên độ nhỏ và ít mang tính đột ngột \cite{Wang2018_slidingwindow}. Trong giai
 đoạn ngủ REM, cơ thể gần như bất động. Do đó, việc ghi nhận chính xác các thay
 đổi tư thế ngủ đòi hỏi cảm biến có độ nhạy cao. Như đã trình bày trong Chương
-I, các cảm biến gia tốc MEMS sử dụng nguyên lý điện dung hiện đang được ứng
-dụng rộng rãi trong giám sát tư thế và chuyển động khi ngủ nhờ vào đặc điểm nổi
-bật là tần số lấy mẫu phù hợp và đặc biệt là độ nhạy cao với mọi loại chuyển
-động.
+I, các cảm biến gia tốc MEMS kiểu điện dung hiện đang được ứng dụng rộng rãi
+trong giám sát tư thế và chuyển động khi ngủ nhờ vào đặc điểm nổi bật là tần số
+lấy mẫu phù hợp và đặc biệt là độ nhạy cao với mọi loại chuyển động.
 
 Sau khi đã khảo sát, cảm biến gia tốc Bosch BMI270 được lựa chọn cho hệ thống
 nhận diện tư thế ngủ với các lý do sau:
 
-\begin{figure}[!ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth, keepaspectratio]{images/BMi270.png}
     \vspace*{-5mm}
@@ -196,10 +191,18 @@ Thứ ba, tốc độ lấy mẫu và thời gian đáp ứng nhanh: BMI270 hỗ
 (ODR) từ 0.7~Hz đến~1.6 kHz cho gia tốc kế, phù hợp bài toán phân loại giấc ngủ
 yêu cầu tần số lấy mẫu thấp (10~Hz).
 
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.75\textwidth, keepaspectratio]{images/bmi270_block.png}
+    \vspace*{-5mm}
+    \caption{Sơ đồ khối Bosch BMI270}
+    \label{bmi270_block}
+\end{figure}
+
 Thứ tư, khả năng chống nhiễu và hiệu chuẩn tự động: cảm biến có cơ chế bù sai
 số và bù độ nhạy theo thời gian thực, giúp giảm sai lệch khi hoạt động lâu dài.
 Tính năng bù sai lệch cho gia tốc kế đảm bảo độ ổn định cao của dữ liệu đo.
-Ngoài ra, cảm biến còn tích hợp thêm bộ lọc thông thấp.
+Ngoài ra, cảm biến còn tích hợp thêm bộ lọc thông thấp Hình~\ref{bmi270_block}.
 
 Cuối cùng, tích hợp tính năng thông minh được lập trình trong các thanh ghi
 riêng được Google chứng nhận tương thích với hệ điều hành Wear OS và hỗ trợ
@@ -210,17 +213,9 @@ chuyển các thiết bị đeo ở cổ tay (wrist wear wakeup). Các tính nă
 học máy khi có thay đổi tư thế đáng kể, qua đó tiết kiệm năng lượng và tăng
 tuổi thọ pin
 
-\begin{figure}[!ht]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth, keepaspectratio]{images/bmi270_block.png}
-    \vspace*{-5mm}
-    \caption{Sơ đồ khối Bosch BMI270}
-    \label{bmi270_block}
-\end{figure}
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.5\textwidth, keepaspectratio]{images/bmi270_pin.png}
+    \includegraphics[width=0.3\textwidth, keepaspectratio]{images/bmi270_pin.png}
     \vspace*{-5mm}
     \caption{Sơ đồ chân Bosch BMI270}
     \label{bmi270_pin}
@@ -228,27 +223,25 @@ tuổi thọ pin
 
 \subsection{Bluetooth năng lượng thấp}
 
-Với mục tiêu tối ưu hóa năng lượng và đảm bảo khả năng hoạt động lâu dài cho
-thiết bị đeo sử dụng pin, BLE được lựa chọn làm chuẩn kết nối không dây chính
-trong hệ thống phần cứng. So với các giao thức khác, BLE tỏ ra vượt trội nhờ
-mức tiêu thụ năng lượng rất thấp, tốc độ khởi tạo kết nối nhanh và khả năng
-tương thích rộng rãi với hầu hết các thiết bị di động hiện nay
-\cite{BLE_compare}.
-
 Các công nghệ truyền thông không dây khác đều bộc lộ những hạn chế đối với
 thiết bị phân loại tư thế ngủ. Wi-Fi, có ưu thế về băng thông, lại tiêu thụ
 năng lượng cao và phụ thuộc vào internet. Bluetooth cổ điển, vốn được thiết kế
 cho các ứng dụng truyền tải dữ liệu dung lượng lớn như âm thanh, cũng đòi hỏi
-năng lượng cao hơn nhiều so với BLE. ZigBee, hiệu quả trong các mạng cảm biến
-nhà thông minh nhờ cấu trúc lưới, lại thiếu sự hỗ trợ trên điện thoại và đòi
-hỏi gateway riêng.
+năng lượng cao hơn so với BLE. ZigBee, hiệu quả trong các mạng cảm biến nhà
+thông minh nhờ cấu trúc lưới, lại thiếu sự hỗ trợ trên điện thoại và đòi hỏi
+gateway riêng. Với mục tiêu tối ưu hóa năng lượng và đảm bảo khả năng hoạt động
+lâu dài cho thiết bị đeo sử dụng pin, BLE được lựa chọn làm chuẩn kết nối không
+dây chính trong hệ thống phần cứng. So với các giao thức khác, BLE tỏ ra vượt
+trội nhờ mức tiêu thụ năng lượng rất thấp, tốc độ khởi tạo kết nối nhanh và khả
+năng tương thích rộng rãi với hầu hết các thiết bị di động hiện nay
+\cite{BLE_compare}.
 
 Ngoài ra, BLE còn được hỗ trợ trên vi điều khiển nRF52840 đã chọn ở phần trên.
 Nhờ sự kết hợp này, hệ thống có thể duy trì khả năng truyền dữ liệu ổn định,
 tiết kiệm năng lượng, và đáp ứng tốt yêu cầu hoạt động liên tục trong quá trình
 giám sát tư thế ngủ.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/ble.png}
     \caption{Các kiểu kết nối không dây trong họ chip nRF52}
@@ -285,17 +278,15 @@ BLE tổ chức logic giao tiếp dựa trên mô hình hồ sơ thuộc tính t
 đơn vị logic: dịch vụ (services) và đặc tính (characteristics). Giao thức nền
 tảng là Attribute Protocol (ATT). Mỗi dịch vụ, đặc tính được định danh bằng mã
 định danh duy nhất (UUID) 16-bit hoặc 128-bit, với quyền truy cập như chỉ đọc,
-chỉ ghi, hoặc hỗ trợ thông báo.
+chỉ ghi, hoặc hỗ trợ thông báo. Trong mô hình GATT là tính kết nối độc quyền:
+tại một thời điểm, thiết bị ngoại vi chỉ có thể duy trì một kết nối duy nhất
+với thiết bị trung tâm. Khi kết nối được thiết lập, thiết bị ngừng quảng cáo,
+điều này hạn chế khả năng kết nối đồng thời từ nhiều thiết bị.
 
-Một điểm quan trọng trong mô hình GATT là tính kết nối độc quyền: tại một thời
-điểm, thiết bị ngoại vi chỉ có thể duy trì một kết nối duy nhất với thiết bị
-trung tâm. Khi kết nối được thiết lập, thiết bị ngừng quảng cáo, điều này hạn
-chế khả năng kết nối đồng thời từ nhiều thiết bị.
-
-Ngoài ra, vi xử lý nRF52840 còn hỗ trợ Bluetooth Mesh, cho phép thiết lập mạng
-lưới nhiều nút. Mỗi nút trong mạng có thể đóng vai trò chuyển tiếp, cho phép dữ
-liệu lan truyền đến các vùng rộng hơn theo mô hình phân tán. Điều này phù hợp
-với các ứng dụng IoT quy mô đa cảm biến đặt tại nhiều nơi khác nhau.
+Ngoài ra, một điểm sáng nữa là Bluetooth Mesh, cho phép thiết lập mạng lưới
+nhiều nút. Mỗi nút trong mạng có thể đóng vai trò chuyển tiếp, cho phép dữ liệu
+lan truyền đến các vùng rộng hơn theo mô hình phân tán. Điều này phù hợp với
+các ứng dụng IoT quy mô đa cảm biến đặt tại nhiều nơi khác nhau.
 
 \subsection{Thiết kế mạch}
 
@@ -304,10 +295,6 @@ loại tư thế ngủ. Trong phần này, tác giả sẽ trình bày về thi�
 lý cho mạch thông qua những câu hỏi: Các thành phần trong cần thiết để phục vụ
 cho bài toán phân loại tư thế ngủ là gì? Chúng được kết nối với nhau như thế
 nào? và chi tiết từng thành phần đó là gì?
-
-Từ đó, tác giả từng bước nghiên cứu và hoàn thiện thiết kế sơ đồ mạch.
-
-\subsubsection*{Mục tiêu}
 
 Bám sát vào yêu cầu đã trình bày từ các phần trước là phần cứng nhỏ gọn, tính
 di dộng cao, tiêu thụ năng lượng ít, giá thành phù hợp tác giả đã nghiên cứu và
@@ -334,11 +321,11 @@ duy trì hoạt động ổn định trong các chế độ năng lượng thấ
 
 Sau khi tìm hiểu, tác giả quyết định lựa chọn module U-blox NINA-B306 để đảm
 nhiệm các nhiệm vụ của khối điều khiển \cite{uBlox2019_NINA_B3}.
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/ninab306.png}
-    \caption{U-blox NINA-B306}
-    \label{ninab306}
+    \includegraphics[width=0.7\textwidth]{images/ninab306_block.png}
+    \caption{Sơ đồ khối U-blox NINA-B306}
+    \label{ninab306_block}
 \end{figure}
 
 Mô-đun NINA-B306 được phát triển dựa trên vi điều khiển Nordic nRF52840, tích
@@ -347,14 +334,7 @@ Hifnh~\ref{ninab306_block}. Ngoài ra, NINA-B306 được thiết kế với d�
 hoạt động chuẩn hóa từ 1.7 V đến 3.6 V, thấp hơn so với giới hạn tối đa 5.5 V
 của vi điều khiển nRF52840, nhằm tối ưu hiệu suất năng lượng.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=1\textwidth]{images/ninab306_block.png}
-    \caption{Sơ đồ khối U-blox NINA-B306}
-    \label{ninab306_block}
-\end{figure}
-
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/ninab306_pin.png}
     \caption{Sơ đồ chân U-blox NINA-B306}
@@ -366,40 +346,32 @@ bao gồm các kênh analog, các đường truyền debug (SWD, TRACE) và các
 được phân bố đối xứng, góp phần tăng cường độ ổn định tín hiệu và giảm nhiễu
 điện từ Hình~\ref{ninab306_pin}.
 
-\newpage
-
 \subsubsection{Khối cảm biến}
 Như đã đề cập chi tiết ở phần~\ref{subsec:cam_bien}, cảm biến gia tốc Bosch
-BMi270 được lựa chọn để thu thập tín hiệu gia tốc cho bài toán phân loại tư thế
-ngủ.
-
-Ngoài ra, việc hướng tới việc xác định chứng ngưng thở khi ngủ OSA thì nhóm có
-bổ sung thêm cảm biến âm thanh STMicroelectronics MP34DT06J. Cảm biến MP34DT06J
-là microphone MEMS kỹ thuật số định hướng đa hướng có kích thước siêu nhỏ gọn
-và tiêu thụ năng lượng thấp. Ngoài ra MP34DT06J là cảm biến số có tỷ lệ tín
-hiệu trên nhiễu (SNR) 64 dB và độ nhạy -26 dBFS ± 1 dB, đảm bảo chất lượng thu
-âm ổn định. Thiết bị được đóng gói theo chuẩn SMD top-port, có che chắn EMI
+BMI270 được lựa chọn để thu thập tín hiệu gia tốc cho bài toán phân loại tư thế
+ngủ. Ngoài ra, việc hướng tới việc xác định chứng ngưng thở khi ngủ OSA thì
+nhóm có bổ sung thêm cảm biến âm thanh STMicroelectronics MP34DT06J. Cảm biến
+MP34DT06J là microphone MEMS kỹ thuật số định hướng đa hướng có kích thước siêu
+nhỏ gọn và tiêu thụ năng lượng thấp. Ngoài ra MP34DT06J là cảm biến số có tỷ lệ
+tín hiệu trên nhiễu (SNR) 64 dB và độ nhạy -26 dBFS ± 1 dB, đảm bảo chất lượng
+thu âm ổn định. Thiết bị được đóng gói theo chuẩn SMD top-port, có che chắn EMI
 (Electromagnetic Interference), và được đảm bảo hoạt động ổn định trong dải
 nhiệt độ mở rộng từ -40 °C đến +85 °C và kèm thêm điện áp đầu vào 1.8V hoàn
-toàn phù hợp với các thông số của vi điều khiển.
-
-Tuy nhiên, trong khuôn khổ luận văn này tác giả không đề cập sâu vào cảm biến
-này để tập trung tối đa vào dữ liệu cảm biến gia tốc cho bài toán phân loại tư
-thế ngủ.
+toàn phù hợp với các thông số của vi điều khiển. Tuy nhiên, trong khuôn khổ
+luận văn này tác giả không đề cập sâu vào cảm biến này để tập trung tối đa vào
+dữ liệu cảm biến gia tốc cho bài toán phân loại tư thế ngủ.
 
 \subsubsection{Khối nguồn, nạp và gỡ lỗi, hiển thị}
 Ba khối chức năng này được thiết kế nhằm đảm bảo sự ổn định và khả năng vận
-hành tin cậy của toàn bộ hệ thống phần cứng.
+hành tin cậy của toàn bộ hệ thống phần cứng. Đối với khối nguồn, hệ thống được
+xác định có hai nguồn cung cấp chính gồm nguồn từ cổng USB và nguồn từ pin
+Li-Polymer. Điện áp đầu vào của toàn mạch được xác định ở mức 3.3 V để tương
+thích với các linh kiện và vi điều khiển. Sau khi nghiên cứu, tác giả sử dụng
+bộ chuyển đổi hạ áp (step-down converter) tích hợp mạch điều khiển MP2322GQH,
+cho phép giảm điện áp đầu vào từ 5 V (USB) hoặc 3.7 V (pin Li-Polymer) xuống
+mức ổn định 3.3 V với hiệu suất cao Hình\ref{fig:MP2322GQH}.
 
-Đối với khối nguồn, hệ thống được xác định có hai nguồn cung cấp chính
-gồm nguồn từ cổng USB và nguồn từ pin Li-Polymer. Điện áp đầu vào của
-toàn mạch được xác định ở mức 3.3 V để tương thích với các linh kiện và
-vi điều khiển. Sau khi nghiên cứu, tác giả sử dụng bộ chuyển đổi hạ áp
-(step-down converter) tích hợp mạch điều khiển MP2322GQH,
-cho phép giảm điện áp đầu vào từ 5 V (USB) hoặc 3.7 V (pin Li-Polymer)
-xuống mức ổn định 3.3 V với hiệu suất cao.
-
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/MP2322GQH.png}
     \caption{Sơ đồ khối IC MP2322GQH, dải đầu vào 3~V - 22~V, dòng tải tối đa 1~A, hiệu suất cao, tần số chuyển mạch 1.25~MHz}
@@ -417,28 +389,26 @@ Serial Wire Debug (SWD); (2) Cơ chế Bootloader thông qua kết nối USB. S�
 hợp này giúp nâng cao tính linh hoạt và khả năng mở rộng trong quá trình phát
 triển phần mềm, đồng thời giảm thiểu thời gian thử nghiệm.
 
-\subsubsection{Sơ đồ mạch}
-\begin{figure}[htbp]
+\begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{images/schematic.png}
     \caption{Sơ đồ mạch}
     \label{fig:schematic}
 \end{figure}
 
+\subsubsection{Sơ đồ mạch}
+
 Sau khi xác định các linh kiện, các yêu cầu về điện áp, kiểu dữ liệu đầu vào,
 đầu ra của các thành phần kể trên, tác giả tiến hành vẽ sơ đồ mạch thông qua
-phần mềm Altium Designer.
+phần mềm Altium Designer. Mạch được thiết kế hình tròn kích thước đường kính
+3~cm, 2~lớp đúng với định hướng của nhóm. Kết quả được thể hiện tại
+Hình~\ref{fig:schematic}
 
-Mạch được thiết kế hình tròn kích thước đường kính 3~cm, 2~lớp đúng với định
-hướng của nhóm.
-
-Kết quả được thể hiện tại Hình~\ref{fig:schematic}
-
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/pcd_dong_top.png}
+        \includegraphics[width=0.5\textwidth]{images/pcd_dong_top.png}
         \label{fig:pcb_dong_top}
         \caption{lớp trên}
 
@@ -446,7 +416,7 @@ Kết quả được thể hiện tại Hình~\ref{fig:schematic}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/pcb_dong_bottom.png}
+        \includegraphics[width=0.5\textwidth]{images/pcb_dong_bottom.png}
         \label{fig:pcb_dong_bottom}
         \caption{lớp dưới}
 
@@ -455,33 +425,33 @@ Kết quả được thể hiện tại Hình~\ref{fig:schematic}
     \label{fig:pcb_dong}
 \end{figure}
 
-\begin{figure}[htbp]
+Sau khi hoàn thiện thiết kế, tác giả thực hiện đặt in mạch, hàn lắp các linh
+kiện theo sơ đồ mạch, và tiến hành kiểm tra hoạt động của các khối chức năng
+trên bo mạch để đánh giá tính ổn định và độ tin cậy của hệ thống.
+
+\begin{figure}
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/pcb_3d_top.png}
+        \includegraphics[width=0.5\textwidth]{images/pcb_3d_top.png}
         \caption{lớp trên}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
+        \includegraphics[width=0.5\textwidth]{images/pcb_3d_bottom.png}
         \caption{lớp dưới}
 
-        \includegraphics[width=\textwidth]{images/pcb_3d_bottom.png}
     \end{subfigure}
     \caption{Mô hình mạch 3D}
     \label{fig:pcb_3d}
 \end{figure}
 
-Sau khi hoàn thiện thiết kế, tác giả thực hiện đặt in mạch, hàn lắp các linh
-kiện theo sơ đồ mạch, và tiến hành kiểm tra hoạt động của các khối chức năng
-trên bo mạch để đánh giá tính ổn định và độ tin cậy của hệ thống.
-
 \newpage
 
 \section{Hệ thống phần mềm}
 Phần này trình bày tổng quan kiến trúc hệ thống phần mềm bao gồm: lập trình
-phần cứng để đọc giá trị cảm biến, cấu hình BE ; phát triển ứng dụng di động
+phần cứng để đọc giá trị cảm biến, cấu hình BLE; phát triển ứng dụng di động
 làm cầu nối giữa phần cứng và hệ thống đám mây, cùng với máy chủ và cơ sở dữ
 liệu lưu trữ dữ liệu. Nội dung cũng đề cập đến các yêu cầu chức năng, phi chức
 năng và thiết kế hệ thống ở mức cao nhằm đảm bảo khả năng triển khai thực tế và
@@ -505,7 +475,7 @@ phát triển đóng vai trò như một lớp trừu tượng, cho phép vi đi
 tiếp trực tiếp với cảm biến Bosch BMI270. Thư viện cung cấp đầy đủ các hàm để
 cấu hình dải đo, tần số lẫy mẫu và chế độ năng lượng tiêu thụ.
 
-\input{chapters/examples/cauhinh_accelerometer.tex}
+\input{chapters/examples/cauhinh_accelerometer.tex}[H]
 
 Phần cấu hình được thể hiện trong mã nguồn~\ref{lst:cauhinh_accelerometer} Việc
 gọi hàm \texttt{imu.beginI2C()} nhằm thiết lập kênh truyền
@@ -515,8 +485,6 @@ I\textsuperscript{2}C và xác nhận sự hiện diện của thiết bị. T�
 và xác thực lại bằng \texttt{getConfig()} thể hiện nguyên tắc kiểm chứng hai
 chiều nhằm chắc chắn các cấu hình đã được đặt trên phần cứng.
 
-\newpage
-
 \subsubsection{Cấu hình BLE}
 
 Quá trình khởi tạo, kết nối và truyền lên thiết bị trung tâm bao gồm các bước
@@ -524,7 +492,7 @@ sau: bao gồm: tạo bản tin quảng bá (advertising), thiết lập cơ ch�
 kết nối, cũng như định nghĩa UUID của dịch vụ và đặc tính theo mô hình
 \gls{gatt}.
 
-\input{chapters/examples/cauhinh_ble.tex}
+\input{chapters/examples/cauhinh_ble.tex}[H]
 
 \usetikzlibrary{positioning}
 
@@ -621,7 +589,7 @@ hình học máy. Cách tiếp cận này đảm bảo rằng dữ liệu thu nh
 thực tế được xử lý nhất quán, có khả năng tái sử dụng và dễ dàng tích hợp với
 các hệ thống khác.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/architecture_software.png}
     \caption{Kiến trúc tổng thể của hệ thống}
@@ -634,16 +602,15 @@ Thứ hai. dữ liệu từ cảm biến sau khi được đọc từ vi điều
 Cả 2 cách đều được tác giả nghiên cứu và triển khai trong luận văn này.
 
 \subsubsection{Ứng dụng di dộng}
-Được coi như 1 cổng kết nối (gateway) trong điện toán đám mây
+Được coi như 1 cổng kết nối trong điện toán đám mây
 có nhiệm vụ gom các tín hiệu từ cảm biến gia tốc hoặc có thể mở
 rộng đa cảm biến khác, hiển thị chúng theo thời gian thực và chuyển
 lên máy chủ đám mây.
-
 Dựa trên yêu cầu bài toán, tác giả xác định được các yêu cầu của phần mềm như
 Bảng~\ref{tab:app_features}. Ngoài ra, các yêu cầu phi chức năng cũng được tác
 giả chú ý như là bảo mật thông tin, thời gian phản hồi hệ thống.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Các nhóm chức năng chính của ứng dụng}
     \label{tab:app_features}
@@ -686,8 +653,6 @@ Mã nguồn của toàn bộ ứng dụng di động tác giả sẽ để dư�
 trong khuôn khổ luận văn nay, tác giả sẽ giải thích chức năng chính là kết nối
 phần cứng, hiển thị và chuyển dữ liệu lên máy chủ trung tâm.
 
-\newpage
-
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}[
@@ -722,7 +687,7 @@ Bluetooth cổ điển như HC-05). Plugin miễn phí cho cá nhân, tổ chứ
 lợi nhuận; các công ty trên 50 nhân viên cần mua bản quyền để sử dụng thương
 mại.
 
-\input{chapters/examples/ble_scan.tex}
+\input{chapters/examples/ble_scan.tex}[H]
 
 Mã nguồn~\ref{lst:ble_scan} trình bày quy trình quét và kết nối thiết bị ngoại
 vi BLE trong Flutter dựa trên thư viện flutter\_blue\_plus. Hàm onScanPressed()
@@ -732,7 +697,7 @@ danh sách mảng các thiết bị bao gồm tên hiển thị, địa chỉ MA
 onStopPressed() dừng quá trình quét, còn onConnectPressed() thiết lập kết nối
 với thiết bị được chọn và chuyển đến màn hình điều khiển chi tiết.
 
-\input{chapters/examples/flutter_ble}
+\input{chapters/examples/flutter_ble}[H]
 
 Mã nguồn~\ref{flutterBle} trình bày cách ứng dụng hoạt động khi người dùng chọn
 đúng BLE của phần cứng. Cụ thể, StreamBuilder được sử dụng để lắng nghe các
@@ -757,7 +722,7 @@ nguồn~\ref{format_ble} mô tả việc tối ưu hóa đẩy dữ liệu HTTP 
 tải phía máy chủ trung tâm. Điều này tăng tính mở rộng lên hàng trăm thiết bị
 hoặc giá trị cảm biến khác đẩy lên cùng 1 thời điểm.
 
-\input{chapters/examples/format_data_ble.tex}
+\input{chapters/examples/format_data_ble.tex}[H]
 
 Một điểm đáng lưu ý nữa, tác giả kết hợp cùng GS.TS. Dương Quý Sỹ phát triển
 thêm tính năng \textbf{chatbot y học giấc ngủ} dựa trên kỹ thuật

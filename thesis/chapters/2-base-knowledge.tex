@@ -795,17 +795,15 @@ thu thập và cấu hình thiết bị, các tín hiệu này được lấy m�
 Một yêu cầu then chốt của bước này là đảm bảo tính ổn định và chất lượng dữ
 liệu. Các cảm biến cần được gắn cố định tại các vị trí tối ưu, chẳng hạn như
 vùng ngực, cổ tay hoặc vùng cổ, nhằm giảm nhiễu chuyển động và duy trì tiếp xúc
-ổn định trong suốt quá trình theo dõi.
-
-Ngoài ra, hệ thống cũng cần đảm bảo khả năng lưu trữ và truyền dữ liệu hiệu quả
-thông qua các giao thức không dây tiết kiệm năng lượng như Bluetooth Low Energy
-(BLE) hoặc Wi-Fi \cite{thuong_wear_paper, hst_wear_paper,
-  Sleep_Posture_Detection}.
+ổn định trong suốt quá trình theo dõi. Hệ thống cũng cần đảm bảo khả năng
+truyền dữ liệu hiệu quả thông qua các giao thức không dây tiết kiệm năng lượng
+như Bluetooth Low Energy (BLE) hoặc Wi-Fi \cite{thuong_wear_paper,
+  hst_wear_paper, Sleep_Posture_Detection}.
 
 Chất lượng dữ liệu thu được trong bước này ảnh hưởng trực tiếp đến hiệu quả của
 các mô hình học máy. Do đó, quy trình thu thập tín hiệu cần được thiết kế sao
 cho vừa đảm bảo phản hồi đúng đặc trưng sinh lý, vừa duy trì tính khả thi khi
-triển khai lâu dài trong môi trường ngoài lâm sàng.
+chạy lâu dài trong môi trường ngoài lâm sàng.
 
 Tuy nhiên, trong nhiều nghiên cứu hiện nay, kiến trúc phần mềm cho quá trình
 thu thập và lưu trữ dữ liệu vẫn chưa được mô tả một cách đầy đủ và thống nhất.
@@ -829,7 +827,7 @@ thống nhất, bảo mật và sẵn sàng cho triển khai thực tế.
 
 \textbf{Phân tích dữ liệu} là bước thống kê lại nhưng dữ liệu  đã thu
 thập bao gồm các yếu tố như: độ cân bằng, độ lặp, các giá trị null/NaN, hay các
-thống kê khác theo yêu cầu bài toán.
+thống kê khác theo yêu cầu bài toán. Bước này sẽ cho thấy bức tranh toàn diện nhất về bộ dữ liệu đã thu thập.
 
 \textbf{Lọc tín hiệu} là bước đầu tiên trong tiền xử lý nhằm loại bỏ nhiễu khỏi
 các tín hiệu sinh lý như EEG, ECG, EMG, âm thanh, $\mathrm{SpO_2}$ và gia tốc.
@@ -990,7 +988,6 @@ nhưng đều chưa tích hợp trực tiếp lên vi điều khiển do dung l�
 nhớ lớn và nhu cầu tính toán cao. Điều này đặt ra thách thức cho việc
 ứng dụng chúng trong môi trường thực tế như giấc ngủ tại nhà,
 nơi mà năng lượng, khả năng lưu trữ và kết nối đều bị hạn chế.
-
 Ở chiều ngược lại, các mô hình truyền thống như cây quyết định,
 rừng ngẫu nhiên hay ngưỡng cố định cho thấy hiệu quả không hề thua
 kém khi được khai thác đúng đặc trưng.
