@@ -7,7 +7,7 @@
 \contentsline {chapter}{Danh sách bảng}{x}{chapter*.3}%
 \contentsline {chapter}{Danh mục ký hiệu, viết tắt}{xii}{table.0.1}%
 \contentsline {chapter}{Đặt vấn đề}{1}{chapter*.6}%
-\contentsline {chapter}{\numberline {1}Tổng quan OSA, tư thế ngủ và công nghệ liên quan}{4}{chapter.1}%
+\contentsline {chapter}{\numberline {1}TỔNG QUAN OSA, MỐI LIÊN HỆ VỚI TƯ THẾ NGỦ VÀ KĨ THUẬT SÀNG LỌC, PHÂN LOẠI}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1.}Hội chứng ngưng thở khi ngủ}{4}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1.}Định nghĩa}{5}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2.}Nguyên nhân}{6}{subsection.1.1.2}%
@@ -15,11 +15,11 @@
 \contentsline {subsection}{\numberline {1.1.4.}Tư thế ngủ và liên hệ với OSA}{8}{subsection.1.1.4}%
 \contentsline {section}{\numberline {1.2.}Công nghệ trong chẩn đoán OSA và phân loại tư thế ngủ}{10}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1.}Đa ký giấc ngủ}{10}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2.}Thiết bị theo dõi OSA tại nhà}{12}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3.}Thiết bị phân loại tư thế ngủ}{14}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.2.}Thiết bị theo dõi OSA tại nhà}{11}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3.}Kĩ thuật phân loại tư thế ngủ}{14}{subsection.1.2.3}%
 \contentsline {subsection}{\numberline {1.2.4.}Cảm biến gia tốc trong đánh giá tư thế ngủ}{17}{subsection.1.2.4}%
 \contentsline {subsection}{\numberline {1.2.5.}Học máy trong phân loại OSA và tư thế ngủ}{25}{subsection.1.2.5}%
-\contentsline {subsubsection}{Thu thập tín hiệu}{27}{subsubsection*.23}%
+\contentsline {subsubsection}{Thu thập tín hiệu}{26}{subsubsection*.23}%
 \contentsline {subsubsection}{Tiền xử lý}{28}{subsubsection*.24}%
 \contentsline {subsubsection}{Trích xuất đặc trưng}{29}{subsubsection*.25}%
 \contentsline {subsubsection}{Lựa chọn và huấn luyện mô hình}{30}{subsubsection*.26}%

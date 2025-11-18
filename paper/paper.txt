@@ -8,7 +8,7 @@ https://www.researchgate.net/publication/377375975_Real-Time_Implementation_of_T
 Real-Time Implementation of Tiny Machine Learning Models for Hand Motion Classification
 
 https://www.researchgate.net/publication/361926287_IMPLEMENTATION_OF_TINY_MACHINE_LEARNING_MODELS_ON_ARDUINO_33_-_BLE_FOR_GESTURE_AND_SPEECH_RECOGNITION
-IMPLEMENTATION OF TINY MACHINE LEARNING MODELS ON ARDUINO 33 – BLE FOR GESTURE AND SPEECH RECOGNITION 
+IMPLEMENTATION OF TINY MACHINE LEARNING MODELS ON ARDUINO 33 - BLE FOR GESTURE AND SPEECH RECOGNITION 
 
 https://ieeexplore-ieee-org.dbvista.idm.oclc.org/document/9745826
 Tiny Machine Learning (Tiny-ML) for Efficient Channel Estimation and Signal Detection\

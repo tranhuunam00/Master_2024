@@ -4895,7 +4895,7 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.nordicsemi.com/Products/nRF52840}}
       \field{note}{Accessed: 2025-07-28}
-      \field{title}{nRF52840 – Advanced Bluetooth 5, Thread and Zigbee multiprotocol SoC}
+      \field{title}{nRF52840 - Advanced Bluetooth 5, Thread and Zigbee multiprotocol SoC}
       \field{year}{2025}
     \endentry
     \entry{Nordic2021_tinyml}{misc}{}{}
@@ -5037,7 +5037,7 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.bluetooth.com/wp-content/uploads/2019/03/Bluetooth_5-FINAL.pdf}}
       \field{note}{Version 1.1.1, Revision Date 13 January 2025}
-      \field{title}{Bluetooth® Core 5.0 – Feature Enhancements}
+      \field{title}{Bluetooth® Core 5.0 - Feature Enhancements}
       \field{year}{2019}
     \endentry
     \entry{BLE}{online}{}{}
@@ -5068,7 +5068,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://content.u-blox.com/sites/default/files/NINA-B3_DataSheet_UBX-17052099.pdf}}
-      \field{title}{NINA-B3 Series – Stand-alone Bluetooth® 5 Low Energy Modules Data Sheet (Document No. UBX-17052099)}
+      \field{title}{NINA-B3 Series - Stand-alone Bluetooth® 5 Low Energy Modules Data Sheet (Document No. UBX-17052099)}
     \endentry
     \entry{SparkFun_BMI270_Library}{misc}{}{}
       \name{author}{1}{}{%
@@ -5100,7 +5100,7 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2025-11-09}
-      \field{title}{flutter\_blue\_plus – Bluetooth Low Energy plugin for Flutter}
+      \field{title}{flutter\_blue\_plus - Bluetooth Low Energy plugin for Flutter}
       \verb{urlraw}
       \verb https://pub.dev/packages/flutter_blue_plus
       \endverb

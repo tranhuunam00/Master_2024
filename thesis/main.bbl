@@ -984,8 +984,8 @@
       \strng{authornamehash}{764138b1920e28af304d52f0e67c7930}
       \strng{authorfullhash}{764138b1920e28af304d52f0e67c7930}
       \strng{authorfullhashraw}{764138b1920e28af304d52f0e67c7930}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Acta Paediatrica}
@@ -1053,8 +1053,8 @@
       \strng{authornamehash}{c61f2813be0bba9ddf757d3ec66a294f}
       \strng{authorfullhash}{c61f2813be0bba9ddf757d3ec66a294f}
       \strng{authorfullhashraw}{c61f2813be0bba9ddf757d3ec66a294f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 37th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)}
@@ -1959,8 +1959,8 @@
       \strng{authornamehash}{bcc80422e219397daa646fd5add8534f}
       \strng{authorfullhash}{bcc80422e219397daa646fd5add8534f}
       \strng{authorfullhashraw}{bcc80422e219397daa646fd5add8534f}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1389-9457}
@@ -2017,8 +2017,8 @@
       \strng{authornamehash}{4060d59d3cf9e31d174e564b57bba9c1}
       \strng{authorfullhash}{4060d59d3cf9e31d174e564b57bba9c1}
       \strng{authorfullhashraw}{4060d59d3cf9e31d174e564b57bba9c1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Respir Med}
@@ -2705,8 +2705,8 @@
       \strng{authornamehash}{ef6092e358e19deb3bea7aaf09dfcae4}
       \strng{authorfullhash}{ef6092e358e19deb3bea7aaf09dfcae4}
       \strng{authorfullhashraw}{ef6092e358e19deb3bea7aaf09dfcae4}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
@@ -2772,8 +2772,8 @@
       \strng{authornamehash}{b5dfdb6a62e5f646d6c929258be57c19}
       \strng{authorfullhash}{b5dfdb6a62e5f646d6c929258be57c19}
       \strng{authorfullhashraw}{b5dfdb6a62e5f646d6c929258be57c19}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0018-9294}
@@ -2837,8 +2837,8 @@
       \strng{authorfullhash}{eaecec87ac18a59eef124bc64c268b75}
       \strng{authorfullhashraw}{eaecec87ac18a59eef124bc64c268b75}
       \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2168-2194}
@@ -2906,8 +2906,8 @@
       \strng{authorfullhash}{eaecec87ac18a59eef124bc64c268b75}
       \strng{authorfullhashraw}{eaecec87ac18a59eef124bc64c268b75}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2168-2194}
@@ -2946,8 +2946,8 @@
       \strng{authornamehash}{48f79b05f205b66a7a472d9c897adaff}
       \strng{authorfullhash}{48f79b05f205b66a7a472d9c897adaff}
       \strng{authorfullhashraw}{48f79b05f205b66a7a472d9c897adaff}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
@@ -3272,8 +3272,8 @@
       \strng{authornamehash}{6f67d453638992d28c37a9a6fd584fa4}
       \strng{authorfullhash}{6f67d453638992d28c37a9a6fd584fa4}
       \strng{authorfullhashraw}{6f67d453638992d28c37a9a6fd584fa4}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Entropy (Basel)}
@@ -3330,8 +3330,8 @@
       \strng{authornamehash}{b27691aeaaedcd3b4fceec149aa21051}
       \strng{authorfullhash}{b27691aeaaedcd3b4fceec149aa21051}
       \strng{authorfullhashraw}{b27691aeaaedcd3b4fceec149aa21051}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1526-1492}
@@ -3595,8 +3595,8 @@
       \strng{authornamehash}{6e9a9b71d6092f029936a4a589e3fd47}
       \strng{authorfullhash}{6e9a9b71d6092f029936a4a589e3fd47}
       \strng{authorfullhashraw}{6e9a9b71d6092f029936a4a589e3fd47}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Eur J Med Res}
@@ -3855,8 +3855,8 @@
       \strng{authornamehash}{d9a2733125f0d04fc73d49d829992b3d}
       \strng{authorfullhash}{d9a2733125f0d04fc73d49d829992b3d}
       \strng{authorfullhashraw}{d9a2733125f0d04fc73d49d829992b3d}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Micromachines}
@@ -3891,8 +3891,8 @@
       \strng{authornamehash}{3582d094f8a721f57edc985066b44f9e}
       \strng{authorfullhash}{3582d094f8a721f57edc985066b44f9e}
       \strng{authorfullhashraw}{3582d094f8a721f57edc985066b44f9e}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Advanced Materials Research}
@@ -3943,8 +3943,8 @@
       \strng{authornamehash}{84199ddcd607230274bbcf1f922ce712}
       \strng{authorfullhash}{84199ddcd607230274bbcf1f922ce712}
       \strng{authorfullhashraw}{84199ddcd607230274bbcf1f922ce712}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Micromachines}
@@ -4160,8 +4160,8 @@
       \strng{authornamehash}{31ef70e6705156db613b1509885d2b91}
       \strng{authorfullhash}{31ef70e6705156db613b1509885d2b91}
       \strng{authorfullhashraw}{31ef70e6705156db613b1509885d2b91}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
@@ -4226,8 +4226,8 @@
       \strng{authornamehash}{bbd746e66fec67f1fac5b88c9f6933a1}
       \strng{authorfullhash}{bbd746e66fec67f1fac5b88c9f6933a1}
       \strng{authorfullhashraw}{bbd746e66fec67f1fac5b88c9f6933a1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2076-3417}
@@ -4264,8 +4264,8 @@
       \strng{authornamehash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
       \strng{authorfullhash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
       \strng{authorfullhashraw}{45f5df5515dbc3f650fa4dd7ab4fc93e}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Transactions of the ASME--Journal of Basic Engineering}
@@ -4305,8 +4305,8 @@
       \strng{authornamehash}{26b452248eff9881f7715a556d259ca1}
       \strng{authorfullhash}{26b452248eff9881f7715a556d259ca1}
       \strng{authorfullhashraw}{26b452248eff9881f7715a556d259ca1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
@@ -4347,8 +4347,8 @@
       \strng{authornamehash}{cf333f30a5515dcdfca28707680bb639}
       \strng{authorfullhash}{cf333f30a5515dcdfca28707680bb639}
       \strng{authorfullhashraw}{cf333f30a5515dcdfca28707680bb639}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Electronics Letters}
@@ -4386,8 +4386,8 @@
       \strng{authornamehash}{ee68599fd138467a0de54f6a06171867}
       \strng{authorfullhash}{ee68599fd138467a0de54f6a06171867}
       \strng{authorfullhashraw}{ee68599fd138467a0de54f6a06171867}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Water}
@@ -4586,8 +4586,8 @@
       \strng{authornamehash}{71d04e64b6c0a297ef4bcdbc5a530ef2}
       \strng{authorfullhash}{71d04e64b6c0a297ef4bcdbc5a530ef2}
       \strng{authorfullhashraw}{71d04e64b6c0a297ef4bcdbc5a530ef2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arxiv}
@@ -4620,8 +4620,8 @@
       \strng{authornamehash}{1171707936423de40af733ec525bbb94}
       \strng{authorfullhash}{1171707936423de40af733ec525bbb94}
       \strng{authorfullhashraw}{1171707936423de40af733ec525bbb94}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0010-4825}
@@ -4685,8 +4685,8 @@
       \strng{authornamehash}{8a7f9fd334f56d5ad3464f653f5cb38d}
       \strng{authorfullhash}{8a7f9fd334f56d5ad3464f653f5cb38d}
       \strng{authorfullhashraw}{8a7f9fd334f56d5ad3464f653f5cb38d}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE Statistical Signal Processing Workshop (SSP)}
@@ -4945,7 +4945,7 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.nordicsemi.com/Products/nRF52840}}
       \field{note}{Accessed: 2025-07-28}
-      \field{title}{nRF52840 – Advanced Bluetooth 5, Thread and Zigbee multiprotocol SoC}
+      \field{title}{nRF52840 - Advanced Bluetooth 5, Thread and Zigbee multiprotocol SoC}
       \field{year}{2025}
     \endentry
     \entry{Nordic2021_tinyml}{misc}{}{}
@@ -5087,7 +5087,7 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.bluetooth.com/wp-content/uploads/2019/03/Bluetooth_5-FINAL.pdf}}
       \field{note}{Version 1.1.1, Revision Date 13 January 2025}
-      \field{title}{Bluetooth® Core 5.0 – Feature Enhancements}
+      \field{title}{Bluetooth® Core 5.0 - Feature Enhancements}
       \field{year}{2019}
     \endentry
     \entry{BLE}{online}{}{}
@@ -5118,7 +5118,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://content.u-blox.com/sites/default/files/NINA-B3_DataSheet_UBX-17052099.pdf}}
-      \field{title}{NINA-B3 Series – Stand-alone Bluetooth® 5 Low Energy Modules Data Sheet (Document No. UBX-17052099)}
+      \field{title}{NINA-B3 Series - Stand-alone Bluetooth® 5 Low Energy Modules Data Sheet (Document No. UBX-17052099)}
     \endentry
     \entry{SparkFun_BMI270_Library}{misc}{}{}
       \name{author}{1}{}{%
@@ -5150,7 +5150,7 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2025-11-09}
-      \field{title}{flutter\_blue\_plus – Bluetooth Low Energy plugin for Flutter}
+      \field{title}{flutter\_blue\_plus - Bluetooth Low Energy plugin for Flutter}
       \verb{urlraw}
       \verb https://pub.dev/packages/flutter_blue_plus
       \endverb

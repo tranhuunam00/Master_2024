@@ -1,36 +1,42 @@
 
 Trong chương này, tác giả trình bày tổng quan về hội chứng ngưng thở khi ngủ do
-tắc nghẽn (OSA), phân tích ảnh hưởng của tư thế ngủ đối với mức độ nghiêm trọng
-của OSA và dạng ngưng thở khi ngủ phụ thuộc tư thế (Position OSA - pOSA). Tiếp
-đó, chương tập trung làm rõ cơ sở khoa học cho việc phát triển các thiết bị
-theo dõi giấc ngủ, phân loại tư thế ngủ tại nhà. Cuối cùng, tác giả đưa ra xu
-hướng ứng dụng trí tuệ nhân tạo (AI) và điện toán biên (Edge Computing) trong
-thu thập, phân tích dữ liệu sinh lý và phân loại tư thế ngủ, qua đó đặt nền
-tảng cho các hướng nghiên cứu và triển khai kỹ thuật được trình bày trong những
+tắc nghẽn, phân tích mối quan hệ của tư thế ngủ đối với mức độ nghiêm trọng của
+OSA và dạng ngưng thở khi ngủ phụ thuộc tư thế (Position OSA - pOSA). Tiếp đó,
+chương tập trung làm rõ cơ sở khoa học cho việc phát triển các thiết bị theo
+dõi giấc ngủ, phân loại tư thế ngủ tại nhà. Cuối cùng, tác giả đưa ra xu hướng
+ứng dụng trí tuệ nhân tạo (AI) và điện toán biên (Edge Computing) trong thu
+thập, phân tích dữ liệu sinh lý để phân loại tư thế ngủ, qua đó đặt nền tảng
+cho các hướng nghiên cứu và triển khai kỹ thuật được trình bày trong những
 chương tiếp theo.
 \section{Hội chứng ngưng thở khi ngủ}
 
-Trong lĩnh vực nghiên cứu các rối loạn hô hấp liên quan đến giấc ngủ, việc
-chuẩn hóa và định nghĩa chính xác các kiểu sự kiện hô hấp giúp đảm bảo tính
-nhất quán trong chẩn đoán, phân lớp nguy cơ và lựa chọn phương pháp điều trị
-phù hợp. Theo tiêu chuẩn của Hiệp hội Y học Giấc ngủ Hoa Kỳ (AASM)
-\cite{berry2012scoring}, ba hiện tượng hô hấp chính cần được nhận diện bao gồm:
-ngưng thở (apnea), giảm thở (hypopnea), và hiện tượng kích hoạt liên quan đến
-nỗ lực hô hấp (Respiratory Effort-Related Arousal - RERA).
+Trong lĩnh vực nghiên cứu các rối loạn hô hấp liên quan đến giấc ngủ, theo tiêu
+chuẩn của Hiệp hội Y học Giấc ngủ Hoa Kỳ (AASM) \cite{berry2012scoring}, ba
+hiện tượng hô hấp chính cần được nhận diện bao gồm: ngưng thở (apnea), giảm thở
+(hypopnea), và hiện tượng kích hoạt liên quan đến nỗ lực hô hấp (Respiratory
+Effort-Related Arousal - RERA).
 
 \subsection{Định nghĩa}
 
-Ngưng thở (Apnea) được AASM định nghĩa là sự ngưng luồng khí hô hấp qua mũi và
-miệng trong thời gian tối thiểu 10 giây gây giảm nồng độ oxy trong máu. Các sự
-kiện ngưng thở có thể kéo dài đến 30 giây hoặc hơn trong những trường hợp nặng.
-Có ba dạng chính của hội chứng ngưng thở khi ngủ \cite{ThaySYOSA}: ngưng thở
-tắc nghẽn, ngưng thở trung ương, ngưng thở hỗn hợp. Trong đó: 01)Ngưng thở khi
-ngủ do tắc nghẽn OSA là sự hẹp hoặc tắc nghẽn một phần hay toàn bộ đường hô hấp
-trên, bao gồm vùng mũi họng, hầu họng \cite{osa_summary}; 02)Ngưng thở khi ngủ
+Ngưng thở được AASM định nghĩa là sự ngưng luồng khí hô hấp qua mũi và miệng
+trong thời gian tối thiểu 10 giây gây giảm nồng độ oxy trong máu. Các sự kiện
+ngưng thở có thể kéo dài đến 30 giây hoặc hơn trong những trường hợp nặng. Có
+ba dạng chính của hội chứng ngưng thở khi ngủ \cite{ThaySYOSA}: ngưng thở tắc
+nghẽn, ngưng thở trung ương, ngưng thở hỗn hợp. Trong đó: 01) Ngưng thở khi ngủ
+do tắc nghẽn OSA là sự hẹp hoặc tắc nghẽn một phần hay toàn bộ đường hô hấp
+trên, bao gồm vùng mũi họng, hầu họng \cite{osa_summary}; 02) Ngưng thở khi ngủ
 do trung ương (Central Sleep Apnea - CSA) là tình trạng não không gửi tín hiệu
-đúng đến các cơ kiểm soát hô hấp \cite{eckert2007csa}. 03)Ngưng thở hỗn hợp
+đúng đến các cơ kiểm soát hô hấp \cite{eckert2007csa}. 03) Ngưng thở hỗn hợp
 (Mixed Apnea) là sự kết hợp của cả hai yếu tố. Dạng này thường xuất hiện ở
 những bệnh nhân OSA nặng.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/OSA.png}
+  \vspace*{-7mm}
+  \caption{Sự khác nhau về đường thở của người bình thường và người mắc OSA}
+  \label{OSA}
+\end{figure}
 
 Giảm thở phản ánh sự giảm một phần của lưu lượng khí qua đường hô hấp trên mà
 không dẫn đến ngừng thở hoàn toàn. Theo AASM sự kiện giảm thở được xác định khi
@@ -39,21 +45,13 @@ lượng khí của thiết bị CPAP giảm ít nhất 30\% so với giá trị
 kéo dài tối thiểu 10 giây, và đi kèm với hiện tượng giảm độ bão hòa oxy từ 3\%
 trở lên hoặc xuất hiện kích hoạt điện não.
 
-RERA theo AASM là sự kiện gia tăng nỗ lực hô hấp kéo dài $\geq 10$ giây, gây
+RERA theo AASM là sự kiện gia tăng nỗ lực hô hấp kéo dài ít nhất 10 giây, gây
 đánh thức khỏi giấc ngủ nhưng không đủ tiêu chí của ngưng thở hoặc giảm thở.
 01) Phương pháp tiêu chuẩn để đo là đo áp lực thực quản, tuy nhiên khó áp dụng
 do gây khó chịu cho bệnh nhân. 02) Phương án thay thế đáng tin cậy là dùng ống
 thông mũi kết hợp cảm biến áp lực, cho kết quả tương đương về mặt lâm sàng. 03)
 RERA được tính vào chỉ số rối loạn hô hấp (Respiratory Disturbance Index -
-RDI); RDI >5 là bất thường, >15 là có ý nghĩa lâm sàng.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{images/OSA.png}
-  \vspace*{-7mm}
-  \caption{Hình ảnh khác nhau về đường thở của người bình thường và người mắc OSA}
-  \label{OSA}
-\end{figure}
+RDI).
 
 Trong số các rối loạn hô hấp liên quan đến giấc ngủ đã đề cập, hội chứng ngưng
 thở khi ngủ do tắc nghẽn là dạng phổ biến nhất và có tác động sâu rộng đến sức
@@ -61,17 +59,17 @@ khỏe cộng đồng. Mức độ của OSA được đánh giá dựa trên ch
 (Apnea-Hypopnea Index - AHI) bằng cách chia tổng số lần ngưng thở và giảm thở
 cho tổng số giờ đã ngủ, với mỗi sự kiện phải kéo dài ít nhất 10 giây
 Bảng~\ref{ahi} \cite{osa_summary}.
-\begin{table}[h!]
+\begin{table}[H]
   \caption{\texorpdfstring{Phân loại mức độ OSA dựa trên chỉ số AHI}{Phân loại OSA}}
   \label{ahi}
   \vspace{-3mm}
   \begin{center}
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|p{3cm}|p{6cm}|}
       \hline
       AHI       & Cấp độ     \\
       \hline
       <5        & Không mắc  \\
-      5 đến 10  & Nhẹ        \\
+      5 đến 15  & Nhẹ        \\
       15 đến 30 & Trung bình \\
       >30       & Nặng       \\
       \hline
@@ -82,13 +80,13 @@ Bảng~\ref{ahi} \cite{osa_summary}.
 
 \subsection{Nguyên nhân}
 
-Nguyên nhân của OSA đến đa yếu tố kết hợp giữa yếu tố giải phẫu và các chức
-năng sinh lý của đường hô hấp trên. Các nguyên nhân thường không đồng nhất giữa
-các người bệnh. Về mặt giải phẫu, hẹp hoặc giảm độ vững của cấu trúc đường hô
-hấp trên là yếu tố tiên quyết. Những bất thường như vòm khẩu hẹp, lưỡi to, phì
-đại amidan, vách mũi lệch, xương hàm nhỏ hoặc tụt về sau, cùng phân bố mỡ vùng
-cổ tăng (vòng cổ lớn, béo phì trung tâm), đều làm giảm tiết diện đường thở và
-tăng khả năng xẹp trong thì hít vào \cite{Young2004_nguyen_nhan}.
+Nguyên nhân của OSA đến từ đa yếu tố kết hợp giữa giải phẫu và các chức năng
+sinh lý của đường hô hấp trên. Các nguyên nhân thường không đồng nhất giữa các
+người bệnh. Về mặt giải phẫu, việc hẹp hoặc giảm độ vững của cấu trúc đường hô
+hấp trên là yếu tố tiên quyết. Những bất thường tại vòng họng như lưỡi to, phì
+đại amidan, vách mũi lệch, xương hàm nhỏ hoặc tụt về sau, cùng với phân bố mỡ
+vùng cổ tăng (vòng cổ lớn, béo phì trung tâm) đều làm giảm tiết diện đường thở
+và tăng khả năng xẹp trong khi hít vào \cite{Young2004_nguyen_nhan}.
 
 Về chức năng thần kinh - cơ, trong giấc ngủ, trương lực cơ duy trì độ mở của
 đường hô hấp trên có thể suy giảm, làm tăng xu hướng xẹp đường thở. Ngoài ra,
@@ -103,7 +101,7 @@ Sỹ \footnote{Giáo sư, Tiến sĩ, Bác sĩ Dương Quý Sỹ là Chủ tịc
   Việt Nam, chuyên gia đầu ngành về rối loạn giấc ngủ và hô hấp.}, tỷ lệ mắc OSA
 ở người trưởng thành chiếm khoảng 8,5\% \cite{nguoimacOSA_VN}. OSA được xem là
 một rối loạn hô hấp trong giấc ngủ có ảnh hưởng sâu rộng tới sức khỏe thể chất
-lẫn tinh thần, và là nguyên nhân y khoa hàng đầu gây ra tình trạng buồn ngủ quá
+lẫn tinh thần và là nguyên nhân y khoa hàng đầu gây ra tình trạng buồn ngủ quá
 mức vào ban ngày (Excessive Daytime Sleepiness - EDS).
 
 Một phân tích gộp được thực hiện bởi Salari và cộng sự \cite{Salari2025} trên
@@ -112,17 +110,17 @@ trên toàn cầu đạt 39,9\%. Tình trạng buồn ngủ quá mức này làm
 nguy cơ tai nạn giao thông, suy giảm năng suất lao động, và rối loạn chức năng
 tình dục \cite{flemons1997quality}.
 
-Hơn nữa, tình trạng giảm oxy máu tái diễn trong khi ngủ cùng với sự gián đoạn
-chu kỳ giấc ngủ được chứng minh có liên quan mật thiết đến nhiều bệnh lý mạn
-tính như suy tim, bệnh động mạch vành, rối loạn nhịp tim, gan nhiễm mỡ do rối
-loạn chuyển hóa, và đột quỵ
+Hơn nữa, tình trạng giảm oxy máu liên tục tái diễn trong khi ngủ cùng với sự
+gián đoạn chu kỳ giấc ngủ được chứng minh có liên quan mật thiết đến nhiều bệnh
+lý mạn tính như suy tim, bệnh động mạch vành, rối loạn nhịp tim, gan nhiễm mỡ
+do rối loạn chuyển hóa, và đột quỵ
 \cite{wright1997health,Zinchuk2018,young1997population}. Nghiên cứu quy mô lớn
 của Xia Wang và cộng sự với 25.760 người tham gia cho thấy, khi chỉ số AHI tăng
 thêm mỗi 10 đơn vị, nguy cơ mắc bệnh tim mạch tăng tương ứng 17\%
 \cite{Wang2013_tim}. GS.TS.BS. Dương Quý Sỹ và cộng sự đã khảo sát 524 trẻ em
 mắc rối loạn tăng động (Attention Deficit Hyperactivity Disorder - ADHD) tại
 Bệnh viện Nhi Trung ương Việt Nam \cite{ThaySUCHildren}. Kết quả cho thấy tỷ lệ
-mắc (OSA) ở nhóm này là 23.3\%, trong đó chủ yếu ở mức độ trung bình đến nặng.
+mắc OSA ở nhóm này là 23.3\%, trong đó chủ yếu ở mức độ trung bình đến nặng.
 Nghiên cứu cũng đồng thời xác định mối tương quan đáng kể giữa mức độ nghiêm
 trọng của OSA và các triệu chứng mất tập trung, tăng động, rối loạn hành vi, lo
 âu và trầm cảm.
@@ -136,7 +134,7 @@ xương, đặc biệt là cột sống \cite{Cary2021_tu_the_ngủ}. Trong hộ
 thở tắc nghẽn khi ngủ , tư thế ngủ được xem là một yếu tố quan trọng quyết định
 mức độ nghiêm trọng của bệnh.
 
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{images/4ngu.png}
   \vspace*{-7mm}
@@ -146,30 +144,10 @@ mức độ nghiêm trọng của bệnh.
 
 Các nghiên cứu cho thấy, nhiều bệnh nhân OSA có tần suất ngưng thở và giảm thở
 cao hơn rõ rệt khi nằm ngửa so với các tư thế khác. Nguyên nhân chủ yếu là do
-tác động của trọng lực lên các cấu trúc mô mềm vùng họng gây tăng khả năng bị
-xẹp đường thở và dẫn đến sự gia tăng của các sự kiện hô hấp bất thường như Hình
+tác động của trọng lực lên các cấu trúc mô vùng họng gây tăng khả năng bị xẹp
+đường thở và dẫn đến sự gia tăng của các sự kiện hô hấp bất thường như Hình
 ~\ref{fig:tuthe_osa}. Hiện tượng này được gọi là OSA phụ thuộc tư thế
 (positional OSA - pOSA) \cite{heinzer2018,aloweidat2023positional}.
-
-Để chẩn đoán pOSA, nhiều tiêu chí khác nhau đã được đề xuất, từ các phương pháp đơn
-giản đến phức tạp hơn. Định nghĩa kinh điển nhất do Cartwright (1984) đưa ra cho
-rằng bệnh nhân được xem là mắc pOSA khi chỉ số AHI
-ở tư thế nằm ngửa cao hơn ít nhất hai lần so với AHI ở tư thế không nằm
-ngửa \cite{cartwright1984position}. Tiếp đó, Mador (2005) đã mở rộng định
-nghĩa này bằng cách bổ sung tiêu chí rằng AHI ở tư thế không nằm ngửa phải
-nhỏ hơn 5 nhằm tăng tính đặc hiệu cho chẩn đoán \cite{mador2005prevalence}.
-Levendowski (2015) lại đề xuất một cách tiếp cận theo tỷ lệ, trong đó
-pOSA được xác định khi AHI toàn bộ lớn hơn hoặc bằng 1.5 lần so với AHI ở tư thế
-không nằm ngửa \cite{levendowski2015neck}.
-Ngoài ra, Frank và cộng sự (2014) đã giới thiệu Amsterdam Positional
-Obstructive Sleep Apnea Classification (APOC) - một hệ thống phân loại
-dành cho các bệnh nhân có chỉ số AHI cao \cite{frank2014positional}.
-Theo tiêu chí APOC, bệnh nhân được xác định mắc pOSA khi có AHI  > 5, đồng thời tổng thời gian ngủ
-ở tư thế có AHI nhỏ nhất  và tư thế có AHI lớn nhất
-đều chiếm ít nhất 10\% tổng thời gian ngủ.
-Hệ thống này chia bệnh nhân thành ba nhóm: APOC-I (có thể khỏi hoàn
-toàn nhờ thay đổi tư thế ngủ), APOC-II (không phụ thuộc tư thế),
-và APOC-III (phụ thuộc tư thế một phần).
 
 \begin{figure}[H]
   \centering
@@ -179,6 +157,26 @@ và APOC-III (phụ thuộc tư thế một phần).
   \label{fig:tuthe_osa}
 \end{figure}
 
+Để chẩn đoán pOSA, nhiều tiêu chí khác nhau đã được đề xuất, từ các phương pháp đơn
+giản đến phức tạp hơn. Định nghĩa kinh điển nhất do Cartwright (1984) đưa ra cho
+rằng bệnh nhân được xem là mắc pOSA khi chỉ số AHI
+ở tư thế nằm ngửa cao hơn ít nhất hai lần so với AHI ở tư thế không nằm
+ngửa \cite{cartwright1984position}. Tiếp đó, Mador (2005) đã mở rộng định
+nghĩa này bằng cách bổ sung tiêu chí rằng AHI ở tư thế không nằm ngửa phải
+nhỏ hơn 5 nhằm tăng tính đặc hiệu cho chẩn đoán \cite{mador2005prevalence}.
+Levendowski (2015) lại đề xuất một cách tiếp cận theo tỷ lệ, trong đó
+pOSA được xác định khi AHI toàn bộ tư thế lớn hơn hoặc bằng 1.5 lần so với AHI ở tư thế
+không nằm ngửa \cite{levendowski2015neck}.
+Ngoài ra, Frank và cộng sự (2014) đã giới thiệu Amsterdam Positional
+Obstructive Sleep Apnea Classification (APOC) - một hệ thống phân loại
+dành cho các bệnh nhân có chỉ số AHI cao \cite{frank2014positional}.
+Theo tiêu chí APOC, bệnh nhân được xác định mắc pOSA khi có AHI  > 5, đồng thời tổng thời gian ngủ
+ở tư thế có AHI nhỏ nhất và tư thế có AHI lớn nhất
+đều chiếm ít nhất 10\% tổng thời gian ngủ.
+Hệ thống này chia bệnh nhân thành ba nhóm: APOC-I (có thể khỏi hoàn
+toàn nhờ thay đổi tư thế ngủ), APOC-II (không phụ thuộc tư thế),
+và APOC-III (phụ thuộc tư thế một phần).
+
 Từ các nghiên cứu trên, có thể thấy việc hiểu rõ mối liên hệ giữa tư thế ngủ và
 sự ổn định của đường thở trên không chỉ giúp cải thiện khả năng chẩn đoán mà
 còn mở ra hướng điều trị không xâm lấn đầy tiềm năng - đó là liệu pháp thay đổi
@@ -187,8 +185,8 @@ nhân OSA.
 
 \section{Công nghệ trong chẩn đoán OSA và phân loại tư thế ngủ}\
 
-Với sự phát triển vượt bậc của công nghệ chế tạo cảm biến, vi xử lý và các
-thuật toán học máy, việc chẩn đoán hội chứng ngưng thở khi ngủ tắc nghẽn (OSA)
+Với sự phát triển vượt bậc của công nghệ thiết kế, chế tạo cảm biến - vi xử lý
+và các thuật toán học máy, việc chẩn đoán hội chứng ngưng thở khi ngủ tắc nghẽn
 và phân loại tư thế ngủ đã đạt được những bước tiến đáng kể. Các hệ thống hiện
 nay có xu hướng thu nhỏ kích thước thiết bị, mở rộng khả năng ứng dụng thực tế
 và giảm đáng kể chi phí triển khai, tạo tiền đề cho việc giám sát giấc ngủ cá
@@ -200,33 +198,34 @@ sống hoặc ngủ một mình, do thiếu sự quan sát từ bên ngoài.
 
 Trong điều kiện lâm sàng hiện nay, phần lớn bệnh nhân nghi ngờ mắc OSA được
 thăm khám bởi bác sĩ chuyên khoa Tai Mũi Họng và bác sĩ chuyên sâu về giấc ngủ.
-Quy trình thăm khám bao gồm khai thác bệnh sử, đánh giá các yếu tố nguy cơ và
-sử dụng những thang điểm sàng lọc như Epworth Sleepiness Scale hoặc STOP-BANG -
-các công cụ được chấp thuận tại Việt Nam nhằm sàng lọc sớm khả năng mắc OSA.
-Ngoài ra, bác sĩ có thể tiến hành nội soi Tai Mũi Họng để tìm nguyên nhân gây
-hẹp đường thở trên, chẳng hạn như phì đại amidan, hay bất thường vùng hàm mặt.
-
-Các đánh giá thường bắt đầu bằng khảo sát giấc ngủ toàn diện, bao gồm thu thập
-bệnh sử liên quan đến các triệu chứng đặc trưng, sau đó tiến hành ghi nhận
-khách quan bằng đa ký giấc ngủ (Polysomnography - PSG) \cite{diagnosis_osa,
-  medical2006polysomnography}. Phương pháp PSG, khi được thực hiện dưới sự giám
-sát của kĩ thuật chuyên môn, được xem là tiêu chuẩn vàng trong chẩn đoán hội
-chứng ngưng thở khi ngủ. Đây là một kỹ thuật ghi đa kênh liên tục trong lúc ngủ
-suốt một đêm, cho phép theo dõi đồng thời nhiều thông số sinh lý phản ánh toàn
-diện hoạt động thần kinh và hô hấp trong giấc ngủ.
+Quy trình thăm khám bao gồm khai thác lịch sử bệnh lý, đánh giá các yếu tố nguy
+cơ và sử dụng những thang điểm sàng lọc như Epworth Sleepiness Scale hoặc
+STOP-BANG - các công cụ được chấp thuận tại Việt Nam nhằm sàng lọc sớm khả năng
+mắc OSA. Ngoài ra, bác sĩ có thể tiến hành nội soi mũi - họng để tìm nguyên
+nhân gây hẹp đường thở trên, chẳng hạn như phì đại amidan, hay bất thường vùng
+hàm mặt. Sau đó tiến hành ghi nhận khách quan bằng đa ký giấc ngủ
+(Polysomnography - PSG) \cite{diagnosis_osa, medical2006polysomnography}.
+Phương pháp PSG, khi được thực hiện dưới sự giám sát của kĩ thuật chuyên môn,
+được xem là tiêu chuẩn vàng trong chẩn đoán hội chứng ngưng thở khi ngủ. Đây là
+một kỹ thuật ghi đa kênh liên tục trong lúc ngủ suốt một đêm, cho phép theo dõi
+đồng thời nhiều thông số sinh lý phản ánh toàn diện hoạt động thần kinh và hô
+hấp trong giấc ngủ.
 
 Một hệ thống PSG điển hình bao gồm: điện não đồ (EEG) để ghi và lưu lại hoạt
 động điện của não; điện cơ đồ (EMG) nhằm đo trương lực cơ; điện nhãn đồ (EOG)
 để xác định giai đoạn ngủ thông qua chuyển động mắt; và điện tâm đồ (ECG) để
 giám sát hoạt động tim. Bên cạnh đó, các cảm biến ghi nhận độ bão hòa oxy trong
 máu (SpO\textsubscript{2}), lưu lượng khí thở qua mũi và miệng, nỗ lực hô hấp
-thông qua chuyển động ngực và bụng, áp lực đường thở qua mũi, và cường độ tiếng
-ngáy \cite{psg_paper, kushida2005psg}. Các thông số thu được sau đêm ghi PSG
-được tổng hợp và phân tích, giúp bác sĩ đưa ra chẩn đoán chính xác về tình
-trạng ngưng thở khi ngủ tắc nghẽn. Hình~\ref{fig:noxa1} là màn hình phần mềm
-NoxA1 hiển thị nhiều tín hiệu sinh lý theo chuỗi thời gian, cho phép quan sát
-đồng thời các kênh hô hấp. Hệ thống cung cấp công cụ đánh dấu tự động và thủ
-công các sự kiện bất thường như ngưng thở và giảm thở.
+thông qua chuyển động ngực và bụng và cường độ tiếng ngáy \cite{psg_paper,
+  kushida2005psg}. Trong số các tín hiệu này, tư thế ngủ là một thông số đặc biệt
+quan trọng, góp phần xác định dạng bệnh pOSA. Theo dõi liên tục tư thế cơ thể
+trong quá trình do PSG cho phép xác định mối tương quan giữa tư thế nằm và mức
+độ nghiêm trọng của rối loạn hô hấp. Các thông số thu được sau đêm ghi PSG được
+tổng hợp và phân tích, giúp bác sĩ đưa ra chẩn đoán chính xác về tình trạng
+ngưng thở khi ngủ tắc nghẽn. Hình~\ref{fig:noxa1} là màn hình phần mềm NoxA1
+hiển thị nhiều tín hiệu sinh lý theo dấu thời gian, cho phép quan sát đồng thời
+các kênh hô hấp. Hệ thống cũng cung cấp công cụ đánh dấu tự động các sự kiện
+bất thường như ngưng thở và giảm thở.
 
 \begin{figure}[H]
   \centering
@@ -236,19 +235,14 @@ công các sự kiện bất thường như ngưng thở và giảm thở.
   \label{fig:noxa1}
 \end{figure}
 
-Trong số các tín hiệu này, tư thế ngủ là một thông số đặc biệt quan trọng, góp
-phần xác định thể bệnh positional OSA (pOSA). Theo dõi liên tục tư thế cơ thể
-trong quá trình do PSG cho phép xác định mối tương quan giữa tư thế nằm và mức
-độ nghiêm trọng của rối loạn hô hấp.
-
-Tuy nhiên, phương pháp PSG vẫn tồn tại nhiều hạn chế trong thực tế. Việc bệnh
-nhân bắt buộc phải lưu trú qua đêm tại cơ sở y tế, gắn nhiều điện cực và cảm
+Tuy nhiên, phương pháp PSG vẫn còn một số hạn chế về mặt chi phí bao gồm đi
+lại. lưu trú và thăm khám. Việc bệnh nhân bắt buộc gắn nhiều điện cực và cảm
 biến trên cơ thể không chỉ gây bất tiện mà còn có thể làm sai lệch hành vi ngủ
-tự nhiên. Chi phí cao, thời gian chờ đợi dài, tín hiệu hay bị gián đoạn hoặc
-nhiễu cũng là các trở ngại đáng kể. Kinh nghiệm thực tế cho thấy, trong nhiều
-trường hợp, bác sĩ có thể đưa ra nhận định dựa trên một tập nhỏ kênh tín hiệu
-còn nguyên vẹn, từ đó gợi mở hướng ứng dụng các mô hình học máy phản ánh đúng
-đặc trưng sinh lý nhằm tự động hóa quá trình nhận dạng.
+tự nhiên. Điều này còn có thể làm tín hiệu bị gián đoạn trong quá trình thu
+thập. Theo tìm hiểu của tác giả, trong nhiều trường hợp, bác sĩ có thể đưa ra
+nhận định dựa trên một tập nhỏ kênh tín hiệu còn nguyên vẹn, từ đó gợi mở hướng
+ứng dụng các mô hình học máy phản ánh đúng đặc trưng sinh lý nhằm tự động hóa
+quá trình nhận dạng.
 
 \subsection{Thiết bị theo dõi OSA tại nhà}
 
@@ -256,19 +250,17 @@ Những hạn chế về chi phí, sự bất tiện của đa ký giấc ngủ 
 lâm sàng đã thúc đẩy sự phát triển của các thiết bị theo dõi giấc ngủ ngoài
 trung tâm (Out-of-Center Sleep Testing Devices - OCST), hay còn gọi là thiết bị
 kiểm tra giấc ngủ tại nhà (Home Sleep Test - HST). Các hệ thống HST được thiết
-kế với mục tiêu giảm thiểu số lượng cảm biến nhưng vẫn đảm bảo độ chính xác
-chẩn đoán thông qua việc tích hợp các thuật toán xử lý tín hiệu tiên tiến và mô
-hình học máy. Nhờ đó, các thiết bị có khả năng tự động thu nhận, phân tích và
-phân loại các thông số sinh lý đặc trưng cho hội chứng ngưng thở khi ngủ, có
-thể được thực thi trực tiếp trên phần cứng nhúng hoặc thông qua ứng dụng hỗ trợ
-trên điện thoại di động.
-
-Một trong những khung chuẩn được sử dụng rộng rãi trong quá trình phát triển
-các hệ thống HST là mô hình \textbf{SCOPERA}, bao gồm sáu nhóm thông số cốt
-lõi: \textit{Sleep (S)} - đặc trưng giấc ngủ; \textit{Cardiovascular (C)} -
-hoạt động tim mạch; \textit{Oximetry (O)} - độ bão hòa oxy; \textit{Effort (E)}
-- nỗ lực hô hấp; \textit{Respiratory flow (R)} - lưu lượng khí hô hấp; và
-\textit{Audio (A)} - âm thanh thở.
+kế với mục tiêu giảm kích thước, chi phí phù hợp, thuận tiện sử dụng tại nhà.
+Để làm được điều đó thì các thiết bị HST cần phải giảm thiểu số lượng cảm biến
+nhưng vẫn đảm bảo độ chính xác chẩn đoán thông qua việc tích hợp các thuật toán
+xử lý tín hiệu và mô hình học máy có thể được thực thi trực tiếp trên phần cứng
+nhúng hoặc thông qua ứng dụng hỗ trợ trên điện thoại di động. Một trong những
+khung chuẩn được sử dụng rộng rãi trong quá trình phát triển các hệ thống HST
+là mô hình \textbf{SCOPERA}, bao gồm sáu nhóm thông số cốt lõi: \textit{Sleep
+  (S)} - đặc trưng giấc ngủ; \textit{Cardiovascular (C)} - hoạt động tim mạch;
+\textit{Oximetry (O)} - độ bão hòa oxy; \textit{Effort (E)} - nỗ lực hô hấp;
+\textit{Respiratory flow (R)} - lưu lượng khí hô hấp; và \textit{Audio (A)} -
+âm thanh thở.
 
 Dựa trên vị trí gắn trên cơ thể, các thiết bị HST có thể được phân thành các
 nhóm chính như: vòng tay, đai ngực, miếng dán, tai nghe và nhẫn thông minh
@@ -324,27 +316,27 @@ của cảm biến thụ động trong phát hiện ngưng thở khi ngủ mà k
 đeo trực tiếp lên cơ thể.
 
 Nhìn chung, các hệ thống HST thế hệ mới đang chuyển dịch từ kiến trúc đám mây
-sang kiến trúc tại biên, tích hợp khả năng học máy. Điều này không chỉ nâng cao
-tính riêng tư và độ tin cậy của dữ liệu, mà còn mở đường cho các thiết bị chẩn
-đoán OSA cá nhân hóa, nhỏ gọn và có khả năng triển khai đại trà trong thực hành
-y học giấc ngủ hiện đại.
+sang kiến trúc tại biên - cho phép suy luận tại biên. Điều này không chỉ nâng
+cao tính riêng tư và độ tin cậy, mà còn mở đường cho các thiết bị chẩn đoán OSA
+cá nhân hóa, nhỏ gọn và có khả năng triển khai đại trà trong thực hành y học
+giấc ngủ hiện đại.
 
-\subsection{Thiết bị phân loại tư thế ngủ}
+\subsection{Kĩ thuật phân loại tư thế ngủ}
 
 Hiện nay, đã có nhiều nghiên cứu tập trung phát triển các hệ thống theo dõi tư
 thế ngủ phục vụ chẩn đoán và hỗ trợ điều trị OSA. Hầu hết các hướng tiếp cận
-ban đầu đều sử dụng nhiều loại cảm biến như cảm biến áp lực, camera RGB/hồng
-ngoại hoặc hệ thống đeo đa điểm, nhằm ghi nhận toàn bộ chuyển động cơ thể trong
-khi ngủ. Chẳng hạn, Asma Channa và cộng sự \cite{Channa_osa} đã phát triển hệ
-thống theo dõi tư thế ngủ sử dụng hai thảm cảm biến áp lực để thu thập dữ liệu
-từ 13 người tham gia, với các thuật toán học máy như Weighted KNN và Linear SVM
-cho độ chính xác tới 98,7\%. Tương tự, Xi Xu và cộng sự
+ban đầu đều sử dụng nhiều loại cảm biến cùng lúc để bổ trợ như cảm biến áp lực,
+camera RGB/hồng ngoại hoặc hệ thống đeo đa điểm, nhằm ghi nhận toàn bộ chuyển
+động cơ thể trong khi ngủ. Chẳng hạn, Asma Channa và cộng sự \cite{Channa_osa}
+đã phát triển hệ thống theo dõi tư thế ngủ sử dụng hai thảm cảm biến áp lực để
+thu thập dữ liệu từ 13 người tham gia, với các thuật toán học máy như Weighted
+KNN và Linear SVM cho độ chính xác tới 98,7\%. Tương tự, Xi Xu và cộng sự
 \cite{xu2024classification} đề xuất mô hình stacking kết hợp ba thuật toán mạnh
 (XGBoost, SVM, DNDT) đạt độ chính xác 94,48\% trên dữ liệu áp suất từ nệm khí.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\textwidth]{images/sleep_camera.png} % giảm xuống 70% chiều rộng trang
+  \includegraphics[width=0.8\textwidth]{images/sleep_camera.png} % giảm xuống 70% chiều rộng trang
   \vspace*{-5mm}
   \caption{Thiết thống nệm áp suất trong nghiên cứu của Xi Xu và cộng sự}
   \label{fig:sleep_camera}
@@ -365,60 +357,51 @@ cộng sự cũng đã tích hợp hệ thống thu thập, phân tích sử d�
 tốc ba trục và một cảm biến áp suất để giám sát chất lượng giấc ngủ tư thế ngủ,
 trạng thái ngủ, giai đoạn ngủ (REM và chu kỳ giai đoạn ngủ không REM)
 \cite{hst_pressure_paper}. Tại Việt Nam, nhóm nghiên cứu của GS.TS. Lê Tiến
-Thường \footnote{Giáo sư Lê Tiến Thường – nguyên là giảng viên Trường Đại học
+Thường \footnote{Giáo sư Lê Tiến Thường - nguyên là giảng viên Trường Đại học
   Bách Khoa TP. Hồ Chí Minh, là chuyên gia trong lĩnh vực kỹ thuật điện tử và hệ
   thống nhúng, với nhiều công trình về cảm biến và trí tuệ nhân tạo ứng dụng
   trong y sinh.} đã sử dụng cảm biến gia tốc MPU6050 cùng với vi xử lý ESP32 nhằm
 ghi nhận hơi thở và nhịp tim của bệnh nhân OSA thông qua rung động, và dòng
 chảy của động mạch và tĩnh mạch ở cổ \cite{thuong_wear_paper}.
 
-Ngoài ra, hiện nay với sự phát triển vượt bậc của điện thoại di động, việc tận
-dụng cảm biến gia tốc ở ngay trên chính chiếc điện thoại cũng là giải pháp hữu
-hiệu \cite{sun2017sleepmonitor}. Nhóm tác giả trong \cite{Ferrer_osa} đã báo
-cáo nghiên cứu đánh giá tư thế ngủ của bệnh nhân sử dụng thiết bị di động đeo ở
-ngực kết hợp với phần mềm trên nền tảng Android để thu thập lại dữ liệu kể cả
-khi tắt màn hình. Trong một nghiên cứu khác, Natale và cộng sự đã khai thác các
-cảm biến tích hợp sẵn trên điện thoại iPhone để ước lượng các thông số liên
-quan đến chất lượng giấc ngủ, bao gồm tổng thời gian ngủ, độ trễ vào giấc và
-hiệu quả giấc ngủ. Phương pháp tiếp cận này cho thấy tiềm năng trong việc sử
-dụng thiết bị di động như một công cụ theo dõi giấc ngủ tiện lợi và dễ tiếp
-cận, đặc biệt trong các nghiên cứu cộng đồng và ứng dụng tại
-nhà\cite{Natale_osa}. Đặc điểm của sử dụng tích hợp cảm biến gia tốc trên điện
-thoại là rất tiện lợi, sử dụng trực tiếp mà không cần phát triển phần cứng. Tuy
-nhiên, việc tiếp xúc điện thoại trực tiếp với cơ thể trực tiếp trong thời gian
-lâu cũng có gây những ảnh hưởng nhất định đến người dùng.
+Ngoài ra, việc tận dụng cảm biến gia tốc ở ngay trên chính chiếc điện thoại
+cũng là giải pháp hữu hiệu \cite{sun2017sleepmonitor}. Nhóm tác giả trong
+\cite{Ferrer_osa} đã báo cáo nghiên cứu đánh giá tư thế ngủ của bệnh nhân sử
+dụng thiết bị di động đeo ở ngực kết hợp với phần mềm trên nền tảng Android để
+thu thập lại dữ liệu kể cả khi tắt màn hình. Trong một nghiên cứu khác, Natale
+và cộng sự đã khai thác các cảm biến tích hợp sẵn trên điện thoại iPhone để ước
+lượng các thông số liên quan đến chất lượng giấc ngủ, bao gồm tổng thời gian
+ngủ, độ trễ vào giấc và hiệu quả giấc ngủ. Phương pháp tiếp cận này cho thấy
+tiềm năng trong việc sử dụng thiết bị di động như một công cụ theo dõi giấc ngủ
+tiện lợi và dễ tiếp cận, đặc biệt trong các nghiên cứu cộng đồng và ứng dụng
+tại nhà\cite{Natale_osa}. Đặc điểm của sử dụng tích hợp cảm biến gia tốc trên
+điện thoại là rất tiện lợi, sử dụng trực tiếp mà không cần phát triển phần
+cứng. Tuy nhiên, việc tiếp xúc điện thoại trực tiếp với cơ thể trực tiếp trong
+thời gian lâu cũng có gây những ảnh hưởng nhất định đến người dùng.
 
-Tuy nhiên, các hệ thống trên đều có hạn chế về tính phức tạp phần cứng, yêu cầu
-nhiều cảm biến, khó áp dụng trong điều kiện thực tế tại nhà. Vì vậy, xu hướng
-nghiên cứu gần đây tập trung vào việc tối giản phần cứng, đặc biệt là sử dụng
-duy nhất một cảm biến gia tốc để nhận dạng tư thế ngủ.
-
-Trong hướng này, Jeng và cộng sự \cite{Jeng_osa} phát triển hệ thống iSleePost
-gồm hai cảm biến gia tốc đeo ở cổ tay và ngực để ánh xạ chuyển động và nhãn tư
-thế, với độ chính xác trung bình 0.82\%. Zhang và cộng sự \cite{Zhang_osa} tiến
-thêm một bước khi chỉ sử dụng một cảm biến gia tốc ba trục gắn ở ngực, kết hợp
-bộ phân loại tuyến tính (LDA), cho phép nhận dạng bốn tư thế ngủ cơ bản và phát
-hiện chuyển động hiệu quả. Một số thiết kế khác như Wearable Sleep System (WSS)
-\cite{kwasnicki2018} hoặc thiết bị HST dạng miếng dán cổ
-\cite{Sleep_Posture_Detection} cũng dùng cảm biến gia tốc ba trục có độ chính
-xác cao (trên 97\%) trong nhận dạng tư thế ngủ.
+Thêm một xu hướng nghiên cứu gần đây nữa là tập trung vào việc tối giản phần
+cứng, đặc biệt là sử dụng duy nhất một cảm biến gia tốc để nhận dạng tư thế
+ngủ. Trong hướng này, Jeng và cộng sự \cite{Jeng_osa} phát triển hệ thống
+iSleePost gồm hai cảm biến gia tốc đeo ở cổ tay và ngực để ánh xạ chuyển động
+và nhãn tư thế, với độ chính xác trung bình 0.82\%. Zhang và cộng sự
+\cite{Zhang_osa} tiến thêm một bước khi chỉ sử dụng một cảm biến gia tốc ba
+trục gắn ở ngực, kết hợp bộ phân loại tuyến tính (LDA), cho phép nhận dạng bốn
+tư thế ngủ cơ bản và phát hiện chuyển động hiệu quả. Một số thiết kế khác như
+Wearable Sleep System (WSS) \cite{kwasnicki2018} hoặc thiết bị HST dạng miếng
+dán cổ \cite{Sleep_Posture_Detection} cũng dùng cảm biến gia tốc ba trục có độ
+chính xác cao (trên 97\%) trong nhận dạng tư thế ngủ.
 
 Nghiên cứu \cite{abdulsadig2023}, tác giả tập trung vào nhận dạng tư thế ngủ tự
-động bằng cảm biến gia tốc đơn gắn tại vùng cổ (Hình~\ref{fig:vitri_co}), vị
-trí thuận lợi cho việc kết hợp theo dõi đa thông số sinh lý trong các ứng dụng
-y tế như OSA. Ba mô hình được thử nghiệm gồm Decision Tree (DT), Extra-Trees
-(ET) và LSTM Neural Network (LSTM-NN), nhằm đánh giá hiệu năng trong điều kiện
-giới hạn về năng lượng và bộ nhớ của thiết bị đeo. Kết quả cho thấy chỉ với tần
-số lấy mẫu 5~Hz và cửa sổ 1~s, các mô hình vẫn đạt độ chính xác trung bình >
-98\% và f1-score lần lượt 0.945\%, 0.975\%, 0.965\%, trong đó mô hình DT có ưu
-thế về tốc độ dự đoán (0.8~ms) và dung lượng nhỏ (1.765~kb), phù hợp triển khai
-mô bình trên biên. Đặc biệt, tác giả Vũ Hoàng Diệu và cộng sự
-\cite{Vu2025SleepPosition} đã chứng minh khả năng của một hệ thống đơn cảm biến
-gia tốc trong nhận dạng đến 12 tư thế ngủ phục vụ bệnh nhân GERD, sử dụng mô
-hình AnpoNet kết hợp 1D-CNN và LSTM, đạt độ chính xác 94,67\% và f1-score
-92,94\%. Kết quả này cho thấy cảm biến gia tốc đơn không chỉ đảm bảo độ chính
-xác cao mà còn mang lại sự tiện lợi, chi phí thấp và khả năng triển khai thực
-tế.
+động bằng cảm biến gia tốc đơn gắn tại vùng cổ (Hình~\ref{fig:vitri_co}). Ba mô
+hình được thử nghiệm gồm Decision Tree (DT), Extra-Trees (ET) và LSTM Neural
+Network (LSTM-NN) và cho kết quả rằng mô hình DT có ưu thế về tốc độ dự đoán
+(0.8~ms) và dung lượng nhỏ (1.765~kb), phù hợp triển khai mô bình trên biên.
+Tác giả Vũ Hoàng Diệu và cộng sự \cite{Vu2025SleepPosition} đã chứng minh khả
+năng của một hệ thống đơn cảm biến gia tốc trong nhận dạng đến 12 tư thế ngủ
+phục vụ bệnh nhân GERD, sử dụng mô hình AnpoNet kết hợp 1D-CNN và LSTM, đạt độ
+chính xác 94,67\% và f1-score 92,94\%. Các kết quả này cho thấy cảm biến gia
+tốc đơn không chỉ đảm bảo độ chính xác cao mà còn mang lại sự tiện lợi, chi phí
+phù hợp và khả năng triển khai thực tế.
 
 \begin{figure}[H]
   \centering
@@ -429,59 +412,52 @@ tế.
 \end{figure}
 
 Bám sát định hướng này, luận văn đề xuất một hệ thống sử dụng duy nhất một cảm
-biến gia tốc gắn dưới hõm ức để phát hiện các tư thế ngủ liên quan đến OSA. Vị
+biến gia tốc gắn tại hõm ức để phát hiện các tư thế ngủ liên quan đến OSA. Vị
 trí đặt thiết bị ở cổ còn là tiền đề để nhóm mở rộng thêm cảm biến như luồng
 khí thở với mục đích đánh giả OSA. Dữ liệu thu được sẽ được xử lý qua các bước
 tiền xử lý, trích xuất đặc trưng và huấn luyện mô hình học máy nhẹ, hướng tới
 việc phát triển thiết bị IoT nhỏ gọn, tiêu thụ năng lượng thấp, phân loại tư
-thế ngủ và có thể có khả năng ước lượng chỉ số AHI.
+thế ngủ và có thể có khả năng ước lượng chỉ số AHI được trình bày ở các chương
+tiếp theo.
 
 \subsection{Cảm biến gia tốc trong đánh giá tư thế ngủ}
-Từ góc độ học thuật, các công trình nghiên cứu gần đây đã khẳng định tính hiệu
-quả và độ tin cậy của cảm biến gia tốc trong việc phân loại tư thế ngủ ở người.
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.75\textwidth, keepaspectratio]{images/vị trí đặt cảm biến.png}
-  \vspace*{-5mm}
-  \caption{Vị trí tối ưu để gắn cảm biến gia tốc}
-  \label{position_sensor}
-\end{figure}
 
 Ưu điểm nổi bật của cảm biến gia tốc nằm ở khả năng vận hành độc lập với mức
 tiêu thụ năng lượng thấp, đồng thời có thể tích hợp dễ dàng vào các hệ thống
-vi điều khiển.
-Nhờ đó, cảm biến này đặc biệt thích hợp cho việc phát triển các thiết
-bị đeo thông minh có khả năng xử lý tại chỗ, nhỏ gọn, di động, tiêu thụ năng lượng thấp phù hợp với xu hướng TinyML
-trong lĩnh vực điện toán biên. Ngoài ra, cảm biến gia tốc không phụ
-thuộc vào các điều kiện môi trường như ánh sáng, nhiệt độ, sử dụng chăn,
-và quan trọng hơn, không xâm phạm quyền riêng tư của người dùng
-như các hệ thống giám sát bằng hình ảnh.
+bảng mạch.
 
-Tuy nhiên, giới hạn kỹ thuật chủ yếu của cảm biến gia tốc xuất phát vị trí gắn
-cảm biến. Việc đặt sai vị trí hoặc xoay lệch trục có thể dẫn đến sai lệch trong
-kết quả phân loại tư thế. Hơn nữa, cảm biến này không cung cấp thông tin về các
-thông số sinh lý quan trọng như độ bão hòa oxy trong máu ($\mathrm{SpO_2}$),
-nhịp thở hoặc nhịp tim. Do đó, để chẩn đoán toàn diện hội chứng ngưng thở khi
-ngủ tắc nghẽn (OSA), việc tích hợp cảm biến đa kênh hoặc ứng dụng các mô hình
-suy luận dựa trên học máy là cần thiết nhằm bù đắp cho những thiếu hụt về dữ
-liệu sinh lý.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth, keepaspectratio]{images/vị trí đặt cảm biến.png}
+  \vspace*{-5mm}
+  \caption{Vị trí đặt cảm biến gia tốc}
+  \label{position_sensor}
+\end{figure}
 
-Về mặt lựa chọn vị trí, các vùng như cổ tay hoặc trán thường chịu ảnh hưởng
-mạnh từ các chuyển động ngoại ý và lệch trục cơ thể, làm giảm độ đại diện của
-tín hiệu thu được. Ngược lại, vùng cổ được xem là vị trí lý tưởng nhờ tính ổn
-định hình học cao, gần trục trung tâm của cơ thể, và khả năng phản ánh trực
-tiếp hướng trọng lực. Những đặc điểm này giúp tín hiệu gia tốc tại vùng cổ có
-độ tương quan cao với tư thế ngủ thực tế, qua đó nâng cao độ chính xác của hệ
-thống nhận diện tư thế trong ứng dụng y sinh. Đặc biệt, thuận lợi cho việc tích
-hợp thêm các cảm biến khác như cảm biến âm thanh hoặc cảm biến nhiệt độ, phục
-vụ cho các mục tiêu mở rộng trong các nghiên cứu tiếp theo
+Nhờ đó, cảm biến này đặc biệt thích hợp cho việc phát triển các thiết bị đeo
+thông minh có khả năng xử lý tại chỗ, nhỏ gọn, di động, tiêu thụ năng lượng
+thấp phù hợp với xu hướng TinyML trong lĩnh vực điện toán biên. Ngoài ra, cảm
+biến gia tốc không phụ thuộc vào các điều kiện môi trường như ánh sáng, nhiệt
+độ, sử dụng chăn, và quan trọng hơn, không xâm phạm quyền riêng tư của người
+dùng như các hệ thống giám sát bằng hình ảnh.
+
+Tuy nhiên, việc đặt sai vị trí hoặc xoay lệch trục có thể dẫn đến sai lệch
+trong kết quả phân loại tư thế. Về mặt lựa chọn vị trí, các vùng như cổ tay
+hoặc trán thường chịu ảnh hưởng mạnh từ các chuyển động ngoại ý và lệch trục cơ
+thể, làm giảm độ đại diện của tín hiệu thu được. Ngược lại, vùng cổ được xem là
+vị trí lý tưởng nhờ tính ổn định hình học cao, gần trục trung tâm của cơ thể,
+và khả năng phản ánh trực tiếp hướng trọng lực. Những đặc điểm này giúp tín
+hiệu gia tốc tại vùng cổ có độ tương quan cao với tư thế ngủ thực tế, qua đó
+nâng cao độ chính xác của hệ thống nhận diện tư thế trong ứng dụng y sinh. Đặc
+biệt, thuận lợi cho việc tích hợp thêm các cảm biến khác như cảm biến âm thanh
+hoặc cảm biến nhiệt độ, phục vụ cho các mục tiêu mở rộng trong các nghiên cứu
+tiếp theo
 
 Xuất phát từ các phân tích nêu trên, nghiên cứu này lựa chọn thiết kế một thiết
-bị đeo tiếp xúc sử dụng cảm biến gia tốc ba trục, được gắn tại vùng cổ.
-
-Sau khi xác định được vị trí gắn tối ưu, bước tiếp theo là làm rõ cơ sở nguyên
-lý đo lường của cảm biến, nhằm lý giải vì sao thiết bị này có thể phản ánh
-chính xác tư thế cơ thể trong khi ngủ.
+bị đeo tiếp xúc sử dụng cảm biến gia tốc ba trục, được gắn tại vùng cổ. Sau khi
+xác định được vị trí gắn tối ưu, bước tiếp theo là làm rõ cơ sở nguyên lý đo
+lường của cảm biến, nhằm lý giải vì sao thiết bị này có thể phản ánh chính xác
+tư thế cơ thể trong khi ngủ.
 
 \subsection*{Nguyên lý cảm biến gia tốc}
 
@@ -493,59 +469,55 @@ biệt trong các thiết bị theo dõi hoạt động và giấc ngủ
   Szermer2025_mems_accelerometer_apply}.
 
 Hiện nay, có ba dạng chính của cảm biến gia tốc vi cơ điện tử
-(Micro-Electro-Mechanical Systems - MEMS) là kiểu điện trở áp, kiểu điện dung
+(Micro-Electro-Mechanical Systems - MEMS) là kiểu áp điện trở, kiểu điện dung
 và kiểu áp điện \cite{Shi2023_mems_accelerometer}.
 
-\subsubsection*{Cảm biến gia tốc MEMS điện trở áp}
+\subsubsection*{Cảm biến gia tốc kiểu áp điện trở}
 
-\begin{figure}[!ht]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth, keepaspectratio]{images/giatoc_ap_dien_tro.png}
   \vspace*{-5mm}
-  \caption{(a) Sơ đồ bố trí tổng thể của cảm biến gia tốc điện trở áp
-    (b) Cấu trúc mặt cắt qua khối trọng và dầm
+  \caption{(a) Sơ đồ bố trí tổng thể của cảm biến gia tốc áp điện trở
+    (b) Cấu trúc mặt cắt qua khối gia trọng và cấu trúc dầm
     (c) Cầu Wheatstone đo gia tốc trục X
     (d) Cầu Wheatstone đo gia tốc trục Y
-    (e) Cầu Wheatstone đo gia tốc trục Z.}
+    (e) Cầu Wheatstone đo gia tốc trục Z. \cite{Song2018_mems_accelerometer}}
   \label{giatoc_ap_dien_tro}
 \end{figure}
 
-Đầu tiên, cảm biến MEMS điện trở áp ra đời sớm nhất, có cấu tạo gồm một khối
-dầm bằng vật liệu có tính điện trở áp, kèm theo một khối trọng (mass) và
+Đầu tiên, cảm biến kiểu áp điện trở có cấu tạo gồm một
+cấu trúc dầm bằng vật liệu có tính chất có thể thay đổi điện trở, kèm theo một khối gia trọng (mass) và
 khung đỡ \cite{Song2018_mems_accelerometer}.
-Bề mặt trên của khối trọng, các dầm và khung nằm trên cùng một mặt phẳng,
-đảm bảo tính đối xứng cấu trúc và khả năng tương thích cao với quy trình
-chế tạo vi cơ điện tử.
+Bề mặt trên của khối gia trọng,  cấu trúc dầm và khung nằm trên cùng một mặt phẳng,
+đảm bảo tính đối xứng cấu trúc.
 Khi cảm biến chịu tác động của gia tốc ngoài, ứng suất cơ học
-xuất hiện tại vùng đầu dầm, dẫn đến sự thay đổi điện trở của các
+xuất hiện tại vùng đầu cấu trúc dầm, dẫn đến sự thay đổi điện trở của các
 phần tử này. Các điện trở  được bố trí và
 liên kết một cách tối ưu để tạo thành ba mạch cầu Wheatstone độc lập,
 tương ứng với việc phát hiện các thành phần gia tốc theo ba trục vuông góc X, Y và Z,
 
 Trong mỗi cầu Wheatstone, sự thay đổi điện trở vi sai được chuyển đổi trực tiếp
 thành tín hiệu điện áp đầu ra, cho phép cảm biến biến đổi biến dạng cơ học
-thành tín hiệu điện tương ứng. Dựa trên đặc tính hình học và sự đối xứng của
-cấu trúc, mô hình toán học của cảm biến có thể được chia thành hai trường hợp
-chính: (1) Gia tốc tác dụng theo phương vuông góc với mặt phẳng (trục Z); (2)
-Gia tốc tác dụng trong mặt phẳng (trục X hoặc Y).
+thành tín hiệu điện tương ứng.
 
-\subsubsection*{Cảm biến gia tốc MEMS áp điện}
+\subsubsection*{Cảm biến gia tốc kiểu áp điện}
 
-Cảm biến gia tốc được cấu tạo gồm hai phần chính
-\cite{Li2018_mems_accelerometer}: (1) Thanh dầm là một dầm silicon có một đầu
-cố định liên kết với khối trọng. Khi có gia tốc tác động, khối lượng này tạo ra
-lực quán tính khiến dầm bị uốn cong, sinh ra ứng suất cơ học trên bề mặt dầm.
-Các thông số hình học cơ bản bao gồm: chiều dài dầm ($L$), chiều rộng ($b$), độ
-dày ($h$), chiều rộng khối lượng ($d$) và độ dày khối lượng ($t$). (2) Cấu trúc
-áp điện gồm ba lớp vật liệu xếp chồng theo thứ tự: lớp điện cực dưới thường
-bằng bạch kim/titan, lớp màng áp điện thường bằng Li-doped ZnO, và lớp điện cực
-trên thường bằng nhôm.
+Cảm biến gia tốc kiểu áp điện được cấu tạo gồm hai phần chính
+\cite{Li2018_mems_accelerometer}: (1) Cấu trúc dầm có một đầu cố định liên kết
+với khối gia trọng. Khi có gia tốc tác động, khối này tạo ra lực quán tính
+khiến cấu trúc dầm bị uốn cong, sinh ra ứng suất cơ học trên bề mặt dầm. Các
+thông số hình học cơ bản bao gồm: chiều dài dầm ($L$), chiều rộng ($b$), độ dày
+($h$), chiều rộng khối lượng ($d$) và độ dày khối lượng ($t$). (2) Cấu trúc áp
+điện gồm ba lớp vật liệu xếp chồng theo thứ tự: lớp điện cực dưới thường bằng
+bạch kim/titan, lớp màng áp điện thường bằng Li-doped ZnO, và lớp điện cực trên
+thường bằng nhôm.
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.75\textwidth, keepaspectratio]{images/giatoc_ap_dien.png}
   \vspace*{-5mm}
-  \caption{Cấu trúc cơ bản của cám biến MEMS áp điện: (a) mặt trên (b) mặt dưới}
+  \caption{Cấu trúc cơ bản của cám biến MEMS áp điện: (a) mặt trên (b) mặt dưới \cite{Li2018_mems_accelerometer}}
   \label{giatoc_ap_dien}
 \end{figure}
 
@@ -590,17 +562,18 @@ Kết hợp với định nghĩa độ nhạy của cảm biến, ta có biểu 
 
 \subsubsection*{Cảm biến gia tốc MEMS điện dung}
 
-Cảm biến gia tốc điện dung được gồm ba khối chức năng chính: khối trọng, hệ dầm
-đàn hồi và cụm lược điện cực \cite{Wang2022_mems_accelerometer}. Khối trọng là
-phần trung tâm của cảm biến, dao động khi có gia tốc tác động. Các dầm có nhiệm
-vụ đỡ và liên kết khối lượng này, đồng thời cho phép chuyển động đàn hồi trong
-giới hạn thiết kế. Cụm lược ghép (assembly combs) được sử dụng để căn chỉnh
-trong quá trình chế tạo, trong khi cụm lược kích thích (drive combs) tạo dao
-động cưỡng bức cho khối trọng trong các thí nghiệm đo đáp ứng. Cụm lược đo
-(sense combs) đảm nhiệm chức năng phát hiện độ dịch chuyển của khối lượng thông
-qua sự thay đổi điện dung giữa các ngón điện cực.
+Cảm biến gia tốc điện dung được gồm ba khối chức năng chính: khối gia trọng, hệ
+dầm đàn hồi và cụm điện cực hình răng lược \cite{Wang2022_mems_accelerometer}.
+Khối gia trọng là phần trung tâm của cảm biến, dao động khi có gia tốc tác
+động. Các dầm có nhiệm vụ đỡ và liên kết khối lượng này, đồng thời cho phép
+chuyển động đàn hồi trong giới hạn thiết kế. Cụm điện cực hình răng lược
+(assembly combs) được sử dụng để căn chỉnh trong quá trình chế tạo, trong khi
+cụm điện cực hình răng lược (drive combs) tạo dao động cưỡng bức cho khối gia
+trọng trong các thí nghiệm đo đáp ứng. Cụm điện cực hình răng lược (sense
+combs) đảm nhiệm chức năng phát hiện độ dịch chuyển của khối lượng thông qua sự
+thay đổi điện dung giữa các ngón điện cực.
 
-\begin{figure}[!ht]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth, keepaspectratio]{images/giatoc_diendung.png}
   \vspace*{-5mm}
@@ -609,7 +582,7 @@ qua sự thay đổi điện dung giữa các ngón điện cực.
 \end{figure}
 
 Để đo tín hiệu, cảm biến sử dụng hai cụm
-lược đo (sense combs 1 và sense combs 2) được mắc theo cấu hình vi sai. Hai tín hiệu điện dung biến thiên ngược pha
+(sense combs 1 và sense combs 2) được mắc theo cấu hình vi sai. Hai tín hiệu điện dung biến thiên ngược pha
 này giúp tăng hệ số khuếch đại vi sai và loại bỏ nhiễu chế độ chung, nhờ đó cải
 thiện đáng kể độ nhạy và độ ổn định của cảm biến điện dung.
 
@@ -645,8 +618,8 @@ lần lượt được xác định bởi \cite{Tirupathi2018_mems_accelerometer
 \end{equation}
 
 Trong đó, $C_0$ là điện dung xác định khi không có gia tốc tác động, và $\Delta
-  C$ là phần biến thiên điện dung phát sinh do dịch chuyển cơ học của khối trọng
-dưới tác dụng của gia tốc.
+  C$ là phần biến thiên điện dung phát sinh do dịch chuyển cơ học của khối gia
+trọng dưới tác dụng của gia tốc.
 
 Tín hiệu kích thích được áp dụng lên hai tụ có dạng sóng vuông vi sai $\pm
   V_p$, gọi là điện áp kích thích. Sự dịch chuyển cơ học $x$ gây ra biến thiên
@@ -736,7 +709,7 @@ biến gia tốc MEMS kiểu điện dung được lựa chọn làm phần tử
 cho hệ thống theo dõi tư thế ngủ kéo dài, trên cơ sở đánh giá đa chiều cả về
 đặc trưng tín hiệu, yêu cầu hệ thống, lẫn khả năng triển khai thực tế.
 
-\textbf{Tóm lại}, việc lựa chọn cảm biến điện dung MEMS không đơn thuần là một quyết định kỹ thuật thuần tuý, mà còn phản ánh một giải pháp có tính cân bằng giữa hiệu quả đo lường, khả năng tích hợp phần cứng, và chiến lược mở rộng ứng dụng lâm sàng theo hướng chi phí thấp. Đây là một trong những nguyên tắc then chốt trong xu hướng đổi mới công nghệ y tế cộng đồng hiện đại - nơi mà tính khả thi triển khai và khả năng mở rộng đóng vai trò không kém phần quan trọng so với độ chính xác kỹ thuật.
+\textbf{Tóm lại}, việc lựa chọn cảm biến điện dung MEMS không đơn thuần là một quyết định kỹ thuật thuần tuý, mà còn phản ánh một giải pháp có tính cân bằng giữa hiệu quả đo lường, khả năng tích hợp phần cứng, và chiến lược mở rộng ứng dụng lâm sàng theo hướng chi phí phù hợp. Đây là một trong những nguyên tắc then chốt trong xu hướng đổi mới công nghệ y tế cộng đồng hiện đại - nơi mà tính khả thi triển khai và khả năng mở rộng đóng vai trò không kém phần quan trọng so với độ chính xác kỹ thuật.
 
 \vspace{1em}
 
@@ -750,33 +723,26 @@ vi điều khiển hoặc thiết bị đeo.
 Trong bối cảnh đó, các mô hình học máy trở thành công cụ thiết yếu để khai thác
 dữ liệu cảm biến. Chúng không chỉ cho phép phân loại tư thế với độ chính xác
 cao mà còn mở rộng sang suy luận các chỉ số lâm sàng như AHI. Việc triển khai
-trực tiếp trên vi điều khiển Cortex-M4 theo hướng TinyML đưa giải pháp từ phòng
-thí nghiệm đến ứng dụng thực tiễn tại nhà, đánh dấu sự giao thoa giữa y học
-giấc ngủ truyền thống và trí tuệ nhân tạo ứng dụng - một lĩnh vực đang phát
-triển mạnh mẽ trong thập niên gần đây \cite{osa_sanchez2025}.
+trực tiếp trên vi điều khiển theo hướng TinyML đưa giải pháp từ phòng thí
+nghiệm đến ứng dụng thực tiễn tại nhà, đánh dấu sự giao thoa giữa y học giấc
+ngủ truyền thống và trí tuệ nhân tạo ứng dụng - một lĩnh vực đang phát triển
+mạnh mẽ trong thập niên gần đây \cite{osa_sanchez2025}.
 
 \subsection{Học máy trong phân loại OSA và tư thế ngủ}
 
-Hiện nay, trí tuệ nhân tạo (AI) đã và đang len lỏi vào hầu hết các lĩnh vực của
-đời sống, đặc biệt là trong các thiết bị y tế tại nhà. Việc ứng dụng các kỹ
-thuật học máy (machine learning) không chỉ giúp nâng cao hiệu suất xử lý, giảm
-chi phí vận hành, mà còn đảm bảo tính ổn định và độ lặp lại cao, đồng thời giảm
-thiểu sự can thiệp trực tiếp của con người.
-
-Với lượng dữ liệu phong phú và liên tục được thu thập từ các cảm biến sinh học,
-học máy trở thành công cụ thiết yếu để phân tích và khai thác hiệu quả các dòng
-dữ liệu này, giúp đưa ra quyết định nhanh chóng và chính xác.
-
-Đặc biệt, trong bối cảnh các thiết bị theo dõi sức khỏe tại nhà yêu cầu kích thước nhỏ gọn,
-tính di động cao, và không phụ thuộc vào kết nối Internet,
-thì học máy tại biên (Edge Machine Learning) nổi lên như một
-giải pháp tối ưu vừa mang lại khả năng tính toán mạnh mẽ,
-vừa dễ dàng triển khai trên các phần cứng có giới hạn tài nguyên.
+Cùng với lượng dữ liệu phong phú và liên tục được thu thập từ các cảm biến sinh
+học, các thuật toán học máy trở thành công cụ thiết yếu để phân tích và khai
+thác hiệu quả các dòng dữ liệu này, giúp đưa ra quyết định nhanh chóng và chính
+xác. Đặc biệt, trong bối cảnh các thiết bị theo dõi sức khỏe tại nhà yêu cầu
+kích thước nhỏ gọn, tính di động cao, và không phụ thuộc vào kết nối Internet,
+thì học máy tại biên (Edge Machine Learning) nổi lên như một giải pháp tối ưu
+vừa mang lại khả năng tính toán mạnh mẽ, vừa dễ dàng triển khai trên các phần
+cứng có giới hạn tài nguyên.
 
 Chính vì những lý do đó, tác giả lựa chọn hướng nghiên cứu và phát triển học
 máy tại biên cho đề tài này.
 
-\begin{table}[htbp]
+\begin{table}[H]
   \centering
   \caption{Các bước chính trong bài toán sử dụng học máy trên biên}
   \label{tab:pipeline_steps}

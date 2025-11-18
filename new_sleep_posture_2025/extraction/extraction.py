@@ -151,47 +151,47 @@ def calculate_accelerometer_fft_features(x_list, y_list, z_list, window_size=20,
 
     # ======= BẮT ĐẦU TÍNH 29 ĐẶC TRƯNG =======
     features = {
-        # 1–3. Mean FFT
+        # 1-3. Mean FFT
         'x_mean_fft': [np.mean(a) for a in x_fft_list],
         'y_mean_fft': [np.mean(a) for a in y_fft_list],
         'z_mean_fft': [np.mean(a) for a in z_fft_list],
 
-        # 4–6. Min FFT
+        # 4-6. Min FFT
         'x_min_fft': [np.min(a) for a in x_fft_list],
         'y_min_fft': [np.min(a) for a in y_fft_list],
         'z_min_fft': [np.min(a) for a in z_fft_list],
 
-        # 7–9. Max–Min Difference FFT
+        # 7-9. Max-Min Difference FFT
         'x_maxmin_diff_fft': [np.max(a) - np.min(a) for a in x_fft_list],
         'y_maxmin_diff_fft': [np.max(a) - np.min(a) for a in y_fft_list],
         'z_maxmin_diff_fft': [np.max(a) - np.min(a) for a in z_fft_list],
 
-        # 10–12. Median FFT
+        # 10-12. Median FFT
         'x_median_fft': [np.median(a) for a in x_fft_list],
         'y_median_fft': [np.median(a) for a in y_fft_list],
         'z_median_fft': [np.median(a) for a in z_fft_list],
 
-        # 13–15. IQR FFT
+        # 13-15. IQR FFT
         'x_IQR_fft': [np.percentile(a, 75) - np.percentile(a, 25) for a in x_fft_list],
         'y_IQR_fft': [np.percentile(a, 75) - np.percentile(a, 25) for a in y_fft_list],
         'z_IQR_fft': [np.percentile(a, 75) - np.percentile(a, 25) for a in z_fft_list],
 
-        # 16–18. Above mean count FFT
+        # 16-18. Above mean count FFT
         'x_above_mean_fft': [np.sum(a > np.mean(a)) for a in x_fft_list],
         'y_above_mean_fft': [np.sum(a > np.mean(a)) for a in y_fft_list],
         'z_above_mean_fft': [np.sum(a > np.mean(a)) for a in z_fft_list],
 
-        # 19–21. Peak count FFT
+        # 19-21. Peak count FFT
         'x_peak_count_fft': [len(find_peaks(a)[0]) for a in x_fft_list],
         'y_peak_count_fft': [len(find_peaks(a)[0]) for a in y_fft_list],
         'z_peak_count_fft': [len(find_peaks(a)[0]) for a in z_fft_list],
 
-        # 22–24. Kurtosis FFT
+        # 22-24. Kurtosis FFT
         'x_kurtosis_fft': [stats.kurtosis(a) for a in x_fft_list],
         'y_kurtosis_fft': [stats.kurtosis(a) for a in y_fft_list],
         'z_kurtosis_fft': [stats.kurtosis(a) for a in z_fft_list],
 
-        # 25–27. Energy FFT (chuẩn hóa theo nb)
+        # 25-27. Energy FFT (chuẩn hóa theo nb)
         'x_energy_fft': [np.sum(a**2) / float(nb) for a in x_fft_list],
         'y_energy_fft': [np.sum(a**2) / float(nb) for a in y_fft_list],
         'z_energy_fft': [np.sum(a**2) / float(nb) for a in z_fft_list],

@@ -286,7 +286,7 @@ def optimize_NN_raw(train, test, labelTrain, labelTest):
     }
 
     # Tổng cộng: 3×3×4×2×3 = 216 tổ hợp
-    # cv=3 → 648 fits (khoảng 2–3 phút chạy)
+    # cv=3 → 648 fits (khoảng 2-3 phút chạy)
     grid_search = GridSearchCV(
         estimator=nn_model,
         param_grid=param_grid,
