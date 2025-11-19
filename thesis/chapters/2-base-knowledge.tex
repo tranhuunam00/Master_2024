@@ -15,7 +15,7 @@ hiện tượng hô hấp chính cần được nhận diện bao gồm: ngưng 
 hiện tượng kích hoạt liên quan đến nỗ lực hô hấp (Respiratory Effort-Related
 Arousal - RERA).
 
-\subsection{Định nghĩa}
+\subsection{Khái niệm}
 
 Ngưng thở được AASM định nghĩa là sự ngưng luồng khí hô hấp qua mũi và miệng
 trong thời gian tối thiểu 10 giây gây giảm nồng độ oxy trong máu. Các sự kiện
@@ -120,7 +120,7 @@ trong đó chủ yếu ở mức độ trung bình đến nặng. Nghiên cứu 
 định mối tương quan đáng kể giữa mức độ nghiêm trọng của OSA và các triệu chứng
 mất tập trung, tăng động, rối loạn hành vi, lo âu và trầm cảm.
 
-\subsection{Tư thế ngủ và liên hệ với OSA}
+\subsection{Tư thế ngủ và mối liên hệ với OSA}
 Tư thế ngủ Hình~\ref{4_tuthe_nguoi} giữ vai trò thiết yếu trong việc duy trì
 sức khỏe tổng thể và chất lượng giấc ngủ, bên cạnh các yếu tố khác như thời
 lượng, môi trường và thói quen ngủ. Nhiều nghiên cứu đã chỉ ra rằng tư thế ngủ
@@ -308,13 +308,13 @@ khả năng triển khai đại trà trong thực hành y học giấc ngủ hi�
 
 \subsection{Kĩ thuật phân loại tư thế ngủ}
 
-Hiện nay, đã có nhiều nghiên cứu tập trung phát triển các hệ thống theo dõi tư
-thế ngủ. Chẳng hạn, Asma Channa và cộng sự \cite{Channa_osa} đã phát triển hệ
-thống theo dõi tư thế ngủ sử dụng hai thảm cảm biến áp lực để thu thập dữ liệu
-từ 13 người tham gia, với các thuật toán học máy như KNN và SVM cho độ chính
-xác tới 98.7\%. Tương tự, Xi Xu và cộng sự \cite{xu2024classification} đề xuất
-mô hình kết hợp ba thuật toán mạnh (XGBoost, SVM, DNDT) đạt độ chính xác
-94.48\% trên dữ liệu áp suất từ nệm khí.
+Hiện nay, có nhiều nghiên cứu tập trung phát triển các hệ thống theo dõi tư thế
+ngủ. Asma Channa và cộng sự \cite{Channa_osa} đã phát triển hệ thống theo dõi
+tư thế ngủ sử dụng hai thảm cảm biến áp lực để thu thập dữ liệu từ 13 người
+tham gia, với các thuật toán học máy như KNN và SVM cho độ chính xác tới
+98.7\%. Tương tự, Xi Xu và cộng sự \cite{xu2024classification} đề xuất mô hình
+kết hợp ba thuật toán mạnh (XGBoost, SVM, DNDT) đạt độ chính xác 94.48\% trên
+dữ liệu áp suất từ nệm khí.
 
 \begin{figure}[H]
   \centering
@@ -324,26 +324,27 @@ mô hình kết hợp ba thuật toán mạnh (XGBoost, SVM, DNDT) đạt độ 
   \label{fig:sleep_camera}
 \end{figure}
 
-Các nghiên cứu sử dụng camera RGB hoặc hồng ngoại cũng cho kết quả ấn tượng
-trong môi trường có kiểm soát. Ví dụ, Khan và cộng sự
-\cite{KHAN20241729_camera} ứng dụng kết hợp camera RGB và camera nhiệt. Sau quá
-trình huấn luyện, hai mô hình VGG16 và ResNet50 cho độ chính xác lên tới 99\%.
-Mahvash và cộng sự \cite{Mahvash_camera} tiếp tục mở rộng hướng nghiên cứu này
-bằng cách sử dụng camera hồng ngoại 2D, kết hợp học sâu với mô hình ResNet, cho
-độ chính xác 95.1\%, f1-score 94.9\% vượt trội hơn cảm biến PSG truyền thống.
-Ngoài ra, một hướng tiếp cận không tiếp xúc khác sử dụng cảm biến radar cũng
-được đề xuất để nhận dạng tư thế ngủ. Kết quả cho thấy hệ thống đạt độ chính
-xác 91\% trong nhận dạng tư thế và 83.7\% trong phát hiện sự kiện chuyển tư
-thế. Nhóm Yunyoung Nam và cộng sự cũng đã tích hợp hệ thống thu thập, phân tích
-sử dụng một cảm biến gia tốc ba trục và một cảm biến áp suất để giám sát chất
-lượng giấc ngủ tư thế ngủ, trạng thái ngủ, giai đoạn ngủ
-\cite{hst_pressure_paper}. Tại Việt Nam, nhóm nghiên cứu của GS.TS. Lê Tiến
-Thường \footnote{Giáo sư Lê Tiến Thường - giảng viên Trường Đại học Bách Khoa
-  TP. Hồ Chí Minh, là chuyên gia trong lĩnh vực kỹ thuật điện tử và hệ thống
-  nhúng, với nhiều công trình về cảm biến và trí tuệ nhân tạo ứng dụng trong y
-  sinh.} đã sử dụng cảm biến gia tốc MPU6050 cùng với vi xử lý ESP32 nhằm ghi
-nhận hơi thở và nhịp tim của bệnh nhân OSA thông qua rung động, và dòng chảy
-của động mạch và tĩnh mạch ở cổ \cite{thuong_wear_paper}.
+Các nghiên cứu sử dụng camera RGB hoặc camera hồng ngoại cũng cho kết quả ấn
+tượng trong môi trường có kiểm soát. Ví dụ, Khan và cộng sự
+\cite{KHAN20241729_camera} phát triển một hệ thống kết hợp camera RGB và camera
+nhiệt. Sau quá trình huấn luyện, hai mô hình VGG16 và ResNet50 cho độ chính xác
+lên tới 99\%. Mahvash và cộng sự \cite{Mahvash_camera} tiếp tục mở rộng hướng
+nghiên cứu này bằng cách sử dụng camera hồng ngoại 2D, kết hợp học sâu với mô
+hình ResNet, cho độ chính xác 95.1\%, f1-score 94.9\% vượt trội hơn cảm biến
+PSG truyền thống. Ngoài ra, một hướng tiếp cận không tiếp xúc khác sử dụng cảm
+biến radar cũng được đề xuất để nhận dạng tư thế ngủ \cite{10123404_camera}.
+Kết quả cho thấy hệ thống đạt độ chính xác 91\% trong nhận dạng tư thế và
+83.7\% trong phát hiện sự kiện chuyển tư thế. Nhóm Yunyoung Nam và cộng sự cũng
+đã phát triển hệ thống có khả năng thu thập, phân tích sử dụng một cảm biến gia
+tốc ba trục và một cảm biến áp suất để giám sát chất lượng giấc ngủ tư thế ngủ,
+trạng thái ngủ, giai đoạn ngủ \cite{hst_pressure_paper}. Tại Việt Nam, nhóm
+nghiên cứu của GS.TS. Lê Tiến Thường \footnote{Giáo sư Lê Tiến Thường - giảng
+  viên Trường Đại học Bách Khoa TP. Hồ Chí Minh, là chuyên gia trong lĩnh vực kỹ
+  thuật điện tử và hệ thống nhúng, với nhiều công trình về cảm biến và trí tuệ
+  nhân tạo ứng dụng trong y sinh.} đã sử dụng cảm biến gia tốc MPU6050 cùng với
+vi xử lý ESP32 nhằm ghi nhận hơi thở và nhịp tim của bệnh nhân OSA thông qua
+rung động, và dòng chảy của động mạch và tĩnh mạch ở cổ
+\cite{thuong_wear_paper}.
 
 Ngoài ra, việc tận dụng cảm biến gia tốc ở ngay trên chính chiếc điện thoại
 cũng là một giải pháp hữu hiệu \cite{sun2017sleepmonitor}. Nhóm tác giả trong
@@ -354,8 +355,8 @@ và cộng sự đã khai thác các cảm biến tích hợp sẵn trên điệ
 lượng các thông số liên quan đến chất lượng giấc ngủ, bao gồm tổng thời gian
 ngủ, độ trễ vào giấc và hiệu quả giấc ngủ. Phương pháp tiếp cận này cho thấy
 tiềm năng trong việc sử dụng thiết bị di động như một công cụ theo dõi giấc ngủ
-tiện lợi và dễ tiếp cận tại nhà\cite{Natale_osa}. Tuy nhiên, việc tiếp xúc điện
-thoại trực tiếp với cơ thể trực tiếp trong thời gian lâu cũng có gây những ảnh
+tiện lợi và dễ tiếp cận tại nhà \cite{Natale_osa}. Tuy nhiên, việc tiếp xúc
+điện thoại trực tiếp với cơ thể trong thời gian lâu cũng có thể gây những ảnh
 hưởng nhất định đến người dùng.
 
 Thêm một xu hướng nghiên cứu gần đây nữa là tập trung vào việc tối giản phần
@@ -437,7 +438,7 @@ tiếp xúc sử dụng cảm biến gia tốc ba trục, được gắn tại v
 của cảm biến, nhằm lý giải vì sao thiết bị này có thể phản ánh chính xác tư thế
 cơ thể trong khi ngủ.
 
-\subsection*{Nguyên lý cảm biến gia tốc}
+\subsection*{Nguyên lý hoạt động cảm biến gia tốc}
 
 Cảm biến gia tốc là một thiết bị đo lường có khả năng phát hiện và ghi nhận gia
 tốc theo thời gian. Với ưu điểm nhỏ gọn, tiêu thụ năng lượng thấp và chi phí
@@ -446,9 +447,9 @@ biệt trong các thiết bị theo dõi hoạt động và giấc ngủ
 \cite{Santoso2015_mems_accelerometer_apply,
   Szermer2025_mems_accelerometer_apply}.
 
-Hiện nay, có ba dạng chính của cảm biến gia tốc vi cơ điện tử
-(Micro-Electro-Mechanical Systems - MEMS) là kiểu áp điện trở, kiểu điện dung
-và kiểu áp điện \cite{Shi2023_mems_accelerometer}.
+Hiện nay, các loại cảm biến gia tốc phổ biến được chế tạo bằng công nghệ vi cơ
+điện tử (Micro-Electro-Mechanical Systems - MEMS) với ba kiểu chính là: kiểu áp
+điện trở, kiểu điện dung và kiểu áp điện \cite{Shi2023_mems_accelerometer}.
 
 \subsubsection*{Cảm biến gia tốc kiểu áp điện trở}
 
@@ -456,7 +457,7 @@ và kiểu áp điện \cite{Shi2023_mems_accelerometer}.
   \centering
   \includegraphics[width=0.75\textwidth, keepaspectratio]{images/giatoc_ap_dien_tro.png}
   \caption{(a) Sơ đồ bố trí tổng thể của cảm biến gia tốc áp điện trở
-    (b) Cấu trúc mặt cắt qua khối gia trọng và cấu trúc dầm
+    (b) Cấu trúc mặt cắt qua khối gia trọng và thanh dầm
     (c) Cầu Wheatstone đo gia tốc trục X
     (d) Cầu Wheatstone đo gia tốc trục Y
     (e) Cầu Wheatstone đo gia tốc trục Z \cite{Song2018_mems_accelerometer}}
@@ -464,15 +465,15 @@ và kiểu áp điện \cite{Shi2023_mems_accelerometer}.
 \end{figure}
 
 Đầu tiên, cảm biến kiểu áp điện trở có cấu tạo gồm một
-cấu trúc dầm bằng vật liệu có tính chất có thể thay đổi điện trở, kèm theo một khối gia trọng (mass) và
-khung đỡ \cite{Song2018_mems_accelerometer}.
-Bề mặt trên của khối gia trọng,  cấu trúc dầm và khung nằm trên cùng một mặt phẳng,
+thanh dầm bằng vật liệu có tính chất có thể thay đổi điện trở, kèm theo một khối gia trọng (mass) và
+giá đỡ \cite{Song2018_mems_accelerometer}.
+Bề mặt trên của khối gia trọng, thanh dầm và giá đỡ nằm trên cùng một mặt phẳng,
 đảm bảo tính đối xứng cấu trúc.
 Khi cảm biến chịu tác động của gia tốc ngoài, ứng suất cơ học
-xuất hiện tại vùng đầu cấu trúc dầm, dẫn đến sự thay đổi điện trở của các
+xuất hiện tại vùng đầu thanh dầm, dẫn đến sự thay đổi điện trở của các
 phần tử này. Các điện trở  được bố trí và
 liên kết một cách tối ưu để tạo thành ba mạch cầu Wheatstone độc lập,
-tương ứng với việc phát hiện các thành phần gia tốc theo ba trục vuông góc X, Y và Z,
+tương ứng với việc phát hiện các thành phần gia tốc theo ba trục vuông góc X, Y và Z.
 
 Trong mỗi cầu Wheatstone, sự thay đổi điện trở vi sai được chuyển đổi trực tiếp
 thành tín hiệu điện áp đầu ra, cho phép cảm biến biến đổi biến dạng cơ học
@@ -481,13 +482,13 @@ thành tín hiệu điện tương ứng.
 \subsubsection*{Cảm biến gia tốc kiểu áp điện}
 
 Cảm biến gia tốc kiểu áp điện được cấu tạo gồm hai phần chính
-\cite{Li2018_mems_accelerometer}: (1) Cấu trúc dầm có một đầu cố định liên kết
-với khối gia trọng. Khi có gia tốc tác động, khối này tạo ra lực quán tính
-khiến cấu trúc dầm bị uốn cong, sinh ra ứng suất cơ học trên bề mặt dầm. Các
-thông số hình học cơ bản bao gồm: chiều dài dầm ($L$), chiều rộng ($b$), độ dày
-($h$), chiều rộng khối lượng ($d$) và độ dày khối lượng ($t$). (2) Cấu trúc áp
-điện gồm ba lớp vật liệu xếp chồng theo thứ tự: lớp điện cực dưới thường bằng
-bạch kim/titan, lớp màng áp điện thường bằng Li-doped ZnO, và lớp điện cực trên
+\cite{Li2018_mems_accelerometer}: (1) thanh dầm có một đầu cố định liên kết với
+khối gia trọng. Khi có gia tốc tác động, khối này tạo ra lực quán tính khiến
+thanh dầm bị uốn cong, sinh ra ứng suất cơ học trên bề mặt dầm. Các thông số
+hình học cơ bản bao gồm: chiều dài dầm ($L$), chiều rộng ($b$), độ dày ($h$),
+chiều rộng khối lượng ($d$) và độ dày khối lượng ($t$). (2) Cấu trúc áp điện
+gồm ba lớp vật liệu xếp chồng theo thứ tự: lớp điện cực dưới thường bằng bạch
+kim/titan, lớp màng áp điện thường bằng Li-doped ZnO, và lớp điện cực trên
 thường bằng nhôm.
 
 \begin{figure}[!ht]

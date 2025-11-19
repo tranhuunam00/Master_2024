@@ -9,10 +9,10 @@
 \contentsline {chapter}{Đặt vấn đề}{1}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}TỔNG QUAN OSA, MỐI LIÊN HỆ VỚI TƯ THẾ NGỦ VÀ KĨ THUẬT SÀNG LỌC, PHÂN LOẠI}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1.}Hội chứng ngưng thở khi ngủ}{4}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1.}Định nghĩa}{5}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.1.}Khái niệm}{5}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2.}Nguyên nhân}{6}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3.}Ảnh hưởng của OSA}{7}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4.}Tư thế ngủ và liên hệ với OSA}{8}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.4.}Tư thế ngủ và mối liên hệ với OSA}{8}{subsection.1.1.4}%
 \contentsline {section}{\numberline {1.2.}Công nghệ trong chẩn đoán OSA và phân loại tư thế ngủ}{10}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1.}Đa ký giấc ngủ}{10}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2.}Thiết bị theo dõi OSA tại nhà}{11}{subsection.1.2.2}%
