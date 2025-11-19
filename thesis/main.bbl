@@ -45,8 +45,8 @@
       \strng{authornamehash}{d4159c2fb33da16548a4583acd7cf055}
       \strng{authorfullhash}{d4159c2fb33da16548a4583acd7cf055}
       \strng{authorfullhashraw}{d4159c2fb33da16548a4583acd7cf055}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{PLoS One}
@@ -78,8 +78,8 @@
       \strng{authornamehash}{e3a5573a93f7a024d9a26c708a9b762a}
       \strng{authorfullhash}{e3a5573a93f7a024d9a26c708a9b762a}
       \strng{authorfullhashraw}{e3a5573a93f7a024d9a26c708a9b762a}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0161-8105}
@@ -136,8 +136,8 @@
       \strng{authornamehash}{ad4d964b382ea8ee8b7ad38dc9e8d2c9}
       \strng{authorfullhash}{ad4d964b382ea8ee8b7ad38dc9e8d2c9}
       \strng{authorfullhashraw}{ad4d964b382ea8ee8b7ad38dc9e8d2c9}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
@@ -177,8 +177,8 @@
       \strng{authornamehash}{026a51dc8a8ec4517162f1974f1eff03}
       \strng{authorfullhash}{026a51dc8a8ec4517162f1974f1eff03}
       \strng{authorfullhashraw}{026a51dc8a8ec4517162f1974f1eff03}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
@@ -225,8 +225,8 @@
       \strng{authornamehash}{a43882f4685f70e1b1713999850f1599}
       \strng{authorfullhash}{a43882f4685f70e1b1713999850f1599}
       \strng{authorfullhashraw}{a43882f4685f70e1b1713999850f1599}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2018 40th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)}
@@ -280,8 +280,8 @@
       \strng{authornamehash}{c0b1b2f7eccdc4e02e4f8a73601bab30}
       \strng{authorfullhash}{c0b1b2f7eccdc4e02e4f8a73601bab30}
       \strng{authorfullhashraw}{c0b1b2f7eccdc4e02e4f8a73601bab30}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 41st Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)}
@@ -332,8 +332,8 @@
       \strng{authornamehash}{9c915cd0a906c0ad746134894fc253d7}
       \strng{authorfullhash}{9c915cd0a906c0ad746134894fc253d7}
       \strng{authorfullhashraw}{9c915cd0a906c0ad746134894fc253d7}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
@@ -363,8 +363,8 @@
       \strng{authornamehash}{f03df1a723e721b81e34564015f45bdb}
       \strng{authorfullhash}{f03df1a723e721b81e34564015f45bdb}
       \strng{authorfullhashraw}{f03df1a723e721b81e34564015f45bdb}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
@@ -430,8 +430,8 @@
       \strng{authornamehash}{406f352d527444383b9efa6e4d2dcd65}
       \strng{authorfullhash}{406f352d527444383b9efa6e4d2dcd65}
       \strng{authorfullhashraw}{406f352d527444383b9efa6e4d2dcd65}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
@@ -484,8 +484,8 @@
       \strng{authornamehash}{764138b1920e28af304d52f0e67c7930}
       \strng{authorfullhash}{764138b1920e28af304d52f0e67c7930}
       \strng{authorfullhashraw}{764138b1920e28af304d52f0e67c7930}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Acta Paediatrica}
@@ -553,8 +553,8 @@
       \strng{authornamehash}{c61f2813be0bba9ddf757d3ec66a294f}
       \strng{authorfullhash}{c61f2813be0bba9ddf757d3ec66a294f}
       \strng{authorfullhashraw}{c61f2813be0bba9ddf757d3ec66a294f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 37th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)}
@@ -1013,8 +1013,8 @@
       \strng{authornamehash}{6a25e388b7422dc5b27ce356ec0d3e71}
       \strng{authorfullhash}{6a25e388b7422dc5b27ce356ec0d3e71}
       \strng{authorfullhashraw}{6a25e388b7422dc5b27ce356ec0d3e71}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0012-3692}
@@ -1056,8 +1056,8 @@
       \strng{authornamehash}{6c170a4dc5257306062958d154a885cb}
       \strng{authorfullhash}{6c170a4dc5257306062958d154a885cb}
       \strng{authorfullhashraw}{6c170a4dc5257306062958d154a885cb}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{JAMA}
@@ -1689,8 +1689,8 @@
       \strng{authornamehash}{1728c56f8499facd3f5842a2f2f6470d}
       \strng{authorfullhash}{1728c56f8499facd3f5842a2f2f6470d}
       \strng{authorfullhashraw}{1728c56f8499facd3f5842a2f2f6470d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Journal of Cardiology}
@@ -1731,8 +1731,8 @@
       \strng{authornamehash}{6cc62492d23cf18ee0bb92a5bbd8d661}
       \strng{authorfullhash}{6cc62492d23cf18ee0bb92a5bbd8d661}
       \strng{authorfullhashraw}{6cc62492d23cf18ee0bb92a5bbd8d661}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Pulmonary therapy}
@@ -2149,8 +2149,8 @@
       \strng{authornamehash}{eb75654ff5c334b4aefa26f389fe9640}
       \strng{authorfullhash}{eb75654ff5c334b4aefa26f389fe9640}
       \strng{authorfullhashraw}{eb75654ff5c334b4aefa26f389fe9640}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Curr Sleep Medicine}
@@ -2246,8 +2246,8 @@
       \strng{authornamehash}{111aca9e0bdacbcd6fd32a34992b53d6}
       \strng{authorfullhash}{111aca9e0bdacbcd6fd32a34992b53d6}
       \strng{authorfullhashraw}{111aca9e0bdacbcd6fd32a34992b53d6}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sleep}
@@ -2288,8 +2288,8 @@
       \strng{authornamehash}{da23caae76eb08b330d66b7e398fff55}
       \strng{authorfullhash}{da23caae76eb08b330d66b7e398fff55}
       \strng{authorfullhashraw}{da23caae76eb08b330d66b7e398fff55}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Frontiers in Neurology}
@@ -2342,8 +2342,8 @@
       \strng{authornamehash}{bc58642bb0ad5c0ff52b2965484e9fe4}
       \strng{authorfullhash}{bc58642bb0ad5c0ff52b2965484e9fe4}
       \strng{authorfullhashraw}{bc58642bb0ad5c0ff52b2965484e9fe4}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1573-689X}
@@ -2410,8 +2410,8 @@
       \strng{authornamehash}{bdfa3dd16ba45d5144c147e0e90737ff}
       \strng{authorfullhash}{bdfa3dd16ba45d5144c147e0e90737ff}
       \strng{authorfullhashraw}{bdfa3dd16ba45d5144c147e0e90737ff}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2327-4662}
@@ -2461,8 +2461,8 @@
       \strng{authornamehash}{532cecd5ce1205c04ff6ebc39ce5c666}
       \strng{authorfullhash}{532cecd5ce1205c04ff6ebc39ce5c666}
       \strng{authorfullhashraw}{532cecd5ce1205c04ff6ebc39ce5c666}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2020 IEEE International Conference on Pervasive Computing and Communications Workshops (PerCom Workshops)}
@@ -2521,8 +2521,8 @@
       \strng{authornamehash}{ef6092e358e19deb3bea7aaf09dfcae4}
       \strng{authorfullhash}{ef6092e358e19deb3bea7aaf09dfcae4}
       \strng{authorfullhashraw}{ef6092e358e19deb3bea7aaf09dfcae4}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
@@ -2588,8 +2588,8 @@
       \strng{authornamehash}{b5dfdb6a62e5f646d6c929258be57c19}
       \strng{authorfullhash}{b5dfdb6a62e5f646d6c929258be57c19}
       \strng{authorfullhashraw}{b5dfdb6a62e5f646d6c929258be57c19}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0018-9294}
@@ -3005,8 +3005,8 @@
       \strng{authornamehash}{2c71f3a846fd1696fb4f2bf24f46a520}
       \strng{authorfullhash}{2c71f3a846fd1696fb4f2bf24f46a520}
       \strng{authorfullhashraw}{2c71f3a846fd1696fb4f2bf24f46a520}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Procedia Computer Science}
@@ -3041,8 +3041,8 @@
       \strng{authornamehash}{e08adc721a3c3f843c5de3d6157be292}
       \strng{authorfullhash}{e08adc721a3c3f843c5de3d6157be292}
       \strng{authorfullhashraw}{e08adc721a3c3f843c5de3d6157be292}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Access}
@@ -3088,8 +3088,8 @@
       \strng{authornamehash}{6f67d453638992d28c37a9a6fd584fa4}
       \strng{authorfullhash}{6f67d453638992d28c37a9a6fd584fa4}
       \strng{authorfullhashraw}{6f67d453638992d28c37a9a6fd584fa4}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Entropy (Basel)}
@@ -3385,8 +3385,8 @@
       \strng{authornamehash}{e8dea7fe6c9f761ef6da7ef8dca01524}
       \strng{authorfullhash}{e8dea7fe6c9f761ef6da7ef8dca01524}
       \strng{authorfullhashraw}{e8dea7fe6c9f761ef6da7ef8dca01524}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE International Conference}
@@ -3411,8 +3411,8 @@
       \strng{authornamehash}{6e9a9b71d6092f029936a4a589e3fd47}
       \strng{authorfullhash}{6e9a9b71d6092f029936a4a589e3fd47}
       \strng{authorfullhashraw}{6e9a9b71d6092f029936a4a589e3fd47}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Eur J Med Res}
@@ -3609,8 +3609,8 @@
       \strng{authornamehash}{1a3e3720ded5d56ef6dd866dd0a76d54}
       \strng{authorfullhash}{1a3e3720ded5d56ef6dd866dd0a76d54}
       \strng{authorfullhashraw}{1a3e3720ded5d56ef6dd866dd0a76d54}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
@@ -3859,8 +3859,8 @@
       \strng{authornamehash}{d46c29c990c5ecd7143b427d9046ed28}
       \strng{authorfullhash}{d46c29c990c5ecd7143b427d9046ed28}
       \strng{authorfullhashraw}{d46c29c990c5ecd7143b427d9046ed28}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physiological Measurement}
@@ -3901,8 +3901,8 @@
       \strng{authornamehash}{c9476a008eb922d667568f5b2f7dfb8a}
       \strng{authorfullhash}{c9476a008eb922d667568f5b2f7dfb8a}
       \strng{authorfullhashraw}{c9476a008eb922d667568f5b2f7dfb8a}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{JMIR Biomedical Engineering}
@@ -3940,8 +3940,8 @@
       \strng{authornamehash}{ee51fd682f7ae907a9e1d9d32daaedec}
       \strng{authorfullhash}{ee51fd682f7ae907a9e1d9d32daaedec}
       \strng{authorfullhashraw}{ee51fd682f7ae907a9e1d9d32daaedec}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Conference on Biomedical Engineering in Vietnam}
@@ -4362,8 +4362,8 @@
       \strng{authornamehash}{624c27f9c47f31d02c0731e26924f873}
       \strng{authorfullhash}{624c27f9c47f31d02c0731e26924f873}
       \strng{authorfullhashraw}{624c27f9c47f31d02c0731e26924f873}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0924-4247}
@@ -4542,8 +4542,8 @@
       \strng{authornamehash}{61d712043bcfd5b41303ebafe5ac477d}
       \strng{authorfullhash}{61d712043bcfd5b41303ebafe5ac477d}
       \strng{authorfullhashraw}{61d712043bcfd5b41303ebafe5ac477d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Scientific Reports}

@@ -22,5 +22,10 @@
 \glossaryentry{I"\textsuperscript {2}C?\glossentry{iic}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{SPI?\glossentry{spi}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{CPU?\glossentry{cpu}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{EEG?\glossentry{eeg}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{EOG?\glossentry{eog}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{EMG?\glossentry{emg}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{ECG?\glossentry{ecg}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{SpO"\textsubscript {2}?\glossentry{spo2}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{GATT?\glossentry{gatt}|setentrycounter[]{page}"\glsnumberformat}{40}
 \glossaryentry{GATT?\glossentry{gatt}|setentrycounter[]{page}"\glsnumberformat}{49}
