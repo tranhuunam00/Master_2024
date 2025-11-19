@@ -14,5 +14,13 @@
 \glossaryentry{ET?\glossentry{et}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{GB?\glossentry{gb}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{MEMS?\glossentry{mems}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{CNN?\glossentry{cnn}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{TinyML?\glossentry{tinyml}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{RNN?\glossentry{rnn}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{RAG?\glossentry{rag}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{UUID?\glossentry{uuid}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{I"\textsuperscript {2}C?\glossentry{iic}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{SPI?\glossentry{spi}|setentrycounter[]{page}"\glsnumberformat}{x}
+\glossaryentry{CPU?\glossentry{cpu}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{GATT?\glossentry{gatt}|setentrycounter[]{page}"\glsnumberformat}{40}
 \glossaryentry{GATT?\glossentry{gatt}|setentrycounter[]{page}"\glsnumberformat}{49}

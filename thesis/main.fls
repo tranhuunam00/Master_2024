@@ -581,6 +581,7 @@ OUTPUT main.lot
 INPUT .\main.acr
 INPUT .\main.acr
 INPUT main.acr
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
 INPUT .\chapters\1-introduction.tex
 INPUT .\chapters\1-introduction.tex
 INPUT .\chapters\1-introduction.tex
@@ -604,7 +605,6 @@ INPUT .\images\OSA.png
 INPUT .\images\OSA.png
 INPUT .\images\OSA.png
 INPUT .\images\OSA.png
-INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm

@@ -100,9 +100,10 @@ luyện trên máy chủ trung tâm.
     \label{4Position}
 \end{figure}
 
-Trong phần này, luận văn trình bày chi tiết phương pháp thu thập dữ liệu, các
-kịch bản thực nghiệm, cũng như quy trình xử lý và trích xuất đặc trưng để phục
-vụ cho việc huấn luyện các mô hình học máy trong bài toán nhận diện tư thế ngủ.
+Trong phần này, luận văn sẽ trình bày chi tiết phương pháp thu thập dữ liệu,
+các kịch bản thực nghiệm, cũng như quy trình xử lý và trích xuất đặc trưng để
+phục vụ cho việc huấn luyện các mô hình học máy trong bài toán nhận diện tư thế
+ngủ.
 
 Tổng cộng 25 tình nguyện viên đã được tuyển chọn tham gia vào quá trình thu
 thập dữ liệu, với độ tuổi dao động từ 10 đến 60, trong đó độ tuổi phổ biến là
@@ -228,8 +229,8 @@ Hình~\ref{ana_distribute_z} chỉ ra phân bố giá trị trục z của hai t
 huấn luyện (xanh) và kiểm thử (cam). Qua đó cho thấy, mật độ đỉnh ở hai tập dữ
 liệu khá tương đồng. Điều này cũng được chính minh ở phần trên. Tuy nhiên, có
 một số điểm khác biệt tại giá trị -0.5 của tập kiểm thử. Giá trị này rơi chủ
-yếu vào tư thế nằm nghiêng trái và nằm sấp. Từ đây, luận văn phỏng đoán sẽ có
-nhầm lẫn trong suy luận giữa 2 tư thế này tại tập kiểm thử.
+yếu vào tư thế nằm nghiêng trái và nằm sấp. Từ đây, một phỏng đoán được đưa ra
+đó là sẽ có sự nhầm lẫn trong suy luận giữa 2 tư thế này tại tập kiểm thử.
 
 \subsection{Xử lý và trích xuất đặc trưng}
 
@@ -387,8 +388,9 @@ thế nghiêng phải và ngửa đang bị suy luận sai. Việc này cũng đ
 trên biểu đồ phân bố đối với trục z bên trên. Ngoài ra, SVM có những sự nhầm
 lẫn ở hai tư thế là nghiêng trái và nghiêng phải.
 
-Để hiểu sâu hơn, luận văn tiến hành phân tích thêm các đặc trưng ảnh hưởng như thế nào
-đến các mô hình có tham số tốt nhất (không có ANN vì lý do ANN không dùng 69
+Để hiểu sâu hơn, trong khuôn khổ khóa luận sẽ tiến hành thêm các đánh giá về mức độ
+ảnh hưởng của các đặc trưng
+đến các mô hình (không có ANN vì lý do ANN không dùng 69
 đặc trưng) Hình~\ref{fig:ml_shap}. Đúng với nhận định từ trước, các tính năng
 miền thời gian chiếm nhiều ý nghĩa lên mô hình đặc biệt là đặc trưng được trích
 xuất từ hai trục x, y và các đặc trưng tổng hợp từ 3 trục. Đặc trưng miền tần
@@ -620,7 +622,7 @@ số, khả năng tự trích xuất tính năng từ chỉ 2 lớp ẩn cũng �
 
 Hình~\ref{fig:kq_kb7_confuse} minh họa ma trận nhầm lẫn giữa các mô hình. Qua
 đó cho thấy việc sử dụng các đặc trưng vị trí đầu cho kết quả thật sự hiệu quả.
-Đây cũng là điểm mới luận văn tìm ra để triển khai bài toán phân loại tư thế
+Đây cũng là điểm mới nghiên cứu tìm ra để triển khai bài toán phân loại tư thế
 ngủ lên biên.
 
 \begin{figure}[htbp]
@@ -978,11 +980,12 @@ uống nước. Qua đó, luận văn sẽ hướng tới mở rộng thêm bài
 không nằm. Đây là bài toán sàng lọc trước khi đến bài toán xác định tư thế ngủ.
 Để đạt được điều đó, 8,500 mẫu dữ liệu các hoạt động như ngồi, đi lại, uống
 nước, được thu thập thêm. Tập các tư thế ngủ được chọn lọc tự tập dữ liệu huấn
-luyện. Kết quả, 11,306 mẫu đủ các 4 tư thế được quy về 1 nhãn là nằm. Luận văn
-áp dụng toàn bộ các bước như đã trình bày trong bài toán phân loại tư thế ngủ,
-để đánh giá tư thế ngủ bao gồm: độ dài cửa sổ 1s, độ phủ 50\%, 69 đặc trưng
-trích xuất. Qua đó mô hình cho kết quả lên tới 99.99\% phân loại 2 nhãn là nằm
-và không nằm và có kích thước mô hình là 3.8 kb.
+luyện. Kết quả, 11,306 mẫu đủ các 4 tư thế được quy về 1 nhãn là nằm. Để thực
+hiện bài toán phân loại ngủ hay không ngủ, toàn bộ các bước như đã trình bày
+trong bài toán phân loại tư thế ngủ sẽ được áp dụng lại bao gồm: độ dài cửa sổ
+1s, độ phủ 50\%, 69 đặc trưng trích xuất. Kết quả cho thấy, mô hình cho độ
+chính xác lên tới 99.99\% phân loại 2 nhãn là nằm và không nằm và có kích thước
+là 3.8 kb.
 
 \begin{figure}[htbp]
     \centering

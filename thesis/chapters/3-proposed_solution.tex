@@ -361,9 +361,9 @@ Ba khối chức năng này được thiết kế nhằm đảm bảo sự ổn 
 hành tin cậy của toàn bộ hệ thống phần cứng. Đối với khối nguồn, hệ thống được
 xác định có hai nguồn cung cấp chính gồm nguồn từ cổng USB và nguồn từ pin
 Li-Polymer. Điện áp đầu vào của toàn mạch được xác định ở mức 3.3 V để tương
-thích với các linh kiện và vi điều khiển. Ngoài ra, luận văn sử dụng một bộ
-chuyển đổi hạ áp (step-down converter) tích hợp mạch điều khiển MP2322GQH để ổn
-định nguồn đầu vào tại 3.3 V Hình~\ref{fig:MP2322GQH}
+thích với các linh kiện và vi điều khiển. Ngoài ra, trong khuôn khổ luận văn sẽ
+sử dụng một bộ chuyển đổi hạ áp (step-down converter) tích hợp mạch điều khiển
+MP2322GQH để ổn định nguồn đầu vào tại 3.3 V Hình~\ref{fig:MP2322GQH}
 
 \begin{figure}[H]
     \centering
@@ -592,7 +592,7 @@ Hình~\ref{fig:architecture_software} mô tả tổng quan các thành phần c�
 sau đó được lưu trữ hoặc được suy luận trên máy chủ đám mây rồi trả về kết quả tại ứng dụng di động.
 Thứ hai. dữ liệu từ cảm biến sau khi được đọc từ vi điều khiển thì
 được suy luận ngay tại biên và hiển thị kết quả thông qua các chỉ báo đèn led.
-Cả 2 cách đều được nghiên cứu và triển khai trong luận văn này.
+Cả 2 cách đều được nghiên cứu và triển khai trong khuôn khổ luận văn này.
 
 \subsubsection{Ứng dụng di dộng}
 Được coi như một cổng kết nối trong điện toán đám mây
@@ -646,8 +646,8 @@ BLoC gồm ba lớp chính được mô tả trong Hình~\ref{flutter}.
 \end{figure}
 
 Mã nguồn của toàn bộ ứng dụng di động sẽ để dưới phần mục lục. Còn trong khuôn
-khổ luận văn nay sẽ giải thích chức năng chính là kết nối phần cứng, hiển thị
-và chuyển dữ liệu lên máy chủ trung tâm.
+khổ luận văn, sẽ bàn luận nhiều hơn chức năng chính là kết nối phần cứng, hiển
+thị và chuyển dữ liệu lên máy chủ trung tâm.
 
 \begin{figure}[H]
     \centering
@@ -708,7 +708,7 @@ dõi sẽ lập tức gửi các gói tin lên lại ứng dụng di dộng theo
 lập.
 
 Đến đây, luận văn đã trình bày \textbf{hoàn thành quy trình kết nối và nhận dữ liệu từ phần cứng}.
-Tiếp theo, luận văn sẽ mô tả rõ cách thức dữ liệu được đóng gói và chuyển lên phần máy chủ trung tâm.
+Tiếp theo, cách thức dữ liệu được đóng gói và chuyển lên phần máy chủ trung tâm sẽ được làm rõ.
 
 Ngoài dữ liệu 3 trục x, y, z, nhóm xác định tập dữ liệu cần lưu thêm thời gian
 tạo và giá trị ID của người đang dùng. Việc này đảm bảo việc minh bạch, dễ đối
@@ -729,10 +729,10 @@ như “Tôi có nên lo nếu ngủ ngáy liên tục?” hoặc “STOP-BANG >
 và chatbot sẽ phản hồi dựa trên kiến thức được truy xuất từ tài liệu nền và
 được tổng hợp lại bằng mô hình ngôn ngữ.
 
-Từ những phân tích nêu trên, luận văn đã chuẩn hóa được các bước cơ bản để từ
-dữ liệu ở phần cứng đến lưu trữ trên máy chủ đám mây. Đây cũng chính là các
-bước của hệ thống điện toán đám mây khi mọi dữ liệu, mô hình tính toán sẽ cùng
-một nơi trên 1 hệ thống phần cứng mạnh mẽ.
+Qua các phân tích trên, các bước từ dữ liệu ở phần cứng đến lưu trữ trên máy
+chủ đám mây đã được hình thành và chuẩn hóa. Đây cũng chính là các bước của hệ
+thống điện toán đám mây khi mọi dữ liệu, mô hình tính toán sẽ cùng một nơi trên
+1 hệ thống phần cứng mạnh mẽ.
 
 \subsubsection{Máy chủ đám mây}
 
@@ -817,9 +817,8 @@ dùng đã đăng nhập và có Internet, ứng dụng chuyển sang chế đ�
 mỗi 1000 mẫu được gộp thành một gói để gửi lên máy chủ. Cơ chế này sẽ làm giảm
 số lần yêu cầu từ ứng dụng lên máy chủ.
 
-Do lý do độ dài trong khuôn khổ luận văn, luận văn không trình bày hết toàn bộ
-các nghiệp vụ của máy chủ trung tâm. Phần mã nguồn sẽ được chú thích tại mục
-lục.
+Do lý do độ dài, luận văn không trình bày hết toàn bộ các nghiệp vụ của máy chủ
+trung tâm. Phần mã nguồn sẽ được chú thích tại mục lục.
 
 \subsection{Học máy trong phân loại tư thế ngủ}
 \begin{figure}[H]
