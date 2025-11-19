@@ -794,6 +794,13 @@ Bên cạnh đó, cơ chế \textit{indexing} tối ưu giúp tăng tốc độ 
 dữ liệu thời gian, đồng thời hỗ trợ các phép lọc, nhóm và tổng hợp hiệu quả
 trong môi trường có khối lượng dữ liệu lớn.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/flow_http2.jpg}
+    \caption{Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}
+    \label{flow_http}
+\end{figure}
+
 Ngược lại, \textbf{PostgreSQL} được triển khai nhằm quản lý các dữ liệu có cấu
 trúc ổn định và đòi hỏi tính toàn vẹn quan hệ cao, bao gồm các thông tin định
 danh người dùng, mật khẩu được mã hoá, kết quả bảng điểm STOP-BANG, thang điểm
@@ -801,13 +808,6 @@ buồn ngủ ban ngày Epworth, chỉ số BMI, cùng tiền sử bệnh nền. 
 không chỉ tăng cường khả năng kiểm soát logic nghiệp vụ ở tầng dữ liệu mà còn
 là yêu cầu tiên quyết để hệ thống tuân thủ các tiêu chuẩn về \textbf{an toàn và
     bảo mật thông tin y tế}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/flow_http.png}
-    \caption{Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}
-    \label{flow_http}
-\end{figure}
 
 Lưu đồ thuật toán lưu trữ dữ liệu được thể hiện trong Hình~\ref{flow_http}, bao
 gồm hai nhánh xử lý. \textit{(i)} Khi người dùng không có kết nối mạng, hệ

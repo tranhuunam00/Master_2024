@@ -33,11 +33,11 @@
 \contentsline {figure}{\numberline {2.18}{\ignorespaces Cấu trúc kiến trúc BLoC trong ứng dụng Flutter}}{57}{figure.caption.54}%
 \contentsline {figure}{\numberline {2.19}{\ignorespaces Sơ đồ kết nối và nhận dữ liệu của ứng dụng di động}}{57}{figure.caption.55}%
 \contentsline {figure}{\numberline {2.20}{\ignorespaces Cấu trúc cây thư mục mã nguồn của máy chủ trung tâm}}{63}{figure.caption.60}%
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}}{65}{figure.caption.61}%
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Phân bố khối lượng công việc với bài toán học máy phân loại tư thế ngủ trong luận văn}}{66}{figure.caption.62}%
-\contentsline {figure}{\numberline {2.23}{\ignorespaces Minh họa mặt siêu phẳng phân tách hai lớp trong SVM}}{70}{figure.caption.65}%
-\contentsline {figure}{\numberline {2.24}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-One}}{70}{figure.caption.66}%
-\contentsline {figure}{\numberline {2.25}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-Rest}}{71}{figure.caption.67}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}}{64}{figure.caption.61}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Phân bố khối lượng công việc với bài toán học máy phân loại tư thế ngủ trong luận văn}}{65}{figure.caption.62}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Minh họa mặt siêu phẳng phân tách hai lớp trong SVM}}{69}{figure.caption.65}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-One}}{69}{figure.caption.66}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Chiến lược phân loại đa lớp bằng phương pháp One-vs-Rest}}{70}{figure.caption.67}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Mạch hoàn chỉnh}}{74}{figure.caption.71}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Giao diện chức năng chatbot và bộ câu hỏi tầm soát}}{75}{figure.caption.72}%

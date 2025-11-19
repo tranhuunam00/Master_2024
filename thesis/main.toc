@@ -41,12 +41,12 @@
 \contentsline {subsection}{\numberline {2.2.2.}Phần mềm thu thập, lưu trữ}{54}{subsection.2.2.2}%
 \contentsline {subsubsection}{Ứng dụng di dộng}{55}{subsubsection*.52}%
 \contentsline {subsubsection}{Máy chủ đám mây}{62}{subsubsection*.58}%
-\contentsline {subsection}{\numberline {2.2.3.}Học máy trong phân loại tư thế ngủ}{66}{subsection.2.2.3}%
-\contentsline {subsubsection}{Hồi quy Logistic}{67}{subsubsection*.63}%
-\contentsline {subsubsection}{Máy vec-tơ hỗ trợ}{68}{subsubsection*.64}%
-\contentsline {subsubsection}{Rừng ngẫu nhiên}{71}{subsubsection*.68}%
-\contentsline {subsubsection}{Gradient boosting}{72}{subsubsection*.69}%
-\contentsline {subsubsection}{Mạng nơ-ron nhân tạo}{73}{subsubsection*.70}%
+\contentsline {subsection}{\numberline {2.2.3.}Học máy trong phân loại tư thế ngủ}{65}{subsection.2.2.3}%
+\contentsline {subsubsection}{Hồi quy Logistic}{66}{subsubsection*.63}%
+\contentsline {subsubsection}{Máy vec-tơ hỗ trợ}{67}{subsubsection*.64}%
+\contentsline {subsubsection}{Rừng ngẫu nhiên}{70}{subsubsection*.68}%
+\contentsline {subsubsection}{Gradient boosting}{71}{subsubsection*.69}%
+\contentsline {subsubsection}{Mạng nơ-ron nhân tạo}{72}{subsubsection*.70}%
 \contentsline {chapter}{\numberline {3}KẾT QUẢ VÀ ĐÁNH GIÁ}{74}{chapter.3}%
 \contentsline {section}{\numberline {3.1.}Hệ thống thu thập, lưu trữ}{74}{section.3.1}%
 \contentsline {section}{\numberline {3.2.}Thu thập và gắn nhãn dữ liệu}{78}{section.3.2}%
