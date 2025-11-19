@@ -376,7 +376,7 @@ hình được thử nghiệm gồm Decision Tree (DT), Extra-Trees (ET) và LST
 Network (LSTM-NN) và cho kết quả rằng mô hình DT có ưu thế về tốc độ dự đoán
 (0.8~ms) và dung lượng nhỏ (1.765~kb), phù hợp triển khai mô bình trên biên.
 Tác giả Vũ Hoàng Diệu và cộng sự \cite{Vu2025SleepPosition} đã chứng minh khả
-năng của một hệ thống đơn cảm biến gia tốc trong nhận dạng đến 12 tư thế ngủ ,
+năng của một hệ thống đơn cảm biến gia tốc trong nhận dạng đến 12 tư thế ngủ,
 sử dụng mô hình AnpoNet kết hợp 1D-CNN và LSTM, đạt độ chính xác 94.67\% và
 f1-score 92.94\%. Các kết quả này cho thấy cảm biến gia tốc đơn không chỉ đảm
 bảo độ chính xác cao mà còn mang lại sự tiện lợi, chi phí phù hợp và khả năng
@@ -508,10 +508,10 @@ biểu diễn như sau:
 
 Dựa trên hiệu ứng áp điện thuận, hai bề mặt trên và dưới của màng áp điện ZnO
 pha tạp Li lần lượt mang điện tích dương và âm theo phương trục $z$. Lượng điện
-tích cảm ứng $q_3$ tại phương trục z được xác định bởi công thức:
+tích cảm ứng $q_z$ tại phương trục z được xác định bởi công thức:
 
 \begin{equation}
-  q_3 = d_{31} \sigma_1
+  q_z = d_{31} \sigma_1
 \end{equation}
 
 Trong đó, $d_{31}$ là hệ số áp điện, và $\sigma_1$ là ứng suất pháp tuyến theo
@@ -519,7 +519,7 @@ phương $x$. Theo định nghĩa, điện dung $C$ giữa hai điện cực tr�
 cấu trúc áp điện được xác định bởi:
 
 \begin{equation}
-  C = \frac{q_3}{V}
+  C = \frac{q_z}{V}
 \end{equation}
 
 \noindent
@@ -714,8 +714,8 @@ thì học máy tại biên nổi lên như một giải pháp tối ưu vừa m
 tính toán mạnh mẽ, vừa dễ dàng triển khai trên các phần cứng có giới hạn tài
 nguyên.
 
-Chính vì những lý do đó, tác giả lựa chọn hướng nghiên cứu và phát triển học
-máy tại biên cho đề tài này.
+Chính vì những lý do đó, hướng nghiên cứu và phát triển học máy tại biên cho đề
+tài này là lựa chọn thực sự cần thiết.
 
 \begin{table}[H]
   \centering
@@ -962,8 +962,8 @@ nhưng đều chưa tích hợp trực tiếp lên vi điều khiển do dung l�
 nhớ lớn và nhu cầu tính toán cao. Điều này đặt ra thách thức cho việc
 ứng dụng chúng trong môi trường thực tế như giấc ngủ tại nhà,
 nơi mà năng lượng, khả năng lưu trữ và kết nối đều bị hạn chế.
-Ở chiều ngược lại, các mô hình truyền thống như cây quyết định,
-rừng ngẫu nhiên hay ngưỡng cố định cho thấy hiệu quả không hề thua
+Ở chiều ngược lại, các mô hình truyền thống như DT,
+RF hay ngưỡng cố định cho thấy hiệu quả không hề thua
 kém khi được khai thác đúng đặc trưng.
 Đặc biệt, việc sử dụng các đặc trưng miền thời gian dễ tính toán so với miền tần số,
 giúp giảm đáng kể độ phức tạp tính toán \cite{gomes2021, souza2017}.

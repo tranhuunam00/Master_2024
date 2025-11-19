@@ -36,9 +36,8 @@ tính liên tục trong điều kiện mất kết nối mạng.
 
 Qua phân tích các nghiên cứu trên có thể thấy rằng phần lớn các cấu hình phần
 cứng có kích thước vẫn còn lớn hoặc gặp giới hạn trong khả năng tích hợp mô
-hình học máy tại thiết bị. Do đó, sau khi nghiên cứu, tác giả quyết định lựa
-chọn vi điều khiển nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với các
-lý do sau:
+hình học máy tại thiết bị. Vì vậy, trong khuôn khổ luận văn sẽ sử dụng vi điều
+khiển nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với các lý do sau:
 
 \begin{figure}[H]
     \centering
@@ -288,24 +287,23 @@ các ứng dụng IoT quy mô đa cảm biến đặt tại nhiều nơi khác n
 \subsection{Thiết kế mạch}
 
 Sau khi đã lựa chọn được vi điều khiển, cảm biến của hệ thống phần cứng phân
-loại tư thế ngủ. Trong phần này, tác giả sẽ trình bày về thiết kế sơ đồ nguyên
+loại tư thế ngủ. Trong phần này, luận văn sẽ trình bày về thiết kế sơ đồ nguyên
 lý cho mạch thông qua những câu hỏi: Các thành phần trong cần thiết để phục vụ
 cho bài toán phân loại tư thế ngủ là gì? Chúng được kết nối với nhau như thế
 nào? và chi tiết từng thành phần đó là gì?
 
-Bám sát vào yêu cầu đã trình bày từ các phần trước là phần cứng nhỏ gọn, tính
-di dộng cao, tiêu thụ năng lượng ít, giá thành phù hợp tác giả đã nghiên cứu và
-đưa ra hệ thống cần các thành phần sau: 01) Khối điều khiển: có chức năng xử lý
-toàn bộ logic trong mạch, kết nối được với các thiết bị khác như điện thoại
-thông qua BLE và đặc biệt, đủ hiệu năng để triển khai các mô hình học máy; 02)
-Khối cảm biến: có nhiệm vụ thu thập dữ liệu sinh lý bao gồm 2 cảm biến chính là
-gia tốc (đã được trình bày các phần trên) và thêm cảm biến âm thanh để phục vụ
-bài toán xác định tiếng ngáy của nhóm; 03) Khối nguồn: có nhiệm vụ ổn áp về
-đúng dải điện áp tương thích, lọc nhiễu, bảo vệ dòng; 04) Khối nạp và gỡ lỗi:
-có nhiệm vụ nạp mã chương trình vào vi điều khiển; 05) Khối hiển thị: có nhiệm
-vụ đưa ra thông báo khi có phát hiện bất thường. Kích thước của mạch là hình
-tròn, có đường kính không quá 4~cm. Đây chính là những đầu mục tiên quyết để
-coi là đạt được mục tiêu trong phần này.
+Để đảm bảo các yêu cầu đặt ra, hệ thống cần
+các thành phần sau: 01) Khối điều khiển: có chức năng xử lý toàn bộ logic trong
+mạch, kết nối được với các thiết bị khác như điện thoại thông qua BLE và đặc
+biệt, đủ hiệu năng để triển khai các mô hình học máy; 02) Khối cảm biến: có
+nhiệm vụ thu thập dữ liệu sinh lý bao gồm 2 cảm biến chính là gia tốc (đã được
+trình bày các phần trên) và thêm cảm biến âm thanh để phục vụ bài toán xác định
+tiếng ngáy của nhóm; 03) Khối nguồn: có nhiệm vụ ổn áp về đúng dải điện áp
+tương thích, lọc nhiễu, bảo vệ dòng; 04) Khối nạp và gỡ lỗi: có nhiệm vụ nạp mã
+chương trình vào vi điều khiển; 05) Khối hiển thị: có nhiệm vụ đưa ra thông báo
+khi có phát hiện bất thường. Kích thước của mạch là hình tròn, có đường kính
+không quá 4~cm. Đây chính là những đầu mục tiên quyết để coi là đạt được mục
+tiêu trong phần này.
 
 \subsubsection{Khối điều khiển}
 
@@ -316,8 +314,8 @@ thì vẫn đang thiếu các thành phần như khối thu phát tín hiệu v�
 ăng ten, mạch phối hợp trở khánh, bộ dao động tinh thể và bộ đếm định thời nhằm
 duy trì hoạt động ổn định trong các chế độ năng lượng thấp.
 
-Sau khi tìm hiểu, tác giả quyết định lựa chọn module U-blox NINA-B306 để đảm
-nhiệm các nhiệm vụ của khối điều khiển \cite{uBlox2019_NINA_B3}.
+Sau khi tìm hiểu, trong khuôn khổ luận văn sẽ sử dụng module U-blox NINA-B306
+để đảm nhiệm các nhiệm vụ của khối điều khiển \cite{uBlox2019_NINA_B3}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/ninab306_block.png}
@@ -363,10 +361,9 @@ Ba khối chức năng này được thiết kế nhằm đảm bảo sự ổn 
 hành tin cậy của toàn bộ hệ thống phần cứng. Đối với khối nguồn, hệ thống được
 xác định có hai nguồn cung cấp chính gồm nguồn từ cổng USB và nguồn từ pin
 Li-Polymer. Điện áp đầu vào của toàn mạch được xác định ở mức 3.3 V để tương
-thích với các linh kiện và vi điều khiển. Sau khi nghiên cứu, tác giả sử dụng
-bộ chuyển đổi hạ áp (step-down converter) tích hợp mạch điều khiển MP2322GQH,
-cho phép giảm điện áp đầu vào từ 5 V (USB) hoặc 3.7 V (pin Li-Polymer) xuống
-mức ổn định 3.3 V với hiệu suất cao Hình~\ref{fig:MP2322GQH}.
+thích với các linh kiện và vi điều khiển. Ngoài ra, luận văn sử dụng một bộ
+chuyển đổi hạ áp (step-down converter) tích hợp mạch điều khiển MP2322GQH để ổn
+định nguồn đầu vào tại 3.3 V Hình~\ref{fig:MP2322GQH}
 
 \begin{figure}[H]
     \centering
@@ -381,10 +378,10 @@ nhằm đảm bảo an toàn và giảm nhiễu điện từ trong quá trình v
 
 Đối với khối hiển thị, hệ thống sử dụng bốn đèn LED khác màu bố trí tại rìa của mạch, có nhiệm vụ thông báo kết quả tư thế được phân loại, trạng thái hoạt động của hệ thống như nguồn, kết nối, truyền dữ liệu hoặc lỗi, giúp người dùng và kỹ sư dễ dàng theo dõi tình trạng thiết bị.
 
-Với khối nạp và gỡ lỗi, tác giả triển khai hai phương thức nạp bao gồm: (1) Qua
-Serial Wire Debug (SWD); (2) Cơ chế Bootloader thông qua kết nối USB. Sự kết
-hợp này giúp nâng cao tính linh hoạt và khả năng mở rộng trong quá trình phát
-triển phần mềm, đồng thời giảm thiểu thời gian thử nghiệm.
+Với khối nạp và gỡ lỗi, hai phương thức chính để nạp bao gồm: (1) Qua Serial
+Wire Debug (SWD); (2) Cơ chế Bootloader thông qua kết nối USB. Sự kết hợp này
+giúp nâng cao tính linh hoạt và khả năng mở rộng trong quá trình phát triển
+phần mềm, đồng thời giảm thiểu thời gian thử nghiệm.
 
 \begin{figure}
     \centering
@@ -396,9 +393,9 @@ triển phần mềm, đồng thời giảm thiểu thời gian thử nghiệm.
 \subsubsection{Sơ đồ mạch}
 
 Sau khi xác định các linh kiện, các yêu cầu về điện áp, kiểu dữ liệu đầu vào,
-đầu ra của các thành phần kể trên, tác giả tiến hành vẽ sơ đồ mạch thông qua
-phần mềm Altium Designer. Mạch được thiết kế hình tròn kích thước đường kính
-3~cm, 2~lớp đúng với định hướng của nhóm. Kết quả được thể hiện tại
+đầu ra của các thành phần kể trên, sơ đồ mạch sẽ được xây dựng thông qua phần
+mềm Altium Designer. Mạch được thiết kế hình tròn kích thước đường kính 3~cm,
+2~lớp đúng với định hướng của nhóm. Kết quả được thể hiện tại
 Hình~\ref{fig:schematic}
 
 \begin{figure}[H]
@@ -422,7 +419,7 @@ Hình~\ref{fig:schematic}
     \label{fig:pcb_dong}
 \end{figure}
 
-Sau khi hoàn thiện thiết kế, tác giả thực hiện đặt in mạch, hàn lắp các linh
+Sau khi hoàn thiện thiết kế, công đoạn tiếp theo là thực hiện hàn, lắp các linh
 kiện theo sơ đồ mạch, và tiến hành kiểm tra hoạt động của các khối chức năng
 trên bo mạch để đánh giá tính ổn định và độ tin cậy của hệ thống.
 
@@ -456,14 +453,13 @@ mở rộng trong tương lai.
 
 \subsection{Lập trình phần cứng}
 
-Ở giai đoạn này, tác giả tiến hành lập trình phần cứng bằng cách sử dụng các framework và thư viện do hãng cung cấp.
+Ở bước này, nhóm ưu tiên lập trình phần cứng bằng cách sử dụng các framework và thư viện do hãng cung cấp.
 Cách tiếp cận này cho phép khai thác hầu hết các phương thức tương tác với phần cứng, cộng đồng hỗ trợ lớn đồng thời giúp rút ngắn đáng kể thời gian phát triển và giảm thiểu sai sót trong quá trình lập trình.
-Tuy nhiên, để có thể kiểm soát toàn diện các chức năng của hệ thống cũng như tối ưu hóa mức tiêu thụ năng lượng, trong tương lai tác giả dự định sẽ chuyển sang phương pháp lập trình ở mức thanh ghi.
+Tuy nhiên, để có thể kiểm soát toàn diện các chức năng của hệ thống cũng như tối ưu hóa mức tiêu thụ năng lượng, trong tương lai sẽ chuyển sang phương pháp lập trình ở mức thấp.
 
 \subsubsection{Cấu hình vi xử lý và cảm biến}
-Bước đầu tiên để giao tiếp với phần cứng, tác giả lựa chọn phương án thông qua
-USB và Bootloader. Bootloader của Arduino Nano được nạp vào vi điều khiển bằng
-giao thức Serial Wire Debug (SWD), cho phép thiết lập môi trường lập trình ban
+Bước đầu tiên, nạp Bootloader của Arduino Nano vào vi điều khiển bằng giao thức
+Serial Wire Debug (SWD). Điều này cho phép thiết lập môi trường lập trình ban
 đầu và hỗ trợ việc tải chương trình trực tiếp từ máy tính thông qua cổng USB.
 
 Việc đọc các giá trị cảm biến thông qua thư viện SparkFun BMI270 Arduino
@@ -542,8 +538,8 @@ nhau, tối ưu cho từng giai đoạn, đảm bảo code mạch lạc và dễ
 
 \subsubsection{Lọc nhiễu bằng bộ lọc Kalman}
 
-Trong phần phân tích các bộ lọc cũng như từ thực nghiệm tác giả thấy, khi có
-những chuyển động đột ngột gia tốc cao có gây ra sai lệnh giá trị thu được.
+Trong phần phân tích các bộ lọc cũng như từ thực nghiệm nhận thấy, khi có những
+chuyển động đột ngột gia tốc cao có thể gây ra sai lệnh giá trị cảm biến.
 
 \begin{figure}[htbp]
     \centering
@@ -570,11 +566,11 @@ học máy.
 Ngoài ra, vùng sai lệch này cũng cho thấy hạn chế của tín hiệu thô khi cảm biến
 được gắn trên cơ thể người, nơi dao động nhỏ do hô hấp, chuyển động tự nhiên
 hoặc thay đổi điểm đặt có thể gây ra nhiễu. Việc sử dụng Kalman giúp hiệu
-chỉnh, đảm bảo giá trị đo được bám sát quỹ đạo thật của chuyển động. Tuy nhiên,
-bộ lọc Kalman có thể làm giảm giá trị biên tại các đỉnh. Vấn đề này được tác
-giả xem xét không ảnh hưởng nhiều đến toàn bộ bài toán phân loại tư thế ngủ. Lý
-do là vì bộ đặc trưng không sử dụng trực tiếp các giá trị đỉnh này mà là một
-cửa sổ mẫu và các thống kê trong cửa sổ đó.
+chỉnh, đảm bảo giá trị đo được bám sát quỹ đạo thật của chuyển động. Một vấn đề
+là bộ lọc Kalman có thể làm giảm giá trị biên tại các đỉnh. Tuy nhiên, vấn đề
+này được nhận định là không ảnh hưởng nhiều đến toàn bộ bài toán phân loại tư
+thế ngủ. Lý do là vì bộ đặc trưng không sử dụng trực tiếp các giá trị đỉnh này
+mà là một cửa sổ mẫu và các thống kê trong cửa sổ đó.
 
 \subsection{Phần mềm thu thập, lưu trữ}
 
@@ -596,16 +592,15 @@ Hình~\ref{fig:architecture_software} mô tả tổng quan các thành phần c�
 sau đó được lưu trữ hoặc được suy luận trên máy chủ đám mây rồi trả về kết quả tại ứng dụng di động.
 Thứ hai. dữ liệu từ cảm biến sau khi được đọc từ vi điều khiển thì
 được suy luận ngay tại biên và hiển thị kết quả thông qua các chỉ báo đèn led.
-Cả 2 cách đều được tác giả nghiên cứu và triển khai trong luận văn này.
+Cả 2 cách đều được nghiên cứu và triển khai trong luận văn này.
 
 \subsubsection{Ứng dụng di dộng}
 Được coi như một cổng kết nối trong điện toán đám mây
 có nhiệm vụ gom các tín hiệu từ cảm biến gia tốc hoặc có thể mở
 rộng đa cảm biến khác, hiển thị chúng theo thời gian thực và chuyển
 lên máy chủ đám mây.
-Dựa trên yêu cầu bài toán, tác giả xác định được các yêu cầu của phần mềm như
-Bảng~\ref{tab:app_features}. Ngoài ra, các yêu cầu phi chức năng cũng được tác
-giả chú ý như là bảo mật thông tin, thời gian phản hồi hệ thống.
+Dựa trên yêu cầu bài toán, xác định được các yêu cầu của phần mềm như
+Bảng~\ref{tab:app_features}. Ngoài ra, các yêu cầu phi chức năng cũng được chú ý như là bảo mật thông tin, thời gian phản hồi hệ thống.
 \begin{table}[H]
     \centering
     \caption{Các nhóm chức năng chính của ứng dụng}
@@ -633,13 +628,13 @@ giả chú ý như là bảo mật thông tin, thời gian phản hồi hệ th�
 
 Ứng dụng di động được viết bằng ngôn ngữ DART trên nền tảng Flutter.
 Vì sao lại chọn Dart mà không phải là các ngôn ngữ thuần túy như Java hay
-Swift? Nói chung, tác giả chọn Dart trên nền tảng Flutter lý do chính là có thể
+Swift? Nói chung, chọn Dart trên nền tảng Flutter lý do chính là có thể
 tạo ra hai phiên bản trên Android và IOS trên cùng một bộ mã chương trình.
 Ngoài ra, việc khởi tạo dự án nhanh, cú pháp thân thiện với người lập trình
 hơn, kèm cộng đồng đông đảo làm giảm đáng kể thời gian phát triển.
 
-Để ứng dụng dễ kiểm thử và nâng cấp, tác giả tìm hiểu và lựa chọn nguyên tắc thiết kế
-BLoC. Nó hoạt động dựa trên nguyên tắc nhận sự kiện đầu vào từ giao diện gồm trạng thái và dữ liệu đầu vào, xử lý trong khối BLOC như gọi lên máy chủ trung tâm
+Để ứng dụng dễ dàng kiểm thử và nâng cấp,
+BLoC được lựa chọn để quản lý các trạng thái của ứng dụng. Nó hoạt động dựa trên nguyên tắc nhận sự kiện đầu vào từ giao diện gồm trạng thái và dữ liệu đầu vào, xử lý trong khối BLOC như gọi lên máy chủ trung tâm
 và trả lại dữ liệu. Qua đó, luồng dữ liệu trở nên rõ ràng. Cấu trúc tổng thể của kiến trúc
 BLoC gồm ba lớp chính được mô tả trong Hình~\ref{flutter}.
 
@@ -713,7 +708,7 @@ dõi sẽ lập tức gửi các gói tin lên lại ứng dụng di dộng theo
 lập.
 
 Đến đây, luận văn đã trình bày \textbf{hoàn thành quy trình kết nối và nhận dữ liệu từ phần cứng}.
-Tiếp theo, luận vẵn sẽ mô tả rõ các thức dữ liệu được đóng gói và chuyển lên phần máy chủ trung tâm.
+Tiếp theo, luận văn sẽ mô tả rõ cách thức dữ liệu được đóng gói và chuyển lên phần máy chủ trung tâm.
 
 Ngoài dữ liệu 3 trục x, y, z, nhóm xác định tập dữ liệu cần lưu thêm thời gian
 tạo và giá trị ID của người đang dùng. Việc này đảm bảo việc minh bạch, dễ đối
@@ -724,8 +719,8 @@ hoặc giá trị cảm biến khác đẩy lên cùng 1 thời điểm.
 
 \input{chapters/examples/format_data_ble.tex}
 
-Một điểm đáng lưu ý nữa, tác giả kết hợp cùng GS.TS. Dương Quý Sỹ phát triển
-thêm tính năng \textbf{chatbot y học giấc ngủ} dựa trên kỹ thuật
+Một điểm đáng lưu ý nữa, nhóm kết hợp cùng GS.TS. Dương Quý Sỹ phát triển thêm
+tính năng \textbf{chatbot y học giấc ngủ} dựa trên kỹ thuật
 \textbf{Retrieval-Augmented Generation (RAG)}. Chatbot này được xây dựng từ cơ
 sở dữ liệu gồm hơn 2000 câu hỏi và câu trả lời chuyên sâu liên quan đến giấc
 ngủ được biên tập bởi GS.TS Dương Quý Sỹ, bao gồm cả tài liệu lâm sàng, nghiên
@@ -734,10 +729,10 @@ như “Tôi có nên lo nếu ngủ ngáy liên tục?” hoặc “STOP-BANG >
 và chatbot sẽ phản hồi dựa trên kiến thức được truy xuất từ tài liệu nền và
 được tổng hợp lại bằng mô hình ngôn ngữ.
 
-Từ những phân tích nêu trên, tác giả chuẩn hóa được các bước cơ bản để từ dữ
-liệu ở phần cứng đến lưu trữ trên máy chủ đám mây. Đây cũng chính là các bước
-của hệ thống điện toán đám mây khi mọi dữ liệu, mô hình tính toán sẽ cùng một
-nơi trên 1 hệ thống phần cứng mạnh mẽ.
+Từ những phân tích nêu trên, luận văn đã chuẩn hóa được các bước cơ bản để từ
+dữ liệu ở phần cứng đến lưu trữ trên máy chủ đám mây. Đây cũng chính là các
+bước của hệ thống điện toán đám mây khi mọi dữ liệu, mô hình tính toán sẽ cùng
+một nơi trên 1 hệ thống phần cứng mạnh mẽ.
 
 \subsubsection{Máy chủ đám mây}
 
@@ -746,7 +741,7 @@ khai trển hạ tầng của Amazon Web Services (AWS) gồm 2 phần chính l�
 
 \textbf{Máy chủ trung tâm}
 có nhiệm vụ mở các kết nối (API) ra bên ngoài, nhận yêu cầu từ ứng dụng di động.
-Tác giả lựa chọn ngôn ngữ Typescript (TS) trên nền tảng NodeJS với các lý do: 1) TS cung cấp khả năng định nghĩ kiểu dữ liệu
+Ngôn ngữ Typescript (TS) trên nền tảng NodeJS được lựa chọn để xây dựng máy chủ trung tâm với các lý do: 1) TS cung cấp khả năng định nghĩ kiểu dữ liệu
 cho biến, hàm. Các lỗi đó sẽ được phát hiện trong quá trình biên dịch ngay trước khi đến quá trình chạy (run time); 2) NodeJS có nhiều thư viện
 hỗ trợ bảo mật, tương tác với các thành phần khác và khả năng khởi tạo nhanh dự án.
 Về mặt cấu trúc mã nguồn, hệ thống được tổ chức theo mô hình phân lớp như thể hiện trong Hình~\ref{be_structure}.
@@ -822,9 +817,9 @@ dùng đã đăng nhập và có Internet, ứng dụng chuyển sang chế đ�
 mỗi 1000 mẫu được gộp thành một gói để gửi lên máy chủ. Cơ chế này sẽ làm giảm
 số lần yêu cầu từ ứng dụng lên máy chủ.
 
-Do lý do độ dài trong khuôn khổ luận văn, tác giả không trình bày hết toàn bộ
-các nghiệp vụ của máy chủ trung tâm. Phần code sẽ được tác giả chú thích tại
-mục lục.
+Do lý do độ dài trong khuôn khổ luận văn, luận văn không trình bày hết toàn bộ
+các nghiệp vụ của máy chủ trung tâm. Phần mã nguồn sẽ được chú thích tại mục
+lục.
 
 \subsection{Học máy trong phân loại tư thế ngủ}
 \begin{figure}[H]
@@ -836,30 +831,28 @@ mục lục.
 
 Tổng quan về các bước xây dựng hệ thống học máy cho bài toán phân loại tư thế
 ngủ đã được trình bày tại Chương~\ref{chapter:1-introduction}. Sau khi đánh
-giá, tác giả lựa chọn 4 mô hình học máy truyền thống là rừng ngẫu nhiên (Random
-forest - RF), máy vec-tơ hỗ trợ (Support vector machine - SVM), hồi quy
-Logistic (Logistic regression - LR), thuật toán tăng cường Gradient Boosting
-(GB) và một mô hình mạng nơ-ron nhân tạo (Artificial Neural Network - ANN).
+giá, 4 mô hình học máy truyền thống là rừng ngẫu nhiên (Random forest - RF),
+máy vec-tơ hỗ trợ (Support vector machine - SVM), hồi quy Logistic (Logistic
+regression - LR), thuật toán tăng cường Gradient Boosting (GB) và một mô hình
+mạng nơ-ron nhân tạo (Artificial Neural Network - ANN), được lựa chọn để đánh
+giá.
 
-Việc lựa chọn này, được tác giả lựa chọn dựa trên hai yếu tố là khả năng khái
-và độ phức tạp thuật toán. Về khả năng khái quát, các mô hình được lựa chọn
-phản ánh những hướng tiếp cận tiêu biểu trong học máy truyền thống, bao gồm cả
-mô hình tuyến tính, phi tuyến và mô hình học sâu cơ bản. Cụ thể, Rừng ngẫu
-nhiên và Gradient Boosting là hai đại diện tiêu biểu của nhóm mô hình ensemble
-dựa trên cây quyết định, có khả năng mô hình hóa các quan hệ phi tuyến phức tạp
-và khắc phục hiện tượng quá khớp cao. Hồi quy logistic giúp giải thích trực
-quan mối quan hệ giữa các đặc trưng đầu. Máy véc-tơ hỗ trợ được lựa chọn vì có
-khả năng tạo ranh giới phân lớp rõ ràng trong không gian đặc trưng. Bên cạnh
-đó, Mạng nơ-ron nhân tạo được đưa vào nhằm khảo sát khả năng trừu tượng hóa sâu
-của dữ liệu cảm biến, nơi mối quan hệ giữa đặc trưng và nhãn phân loại có thể
-phi tuyến và phức tạp hơn so với các mô hình cổ điển.
-
-Xét theo yếu tố độ phức tạp, tác giả cân nhắc việc lựa chọn các mô hình sao cho
-đảm bảo cân bằng giữa hiệu năng và chi phí tính toán. Đặc biệt, mô hình ANN
-được thiết kế với hai lớp ẩn nhằm đánh giá sơ bộ hiệu quả của mô hình học sâu
-trước khi mở rộng sang các kiến trúc phức tạp hơn như mạng tích chập
-(Convolutional Neural Network - CNN), mạng hồi tiếp (Recurrent Neural Network -
-RNN) hay mạng bộ nhớ dài ngắn hạn (Long Short-Term Memory - LSTM).
+Việc lựa chọn này dựa trên hai yếu tố là khả năng khái và độ phức tạp thuật
+toán. Về khả năng khái quát, các mô hình được lựa chọn phản ánh những hướng
+tiếp cận tiêu biểu trong học máy truyền thống, bao gồm cả mô hình tuyến tính,
+phi tuyến và mô hình học sâu cơ bản. Cụ thể, RF và GB là hai đại diện tiêu biểu
+của nhóm mô hình ensemble dựa trên cây quyết định, có khả năng mô hình hóa các
+quan hệ phi tuyến phức tạp và khắc phục hiện tượng quá khớp cao. Hồi quy
+logistic giúp giải thích trực quan mối quan hệ giữa các đặc trưng đầu. Máy
+véc-tơ hỗ trợ được lựa chọn vì có khả năng tạo ranh giới phân lớp rõ ràng trong
+không gian đặc trưng. Bên cạnh đó, Mạng nơ-ron nhân tạo được đưa vào nhằm khảo
+sát khả năng trừu tượng hóa sâu của dữ liệu cảm biến, nơi mối quan hệ giữa đặc
+trưng và nhãn phân loại có thể phi tuyến và phức tạp hơn so với các mô hình cổ
+điển. Trong đó, mô hình ANN được thiết kế với hai lớp ẩn nhằm đánh giá sơ bộ
+hiệu quả của mô hình học sâu trước khi mở rộng sang các kiến trúc phức tạp hơn
+như mạng tích chập (Convolutional Neural Network - CNN), mạng hồi tiếp
+(Recurrent Neural Network - RNN) hay mạng bộ nhớ dài ngắn hạn (Long Short-Term
+Memory - LSTM).
 
 \subsubsection{Hồi quy Logistic}
 
@@ -1066,8 +1059,8 @@ có nhiễu hoặc mất cân bằng.
 
 Đây là một phương pháp học
 có giám sát cũng thuộc nhóm thuật toán tổ hợp (ensemble learning) \cite{chen2016xgboost}.
-Khác với Random Forest khi các cây được xây dựng song song và độc lập,
-Gradient Boosting xây dựng mô hình theo từng bước lặp, mỗi cây tiếp
+Khác với RG khi các cây được xây dựng song song và độc lập,
+GB xây dựng mô hình theo từng bước lặp, mỗi cây tiếp
 theo được huấn luyện để sửa lỗi còn lại từ mô hình trước đó. Cụ thể, tại mỗi
 vòng lặp $t$, mô hình hiện tại $F_t(x)$ được cập nhật bằng cách cộng thêm một
 cây mới $h_t(x)$ được huấn luyện để xấp xỉ gradient âm của hàm mất mát:
@@ -1085,10 +1078,10 @@ hàm bình phương sai số trong bài toán hồi quy. Nhờ đó, GB thườn
 xác rất cao, đặc biệt trên các bài toán với dữ liệu có quan hệ phi tuyến và có
 nhiều đặc trưng tương tác phức tạp.
 
-Tuy nhiên, Gradient Boosting cũng có những hạn chế rõ rệt. Do các cây được xây
-dựng tuần tự phụ thuộc lẫn nhau, GB thường mất nhiều thời gian huấn luyện hơn
-so với Random Forest. Hơn nữa, mô hình nhạy cảm với nhiễu và dữ liệu nhiễu sẽ
-dễ dàng bị mô hình học theo, dẫn đến hiện tượng quá khớp hơn.
+Tuy nhiên, GB cũng có những hạn chế rõ rệt. Do các cây được xây dựng tuần tự
+phụ thuộc lẫn nhau, GB thường mất nhiều thời gian huấn luyện hơn so với RF. Hơn
+nữa, mô hình nhạy cảm với nhiễu và dữ liệu nhiễu sẽ dễ dàng bị mô hình học
+theo, dẫn đến hiện tượng quá khớp hơn.
 
 \subsubsection{Mạng nơ-ron nhân tạo}
 
@@ -1097,8 +1090,9 @@ mô hình học sâu mô phỏng cấu trúc hoạt động của hệ thần ki
 trong đó các nơ-ron nhân tạo (artificial neurons) được tổ chức thành nhiều
 lớp (layers) và kết nối với nhau qua các trọng số (weights) \cite{jain1996}.
 
-Trong nghiên cứu này, tác giả sử dụng kiến trúc đơn giản nhất gồm 3 lớp: lớp
-đầu vào (input layer), hai lớp ẩn (hidden layers) và lớp đầu ra (output layer).
+Trong nghiên cứu này, kiến trúc đơn giản nhất gồm 3 lớp: lớp đầu vào (input
+layer), hai lớp ẩn (hidden layers) và lớp đầu ra (output layer), sẽ được sử
+dụng.
 
 Mỗi nơ-ron trong lớp ẩn thực hiện một tổ hợp tuyến tính giữa các đầu vào, sau
 đó áp dụng một hàm kích hoạt phi tuyến như hàm ReLU (Rectified Linear Unit):
@@ -1125,4 +1119,3 @@ toán phân loại tư thế ngủ.
 
 Đến đây, luận văn đã trình bày đầy đủ phương pháp xây dựng hệ thống, bao gồm cả phần cứng, phần mềm và các mô hình học máy được lựa chọn phù hợp với bài toán phân loại tư thế ngủ.
 Phương pháp đề xuất được đánh giá một cách toàn diện, từ cơ sở lý thuyết đến triển khai thực tế, nhằm đảm bảo tính khả thi và hiệu quả trong ứng dụng.
-Trên cơ sở đó, tác giả tiến hành phát triển, thử nghiệm và trình bày kết quả cụ thể trong chương tiếp theo.

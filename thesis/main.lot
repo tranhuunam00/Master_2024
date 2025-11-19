@@ -9,10 +9,10 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces Các nhóm chức năng chính của ứng dụng}}{56}{table.caption.53}%
 \contentsline {table}{\numberline {2.2}{\ignorespaces Mô tả các thư mục chính trong cấu trúc mã nguồn máy chủ trung tâm}}{62}{table.caption.59}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}}{84}{table.caption.82}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Kết quả lựa chọn tham số cho các mô hình học máy}}{87}{table.caption.86}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}}{93}{table.caption.90}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces So sánh hiệu năng LR và ANN trên nRF52840}}{101}{table.caption.95}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces So sánh kết quả mô hình trên tập thử Python và khi triển khai trên MCU}}{103}{table.caption.97}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}}{83}{table.caption.82}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Kết quả lựa chọn tham số cho các mô hình học máy}}{86}{table.caption.86}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}}{92}{table.caption.90}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces So sánh hiệu năng LR và ANN trên nRF52840}}{100}{table.caption.95}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces So sánh kết quả mô hình trên tập thử Python và khi triển khai trên MCU}}{102}{table.caption.97}%
 \contentsfinish 
 \contentsfinish 
