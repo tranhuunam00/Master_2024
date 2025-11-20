@@ -25,7 +25,7 @@
 \contentsline {subsubsection}{Lựa chọn và huấn luyện mô hình}{29}{subsubsection*.26}%
 \contentsline {chapter}{\numberline {2}HỆ THỐNG THU THẬP, XỬ LÝ TÍN HIỆU CẢM BIẾN VÀ ĐÁNH GIÁ BẰNG MÔ HÌNH HỌC MÁY}{32}{chapter.2}%
 \contentsline {section}{\numberline {2.1.}Nghiên cứu, phát triển phần cứng }{32}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1.}Vi xử lý}{33}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.1.}Vi điều khiển}{32}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2.}Cảm biến}{36}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3.}Bluetooth năng lượng thấp}{38}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4.}Thiết kế mạch}{41}{subsection.2.1.4}%

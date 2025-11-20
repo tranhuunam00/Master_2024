@@ -79,7 +79,7 @@ nhất 10 giây Bảng~\ref{ahi} \cite{osa_summary}.
 Nguyên nhân của OSA đến từ đa dạng các yếu tố bao gồm cả hình thái giải phẫu và
 các chức năng sinh lý của đường hô hấp trên. Các nguyên nhân thường không đồng
 nhất giữa các người bệnh. Về mặt giải phẫu, việc hẹp hoặc giảm độ vững của cấu
-trúc đường hô hấp trên là yếu tố tiên quyết. Những bất thường tại vòng họng như
+trúc đường hô hấp trên là yếu tố tiên quyết. Những bất thường tại vòm họng như
 lưỡi to, phì đại amidan, vách mũi lệch, xương hàm nhỏ hoặc tụt về sau, cùng với
 phân bố mỡ vùng cổ tăng (vòng cổ lớn) đều làm giảm tiết diện đường thở và tăng
 khả năng xẹp trong khi hít vào \cite{Young2004_nguyen_nhan}.
@@ -108,7 +108,7 @@ chức năng tình dục \cite{flemons1997quality}.
 
 Hơn nữa, tình trạng giảm oxy máu liên tục tái diễn trong khi ngủ cùng với sự
 gián đoạn chu kỳ giấc ngủ được chứng minh có liên quan mật thiết đến nhiều bệnh
-lý mạn tính như suy tim, bệnh động mạch vành, rối loạn nhịp tim, gan nhiễm mỡ
+lý mãn tính như suy tim, bệnh động mạch vành, rối loạn nhịp tim, gan nhiễm mỡ
 do rối loạn chuyển hóa, và đột quỵ
 \cite{wright1997health,Zinchuk2018,young1997population}. Nghiên cứu quy mô lớn
 của Xia Wang và cộng sự với 25,760 người tham gia cho thấy, khi chỉ số AHI tăng
@@ -417,7 +417,7 @@ bảng mạch.
 Nhờ đó, cảm biến này đặc biệt thích hợp cho việc phát triển các thiết bị đeo
 thông minh có khả năng xử lý tại chỗ, nhỏ gọn, di động, tiêu thụ năng lượng
 thấp phù hợp với xu hướng TinyML trong lĩnh vực điện toán biên. Ngoài ra, cảm
-biến gia tốc ít thậm trí không phụ thuộc vào các điều kiện môi trường như ánh
+biến gia tốc ít thậm chí không phụ thuộc vào các điều kiện môi trường như ánh
 sáng, nhiệt độ, sử dụng chăn, và quan trọng hơn, không xâm phạm quyền riêng tư
 của người dùng như các hệ thống giám sát bằng hình ảnh.
 
@@ -682,41 +682,34 @@ phụ thuộc vào cấu hình vi sai.
 
 Dựa vào Bảng~\ref{tab:so_sanh_cam_bien_MEMS} trong khuôn khổ luận văn này, cảm
 biến gia tốc MEMS kiểu điện dung được lựa chọn làm phần tử cảm biến trung tâm
-cho hệ thống theo dõi tư thế ngủ kéo dài, trên cơ sở đánh giá đa chiều cả về
-đặc trưng tín hiệu, yêu cầu hệ thống, lẫn khả năng triển khai thực tế.
+cho hệ thống theo dõi tư thế ngủ kéo dài, trên cơ sở đánh giá cả về đặc trưng
+tín hiệu, yêu cầu hệ thống, lẫn khả năng triển khai thực tế.
 
-\textbf{Tóm lại}, việc lựa chọn cảm biến điện dung MEMS không đơn thuần là một quyết định kỹ thuật thuần tuý, mà còn phản ánh một giải pháp có tính cân bằng giữa hiệu quả đo lường, khả năng tích hợp phần cứng, và chiến lược mở rộng ứng dụng lâm sàng theo hướng chi phí phù hợp. Đây là một trong những nguyên tắc then chốt trong xu hướng đổi mới công nghệ y tế cộng đồng hiện đại - nơi mà tính khả thi triển khai và khả năng mở rộng đóng vai trò không kém phần quan trọng so với độ chính xác kỹ thuật.
-
-\vspace{1em}
-
-Nhìn chung, việc xác định tư thế ngủ để phục vụ việc chẩn đoán hội chứng ngưng
-thở khi ngủ đòi hỏi một hệ thống giám sát liên tục, có khả năng thu thập dữ
-liệu sinh lý trong thời gian dài trong môi trường sinh hoạt tự nhiên tại nhà.
-Những yêu cầu này không chỉ giới hạn ở độ chính xác mô hình, mà còn mở rộng tới
-tiêu chí về tính gọn nhẹ, tiết kiệm năng lượng, và dễ triển khai trên nền tảng
-vi điều khiển hoặc thiết bị đeo.
+Tóm lại, việc lựa chọn cảm biến MEMS kiểu điện dung không đơn thuần là một
+quyết định kỹ thuật thuần tuý, mà còn phản ánh một giải pháp có tính cân bằng
+giữa hiệu quả đo lường, khả năng tích hợp phần cứng, và kế hoạch mở rộng ứng
+dụng trong lâm sàng theo hướng chi phí phù hợp. Đây là một trong những nguyên
+tắc quan trọng trong xu hướng đổi mới công nghệ y tế cộng đồng - nơi mà tính
+khả thi triển khai và khả năng mở rộng đóng vai trò không kém phần quan trọng
+so với độ chính xác kỹ thuật.
 
 Trong bối cảnh đó, các mô hình học máy trở thành công cụ thiết yếu để khai thác
-dữ liệu cảm biến. Chúng không chỉ cho phép phân loại tư thế với độ chính xác
-cao mà còn mở rộng sang suy luận các chỉ số lâm sàng như AHI. Việc triển khai
-trực tiếp trên vi điều khiển theo hướng TinyML đưa giải pháp từ phòng thí
-nghiệm đến ứng dụng thực tiễn tại nhà, đánh dấu sự giao thoa giữa y học giấc
-ngủ truyền thống và trí tuệ nhân tạo ứng dụng - một lĩnh vực đang phát triển
-mạnh mẽ trong thập niên gần đây \cite{osa_sanchez2025}.
+dữ liệu cảm biến. Chúng không chỉ cho phép phân loại tư thế ngủ với độ chính
+xác cao mà còn mở rộng sang suy luận các chỉ số như AHI. Việc triển khai trực
+tiếp TinyML trên vi điều khiển theo hướng góp phần làm thực tế giải pháp từ
+phòng thí nghiệm đến ứng dụng thực tiễn tại nhà. Đây cũng đánh dấu sự giao thoa
+giữa y học giấc ngủ truyền thống và trí tuệ nhân tạo ứng dụng - một lĩnh vực
+đang phát triển mạnh mẽ trong thập niên gần đây \cite{osa_sanchez2025}.
 
 \subsection{Học máy trong phân loại OSA và tư thế ngủ}
 
-Cùng với lượng dữ liệu phong phú và liên tục được thu thập từ các cảm biến sinh
-học, các thuật toán học máy trở thành công cụ thiết yếu để phân tích và khai
-thác hiệu quả các dòng dữ liệu này, giúp đưa ra quyết định nhanh chóng và chính
-xác. Đặc biệt, trong bối cảnh các thiết bị theo dõi sức khỏe tại nhà yêu cầu
-kích thước nhỏ gọn, tính di động cao, và không phụ thuộc vào kết nối Internet,
-thì học máy tại biên nổi lên như một giải pháp tối ưu vừa mang lại khả năng
-tính toán mạnh mẽ, vừa dễ dàng triển khai trên các phần cứng có giới hạn tài
-nguyên.
-
-Chính vì những lý do đó, hướng nghiên cứu và phát triển học máy tại biên cho đề
-tài này là lựa chọn thực sự cần thiết.
+Cùng với lượng dữ liệu phong phú và liên tục được thu thập từ các cảm biến, các
+thuật toán học máy trở thành công cụ để phân tích và khai thác hiệu quả các
+dòng dữ liệu này, giúp đưa ra quyết định nhanh chóng và chính xác. Đặc biệt,
+trong bối cảnh các thiết bị theo dõi sức khỏe tại nhà yêu cầu kích thước nhỏ
+gọn, có khả năng đeo được, không phụ thuộc vào kết nối Internet, thì học máy
+tại biên trở thành như một giải pháp tối ưu vừa mang lại khả năng tính toán
+mạnh mẽ, vừa dễ dàng triển khai trên các phần cứng có tài nguyên hạn chế.
 
 \begin{table}[H]
   \centering
@@ -734,7 +727,7 @@ tài này là lựa chọn thực sự cần thiết.
     \hline
     3            & \textbf{Trích xuất đặc trưng}           & Tính toán các đặc trưng thời gian, tần số - đại diện cho nội dung sinh lý trong từng đoạn tín hiệu.                                                                                                                       \\
     \hline
-    4            & \textbf{Lựa chọn và huấn luyện mô hình} & Lựa chọn thuật toán học máy phuù hợp với bài toán.                                                                                                                                                                        \\
+    4            & \textbf{Lựa chọn và huấn luyện mô hình} & Lựa chọn thuật toán học máy phù hợp với bài toán.                                                                                                                                                                         \\
     \hline
     5            & \textbf{Đánh giá hiệu năng}             & Sử dụng các chỉ số đánh giá mô hình như độ chính xác (Accuracy), độ chính xác dự đoán dương (Precision), độ bao phủ (Recall), điểm F1 (F1-Score), diện tích dưới đường cong (AUC) và ma trận nhầm lẫn (Confusion Matrix). \\
     \hline
@@ -747,43 +740,42 @@ tài này là lựa chọn thực sự cần thiết.
 
 Bảng~\ref{tab:pipeline_steps} trình bày tổng quan quy trình triển khai một bài
 toán học máy. Quy trình này có thể được điều chỉnh linh hoạt tùy theo loại tín
-hiệu đầu vào và mục tiêu phân tích cụ thể, chẳng hạn như nhận diện tư thế ngủ,
-phát hiện ngưng thở hay theo dõi nhịp hô hấp. Tuy nhiên, nguyên tắc cốt lõi vẫn
-là đảm bảo tín hiệu đầu vào có chất lượng cao và mô hình học máy đủ nhẹ để
-triển khai trong thực tế.
+hiệu đầu vào và mục đích phân tích cụ thể, chẳng hạn như nhận diện tư thế ngủ,
+phát hiện ngưng thở hay theo dõi nhịp hô hấp. Tuy nhiên, nguyên tắc vẫn là đảm
+bảo tín hiệu đầu vào có chất lượng cao và mô hình học máy đủ nhẹ để triển khai
+trong thực tế.
 
-\textbf{Phần tiếp theo, luận văn sẽ tập trung trình bày quy trình triển khai nêu trên vào
-  bài toán phân loại tư thế ngủ và đánh giá OSA.}
+Phần tiếp theo, luận văn sẽ tập trung trình bày quy trình triển khai nêu trên
+vào bài toán phân loại tư thế ngủ và đánh giá OSA.
 
 \subsubsection{Thu thập tín hiệu}
 
 Là bước đầu tiên và đóng vai trò nền tảng trong toàn bộ quy trình tiếp đó. Các
-tín hiệu được ghi nhận có thể bao gồm tín hiệu gia tốc ba trục để phát hiện
-chuyển động và tư thế nằm; tín hiệu phản hồi quang học dùng để đo nhịp tim và
-độ bão hòa oxy trong máu; tín hiệu ECG phản ánh hoạt động điện học của tim;
-hoặc các tín hiệu hô hấp và áp lực từ cảm biến gắn trên giường, giúp xác định
-tư thế ngủ thông qua phân bố trọng lực và các tín hiệu bổ sung khác
-\cite{Roebuck2014_sleepSignals, Pan2020_sleepMonitoring}. Tùy theo dạng dữ liệu
-thu thập và cấu hình thiết bị, các tín hiệu này được lấy mẫu với tần số phù hợp
-\cite{Jeng_osa,Ferrer_osa,osa_sanchez2025, Sleep_Posture_Detection,Zhang_osa,
-  Sang, }.
+tín hiệu được ghi nhận có thể bao gồm tín hiệu gia tốc trên ba trục để phát
+hiện chuyển động và tư thế ngủ; có thể là tín hiệu phản hồi quang học dùng để
+đo nhịp tim và độ bão hòa oxy trong máu; có thể là tín hiệu ECG phản ánh hoạt
+động điện học của tim; hoặc các tín hiệu hô hấp và áp lực từ cảm biến gắn trên
+giường, giúp xác định tư thế ngủ thông qua phân bố trọng lực và các tín hiệu bổ
+sung khác \cite{Roebuck2014_sleepSignals, Pan2020_sleepMonitoring}. Tùy theo
+dạng dữ liệu thu thập và cấu hình thiết bị, các tín hiệu này được lấy mẫu với
+tần số phù hợp \cite{Jeng_osa,Ferrer_osa,osa_sanchez2025,
+  Sleep_Posture_Detection,Zhang_osa, Sang, }.
 
-Một yêu cầu then chốt của bước này là đảm bảo tính ổn định và chất lượng dữ
-liệu. Các cảm biến cần được gắn cố định tại các vị trí tối ưu, chẳng hạn như
+Yêu cầu then chốt trong thu thập dữ liệu là đảm bảo tính ổn định và chất lượng
+dữ liệu. Các cảm biến cần được gắn cố định tại các vị trí tối ưu, chẳng hạn như
 vùng ngực, cổ tay hoặc vùng cổ, nhằm giảm nhiễu chuyển động và duy trì tiếp xúc
 ổn định trong suốt quá trình theo dõi. Hệ thống cũng cần đảm bảo khả năng
 truyền dữ liệu hiệu quả thông qua các giao thức không dây tiết kiệm năng lượng
-như Bluetooth Low Energy (BLE) hoặc Wi-Fi \cite{thuong_wear_paper,
-  hst_wear_paper, Sleep_Posture_Detection}.
+như BLE hoặc Wi-Fi \cite{thuong_wear_paper, hst_wear_paper,
+  Sleep_Posture_Detection}.
 
 Chất lượng dữ liệu thu được trong bước này ảnh hưởng trực tiếp đến hiệu quả của
 các mô hình học máy. Do đó, quy trình thu thập tín hiệu cần được thiết kế sao
 cho vừa đảm bảo phản hồi đúng đặc trưng sinh lý, vừa duy trì tính khả thi khi
-chạy lâu dài trong môi trường ngoài lâm sàng.
-
-Tuy nhiên, trong nhiều nghiên cứu hiện nay, kiến trúc phần mềm cho quá trình
-thu thập và lưu trữ dữ liệu vẫn chưa được mô tả một cách đầy đủ và thống nhất.
-Các yếu tố như:
+triển khai thực tế. Để đảm bảo tính toàn vẹn, thì hệ thống thu thập bao gồm
+phần cứng, phần mềm và máy chủ lưu trữ. Tuy nhiên, trong nhiều nghiên cứu hiện
+nay, kiến trúc phần mềm cho quá trình thu thập và lưu trữ dữ liệu vẫn chưa được
+mô tả một cách đầy đủ hoặc thiếu thông tin về các yếu tố như:
 \begin{itemize}
   \item Kiến trúc hệ thống: ứng dụng di động, nền tảng web hoặc máy chủ trung tâm;
   \item Giao thức truyền thông: MQTT, HTTP;
@@ -792,92 +784,88 @@ Các yếu tố như:
         chuyên ngành;
 \end{itemize}
 
-Việc thiếu chuẩn hóa trong các yếu tố trên có thể ảnh hưởng đáng kể đến khả
-năng mở rộng, tích hợp và ứng dụng thực tiễn của hệ thống trong môi trường chăm
-sóc sức khỏe tại nhà. Chính vì vậy, luận văn này tập trung giải quyết những hạn
-chế đó, hướng đến xây dựng một quy trình thu thập và quản lý tín hiệu sinh học
-thống nhất, bảo mật và sẵn sàng cho triển khai thực tế.
+Việc thiếu chuẩn hóa trong xây dựng hệ thống có thể ảnh hưởng đáng kể đến khả
+năng mở rộng, tích hợp và ứng dụng thực tiễn trong lĩnh vực chăm sóc sức khỏe
+tại nhà. Chính vì vậy, luận văn này hướng đến xây dựng một quy trình thu thập
+và quản lý tín hiệu thống nhất, bảo mật và sẵn sàng cho triển khai thực tế.
 
 \subsubsection{Tiền xử lý}
 
-\textbf{Phân tích dữ liệu} là bước thống kê lại nhưng dữ liệu  đã thu
-thập bao gồm các yếu tố như: độ cân bằng, độ lặp, các giá trị null/NaN, hay các
-thống kê khác theo yêu cầu bài toán. Bước này sẽ cho thấy bức tranh toàn diện nhất về bộ dữ liệu đã thu thập.
+Phân tích dữ liệu là bước thống kê lại phần dữ liệu đã thu thập bao gồm các yếu
+tố như: độ cân bằng, độ lặp, các giá trị bị khuyết, hay các thống kê khác theo
+yêu cầu bài toán. Bước này sẽ cho thấy bức tranh toàn diện nhất về bộ dữ liệu
+đã thu thập.
 
-\textbf{Lọc tín hiệu} là bước đầu tiên trong tiền xử lý nhằm loại bỏ nhiễu khỏi
-các tín hiệu sinh lý.
-Các loại nhiễu thường gặp bao gồm: nhiễu điện lưới,
-nhiễu tần số cao và trôi đường
-cơ sở \cite{rossi2023sleep, sheta2021osa}.
-Các kỹ thuật lọc thường được sử dụng bao gồm: bộ lọc chặn dải
-(notch filter) - đặc biệt là bộ lọc notch IIR bậc hai  để loại bỏ nhiễu điện
-lưới; bộ lọc thông dải (bandpass filter) nhằm giữ lại dải tần sinh lý; và
-các bộ lọc làm mượt như Butterworth bậc ba; bộ lọc trung vị (median filter)
-hoặc bộ lọc trung bình trượt (moving average filter) \cite{Roebuck2014_sleepSignals, Pan2020_sleepMonitoring}.
-Trong nghiên cứu của Sheta và cộng sự \cite{sheta2021osa}, tác giả đã sử
-dụng bộ lọc notch IIR bậc hai nhằm loại bỏ nhiễu điện lưới 60~Hz khỏi
-tín hiệu ECG. Đây là loại nhiễu phổ biến gây khó khăn cho việc phân
-tích và trích xuất đặc trưng. Kết quả cho thấy tín hiệu sau
-lọc cho chất lượng cao hơn đáng kể và cải thiện hiệu năng của các mô
-hình học máy trong chẩn đoán OSA.
-Đối với tín hiệu gia tốc, các bộ lọc cần đảm bảo vừa loại bỏ nhiễu vừa
-bảo toàn các đặc trưng chuyển động. Trong đó, Kalman filter và bộ lọc biến thiên toàn phần (total variation filter) được sử dụng
-rộng rãi để làm mượt chuỗi tín hiệu thời gian và giảm nhiễu ngẫu nhiên
-\cite{sun2017sleepmonitor, kalman, Cuadrado2021_kalman, Abbasi_filter}.
-Việc lựa chọn bộ lọc phù hợp cần dựa trên đặc điểm của từng loại
-tín hiệu và mục tiêu phân tích cụ thể.
+Lọc tín hiệu là nhằm lọc, loại bỏ nhiễu khỏi các tín hiệu có ích. Các loại
+nhiễu thường gặp bao gồm: nhiễu điện lưới, nhiễu tần số cao và trôi đường cơ sở
+\cite{rossi2023sleep, sheta2021osa}. Các kỹ thuật lọc thường được sử dụng bao
+gồm: bộ lọc chặn dải (notch filter) - đặc biệt là bộ lọc notch IIR bậc hai để
+loại bỏ nhiễu điện lưới; bộ lọc thông dải (bandpass filter) nhằm giữ lại dải
+tần với dữ liệu có ích; và các bộ lọc làm mượt như Butterworth bậc ba; bộ lọc
+trung vị (median filter) hoặc bộ lọc trung bình trượt (moving average filter)
+\cite{Roebuck2014_sleepSignals, Pan2020_sleepMonitoring}. Trong nghiên cứu của
+Sheta và cộng sự \cite{sheta2021osa}, tác giả đã sử dụng bộ lọc notch IIR bậc
+hai nhằm loại bỏ nhiễu điện lưới 60~Hz khỏi tín hiệu ECG. Đây là loại nhiễu phổ
+biến gây khó khăn cho việc phân tích và trích xuất đặc trưng. Kết quả cho thấy
+tín hiệu sau lọc cho chất lượng cao hơn đáng kể và cải thiện hiệu năng của các
+mô hình học máy trong chẩn đoán OSA. Đối với tín hiệu gia tốc, các bộ lọc cần
+đảm bảo vừa loại bỏ nhiễu vừa bảo toàn các đặc trưng chuyển động. Trong đó, bộ
+lọc Kalman và bộ lọc biến thiên toàn phần (total variation filter) được sử dụng
+rộng rãi để làm mượt tín hiệu theo thời gian \cite{sun2017sleepmonitor, kalman,
+  Cuadrado2021_kalman, Abbasi_filter}. Việc lựa chọn bộ lọc phù hợp cần dựa trên
+đặc điểm của từng loại tín hiệu và mục tiêu phân tích cụ thể.
 
-\textbf{Nội suy} là một bước quan trọng trong quá trình
+\textbf{Nội suy} là một khâu quan trọng trong quá trình
 chuẩn hóa chuỗi thời gian,
 nhằm đảm bảo tính đồng nhất về tần số lấy mẫu giữa các kênh dữ liệu và
-duy trì tính toàn vẹn của đặc trưng tín hiệu. Các phương pháp nội suy có thể kể đến như spline
+duy trì tính toàn vẹn của đặc trưng tín hiệu.
+Các phương pháp nội suy có thể kể đến như spline
 bậc ba (cubic spline), nội suy Hermite đa thức từng đoạn và nội suy tuyến tính
 (linear interpolation) thường được áp dụng để điều chỉnh chuỗi dữ liệu về cùng tần số chuẩn, từ đó bảo đảm đầu vào đồng bộ cho các mô
 hình học máy hoặc mạng nơ-ron, giúp cải thiện khả năng trích xuất
 đặc trưng của tín hiệu \cite{Lepot2017_interpolation}.
 Bên cạnh đó, đối với các chuỗi tín hiệu rời rạc như nhịp RR từ ECG hoặc
 chuỗi $\mathrm{SpO_2}$ thường xuyên bị gián đoạn hay mất mẫu, kỹ thuật nội
-suy đóng vai trò thiết yếu trong việc phục hồi dữ liệu bị thiếu
+suy đóng vai trò quan trọng trong việc phục hồi dữ liệu bị thiếu
 (missing/null values imputation) và tái cấu trúc tín hiệu thành
 chuỗi liên tục. Cách tiếp cận này không chỉ nâng cao tính toàn vẹn
 của dữ liệu mà còn giúp mô hình học sâu khai thác được các mối quan
-hệ động trong miền thời gian, dẫn đến hiệu năng suy luận tốt hơn
+hệ trong miền thời gian, dẫn đến hiệu năng suy luận tốt hơn
 \cite{zou2024mbtcn}.
 Trong nghiên cứu của \cite{olsen2024transfer},
 cả hai loại tín hiệu gia tốc và phản hồi quang học đều được nội
 suy để tạo thành chuỗi thời gian đồng nhất với tần số lấy mẫu.
 
-\textbf{Chuẩn hóa dữ liệu}  giúp đưa các đặc trưng đầu vào về cùng một miền giá trị,
-tránh hiện tượng các đặc trưng có giá trị số lớn chi phối quá trình huấn luyện mô hình.
-Một số phương pháp phổ biến bao gồm:
-chuẩn hóa về trung bình 0 và độ lệch chuẩn 1 (Z-score normalization),
-đưa về khoảng 0,1 (min-max scaling),
-dựa trên trung vị và tứ phân vị, phù hợp với dữ liệu có nhiễu hoặc ngoại lệ
+Chuẩn hóa dữ liệu giúp đưa các đặc trưng đầu vào về cùng một miền giá trị,
+tránh hiện tượng các đặc trưng có giá trị số lớn chi phối quá trình huấn luyện
+mô hình. Một số phương pháp phổ biến bao gồm: chuẩn hóa về trung bình 0 và độ
+lệch chuẩn 1 (Z-score normalization), đưa về khoảng 0,1 (min-max scaling), dựa
+trên trung vị và tứ phân vị, phù hợp với dữ liệu có nhiễu hoặc ngoại lai
 \cite{Sleep_Posture_Detection, Vu2025SleepPosition, rossi2023sleep}.
 
-\textbf{Phân đoạn tín hiệu} là một bước thiết yếu trong xử lý tín
-hiệu sinh lý. Mục tiêu của bước này là chia chuỗi dữ
-liệu liên tục thành các đoạn thời gian ngắn cố định gọi là cửa sổ (window),
-giúp mô hình học máy nhận diện hiệu quả các đặc trưng biến đổi theo
-thời gian. Thời lượng cửa sổ thường phụ thuộc vào loại tín hiệu và
-mục tiêu phân tích: 30 giây cho EEG, 60 giây cho ECG và $\mathrm{SpO_2}$,
-5 phút cho HRV, hoặc các cửa sổ trượt ngắn để phát hiện sự kiện ngắn hạn \cite{osa_sanchez2025, Sleep_Posture_Detection, zou2024mbtcn,HOANG2025116309, }.
-Trong một số trường hợp, việc phân đoạn còn dựa vào các đặc điểm sinh lý
-như đỉnh sóng R trong ECG. Riêng đôi với dữ liệu gia tốc để xác định tư thế thì cửa sổ phân
-đoạn là từ 0.5Hz
-đến 3Hz \cite{Vu2025SleepPosition,abdulsadig2023}.
+Phân đoạn tín hiệu là khâu tiếp theo trong xử lý tín hiệu. Mục tiêu của bước
+này là chia chuỗi dữ liệu liên tục thành các đoạn thời gian ngắn cố định gọi là
+cửa sổ (window), giúp mô hình học máy nhận diện hiệu quả các đặc trưng biến đổi
+theo thời gian. Thời lượng cửa sổ thường phụ thuộc vào loại tín hiệu và mục
+tiêu phân tích: 30 giây cho EEG, 60 giây cho ECG và $\mathrm{SpO_2}$, 5 phút
+cho HRV, hoặc các cửa sổ trượt ngắn hơn để phát hiện sự kiện diễn ra trong một
+thời gian ngắn \cite{osa_sanchez2025, Sleep_Posture_Detection,
+  zou2024mbtcn,HOANG2025116309, }. Trong một số trường hợp, việc phân đoạn còn
+dựa vào các đặc điểm sinh lý như đỉnh sóng R trong ECG. Riêng đối với dữ liệu
+gia tốc để xác định tư thế ngủ thì cửa sổ phân đoạn là từ 0.5Hz đến 15Hz
+\cite{Vu2025SleepPosition,abdulsadig2023}.
 
-Tóm lại, tiền xử không chỉ giúp nâng cao chất lượng dữ liệu mà còn đảm bảo tính
-nhất quán đầu vào cho hệ thống học máy. Việc lựa chọn kỹ thuật tiền xử lý cần
-phù hợp với đặc điểm của từng loại tín hiệu và mục tiêu phân tích cụ thể.
+Tiền xử không chỉ giúp nâng cao chất lượng dữ liệu mà còn đảm bảo tính nhất
+quán đầu vào cho hệ thống học máy. Việc lựa chọn kỹ thuật tiền xử lý cần phù
+hợp với đặc điểm của từng loại tín hiệu và mục tiêu phân tích cụ thể.
 
 \subsubsection{Trích xuất đặc trưng}
 
-\textbf{Trích xuất đặc trưng} là một bước quan trọng trọng
-nhằm chuyển đổi tín hiệu cảm biến thô thành tập hợp các đặc trưng có ý nghĩa,
-phản ánh đúng ý nghĩa về mặt sinh lý.
-Quá trình này giúp làm nổi bật các thông tin cốt lõi từ tín hiệu sinh học,
-đồng thời loại bỏ các yếu tố dư thừa hoặc nhiễu không mang giá trị chẩn đoán.
+Trích xuất đặc trưng là một khâu quan trọng trọng nhằm chuyển đổi tín hiệu thô
+từ cảm biến thành tập hợp các đặc trưng có ý nghĩa, phản ánh đúng các hiện
+tượng vật lý. Quá trình này giúp làm nổi bật các thông tin quan trọng từ tín
+hiệu, đồng thời loại bỏ các yếu tố dư thừa hoặc nhiễu không mang giá trị chẩn
+đoán.
 
 Trong bài toán phát hiện hội chứng ngưng thở khi ngủ
 \cite{hstSurvey,Channa_osa,Sang,HOANG2025116309,Uday,RAJESH2021104199_wavelet},
@@ -893,33 +881,30 @@ các đặc trưng thường được trích xuất trực tiếp từ miền th
 Trong nghiên cứu \textit{Sleep Posture Monitoring Using a Single Neck-Situated Accelerometer}
 \cite{abdulsadig2023}, các đặc trưng được tính toán hoàn toàn trong miền thời gian,
 bao gồm giá trị trung bình và trung vị của ba trục gia tốc (X, Y, Z)
-cùng với các góc nghiêng giữa các mặt phẳng XY, YZ và XZ, tạo thành tổng cộng 12
+cùng với các góc nghiêng giữa các mặt phẳng XY, YZ, và XZ, tạo thành tổng cộng 12
 đặc trưng cho mỗi cửa sổ dữ liệu.
-Trong khi đó, nghiên cứu \cite{Vu2025SleepPosition, vu2023} không trích xuất đặc trưng thủ công  mà đưa trực tiếp tín hiệu gia tốc thô $(a_x, a_y,
+Trong khi đó, nghiên cứu \cite{Vu2025SleepPosition, vu2023} không trích xuất đặc trưng thủ công  mà đưa trực tiếp tín hiệu thô từ cảm biến gia tốc $(a_x, a_y,
   a_z)$ vào mô hình LSTM. Mạng học sâu này tự động học các đặc trưng với cửa sổ 20 mẫu, nhờ đó mô hình đạt độ chính xác cao mà không
 cần bước trích chọn đặc trưng.
 
-\textbf{Gán nhãn}
-Được thực hiện nhằm liên kết các phân đoạn tín hiệu với nhãn sự kiện
-hô hấp tương ứng như “Apnea”, “Hypopnea”, hoặc phân mức độ nặng của OSA
-như “Mild”, “Moderate”, “Severe”, các nhãn liên quan đến tư thế ngủ.
-Việc gán nhãn đúng đắn giúp huấn luyện mô hình
-AI chính xác.
-Tùy theo thiết kế nghiên cứu, nhãn có thể được gán thủ công dựa trên
-chuyên gia hoặc tự động đồng bộ với thiết bị tham chiếu như
-camera, hệ thống PSG.
+Gán nhãn được thực hiện nhằm liên kết các phân đoạn tín hiệu với nhãn sự kiện
+hô hấp tương ứng như “Apnea”, “Hypopnea”, hoặc phân mức độ nặng nhẹ của OSA như
+“Mild”, “Moderate”, “Severe”, các nhãn liên quan đến tư thế ngủ. Việc gán nhãn
+đúng giúp huấn luyện mô hình AI chính xác. Tùy theo thiết kế nghiên cứu, nhãn
+có thể được gán thủ công dựa trên chuyên gia hoặc tự động đồng bộ với thiết bị
+tham chiếu như camera, hệ thống PSG.
 
 \subsubsection{Lựa chọn và huấn luyện mô hình}
 
 Từ các bước thu thập dữ liệu, tiền xử lý và trích xuất đặc trưng đã trình bày,
-có thể nhận thấy rằng các tín hiệu sinh lý trong việc chẩn đoán OSA. Đặc biệt
-là tín hiệu gia tốc cung cấp nguồn thông tin giá trị trong việc nhận diện tư
-thế ngủ. Tuy nhiên, trong khuôn khổ luận văn sẽ không đi sâu vào phân tích chi
-tiết các mô hình liên quan đến hội chứng ngưng thở khi ngủ, mà tập trung vào
-việc xây dựng và tối ưu mô hình học máy nhằm phục vụ phân loại tư thế ngủ một
-cách hiệu quả và khả thi khi triển khai trên thiết bị biên. Do đó, từ phần tiếp
-theo, nội dung nghiên cứu sẽ tập trung vào quy trình nghiên cứ, huấn luyện và
-đánh giá hiệu năng của mô hình học máy cho bài toán phân loại tư thế ngủ.
+có thể nhận thấy rằng các tín hiệu thu được từ cảm biến gia tốc sẽ cung cấp
+nguồn thông tin giá trị trong việc nhận diện tư thế ngủ. Trong khuôn khổ luận
+văn sẽ không đi sâu vào phân tích chi tiết các mô hình liên quan đến hội chứng
+ngưng thở khi ngủ, mà tập trung vào việc xây dựng và tối ưu mô hình học máy
+nhằm phục vụ phân loại tư thế ngủ một cách hiệu quả và khả thi khi triển khai
+trên thiết bị biên. Do đó, từ điểm này trở đi, luận văn sẽ tập trung vào quy
+trình nghiên cứu, huấn luyện và đánh giá hiệu năng của mô hình học máy cho bài
+toán phân loại tư thế ngủ.
 
 \begin{table}[htbp]
   \centering
@@ -953,24 +938,21 @@ bài toán nhận diện tư thế ngủ. Hầu hết các nghiên cứu đạt 
 (trên 95\%), ngay cả khi sử dụng các thuật toán đơn giản như ngưỡng định sẵn
 hoặc mô hình học máy truyền thống. Tuy nhiên, một điểm đáng lưu ý là chỉ duy
 nhất nghiên cứu của Abdulsadig và cộng sự \cite{abdulsadig2023} thực sự được
-triển khai trên phần cứng nhúng, chứng tỏ tính khả thi trong môi trường tài
+triển khai trên phần cứng nhúng, chứng tỏ tính khả thi trong môi trường có tài
 nguyên hạn chế. Các nghiên cứu còn lại chủ yếu dừng ở mức mô phỏng phần mềm
 hoặc chạy trên máy tính.
 
-Đi sâu hơn, nhóm mô hình học sâu LSTM hoặc kết hợp nhiều lớp tuy đạt độ chính xác vượt trội
-(trên 99\%) như trong nghiên cứu \cite{vu2023},
-nhưng đều chưa tích hợp trực tiếp lên vi điều khiển do dung lượng bộ
-nhớ lớn và nhu cầu tính toán cao. Điều này đặt ra thách thức cho việc
-ứng dụng chúng trong môi trường thực tế như giấc ngủ tại nhà,
-nơi mà năng lượng, khả năng lưu trữ và kết nối đều bị hạn chế.
-Ở chiều ngược lại, các mô hình truyền thống như DT,
-RF hay ngưỡng cố định cho thấy hiệu quả không hề thua
-kém khi được khai thác đúng đặc trưng.
-Đặc biệt, việc sử dụng các đặc trưng miền thời gian dễ tính toán so với miền tần số,
-giúp giảm đáng kể độ phức tạp tính toán \cite{gomes2021, souza2017}.
-Điều này rất phù hợp với yêu cầu thiết kế của TinyML:
-đơn giản, hiệu quả và khả thi khi triển khai thực
-tế trên các nền tảng phần cứng hạn chế.
+Nhóm mô hình học sâu LSTM hoặc kết hợp nhiều lớp tuy đạt độ chính xác vượt trội
+(trên 99\%) như trong nghiên cứu \cite{vu2023}, nhưng đều chưa tích hợp trực
+tiếp lên vi điều khiển do dung lượng bộ nhớ lớn và nhu cầu tính toán cao. Điều
+này đặt ra thách thức cho việc ứng dụng chúng trong môi trường thực tế như phân
+loại tư thế ngủ tại nhà, nơi mà năng lượng, khả năng lưu trữ và kết nối đều bị
+hạn chế. Ngược lại, các mô hình truyền thống như DT, RF hay ngưỡng cố định cho
+thấy hiệu quả không hề thua kém khi được khai thác đúng đặc trưng. Đặc biệt,
+việc sử dụng các đặc trưng miền thời gian dễ tính toán so với miền tần số, giúp
+giảm đáng kể độ phức tạp tính toán \cite{gomes2021, souza2017}. Điều này rất
+phù hợp với yêu cầu thiết kế của TinyML: đơn giản, hiệu quả và khả thi khi
+triển khai thực tế trên các nền tảng phần cứng hạn chế.
 
 Nhờ sự phát triển của các nền tảng hỗ trợ triển khai mô hình học máy như
 \textbf{TensorFlow Lite for Microcontrollers}, \textbf{Edge Impulse}, và
@@ -978,12 +960,11 @@ Nhờ sự phát triển của các nền tảng hỗ trợ triển khai mô hì
 hình đã trở nên dễ tiếp cận hơn nhiều. Điều này mở ra hướng mới trong chẩn đoán
 y tế cá nhân hóa, thông qua thiết bị đeo thông minh hoạt động liên tục tại nhà.
 
-Vì vậy, luận văn được trình bày theo hai giai đoạn: (i) \emph{Đánh giá đặc
-  trưng và mô hình trên dữ liệu thu thập} - xây dựng lộ trình xử lý từ tiền xử
-lý, phân đoạn theo cửa sổ, trích xuất đặc trưng đại diện (miền thời gian và tần
-số) đến so sánh các mô hình học máy. Tiêu chí lựa chọn không chỉ dựa trên độ
-chính xác, độ chụm cho từng tư thế, mà còn cân nhắc tới kích thước mô hình, chi
-phí tính toán. (ii) \emph{Triển khai on-chip (TinyML) trên vi điều khiển mục
-  tiêu} triển khai trên vi điều khiển nRF52840, đồng thời kiểm chứng so với giai
-đoạn (i).
+Luận văn được trình bày theo hai giai đoạn: (i) \emph{Đánh giá đặc trưng và mô
+  hình trên dữ liệu thu thập} - xây dựng lộ trình triển khai từ tiền xử lý, phân
+đoạn theo cửa sổ, trích xuất đặc trưng đại diện (miền thời gian và tần số) đến
+so sánh các mô hình học máy. Tiêu chí lựa chọn không chỉ dựa trên độ chính xác,
+độ chụm cho từng tư thế, mà còn cân nhắc tới kích thước mô hình, chi phí tính
+toán. (ii) \emph{Triển khai on-chip (TinyML) trên vi điều khiển} - cụ thể triển
+khai trên vi điều khiển nRF52840, đồng thời kiểm chứng so với giai đoạn (i).
 

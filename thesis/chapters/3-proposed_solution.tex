@@ -1,43 +1,39 @@
-Dựa trên các cơ sở lý thuyết tại chương I, trong chương này, luận văn sẽ trình
-bày về phương pháp nghiên cứu và phát triển hệ thống thu thập, xử lý và lưu trữ
-dữ liệu cảm biến gia tốc. Từ bộ dữ liệu thu thập, sẽ tiến hành trích xuất đặc
+Dựa trên các cơ sở lý thuyết tại chương I, chương này của luận văn trình bày về
+phương pháp nghiên cứu và phát triển hệ thống thu thập, xử lý và lưu trữ dữ
+liệu cảm biến gia tốc. Từ bộ dữ liệu thu thập, sẽ tiến hành trích xuất đặc
 trưng, đề xuất mô hình học máy phù hợp và thiết lập các kịch bản để đánh giá
 các mô hình đề xuất đó.
 \section{Nghiên cứu, phát triển phần cứng }
 
-Trong phần này sẽ có các nội dung bao gồm: nghiên cứu, lựa chọn vi điều khiển
-và cảm biến phù hợp; từ đó tiến hành thiết kế sơ đồ mạch, mô phỏng mạch 3D và
-hoàn thiện sản phẩm.
-
-\subsection{Vi xử lý}
+\subsection{Vi điều khiển}
 \label{subsec:vi_xu_ly}
 
 Với sự phát triển vượt bậc và đa dạng của công nghệ thiết kế và chế tạo, có rất
 nhiều cấu hình phần cứng được nhiều nhóm tác giả lựa chọn phù hợp với các mục
-đích khác nhau. Trong đó, \cite{p_1} các tác giả đã sử dụng máy tính đơn
-Raspberry Pi để phát hiện 4 tư thế ngủ với sự lấy nhãn từ video theo dõi người
-bệnh trong suốt quá trình lấy mẫu. Tác giả Kwasnicki và cộng sự đã sử dụng bộ
-xử lý công suất thấp TI MSP430 và mô-đun RF Chipcon CC2420 cho truyền thông
-không dây kết hợp với cảm biến gia tốc ba trục ADXL330, con quay hồi chuyển đạt
-được 99.5\% độ chính xác \cite{kwasnicki2018}. Nhóm của tác giả I.Yun đã phát
-triển thiết bị theo dõi tư thế ngủ của trẻ nhỏ sử dụng vi xử lý ATmega328P-PU
-kết hợp cảm biến gia tốc ADXL335 được đặt trên bụng \cite{p_3}. Trong nghiên
-cứu của Abdulsadig và cộng sự, hệ thống thu thập dữ liệu được xây dựng dựa trên
-một bo mạch tùy chỉnh tích hợp vi điều khiển nRF5232. Vi điều khiển này đảm
-nhiệm đồng thời cả việc lấy mẫu dữ liệu từ cảm biến gia tốc ba trục LIS2DH12
-với tần số 100 Hz và truyền dữ liệu không dây theo thời gian thực \cite{
-    abdulsadig2023, Sleep_Posture_Detection}. Trong nghiên cứu của tác giả Vũ Hoàng
-Diệu, mô-đun ESP32 được lựa chọn làm đơn vị xử lý trung tâm nhờ tích hợp bộ vi
-điều khiển hiệu năng cao, kết nối không dây Wi-Fi đáp ứng tốt yêu cầu của hệ
-thống thu thập dữ liệu tư thế ngủ theo thời gian thực \cite{vu2023}. Thiết bị
-không chỉ cho phép truyền dữ liệu trực tiếp lên máy chủ hoặc nền tảng đám mây
-thông qua Wi-Fi, mà còn hỗ trợ lưu trữ cục bộ trên thẻ nhớ microSD, đảm bảo
+đích khác nhau. Trong đó, các tác giả ở \cite{p_1} đã sử dụng máy tính đơn
+Raspberry Pi để phát hiện 4 tư thế ngủ kết hợp sự gắn nhãn từ video theo dõi
+người bệnh trong suốt quá trình lấy mẫu. Tác giả Kwasnicki và cộng sự đã sử
+dụng bộ xử lý công suất thấp TI MSP430 và mô-đun RF Chipcon CC2420 cho truyền
+thông không dây kết hợp với cảm biến gia tốc ba trục ADXL330, con quay hồi
+chuyển đạt được 99.5\% độ chính xác \cite{kwasnicki2018}. Nhóm của tác giả
+I.Yun đã phát triển thiết bị theo dõi tư thế ngủ của trẻ nhỏ sử dụng vi xử lý
+ATmega328P-PU kết hợp cảm biến gia tốc ADXL335 được đặt trên bụng \cite{p_3}.
+Trong nghiên cứu của Abdulsadig và cộng sự, hệ thống thu thập dữ liệu được xây
+dựng dựa trên một bo mạch tùy chỉnh tích hợp vi điều khiển nRF5232. Vi điều
+khiển này đảm nhiệm đồng thời cả việc lấy mẫu dữ liệu từ cảm biến gia tốc ba
+trục LIS2DH12 với tần số 100 Hz và truyền dữ liệu không dây theo thời gian thực
+\cite{ abdulsadig2023, Sleep_Posture_Detection}. Trong nghiên cứu của tác giả
+Vũ Hoàng Diệu, mô-đun ESP32 được lựa chọn làm đơn vị xử lý trung tâm nhờ tích
+hợp bộ vi điều khiển hiệu năng cao, kết nối không dây Wi-Fi đáp ứng tốt yêu cầu
+của hệ thống thu thập dữ liệu tư thế ngủ theo thời gian thực \cite{vu2023}.
+Thiết bị không chỉ cho phép truyền dữ liệu trực tiếp lên máy chủ hoặc nền tảng
+đám mây thông qua Wi-Fi, mà còn hỗ trợ lưu trữ trên thẻ nhớ microSD, đảm bảo
 tính liên tục trong điều kiện mất kết nối mạng.
 
-Qua phân tích các nghiên cứu trên có thể thấy rằng phần lớn các cấu hình phần
+Qua phân tích các nghiên cứu trên, có thể thấy rằng phần lớn các cấu hình phần
 cứng có kích thước vẫn còn lớn hoặc gặp giới hạn trong khả năng tích hợp mô
-hình học máy tại thiết bị. Vì vậy, trong khuôn khổ luận văn sẽ sử dụng vi điều
-khiển nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với các lý do sau:
+hình học máy tại thiết bị. Trong khuôn khổ luận văn sẽ sử dụng vi điều khiển
+nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với các lý do sau:
 
 \begin{figure}[H]
     \centering
@@ -48,11 +44,11 @@ khiển nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với các
 
 nRF52840 tích hợp bộ giao thức không dây Bluetooth năng lượng thấp hoạt động ở
 băng tần 2.4~GHz và bộ xử lý trung tâm Arm Cortex-M4F chạy ở xung nhịp 64~MHz,
-kèm bộ xử lý dấu phẩy động (FPU). Vi xử lý này được trang bị bộ nhớ 1~MB Flash
-và 256~kb RAM phù hợp để triển khai các mô hình cho bài toán phân loại tư thế
-ngủ. Ngoài khả năng hoạt động trong dải điện áp rộng từ +1.7~V đến +5.5~V
+kèm bộ xử lý dấu phẩy động (FPU). Vi điều khiển này được trang bị bộ nhớ 1~MB
+Flash và 256~kb RAM phù hợp để triển khai các mô hình cho bài toán phân loại tư
+thế ngủ. Ngoài khả năng hoạt động trong dải điện áp rộng từ +1.7~V đến +5.5~V
 (tương thích với nguồn pin và USB), nRF52840 còn cung cấp các giao tiếp ngoại
-vi phong phú: hai giao diện I2C, bốn SPI chủ (master), ba SPI tớ (slave), bốn
+vi phong phú: hai kết nối I2C, bốn SPI chủ (master), ba SPI tớ (slave), bốn
 kênh điều chế xung (PWM) hỗ trợ EasyDMA, cùng với bộ định thời 32-bit, phù hợp
 cho các ứng dụng đòi hỏi xử lý thời gian thực chính xác
 Hình~\ref{nrf52840_schematic}.
@@ -72,11 +68,6 @@ Hiện nay, nRF52840 cũng tích hợp trong nhiều bộ kit phát triển thư
 như Adafruit Circuit Playground Bluefruit,
 SparkFun Pro nRF52840 Mini,
 Seeed Studio XIAO.
-Các bộ kit này cung cấp tài nguyên phần cứng và thư viện mã nguồn mở,
-hỗ trợ kết nối BLE, USB, GPIO, SPI, I²C, cùng khả năng lập trình trực
-tiếp qua môi trường Arduino IDE, PlatformIO hoặc Zephyr RTOS.
-Nhờ đó, nRF52840 càng trở nên phổ biến trong các nghiên cứu và dự án về IoT,
-thiết bị đeo thông minh và học máy tại biên.
 
 \begin{figure}[H]
     \centering
@@ -95,6 +86,12 @@ thiết bị đeo thông minh và học máy tại biên.
     \caption{Một số bộ kit phát triển dựa trên vi điều khiển Nordic nRF52840}
     \label{fig:nrf52840_devkits}
 \end{figure}
+
+Các bộ kit này cung cấp tài nguyên phần cứng và thư viện mã nguồn mở, hỗ trợ
+kết nối BLE, USB, GPIO, SPI, I²C, cùng khả năng lập trình trực tiếp qua môi
+trường Arduino IDE, PlatformIO hoặc Zephyr RTOS. Nhờ đó, nRF52840 càng trở nên
+phổ biến trong các nghiên cứu và dự án về IoT, thiết bị đeo thông minh và học
+máy tại biên.
 
 % Kiến trúc ARM có nhiều dòng vi xử lý khác nhau, được phát triển và nâng cấp
 % liên tục nhằm đáp ứng nhu cầu đa dạng trong lĩnh vực công nghệ nhúng. Trong đó,
@@ -157,7 +154,7 @@ thiết bị đeo thông minh và học máy tại biên.
 \subsection{Cảm biến}
 \label{subsec:cam_bien}
 
-Trong quá trình ngủ, các chuyển động thân thể chủ yếu là chuyển động chậm, với
+Trong quá trình ngủ, các chuyển động cơ thể chủ yếu là chuyển động chậm, với
 biên độ nhỏ và ít mang tính đột ngột \cite{Wang2018_slidingwindow}. Trong giai
 đoạn ngủ REM, cơ thể gần như bất động. Do đó, việc ghi nhận chính xác các thay
 đổi tư thế ngủ đòi hỏi cảm biến có độ nhạy cao. Như đã trình bày trong Chương
@@ -189,7 +186,7 @@ Thứ ba, tốc độ lấy mẫu và thời gian đáp ứng nhanh: BMI270 hỗ
 (ODR) từ 0.7~Hz đến~1.6 kHz cho cảm biến gia tốc, phù hợp bài toán phân loại
 giấc ngủ yêu cầu tần số lấy mẫu thấp (10~Hz).
 
-\begin{figure}[]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth, keepaspectratio]{images/bmi270_block.png}
     \caption{Sơ đồ khối Bosch BMI270}
@@ -202,6 +199,14 @@ Tính năng bù sai lệch cho cảm biến gia tốc đảm bảo độ ổn đ
 đo. Ngoài ra, cảm biến còn tích hợp thêm bộ lọc thông thấp
 Hình~\ref{bmi270_block}.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth, keepaspectratio]{images/bmi270_pin.png}
+    \vspace*{-5mm}
+    \caption{Sơ đồ chân Bosch BMI270}
+    \label{bmi270_pin}
+\end{figure}
+
 Cuối cùng, tích hợp tính năng thông minh được lập trình trong các thanh ghi
 riêng được Google chứng nhận tương thích với hệ điều hành Wear OS và hỗ trợ
 phát hiện chuyển động tự động: BMI270 có khả năng phát hiện các trạng thái như
@@ -211,33 +216,20 @@ chuyển các thiết bị đeo ở cổ tay (wrist wear wakeup). Các tính nă
 học máy khi có thay đổi tư thế đáng kể, qua đó tiết kiệm năng lượng và tăng
 tuổi thọ pin.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth, keepaspectratio]{images/bmi270_pin.png}
-    \vspace*{-5mm}
-    \caption{Sơ đồ chân Bosch BMI270}
-    \label{bmi270_pin}
-\end{figure}
-
 \subsection{Bluetooth năng lượng thấp}
 
 Các công nghệ truyền thông không dây khác đều bộc lộ những hạn chế đối với
 thiết bị phân loại tư thế ngủ. Wi-Fi, có ưu thế về băng thông, lại tiêu thụ
-năng lượng cao và phụ thuộc vào internet. Bluetooth cổ điển, vốn được thiết kế
-cho các ứng dụng truyền tải dữ liệu dung lượng lớn như âm thanh, cũng đòi hỏi
-năng lượng cao hơn so với BLE. ZigBee, hiệu quả trong các mạng cảm biến nhà
-thông minh nhờ cấu trúc lưới, lại thiếu sự hỗ trợ trên điện thoại và đòi hỏi
-gateway riêng. Với mục tiêu tối ưu hóa năng lượng và đảm bảo khả năng hoạt động
-lâu dài cho thiết bị đeo sử dụng pin, BLE được lựa chọn làm chuẩn kết nối không
-dây chính trong hệ thống phần cứng. So với các giao thức khác, BLE tỏ ra vượt
-trội nhờ mức tiêu thụ năng lượng rất thấp, tốc độ khởi tạo kết nối nhanh và khả
-năng tương thích rộng rãi với hầu hết các thiết bị di động hiện nay
-\cite{BLE_compare}.
-
-Ngoài ra, BLE còn được hỗ trợ trên vi điều khiển nRF52840 đã chọn ở phần trên.
-Nhờ sự kết hợp này, hệ thống có thể duy trì khả năng truyền dữ liệu ổn định,
-tiết kiệm năng lượng, và đáp ứng tốt yêu cầu hoạt động liên tục trong quá trình
-giám sát tư thế ngủ.
+năng lượng cao và phụ thuộc vào internet. Bluetooth truyền thống, vốn được
+thiết kế cho các ứng dụng truyền tải dữ liệu dung lượng lớn như âm thanh, cũng
+đòi hỏi năng lượng cao hơn so với BLE. ZigBee, hiệu quả trong các mạng cảm biến
+nhà thông minh nhờ cấu trúc lưới, lại thiếu sự hỗ trợ trên điện thoại di động
+và đòi hỏi gateway riêng. Với mục tiêu tối ưu hóa năng lượng và đảm bảo khả
+năng hoạt động lâu dài cho thiết bị đeo sử dụng pin, BLE được lựa chọn làm
+chuẩn kết nối không dây chính trong hệ thống phần cứng. So với các giao thức
+khác, BLE tỏ ra vượt trội nhờ mức tiêu thụ năng lượng rất thấp, tốc độ khởi tạo
+kết nối nhanh và khả năng tương thích rộng rãi với hầu hết các thiết bị di động
+hiện nay \cite{BLE_compare}.
 
 \begin{figure}[H]
     \centering
@@ -245,6 +237,11 @@ giám sát tư thế ngủ.
     \caption{Các kiểu kết nối không dây trong họ chip nRF52}
     \label{ble}
 \end{figure}
+
+Ngoài ra, BLE còn được hỗ trợ trên vi điều khiển nRF52840 đã chọn ở phần trên.
+Nhờ sự kết hợp này, hệ thống có thể duy trì khả năng truyền dữ liệu ổn định,
+tiết kiệm năng lượng, và đáp ứng tốt yêu cầu hoạt động liên tục trong quá trình
+giám sát tư thế ngủ.
 
 \subsubsection*{Các thành phần, chức năng}
 
@@ -262,7 +259,7 @@ trọng hơn, chế độ này còn giúp giảm đáng kể mức tiêu thụ n
 Đặc biệt, chế độ Long Range mở rộng đáng kể phạm vi truyền thông của BLE, cho
 phép các thiết bị duy trì kết nối trong toàn bộ không gian trong nhà.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/gatt.drawio.png}
     \caption{Cấu trúc của GATT}
@@ -288,12 +285,12 @@ các ứng dụng IoT quy mô đa cảm biến đặt tại nhiều nơi khác n
 
 Sau khi đã lựa chọn được vi điều khiển, cảm biến của hệ thống phần cứng phân
 loại tư thế ngủ. Trong phần này, luận văn sẽ trình bày về thiết kế sơ đồ nguyên
-lý cho mạch thông qua những câu hỏi: Các thành phần trong cần thiết để phục vụ
+lý cho mạch trả lời những câu hỏi: Các thành phần trong cần thiết để phục vụ
 cho bài toán phân loại tư thế ngủ là gì? Chúng được kết nối với nhau như thế
 nào? và chi tiết từng thành phần đó là gì?
 
 Để đảm bảo các yêu cầu đặt ra, hệ thống cần
-các thành phần sau: 01) Khối điều khiển: có chức năng xử lý toàn bộ logic trong
+các khối sau: 01) Khối điều khiển: có chức năng xử lý toàn bộ logic trong
 mạch, kết nối được với các thiết bị khác như điện thoại thông qua BLE và đặc
 biệt, đủ hiệu năng để triển khai các mô hình học máy; 02) Khối cảm biến: có
 nhiệm vụ thu thập dữ liệu sinh lý bao gồm 2 cảm biến chính là gia tốc (đã được
@@ -307,12 +304,12 @@ tiêu trong phần này.
 
 \subsubsection{Khối điều khiển}
 
-Với yêu cầu quan trọng đối điều khiển thì vi điều khiển nRF52840 được chọn hoàn
-toàn có thể đáp ứng các tiêu trí đã nêu trong phần~\ref{subsec:vi_xu_ly} để làm
-vi điều khiển của mạch. Tuy nhiên để đáp ứng đủ các yêu cầu của khối điều khiển
-thì vẫn đang thiếu các thành phần như khối thu phát tín hiệu vô tuyến bao gồm
-ăng ten, mạch phối hợp trở khánh, bộ dao động tinh thể và bộ đếm định thời nhằm
-duy trì hoạt động ổn định trong các chế độ năng lượng thấp.
+Vi điều khiển nRF52840 được chọn hoàn toàn có thể đáp ứng các tiêu trí đã nêu
+trong phần~\ref{subsec:vi_xu_ly} để làm vi điều khiển của mạch. Tuy nhiên để
+đáp ứng đủ các yêu cầu của khối điều khiển thì vẫn đang thiếu các thành phần
+như khối thu phát tín hiệu vô tuyến bao gồm ăng ten, mạch phối hợp trở kháng,
+bộ dao động tinh thể và bộ đếm định thời nhằm duy trì hoạt động ổn định trong
+các chế độ năng lượng thấp.
 
 Sau khi tìm hiểu, trong khuôn khổ luận văn sẽ sử dụng module U-blox NINA-B306
 để đảm nhiệm các nhiệm vụ của khối điều khiển \cite{uBlox2019_NINA_B3}.
@@ -344,14 +341,14 @@ bao gồm các kênh analog, các đường truyền debug (SWD, TRACE) và các
 \subsubsection{Khối cảm biến}
 Như đã đề cập chi tiết ở phần~\ref{subsec:cam_bien}, cảm biến gia tốc Bosch
 BMI270 được lựa chọn để thu thập tín hiệu gia tốc cho bài toán phân loại tư thế
-ngủ. Ngoài ra, việc hướng tới việc xác định chứng ngưng thở khi ngủ OSA thì
-nhóm có bổ sung thêm cảm biến âm thanh STMicroelectronics MP34DT06J. Cảm biến
-MP34DT06J là microphone MEMS kỹ thuật số định hướng đa hướng có kích thước siêu
+ngủ. Ngoài ra, việc hướng tới việc xác định chứng ngưng thở khi ngủ OSA nhóm
+tác giả quyết định bổ sung thêm cảm biến âm thanh STMicroelectronics MP34DT06J.
+Cảm biến MP34DT06J, là microphone MEMS kỹ thuật số đa hướng có kích thước siêu
 nhỏ gọn và tiêu thụ năng lượng thấp. Ngoài ra, MP34DT06J là cảm biến số có tỷ
 lệ tín hiệu trên nhiễu (SNR) 64 dB và độ nhạy -26 dBFS ± 1 dB, đảm bảo chất
 lượng thu âm ổn định. Thiết bị được đóng gói theo chuẩn SMD top-port và được
 đảm bảo hoạt động ổn định trong dải nhiệt độ mở rộng từ -40 °C đến +85 °C và
-kèm thêm điện áp đầu vào 1.8V hoàn toàn phù hợp với các thông số của vi điều
+kèm thêm điện áp đầu vào 1.8~V hoàn toàn phù hợp với các thông số của vi điều
 khiển. Tuy nhiên, trong khuôn khổ luận văn này sẽ không đề cập sâu vào cảm biến
 này để tập trung tối đa vào dữ liệu cảm biến gia tốc cho bài toán phân loại tư
 thế ngủ.
