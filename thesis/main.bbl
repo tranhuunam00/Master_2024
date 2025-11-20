@@ -5008,6 +5008,51 @@
       \field{title}{SparkFun BMI270 Arduino Library- Driver for the Bosch BMI270 6-DoF IMU}
       \field{year}{2023}
     \endentry
+    \entry{kalman_2015}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=f495cdda14989886bcfdb65c02b7a19d}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=f7c7e1d639492d5fd32dabd9b135a35e}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Ranyang},
+           giveni={R\bibinitperiod}}}%
+        {{hash=93e1b417aed8ab80723f0f199b758743}{%
+           family={Ji},
+           familyi={J\bibinitperiod},
+           given={Kaifan},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9df66f26414e5a0bebb294d519fa5f56}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{2714f221bb9ed7f5cd4a871871ac850a}
+      \strng{fullhash}{2714f221bb9ed7f5cd4a871871ac850a}
+      \strng{fullhashraw}{2714f221bb9ed7f5cd4a871871ac850a}
+      \strng{bibnamehash}{2714f221bb9ed7f5cd4a871871ac850a}
+      \strng{authorbibnamehash}{2714f221bb9ed7f5cd4a871871ac850a}
+      \strng{authornamehash}{2714f221bb9ed7f5cd4a871871ac850a}
+      \strng{authorfullhash}{2714f221bb9ed7f5cd4a871871ac850a}
+      \strng{authorfullhashraw}{2714f221bb9ed7f5cd4a871871ac850a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 8th International Conference on Intelligent Networks and Intelligent Systems (ICINIS)}
+      \field{title}{Kalman Filter and Its Application}
+      \field{year}{2015}
+      \field{pages}{74\bibrangedash 77}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/ICINIS.2015.35
+      \endverb
+      \keyw{Kalman filters;Mathematical model;Estimation;Target tracking;Jacobian matrices;Real-time systems;Kalman filter;Extended Kalman filter;Unscented Kalman filter}
+    \endentry
     \entry{flutter_blue_plus}{software}{}{}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}

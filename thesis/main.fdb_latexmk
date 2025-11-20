@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1763607627.90407 "main.bcf" "main.bbl" "main" 1763607768.7388 0
-  "main.bcf" 1763607767 120432 0d2131b0b966d93510d4a98554651be5 "pdflatex"
-  "refs.bib" 1763454041 83861 99461e8029571e8e399086ad7380ef3c ""
+["biber main"] 1763653475.74665 "main.bcf" "main.bbl" "main" 1763654297.70023 0
+  "main.bcf" 1763654295 120563 104babc0b2cd9087e564efc681d023c8 "pdflatex"
+  "refs.bib" 1763631677 84382 66334c5e5b5b0d24debb3ee494224dae ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1763607746.06062 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1763607768.74118 0
+["pdflatex"] 1763654267.6068 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1763654297.70223 0
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761721282 170669 580f60f86b494b149fd13be17089526f ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1753283835 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1753323483 13254313 89e2afc147c36950f3366f1142cce13c ""
@@ -294,7 +294,7 @@
   "chapters/0-coverpage.tex" 1763603705 10736 71eef3ef67ee8e9bc11bebce9e32030d ""
   "chapters/1-introduction.tex" 1763517757 8516 76c3a57d8ca0ec99730a9e97d3de8334 ""
   "chapters/2-base-knowledge.tex" 1763606801 71082 f0225134b161c422eb0ca85a8e9df08f ""
-  "chapters/3-proposed_solution.tex" 1763607740 72622 604b0c2a2314cc36ef23139ec957fae3 ""
+  "chapters/3-proposed_solution.tex" 1763654265 72037 9eb55745377d82b28c8ab0d77d28da3a ""
   "chapters/4-experiment.tex" 1763528904 65696 483cf12948b4dd03798e1c258cd76363 ""
   "chapters/5-conclusion.tex" 1763524442 1440 10ff338e3b045ae3bc2596f578789b82 ""
   "chapters/examples/ble_scan.tex" 1762847064 1537 fede42ab9a829e79b43d7192fbde6b05 ""
@@ -381,15 +381,15 @@
   "images/vitri_co.png" 1762443391 129340 184f6133557167661d5ac27fd98fe482 ""
   "images/z_kalman.png" 1762683551 57101 e6bcaa3aaf0c8deeead9eef7f1c9c073 ""
   "main.acr" 1763536830 3911 c1d4c7d3420bf92cdaa456791b5c37a8 ""
-  "main.aux" 1763607767 62615 22a2662144dc65f7393abd668029280d "pdflatex"
-  "main.bbl" 1763607633 221669 a5f8c3b53624d017838ed9583a106b93 "biber main"
+  "main.aux" 1763654295 62842 12451161e82d3711cc0d1835b625e903 "pdflatex"
+  "main.bbl" 1763653480 223672 419496653f3bd6642fa1f3df5219d322 "biber main"
   "main.glsdefs" 1762831769 3249 385e942e8001cc86b0cf55ef553a96c2 ""
-  "main.lof" 1763607767 9252 3dfea80e4a65e1c251e109229f205b65 "pdflatex"
-  "main.lot" 1763607767 1964 f75ff0459fbbfc3cb180e801b181a462 "pdflatex"
-  "main.out" 1763607767 8836 cc6a12b1cbbb4c586a496148a5e5e12e "pdflatex"
-  "main.run.xml" 1763607767 2268 456211433cb673c754af192d4ef1bf89 "pdflatex"
+  "main.lof" 1763654295 9276 f87fb3dcbd81af2cb65cbf16dab41e9e "pdflatex"
+  "main.lot" 1763654295 1964 60197d2750ceffd0d8d28239da11f764 "pdflatex"
+  "main.out" 1763654295 8836 cc6a12b1cbbb4c586a496148a5e5e12e "pdflatex"
+  "main.run.xml" 1763654295 2268 456211433cb673c754af192d4ef1bf89 "pdflatex"
   "main.tex" 1763545473 6150 064ea8346ea772bb6e8c253e681137c7 ""
-  "main.toc" 1763607767 5777 1dee574ba7940ffae17085e3d5b01763 "pdflatex"
+  "main.toc" 1763654295 5762 7afb593c3cf59bb75da86792d1e82f3d "pdflatex"
   "setting/bkthesis.sty" 1753256024 967 af4f61477f3f023e14bc982890f87805 ""
   (generated)
   "main.acn"

@@ -355,12 +355,12 @@ thế ngủ.
 
 \subsubsection{Khối nguồn, nạp và gỡ lỗi, hiển thị}
 Ba khối chức năng này được thiết kế nhằm đảm bảo sự ổn định và khả năng vận
-hành tin cậy của toàn bộ hệ thống phần cứng. Đối với khối nguồn, hệ thống được
-xác định có hai nguồn cung cấp chính gồm nguồn từ cổng USB và nguồn từ pin
-Li-Polymer. Điện áp đầu vào của toàn mạch được xác định ở mức 3.3 V để tương
-thích với các linh kiện và vi điều khiển. Ngoài ra, trong khuôn khổ luận văn sẽ
-sử dụng một bộ chuyển đổi hạ áp (step-down converter) tích hợp mạch điều khiển
-MP2322GQH để ổn định nguồn đầu vào tại 3.3 V Hình~\ref{fig:MP2322GQH}
+hành của toàn bộ hệ thống phần cứng. Đối với khối nguồn, hệ thống được xác định
+có hai nguồn cung cấp chính gồm nguồn từ cổng USB và nguồn từ pin Li-Polymer.
+Điện áp đầu vào của toàn mạch được xác định ở mức 3.3 V để tương thích với các
+linh kiện và vi điều khiển. Ngoài ra, trong khuôn khổ luận văn sẽ sử dụng một
+bộ chuyển đổi hạ áp (step-down converter) tích hợp mạch điều khiển MP2322GQH để
+ổn định nguồn đầu vào tại 3.3 V Hình~\ref{fig:MP2322GQH}
 
 \begin{figure}[H]
     \centering
@@ -393,7 +393,7 @@ Sau khi xác định các linh kiện, các yêu cầu về điện áp, kiểu 
 đầu ra của các thành phần kể trên, sơ đồ mạch sẽ được xây dựng thông qua phần
 mềm Altium Designer. Mạch được thiết kế hình tròn kích thước đường kính 3~cm,
 2~lớp đúng với định hướng của nhóm. Kết quả được thể hiện tại
-Hình~\ref{fig:schematic}
+Hình~\ref{fig:schematic}.
 
 \begin{figure}[H]
     \centering
@@ -454,7 +454,7 @@ mở rộng trong tương lai.
 Cách tiếp cận này cho phép khai thác hầu hết các phương thức tương tác với phần cứng, cộng đồng hỗ trợ lớn đồng thời giúp rút ngắn đáng kể thời gian phát triển và giảm thiểu sai sót trong quá trình lập trình.
 Tuy nhiên, để có thể kiểm soát toàn diện các chức năng của hệ thống cũng như tối ưu hóa mức tiêu thụ năng lượng, trong tương lai sẽ chuyển sang phương pháp lập trình ở mức thấp.
 
-\subsubsection{Cấu hình vi xử lý và cảm biến}
+\subsubsection{Cấu hình vi điều khiển và cảm biến}
 Bước đầu tiên, nạp Bootloader của Arduino Nano vào vi điều khiển bằng giao thức
 Serial Wire Debug (SWD). Điều này cho phép thiết lập môi trường lập trình ban
 đầu và hỗ trợ việc tải chương trình trực tiếp từ máy tính thông qua cổng USB.
@@ -478,8 +478,8 @@ chiều nhằm chắc chắn các cấu hình đã được đặt trên phần 
 \subsubsection{Cấu hình BLE}
 
 Quá trình khởi tạo, kết nối và truyền lên thiết bị trung tâm bao gồm các bước
-sau: tạo bản tin quảng bá (advertising), thiết lập cơ chế kết nối/ngắt kết nối,
-cũng như định nghĩa UUID của dịch vụ và đặc tính theo mô hình \gls{gatt}.
+sau: tạo bản tin quảng bá, thiết lập cơ chế kết nối/ngắt kết nối, cũng như định
+nghĩa UUID của dịch vụ và đặc tính theo mô hình \gls{gatt}.
 
 \input{chapters/examples/cauhinh_ble.tex}
 
@@ -520,10 +520,10 @@ hồi. Sau khi kết nối thành công, phần cứng lấy được thông tin
 trung tâm ở đây là ứng dụng điện thoại. Đây một bước xác thực cần thiết để chỉ
 cho phép thiết bị trung tâm nào được lập trình sẵn.
 
-Thứ tư, thu nhận dữ liệu cảm biến ba trục (x, y, z) từ BMI270. Các giá trị gia
-tốc được đọc và chuẩn hóa trước khi truyền. Việc chuẩn hóa ở đây gồm tách dấu
-và phần nguyên - phần thập phân để giảm kích thước gói tin mà vẫn đảm bảo độ
-chính xác khi tái lập lại.
+Thứ tư, thu nhận dữ liệu cảm biến trên ba trục (x, y, z) từ BMI270. Các giá trị
+gia tốc được đọc và chuẩn hóa trước khi truyền. Việc chuẩn hóa ở đây gồm tách
+dấu và phần nguyên - phần thập phân để giảm kích thước gói tin mà vẫn đảm bảo
+độ chính xác khi tái lập lại.
 
 Cuối cùng, truyền dữ liệu định dạng byte qua BLE thông qua characteristic đã
 định nghĩa. Mỗi gói tin gồm 9 byte chứa đầy đủ thông tin về hướng và biên độ
@@ -531,21 +531,101 @@ gia tốc trên ba trục, được gửi chu kỳ 100 ms, bảo đảm tốc đ
 (10 Hz) phục vụ phân tích tư thế trong thời gian thực.
 
 Việc chuẩn hóa 5 giai đoạn này có ưu điểm có thể bóc tách cho mục đích khác
-nhau, tối ưu cho từng giai đoạn, đảm bảo code mạch lạc và dễ bảo trì.
+nhau, tối ưu cho từng giai đoạn, đảm bảo mã nguồn mạch lạc và dễ bảo trì.
 
 \subsubsection{Lọc nhiễu bằng bộ lọc Kalman}
 
 Trong phần phân tích các bộ lọc cũng như từ thực nghiệm nhận thấy, khi có những
-chuyển động đột ngột gia tốc cao có thể gây ra sai lệnh giá trị cảm biến.
+chuyển động đột ngột với gia tốc cao có thể gây ra sai lệnh giá trị cảm biến.
+Để giảm bớt các nhiễu đó, bộ lọc Kalmann được sử dụng với các lý do sau: Thứ
+nhất, bộ lọc Kalman cho phép kết hợp đồng thời mô hình dự đoán trạng thái và
+giá trị thực tế, nhờ đó không chỉ làm mịn dữ liệu và giảm sự xuất hiện của các
+giá trị ngoại lai. Thứ hai, bộ lọc này dễ dàng triển khai, độ phức tạp thuật
+toán phù hợp với yêu cầu triển khai trên vi điều khiển nRF52840 trong nghiên
+cứu này. Bộ lọc Kalman hoạt động dựa trên hệ thống trạng thái tuyến tính được
+mô tả bởi hai phương trình sau \cite{kalman, kalman_2015}:
+
+Phương trình trạng thái:
+\begin{equation}
+    x_k = A_k x_{k-1} + B_k u_k + w_k
+\end{equation}
+
+Phương trình quan sát:
+\begin{equation}
+    z_k = H_k x_k + v_k
+\end{equation}
+
+Trong đó:
+\begin{itemize}
+    \item $x_k$: Vector trạng thái của hệ thống tại thời điểm $k$.
+    \item $z_k$: Vector tín hiệu đo lường (quan sát) tại thời điểm $k$.
+    \item $u_k$: Vector tín hiệu điều khiển  tại thời điểm $k$.
+    \item $A_k$: Ma trận chuyển trạng thái.
+    \item $B_k$: Ma trận điều khiển.
+    \item $H_k$: Ma trận quan sát.
+    \item $w_k$: Nhiễu quá trình.
+    \item $v_k$: Nhiễu đo lường.
+    \item $Q_k$: Ma trận hiệp phương sai của nhiễu quá trình.
+    \item $R_k$: Ma trận hiệp phương sai của nhiễu đo lường.
+\end{itemize}
+
+Thuật toán bao gồm hai giai đoạn lặp lại liên tục:
+
+1. Bước dự đoán, bộ lọc tạo ra các ước lượng tiên nghiệm  dựa trên trạng
+thái trước đó:
+
+Dự đoán trạng thái:
+\begin{equation}
+    \hat{x}_{k|k-1} = A_k \hat{x}_{k-1|k-1} + B_k u_k
+\end{equation}
+
+Dự đoán hiệp phương sai sai số:
+\begin{equation}
+    P_{k|k-1} = A_k P_{k-1|k-1} A_k^{T} + Q_k
+\end{equation}
+
+Trong đó:
+\begin{itemize}
+    \item $\hat{x}_{k|k-1}$: Ước lượng trạng thái tiên nghiệm tại thời điểm $k$.
+    \item $\hat{x}_{k-1|k-1}$: Ước lượng trạng thái hậu nghiệm tại thời điểm $k-1$.
+    \item $P_{k|k-1}$: Hiệp phương sai sai số tiên nghiệm.
+    \item $P_{k-1|k-1}$: Hiệp phương sai sai số hậu nghiệm từ bước trước.
+\end{itemize}
+
+2. Bước cập nhật, bộ lọc kết hợp dự đoán với dữ liệu đo mới $z_k$ để tạo ra ước
+lượng hậu nghiệm:
+
+Tính Kalman Gain:
+\begin{equation}
+    K_k = P_{k|k-1} H_k^{T} \left( H_k P_{k|k-1} H_k^{T} + R_k \right)^{-1}
+\end{equation}
+
+Cập nhật trạng thái:
+\begin{equation}
+    \hat{x}_{k|k} = \hat{x}_{k|k-1} + K_k \left( z_k - H_k \hat{x}_{k|k-1} \right)
+\end{equation}
+
+Cập nhật hiệp phương sai sai số:
+\begin{equation}
+    P_{k|k} = (I - K_k H_k) P_{k|k-1}
+\end{equation}
+
+Trong đó:
+\begin{itemize}
+    \item $K_k$: Hệ số Kalman Gain, quyết định trọng số tin cậy giữa dự đoán và đo lường.
+    \item $\hat{x}_{k|k}$: Ước lượng trạng thái tối ưu (hậu nghiệm) tại thời điểm $k$.
+    \item $P_{k|k}$: Hiệp phương sai sai số ước lượng tối ưu (hậu nghiệm).
+    \item $I$: Ma trận đơn vị.
+\end{itemize}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{images/z_kalman.png}
-    \caption{So sánh tín hiệu trục Z trước và sau lọc Kalman}
+    \caption{So sánh tín hiệu trục z trước và sau lọc Kalman}
     \label{fig:z_kalman}
 \end{figure}
 
-Hình~\ref{fig:z_kalman} trình bày so sánh tín hiệu gia tốc thu được trên trục Z
+Hình~\ref{fig:z_kalman} trình bày so sánh tín hiệu gia tốc thu được trên trục z
 giữa hai trạng thái: dữ liệu thô và dữ liệu sau khi qua bộ lọc Kalman. Có thể
 quan sát thấy, trong vùng được khoanh tròn, tín hiệu thô (đường màu xanh) xuất
 hiện một giá trị đột biến âm với biên độ lớn, thể hiện hiện tượng trôi tín hiệu
@@ -571,10 +651,9 @@ mà là một cửa sổ mẫu và các thống kê trong cửa sổ đó.
 
 \subsection{Phần mềm thu thập, lưu trữ}
 
-Phần mềm trong nghiên cứu này không chỉ đơn thuần là công cụ trực quan hoá dữ
-liệu cảm biến, mà còn được thiết kế như một mắt xích trọng yếu trong toàn bộ
-quy trình từ thu thập, truyền tải, lưu trữ, cho đến huấn luyện và triển khai mô
-hình học máy. Cách tiếp cận này đảm bảo rằng dữ liệu thu nhận từ môi trường
+Phần mềm trong nghiên cứu này không chỉ là công cụ trực quan hoá dữ liệu cảm
+biến, mà còn được thiết kế như một mắt xích trọng yếu trong quy trình từ thu
+thập, truyền tải. Cách tiếp cận này đảm bảo rằng dữ liệu thu nhận từ môi trường
 thực tế được xử lý nhất quán, có khả năng tái sử dụng và dễ dàng tích hợp với
 các hệ thống khác.
 
@@ -584,20 +663,22 @@ các hệ thống khác.
     \caption{Kiến trúc tổng thể của hệ thống}
     \label{fig:architecture_software}
 \end{figure}
-Hình~\ref{fig:architecture_software} mô tả tổng quan các thành phần cần thiết trong luận văn và kết nối giữa chúng.
-Để đưa ra kết quả phân loại tư thế ngủ dữ liệu từ cảm biến có thể có 2 hướng đi. Thứ nhất, dữ liệu từ cảm biến thông qua vi điều khiển đẩy lên ứng dụng di động
+Hình~\ref{fig:architecture_software} mô tả tổng quan các thành phần trong hệ thống và kết nối giữa chúng.
+Để đưa ra kết quả đây là tư thế ngủ nào, dữ liệu từ cảm biến có thể theo hai hướng. Thứ nhất,
+dữ liệu từ cảm biến
+thông qua BLE tới ứng dụng di động
 sau đó được lưu trữ hoặc được suy luận trên máy chủ đám mây rồi trả về kết quả tại ứng dụng di động.
-Thứ hai. dữ liệu từ cảm biến sau khi được đọc từ vi điều khiển thì
-được suy luận ngay tại biên và hiển thị kết quả thông qua các chỉ báo đèn led.
+Thứ hai, dữ liệu từ cảm biến sau khi được đọc từ vi điều khiển thì
+được suy luận ngay tại đó và hiển thị kết quả thông qua các chỉ báo đèn led.
 Cả 2 cách đều được nghiên cứu và triển khai trong khuôn khổ luận văn này.
 
 \subsubsection{Ứng dụng di dộng}
-Được coi như một cổng kết nối trong điện toán đám mây
-có nhiệm vụ gom các tín hiệu từ cảm biến gia tốc hoặc có thể mở
-rộng đa cảm biến khác, hiển thị chúng theo thời gian thực và chuyển
+Được coi như một cổng kết nối trung gian trong mô hình điện toán đám mây
+có nhiệm vụ gom các tín hiệu từ cảm biến gia tốc, hiển thị chúng theo thời gian thực và chuyển
 lên máy chủ đám mây.
-Dựa trên yêu cầu bài toán, xác định được các yêu cầu của phần mềm như
-Bảng~\ref{tab:app_features}. Ngoài ra, các yêu cầu phi chức năng cũng được chú ý như là bảo mật thông tin, thời gian phản hồi hệ thống.
+Dựa vào mục tiêu nghiên cứu, yêu cầu chức năng của phần mềm như
+Bảng~\ref{tab:app_features} được xác định. Ngoài ra, các yêu cầu phi chức năng
+cũng được chú ý như là bảo mật thông tin, thời gian phản hồi hệ thống.
 \begin{table}[H]
     \centering
     \caption{Các nhóm chức năng chính của ứng dụng}
@@ -624,15 +705,17 @@ Bảng~\ref{tab:app_features}. Ngoài ra, các yêu cầu phi chức năng cũng
 \end{table}
 
 Ứng dụng di động được viết bằng ngôn ngữ DART trên nền tảng Flutter.
-Vì sao lại chọn Dart mà không phải là các ngôn ngữ thuần túy như Java hay
+Vì sao lại chọn Dart mà không phải là các ngôn ngữ khác như Java hay
 Swift? Nói chung, chọn Dart trên nền tảng Flutter lý do chính là có thể
 tạo ra hai phiên bản trên Android và IOS trên cùng một bộ mã chương trình.
 Ngoài ra, việc khởi tạo dự án nhanh, cú pháp thân thiện với người lập trình
 hơn, kèm cộng đồng đông đảo làm giảm đáng kể thời gian phát triển.
 
 Để ứng dụng dễ dàng kiểm thử và nâng cấp,
-BLoC được lựa chọn để quản lý các trạng thái của ứng dụng. Nó hoạt động dựa trên nguyên tắc nhận sự kiện đầu vào từ giao diện gồm trạng thái và dữ liệu đầu vào, xử lý trong khối BLOC như gọi lên máy chủ trung tâm
-và trả lại dữ liệu. Qua đó, luồng dữ liệu trở nên rõ ràng. Cấu trúc tổng thể của kiến trúc
+BLoC được lựa chọn để quản lý các trạng thái của ứng dụng. Nó hoạt động dựa trên nguyên tắc
+nhận sự kiện đầu vào từ giao diện gồm trạng thái và dữ liệu đầu vào, xử lý trong khối BLOC như gọi lên máy chủ trung tâm
+và trả lại dữ liệu lại giao diện. Kiến trúc này giúp phân tầng mã nguồn, dễ dàng cho kiểm tra và gỡ lỗi.
+Cấu trúc tổng thể của kiến trúc
 BLoC gồm ba lớp chính được mô tả trong Hình~\ref{flutter}.
 
 \begin{figure}[htbp]
@@ -642,9 +725,9 @@ BLoC gồm ba lớp chính được mô tả trong Hình~\ref{flutter}.
     \label{flutter}
 \end{figure}
 
-Mã nguồn của toàn bộ ứng dụng di động sẽ để dưới phần mục lục. Còn trong khuôn
+Mã nguồn của toàn bộ ứng dụng di động sẽ để dưới phần phụ lục. Còn trong khuôn
 khổ luận văn, sẽ bàn luận nhiều hơn chức năng chính là kết nối phần cứng, hiển
-thị và chuyển dữ liệu lên máy chủ trung tâm.
+thị và chuyển dữ liệu lên máy chủ trung tâm như thế nào.
 
 \begin{figure}[H]
     \centering
@@ -667,81 +750,69 @@ thị và chuyển dữ liệu lên máy chủ trung tâm.
         \foreach \i/\j in {init/finding, finding/connect, connect/choosing, choosing/notify, notify/present}
         \draw[arrow] (\i) -- (\j);
     \end{tikzpicture}
-    \caption{Sơ đồ kết nối và nhận dữ liệu của ứng dụng di động}
+    \caption{Sơ đồ lộ trình dữ liệu được truyền từ cảm biến đến máy chủ đám mây}
     \label{fig:mobile_ble}
 \end{figure}
 
-Sau khi tìm hiểu, thư viện flutter\_blue\_plus được chọn để kết nối BLE từ ứng
-dụng di động đến phần cứng \cite{flutter_blue_plus}. Nó hỗ trợ các phương thức
-gồm quét, kết nối, đọc/ghi đặc tính và nhận thông báo từ thiết bị BLE trên
-Android, iOS, macOS, Linux và web. Ngoài ra nó không có thêm phụ thuộc ngoài
-Flutter, và được thiết kế cho vai trò BLE trung tâm (không hỗ trợ Bluetooth cổ
-điển như HC-05). Đây là thư viện miễn phí cho cá nhân, tổ chức nhỏ, và phi lợi
-nhuận; các công ty trên 50 nhân viên cần mua bản quyền để sử dụng thương mại.
+Thư viện flutter\_blue\_plus được chọn để kết nối BLE từ ứng dụng di động đến
+phần cứng \cite{flutter_blue_plus}. Nó hỗ trợ các phương thức gồm: quét, kết
+nối, đọc/ghi các dịch vụ - đặc tính theo cấu trúc GATT và lắng nghe phản hồi từ
+thiết bị ngoại vi. Ngoài ra nó không có thêm phụ thuộc ngoài Flutter.
 
 \input{chapters/examples/ble_scan.tex}
 
-Mã nguồn~\ref{lst:ble_scan} trình bày quy trình quét và kết nối thiết bị ngoại
-vi BLE trong Flutter dựa trên thư viện flutter\_blue\_plus. Hàm onScanPressed()
-mục đích quét thiết bị đang khả dụng thông qua dịch vụ mức pin có UUID là 180F.
-Khi này BLoc nhận trạng thái quét, thực hiện quét và trả về danh sách mảng các
-thiết bị bao gồm tên hiển thị, địa chỉ MAC. Hàm onStopPressed() dừng quá trình
-quét, còn onConnectPressed() thiết lập kết nối với thiết bị được chọn và chuyển
-đến màn hình điều khiển chi tiết.
+Mã nguồn~\ref{lst:ble_scan} trình bày quy trình tìm kiếm và kết nối thiết bị
+BLE ngoại vi. Hàm onScanPressed() có nhiệm vụ quét thiết bị đang khả dụng bằng
+cách tìm dịch vụ mức pin có UUID là 180F. Khi này BLoc nhận trạng thái quét,
+thực hiện quét và trả về danh sách mảng các thiết bị bao gồm tên hiển thị, địa
+chỉ MAC. Hàm onStopPressed() dừng quá trình quét, còn onConnectPressed() thiết
+lập kết nối với thiết bị được chọn và chuyển đến màn hình điều khiển chi tiết.
 
 \input{chapters/examples/flutter_ble}
-Mã nguồn~\ref{flutterBle} trình bày cách ứng dụng hoạt động khi người dùng chọn
-đúng BLE của phần cứng. Cụ thể, StreamBuilder được sử dụng để lắng nghe các
-thay đổi của device.services, cho phép hệ thống phản ứng tức thời khi thiết bị
+Mã nguồn~\ref{flutterBle} trình bày cách ứng dụng lắng nghe giá trị cảm biến, hiển thị, xử lý và đẩy lên máy chủ đám mây.
+Cụ thể, một luồng StreamBuilder được khởi tại để lắng nghe các
+thay đổi  các dịch vụ của thiết bị đang kết nối, cho phép hệ thống phản ứng tức thời
+khi thiết bị
 BLE truyền lên các dịch vụ khả dụng. Quá trình so khớp UUID giữa dịch vụ thực
 tế đã cài đặt ở phần cứng và hằng số định nghĩa (ACCLEROMETER\_SERVICE,
-ACCLEROMETER\_CHARACTION) trên ứng dụng di động cho phép xác thực logic nhằm
+ACCLEROMETER\_CHARACTION) trên ứng dụng di động mang tiscnh xác thực. Điều này nhằm
 đảm bảo rằng ứng dụng chỉ giao tiếp với dịch vụ và đặc tính cảm biến hợp lệ.
 
-Sau khi đã khớp các thành phần BLE, ứng dụng di động có thêm nút ấn để lấy
-thông tin. Khi đó, ứng dụng di động sẽ gửi 1 yêu cầu theo dõi đến phần cứng.
-Như đoạn mã~\ref{lst:ble_bmi270}, vi điều khiển lắng nghe được hành động theo
-dõi sẽ lập tức gửi các gói tin lên lại ứng dụng di dộng theo cấu trúc đã xác
-lập.
+Sau khi đã khớp các thành phần GATT, ứng dụng di động có thêm nút ấn để lấy
+thông tin. Khi đó, một yêu cầu theo dõi đến BLE tại phần cứng. Như đoạn
+mã~\ref{lst:ble_bmi270}, vi điều khiển tiếp nhận hành động theo dõi từ ứng dụng
+di động sẽ lập tức gửi các gói tin lên lại ứng dụng di dộng theo cấu trúc đã
+xác lập.
 
-Đến đây, luận văn đã trình bày \textbf{hoàn thành quy trình kết nối và nhận dữ liệu từ phần cứng}.
-Tiếp theo, cách thức dữ liệu được đóng gói và chuyển lên phần máy chủ trung tâm sẽ được làm rõ.
+Đến đây, luận văn đã trình bày quy trình kết nối và nhận dữ liệu từ phần cứng.
+Tiếp theo là đến phần cách thức dữ liệu được đóng gói và chuyển lên phần máy chủ như thế nào.
 
-Ngoài dữ liệu 3 trục x, y, z, nhóm xác định tập dữ liệu cần lưu thêm thời gian
-tạo và giá trị ID của người đang dùng. Việc này đảm bảo việc minh bạch, dễ đối
-chiếu và phân tích, mô phỏng lại giá trị cảm biến theo chuỗi thời gian. Mã
-nguồn~\ref{format_ble} mô tả việc tối ưu hóa đẩy dữ liệu HTTP theo lô giúp giảm
-tải phía máy chủ trung tâm. Điều này tăng tính mở rộng lên hàng trăm thiết bị
-hoặc giá trị cảm biến khác đẩy lên cùng 1 thời điểm.
+Ngoài dữ liệu từ 3 trục x, y, z của cảm biến, thời gian tạo và giá trị ID của
+người đang dùng cũng bắt buộc phải lưu lại. Việc này đảm bảo việc minh bạch, dễ
+đối chiếu và phân tích. Mã nguồn~\ref{format_ble} mô tả việc đẩy dữ liệu thông
+qua phương thức HTTP theo lô giúp giảm tạo các kết nối liên tục tới máy chủ
+trung tâm. Điều này tăng tính mở rộng lên hàng trăm thiết bị hoặc giá trị cảm
+biến khác đẩy lên cùng 1 thời điểm.
 
 \input{chapters/examples/format_data_ble.tex}
 
-Một điểm đáng lưu ý nữa, nhóm kết hợp cùng GS.TS. Dương Quý Sỹ phát triển thêm
-tính năng \textbf{chatbot y học giấc ngủ} dựa trên kỹ thuật
-\textbf{Retrieval-Augmented Generation (RAG)}. Chatbot này được xây dựng từ cơ
-sở dữ liệu gồm hơn 2000 câu hỏi và câu trả lời chuyên sâu liên quan đến giấc
-ngủ được biên tập bởi GS.TS Dương Quý Sỹ, bao gồm cả tài liệu lâm sàng, nghiên
-cứu khoa học và các hướng dẫn thực hành. Người dùng có thể đặt câu hỏi tự nhiên
-như “Tôi có nên lo nếu ngủ ngáy liên tục?” hoặc “STOP-BANG > 5 có ý nghĩa gì?”,
-và chatbot sẽ phản hồi dựa trên kiến thức được truy xuất từ tài liệu nền và
-được tổng hợp lại bằng mô hình ngôn ngữ.
-
-Qua các phân tích trên, các bước từ dữ liệu ở phần cứng đến lưu trữ trên máy
-chủ đám mây đã được hình thành và chuẩn hóa. Đây cũng chính là các bước của hệ
-thống điện toán đám mây khi mọi dữ liệu, mô hình tính toán sẽ cùng một nơi trên
-1 hệ thống phần cứng mạnh mẽ.
+Qua các phân tích trên, toàn bộ quy trình thu thập đến lưu trữ đã được chuẩn
+hóa. Đây cũng là hướng tiếp cận đầu tiên, khi mọi dữ liệu, mô hình tính toán sẽ
+cùng một nơi trên 1 hệ thống phần cứng mạnh mẽ.
 
 \subsubsection{Máy chủ đám mây}
 
-Để giảm thời gian phát triển, toàn bộ hệ thống máy chủ được triển
-khai trển hạ tầng của Amazon Web Services (AWS) gồm 2 phần chính là máy chủ trung tâm và cơ sở dữ liệu.
+Toàn bộ thành phần của hệ thống máy chủ được triển khai trển hạ tầng của Amazon
+Web Services (AWS) gồm 2 phần chính là máy chủ trung tâm và cơ sở dữ liệu.
 
-\textbf{Máy chủ trung tâm}
-có nhiệm vụ mở các kết nối (API) ra bên ngoài, nhận yêu cầu từ ứng dụng di động.
-Ngôn ngữ Typescript (TS) trên nền tảng NodeJS được lựa chọn để xây dựng máy chủ trung tâm với các lý do: 1) TS cung cấp khả năng định nghĩ kiểu dữ liệu
-cho biến, hàm. Các lỗi đó sẽ được phát hiện trong quá trình biên dịch ngay trước khi đến quá trình chạy (run time); 2) NodeJS có nhiều thư viện
-hỗ trợ bảo mật, tương tác với các thành phần khác và khả năng khởi tạo nhanh dự án.
-Về mặt cấu trúc mã nguồn, hệ thống được tổ chức theo mô hình phân lớp như thể hiện trong Hình~\ref{be_structure}.
+Máy chủ trung tâm có nhiệm vụ tiếp nhận và phản hồi các yêu cầu từ ứng dụng di
+động. Ngôn ngữ Typescript (TS) trên nền tảng NodeJS được lựa chọn để xây dựng
+máy chủ trung tâm với các lý do: 1) TS cung cấp khả năng định nghĩa kiểu dữ
+liệu nhằm đảm bảo quá trình lập trình sẽ kiểm soát chuẩn kiễu dữ liệu đầu vào -
+đầu ra. Nếu không tuân thủ, lỗi sẽ được ném ra ngay trong thời điểm biên dịch;
+2) NodeJS sở hữu cơ chế event loop, hỗ trợ bởi nhiều thư viện, giúp giảm thời
+gian phát triển. Về mặt cấu trúc mã nguồn, hệ thống được tổ chức theo mô hình
+phân lớp như thể hiện trong Hình~\ref{be_structure}.
 \begin{table}[htbp]
     \centering
     \caption{Mô tả các thư mục chính trong cấu trúc mã nguồn máy chủ trung tâm}
@@ -778,18 +849,13 @@ Về mặt cấu trúc mã nguồn, hệ thống được tổ chức theo mô h
 Kiến trúc trên không chỉ đảm bảo tính tách biệt giữa các tầng xử lý mà còn giúp
 nâng cao khả năng bảo trì, kiểm thử và mở rộng trong tương lai.
 
-\textbf{Cơ sở dữ liệu} có nhiệm vụ lưu trữ dữ liệu bao gồm dữ liệu về người dùng, cảm biến.
-Sau khi tìm hiểu, nhóm chọn kiến trúc lưu trữ được thiết kế theo hướng lai,
-kết hợp cả NoSQL (MongoDB) và SQL (Postgres), nhằm tận dụng thế mạnh riêng của từng loại hình.
-
-Với đặc thù của dữ liệu cảm biến là mang tính phi cấu trúc, có tần suất cập
-nhật gần như không và yêu cầu truy xuất theo chuỗi thời gian. Hệ thống lựa chọn
-sử dụng \textbf{MongoDB} làm nền tảng lưu trữ chính cho nhóm dữ liệu này.
-MongoDB thể hiện ưu thế vượt trội nhờ mô hình lưu trữ dạng tài liệu , cho phép
-linh hoạt mở rộng cấu trúc dữ liệu mà không cần định nghĩa cột hàng cố định.
-Bên cạnh đó, cơ chế \textit{indexing} tối ưu giúp tăng tốc độ truy vấn đối với
-dữ liệu thời gian, đồng thời hỗ trợ các phép lọc, nhóm và tổng hợp hiệu quả
-trong môi trường có khối lượng dữ liệu lớn.
+Cơ sở dữ liệu có nhiệm vụ lưu trữ dữ liệu liên quan đến người dùng và dữ liệu
+của cảm biến. Vì vậy, kết hợp cả NoSQL (MongoDB) và SQL (Postgres) sẽ là phương
+pháp tối ưu nhất và được nhiều dự án thực tế lựa chọn. MongoDB thể hiện ưu thế
+vượt trội nhờ mô hình lưu trữ dạng tài liệu, cho phép linh hoạt mở rộng cấu
+trúc dữ liệu mà không cần định nghĩa cột hàng cố định. Bên cạnh đó, cơ chế chỉ
+mục giúp tăng tốc độ truy vấn đối với dữ liệu thời gian, đồng thời hỗ trợ các
+phép lọc, nhóm và tổng hợp hiệu quả trong môi trường có khối lượng dữ liệu lớn.
 
 \begin{figure}
     \centering
@@ -798,26 +864,28 @@ trong môi trường có khối lượng dữ liệu lớn.
     \label{flow_http}
 \end{figure}
 
-Ngược lại, \textbf{PostgreSQL} được triển khai nhằm quản lý các dữ liệu có cấu
-trúc ổn định và đòi hỏi tính toàn vẹn quan hệ cao, bao gồm các thông tin định
-danh người dùng, mật khẩu được mã hoá, kết quả bảng điểm STOP-BANG, thang điểm
-buồn ngủ ban ngày Epworth, chỉ số BMI, cùng tiền sử bệnh nền. Cách tiếp cận này
-không chỉ tăng cường khả năng kiểm soát logic nghiệp vụ ở tầng dữ liệu mà còn
-là yêu cầu tiên quyết để hệ thống tuân thủ các tiêu chuẩn về \textbf{an toàn và
-    bảo mật thông tin y tế}.
+Ngược lại, sử dụng PostgreSQL nhằm quản lý các dữ liệu có cấu trúc ổn định và
+đòi hỏi tính toàn vẹn cao, bao gồm các thông tin định danh người dùng, mật khẩu
+được mã hoá, kết quả bảng điểm STOP-BANG, thang điểm buồn ngủ ban ngày Epworth,
+chỉ số BMI cùng các thao tác người dùng.
 
 Lưu đồ thuật toán lưu trữ dữ liệu được thể hiện trong Hình~\ref{flow_http}, bao
-gồm hai nhánh xử lý. \textit{(i)} Khi người dùng không có kết nối mạng, hệ
-thống vẫn duy trì liên kết BLE và hiển thị tín hiệu thời gian thực; dữ liệu
-được lưu tạm ở phía thiết bị thay vì đẩy lên cloud. \textit{(ii)} Khi người
-dùng đã đăng nhập và có Internet, ứng dụng chuyển sang chế độ đồng bộ theo lô:
-mỗi 1000 mẫu được gộp thành một gói để gửi lên máy chủ. Cơ chế này sẽ làm giảm
-số lần yêu cầu từ ứng dụng lên máy chủ.
-
-Do lý do độ dài, luận văn không trình bày hết toàn bộ các nghiệp vụ của máy chủ
-trung tâm. Phần mã nguồn sẽ được chú thích tại mục lục.
+gồm hai nhánh xử lý. \textit{(i)} Khi người dùng không có kết nối mạng, dữ liệu
+sẽ được lưu trữ tạo tại ngay bộ nhớ của điện thoại. \textit{(ii)} Khi người
+dùng đã đăng nhập và có Internet, khi nhận đủ 1000 mẫu, ứng dụng di động sẽ đẩy
+gói đó lên máy chủ. Khi này, máy chủ sẽ mở các API để có thể lấy dữ liệu (giá
+trị cảm biến, thời gian và thông tin của người thực hiện) định dạng CSV để sử
+dụng cho bài toán học máy.
 
 \subsection{Học máy trong phân loại tư thế ngủ}
+
+Tổng quan về các bước xây dựng hệ thống học máy cho bài toán phân loại tư thế
+ngủ đã được trình bày tại Chương~\ref{chapter:1-introduction}. Sau khi đánh
+giá, 4 mô hình học máy truyền thống là rừng ngẫu nhiên (Random forest - RF),
+máy vec-tơ hỗ trợ (Support vector machine - SVM), hồi quy Logistic (Logistic
+regression - LR), thuật toán tăng cường Gradient Boosting (GB) và một mô hình
+mạng nơ-ron nhân tạo (Artificial Neural Network - ANN), được lựa chọn.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/hocmaytime.png}
@@ -825,30 +893,21 @@ trung tâm. Phần mã nguồn sẽ được chú thích tại mục lục.
     \label{hocmay_time}
 \end{figure}
 
-Tổng quan về các bước xây dựng hệ thống học máy cho bài toán phân loại tư thế
-ngủ đã được trình bày tại Chương~\ref{chapter:1-introduction}. Sau khi đánh
-giá, 4 mô hình học máy truyền thống là rừng ngẫu nhiên (Random forest - RF),
-máy vec-tơ hỗ trợ (Support vector machine - SVM), hồi quy Logistic (Logistic
-regression - LR), thuật toán tăng cường Gradient Boosting (GB) và một mô hình
-mạng nơ-ron nhân tạo (Artificial Neural Network - ANN), được lựa chọn để đánh
-giá.
-
-Việc lựa chọn này dựa trên hai yếu tố là khả năng khái và độ phức tạp thuật
-toán. Về khả năng khái quát, các mô hình được lựa chọn phản ánh những hướng
-tiếp cận tiêu biểu trong học máy truyền thống, bao gồm cả mô hình tuyến tính,
-phi tuyến và mô hình học sâu cơ bản. Cụ thể, RF và GB là hai đại diện tiêu biểu
-của nhóm mô hình ensemble dựa trên cây quyết định, có khả năng mô hình hóa các
-quan hệ phi tuyến phức tạp và khắc phục hiện tượng quá khớp cao. Hồi quy
-logistic giúp giải thích trực quan mối quan hệ giữa các đặc trưng đầu. Máy
-véc-tơ hỗ trợ được lựa chọn vì có khả năng tạo ranh giới phân lớp rõ ràng trong
-không gian đặc trưng. Bên cạnh đó, Mạng nơ-ron nhân tạo được đưa vào nhằm khảo
-sát khả năng trừu tượng hóa sâu của dữ liệu cảm biến, nơi mối quan hệ giữa đặc
-trưng và nhãn phân loại có thể phi tuyến và phức tạp hơn so với các mô hình cổ
-điển. Trong đó, mô hình ANN được thiết kế với hai lớp ẩn nhằm đánh giá sơ bộ
-hiệu quả của mô hình học sâu trước khi mở rộng sang các kiến trúc phức tạp hơn
-như mạng tích chập (Convolutional Neural Network - CNN), mạng hồi tiếp
-(Recurrent Neural Network - RNN) hay mạng bộ nhớ dài ngắn hạn (Long Short-Term
-Memory - LSTM).
+Việc lựa chọn này dựa trên hai yếu tố là khả năng khái quát và độ phức tạp
+thuật toán. Về khả năng khái quát, các mô hình được lựa chọn phản ánh những
+hướng tiếp cận tiêu biểu trong bài toán phân loại tư thế ngủ, bao gồm cả mô
+hình tuyến tính, phi tuyến và mô hình học sâu. Cụ thể, RF và GB là hai đại diện
+tiêu biểu của nhóm mô hình ensemble dựa trên cây quyết định, có khả năng mô
+hình hóa các quan hệ phi tuyến phức tạp và khắc phục hiện tượng quá khớp cao.
+Hồi quy logistic sẽ trực quan mối quan hệ giữa các đặc trưng đầu. Máy véc-tơ hỗ
+trợ được lựa chọn vì có khả năng tạo ranh giới rõ ràng. Học sâu được đưa vào
+nhằm khảo sát khả năng trừu tượng hóa của dữ liệu cảm biến, nơi mối quan hệ
+giữa đặc trưng và nhãn phân loại có thể phi tuyến và phức tạp hơn so với các mô
+hình cổ điển. Trong nghiên cứu này, dùng nhất mô hình ANN được thiết kế với hai
+lớp ẩn nhằm đánh giá sơ bộ hiệu quả của mô hình học sâu trước khi mở rộng sang
+các kiến trúc phức tạp hơn như mạng tích chập (Convolutional Neural Network -
+CNN), mạng hồi tiếp (Recurrent Neural Network - RNN) hay mạng bộ nhớ dài ngắn
+hạn (Long Short-Term Memory - LSTM).
 
 \subsubsection{Hồi quy Logistic}
 
@@ -863,13 +922,13 @@ lớp đối với bài toán phân loại nhị phân:
 
 Trong đó, $\mathbf{w}$ là vector trọng số, $\mathbf{x}$ là vector đặc trưng đầu
 vào, và $b$ là hệ số điều chỉnh (bias). Khi xác suất này vượt quá một ngưỡng
-nhất định (thông thường là $0.5$), mô hình sẽ gán nhãn cho $\mathbf{x}$ là
-thuộc lớp dương. Ngược lại, nếu nhỏ hơn ngưỡng, mẫu được phân loại vào lớp âm.
+nhất định, mô hình sẽ gán nhãn cho $\mathbf{x}$ là thuộc lớp dương. Ngược lại,
+nếu nhỏ hơn ngưỡng, mẫu được phân loại vào lớp âm.
 
-Mặc dù đơn giản và dễ triển khai, hồi quy logistic nguyên thủy chỉ phù hợp với
-các bài toán phân loại nhị phân. Để mở rộng cho bài toán phân loại đa lớp, có
-thể sử dụng biến thể \textbf{Softmax Regression}, trong đó mô hình ước lượng
-xác suất đầu ra theo phân phối softmax:
+Mặc dù đơn giản và dễ triển khai, hồi quy logistic ban đầu chỉ phù hợp với các
+bài toán phân loại nhị phân. Để mở rộng cho bài toán phân loại đa lớp, có thể
+sử dụng biến thể của nó, trong đó mô hình ước lượng xác suất đầu ra theo phân
+phối softmax:
 
 \begin{equation}
     P(y = j \mid \mathbf{x}) = \frac{e^{\mathbf{w}_j^\top \mathbf{x}}}{\sum_{k=1}^{K} e^{\mathbf{w}_k^\top \mathbf{x}}}
@@ -879,11 +938,11 @@ Trong đó, $K$ là tổng số lớp và $\mathbf{w}_j$ là vector trọng số
 lớp $j$. Cách tiếp cận này cho phép mô hình tính toán đồng thời xác suất cho
 tất cả các lớp và lựa chọn lớp có xác suất cao nhất làm đầu ra.
 
-Ngoài phương pháp softmax, một chiến lược mở rộng khác thường được sử dụng là
-\textbf{One-vs-Rest (OvR)}. Trong chiến lược này, mô hình sẽ huấn luyện $K$ bộ
-phân loại nhị phân độc lập, mỗi bộ phân biệt một lớp cụ thể với phần còn lại
-của tập dữ liệu. Khi dự đoán, mẫu dữ liệu mới được đưa vào cả $K$ mô hình, và
-lớp có xác suất dự đoán cao nhất sẽ được chọn làm kết quả cuối cùng.
+Ngoài phương pháp softmax, một biến thể khác thường được sử dụng là One-vs-Rest
+(OvR). Trong biến thể này, mô hình sẽ huấn luyện $K$ bộ phân loại nhị phân độc
+lập, mỗi bộ phân biệt một lớp cụ thể với phần còn lại của tập dữ liệu. Khi dự
+đoán, mẫu dữ liệu mới được đưa vào cả $K$ mô hình, và lớp có xác suất dự đoán
+cao nhất sẽ được chọn làm kết quả cuối cùng.
 
 Trong bài toán phân loại tư thế ngủ, LR được kì vọng sẽ tối ưu về mặt chi phí
 tính toán và kích thước mô hình để phù hợp với các bài toán triển khai tại
@@ -891,18 +950,16 @@ biên.
 
 \subsubsection{Máy vec-tơ hỗ trợ}
 
-Đây là một thuật
-toán học có giám sát, đặc biệt hiệu quả cho các bài toán phân loại nhị
-phân với biên ranh giới rõ ràng \cite{cortes1995svm}. Ý tưởng chính của SVM là tìm kiếm một
-\textbf{mặt siêu phẳng} trong không gian đặc trưng để phân
-chia các điểm dữ liệu thành hai lớp sao cho biên phân cách giữa các lớp
-là lớn nhất.
+Mô hình này cũng thuộc lớp có giám sát, đặc biệt hiệu quả cho các bài toán phân
+loại nhị phân với biên ranh giới rõ ràng \cite{cortes1995svm}. Ý tưởng chính
+của SVM là tìm kiếm một \textbf{mặt siêu phẳng} trong không gian đặc trưng để
+phân chia các điểm dữ liệu thành hai lớp sao cho biên phân cách giữa các lớp là
+lớn nhất.
 
-Trong không gian hai chiều, mặt siêu phẳng tương ứng với một đường thẳng; trong
-không gian ba chiều, đó là một mặt phẳng. Trong không gian nhiều chiều hơn, nó
-là một siêu mặt phẳng tổng quát. SVM chọn mặt siêu phẳng sao cho khoảng cách từ
-nó đến các điểm dữ liệu gần nhất của mỗi lớp - gọi là \textbf{support vectors}
-là tối đa.
+Trong không gian hai chiều, mặt siêu phẳng tương ứng với một đường thẳng. Trong
+không gian nhiều chiều hơn, nó là một siêu mặt phẳng. SVM chọn mặt siêu phẳng
+sao cho khoảng cách từ nó đến các điểm dữ liệu gần nhất của mỗi lớp - gọi là
+máy hỗ trợ là tối đa.
 
 Trong không gian hai chiều, khoảng cách từ một điểm có tọa độ $(x_0, y_0)$ đến
 đường thẳng có phương trình:
@@ -930,9 +987,9 @@ về cùng một phía (phía dương), trong khi những điểm có giá trị
 còn lại (phía âm). Các điểm nằm trên chính mặt phẳng này sẽ làm cho tử số bằng
 không, tức là khoảng cách bằng 0.
 
-Khái niệm này có thể được \textbf{tổng quát hóa lên không gian nhiều chiều}.
-Giả sử ta có một điểm (vector) $\mathbf{x}_0 \in \mathbb{R}^d$ và một siêu mặt
-phẳng có phương trình \cite{MLCoBan2017_SVM}:
+Khái niệm này có thể được tổng quát hóa lên không gian nhiều chiều. Giả sử có
+một điểm (vector) $\mathbf{x}_0 \in \mathbb{R}^d$ và một siêu mặt phẳng có
+phương trình \cite{MLCoBan2017_SVM}:
 \[
     \mathbf{w}^\top \mathbf{x} + b = 0
 \]
@@ -952,14 +1009,14 @@ Hình~\ref{svm} minh hoạ khái niệm mặt siêu phẳng và các máy hỗ t
 gian hai chiều.
 
 Với mặt phẳng phân chia như trên, khoảng cách được tính là khoảng cách gần nhất
-từ một điểm tới mặt phẳng đó (bất kể điểm thuộc hai lớp nào):
+từ một điểm tới mặt phẳng đó:
 
 \[
     \text{margin} = \min_{n} \frac{y_n \left( \mathbf{w}^T \mathbf{x}_n + b \right)}{||\mathbf{w}||_2}
 \]
 
 Bài toán tối ưu trong SVM chính là bài toán tìm \(\mathbf{w}\) và \(b\) sao cho
-\textit{margin} này đạt giá trị lớn nhất:
+\textit{khoảng cách} này đạt giá trị lớn nhất:
 
 \[
     (\mathbf{w}, b) = \arg\max_{\mathbf{w},\, b}
@@ -977,12 +1034,12 @@ Bài toán tối ưu trong SVM chính là bài toán tìm \(\mathbf{w}\) và \(b
 \end{figure}
 
 Thêm vào đó, SVM có thể mở rộng cho các bài toán không tuyến tính thông qua
-việc sử dụng các hàm kernel, chẳng hạn như \textbf{Gaussian RBF kernel} hoặc
-\textbf{polynomial kernel}, giúp ánh xạ dữ liệu vào không gian mới nơi mà việc
-phân tách tuyến tính trở nên khả thi.
+việc sử dụng các hàm kernel, chẳng hạn như Gaussian RBF kernel hoặc polynomial
+kernel, giúp ánh xạ dữ liệu vào không gian mới nơi mà việc phân tách tuyến tính
+trở nên khả thi.
 
 Để mở rộng cho các bài toán phân loại đa lớp, có thể áp dụng hai kỹ
-thuật phổ biến: \textbf{one-vs-one} và \textbf{one-vs-rest}, được minh
+thuật phổ biến: one-vs-one và one-vs-rest, được minh
 hoạ trong Hình~\ref{svm_ovso} và Hình~\ref{ovsr}.
 
 \begin{figure}[htbp]
@@ -999,62 +1056,43 @@ hoạ trong Hình~\ref{svm_ovso} và Hình~\ref{ovsr}.
     \label{ovsr}
 \end{figure}
 
-\textbf{One-vs-One (OvO):} Trong phương pháp này, một mô hình SVM được
-huấn luyện cho mỗi cặp lớp. Với $K$ lớp, tổng cộng $\frac{K(K-1)}{2}$
-mô hình con được huấn luyện. Mỗi mô hình học cách phân biệt giữa hai
-lớp cụ thể và bỏ qua các lớp còn lại. Trong quá trình dự đoán, một cơ
-chế bỏ phiếu (voting) được sử dụng để xác định lớp cuối cùng.
+One-vs-One (OvO): Trong phương pháp này, một mô hình SVM được huấn luyện cho
+mỗi cặp lớp. Với $K$ lớp, tổng cộng $\frac{K(K-1)}{2}$ mô hình con được huấn
+luyện. Mỗi mô hình sẽ phân biệt giữa hai lớp cụ thể và bỏ qua các lớp còn lại.
+Trong quá trình dự đoán, một cơ chế bỏ phiếu được sử dụng để xác định lớp cuối
+cùng.
 
-\textbf{One-vs-Rest (OvR):} Phương pháp này huấn luyện một mô hình cho
-mỗi lớp, trong đó mô hình học cách phân biệt giữa một lớp cụ thể và
-phần còn lại. Với $K$ lớp, ta có $K$ mô hình. Trong quá trình suy luận,
-mô hình đưa ra xác suất hoặc độ tin cậy, và lớp có giá trị cao nhất
-sẽ được chọn.
-
-Cả hai chiến lược OvO và OvR đều giúp mở rộng SVM từ mô hình phân loại nhị phân
-thành phân loại đa lớp hiệu quả, nhưng mỗi phương pháp đều có ưu và nhược điểm
-riêng về thời gian huấn luyện, độ phức tạp tính toán và hiệu năng phân loại.
+One-vs-Rest (OvR): Phương pháp này huấn luyện một mô hình cho mỗi lớp, trong đó
+mô hình học cách phân biệt giữa một lớp cụ thể và phần còn lại. Với $K$ lớp, ta
+có $K$ mô hình. Trong quá trình suy luận, mô hình đưa ra xác suất hoặc độ tin
+cậy, và lớp có giá trị cao nhất sẽ được chọn.
 
 \subsubsection{Rừng ngẫu nhiên}
 
 Đây là một mô hình học có
-giám sát thuộc nhóm thuật toán tổ hợp (ensemble learning),
+giám sát thuộc nhóm thuật toán tổ hợp,
 được xây dựng dựa trên nền tảng của
-\textbf{Cây quyết định (Decision Tree)} \cite{breiman2001random}.
+các cây quyết định \cite{breiman2001random}.
 Khác với việc sử dụng một cây quyết định duy nhất
 truyền thống, rừng ngẫu nhiên xây dựng một tập hợp gồm nhiều cây
 quyết định độc lập, mỗi cây học trên một phần khác nhau của dữ liệu và
-không sử dụng toàn bộ tập thuộc tính. Dự đoán cuối cùng của mô hình
-được xác định thông qua cơ chế biểu quyết hoặc trung bình hoá
-(trong bài toán hồi quy).
-
-Ý tưởng chính của rừng ngẫu nhiên nhằm giảm thiểu hiện tượng
-\textbf{quá khớp (overfitting)} thường gặp trong câu quyết định đơn lẻ.
-Khi xây dựng một cây quyết định mà không giới hạn độ sâu,
-cây có xu hướng học thuộc hoàn toàn dữ liệu huấn luyện,
-dẫn đến khả năng tổng quát kém trên tập kiểm thử.
-RF khắc phục điều này bằng cách đưa vào hai cơ chế ngẫu nhiên chính:
-
-\vspace{0.5em}
-\noindent\textbf{1) Lấy mẫu bootstrap:} Mỗi cây được huấn luyện trên
-một tập con của dữ liệu ban đầu, được chọn ngẫu nhiên có lặp lại
-(bootstrap sampling). Như vậy, một phần dữ liệu được bỏ qua,
-làm tăng tính đa dạng giữa các cây.
-
-\vspace{0.5em}
-\noindent\textbf{2) Lựa chọn ngẫu nhiên tập thuộc tính:} Tại mỗi nút
+không sử dụng toàn bộ tập dữ liệu huấn luyện. Dự đoán cuối cùng của mô hình
+được xác định thông qua cơ chế biểu quyết giúp giảm tình trạng quá khớp.
+Có hai cách chia tập huấn luyện trong RF.
+Đầu tiên, lấy mẫu bootstrap. Đây là cách mỗi cây được huấn luyện trên một tập con của dữ liệu ban
+đầu, được chọn ngẫu nhiên có lặp lại. Như vậy, một phần dữ
+liệu được bỏ qua, làm tăng tính đa dạng giữa các cây.
+Thứ hai là  lựa chọn ngẫu nhiên trong tập huấn luyện. Tại mỗi nút
 phân chia của cây, chỉ một tập con ngẫu nhiên của các thuộc tính được
 xem xét để chọn điểm chia tốt nhất. Điều này làm giảm sự tương quan
 giữa các cây trong rừng.
-
-Ngoài ra, việc tổng hợp kết quả của nhiều cây giúp giảm phương sai, cải thiện
-khả năng tổng quát hoá. Nhờ đó, RF đạt được sự ổn định kể cả với các bộ dữ liệu
+Nhờ đó, RF đạt được sự ổn định kể cả với các bộ dữ liệu
 có nhiễu hoặc mất cân bằng.
 
 \subsubsection{Gradient boosting}
 
 Đây là một phương pháp học
-có giám sát cũng thuộc nhóm thuật toán tổ hợp (ensemble learning) \cite{chen2016xgboost}.
+có giám sát cũng thuộc nhóm thuật toán tổ hợp \cite{chen2016xgboost}.
 Khác với RG khi các cây được xây dựng song song và độc lập,
 GB xây dựng mô hình theo từng bước lặp, mỗi cây tiếp
 theo được huấn luyện để sửa lỗi còn lại từ mô hình trước đó. Cụ thể, tại mỗi
@@ -1065,8 +1103,8 @@ cây mới $h_t(x)$ được huấn luyện để xấp xỉ gradient âm của 
     F_{t+1}(x) = F_t(x) + \gamma h_t(x)
 \end{equation}
 
-Trong đó, $\gamma$ là hệ số học (learning rate), điều chỉnh mức đóng góp của
-cây mới vào tổng thể mô hình.
+Trong đó, $\gamma$ là hệ số học, điều chỉnh mức đóng góp của cây mới vào tổng
+thể mô hình.
 
 Một trong những đặc điểm quan trọng của GB là khả năng tối ưu hoá trực tiếp một
 hàm mất mát bất kỳ, chẳng hạn như hàm log-loss trong bài toán phân loại, hoặc
@@ -1075,20 +1113,17 @@ xác rất cao, đặc biệt trên các bài toán với dữ liệu có quan h
 nhiều đặc trưng tương tác phức tạp.
 
 Tuy nhiên, GB cũng có những hạn chế rõ rệt. Do các cây được xây dựng tuần tự
-phụ thuộc lẫn nhau, GB thường mất nhiều thời gian huấn luyện hơn so với RF. Hơn
-nữa, mô hình nhạy cảm với nhiễu và dữ liệu nhiễu sẽ dễ dàng bị mô hình học
-theo, dẫn đến hiện tượng quá khớp hơn.
+phụ thuộc lẫn nhau, GB thường mất nhiều thời gian huấn luyện hơn, kích thước mô
+hình lớn hơn so với RF. Hơn nữa, mô hình nhạy cảm với nhiễu và dữ liệu nhiễu sẽ
+dễ dàng bị mô hình học theo, dẫn đến hiện tượng quá khớp hơn.
 
-\subsubsection{Mạng nơ-ron nhân tạo}
+\subsubsection{ANN}
 
-Đây thuộc lớp
-mô hình học sâu mô phỏng cấu trúc hoạt động của hệ thần kinh sinh học,
-trong đó các nơ-ron nhân tạo (artificial neurons) được tổ chức thành nhiều
-lớp (layers) và kết nối với nhau qua các trọng số (weights) \cite{jain1996}.
-
-Trong nghiên cứu này, kiến trúc đơn giản nhất gồm 3 lớp: lớp đầu vào (input
-layer), hai lớp ẩn (hidden layers) và lớp đầu ra (output layer), sẽ được sử
-dụng.
+ANN thuộc lớp mô hình học sâu mô phỏng cấu trúc hoạt động của hệ thần kinh sinh
+học, trong đó các nơ-ron nhân tạo được tổ chức thành nhiều lớp (layers) và kết
+nối với nhau qua các trọng số (weights) \cite{jain1996}. Trong nghiên cứu này,
+kiến trúc mạng được thiết lập gồm 3 lớp: lớp đầu vào (input layer), hai lớp ẩn
+(hidden layers) và lớp đầu ra (output layer)
 
 Mỗi nơ-ron trong lớp ẩn thực hiện một tổ hợp tuyến tính giữa các đầu vào, sau
 đó áp dụng một hàm kích hoạt phi tuyến như hàm ReLU (Rectified Linear Unit):
@@ -1099,19 +1134,16 @@ Mỗi nơ-ron trong lớp ẩn thực hiện một tổ hợp tuyến tính gi�
 
 Đầu ra của mạng được tính thông qua lan truyền tiến,
 và mô hình được huấn luyện bằng cách tối thiểu hóa một hàm mất mát.
+Khác với các mô
+hình học máy truyền thống cần cung cập các đặc trưng để huấn luyện theo các thủ công,
+ANN sẽ tự động trích xuất và huấn luyện dựa trên bộ đặc trưng riêng của nó.
 
-Ưu điểm chính của mạng nơ-ron là khả năng học các quan hệ phi tuyến
-phức tạp và tự động trích xuất đặc trưng từ dữ liệu. Khác với các mô
-hình tuyến tính như LR hoặc SVM, ANN có thể biểu diễn các ranh giới
-phân lớp không tuyến tính và phù hợp với các bài toán đa tín hiệu cảm
-biến, đa cấu trúc.
+Trong khuôn khổ của nghiên cứu này, mục tiêu không chỉ là đạt độ chính xác tối
+đa mà còn là đánh giá ảnh hưởng của các đặc trưng trên miền thời gian và miền
+tần số đối với hiệu suất của mô hình học máy nên nhóm quyết định chọn LR, SVM,
+RF, GB, NN Còn tương lai, nhóm sẽ mở rộng với các thuật toán phức tạp hơn để
+đánh giá toàn diện hơn đối với bài toán phân loại tư thế ngủ.
 
-Tuy nhiên, trong khuôn khổ của nghiên cứu này, mục tiêu chính không chỉ là đạt
-độ chính xác tối đa mà còn là đánh giá ảnh hưởng của các đặc trưng trên miền
-thời gian và miền tần số đối với hiệu suất của mô hình học máy nên nhóm quyết
-định chọn LR, SVM, RF, GB, NN để tiến hành thử nghiệm. Còn tương lai, nhóm sẽ
-mở rộng với các thuật toán phức tạp hơn để đánh giá toàn diện hơn đối với bài
-toán phân loại tư thế ngủ.
-
-Đến đây, luận văn đã trình bày đầy đủ phương pháp xây dựng hệ thống, bao gồm cả phần cứng, phần mềm và các mô hình học máy được lựa chọn phù hợp với bài toán phân loại tư thế ngủ.
-Phương pháp đề xuất được đánh giá một cách toàn diện, từ cơ sở lý thuyết đến triển khai thực tế, nhằm đảm bảo tính khả thi và hiệu quả trong ứng dụng.
+Đến đây, luận văn đã trình bày toàn bộ quy trình
+từ nghiên cứu - phát triển phần cứng - phần mềm đến các mô hình học máy được lựa chọn phù hợp
+với bài toán phân loại tư thế ngủ phù hợp với cơ sở lý thuyết và dễ dàng triển khai thực tế.
