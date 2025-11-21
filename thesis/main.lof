@@ -7,57 +7,57 @@
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Thiết bị Sleep Care Kit}}{13}{figure.caption.13}%
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Thiết kế hệ thống nệm áp suất trong nghiên cứu của Xi Xu và cộng sự}}{14}{figure.caption.14}%
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Ví trị đặt cảm biến được đề xuất trong nghiên cứu \blx@tocontentsinit {0}\cite {abdulsadig2023}}}{16}{figure.caption.15}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Vị trí đặt cảm biến gia tốc}}{17}{figure.caption.16}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Vị trí đặt cảm biến gia tốc}}{16}{figure.caption.16}%
 \contentsline {figure}{\numberline {1.9}{\ignorespaces Cấu trúc cảm biến gia tốc áp điện trở \blx@tocontentsinit {0}\cite {Song2018_mems_accelerometer}.}}{18}{figure.caption.17}%
 \contentsline {figure}{\numberline {1.10}{\ignorespaces Cấu trúc cơ bản của cảm biến MEMS áp điện: (a) mặt trên (b) mặt dưới \blx@tocontentsinit {0}\cite {Li2018_mems_accelerometer}}}{19}{figure.caption.18}%
 \contentsline {figure}{\numberline {1.11}{\ignorespaces Sơ đồ thiết kế cơ bản của cảm biến MEMS điện dung}}{21}{figure.caption.19}%
 \contentsline {figure}{\numberline {1.12}{\ignorespaces Quá trình biến đổi tín hiệu trong cảm biến điện dung.}}{21}{figure.caption.20}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Các tính năng Nordic nRF52840}}{33}{figure.caption.27}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Sơ đồ khối Nordic NRF52840}}{34}{figure.caption.28}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Một số bộ kit phát triển dựa trên vi điều khiển Nordic nRF52840}}{35}{figure.caption.29}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Bosch BMI270}}{35}{figure.caption.30}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Sơ đồ khối Bosch BMI270}}{36}{figure.caption.31}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Sơ đồ chân Bosch BMI270}}{37}{figure.caption.32}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Các kiểu kết nối không dây trong họ chip nRF52}}{38}{figure.caption.33}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Cấu trúc của GATT}}{39}{figure.caption.34}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Sơ đồ khối U-blox NINA-B306}}{41}{figure.caption.36}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Sơ đồ chân U-blox NINA-B306}}{42}{figure.caption.37}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Sơ đồ khối của IC MP2322GQH.}}{43}{figure.caption.40}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Sơ đồ mạch}}{44}{figure.caption.42}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Sơ đồ mạch}}{45}{figure.caption.43}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Minh họa bố trí mạch in và mô hình 3D}}{46}{figure.caption.44}%
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Sơ đồ tóm tắt quy trình hoạt động BLE-BMI270 của đoạn mã nguồn~\ref {lst:ble_bmi270}}}{52}{figure.caption.47}%
-\contentsline {figure}{\numberline {2.16}{\ignorespaces So sánh tín hiệu trục z trước và sau lọc Kalman}}{55}{figure.caption.49}%
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Kiến trúc tổng thể của hệ thống}}{56}{figure.caption.50}%
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Cấu trúc kiến trúc BLoC trong ứng dụng Flutter}}{59}{figure.caption.53}%
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Sơ đồ lộ trình dữ liệu được truyền từ cảm biến đến máy chủ đám mây}}{59}{figure.caption.54}%
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Cấu trúc cây thư mục mã nguồn của máy chủ trung tâm}}{64}{figure.caption.59}%
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}}{66}{figure.caption.60}%
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Minh họa mặt siêu phẳng phân tách hai lớp trong SVM}}{69}{figure.caption.63}%
-\contentsline {figure}{\numberline {2.23}{\ignorespaces Chiến lược phân loại đa lớp SVM}}{71}{figure.caption.64}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Các tính năng Nordic nRF52840}}{32}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Sơ đồ khối Nordic NRF52840}}{33}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Một số bộ kit phát triển dựa trên vi điều khiển Nordic nRF52840}}{34}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Bosch BMI270}}{34}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Sơ đồ khối Bosch BMI270}}{35}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Sơ đồ chân Bosch BMI270}}{36}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Các kiểu kết nối không dây trong họ chip nRF52}}{37}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Cấu trúc của GATT}}{38}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Sơ đồ khối U-blox NINA-B306}}{40}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Sơ đồ chân U-blox NINA-B306}}{41}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Sơ đồ khối của IC MP2322GQH.}}{42}{figure.caption.40}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Sơ đồ mạch}}{43}{figure.caption.42}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Sơ đồ mạch}}{44}{figure.caption.43}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Minh họa bố trí mạch in và mô hình 3D}}{45}{figure.caption.44}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Sơ đồ tóm tắt quy trình hoạt động BLE-BMI270 của đoạn mã nguồn~\ref {lst:ble_bmi270}}}{50}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces So sánh tín hiệu trục z trước và sau lọc Kalman}}{53}{figure.caption.49}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Kiến trúc tổng thể của hệ thống}}{54}{figure.caption.50}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Cấu trúc kiến trúc BLoC trong ứng dụng Flutter}}{57}{figure.caption.53}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Sơ đồ lộ trình dữ liệu được truyền từ cảm biến đến máy chủ đám mây}}{57}{figure.caption.54}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Cấu trúc cây thư mục mã nguồn của máy chủ trung tâm}}{62}{figure.caption.59}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}}{64}{figure.caption.60}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Minh họa mặt siêu phẳng phân tách hai lớp trong SVM}}{67}{figure.caption.63}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Chiến lược phân loại đa lớp SVM}}{69}{figure.caption.64}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Mạch hoàn chỉnh}}{75}{figure.caption.68}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Giao diện chức năng đăng ký và đăng nhập}}{76}{figure.caption.69}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Màn hình yêu cầu quyền truy cập Bluetooth và danh sách thiết bị đang hoạt động}}{76}{figure.caption.70}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Màn hình hiển thị dữ liệu gia tốc ba trục với trục hoàng là giá trị thời gian, trục tung là giá trị cảm biến gấp lên 10 lần }}{77}{figure.caption.71}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Dữ liệu cảm biến gia tốc được lưu trong cơ sở dữ liệu}}{77}{figure.caption.72}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Mô phỏng thực nghiệm thực tế}}{78}{figure.caption.73}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Phân bố khối lượng công việc với bài toán học máy phân loại tư thế ngủ trong luận văn}}{79}{figure.caption.74}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Biểu đồ phân bố các nhãn thu được}}{80}{figure.caption.75}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Biểu đồ phân bố dữ liệu 3 trục theo các tư thế ngủ}}{81}{figure.caption.76}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Phân bố giá trị trục x của 2 tập dữ liệu}}{82}{figure.caption.77}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Phân bố của đặc trưng trung bình, độ lệnh chuẩn và năng lượng trên miền thời gian của tập huấn luyện}}{84}{figure.caption.81}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Phân bố của đặc trưng trung bình, độ lệnh chuẩn trên miền tần số của tập huấn luyện}}{85}{figure.caption.82}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Ma trận nhầm lẫn của các mô hình}}{87}{figure.caption.84}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Ý nghĩa của các đặc trưng lên mô hình}}{88}{figure.caption.85}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Ma trận tương quan giữa các đặc trưng trích xuất}}{89}{figure.caption.86}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Kết quả độ chính xác của 8 kịch bản}}{91}{figure.caption.88}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Ma trận nhầm lẫn trong kịch bản 8}}{92}{figure.caption.89}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Kết quả kết thước mô hình của 8 kịch bản (đơn vị: kb)}}{93}{figure.caption.90}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Mức độ ảnh hưởng của số lượng mẫu đến độ chính xác mô hình LR}}{94}{figure.caption.91}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Quy trình đánh giá mô hình trên MCU và đối chiếu kết quả trên PC.}}{99}{figure.caption.93}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Biểu đồ mức độ ảnh hưởng của các đặc trưng lên mô hình với bài toán nằm hay không nằm}}{101}{figure.caption.95}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Ma trận nhầm lẫn phân biệt 2 nhãn nằm và không nằm}}{102}{figure.caption.96}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Mạch hoàn chỉnh}}{73}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Giao diện chức năng đăng ký và đăng nhập}}{74}{figure.caption.69}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Màn hình yêu cầu quyền truy cập Bluetooth và danh sách thiết bị đang hoạt động}}{74}{figure.caption.70}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Màn hình hiển thị dữ liệu gia tốc ba trục với trục hoàng là giá trị thời gian, trục tung là giá trị cảm biến gấp lên 10 lần }}{75}{figure.caption.71}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Dữ liệu cảm biến gia tốc được lưu trong cơ sở dữ liệu}}{75}{figure.caption.72}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Mô phỏng thực nghiệm thực tế}}{76}{figure.caption.73}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Phân bố khối lượng công việc với bài toán học máy phân loại tư thế ngủ trong luận văn}}{77}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Biểu đồ phân bố các nhãn thu được}}{78}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Biểu đồ phân bố dữ liệu 3 trục theo các tư thế ngủ}}{79}{figure.caption.76}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Phân bố giá trị trục x của 2 tập dữ liệu}}{80}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Phân bố của đặc trưng trung bình, độ lệnh chuẩn và năng lượng trên miền thời gian của tập huấn luyện}}{82}{figure.caption.81}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Phân bố của đặc trưng trung bình, độ lệnh chuẩn trên miền tần số của tập huấn luyện}}{83}{figure.caption.82}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Ma trận nhầm lẫn của các mô hình}}{85}{figure.caption.84}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Ý nghĩa của các đặc trưng lên mô hình}}{86}{figure.caption.85}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Ma trận tương quan giữa các đặc trưng trích xuất}}{87}{figure.caption.86}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Kết quả độ chính xác của 8 kịch bản}}{89}{figure.caption.88}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Ma trận nhầm lẫn trong kịch bản 8}}{90}{figure.caption.89}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Kết quả kết thước mô hình của 8 kịch bản (đơn vị: kb)}}{91}{figure.caption.90}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Mức độ ảnh hưởng của số lượng mẫu đến độ chính xác mô hình LR}}{92}{figure.caption.91}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Quy trình đánh giá mô hình trên MCU và đối chiếu kết quả trên PC.}}{97}{figure.caption.93}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Biểu đồ mức độ ảnh hưởng của các đặc trưng lên mô hình với bài toán nằm hay không nằm}}{99}{figure.caption.95}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Ma trận nhầm lẫn phân biệt 2 nhãn nằm và không nằm}}{100}{figure.caption.96}%
 \contentsfinish 
 \contentsfinish 

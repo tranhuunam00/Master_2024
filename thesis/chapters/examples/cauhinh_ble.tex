@@ -53,30 +53,7 @@ void loop() {
     Serial.println(central.address());
     while (central.connected()) {
       imu.getSensorData();
-      x = imu.data.accelX;
-      y = imu.data.accelY;
-      z = imu.data.accelZ;
-
-      Serial.print(x);
-      Serial.print('\t');
-      Serial.print(y);
-      Serial.print('\t');
-      Serial.println(z);
-
-      uint8_t accelData[9] = {
-        (x >= 0) ? 1 : 0,
-        abs((int)x),
-        abs((int)(x * 100) % 100),
-        (y >= 0) ? 1 : 0,
-        abs((int)y),
-        abs((int)(y * 100) % 100),
-        (z >= 0) ? 1 : 0,
-        abs((int)z),
-        abs((int)(z * 100) % 100)
-      };
-
-      accelerometerCharacteristic.writeValue(accelData, sizeof(accelData)); 
-      delay(100); 
+      ----- push data to mobile app ---
     }
   }
 }
