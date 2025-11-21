@@ -365,8 +365,14 @@ bộ chuyển đổi hạ áp (step-down converter) tích hợp mạch điều k
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/MP2322GQH.png}
-    \caption{Sơ đồ khối IC MP2322GQH, dải đầu vào 3~V - 22~V, dòng tải tối đa 1~A, hiệu suất cao, tần số chuyển mạch 1.25~MHz}
+    \caption{Sơ đồ khối của IC MP2322GQH.}
     \label{fig:MP2322GQH}
+
+    \vspace{0.2cm}
+    \small{
+        Dải điện áp đầu vào: 3~V–22~V;
+        dòng tải tối đa: 1~A;
+    }
 \end{figure}
 
 Bên cạnh đó, nguồn USB còn được bổ sung các thành phần hỗ trợ như diode bảo vệ
@@ -380,20 +386,44 @@ Wire Debug (SWD); (2) Cơ chế Bootloader thông qua kết nối USB. Sự kế
 giúp nâng cao tính linh hoạt và khả năng mở rộng trong quá trình phát triển
 phần mềm, đồng thời giảm thiểu thời gian thử nghiệm.
 
-\begin{figure}
+\subsubsection{Sơ đồ mạch}
+
+Sau khi xác định các linh kiện, các yêu cầu về điện áp, kiểu dữ liệu đầu vào,
+đầu ra của các thành phần kể trên, sơ đồ mạch sẽ được xây dựng thông qua phần
+mềm Altium Designer.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/altium_rule.png}
+    \caption{Sơ đồ mạch}
+    \label{fig:altium_rule}
+\end{figure}
+Trong quá trình thiết kế phần cứng, ngoài những yêu cầu chức năng các khối của
+mạch, những yêu cầu từ phía nhà sản xuất JLCPCB \footnote{JLCPCB là nhà sản
+    xuất PCB thuộc Shenzhen Jialichuang Electronic Technology Co., Ltd., cung cấp
+    dịch vụ chế tạo mạch in từ 1đến 32 lớp và công bố đầy đủ năng lực gia công tại
+    trang “https://jlcpcb.com”} cũng được xem xét kĩ lưỡng. Những thông số sẽ được
+cài đặt trong phần rule trong phần mềm Altium có thể kể tới là
+\cite{jlcpcb_capabilities} Hình~\ref{fig:altium_rule}: via, độ rộng đường mạch,
+khoảng cách giữa hai đường mạch, tiêu chuẩn của 2 đường tín hiệu nhận từ USB...
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{images/schematic.png}
     \caption{Sơ đồ mạch}
     \label{fig:schematic}
 \end{figure}
 
-\subsubsection{Sơ đồ mạch}
-
-Sau khi xác định các linh kiện, các yêu cầu về điện áp, kiểu dữ liệu đầu vào,
-đầu ra của các thành phần kể trên, sơ đồ mạch sẽ được xây dựng thông qua phần
-mềm Altium Designer. Mạch được thiết kế hình tròn kích thước đường kính 3~cm,
-2~lớp đúng với định hướng của nhóm. Kết quả được thể hiện tại
+Đi kèm với mục tiêu đề ra là mạch nhỏ gọn, chi phí phù hợp, cảm biến được đặt ở
+trung tâm, mạch đã được thiết kế hình tròn với đường kính 3~cm, 2~lớp. Cách
+thiết kế này được nhóm xem xét là phù hợp với thiết bị đeo ở cổ và hơn nữa có
+liên quan đến thiết kế cơ khí của vỏ mạch. Kết quả được thể hiện tại
 Hình~\ref{fig:schematic}.
+
+Sau khi hoàn thiện thiết kế, công đoạn tiếp theo là thực hiện hàn, lắp các linh
+kiện theo sơ đồ mạch, và tiến hành kiểm tra hoạt động của các khối chức năng
+trên bo mạch để đánh giá tính ổn định và độ tin cậy của hệ thống
+Hình~\ref{fig:pcb_3d}.
 
 \begin{figure}[H]
     \centering
@@ -401,7 +431,7 @@ Hình~\ref{fig:schematic}.
         \centering
         \includegraphics[width=0.5\textwidth]{images/pcd_dong_top.png}
         \label{fig:pcb_dong_top}
-        \caption{lớp trên}
+        \caption{Lớp đồng trên}
 
     \end{subfigure}
     \hfill
@@ -409,32 +439,23 @@ Hình~\ref{fig:schematic}.
         \centering
         \includegraphics[width=0.5\textwidth]{images/pcb_dong_bottom.png}
         \label{fig:pcb_dong_bottom}
-        \caption{lớp dưới}
+        \caption{Lớp đồng dưới}
 
     \end{subfigure}
-    \caption{Bố trí mạch in hai mặt của bo mạch}
-    \label{fig:pcb_dong}
-\end{figure}
-
-Sau khi hoàn thiện thiết kế, công đoạn tiếp theo là thực hiện hàn, lắp các linh
-kiện theo sơ đồ mạch, và tiến hành kiểm tra hoạt động của các khối chức năng
-trên bo mạch để đánh giá tính ổn định và độ tin cậy của hệ thống.
-
-\begin{figure}
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=0.5\textwidth]{images/pcb_3d_top.png}
-        \caption{lớp trên}
+        \caption{Mô hình 3D mặt trên}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=0.5\textwidth]{images/pcb_3d_bottom.png}
-        \caption{lớp dưới}
+        \caption{Mô hình 3D mặt dưới}
 
     \end{subfigure}
-    \caption{Mô hình mạch 3D}
+    \caption{Minh họa bố trí mạch in và mô hình 3D}
     \label{fig:pcb_3d}
 \end{figure}
 
@@ -841,7 +862,7 @@ phân lớp như thể hiện trong Hình~\ref{be_structure}.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.3\textwidth]{images/be_structure.png}
+    \includegraphics[angle=90, width=1\textwidth]{images/be_structure.png}
     \caption{Cấu trúc cây thư mục mã nguồn của máy chủ trung tâm}
     \label{be_structure}
 \end{figure}
@@ -856,18 +877,23 @@ vượt trội nhờ mô hình lưu trữ dạng tài liệu, cho phép linh ho�
 trúc dữ liệu mà không cần định nghĩa cột hàng cố định. Bên cạnh đó, cơ chế chỉ
 mục giúp tăng tốc độ truy vấn đối với dữ liệu thời gian, đồng thời hỗ trợ các
 phép lọc, nhóm và tổng hợp hiệu quả trong môi trường có khối lượng dữ liệu lớn.
+Ngược lại, sử dụng PostgreSQL nhằm quản lý các dữ liệu có cấu trúc ổn định và
+đòi hỏi tính toàn vẹn cao, bao gồm các thông tin định danh người dùng, mật khẩu
+được mã hoá, kết quả bảng điểm STOP-BANG, thang điểm buồn ngủ ban ngày Epworth,
+chỉ số BMI cùng các thao tác người dùng.
 
-\begin{figure}
+Ngoài ra, phục vụ mục đích lưu các tệp dữ liệu như ảnh, hệ thống sử dụng một
+Object Storage là Minio. Minio là được thiết kế tương tự AWS S3. Điều đó có
+nghĩa là những ứng dụng được cấu hình để giao tiếp với Minio thì cũng có thể
+giao tiếp với AWS S3. Dung lượng của 1 object có thể lên tới 5 TB và có cơ chế
+phân thành các cụm riêng biệt.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/flow_http2.jpg}
     \caption{Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}
     \label{flow_http}
 \end{figure}
-
-Ngược lại, sử dụng PostgreSQL nhằm quản lý các dữ liệu có cấu trúc ổn định và
-đòi hỏi tính toàn vẹn cao, bao gồm các thông tin định danh người dùng, mật khẩu
-được mã hoá, kết quả bảng điểm STOP-BANG, thang điểm buồn ngủ ban ngày Epworth,
-chỉ số BMI cùng các thao tác người dùng.
 
 Lưu đồ thuật toán lưu trữ dữ liệu được thể hiện trong Hình~\ref{flow_http}, bao
 gồm hai nhánh xử lý. \textit{(i)} Khi người dùng không có kết nối mạng, dữ liệu
@@ -885,13 +911,6 @@ giá, 4 mô hình học máy truyền thống là rừng ngẫu nhiên (Random f
 máy vec-tơ hỗ trợ (Support vector machine - SVM), hồi quy Logistic (Logistic
 regression - LR), thuật toán tăng cường Gradient Boosting (GB) và một mô hình
 mạng nơ-ron nhân tạo (Artificial Neural Network - ANN), được lựa chọn.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{images/hocmaytime.png}
-    \caption{Phân bố khối lượng công việc với bài toán học máy phân loại tư thế ngủ trong luận văn}
-    \label{hocmay_time}
-\end{figure}
 
 Việc lựa chọn này dựa trên hai yếu tố là khả năng khái quát và độ phức tạp
 thuật toán. Về khả năng khái quát, các mô hình được lựa chọn phản ánh những
@@ -987,6 +1006,13 @@ về cùng một phía (phía dương), trong khi những điểm có giá trị
 còn lại (phía âm). Các điểm nằm trên chính mặt phẳng này sẽ làm cho tử số bằng
 không, tức là khoảng cách bằng 0.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/svm.png}
+    \caption{Minh họa mặt siêu phẳng phân tách hai lớp trong SVM}
+    \label{svm}
+\end{figure}
+
 Khái niệm này có thể được tổng quát hóa lên không gian nhiều chiều. Giả sử có
 một điểm (vector) $\mathbf{x}_0 \in \mathbb{R}^d$ và một siêu mặt phẳng có
 phương trình \cite{MLCoBan2017_SVM}:
@@ -1026,13 +1052,6 @@ Bài toán tối ưu trong SVM chính là bài toán tìm \(\mathbf{w}\) và \(b
     \right\}
 \]
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{images/svm.png}
-    \caption{Minh họa mặt siêu phẳng phân tách hai lớp trong SVM}
-    \label{svm}
-\end{figure}
-
 Thêm vào đó, SVM có thể mở rộng cho các bài toán không tuyến tính thông qua
 việc sử dụng các hàm kernel, chẳng hạn như Gaussian RBF kernel hoặc polynomial
 kernel, giúp ánh xạ dữ liệu vào không gian mới nơi mà việc phân tách tuyến tính
@@ -1040,20 +1059,25 @@ trở nên khả thi.
 
 Để mở rộng cho các bài toán phân loại đa lớp, có thể áp dụng hai kỹ
 thuật phổ biến: one-vs-one và one-vs-rest, được minh
-hoạ trong Hình~\ref{svm_ovso} và Hình~\ref{ovsr}.
+hoạ trong Hình~\ref{fig:svm_multi}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{images/svm_ovso.png}
-    \caption{Chiến lược phân loại đa lớp bằng phương pháp One-vs-One}
-    \label{svm_ovso}
-\end{figure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=1.1\textwidth]{images/svm_ovso.png}
+        \label{fig:svm_ovso}
+        \caption{One-vs-One}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.6\linewidth]{images/ovsr.png}
-    \caption{Chiến lược phân loại đa lớp bằng phương pháp One-vs-Rest}
-    \label{ovsr}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/ovsr.png}
+        \label{fig:ovsr}
+        \caption{One-vs-Rest}
+    \end{subfigure}
+    \caption{Chiến lược phân loại đa lớp SVM}
+    \label{fig:svm_multi}
 \end{figure}
 
 One-vs-One (OvO): Trong phương pháp này, một mô hình SVM được huấn luyện cho

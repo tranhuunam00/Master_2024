@@ -4363,8 +4363,8 @@
       \strng{authornamehash}{de0ec86f07e4e27f5d7b3ead94d05df6}
       \strng{authorfullhash}{de0ec86f07e4e27f5d7b3ead94d05df6}
       \strng{authorfullhashraw}{de0ec86f07e4e27f5d7b3ead94d05df6}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0018-9294}
@@ -4982,6 +4982,32 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://content.u-blox.com/sites/default/files/NINA-B3_DataSheet_UBX-17052099.pdf}}
       \field{title}{NINA-B3 Series - Stand-alone Bluetooth® 5 Low Energy Modules Data Sheet (Document No. UBX-17052099)}
+    \endentry
+    \entry{jlcpcb_capabilities}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=92f306c31bed5178fb45604cfc04b454}{%
+           family={JLCPCB},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{92f306c31bed5178fb45604cfc04b454}
+      \strng{fullhash}{92f306c31bed5178fb45604cfc04b454}
+      \strng{fullhashraw}{92f306c31bed5178fb45604cfc04b454}
+      \strng{bibnamehash}{92f306c31bed5178fb45604cfc04b454}
+      \strng{authorbibnamehash}{92f306c31bed5178fb45604cfc04b454}
+      \strng{authornamehash}{92f306c31bed5178fb45604cfc04b454}
+      \strng{authorfullhash}{92f306c31bed5178fb45604cfc04b454}
+      \strng{authorfullhashraw}{92f306c31bed5178fb45604cfc04b454}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{PCB Manufacturing Capabilities}
+      \verb{urlraw}
+      \verb https://jlcpcb.com/capabilities/pcb-capabilities
+      \endverb
+      \verb{url}
+      \verb https://jlcpcb.com/capabilities/pcb-capabilities
+      \endverb
     \endentry
     \entry{SparkFun_BMI270_Library}{misc}{}{}
       \name{author}{1}{}{%

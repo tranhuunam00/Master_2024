@@ -6,9 +6,18 @@ biên.
 
 \section{Hệ thống thu thập, lưu trữ}
 
-Hình~\ref{fig:mach} là kết quả mạch đã hoàn thiện. Mạch đã được nhóm kiểm tra
-hoạt đồng đúng theo yêu cầu các thành phần theo như thiết kế. Nạp bootloader và
-tiến hành nạp code cho vi điều khiển qua USB.
+Hình~\ref{fig:mach} là kết quả mạch đã hoàn thiện. Để đánh giá mạch hoạt động
+ổn định, tác ra tiến hành đo kiểm điện áp đầu vào và điện áp đầu ra của bộ hạ
+áp, chân kết nối cảm biến. Tiếp đến để đánh giá về mặt dữ liệu, tác giả tiến
+hành nạp mã nguồn điều khiển. Nhưng kịch bản kiểm thử (cách tiến hành, kết quả
+mong muốn, kết quả thực tế) được xác lập trước như: đặt trên mặt phẳng phù hợp
+để xác định giá trị các trục của cảm biến gia tốc có hoạt động đúng với chiều
+của nó hay không, kiểm tra việc dữ liệu đáp ứng như thế nào khi thay đổi các
+thông số (tần số lấy mẫu, độ nhạy), BLE có khởi tạo và quảng bá đúng không?
+Ngoài ra, dữ liệu gia tốc từ bộ kit Seeed Xiao được dùng làm tham chiếu. Kết
+quả đánh giá cho thấy, các mức điện áp đều chuẩn theo thiết kế, dữ liệu trả ra
+từ cảm biến gia tốc ổn định và chính xác trong điều kiện thử nghiệm.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{images/mach.png}
@@ -16,37 +25,21 @@ tiến hành nạp code cho vi điều khiển qua USB.
     \label{fig:mach}
 \end{figure}
 
-Ngoài cách cấp nguồn trực tiếp thông qua USB, phần cứng còn được gắn thêm viên
-pin lipo có dải điện áp trung bình là 3.7 V và tối thiểu là 3V có kích thước là
-20 mm * 20 mm * 5 mm tại mặt sau của mạch để thuận lợi hơn trong quá trình lấy
-mẫu.
-
 Song song với việc phát triển phần cứng, phần mềm cũng được hoàn thành với đầy
-đủ các tính năng như yêu cầu trước đó đưa ra bao gồm cả ứng dụng di dộng và máy
-chủ đám mây. Dựa trên phản hồi từ nhóm nghiên cứu, tư vấn khoa học của Thầy
-PGS.TS. Mai Anh Tuấn, tư vấn y khoa của Thầy GS.TS. Dương Quý Sỹ, ứng dụng được
-thiết kế với tiêu chí giao diện thân thiện, thao tác đơn giản và tính năng tập
-trung vào mục tiêu thử nghiệm.
+đủ các yêu cầu chức năng và yêu cầu phi trước năng. Dựa trên tư vấn khoa học
+của Thầy PGS.TS. Mai Anh Tuấn, tư vấn y khoa của Thầy GS.TS. Dương Quý Sỹ, ứng
+dụng được phát triển có giao diện thân thiện, thao tác đơn giản và tính năng
+tập trung vào mục tiêu thử nghiệm.
 
 Sau khi cài đặt, người dùng có thể đăng nhập hoặc đăng ký tài khoản thông qua
 giao diện như được thể hiện trong Hình~\ref{appAuth}. Với người dùng mới, quá
 trình đăng ký yêu cầu xác thực địa chỉ email nhằm đảm bảo bảo mật và hỗ trợ
-tính năng khôi phục tài khoản. Hình~\ref{appsleep} minh họa giao diện của các
-chức năng - chatbot hỗ trợ người dùng trong quá trình sàng lọc nguy cơ ngưng
-thở khi ngủ và cung cấp thông tin về chất lượng giấc ngủ.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{images/appsleep.png}
-    \caption{Giao diện chức năng chatbot và bộ câu hỏi tầm soát}
-    \label{appsleep}
-\end{figure}
-
-Hình ~\ref{fig:ketqua_scan_BLE} thể hiện danh sách BLE có thể kết nối và dịch
-vụ kết nối với phần cứng đã được nhắc tới bên trên. Khi người chọn vào BLE có
-tên là MASTER\_2025\_BLE ứng dụng di động xuất thêm màn hình chọn cảm biến thu
-thập. Đây cũng có thể coi là bước chọn đúng UUID của dịch cụ GATT đã được cấu
-hình sẵn ở phần cứng.
+tính năng khôi phục tài khoản, các bộ câu hỏi tầm soát và chatbot. Hình
+~\ref{fig:ketqua_scan_BLE} thể hiện danh sách BLE có thể kết nối và dịch vụ kết
+nối với phần cứng đã được nhắc tới bên trên. Khi người chọn vào BLE có tên là
+MASTER\_2025\_BLE ứng dụng di động xuất thêm màn hình chọn cảm biến thu thập.
+Đây cũng có thể coi là bước chọn đúng UUID của dịch cụ GATT đã được cấu hình
+sẵn ở phần cứng.
 
 \begin{figure}[H]
     \centering
@@ -90,71 +83,74 @@ luyện trên máy chủ trung tâm.
     \label{ketqua_mongo}
 \end{figure}
 
-\newpage
-
 \section{Thu thập và gắn nhãn dữ liệu}
-
-\begin{figure}[htbp]
-    \centerline{\includegraphics[width=0.8\linewidth]{images/4position.png}}
-    \caption{Mô phỏng thực nghiệm thực tế}
-    \label{4Position}
-\end{figure}
-
-Trong phần này, luận văn sẽ trình bày chi tiết phương pháp thu thập dữ liệu,
-các kịch bản thực nghiệm, cũng như quy trình xử lý và trích xuất đặc trưng để
-phục vụ cho việc huấn luyện các mô hình học máy trong bài toán nhận diện tư thế
-ngủ.
 
 Tổng cộng 25 tình nguyện viên đã được tuyển chọn tham gia vào quá trình thu
 thập dữ liệu, với độ tuổi dao động từ 10 đến 60, trong đó độ tuổi phổ biến là
 24. Nhóm tình nguyện viên bao gồm cả nam và nữ, được lựa chọn với tiêu chí đa
 dạng về giới tính và độ tuổi nhằm tăng tính đại diện và khách quan cho bộ dữ
 liệu.
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.8\linewidth]{images/4position.png}}
+    \caption{Mô phỏng thực nghiệm thực tế}
+    \label{4Position}
+\end{figure}
 
-Trong kịch bản đầu tiên (gọi là \textbf{thu thập có giám sát}), mỗi tình nguyện
-viên được hướng dẫn gắn thiết bị cảm biến vào vùng cổ bằng băng keo y tế hai
-mặt 3M, sau đó đăng nhập vào ứng dụng di động với tài khoản cá nhân đã đăng ký.
-Dưới sự giám sát trực tiếp của tác giả, mỗi người tham gia sẽ lần lượt thực
-hiện các tư thế ngủ cơ bản (nằm ngửa, nằm sấp, nghiêng trái, nghiêng phải)
-trong thời gian tối thiểu 2 phút cho mỗi tư thế Hình~\ref{4Position}. Mỗi tư
-thế được lặp lại ít nhất hai lần để đảm bảo tính lặp lại và ổn định của tín
-hiệu. Sau khi xác minh rằng dữ liệu cảm biến đã được lưu trữ đầy đủ trên hệ
-thống (kiểm tra trên MongoDB và giao diện ứng dụng), quá trình thu thập dữ liệu
-từ một tình nguyện viên được xem là hoàn tất.
+Trong kịch bản đầu tiên (gọi là thu thập có giám sát), mỗi tình nguyện viên
+được hướng dẫn gắn thiết bị cảm biến vào vùng cổ bằng băng keo y tế hai mặt 3M,
+sau đó đăng nhập vào ứng dụng di động với tài khoản cá nhân đã đăng ký. Dưới sự
+giám sát trực tiếp của tác giả, mỗi người tham gia sẽ lần lượt thực hiện các tư
+thế ngủ cơ bản (nằm ngửa, nằm sấp, nghiêng trái, nghiêng phải) trong thời gian
+tối thiểu 2 phút cho mỗi tư thế Hình~\ref{4Position}. Mỗi tư thế được lặp lại
+ít nhất hai lần để đảm bảo tính lặp lại và ổn định của tín hiệu. Sau khi xác
+minh rằng dữ liệu cảm biến đã được lưu trữ đầy đủ trên hệ thống (kiểm tra trên
+MongoDB và giao diện ứng dụng), quá trình thu thập dữ liệu từ một tình nguyện
+viên được xem là hoàn tất.
 
-Bên cạnh đó, để mô phỏng điều kiện thực tế khi sử dụng thiết bị trong sinh hoạt
-ban đêm, hiện kịch bản thứ hai (\textbf{thu thập trong giấc ngủ tự nhiên}) được
-xây dựng. Trong kịch bản này, thiết bị được gắn vào cổ trước khi đi ngủ và ghi
-nhận dữ liệu liên tục trong suốt một đêm. Song song đó, một camera cố định được
-lắp đặt phía trên giường để ghi hình toàn bộ quá trình ngủ, từ đó hỗ trợ gán
-nhãn chính xác theo thời gian. Dữ liệu trong giai đoạn này được xử lý và đồng
-bộ thủ công giữa tín hiệu cảm biến và video để loại bỏ các đoạn có chuyển động
-hoặc sai lệch nhãn.
-
-Mặc dù phương pháp thu thập trong môi trường tự nhiên sát với điều kiện sử dụng
-thực tế, nhưng đòi hỏi nhiều công sức xử lý hậu kỳ và khó kiểm soát chất lượng
-dữ liệu đầu vào. Theo ý kiến tư vấn từ các chuyên gia trong lĩnh vực y học giấc
+Bên cạnh đó, để mô phỏng điều kiện thực tế khi sử dụng thiết bị trong khi ngủ
+ban đêm, hiện kịch bản thứ hai (gọi là thu thập trong giấc ngủ tự nhiên) được
+xây dựng. Trong kịch bản này, thiết bị được gắn trước khi đi ngủ và ghi nhận dữ
+liệu liên tục trong suốt một đêm. Song song đó, một camera cố định được lắp đặt
+để ghi hình toàn bộ quá trình ngủ, từ đó hỗ trợ gán nhãn chính xác theo thời
+gian. Dữ liệu trong giai đoạn này được xử lý và đồng bộ thủ công giữa tín hiệu
+cảm biến và video để loại bỏ các đoạn có chuyển động hoặc sai lệch nhãn. Mặc dù
+phương pháp thu thập trong môi trường tự nhiên sát với điều kiện sử dụng thực
+tế, nhưng đòi hỏi nhiều công sức xử lý hậu kỳ và khó kiểm soát chất lượng dữ
+liệu đầu vào. Theo ý kiến tư vấn từ các chuyên gia trong lĩnh vực y học giấc
 ngủ, phương pháp thu thập có giám sát (phương pháp 1) vẫn được ưu tiên do khả
 năng kiểm soát tốt, đảm bảo dữ liệu cân bằng giữa các tư thế, đồng thời vẫn duy
 trì được mức độ tương thích cao với điều kiện thực tế khi triển khai ứng dụng
-theo dõi tại nhà.
-
-Sau quá trình thu thập, bộ dữ liệu huấn luyện bao gồm tổng cộng \textbf{158,750
-    mẫu} hợp lệ sau khi đã lọc nhiễu và loại bỏ các phiên ghi nhận không đạt yêu
-cầu của 25 tình nguyện viên. Dữ liệu kiểm thử được loại bỏ các hoạt động không
-thuộc tư thế ngủ và gắn nhãn dựa trên camera. Kết quả là bộ dữ liệu kiểm thử
-gồm \textbf{64,258 mẫu}.
-
-Tất cả dữ liệu thu thập từ các tình nguyện viên đều được xuất ra định dạng
-\texttt{CSV}, bao gồm thông tin thời gian, giá trị cảm biến trên ba trục $x$,
-$y$, $z$, và nhãn tư thế tương ứng. Dữ liệu này được sử dụng làm đầu vào cho
-quá trình trích xuất đặc trưng và huấn luyện mô hình học máy.
+theo dõi tại nhà. Kết quả, bộ dữ liệu huấn luyện đạt 158,750 mẫu, bộ dữ liệu
+kiểm thử đạt 64,258 mẫu hợp lệ sau khi đã lọc nhiễu và loại bỏ không phần đạt
+yêu cầu. Dữ liệu này được sử dụng làm đầu vào cho quá trình trích xuất đặc
+trưng và huấn luyện mô hình học máy.
 
 \section{Phân loại tư thế ngủ bằng học máy}
+Ứng với các bước để hoàn thành bài toán sử dụng học máy tại chương II,
+tác giả có tổng hợp thời gian để hoàn
+thành từng bước
+đó đối với nghiêng cứu này Hình~\ref{hocmay_time}.
+Thời gian để chuẩn bị dữ liệu cho học máy
+(thu thập, tiền xử lý) chiếm tới hơn 80\% khối lượng
+công việc trong bài toán phân loại tư thế ngủ.
+Điều này càng khẳng định định hướng
+"chuẩn hóa quy trình từ thu thập dữ liệu đến lưu trữ" của nhóm là hợp lý.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/hocmaytime.png}
+    \caption{Phân bố khối lượng công việc với bài toán học máy phân loại tư thế ngủ trong luận văn}
+    \label{hocmay_time}
+\end{figure}
 
 \subsection{Phân tích dữ liệu}
-Sau khi hoàn thành quá trình thu thập dữ liệu của hai kịch bản, tiến hành phân
-tích các giá trị cảm biến của ba trục.
+
+Hình~\ref{fig:ana_balance} cho thấy phân bố dữ liệu của tập huấn luyện tương
+đối cân bằng. Còn đối với tập kiểm thử, tư thế nằm ngửa và nghiêng trái chiếm
+đa số. Những lập luận trên hoàn toàn đúng với bài toán học máy phân loại tư thế
+ngủ bởi vì: trên bộ huấn luyện, các nhãn cần được giữ ở mức cân bằng để tránh
+tình trạng quá khớp; còn trên tập kiểm thử, các nhãn sẽ có xu hướng phản ánh
+đúng sinh lý của cá nhân khi ngủ, sẽ thường có những tư thế nổi bật hẳn về số
+lượng do thói quen.
 
 \begin{figure}[H]
     \centering
@@ -175,15 +171,16 @@ tích các giá trị cảm biến của ba trục.
     \label{fig:ana_balance}
 \end{figure}
 
-Hình~\ref{fig:ana_balance} cho thấy phân bố dữ liệu của tập huấn luyện tương
-đối cân bằng. Còn đối với tập kiểm thử, tư thế nằm ngửa và nghiêng trái chiếm
-đa số. Những lập luận trên hoàn toàn đúng với bài toán học máy phân loại tư thế
-ngủ bởi vì: trên bộ huấn luyện, các nhãn cần được giữ ở mức cân bằng để tránh
-tình trạng quá khớp; còn trên tập kiểm thử, các nhãn sẽ có xu hướng phản ánh
-đúng sinh lý của cá nhân khi ngủ, sẽ thường có những tư thế nổi bật hẳn về số
-lượng do thói quen.
-
-\begin{figure}[htbp]
+Hình~\ref{fig:ana_distribute} (a) trình bày phân tích chi tiết phân bố tín hiệu
+cảm biến theo ba trục gia tốc ứng với bốn tư thế ngủ cơ bản của tập huấn luyện
+thu từ 25 tình nguyện viên. Ở trục $x$, các phân bố tương đối biệt lập, giữa
+hai tư thế nằm ngửa và nằm sấp, cũng như giữa nghiêng trái và nghiêng phải.
+Điều này cho thấy trục $x$ có khả năng phân biệt tư thế tốt. Trục $y$ thể hiện
+mức độ tương đồng giữa các tư thế, dẫn đến khả năng tách biệt thấp và ít giá
+trị trong việc xác định tư thế ngủ. Đối với trục $z$, có thể quan sát được sự
+phân tách rõ ràng giữa tư thế nằm nghiêng và các tư thế dọc (nằm ngửa và nằm
+sấp), chứng tỏ vai trò quan trọng của trục $z$ trong phân loại tư thế.
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
@@ -201,18 +198,9 @@ lượng do thói quen.
     \label{fig:ana_distribute}
 \end{figure}
 
-Hình~\ref{fig:ana_distribute} (a) trình bày phân tích chi tiết phân bố tín hiệu
-cảm biến theo ba trục gia tốc ứng với bốn tư thế ngủ cơ bản của tập huấn luyện
-thu từ 25 tình nguyện viên. Ở trục $x$, các phân bố tương đối biệt lập, giữa
-hai tư thế nằm ngửa và nằm sấp, cũng như giữa nghiêng trái và nghiêng phải.
-Điều này cho thấy trục $x$ có khả năng phân biệt tư thế tốt. Trục $y$ thể hiện
-mức độ tương đồng giữa các tư thế, dẫn đến khả năng tách biệt thấp và ít giá
-trị trong việc xác định tư thế ngủ. Đối với trục $z$, có thể quan sát được sự
-phân tách rõ ràng giữa tư thế nằm nghiêng và các tư thế dọc (nằm ngửa và nằm
-sấp), chứng tỏ vai trò quan trọng của trục $z$ trong phân loại tư thế. Còn đối
-với Hình~\ref{fig:ana_distribute} (b), các phân bố về trung bình cũng tương
-đồng với tập huấn luyện cho thấy phương pháp lấy mẫu mang tính đúng đắn. Tuy
-nhiên, giải phân phối của tập kiểm thử tương đối rộng, nguyên nhân được suy
+Còn đối với Hình~\ref{fig:ana_distribute} (b), các phân bố về trung bình cũng
+tương đồng với tập huấn luyện cho thấy phương pháp lấy mẫu mang tính đúng đắn.
+Tuy nhiên, giải phân phối của tập kiểm thử tương đối rộng, nguyên nhân được suy
 đoán là do các tín hiệu nhiễu chưa được sàng lọc kĩ ở bước làm sạch dữ liệu và
 gắn nhãn. Đây là cũng trường hợp không hiếm gặp trong khi ngủ thực tế cả đêm,
 con người có thể có các hoạt động khác như là đi vệ sinh hay là uống nước. Vì
@@ -329,16 +317,17 @@ Các đặc trưng trung bình và năng lượng của 2 trục x và z cho ph�
 tách biệt để phân bật nhóm tư thế nghiêng trái - nghiêng phải và ngửa - sấp.
 Đối với trục y, phân bố của các tư thế có xu hướng giống nhau và cũng tương tự
 các đặc trưng độ lệnh chuẩn trên miền thời gian và các hai giá trị đặc trưng
-trên miền tần số Hình~\ref{ana_feature_fft}. Qua phân tích trên, nhóm càng tin
-tưởng về luận điểm rằng với tư thế ngủ, các đặc trưng miền thời gian sẽ có
-nhiều ý nghĩa hơn và trong đó cũng sẽ có những nhóm thực sự nổi bật để có thể
-phân loại tư thế ngủ.
+trên miền tần số Hình~\ref{ana_feature_fft}.
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=1\linewidth]{images/ana_feature_fft.png}}
     \caption{Phân bố của đặc trưng trung bình, độ lệnh chuẩn trên miền tần số của tập huấn luyện}
     \label{ana_feature_fft}
 \end{figure}
+
+Qua phân tích trên, nhóm càng tin tưởng về luận điểm rằng với tư thế ngủ, các
+đặc trưng miền thời gian sẽ có nhiều ý nghĩa hơn và trong đó cũng sẽ có những
+nhóm thực sự nổi bật để có thể phân loại tư thế ngủ.
 \subsection{Lựa chọn tham số}
 Sau khi xác định được 69 đặc trưng cả miền thời gian và tần số, các vòng lặp
 với các dải tham số cài đặt sẵn trên 5 mô hình đã lựa chọn LR, RF, SVM, GB và
@@ -356,7 +345,7 @@ ANN (Bảng~\ref{tab:model_results}) sẽ được chạy thử nghiệm.
         \hline
         \textbf{RF}                                                                                                                              & 288                & 864              &
         \raggedright\ttfamily n\_estimators=20, max\_depth=10, min\_samples\_split=2, min\_samples\_leaf=1, max\_features='sqrt', bootstrap=True &
-        \textbf{98.82}                                                                                                                           & \textbf{99.45}                                                                                                   \\
+        98.82                                                                                                                                    & 99.45                                                                                                            \\
         \hline
         \textbf{LR}                                                                                                                              & 54                 & 162              &
         \raggedright\ttfamily C=5, max\_iter=10, penalty='l2', solver='newton-cg'                                                                &
@@ -368,7 +357,7 @@ ANN (Bảng~\ref{tab:model_results}) sẽ được chạy thử nghiệm.
         \hline
         \textbf{GB}                                                                                                                              & 216                & 648              &
         \raggedright\ttfamily n\_estimators=10, learning\_rate=0.1, max\_depth=4, max\_features='sqrt', subsample=0.8                            &
-        \textbf{97.51}                                                                                                                           & \textbf{99.51}                                                                                                   \\
+        97.51                                                                                                                                    & 99.51                                                                                                            \\
         \hline
         \textbf{ANN}                                                                                                                             & 32                 & 96               &
         \raggedright\ttfamily neurons\_1=8, neurons\_2=8, learning\_rate=0.01, batch\_size=16, epochs=20                                         &
@@ -385,17 +374,7 @@ tiếp giá trị gia tốc thô với cửa số 10 mẫu (30 giá trị x, y, 
 cho kết quả ấn tượng đối với tập huấn luyện nhưng bị suy giảm so với tập kiểm
 tra. Hình~\ref{fig:ml_confuse} cũng chỉ ra rằng, đối với mô hình ANN, hai tư
 thế nghiêng phải và ngửa đang bị suy luận sai. Việc này cũng được phân tích dựa
-trên biểu đồ phân bố đối với trục z bên trên. Ngoài ra, SVM có những sự nhầm
-lẫn ở hai tư thế là nghiêng trái và nghiêng phải.
-
-Để hiểu sâu hơn, trong khuôn khổ khóa luận sẽ tiến hành thêm các đánh giá về mức độ
-ảnh hưởng của các đặc trưng
-đến các mô hình (không có ANN vì lý do ANN không dùng 69
-đặc trưng) Hình~\ref{fig:ml_shap}. Đúng với nhận định từ trước, các tính năng
-miền thời gian chiếm nhiều ý nghĩa lên mô hình đặc biệt là đặc trưng được trích
-xuất từ hai trục x, y và các đặc trưng tổng hợp từ 3 trục. Đặc trưng miền tần
-số đa phần đứng vị trí cuối cho thấy không có nhiều ý nghĩa đối với các tham số
-đã chọn.
+trên biểu đồ phân bố đối với trục z bên trên.
 
 \begin{figure}[H]
     \centering
@@ -434,21 +413,14 @@ số đa phần đứng vị trí cuối cho thấy không có nhiều ý nghĩa
     \label{fig:ml_confuse}
 
 \end{figure}
-
-Hình~\ref{fig:ml_shap} (a) và (d) khá tương đồng về mặt ý nghĩa của các đặc
-trên lên mô hình RF và GB. Đây cũng thể xem là do 2 mô hình đều có cơ chế xây
-dựng dựa trên các cây quyết định. Hình~\ref{fig:ml_shap} (b) chỉ ra LR thì lại
-ưu tiên hơn các đặc trưng được tổng hợp từ ba trục. Còn đối với SVM
-Hình~\ref{fig:ml_shap} (c), đã xác định rõ các véc-tơ hỗ trợ nên đang tính các
-tính năng còn lại đều có giá trị 0.
-
-Nhận thấy có 15 đặc trưng luôn xuất hiên vị trí đầu của tất cả các mô hình bao
-gồm: 'z\_median', 'z\_mean', 'x\_mean', 'x\_energy', 'z\_pos\_count',
-'z\_neg\_count', 'x\_median', 'z\_energy', 'avg\_result\_accl',
-'x\_neg\_count', 'z\_std', 'x\_pos\_count', 'y\_energy', 'y\_mean', 'sma'. Để
-hiểu sâu hơn về ý nghĩa các đặc trưng này, 8 kịch bản được xây dựng. Việc này
-không chỉ có ý nghĩa về mặt phân tích đặc trưng và còn muốn làm rõ hơn về mặt
-kích thước mô hình để phù hợp triển khai lên biên.
+Để hiểu sâu hơn, trong khuôn khổ khóa luận sẽ tiến hành thêm các đánh giá về mức độ
+ảnh hưởng của các đặc trưng
+đến các mô hình (không có ANN vì lý do ANN không dùng 69
+đặc trưng) Hình~\ref{fig:ml_shap}. Đúng với nhận định từ trước, các tính năng
+miền thời gian chiếm nhiều ý nghĩa lên mô hình đặc biệt là đặc trưng được trích
+xuất từ hai trục x, z và các đặc trưng tổng hợp từ 3 trục. Đặc trưng miền tần
+số đa phần đứng vị trí cuối cho thấy không có nhiều ý nghĩa đối với các tham số
+đã chọn.
 
 \begin{figure}[H]
     \centering
@@ -482,14 +454,27 @@ kích thước mô hình để phù hợp triển khai lên biên.
 
 \end{figure}
 
-\newpage
+Hình~\ref{fig:ml_shap} (a) và (d) khá tương đồng về mặt ý nghĩa của các đặc
+trên lên mô hình RF và GB. Đây cũng thể xem là do 2 mô hình đều có cơ chế xây
+dựng dựa trên các cây quyết định. Hình~\ref{fig:ml_shap} (b) chỉ ra LR thì lại
+ưu tiên hơn các đặc trưng được tổng hợp từ ba trục. Còn đối với SVM
+Hình~\ref{fig:ml_shap} (c), đã xác định rõ các véc-tơ hỗ trợ nên đang tính các
+tính năng còn lại đều có giá trị 0.
 
-\subsection{Kịch bản kiểm thử}
+Nhận thấy có 15 đặc trưng luôn xuất hiên vị trí đầu của tất cả các mô hình bao
+gồm: 'z\_median', 'z\_mean', 'x\_mean', 'x\_energy', 'z\_pos\_count',
+'z\_neg\_count', 'x\_median', 'z\_energy', 'avg\_result\_accl',
+'x\_neg\_count', 'z\_std', 'x\_pos\_count', 'y\_energy', 'y\_mean', 'sma'. Để
+hiểu sâu hơn về ý nghĩa các đặc trưng này, 8 kịch bản được xây dựng. Việc này
+không chỉ có ý nghĩa về mặt phân tích đặc trưng và còn muốn làm rõ hơn về mặt
+kích thước mô hình để phù hợp triển khai lên biên.
 
-Lựa chọn đặc trưng là một bước quan trọng trong quá trình xây dựng mô hình học
-máy, giúp giảm chiều dữ liệu, cải thiện hiệu quả huấn luyện, rút ngắn thời gian
-tính toán và hạn chế hiện tượng quá khớp. Nguyên lý chung là các đặc trưng hiệu
-quả phải có mối tương quan cao với mục tiêu là phát hiện tư thế ngủ.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/correlation.png}
+    \caption{Ma trận tương quan giữa các đặc trưng trích xuất}
+    \label{fig:correlation}
+\end{figure}
 
 Phân tích ma trận tương quan (Hình~\ref{fig:correlation}) đã cho thấy một số
 cặp đặc trưng có mức tương quan rất cao, điển hình như $x_{\mathrm{std}}$ và
@@ -500,14 +485,7 @@ lặp nhằm giảm độ phức tạp mô hình mà vẫn giữ được thông
 Kết hợp với phân tích ở phần trên, 3 thông số chính sẽ được thay đổi là: độ dài
 cửa sổ - độ phủ, đặc trưng miền và số lượng đặc trưng Bảng~\ref{tab:scenarios}.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/correlation.png}
-    \caption{Ma trận tương quan giữa các đặc trưng trích xuất}
-    \label{fig:correlation}
-\end{figure}
-
-\begin{table}[htbp]
+\begin{table}[H]
     \caption{Các kịch bản lựa chọn và sử dụng đặc trưng trong nghiên cứu}
     \label{tab:scenarios}
     \begin{center}
@@ -535,9 +513,6 @@ cửa sổ - độ phủ, đặc trưng miền và số lượng đặc trưng B
         \end{tabular}
     \end{center}
 \end{table}
-
-\newpage
-
 \subsection{Đánh giá kết quả}
 Sau khi xác lập, tất cả các kịch bản sẽ tiến hành huấn luyện trên cũng một máy
 tính và đưa ra kết quả về độ chính xác Hình~\ref{kq_8kb}.
@@ -546,15 +521,15 @@ Kết quả cho thấy, kịch bản 3 (màu đỏ) là toàn bộ các đặc t
 hoàn toàn không phù hợp để phân loại tư thế ngủ. Điều này cũng được chứng minh
 tại ở phần trên. Các mô hình RF và GB luôn cho cho độ chính xác cao nhất và ổn
 định nhất ở toàn bộ các bộ dữ liệu huấn luyện. Các kịch bản 5, 6, 7, 8 đựa trên
-chỉ 15 đặc trưng có vị trí đầu hầu như không thay đổi độ chính xác nhiều. Điều
+chỉ 15 đặc trưng (vị trí đầu), hầu như không thay đổi độ chính xác nhiều. Điều
 này cho thấy, việc lựa chọn này phù hợp đối với bài toán tư thế ngủ. Trong kịch
 bản 6, có độ chính xác cao nhất lên tới 99.84\% đối với mô hình GB với bộ dữ
-liệu cửa sổ 30 mẫu. Kịch bản 7 có kết quả ấn tượng nhất. Trong đó, độ chính xác
-các mô hình đều được cải thiện rõ rệt ngay cả mô hình LR và SVM. Điều này thực
-sự có ý nghĩa vì độ rộng cửa sổ có ảnh hưởng trực tiếp đến việc tính toán, thời
-gian phản hồi kết quả trên biên. Với ANN như đánh giá trong phần lựa chọn tham
-số, khả năng tự trích xuất tính năng từ chỉ 2 lớp ẩn cũng đã cho kết quả đến
-98\%, nhưng giảm nhẹ ở tập kiểm tra 95.5\%.
+liệu cửa sổ 30 mẫu. Kịch bản 7 có kết quả ấn tượng nhất với độ chính xác các mô
+hình đều được cải thiện rõ rệt ngay cả mô hình LR và SVM. Điều này thực sự có ý
+nghĩa vì độ rộng cửa sổ có ảnh hưởng trực tiếp đến việc tính toán, thời gian
+phản hồi kết quả trên biên. Với ANN như đánh giá trong phần lựa chọn tham số,
+khả năng tự trích xuất tính năng từ chỉ 2 lớp ẩn cũng đã cho kết quả đến 98\% ở
+tập huấn luyện, nhưng giảm nhẹ ở tập kiểm tra 95.5\%.
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=1\linewidth]{images/kq_8kb.png}}
@@ -644,17 +619,15 @@ sự có ý nghĩa mặt tính toán. Riêng đối với mô hình ANN, do ch�
 kịch bản nhưng cũng cho thấy tiềm năng mạnh mẽ khi chỉ với kích thước 31.94 kb
 đã cho độ chính xác ở tập huấn luyện lên tới 98\%.
 
-Tất cả những đánh giá trên, trong khuôn khổ luận văn quyết định lựa chọn đại
-diện 2 mô hình là LR - truyền thống và ANN - học sâu để tiến hình thử nghiệm
-triển khai trên biên. Lựa chọn LR mà không phải 3 mô hình còn lại có lý do đầu
-tiên là kích thước ổn định, nhỏ nhất và có độ chính xác lên tới 97\%. Việc này
-sẽ phù hợp với phần cứng của nhóm. Còn ANN, lý do là muốn kiểm tra cả học sâu
-học động hiệu quả hay không trên môi trường tại biên. Ngoài ra, trong tương lại
-ngoài phân loại tư thế ngủ, phần cứng của nhóm còn phải gánh thêm những bài
-toán khác với kích thước mô hình, kích thước dữ liệu đầu vào cho mô hình lớn
-hơn rất nhiều lần như tín hiệu audio. Vậy nên LR sẽ giúp san sẻ tài nguyên phân
-cứng, ANN sẽ làm tiền đề để phát triển mô hình cho bài toán khác tại biên.
-
+Tất cả những đánh giá trên, trong nghiên cứu này lựa chọn đại diện 2 mô hình là
+LR - truyền thống và ANN - học sâu để tiến hình thử nghiệm triển khai trên
+biên. Lựa chọn LR mà không phải 3 mô hình còn lại có lý do đầu tiên là kích
+thước ổn định, nhỏ nhất và có độ chính xác lên tới 97\%. Việc này sẽ phù hợp
+với phần cứng của nhóm. Còn ANN, lý do là muốn kiểm tra cả học sâu học động
+hiệu quả hay không trên môi trường tại biên. Ngoài ra, trong tương lại ngoài
+phân loại tư thế ngủ, phần cứng của nhóm còn phải gánh thêm những bài toán khác
+với kích thước mô hình, kích thước dữ liệu đầu vào cho mô hình lớn hơn rất
+nhiều lần như tín hiệu audio.
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=1\linewidth]{images/kq_influence.png}}
     \caption{Mức độ ảnh hưởng của số lượng mẫu đến độ chính xác mô hình LR}
@@ -662,14 +635,13 @@ cứng, ANN sẽ làm tiền đề để phát triển mô hình cho bài toán 
 \end{figure}
 
 Hình~\ref{kq_influence} cho thấy, độ chính xác tăng vọt từ khi bắt đầu đến
-ngưỡng khoảng 2000 mẫu dữ liệu. Sau đó, đường có xu hướng đi ngang. Từ biểu đồ
+ngưỡng khoảng 2,000 mẫu dữ liệu. Sau đó, đường có xu hướng đi ngang. Từ biểu đồ
 này phần nào cũng xác định được số lượng mẫu thu thập được từ 25 tình nguyện
-viên đã đủ đối với bài toán phân loại tư thế ngủ. Ngoài ra, nó còn cho thấy
-tiềm năng để giảm tiếp kích thước mô hình bằng cách giảm số lượng mẫu huấn
+viên đã đủ đối với bài toán phân loại tư thế ngủ. Hơn nữa, điều này còn cho
+thấy tiềm năng để giảm tiếp kích thước mô hình bằng cách giảm số lượng mẫu huấn
 luyện.
 
 \section{Triển khai mô hình lên phần cứng}
-
 \section{Chuyển đổi mô hình}
 
 Đầu tiên, bước chuẩn hóa sẽ được tiến hành để biến đổi từ mô hình trên máy chủ trung tâm thành định dạng mô hình trên vi điều khiển.
@@ -695,8 +667,8 @@ thư viện TensorFlow\footnote{\textit{TensorFlow} là thư viện mã nguồn 
 nguyên nghiêm ngặt về bộ nhớ (RAM = 256 KB) và bộ nhớ lưu trữ (Flash = 1 MB).
 
 Sau khi, mô hình ANN được huấn luyện và hiệu chỉnh. Sau đó, mô hình được chuyển
-đổi sang định dạng \textbf{TensorFlow Lite (TFLite)} bằng thư viện
-\texttt{TFLiteConverter}, giúp nén và tối ưu mô hình cho thiết bị nhúng.
+đổi sang định dạng TensorFlow Lite (TFLite) bằng thư viện TFLiteConverter, giúp
+nén và tối ưu mô hình cho thiết bị nhúng.
 
 Thư viện TFLiteConverter cung cấp nhiều thuộc tính điều chỉnh quan trọng ảnh
 hưởng trực tiếp đến chất lượng suy luận cũng như khả năng thu gọn mô hình. Các
@@ -706,7 +678,7 @@ nguyên. Thư viện cũng cung cấp tùy chọn các phép toán tùy chỉnh,
 metadata; Phương thức trung tâm của lớp là convert(), nơi toàn bộ đồ thị
 TensorFlow được ánh xạ sang mô hình TFLite dưới dạng chuỗi byte.
 
-Trong phạm vi luận văn này, kích thước mô hình mạng nơ-ron nhân tạo (ANN) sau
+Trong phạm vi nghiên cứu này, kích thước mô hình mạng nơ-ron nhân tạo (ANN) sau
 huấn luyện chỉ vào khoảng 35~kB, cho thấy chưa cần áp dụng các kỹ thuật tối ưu
 hóa mạnh như cắt tỉa trọng số hay lượng tử hóa từ định dạng \texttt{float32}
 xuống \texttt{float8}. Vì vậy, chỉ sử dụng TFLiteConverter với mục tiêu loại bỏ
@@ -726,37 +698,22 @@ trực tiếp sang mã C/C++ thông qua ba thành phần chính: (i) tệp \text
 lưu trữ toàn bộ tham số huấn luyện (trọng số, hệ số bias, giá trị chuẩn hoá);
 (ii) tệp \texttt{predict.h} định nghĩa cơ chế suy luận bằng phép tính tuyến
 tính kết hợp Softmax; và (iii) chương trình chính điều khiển cảm biến, trích
-xuất đặc trưng, chuẩn hoá và gọi hàm dự đoán. Cách tổ chức này giúp mô hình
-hoạt động độc lập hoàn toàn trên vi điều khiển mà không cần bất kỳ thư viện học
-máy ngoài nào.
+xuất đặc trưng, chuẩn hoá và gọi hàm dự đoán. Thực nghiệm cho thấy toàn bộ quá
+trình suy luận được thực hiện chỉ với các phép toán cơ bản (\emph{cộng, nhân,
+    căn bậc hai, hàm mũ}), tiêu tốn rất ít tài nguyên tính toán và đạt thời gian xử
+lý ở mức micro giây cho mỗi cửa sổ dữ liệu. Điều này khẳng định tính phù hợp
+của LR trong bối cảnh triển khai trên thiết bị nhúng có bộ nhớ và công suất xử
+lý hạn chế. Việc triển khai LR theo cách này minh chứng rằng một mô hình học
+máy có thể được rút gọn thành tập tham số tĩnh và tái hiện chính xác trên chip,
+đồng thời duy trì độ chính xác ở mức chấp nhận được cho ứng dụng giám sát sức
+khoẻ thời gian thực.
 
-Thực nghiệm cho thấy toàn bộ quá trình suy luận được thực hiện chỉ với các phép
-toán cơ bản (\emph{cộng, nhân, căn bậc hai, hàm mũ}), tiêu tốn rất ít tài
-nguyên tính toán và đạt thời gian xử lý ở mức micro giây cho mỗi cửa sổ dữ
-liệu. Điều này khẳng định tính phù hợp của LR trong bối cảnh triển khai trên
-thiết bị nhúng có bộ nhớ và công suất xử lý hạn chế.
-
-Từ góc độ khoa học, việc triển khai LR theo cách này minh chứng rằng một mô
-hình học máy có thể được rút gọn thành tập tham số tĩnh và tái hiện chính xác
-trên chip, đồng thời duy trì độ chính xác ở mức chấp nhận được cho ứng dụng
-giám sát sức khoẻ thời gian thực. Chiến lược \textbf{tối giản mô hình} này là
-minh chứng rõ rệt cho tính khả thi của Edge AI: đảm bảo độ trễ thấp, tính riêng
-tư dữ liệu và khả năng vận hành bền vững trong môi trường hạn chế tài nguyên.
-
-Khác với LR, ANN được triển khai trên chip thông qua định dạng
-\textbf{TensorFlow Lite Micro (TFLM)}. Khối \texttt{MicroInterpreter} trong
-TFLM chịu trách nhiệm đọc mô hình, thực thi các toán tử (Dense, ReLU, Softmax),
-và trả về xác suất dự đoán cho từng tư thế. Kết quả cuối cùng được xác định
-bằng cách chọn lớp có xác suất cao nhất. Ý nghĩa khoa học của phương thức triển
-khai này nằm ở chỗ: thay vì trích xuất đặc trưng thủ công như với LR, ANN có
-khả năng học trực tiếp từ dữ liệu thô, từ đó giảm thiểu sự phụ thuộc vào các
-bước tiền xử lý. Mặc dù chi phí tính toán cao hơn, ANN có ưu thế trong việc nắm
-bắt quan hệ phi tuyến phức tạp giữa các tín hiệu.
-
-Như vậy, hai mô hình LR và ANN phản ánh hai chiến lược bổ sung cho nhau: LR tối
-giản, phù hợp khi ưu tiên tốc độ và tài nguyên, trong khi ANN khai thác tối đa
-dữ liệu thô nhờ khả năng biểu diễn phi tuyến, phù hợp cho các ứng dụng đòi hỏi
-độ chính xác cao và tính khái quát.
+Khác với LR, ANN được triển khai trên chip thông qua định dạng TensorFlow Lite
+Micro (TFLM). Khối \texttt{MicroInterpreter} trong TFLM chịu trách nhiệm đọc mô
+hình, thực thi các toán tử (Dense, ReLU, Softmax), và trả về xác suất dự đoán
+cho từng tư thế. Kết quả cuối cùng được xác định bằng cách chọn lớp có xác suất
+cao nhất. Mặc dù chi phí tính toán cao hơn, ANN có ưu thế trong việc nắm bắt
+quan hệ phi tuyến phức tạp giữa các tín hiệu.
 
 \subsection{Đánh giá hiệu suất và tài nguyên}
 
@@ -767,10 +724,11 @@ xuống vi điều khiển được thực hiện trên một máy tính xách t
 cứng như sau:
 
 \begin{itemize}
-    \item \textbf{Bộ xử lý:} Intel(R) Core(TM) Ultra 5 226V, tốc độ xung nhịp $2.10$~GHz.
-    \item \textbf{Bộ nhớ trong:} $16.0$~GB DDR5, tốc độ $8533$~MT/s.
-    \item \textbf{Ổ lưu trữ:} SSD dung lượng $954$~GB (trong đó đã sử dụng $188$~GB).
-    \item \textbf{Card đồ họa:} Intel(R) Arc(TM) 130V, dung lượng bộ nhớ đồ hoạ $8$~GB (VRAM khả dụng $128$~MB cho hệ thống).
+    \item Bộ xử lý: Intel(R) Core(TM) Ultra 5 226V, tốc độ xung nhịp $2.10$~GHz.
+    \item Bộ nhớ trong: $16.0$~GB DDR5, tốc độ $8533$~MT/s.
+    \item Ổ lưu trữ: SSD dung lượng $954$~GB (trong đó đã sử dụng $188$~GB).
+    \item Card đồ họa: Intel(R) Arc(TM) 130V, dung lượng bộ nhớ đồ hoạ $8$~GB (VRAM khả
+          dụng $128$~MB cho hệ thống).
 \end{itemize}
 
 Việc mô tả chi tiết môi trường phần cứng nhằm giúp đảm bảo tính minh bạch, đồng
@@ -782,11 +740,11 @@ thử nghiệm là cần thiết.
 
 Bảng \ref{tab:comparison_full} trình bày sự so sánh chi tiết hai mô hình khi
 triển khai trên vi điều khiển nRF52840. Ngoài các tiêu chí về dung lượng bộ nhớ
-và độ phức tạp, kết quả thực nghiệm còn chỉ ra sự khác biệt rất lớn về
-\textbf{hiệu năng suy luận}. Cụ thể, mô hình LR đạt thời gian xử lý trung bình
-$501~\mu s$ trên mỗi mẫu, trong khi ANN mất tới $8000~\mu s$, tức là chậm hơn
-khoảng $16$ lần. Đây là một yếu tố quan trọng, đặc biệt trong các ứng dụng thời
-gian thực nơi độ trễ (latency) quyết định khả năng đáp ứng của hệ thống.
+và độ phức tạp, kết quả thực nghiệm còn chỉ ra sự khác biệt rất lớn về hiệu
+năng suy luận. Cụ thể, mô hình LR đạt thời gian xử lý trung bình $501~\mu s$
+trên mỗi mẫu, trong khi ANN mất tới $8000~\mu s$, tức là chậm hơn khoảng $16$
+lần. Đây là một yếu tố quan trọng, đặc biệt trong các ứng dụng thời gian thực
+nơi độ trễ (latency) quyết định khả năng đáp ứng của hệ thống.
 
 \begin{table}[H]
     \centering
@@ -811,17 +769,17 @@ có khả năng khai thác tốt hơn các quan hệ phi tuyến giữa dữ li�
 tăng độ chính xác trong các bài toán phức tạp như nhận diện chuyển động liên
 tục hoặc phân loại đa trạng thái.
 
-Điểm mấu chốt ở đây là \textbf{sự đánh đổi giữa tốc độ và khả năng biểu diễn}:
+Điểm mấu chốt ở đây là sự đánh đổi giữa tốc độ và khả năng biểu diễn:
 LR nhanh và nhẹ, nhưng hạn chế về năng lực mô hình;
 trong khi ANN tiêu tốn nhiều tài nguyên hơn, song mang
 lại độ chính xác cao và khả năng tổng quát hóa mạnh mẽ.
 Do đó, việc lựa chọn mô hình không mang tính tuyệt đối,
 mà cần được cân nhắc dựa trên mục tiêu ứng dụng:
 \textit{ưu tiên thời gian thực và tiết kiệm năng lượng} (chọn LR) hoặc
-\textit{ưu tiên độ chính xác và khả năng mở rộng} (chọn ANN).
+\textit{ưu tiên khả năng mở rộng} (chọn ANN).
 
 Để đánh giá độ chính xác của 2 mô hình đã triển khai trên biên, một mô
-hình để truyền toàn bộ dữ liệu tập kiểm
+hình có thể truyền toàn bộ dữ liệu tập kiểm
 tra vào phần cứng và nhận lại giá trị suy luận được xây dựng.
 Quy trình đánh giá mô hình trên vi điều khiển được tổ chức theo hai nhánh
 chính: luồng xử lý trên MCU và luồng kiểm thử trên máy tính. Phía máy tính chịu
@@ -897,7 +855,7 @@ khiển ARM Cortex-M4.
         \hline
         Tổng số cửa sổ        & 12\,749                     & 12\,749                  \\[4pt]
 
-        Accuracy              & \textbf{0.9758}             & \textbf{0.8973}          \\[6pt]
+        Accuracy              & 0.9758                      & 0.8973                   \\[6pt]
 
         Ma trận nhầm lẫn      & $\begin{bmatrix}
                                          5495 & 190  & 86   & 4   \\
@@ -921,45 +879,26 @@ khiển ARM Cortex-M4.
     \label{tiny_result}
 \end{table}
 
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=1\textwidth]{images/tiny_nn.png}
-        \label{fig:tiny_nn}
-        \caption{ANN}
-
-    \end{subfigure}
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=1\textwidth]{images/tiny_lr.png}
-        \label{fig:tiny_lr}
-        \caption{LR}
-    \end{subfigure}
-    \caption{Ma trận nhầm lẫn của 2 mô hình triển khai trên biên}
-    \label{fig:tiny_confuse}
-\end{figure}
-
 Kết quả thực nghiệm Bảng~\ref{tiny_result} cho thấy sự khác biệt rõ rệt giữa
 Logistic Regression (LR) và mô hình Neural Network (ANN) khi đánh giá trên cùng
 một tập dữ liệu gồm 12.749 cửa sổ tín hiệu. LR vẫn đạt độ chính xác 97.58\%,
 trong khi ANN chỉ đạt 89.73\%. Sự chênh lệch này không chỉ phản ánh ưu thế của
 LR trong điều kiện dữ liệu được chuẩn hóa tốt, mà còn làm nổi bật tính ổn định
 của LR khi chuyển sang môi trường triển khai thực, vốn chứa nhiều bất định và
-sai số đặc trưng của thiết bị biên.
-
-Ở mô hình LR, các chỉ số precision, recall và f1-score đều duy trì ở mức cao cho cả bốn tư thế.
-Đặc biệt, tư thế sấp - vốn là tư thế dễ nhiễu và ít xuất hiện - vẫn được nhận dạng với recall 0.98 và f1-score 0.98.
-Ma trận nhầm lẫn của LR cho thấy các sai lệch chủ yếu mang tính cục bộ không phá vỡ đi khả năng phân lớp.
-Điều này cho thấy mô hình tuyến tính của LR, mặc dù đơn giản về mặt cấu trúc, lại tạo ra mặt phân tách tương đối bền vững đối với các biến động nhỏ trong tín hiệu gia tốc.
-
-Ngược lại, mô hình ANN thể hiện sự suy giảm đáng kể về hiệu năng khi triển
-khai. Mặc dù recall của tư thế 2 và 3 vẫn ở mức tuyệt đối, mô hình gần như thất
-bại hoàn toàn với tư thế sấp (recall bằng 0). Điều này phản ánh một phần độ
-chính xác đã bị suy hao trong quá trình convert và triển khai trên biên.
+sai số đặc trưng của thiết bị biên. Ở mô hình LR, các chỉ số precision, recall
+và f1-score đều duy trì ở mức cao cho cả bốn tư thế. Đặc biệt, tư thế sấp - vốn
+là tư thế dễ nhiễu và ít xuất hiện - vẫn được nhận dạng với recall 0.98 và
+f1-score 0.98. Ma trận nhầm lẫn của LR cho thấy các sai lệch chủ yếu mang tính
+cục bộ không phá vỡ đi khả năng phân lớp. Điều này cho thấy mô hình tuyến tính
+của LR, mặc dù đơn giản về mặt cấu trúc, lại tạo ra mặt phân tách tương đối bền
+vững đối với các biến động nhỏ trong tín hiệu gia tốc. Ngược lại, mô hình ANN
+thể hiện sự suy giảm đáng kể về hiệu năng khi triển khai. Mặc dù recall của tư
+thế 2 và 3 vẫn ở mức tuyệt đối, mô hình gần như thất bại hoàn toàn với tư thế
+sấp (recall bằng 0). Điều này phản ánh một phần độ chính xác đã bị suy hao
+trong quá trình convert và triển khai trên biên.
 
 Sự khác biệt giữa hai mô hình đặc biệt rõ trong ma trận nhầm lẫn
-Hình~\ref{fig:tiny_confuse}. Trong khi LR duy trì cấu trúc phân lớp gần như lý
+Bảng~\ref{fig:tiny_confuse}. Trong khi LR duy trì cấu trúc phân lớp gần như lý
 tưởng ở cả bốn tư thế, ANN xuất hiện nhiều sai lệch nghiêm trọng giữa tư thế
 ngửa và nghiêng phải, và đặc biệt là không thể nhận dạng tư thế sấp. Điều này
 cho thấy LR phù hợp hơn cho tín hiệu từ cảm biến gia tốc gắn trên cơ thể.

@@ -243,12 +243,11 @@ HST cần phải giảm thiểu số lượng cảm biến nhưng vẫn đảm b
 này có thể đạt được thông qua việc tích hợp các thuật toán xử lý tín hiệu và mô
 hình học máy có thể được thực thi trực tiếp trên phần cứng nhúng hoặc thông qua
 ứng dụng hỗ trợ trên điện thoại di động. Một trong những khung chuẩn được sử
-dụng rộng rãi trong quá trình phát triển các hệ thống HST là mô hình
-\textbf{SCOPERA}, bao gồm sáu nhóm thông số cốt lõi: \textit{Sleep (S)} - đặc
-trưng giấc ngủ; \textit{Cardiovascular (C)} - hoạt động tim mạch;
-\textit{Oximetry (O)} - độ bão hòa oxy; \textit{Effort (E)} - nỗ lực hô hấp;
-\textit{Respiratory flow (R)} - lưu lượng khí hô hấp; và \textit{Audio (A)} -
-âm thanh thở.
+dụng rộng rãi trong quá trình phát triển các hệ thống HST là mô hình SCOPERA,
+bao gồm sáu nhóm thông số cốt lõi: \textit{Sleep (S)} - đặc trưng giấc ngủ;
+\textit{Cardiovascular (C)} - hoạt động tim mạch; \textit{Oximetry (O)} - độ
+bão hòa oxy; \textit{Effort (E)} - nỗ lực hô hấp; \textit{Respiratory flow (R)}
+- lưu lượng khí hô hấp; và \textit{Audio (A)} - âm thanh luồng khí thở.
 
 Dựa trên vị trí gắn trên cơ thể, các thiết bị HST có thể được phân thành các
 nhóm chính như: vòng tay, đai ngực, miếng dán, tai nghe và nhẫn thông minh
@@ -271,10 +270,10 @@ Naive Bayes, ANN và k-Nearest Neighbor được huấn luyện nhằm phân lo�
 thái hô hấp và phát hiện ngưng thở. Trong đó mô hình KNN đạt độ chính xác 95\%
 và thời gian xử lý chỉ 640~$\mu$s - đáp ứng tiêu chí chẩn đoán OSA theo thời
 gian thực. Tương tự, Chen và cộng sự \cite{chen2024hdc} phát triển thiết bị
-vòng tay ghi tín hiệu phản hồi quang để phát hiện biến thiên lưu lượng máu trên
-100 đối tượng tình nguyện. Nghiên cứu này hướng tới tối ưu về bộ nhớ, độ trễ và
-năng lượng, đồng thời đồng bộ dữ liệu với PSG để đảm bảo độ tin cậy, hướng tới
-ứng dụng giám sát dài hạn tại nhà.
+vòng tay ghi tín hiệu phản hồi quang học để phát hiện biến thiên lưu lượng máu
+trên 100 đối tượng tình nguyện. Nghiên cứu này hướng tới tối ưu về bộ nhớ, độ
+trễ và năng lượng, đồng thời đồng bộ dữ liệu với PSG để đảm bảo độ tin cậy,
+hướng tới ứng dụng giám sát dài hạn tại nhà.
 
 \begin{figure}[H]
   \centering
@@ -456,12 +455,21 @@ Hiện nay, các loại cảm biến gia tốc phổ biến được chế tạo
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth, keepaspectratio]{images/giatoc_ap_dien_tro.png}
-  \caption{(a) Sơ đồ bố trí tổng thể của cảm biến gia tốc áp điện trở
-    (b) Cấu trúc mặt cắt qua khối gia trọng và thanh dầm
-    (c) Cầu Wheatstone đo gia tốc trục X
-    (d) Cầu Wheatstone đo gia tốc trục Y
-    (e) Cầu Wheatstone đo gia tốc trục Z \cite{Song2018_mems_accelerometer}}
+  \caption{Cấu trúc cảm biến gia tốc áp điện trở \cite{Song2018_mems_accelerometer}.}
   \label{giatoc_ap_dien_tro}
+
+  \vspace{0.2cm}
+  \small{
+    (a) Bố trí tổng thể
+    \quad
+    (b) Mặt cắt qua khối gia trọng và thanh dầm
+    \quad
+    (c) Cầu Wheatstone đo gia tốc trục X
+    \quad
+    (d) Cầu Wheatstone đo gia tốc trục Y
+    \quad
+    (e) Cầu Wheatstone đo gia tốc trục Z
+  }
 \end{figure}
 
 Đầu tiên, cảm biến kiểu áp điện trở có cấu tạo gồm một
@@ -648,58 +656,15 @@ thuận với điện áp kích thích $V_p$. Dạng tổng quát của mối qu
 với $K = 8$ là hệ số khuếch đại hiệu dụng
 phụ thuộc vào cấu hình vi sai.
 
-\begin{table}[H]
-  \centering
-  \caption{ So sánh đặc tính giữa ba loại cảm biến gia tốc MEMS}
-  \label{tab:so_sanh_cam_bien_MEMS}
-  \renewcommand{\arraystretch}{1.25}
-  \fontsize{12pt}{11pt}\selectfont
-  \begin{tabular}{|p{4cm}|p{3.4cm}|p{3.4cm}|p{3.4cm}|}
-    \hline
-    \textbf{Tham số}                      & \textbf{Áp điện}                     & \textbf{Áp điện trở}                 & \textbf{Điện dung}                                                 \\ \hline
-
-    \textbf{Đáp ứng DC}                   & Kém - không đo được tín hiệu tĩnh    & Tốt - đo được tín hiệu tĩnh          & Tốt - đo được tín hiệu tĩnh và chậm                                \\ \hline
-
-    \textbf{Trở kháng}                    & Cao                                  & Thấp                                 & Cao                                                                \\ \hline
-
-    \textbf{Mức tín hiệu}                 & Cao - tạo điện áp trực tiếp          & Thấp - cần khuếch đại cầu Wheatstone & Trung bình - phụ thuộc vào biến thiên điện dung và mạch khuếch đại \\ \hline
-
-    \textbf{Hiệu chuẩn tĩnh}              & Kém                                  & Tốt                                  & Tốt                                                                \\ \hline
-
-    \textbf{Độ nhạy}                      & Cao                                  & Thấp                                 & Cao                                                                \\ \hline
-
-    \textbf{Thiết kế giảm chấn}           & Kém - khó kiểm soát tắt dần          & Tốt - dễ điều chỉnh                  & Tốt - điều khiển được qua cấu trúc MEMS                            \\ \hline
-
-    \textbf{Giá thành}                    & Cao - vật liệu và chế tạo phức tạp   & Thấp - tương thích công nghệ CMOS    & Cao - yêu cầu mạch xử lý phức tạp                                  \\ \hline
-
-    \textbf{Đo xung dài ($>$10 ms)}       & Kém - chỉ đo tín hiệu dao động nhanh & Tốt                                  & Tốt                                                                \\ \hline
-
-    \textbf{Độ nhạy với ứng suất lắp đặt} & Cao - dễ sai lệch do biến dạng       & Thấp                                 & Thấp - cấu trúc vi sai cân bằng                                    \\ \hline
-
-    \textbf{Độ phức tạp của mạch}         & Đơn giản - xuất điện áp trực tiếp    & Đơn giản - cầu Wheatstone            & Phức tạp - cần mạch khuếch đại vi sai, điều chế và giải điều chế   \\ \hline
-  \end{tabular}
-\end{table}
-
-Dựa vào Bảng~\ref{tab:so_sanh_cam_bien_MEMS} trong khuôn khổ luận văn này, cảm
-biến gia tốc MEMS kiểu điện dung được lựa chọn làm phần tử cảm biến trung tâm
-cho hệ thống theo dõi tư thế ngủ kéo dài, trên cơ sở đánh giá cả về đặc trưng
-tín hiệu, yêu cầu hệ thống, lẫn khả năng triển khai thực tế.
-
-Tóm lại, việc lựa chọn cảm biến MEMS kiểu điện dung không đơn thuần là một
-quyết định kỹ thuật thuần tuý, mà còn phản ánh một giải pháp có tính cân bằng
-giữa hiệu quả đo lường, khả năng tích hợp phần cứng, và kế hoạch mở rộng ứng
-dụng trong lâm sàng theo hướng chi phí phù hợp. Đây là một trong những nguyên
-tắc quan trọng trong xu hướng đổi mới công nghệ y tế cộng đồng - nơi mà tính
-khả thi triển khai và khả năng mở rộng đóng vai trò không kém phần quan trọng
-so với độ chính xác kỹ thuật.
-
-Trong bối cảnh đó, các mô hình học máy trở thành công cụ thiết yếu để khai thác
-dữ liệu cảm biến. Chúng không chỉ cho phép phân loại tư thế ngủ với độ chính
-xác cao mà còn mở rộng sang suy luận các chỉ số như AHI. Việc triển khai trực
-tiếp TinyML trên vi điều khiển theo hướng góp phần làm thực tế giải pháp từ
-phòng thí nghiệm đến ứng dụng thực tiễn tại nhà. Đây cũng đánh dấu sự giao thoa
-giữa y học giấc ngủ truyền thống và trí tuệ nhân tạo ứng dụng - một lĩnh vực
-đang phát triển mạnh mẽ trong thập niên gần đây \cite{osa_sanchez2025}.
+Trong khuôn khổ nghiên cứu này, cảm biến gia tốc kiểu điện dung được lựa chọn
+vì có độ nhạy cao trong vùng gia tốc thấp, phù hợp với các chuyển động nhỏ khi
+ngủ. Việc lựa chọn cảm biến kiểu điện dung không đơn thuần là một quyết định kỹ
+thuật thuần tuý, mà còn phản ánh một giải pháp có tính cân bằng giữa hiệu quả
+đo lường, khả năng tích hợp phần cứng, và kế hoạch mở rộng ứng dụng trong lâm
+sàng theo hướng chi phí phù hợp. Đây là một trong những nguyên tắc quan trọng
+trong xu hướng đổi mới công nghệ y tế cộng đồng - nơi mà tính khả thi triển
+khai và khả năng mở rộng đóng vai trò không kém phần quan trọng so với độ chính
+xác kỹ thuật.
 
 \subsection{Học máy trong phân loại OSA và tư thế ngủ}
 
@@ -719,21 +684,21 @@ mạnh mẽ, vừa dễ dàng triển khai trên các phần cứng có tài ngu
   \renewcommand{\arraystretch}{1.2}
   \begin{tabular}{|c|p{3.8cm}|p{9.2cm}|}
     \hline
-    \textbf{STT} & \textbf{Giai đoạn}                      & \textbf{Mô tả tổng quát}                                                                                                                                                                                                  \\
+    \textbf{STT} & \textbf{Giai đoạn}             & \textbf{Mô tả tổng quát}                                                                                                                                                                                                  \\
     \hline
-    1            & \textbf{Thu thập tín hiệu}              & Ghi nhận tín hiệu từ cảm biến, xử lý  và lưu trữ.                                                                                                                                                                         \\
+    1            & Thu thập tín hiệu              & Ghi nhận tín hiệu từ cảm biến, xử lý  và lưu trữ.                                                                                                                                                                         \\
     \hline
-    2            & \textbf{Tiền xử lý}                     & Lọc nhiễu, phân đoạn theo cửa sổ thời gian, thống kê dữ liệu.                                                                                                                                                             \\
+    2            & Tiền xử lý                     & Lọc nhiễu, phân đoạn theo cửa sổ thời gian, thống kê dữ liệu.                                                                                                                                                             \\
     \hline
-    3            & \textbf{Trích xuất đặc trưng}           & Tính toán các đặc trưng thời gian, tần số - đại diện cho nội dung sinh lý trong từng đoạn tín hiệu.                                                                                                                       \\
+    3            & Trích xuất đặc trưng           & Tính toán các đặc trưng thời gian, tần số - đại diện cho nội dung sinh lý trong từng đoạn tín hiệu.                                                                                                                       \\
     \hline
-    4            & \textbf{Lựa chọn và huấn luyện mô hình} & Lựa chọn thuật toán học máy phù hợp với bài toán.                                                                                                                                                                         \\
+    4            & Lựa chọn và huấn luyện mô hình & Lựa chọn thuật toán học máy phù hợp với bài toán.                                                                                                                                                                         \\
     \hline
-    5            & \textbf{Đánh giá hiệu năng}             & Sử dụng các chỉ số đánh giá mô hình như độ chính xác (Accuracy), độ chính xác dự đoán dương (Precision), độ bao phủ (Recall), điểm F1 (F1-Score), diện tích dưới đường cong (AUC) và ma trận nhầm lẫn (Confusion Matrix). \\
+    5            & Đánh giá hiệu năng             & Sử dụng các chỉ số đánh giá mô hình như độ chính xác (Accuracy), độ chính xác dự đoán dương (Precision), độ bao phủ (Recall), điểm F1 (F1-Score), diện tích dưới đường cong (AUC) và ma trận nhầm lẫn (Confusion Matrix). \\
     \hline
-    6            & \textbf{Tối ưu mô hình}                 & Ứng dụng kỹ thuật cắt tỉa (pruning), lượng tử hóa (quantization) để giảm kích thước và độ phức tạp mô hình nhằm phục vụ triển khai biên.                                                                                  \\
+    6            & Tối ưu mô hình                 & Ứng dụng kỹ thuật cắt tỉa (pruning), lượng tử hóa (quantization) để giảm kích thước và độ phức tạp mô hình nhằm phục vụ triển khai biên.                                                                                  \\
     \hline
-    7            & \textbf{Triển khai thực tế}             & Triển khai mô hình trên vi điều khiển, đánh giá và tái huấn luyện.                                                                                                                                                        \\
+    7            & Triển khai thực tế             & Triển khai mô hình trên vi điều khiển, đánh giá và tái huấn luyện.                                                                                                                                                        \\
     \hline
   \end{tabular}
 \end{table}
@@ -913,7 +878,7 @@ toán phân loại tư thế ngủ.
   \small
   \renewcommand{\arraystretch}{1.2}
   \resizebox{\textwidth}{!}{
-    \fontsize{13pt}{13pt}\selectfont % 
+    \fontsize{16pt}{16pt}\selectfont % 
     \begin{tabular}{|c|p{3.2cm}|p{5cm}|p{6cm}|p{3cm}|c|c|p{1.2cm}|}
       \hline
       \textbf{Tài liệu}              & \textbf{Dữ liệu} & \textbf{Nhiệm vụ}                     & \textbf{Đặc trưng}                                     & \textbf{Mô hình}               & \textbf{Độ chính xác} & \textbf{Phần mềm}           & \textbf{On-chip} \\
@@ -955,10 +920,10 @@ phù hợp với yêu cầu thiết kế của TinyML: đơn giản, hiệu qu�
 triển khai thực tế trên các nền tảng phần cứng hạn chế.
 
 Nhờ sự phát triển của các nền tảng hỗ trợ triển khai mô hình học máy như
-\textbf{TensorFlow Lite for Microcontrollers}, \textbf{Edge Impulse}, và
-\textbf{TinyML EON Compiler}, việc huấn luyện, chuyển đổi và triển khai các mô
-hình đã trở nên dễ tiếp cận hơn nhiều. Điều này mở ra hướng mới trong chẩn đoán
-y tế cá nhân hóa, thông qua thiết bị đeo thông minh hoạt động liên tục tại nhà.
+TensorFlow Lite for Microcontrollers, Edge Impulse, và TinyML EON Compiler,
+việc huấn luyện, chuyển đổi và triển khai các mô hình đã trở nên dễ tiếp cận
+hơn nhiều. Điều này mở ra hướng mới trong chẩn đoán y tế cá nhân hóa, thông qua
+thiết bị đeo thông minh hoạt động liên tục tại nhà.
 
 Luận văn được trình bày theo hai giai đoạn: (i) \emph{Đánh giá đặc trưng và mô
   hình trên dữ liệu thu thập} - xây dựng lộ trình triển khai từ tiền xử lý, phân
