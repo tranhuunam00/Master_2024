@@ -41,24 +41,24 @@
 \contentsline {subsection}{\numberline {2.2.2.}Phần mềm thu thập, lưu trữ}{56}{subsection.2.2.2}%
 \contentsline {subsubsection}{Ứng dụng di dộng}{57}{subsubsection*.51}%
 \contentsline {subsubsection}{Máy chủ đám mây}{63}{subsubsection*.57}%
-\contentsline {subsection}{\numberline {2.2.3.}Học máy trong phân loại tư thế ngủ}{67}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3.}Học máy trong phân loại tư thế ngủ}{66}{subsection.2.2.3}%
 \contentsline {subsubsection}{Hồi quy Logistic}{67}{subsubsection*.61}%
-\contentsline {subsubsection}{Máy vec-tơ hỗ trợ}{68}{subsubsection*.62}%
-\contentsline {subsubsection}{Rừng ngẫu nhiên}{71}{subsubsection*.65}%
-\contentsline {subsubsection}{Gradient boosting}{72}{subsubsection*.66}%
-\contentsline {subsubsection}{ANN}{72}{subsubsection*.67}%
-\contentsline {chapter}{\numberline {3}KẾT QUẢ VÀ ĐÁNH GIÁ}{74}{chapter.3}%
-\contentsline {section}{\numberline {3.1.}Hệ thống thu thập, lưu trữ}{74}{section.3.1}%
-\contentsline {section}{\numberline {3.2.}Thu thập và gắn nhãn dữ liệu}{77}{section.3.2}%
-\contentsline {section}{\numberline {3.3.}Phân loại tư thế ngủ bằng học máy}{79}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1.}Phân tích dữ liệu}{80}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2.}Xử lý và trích xuất đặc trưng}{82}{subsection.3.3.2}%
-\contentsline {subsubsection}{Đặc trưng miền thời gian (T1)}{82}{subsubsection*.78}%
-\contentsline {subsubsection}{Đặc trưng miền tần số (F1)}{84}{subsubsection*.80}%
-\contentsline {subsection}{\numberline {3.3.3.}Lựa chọn tham số}{85}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4.}Đánh giá kết quả}{91}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4.}Triển khai mô hình lên phần cứng}{94}{section.3.4}%
-\contentsline {section}{\numberline {3.5.}Chuyển đổi mô hình}{94}{section.3.5}%
-\contentsline {section}{\numberline {3.6.}Triển khai tại biên}{96}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1.}Đánh giá hiệu suất và tài nguyên}{96}{subsection.3.6.1}%
+\contentsline {subsubsection}{Máy vec-tơ hỗ trợ}{67}{subsubsection*.62}%
+\contentsline {subsubsection}{Rừng ngẫu nhiên}{70}{subsubsection*.65}%
+\contentsline {subsubsection}{Gradient boosting}{71}{subsubsection*.66}%
+\contentsline {subsubsection}{ANN}{71}{subsubsection*.67}%
+\contentsline {chapter}{\numberline {3}KẾT QUẢ VÀ ĐÁNH GIÁ}{73}{chapter.3}%
+\contentsline {section}{\numberline {3.1.}Hệ thống thu thập, lưu trữ}{73}{section.3.1}%
+\contentsline {section}{\numberline {3.2.}Thu thập và gắn nhãn dữ liệu}{76}{section.3.2}%
+\contentsline {section}{\numberline {3.3.}Phân loại tư thế ngủ bằng học máy}{78}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1.}Phân tích dữ liệu}{79}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2.}Xử lý và trích xuất đặc trưng}{81}{subsection.3.3.2}%
+\contentsline {subsubsection}{Đặc trưng miền thời gian (T1)}{81}{subsubsection*.78}%
+\contentsline {subsubsection}{Đặc trưng miền tần số (F1)}{83}{subsubsection*.80}%
+\contentsline {subsection}{\numberline {3.3.3.}Lựa chọn tham số}{84}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4.}Đánh giá kết quả}{90}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4.}Triển khai mô hình lên phần cứng}{93}{section.3.4}%
+\contentsline {section}{\numberline {3.5.}Chuyển đổi mô hình}{93}{section.3.5}%
+\contentsline {section}{\numberline {3.6.}Triển khai tại biên}{95}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1.}Đánh giá hiệu suất và tài nguyên}{95}{subsection.3.6.1}%
 \contentsfinish 
