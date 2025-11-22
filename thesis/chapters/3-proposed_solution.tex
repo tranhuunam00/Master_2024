@@ -305,11 +305,10 @@ tiêu trong phần này.
 \subsubsection{Khối điều khiển}
 
 Vi điều khiển nRF52840 được chọn hoàn toàn có thể đáp ứng các tiêu trí đã nêu
-trong phần~\ref{subsec:vi_xu_ly} để làm vi điều khiển của mạch. Tuy nhiên để
-đáp ứng đủ các yêu cầu của khối điều khiển thì vẫn đang thiếu các thành phần
-như khối thu phát tín hiệu vô tuyến bao gồm ăng ten, mạch phối hợp trở kháng,
-bộ dao động tinh thể và bộ đếm định thời nhằm duy trì hoạt động ổn định trong
-các chế độ năng lượng thấp.
+trong phần~\ref{subsec:vi_xu_ly}. Tuy nhiên để đáp ứng đủ các yêu cầu của khối
+điều khiển thì vẫn đang thiếu các thành phần như khối thu phát tín hiệu vô
+tuyến bao gồm ăng ten, mạch phối hợp trở kháng, bộ dao động tinh thể và bộ đếm
+định thời nhằm duy trì hoạt động ổn định trong các chế độ năng lượng thấp.
 
 Sau khi tìm hiểu, trong khuôn khổ luận văn sẽ sử dụng module U-blox NINA-B306
 để đảm nhiệm các nhiệm vụ của khối điều khiển \cite{uBlox2019_NINA_B3}.
@@ -404,7 +403,7 @@ mạch, những yêu cầu từ phía nhà sản xuất JLCPCB \footnote{JLCPCB 
     dịch vụ chế tạo mạch in từ 1đến 32 lớp và công bố đầy đủ năng lực gia công tại
     trang “https://jlcpcb.com”} cũng được xem xét kĩ lưỡng. Những thông số sẽ được
 cài đặt trong phần rule trong phần mềm Altium có thể kể tới là
-\cite{jlcpcb_capabilities} Hình~\ref{fig:altium_rule}: via, độ rộng đường mạch,
+Hình~\ref{fig:altium_rule}: via, độ rộng đường mạch,
 khoảng cách giữa hai đường mạch, tiêu chuẩn của 2 đường tín hiệu nhận từ USB...
 
 \begin{figure}[H]
@@ -419,7 +418,6 @@ trung tâm, mạch đã được thiết kế hình tròn với đường kính 
 thiết kế này được nhóm xem xét là phù hợp với thiết bị đeo ở cổ và hơn nữa có
 liên quan đến thiết kế cơ khí của vỏ mạch. Kết quả được thể hiện tại
 Hình~\ref{fig:schematic}.
-
 Sau khi hoàn thiện thiết kế, công đoạn tiếp theo là thực hiện hàn, lắp các linh
 kiện theo sơ đồ mạch, và tiến hành kiểm tra hoạt động của các khối chức năng
 trên bo mạch để đánh giá tính ổn định và độ tin cậy của hệ thống

@@ -2,19 +2,18 @@ Tư thế ngủ nắm vai trò đặc biệt quan trọng trong việc duy trì 
 và chất lượng giấc ngủ, bên cạnh các yếu tố khác như thời lượng, môi trường và
 thói quen ngủ. Nhiều nghiên cứu đã chỉ ra rằng tư thế ngủ có thể ảnh hưởng trực
 tiếp đến hoạt động của hệ hô hấp, tim mạch và hệ cơ - xương, đặc biệt là cột
-sống \cite{Cary2021_tu_the_ngủ}. Trong hội chứng ngưng thở tắc nghẽn khi ngủ,
-tư thế ngủ được xem là một yếu tố quyết định mức độ nghiêm trọng của bệnh
-\cite{cartwright1984position}. Vì vậy, phân loại đúng tư thế ngủ góp phần đánh
-giá đúng tình trạng OSA và đưa ra những liệu trình điều trị phù hợp.
+sống \cite{Cary2021_tu_the_ngủ}. Trong phạm vi hội chứng ngưng thở tắc nghẽn
+khi ngủ, tư thế ngủ được xem là một yếu tố quyết định mức độ nghiêm trọng của
+bệnh \cite{cartwright1984position}. Vì vậy, phân loại đúng tư thế ngủ góp phần
+đánh giá đúng tình trạng OSA và đưa ra những liệu trình điều trị phù hợp.
 
 Các nghiên cứu hiện nay đã và đang tập trung phát triển các hệ thống theo dõi
 tư thế ngủ dựa trên đa dạng công nghệ cảm biến. Các phương pháp này trải rộng
-từ dạng tiếp xúc đên không tiếp xúc, gồm: tấm dẫn điện với các điện cực ECG đặt
-tại giường để thu thập tín hiệu nhịp tim để phân loại tư thế ngủ
-\cite{Lee2013_12ecg}; cảm biến áp suất dưới nệm đo phân bố lực tiếp xúc toàn
-thân \cite{Nam2016_mattre, Enayati2018_mattre}; camera hồng ngoại ghi hình ban
-đêm không cần chiếu sáng, nhận dạng tư thế bằng thị giác máy
-\cite{Mohammadi2019_camera, Tam2021_camera}.
+từ dạng tiếp xúc đến không tiếp xúc, gồm: tấm dẫn điện với các điện cực ECG đặt
+tại giường để thu thập tín hiệu nhịp tim \cite{Lee2013_12ecg}; cảm biến áp suất
+đặt dưới nệm đo phân bố lực tiếp xúc toàn thân \cite{Nam2016_mattre,
+  Enayati2018_mattre}; camera hồng ngoại ghi hình ban đêm không cần chiếu sáng,
+nhận dạng tư thế bằng thị giác máy \cite{Mohammadi2019_camera, Tam2021_camera}.
 
 Các thiết bị đeo sử dụng tín hiệu đo lường quán tính (Inertial Measurement Unit
 - IMU) được đặt tại nhiều vị trí khác nhau trên cơ thể nổi lên như một cách
@@ -28,7 +27,7 @@ nghiêng của đầu và tham chiếu tới bảng điều kiện được xác
 nhiên, tư thế nằm sấp không được xem xét do vị trí gắn thiết bị ở vùng mũi. Một
 nghiên cứu gần đây giới thiệu hệ thống NAPPA - tã thông minh được thiết kế để
 theo dõi nhịp thở và tư thế của trẻ sơ sinh trong khi ngủ \cite{Ranta2021_ta}.
-Thiết bị tích hợp cảm biến gia tốc và con quay hồi chuyển. Tuy nhiên, trong
+Thiết bị sử dụng cảm biến gia tốc và con quay hồi chuyển. Tuy nhiên, trong
 nghiên cứu này, các phương pháp và kết quả phát hiện tư thế ngủ chi tiết không
 được công bố.
 
@@ -51,20 +50,16 @@ trục cho thấy độ chính xác 96.9 - 98.6\% trong phát hiện tư thế n
 hõm ức là vị trí tối ưu cho cảm biến gắn tại vùng cổ
 \cite{Kukwa2022_xuong_uc_co}. Các kết quả này cho thấy hướng tiếp cận đơn cảm
 biến hoàn toàn có thể thay thế cho hệ thống đa cảm biến trong bài toán phân
-loại tư thế ngủ.
-
-Tuy nhiên, các công trình hiện có chưa xem xét đến việc phân biệt trạng thái
-“đã nằm” hay “chưa nằm” - một yếu tố nền tảng để xác định chính xác giai đoạn
-bắt đầu giấc ngủ hoặc phát hiện sớm thay đổi tư thế. Đồng thời, việc lựa chọn
-tập hợp đặc trưng từ dữ liệu đơn cảm biến gia tốc và mô hình học máy phù hợp
-duy nhất đặt tại vùng cổ - vị trí có khả năng phản ánh biến thiên tư thế tốt
-nhất vẫn chưa được nghiên cứu cụ thể. Cho đến nay, tại Việt Nam chưa có công bố
-khoa học nào tập trung vào bài toán nhận dạng tư thế ngủ dựa hoàn toàn trên dữ
-liệu đơn cảm biến gia tốc và được triển khai mô hình học máy trực tiếp trên
-phần cứng hạn chế về tài nguyên. Khoảng trống này đặt ra yêu cầu là phải phát
-triển một hệ thống phân loại tư thế ngủ đơn giản với chi phí phù hợp, có khả
-năng xử lý ngay lập tức, hướng tới ứng dụng trong sàng lọc sớm hội chứng ngưng
-thở tắc nghẽn khi ngủ.
+loại tư thế ngủ. Tuy nhiên, các công trình hiện có chưa xem xét đến việc phân
+biệt trạng thái “đã nằm” hay “chưa nằm” - để xác định các hoạt động khác trong
+lúc ngủ. Đồng thời, việc lựa chọn tập hợp đặc trưng từ dữ liệu đơn cảm biến gia
+tốc và mô hình học máy phù hợp duy nhất đặt tại vùng cổ - vị trí có khả năng
+phản ánh biến thiên tư thế tốt nhất vẫn chưa được nghiên cứu cụ thể. Cho đến
+nay, tại Việt Nam chưa có công bố khoa học nào tập trung vào bài toán nhận dạng
+tư thế ngủ dựa hoàn toàn trên dữ liệu đơn cảm biến gia tốc và được triển khai
+mô hình học máy trực tiếp trên phần cứng hạn chế về tài nguyên. Khoảng trống
+này đặt ra yêu cầu là phải phát triển một hệ thống phân loại tư thế ngủ đơn
+giản với chi phí phù hợp, có khả năng xử lý ngay lập tức.
 
 Vì vậy, luận văn này sẽ tập trung làm rõ các đặc trưng của dữ liệu cảm biến gia
 tốc khi được đặt tại vùng cổ, đồng thời đi sâu tìm hiểu các đặc trưng dữ liệu
@@ -73,8 +68,8 @@ triển khai trên các thiết bị có phần cứng hạn chế. Để đạt
 văn sẽ xây dựng một hệ thống hoàn chỉnh gồm phần cứng đeo được kích thước nhỏ
 gọn, chi phí phù hợp; phần mềm thu thập; máy chủ lưu trữ dữ liệu; cùng với
 mô-đun xử lý và phân loại tư thế ngủ tích hợp trực tiếp trên vi điều khiển. Mặc
-dù chưa tích hợp chức năng sàng lọc hội chứng ngưng thở tắc nghẽn khi ngủ, kết
-quả nghiên cứu này tạo nền tảng kỹ thuật tiềm năng cho các ứng dụng trong tương
+dù chưa có khả năng sàng lọc hội chứng ngưng thở tắc nghẽn khi ngủ, kết quả
+nghiên cứu này tạo nền tảng kỹ thuật tiềm năng cho các ứng dụng trong tương
 lai, đặc biệt trong việc hỗ trợ sàng lọc sớm hội chứng ngưng thở tắc nghẽn dạng
 phụ thuộc tư thế.
 
