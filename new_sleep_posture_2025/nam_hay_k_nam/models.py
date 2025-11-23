@@ -2,7 +2,7 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import (
     accuracy_score,
     classification_report,
@@ -86,7 +86,7 @@ def train_RF(train, test, labelTrain, labelTest):
 def train_LR(train, test, labelTrain, labelTest):
     print(" Training Logistic Regression (optimized)...")
 
-    scaler = StandardScaler()
+    scaler = MinMaxScaler(feature_range=(-1, 1))
     scaler.fit(train)
     X_train_scaled = scaler.transform(train)
     X_test_scaled = scaler.transform(test)
