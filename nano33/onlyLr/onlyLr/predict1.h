@@ -4,6 +4,9 @@
 #include <math.h>
 #include "model1.h"
 
+// Hàm dự đoán cho Logistic Regression
+// Input: Mảng features đã được chuẩn hóa (normalized)
+// Output: 1 (Nằm), 0 (Không nằm)
 int predict1(float f[])
 {
   float logit = bias1;
@@ -13,9 +16,9 @@ int predict1(float f[])
     logit += weights1[i] * f[i];
   }
 
-  float p = 1.0 / (1.0 + exp(-logit)); // sigmoid
+  float p = 1.0 / (1.0 + exp(-logit)); // sigmoid activation
 
-  return (p > 0.5) ? 1 : 0; // 1 = nằm, 0 = không nằm
+  return (p > 0.5) ? 1 : 0; // Threshold 0.5
 }
 
 #endif

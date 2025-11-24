@@ -17,6 +17,5 @@ const float min_vals1[NUM_FEATURES_1] = {
 const float max_vals1[NUM_FEATURES_1] = {
     1.22997, 1.36570, 0.97000, 1.04800, 0.77700, 0.82500};
 const float scale1[NUM_FEATURES_1] = {
-   5.34428, 1.46550, 1.56250, 1.60128, 0.93589, 1.12676
-};
+    5.34428, 1.46550, 1.56250, 1.60128, 0.93589, 1.12676};
 #endif
