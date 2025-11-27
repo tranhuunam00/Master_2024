@@ -1,15 +1,27 @@
 \chapter*{KẾT LUẬN}
 
-Các mô hình học máy LR, RF, SVM và GB, ANN đã được áp dụng để phân loại tư thế
-ngủ với độ chính xác cao. Kèm với hai mô hình đã chạy ổn định trên thiết bị
-phần cứng của nhóm thiết kế, tác giả tự đánh giá các kết quả này đã hoàn thành
-mục tiêu của đề tại đề ra từ trước.
+Luận văn đã xây dựng được một nền tảng phần cứng hoàn chỉnh phục vụ nghiên cứu,
+trong đó vi điều khiển nRF52840 được tích hợp cùng cảm biến gia tốc và các khối
+chức năng cần thiết nhằm bảo đảm khả năng thu nhận và xử lý tín hiệu ổn định.
+Song song với đó, hệ thống thu thập - truyền dẫn - lưu trữ dữ liệu dựa trên
+giao tiếp BLE cũng đã được phát triển, bao gồm ứng dụng di động, máy chủ và cơ
+sở dữ liệu. Cấu trúc này không chỉ đáp ứng yêu cầu của bài toán tư thế ngủ mà
+còn cho phép mở rộng linh hoạt đối với các loại cảm biến khác trong tương lai.
 
-Trong tương lai, nhóm sẽ mở rộng hơn các mô hình học sâu để đánh giá đâu là mô
-hình phù hợp nhất trong phân loại tư thế ngủ sử dụng dữ liệu từ cảm biến gia
-tốc. Tiếp nữa, nhóm sẽ sử dụng thêm dữ liệu từ các cảm biến khác, nâng cấp hệ
-thống thu thập - lưu trữ dữ liệu, nhằm phục vụ các bài toán liên quan đến sàng
-lọc OSA.
+Trên cơ sở dữ liệu thu được, luận văn đã khảo sát và đề xuất các mô hình học
+máy phù hợp cho phân loại tư thế ngủ, bao gồm Logistic Regression, Random
+Forest, Gradient Boosting, Support Vector Machine và mạng nơ-ron nhân tạo. Các
+mô hình này cho thấy hiệu năng ấn tượng, với độ chính xác tối đa đạt 99,8\%,
+chứng minh tính khả thi của bài toán khi triển khai trên thiết bị có tài nguyên
+hạn chế.
+
+Để đánh giá khả năng vận hành thực tế tại biên, luận văn đã thử nghiệm triển khai một mô hình truyền thống (Logistic Regression) và một mô hình học sâu (ANN) trực tiếp trên phần cứng nRF52840.
+Kết quả cho thấy thời gian suy luận đạt khoảng  $501\,\mu\text{s}$
+, đáp ứng tốt yêu cầu xử lý theo thời gian thực của thiết bị đeo.
+
+Cuối cùng, luận văn cũng mở rộng hướng nghiên cứu sang bài toán nhận biết trạng
+thái “nằm” hoặc “không nằm”, tạo tiền đề cho các ứng dụng giám sát giấc ngủ đa
+mục tiêu và hỗ trợ sàng lọc sớm các rối loạn hô hấp khi ngủ.
 
 Đến đây, toàn bộ nội dung luận văn thạc sĩ \textit{NGHIÊN CỨU, PHÁT TRIỂN MÔ HÌNH HỌC
   MÁY TẠI BIÊN NHẰM PHÂN LOẠI TƯ THẾ

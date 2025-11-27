@@ -44,30 +44,28 @@ nRF52840 làm bộ điều khiển trung tâm \cite{nrf52840} với các lý do 
 
 nRF52840 tích hợp bộ giao thức không dây Bluetooth năng lượng thấp hoạt động ở
 băng tần 2.4~GHz và bộ xử lý trung tâm Arm Cortex-M4F chạy ở xung nhịp 64~MHz,
-kèm bộ xử lý dấu phẩy động (FPU). Vi điều khiển này được trang bị bộ nhớ 1~MB
-Flash và 256~kb RAM phù hợp để triển khai các mô hình cho bài toán phân loại tư
-thế ngủ. Ngoài khả năng hoạt động trong dải điện áp rộng từ +1.7~V đến +5.5~V
-(tương thích với nguồn pin và USB), nRF52840 còn cung cấp các giao tiếp ngoại
-vi phong phú: hai kết nối I2C, bốn SPI chủ (master), ba SPI tớ (slave), bốn
-kênh điều chế xung (PWM) hỗ trợ EasyDMA, cùng với bộ định thời 32-bit, phù hợp
-cho các ứng dụng đòi hỏi xử lý thời gian thực chính xác
-Hình~\ref{nrf52840_schematic}.
+kèm bộ xử lý dấu phẩy động (FPU).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/nrf52840_schematic.png}
+    \includegraphics[width=0.9\textwidth]{images/nrf52840_schematic.png}
     \caption{Sơ đồ khối Nordic NRF52840}
     \label{nrf52840_schematic}
 \end{figure}
 
-Đặc biệt, nRF52840 có
-một hệ sinh thái phần mềm đi kèm, bao gồm bộ công cụ phát triển (SDK) của Nordic Semiconductor
-và nền tảng TensorFlow Lite for Microcontrollers, giúp rút ngắn thời gian phát triển và triển khai hệ
-thống TinyML trực tiếp lên chip \cite{Nordic2021_tinyml}.
-Hiện nay, nRF52840 cũng tích hợp trong nhiều bộ kit phát triển thương mại,
-như Adafruit Circuit Playground Bluefruit,
-SparkFun Pro nRF52840 Mini,
-Seeed Studio XIAO.
+Vi điều khiển này được trang bị bộ nhớ 1~MB Flash và 256~kb RAM phù hợp để
+triển khai các mô hình cho bài toán phân loại tư thế ngủ. Ngoài khả năng hoạt
+động trong dải điện áp rộng từ +1.7~V đến +5.5~V (tương thích với nguồn pin và
+USB), nRF52840 còn cung cấp các giao tiếp ngoại vi phong phú: hai kết nối I2C,
+bốn SPI chủ (master), ba SPI tớ (slave), bốn kênh điều chế xung (PWM) hỗ trợ
+EasyDMA, cùng với bộ định thời 32-bit, phù hợp cho các ứng dụng đòi hỏi xử lý
+thời gian thực chính xác Hình~\ref{nrf52840_schematic}. Đặc biệt, nRF52840 có
+một hệ sinh thái phần mềm đi kèm, bao gồm bộ công cụ phát triển (SDK) của
+Nordic Semiconductor và nền tảng TensorFlow Lite for Microcontrollers, giúp rút
+ngắn thời gian phát triển và triển khai hệ thống TinyML trực tiếp lên chip
+\cite{Nordic2021_tinyml}. Hiện nay, nRF52840 cũng tích hợp trong nhiều bộ kit
+phát triển thương mại, như Adafruit Circuit Playground Bluefruit, SparkFun Pro
+nRF52840 Mini, Seeed Studio XIAO.
 
 \begin{figure}[H]
     \centering
@@ -188,7 +186,7 @@ giấc ngủ yêu cầu tần số lấy mẫu thấp (10~Hz).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth, keepaspectratio]{images/bmi270_block.png}
+    \includegraphics[width=0.9\textwidth, keepaspectratio]{images/bmi270_block.png}
     \caption{Sơ đồ khối Bosch BMI270}
     \label{bmi270_block}
 \end{figure}
@@ -233,7 +231,7 @@ hiện nay \cite{BLE_compare}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/ble.png}
+    \includegraphics[width=1\textwidth]{images/ble.png}
     \caption{Các kiểu kết nối không dây trong họ chip nRF52}
     \label{ble}
 \end{figure}
@@ -314,7 +312,7 @@ Sau khi tìm hiểu, trong khuôn khổ luận văn sẽ sử dụng module U-bl
 để đảm nhiệm các nhiệm vụ của khối điều khiển \cite{uBlox2019_NINA_B3}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/ninab306_block.png}
+    \includegraphics[width=1\textwidth]{images/ninab306_block.png}
     \caption{Sơ đồ khối U-blox NINA-B306}
     \label{ninab306_block}
 \end{figure}
@@ -888,7 +886,7 @@ phân thành các cụm riêng biệt.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/flow_http2.jpg}
+    \includegraphics[width=0.7\textwidth]{images/flow_http3.jpg}
     \caption{Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}
     \label{flow_http}
 \end{figure}
