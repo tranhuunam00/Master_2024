@@ -10,7 +10,6 @@
 \glossaryentry{SVM?\glossentry{svm}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{LR?\glossentry{lr}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{ANN?\glossentry{ann}|setentrycounter[]{page}"\glsnumberformat}{x}
-\glossaryentry{LSTM?\glossentry{lstm}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{ET?\glossentry{et}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{GB?\glossentry{gb}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{MEMS?\glossentry{mems}|setentrycounter[]{page}"\glsnumberformat}{x}
@@ -20,8 +19,6 @@
 \glossaryentry{RAG?\glossentry{rag}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{UUID?\glossentry{uuid}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{I"\textsuperscript {2}C?\glossentry{iic}|setentrycounter[]{page}"\glsnumberformat}{x}
-\glossaryentry{SPI?\glossentry{spi}|setentrycounter[]{page}"\glsnumberformat}{x}
-\glossaryentry{CPU?\glossentry{cpu}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{EEG?\glossentry{eeg}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{EOG?\glossentry{eog}|setentrycounter[]{page}"\glsnumberformat}{x}
 \glossaryentry{EMG?\glossentry{emg}|setentrycounter[]{page}"\glsnumberformat}{x}
