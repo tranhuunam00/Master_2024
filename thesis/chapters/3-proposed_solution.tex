@@ -179,17 +179,16 @@ tiêu thụ trung bình chỉ khoảng 685 µA khi hoạt động bình thườn
 trang bị bộ quản lý năng lượng tích hợp hỗ trợ nhiều chế độ tiết kiệm điện khác
 nhau. Điều này cho phép thiết bị hoạt động lâu dài trên nền tảng phần cứng công
 suất thấp mà không ảnh hưởng đến hiệu năng đo.
-
-Thứ ba, tốc độ lấy mẫu và thời gian đáp ứng nhanh: BMI270 hỗ trợ tốc độ lấy mẫu
-(ODR) từ 0.7~Hz đến~1.6 kHz cho cảm biến gia tốc, phù hợp bài toán phân loại
-giấc ngủ yêu cầu tần số lấy mẫu thấp (10~Hz).
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth, keepaspectratio]{images/bmi270_block.png}
     \caption{Sơ đồ khối Bosch BMI270}
     \label{bmi270_block}
 \end{figure}
+
+Thứ ba, tốc độ lấy mẫu và thời gian đáp ứng nhanh: BMI270 hỗ trợ tốc độ lấy mẫu
+(ODR) từ 0.7~Hz đến~1.6 kHz cho cảm biến gia tốc, phù hợp bài toán phân loại
+giấc ngủ yêu cầu tần số lấy mẫu thấp (10~Hz).
 
 Thứ tư, khả năng chống nhiễu và hiệu chuẩn tự động: cảm biến có cơ chế bù sai
 số và bù độ nhạy theo thời gian thực, giúp giảm sai lệch khi hoạt động lâu dài.
@@ -231,7 +230,7 @@ hiện nay \cite{BLE_compare}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{images/ble.png}
+    \includegraphics[width=0.7\textwidth]{images/ble.png}
     \caption{Các kiểu kết nối không dây trong họ chip nRF52}
     \label{ble}
 \end{figure}
@@ -725,26 +724,19 @@ cũng được chú ý như là bảo mật thông tin, thời gian phản hồi
 Vì sao lại chọn Dart mà không phải là các ngôn ngữ khác như Java hay
 Swift? Nói chung, chọn Dart trên nền tảng Flutter lý do chính là có thể
 tạo ra hai phiên bản trên Android và IOS trên cùng một bộ mã chương trình.
-Ngoài ra, việc khởi tạo dự án nhanh, cú pháp thân thiện với người lập trình
-hơn, kèm cộng đồng đông đảo làm giảm đáng kể thời gian phát triển.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/flutter.png}
+    \caption{Cấu trúc kiến trúc BLoC trong ứng dụng Flutter}
+    \label{flutter}
+\end{figure}
 Để ứng dụng dễ dàng kiểm thử và nâng cấp,
 BLoC được lựa chọn để quản lý các trạng thái của ứng dụng. Nó hoạt động dựa trên nguyên tắc
 nhận sự kiện đầu vào từ giao diện gồm trạng thái và dữ liệu đầu vào, xử lý trong khối BLOC như gọi lên máy chủ trung tâm
 và trả lại dữ liệu lại giao diện. Kiến trúc này giúp phân tầng mã nguồn, dễ dàng cho kiểm tra và gỡ lỗi.
 Cấu trúc tổng thể của kiến trúc
 BLoC gồm ba lớp chính được mô tả trong Hình~\ref{flutter}.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/flutter.png}
-    \caption{Cấu trúc kiến trúc BLoC trong ứng dụng Flutter}
-    \label{flutter}
-\end{figure}
-
-Mã nguồn của toàn bộ ứng dụng di động sẽ để dưới phần phụ lục. Còn trong khuôn
-khổ luận văn, sẽ bàn luận nhiều hơn chức năng chính là kết nối phần cứng, hiển
-thị và chuyển dữ liệu lên máy chủ trung tâm như thế nào.
 
 \begin{figure}[H]
     \centering
@@ -771,6 +763,10 @@ thị và chuyển dữ liệu lên máy chủ trung tâm như thế nào.
     \label{fig:mobile_ble}
 \end{figure}
 
+Mã nguồn của toàn bộ ứng dụng di động sẽ để dưới phần phụ lục. Còn trong khuôn
+khổ luận văn, sẽ bàn luận nhiều hơn chức năng chính là kết nối phần cứng, hiển
+thị và chuyển dữ liệu lên máy chủ trung tâm như thế nào.
+
 Thư viện flutter\_blue\_plus được chọn để kết nối BLE từ ứng dụng di động đến
 phần cứng \cite{flutter_blue_plus}. Nó hỗ trợ các phương thức gồm: quét, kết
 nối, đọc/ghi các dịch vụ - đặc tính theo cấu trúc GATT và lắng nghe phản hồi từ
@@ -794,22 +790,16 @@ BLE truyền lên các dịch vụ khả dụng. Quá trình so khớp UUID gi�
 tế đã cài đặt ở phần cứng và hằng số định nghĩa (ACCLEROMETER\_SERVICE,
 ACCLEROMETER\_CHARACTION) trên ứng dụng di động mang tiscnh xác thực. Điều này nhằm
 đảm bảo rằng ứng dụng chỉ giao tiếp với dịch vụ và đặc tính cảm biến hợp lệ.
-
 Sau khi đã khớp các thành phần GATT, ứng dụng di động có thêm nút ấn để lấy
 thông tin. Khi đó, một yêu cầu theo dõi đến BLE tại phần cứng. Như đoạn
 mã~\ref{lst:ble_bmi270}, vi điều khiển tiếp nhận hành động theo dõi từ ứng dụng
 di động sẽ lập tức gửi các gói tin lên lại ứng dụng di dộng theo cấu trúc đã
-xác lập.
-
-Đến đây, luận văn đã trình bày quy trình kết nối và nhận dữ liệu từ phần cứng.
-Tiếp theo là đến phần cách thức dữ liệu được đóng gói và chuyển lên phần máy chủ như thế nào.
-
-Ngoài dữ liệu từ 3 trục x, y, z của cảm biến, thời gian tạo và giá trị ID của
-người đang dùng cũng bắt buộc phải lưu lại. Việc này đảm bảo việc minh bạch, dễ
-đối chiếu và phân tích. Mã nguồn~\ref{format_ble} mô tả việc đẩy dữ liệu thông
-qua phương thức HTTP theo lô giúp giảm tạo các kết nối liên tục tới máy chủ
-trung tâm. Điều này tăng tính mở rộng lên hàng trăm thiết bị hoặc giá trị cảm
-biến khác đẩy lên cùng 1 thời điểm.
+xác lập. Ngoài dữ liệu từ 3 trục x, y, z của cảm biến, thời gian tạo và giá trị
+ID của người đang dùng cũng bắt buộc phải lưu lại. Việc này đảm bảo việc minh
+bạch, dễ đối chiếu và phân tích. Mã nguồn~\ref{format_ble} mô tả việc đẩy dữ
+liệu thông qua phương thức HTTP theo lô giúp giảm tạo các kết nối liên tục tới
+máy chủ trung tâm. Điều này tăng tính mở rộng lên hàng trăm thiết bị hoặc giá
+trị cảm biến khác đẩy lên cùng 1 thời điểm.
 
 \input{chapters/examples/format_data_ble.tex}
 
@@ -836,29 +826,26 @@ phân lớp như thể hiện trong Hình~\ref{be_structure}.
     \label{tab:be_folder_structure}
     \begin{tabular}{p{3.2cm} p{10.5cm}}
         \toprule
-        \textbf{Thư mục}      & \textbf{Chức năng và nội dung chính}                                                                         \\
+        \textbf{Thư mục}     & \textbf{Chức năng và nội dung chính}                                                                \\
         \midrule
-        \texttt{mqtt\_broken} &
-        Chứa mã nguồn khởi tạo và quản lý máy chủ MQTT, chịu trách nhiệm giao tiếp theo mô hình publish-subscribe với các thiết bị đầu cuối. \\
+        \texttt{src/common}  &
+        Bao gồm các mô-đun dùng chung như xác thực người dùng, quản lý kết nối cơ sở dữ liệu, chuẩn hóa phản hồi lỗi hệ thống.     \\
 
-        \texttt{src/common}   &
-        Bao gồm các mô-đun dùng chung như xác thực người dùng, quản lý kết nối cơ sở dữ liệu, chuẩn hóa phản hồi lỗi hệ thống.               \\
+        \texttt{src/config}  &
+        Lưu trữ các thông số cấu hình nội bộ, bao gồm biến môi trường, thông tin kết nối và khóa truy cập nội bộ giữa các dịch vụ. \\
 
-        \texttt{src/config}   &
-        Lưu trữ các thông số cấu hình nội bộ, bao gồm biến môi trường, thông tin kết nối và khóa truy cập nội bộ giữa các dịch vụ.           \\
+        \texttt{src/migrate} &
+        Chứa lịch sử các lần thay đổi cấu trúc cơ sở dữ liệu nhằm đảm bảo khả năng truy vết, phục hồi và đồng bộ khi triển khai.   \\
 
-        \texttt{src/migrate}  &
-        Chứa lịch sử các lần thay đổi cấu trúc cơ sở dữ liệu nhằm đảm bảo khả năng truy vết, phục hồi và đồng bộ khi triển khai.             \\
-
-        \texttt{src/modules}  &
-        Tập hợp toàn bộ các mô-đun nghiệp vụ, nơi thực hiện các chức năng xử lý chính và điều phối hoạt động của hệ thống.                   \\
+        \texttt{src/modules} &
+        Tập hợp toàn bộ các mô-đun nghiệp vụ, nơi thực hiện các chức năng xử lý chính và điều phối hoạt động của hệ thống.         \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[angle=90, width=1\textwidth]{images/be_structure.png}
+    \includegraphics[angle=90, width=0.7\textwidth]{images/be_structure.png}
     \caption{Cấu trúc cây thư mục mã nguồn của máy chủ trung tâm}
     \label{be_structure}
 \end{figure}
@@ -886,7 +873,7 @@ phân thành các cụm riêng biệt.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/flow_http3.jpg}
+    \includegraphics[width=0.8\textwidth]{images/master.2025-chuẩn-Trang-3.drawio (2).png}
     \caption{Lưu đồ thuật toán lưu trữ dữ liệu cảm biến}
     \label{flow_http}
 \end{figure}

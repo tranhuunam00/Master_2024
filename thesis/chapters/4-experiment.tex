@@ -20,7 +20,7 @@ từ cảm biến gia tốc ổn định và chính xác trong điều kiện th
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/mach.png}
+    \includegraphics[width=0.5\textwidth]{images/mach.png}
     \caption{Mạch hoàn chỉnh}
     \label{fig:mach}
 \end{figure}
@@ -30,6 +30,13 @@ Song song với việc phát triển phần cứng, phần mềm cũng được 
 của Thầy PGS.TS. Mai Anh Tuấn, tư vấn y khoa của Thầy GS.TS. Dương Quý Sỹ, ứng
 dụng được phát triển có giao diện thân thiện, thao tác đơn giản và tính năng
 tập trung vào mục tiêu thử nghiệm.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/appAuth.png}
+    \caption{Giao diện chức năng đăng ký và đăng nhập}
+    \label{appAuth}
+\end{figure}
 
 Sau khi cài đặt, người dùng có thể đăng nhập hoặc đăng ký tài khoản thông qua
 giao diện như được thể hiện trong Hình~\ref{appAuth}. Với người dùng mới, quá
@@ -43,20 +50,13 @@ sẵn ở phần cứng.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/appAuth.png}
-    \caption{Giao diện chức năng đăng ký và đăng nhập}
-    \label{appAuth}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=0.4\textwidth]{images/ketqua_capquyen.jpg}
+        \includegraphics[width=0.35\textwidth]{images/ketqua_capquyen.jpg}
     \end{subfigure}
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=0.4\textwidth]{images/ketqua_scan.jpg}
+        \includegraphics[width=0.35\textwidth]{images/ketqua_scan.jpg}
     \end{subfigure}
     \caption{Màn hình yêu cầu quyền truy cập Bluetooth và danh sách thiết bị đang hoạt động}
     \label{fig:ketqua_scan_BLE}
@@ -137,7 +137,7 @@ công việc trong bài toán phân loại tư thế ngủ.
 chuẩn hóa quy trình từ thu thập dữ liệu đến lưu trữ của nhóm là hợp lý.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{images/hocmaytime.png}
+    \includegraphics[width=0.8\textwidth]{images/hocmaytime.png}
     \caption{Phân bố khối lượng công việc với bài toán học máy phân loại tư thế ngủ trong luận văn}
     \label{hocmay_time}
 \end{figure}
@@ -158,14 +158,12 @@ lượng do thói quen.
         \centering
         \includegraphics[width=1\textwidth]{images/ana_balance_train.png}
         \label{fig:ana_balance_train}
-        \caption{tập huấn luyện}
 
     \end{subfigure}
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{images/ana_balance_test.png}
         \label{fig:ana_balance_test}
-        \caption{tập kiểm thử}
     \end{subfigure}
     \caption{Biểu đồ phân bố các nhãn thu được}
     \label{fig:ana_balance}
@@ -180,6 +178,7 @@ mức độ tương đồng giữa các tư thế, dẫn đến khả năng tác
 trị trong việc xác định tư thế ngủ. Đối với trục $z$, có thể quan sát được sự
 phân tách rõ ràng giữa tư thế nằm nghiêng và các tư thế dọc (nằm ngửa và nằm
 sấp), chứng tỏ vai trò quan trọng của trục $z$ trong phân loại tư thế.
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
@@ -231,17 +230,8 @@ những cửa sổ dữ liệu có nhãn nhất quán trong toàn bộ thời gi
 nhãn) hoặc có biểu hiện chuyển động bất thường sẽ bị loại bỏ khỏi quá trình xử
 lý tiếp theo.
 \subsubsection{Đặc trưng miền thời gian (T1)}\label{AA}
-Dữ liệu cảm biến gia tốc là dữ liệu chuỗi thời gian, do đó các đặc trưng miền
-thời gian đóng vai trò rất quan trọng trong nhận diện tư thế ngủ. Trong nghiên
-cứu này, tổng cộng 40 đặc trưng thống kê cho mỗi cửa sổ dữ liệu, trên cả ba
-trục $x$, $y$, $z$, được trích xuất. Các đặc trưng bao gồm giá trị trung bình,
-độ lệch chuẩn, độ lệch tuyệt đối trung bình, giá trị lớn nhất, nhỏ nhất, hiệu
-số lớn-nhỏ nhất, trung vị, độ lệch tuyệt đối trung vị, khoảng tứ phân vị, số
-lượng giá trị âm/dương, số lượng giá trị lớn hơn trung bình, số đỉnh tín hiệu,
-độ lệch, độ nhọn, năng lượng tín hiệu, gia tốc tổng hợp và tổng độ lớn tín
-hiệu. Các đặc trưng này được lựa chọn dựa trên tính dễ tính toán, hiệu quả phân
-tách tư thế và khả năng triển khai trên vi điều khiển.
-
+Dữ liệu cảm biến gia tốc là dữ liệu kèm thời gian, do đó các đặc trưng miền
+thời gian đóng vai trò rất quan trọng trong nhận diện tư thế ngủ.
 \begin{table}[H]
     \caption{Các đặc trưng thống kê và tín hiệu được sử dụng trong phân loại tư thế ngủ}
     \label{tab:features}
@@ -290,6 +280,15 @@ tách tư thế và khả năng triển khai trên vi điều khiển.
         \end{tabular}
     \end{center}
 \end{table}
+Trong nghiên
+cứu này, tổng cộng 40 đặc trưng thống kê cho mỗi cửa sổ dữ liệu, trên cả ba
+trục $x$, $y$, $z$, được trích xuất. Các đặc trưng bao gồm giá trị trung bình,
+độ lệch chuẩn, độ lệch tuyệt đối trung bình, giá trị lớn nhất, nhỏ nhất, hiệu
+số lớn-nhỏ nhất, trung vị, độ lệch tuyệt đối trung vị, khoảng tứ phân vị, số
+lượng giá trị âm/dương, số lượng giá trị lớn hơn trung bình, số đỉnh tín hiệu,
+độ lệch, độ nhọn, năng lượng tín hiệu, gia tốc tổng hợp và tổng độ lớn tín
+hiệu. Các đặc trưng này được lựa chọn dựa trên tính dễ tính toán, hiệu quả phân
+tách tư thế và khả năng triển khai trên vi điều khiển.
 
 \subsubsection{Đặc trưng miền tần số (F1)}\label{AA}
 

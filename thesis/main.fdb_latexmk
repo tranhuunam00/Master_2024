@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1764906928.6306 "main.bcf" "main.bbl" "main" 1764907230.27169 0
-  "main.bcf" 1764907229 120187 7bfb980f7fcff01d020b2bc6522d6431 "pdflatex"
+["biber main"] 1764930544.92012 "main.bcf" "main.bbl" "main" 1764932987.86839 0
+  "main.bcf" 1764932986 120187 381d9dc0cd6d758144934e201a90d385 "pdflatex"
   "refs.bib" 1763957566 84649 14cf911bcdce370e8c8fdf3f42544ee9 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1764907208.87793 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1764907230.27375 0
+["pdflatex"] 1764932964.82313 "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" "main.pdf" "main" 1764932987.87038 0
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1763779579 170669 580f60f86b494b149fd13be17089526f ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1753283835 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/ADMIN/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1753323483 13254313 89e2afc147c36950f3366f1142cce13c ""
@@ -299,10 +299,10 @@
   "c:/Users/ADMIN/OneDrive/Máy tính/Master_2024/thesis/main.tex" 1764907206 6590 7e3422b1f0c48d5845b5f33a8cf6f457 ""
   "chapters/0-coverpage.tex" 1764906203 10984 b193392fd278b3207905df93c22f6cc3 ""
   "chapters/1-introduction.tex" 1764905524 8294 0b25b60a6225e65905ff336c5a091579 ""
-  "chapters/2-base-knowledge.tex" 1764906912 64012 a0cd9af1ac0bbeeae16d81e9c3d2b7b8 ""
-  "chapters/3-proposed_solution.tex" 1764905899 73317 553b0789538e634ce9c5f68f50ea2f4b ""
-  "chapters/4-experiment.tex" 1764906145 63015 bc9f6035097dc15b3ddeca62ab1abd6d ""
-  "chapters/5-conclusion.tex" 1764235078 2591 fff5e53732f60d1ba1fb7697504969b9 ""
+  "chapters/2-base-knowledge.tex" 1764931080 64005 74af4150a2b39c581d1382c21198e900 ""
+  "chapters/3-proposed_solution.tex" 1764932963 72635 2c9cd8b160d99b602aeb436d8985f59e ""
+  "chapters/4-experiment.tex" 1764932763 62939 4eb5638695ea364bddb31bc179290927 ""
+  "chapters/5-conclusion.tex" 1764927471 2637 e566ba460fa299180265657e4c01ffb5 ""
   "chapters/examples/ble_scan.tex" 1762847064 1537 fede42ab9a829e79b43d7192fbde6b05 ""
   "chapters/examples/cauhinh_accelerometer.tex" 1762846960 1940 cb82e7c6e014aebecce16338328a4b30 ""
   "chapters/examples/cauhinh_ble.tex" 1763779929 1633 3f33c2ec05d8f919c6144c203ef3fe7b ""
@@ -332,7 +332,6 @@
   "images/bmi270_block.png" 1762594031 121967 5c51405df9f6e9d31753705b00b70e86 ""
   "images/bmi270_pin.png" 1762594096 84364 0fc63f7deec9daad41db1fea8d2c98e0 ""
   "images/correlation.png" 1753763698 171868 35b8ee5c7bfbc23014fff7afe0700f7d ""
-  "images/flow_http3.jpg" 1764235719 38108 bcbaaaa6260e8c2276f9ec2d9d747201 ""
   "images/flutter.png" 1753256026 93116 0173b9f3503ee5c102e7ca652c73ed17 ""
   "images/gatt.drawio.png" 1753256028 18306 f52091be11db592e1381e658055e3943 ""
   "images/giatoc_ap_dien.png" 1762487393 1922916 b143952a346b7083b2504a92b9d31537 ""
@@ -385,14 +384,14 @@
   "images/vitri_co.png" 1762443391 129340 184f6133557167661d5ac27fd98fe482 ""
   "images/z_kalman.png" 1762683551 57101 e6bcaa3aaf0c8deeead9eef7f1c9c073 ""
   "main.acr" 1763957655 3969 0f52bd4c8e038ed636d55409a55dd43c ""
-  "main.aux" 1764907229 59847 36c79f13f44cfd326a6ff2a37db394f0 "pdflatex"
-  "main.bbl" 1764906934 222776 0e10f004f180b3fea6d86ab7255bc031 "biber main"
-  "main.lof" 1764907229 8458 29aba85c5e5d40b069e0413e4321b7f5 "pdflatex"
-  "main.lot" 1764907229 1816 b7fd17b961fb05bc75ddacf069a6fab2 "pdflatex"
-  "main.out" 1764907229 8404 ece7a8e3bafa26765fb5ed509ff95b26 "pdflatex"
-  "main.run.xml" 1764907229 2268 456211433cb673c754af192d4ef1bf89 "pdflatex"
+  "main.aux" 1764932986 59835 28ba1dfeeff61caf5baf1ef2056d1406 "pdflatex"
+  "main.bbl" 1764930551 222776 0e10f004f180b3fea6d86ab7255bc031 "biber main"
+  "main.lof" 1764932986 8456 099791806bc076d1d15e0c819cceed85 "pdflatex"
+  "main.lot" 1764932986 1816 fb71e1fb2deb932a906b0e0275171f58 "pdflatex"
+  "main.out" 1764932986 8404 ece7a8e3bafa26765fb5ed509ff95b26 "pdflatex"
+  "main.run.xml" 1764932986 2268 456211433cb673c754af192d4ef1bf89 "pdflatex"
   "main.tex" 1764907206 6590 7e3422b1f0c48d5845b5f33a8cf6f457 ""
-  "main.toc" 1764907229 5546 575b508a520d7ff6a4e547d6edeae442 "pdflatex"
+  "main.toc" 1764932986 5545 2516d99e1166d5c9003da21039019c10 "pdflatex"
   "setting/bkthesis.sty" 1753256024 967 af4f61477f3f023e14bc982890f87805 ""
   (generated)
   "main.acn"

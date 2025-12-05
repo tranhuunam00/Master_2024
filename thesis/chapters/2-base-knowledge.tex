@@ -129,14 +129,6 @@ xương, đặc biệt là cột sống \cite{Cary2021_tu_the_ngủ}. Trong ph�
 ngưng thở tắc nghẽn khi ngủ, tư thế ngủ được xem là một yếu tố quan trọng quyết
 định mức độ nghiêm trọng của bệnh.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/4ngu.png}
-  \vspace*{-7mm}
-  \caption{Các tư thế ngủ cơ bản của con người}
-  \label{4_tuthe_nguoi}
-\end{figure}
-
 Các nghiên cứu cho thấy, nhiều bệnh nhân OSA có tần suất ngưng thở và giảm thở
 cao hơn rõ rệt khi nằm ngửa so với các tư thế khác. Nguyên nhân chủ yếu là do
 tác động của trọng lực lên các cấu trúc mô vùng họng gây tăng khả năng bị xẹp
@@ -145,10 +137,10 @@ tư thế \cite{heinzer2018,aloweidat2023positional}.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\textwidth]{images/tuthe_osa.png} % giảm xuống 70% chiều rộng trang
-  \vspace*{-5mm}
-  \caption{Xẹp đường thở ở tư thế ngửa}
-  \label{fig:tuthe_osa}
+  \includegraphics[width=\textwidth]{images/4ngu.png}
+  \vspace*{-7mm}
+  \caption{Các tư thế ngủ cơ bản của con người}
+  \label{4_tuthe_nguoi}
 \end{figure}
 
 Để chẩn đoán pOSA, nhiều tiêu chí khác nhau đã được đề xuất, từ các phương pháp đơn
@@ -170,6 +162,14 @@ Theo tiêu chí APOC, bệnh nhân được xác định mắc pOSA khi có AHI 
 Hệ thống này chia bệnh nhân thành ba nhóm: APOC-I (có thể khỏi hoàn
 toàn nhờ thay đổi tư thế ngủ), APOC-II (không phụ thuộc tư thế),
 APOC-III (phụ thuộc tư thế một phần).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{images/tuthe_osa.png} % giảm xuống 70% chiều rộng trang
+  \vspace*{-5mm}
+  \caption{Xẹp đường thở ở tư thế ngửa}
+  \label{fig:tuthe_osa}
+\end{figure}
 
 Từ các nghiên cứu trên, có thể thấy việc hiểu rõ mối liên hệ giữa tư thế ngủ và
 sự ổn định của đường thở trên không chỉ giúp cải thiện khả năng chẩn đoán mà
@@ -204,6 +204,13 @@ pháp này sẽ ghi lại đa kênh dữ liệu trong lúc ngủ liên tục su�
 đó, cho phép theo dõi đồng thời nhiều thông số sinh lý phản ánh toàn diện hoạt
 động thần kinh và hô hấp trong giấc ngủ.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{images/mceclip13.png} % giảm xuống 70% chiều rộng trang
+  \caption{Màn hình tổng hợp tín hiệu của PSG}
+  \label{fig:noxa1}
+\end{figure}
+
 Một hệ thống PSG điển hình bao gồm: điện não đồ để ghi và lưu lại hoạt động
 điện của não; điện cơ đồ nhằm đo trương lực cơ; điện nhãn đồ để xác định giai
 đoạn ngủ thông qua chuyển động mắt; và điện tâm đồ để giám sát hoạt động tim.
@@ -216,13 +223,6 @@ các tín hiệu này, tư thế ngủ là một thông số đặc biệt quan 
 nhiều tín hiệu sinh lý theo thời gian, cho phép quan sát đồng thời các kênh hô
 hấp. Hệ thống cũng cung cấp công cụ đánh dấu tự động các sự kiện bất thường như
 ngưng thở và giảm thở.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{images/mceclip13.png} % giảm xuống 70% chiều rộng trang
-  \caption{Màn hình tổng hợp tín hiệu của PSG}
-  \label{fig:noxa1}
-\end{figure}
 
 Tuy nhiên, phương pháp PSG vẫn còn một số hạn chế về mặt chi phí bao gồm chi
 phí đi lại lưu trú và thăm khám. Việc bệnh nhân bắt buộc gắn nhiều điện cực và
@@ -268,12 +268,7 @@ tim, tín hiệu gia tốc ba trục, tín hiệu hô hấp và SpO$_2$. Các m�
 Naive Bayes, ANN và k-Nearest Neighbor (KNN) được huấn luyện nhằm phân loại
 trạng thái hô hấp và phát hiện ngưng thở. Trong đó mô hình KNN đạt độ chính xác
 95\% và thời gian xử lý chỉ 640~$\mu$s - đáp ứng tiêu chí chẩn đoán OSA theo
-thời gian thực. Tương tự, Chen và cộng sự \cite{chen2024hdc} phát triển thiết
-bị vòng tay ghi tín hiệu phản hồi quang học để phát hiện biến thiên lưu lượng
-máu trên 100 đối tượng tình nguyện. Nghiên cứu này hướng tới tối ưu về bộ nhớ,
-độ trễ và năng lượng, đồng thời đồng bộ dữ liệu với PSG để đảm bảo độ tin cậy,
-hướng tới ứng dụng giám sát dài hạn tại nhà.
-
+thời gian thực.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\textwidth]{images/sleepcare.png} % giảm xuống 70% chiều rộng trang
@@ -281,17 +276,21 @@ hướng tới ứng dụng giám sát dài hạn tại nhà.
   \caption{Thiết bị Sleep Care Kit}
   \label{fig:sleepcare}
 \end{figure}
-
-Yeo và cộng sự \cite{yeo2022resnet, yeo2022respiratory} triển khai thiết bị dán
-T-REX TR100A để ghi điện tâm đồ một kênh tại vùng bụng trên. Thiết bị dán trực
-tiếp lên da, đảm bảo tiếp xúc ổn định, giúp ghi liên tục trong thời gian dài mà
-không gây khó chịu cho người sử dụng. Bên cạnh đó, nghiên cứu \cite{svmHSt2017}
-chỉ ra rằng các tín hiệu chuyển động ngực và bụng thu từ dải cảm biến gia tốc
-áp điện có thể được khai thác hiệu quả trong phân loại rối loạn hô hấp khi ngủ
-bằng mô hình SVM, đạt độ chính xác trung bình 81.8\%. Ngoài ra, Domingues và
-cộng sự đề xuất một mô hình mạng nơ-ron nhân tạo sử dụng dữ liệu từ SpO$_2$,
-cảm biến gia tốc và âm thanh ngáy. Kết quả đạt được tiệm cận độ chính xác của
-PSG truyền thống \cite{domingues2024sleep}.
+Tương tự, Chen và cộng sự \cite{chen2024hdc} phát triển thiết
+bị vòng tay ghi tín hiệu phản hồi quang học để phát hiện biến thiên lưu lượng
+máu trên 100 đối tượng tình nguyện. Nghiên cứu này hướng tới tối ưu về bộ nhớ,
+độ trễ và năng lượng, đồng thời đồng bộ dữ liệu với PSG để đảm bảo độ tin cậy,
+hướng tới ứng dụng giám sát dài hạn tại nhà. Yeo và cộng sự
+\cite{yeo2022resnet, yeo2022respiratory} triển khai thiết bị dán T-REX TR100A
+để ghi điện tâm đồ một kênh tại vùng bụng trên. Thiết bị dán trực tiếp lên da,
+đảm bảo tiếp xúc ổn định, giúp ghi liên tục trong thời gian dài mà không gây
+khó chịu cho người sử dụng. Bên cạnh đó, nghiên cứu \cite{svmHSt2017} chỉ ra
+rằng các tín hiệu chuyển động ngực và bụng thu từ dải cảm biến gia tốc áp điện
+có thể được khai thác hiệu quả trong phân loại rối loạn hô hấp khi ngủ bằng mô
+hình SVM, đạt độ chính xác trung bình 81.8\%. Ngoài ra, Domingues và cộng sự đề
+xuất một mô hình mạng nơ-ron nhân tạo sử dụng dữ liệu từ SpO$_2$, cảm biến gia
+tốc và âm thanh ngáy. Kết quả đạt được tiệm cận độ chính xác của PSG truyền
+thống \cite{domingues2024sleep}.
 
 Nhìn chung, các hệ thống HST thế hệ mới đang chuyển dịch từ kiến trúc đám mây
 sang kiến trúc tại biên. Điều này không chỉ nâng cao tính riêng tư và độ tin
@@ -310,7 +309,7 @@ liệu áp suất từ nệm khí.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1\textwidth]{images/sleep_camera.png} % giảm xuống 70% chiều rộng trang
+  \includegraphics[width=0.8\textwidth]{images/sleep_camera.png} % giảm xuống 70% chiều rộng trang
   \vspace*{-5mm}
   \caption{Thiết kế hệ thống nệm áp suất trong nghiên cứu của Xi Xu và cộng sự}
   \label{fig:sleep_camera}
@@ -352,6 +351,13 @@ ngủ cơ bản và phát hiện chuyển động hiệu quả. Một số thi�
 Sleep System (WSS) \cite{kwasnicki2018} hoặc thiết bị HST dạng miếng dán cổ
 \cite{Sleep_Posture_Detection} cũng dùng cảm biến gia tốc ba trục có độ chính
 xác cao (trên 97\%) trong nhận dạng tư thế ngủ.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{images/vitri_co.png} % giảm xuống 70% chiều rộng trang
+  \vspace*{-5mm}
+  \caption{Ví trị đặt cảm biến được đề xuất trong nghiên cứu \cite{abdulsadig2023}}
+  \label{fig:vitri_co}
+\end{figure}
 
 Nghiên cứu \cite{abdulsadig2023}, tác giả tập trung vào nhận dạng tư thế ngủ tự
 động bằng cảm biến gia tốc đơn gắn tại vùng cổ (Hình~\ref{fig:vitri_co}). Ba mô
@@ -364,14 +370,6 @@ sử dụng mô hình AnpoNet kết hợp 1D-CNN và LSTM, đạt độ chính x
 f1-score 92.94\%. Các kết quả này cho thấy cảm biến gia tốc đơn không chỉ đảm
 bảo độ chính xác cao mà còn mang lại sự tiện lợi, chi phí phù hợp và khả năng
 triển khai thực tế.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.6\textwidth]{images/vitri_co.png} % giảm xuống 70% chiều rộng trang
-  \vspace*{-5mm}
-  \caption{Ví trị đặt cảm biến được đề xuất trong nghiên cứu \cite{abdulsadig2023}}
-  \label{fig:vitri_co}
-\end{figure}
 
 Bám sát định hướng này, luận văn đề xuất một hệ thống sử dụng duy nhất một cảm
 biến gia tốc gắn tại vùng cổ để phát hiện các tư thế ngủ. Vị trí đặt thiết bị ở
@@ -651,7 +649,12 @@ trong bối cảnh các thiết bị theo dõi sức khỏe tại nhà yêu cầ
 gọn, có khả năng đeo được, không phụ thuộc vào kết nối Internet, thì học máy
 tại biên trở thành như một giải pháp tối ưu vừa mang lại khả năng tính toán
 mạnh mẽ, vừa dễ dàng triển khai trên các phần cứng có tài nguyên hạn chế.
-
+Bảng~\ref{tab:pipeline_steps} trình bày tổng quan quy trình triển khai một bài
+toán học máy. Quy trình này có thể được điều chỉnh linh hoạt tùy theo loại tín
+hiệu đầu vào và mục đích phân tích cụ thể, chẳng hạn như nhận diện tư thế ngủ,
+phát hiện ngưng thở hay theo dõi nhịp hô hấp. Tuy nhiên, nguyên tắc vẫn là đảm
+bảo tín hiệu đầu vào có chất lượng cao và mô hình học máy đủ nhẹ để triển khai
+trong thực tế.
 \begin{table}[H]
   \centering
   \caption{Các bước chính trong bài toán sử dụng học máy trên biên}
@@ -678,13 +681,6 @@ mạnh mẽ, vừa dễ dàng triển khai trên các phần cứng có tài ngu
     \hline
   \end{tabular}
 \end{table}
-
-Bảng~\ref{tab:pipeline_steps} trình bày tổng quan quy trình triển khai một bài
-toán học máy. Quy trình này có thể được điều chỉnh linh hoạt tùy theo loại tín
-hiệu đầu vào và mục đích phân tích cụ thể, chẳng hạn như nhận diện tư thế ngủ,
-phát hiện ngưng thở hay theo dõi nhịp hô hấp. Tuy nhiên, nguyên tắc vẫn là đảm
-bảo tín hiệu đầu vào có chất lượng cao và mô hình học máy đủ nhẹ để triển khai
-trong thực tế.
 
 Phần tiếp theo, luận văn sẽ tập trung trình bày quy trình triển khai nêu trên
 vào bài toán phân loại tư thế ngủ và đánh giá OSA.
