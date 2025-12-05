@@ -238,7 +238,7 @@ hiện nay \cite{BLE_compare}.
 
 Ngoài ra, BLE còn được hỗ trợ trên vi điều khiển nRF52840 đã chọn ở phần trên.
 Nhờ sự kết hợp này, hệ thống có thể duy trì khả năng truyền dữ liệu ổn định,
-tiết kiệm năng lượng, và đáp ứng tốt yêu cầu hoạt động liên tục trong quá trình
+tiết kiệm năng lượng, đáp ứng tốt yêu cầu hoạt động liên tục trong quá trình
 giám sát tư thế ngủ.
 
 \subsubsection*{Các thành phần, chức năng}
@@ -417,7 +417,7 @@ thiết kế này được nhóm xem xét là phù hợp với thiết bị đeo
 liên quan đến thiết kế cơ khí của vỏ mạch. Kết quả được thể hiện tại
 Hình~\ref{fig:schematic}.
 Sau khi hoàn thiện thiết kế, công đoạn tiếp theo là thực hiện hàn, lắp các linh
-kiện theo sơ đồ mạch, và tiến hành kiểm tra hoạt động của các khối chức năng
+kiện theo sơ đồ mạch, tiến hành kiểm tra hoạt động của các khối chức năng
 trên bo mạch để đánh giá tính ổn định và độ tin cậy của hệ thống
 Hình~\ref{fig:pcb_3d}.
 
@@ -842,7 +842,7 @@ phân lớp như thể hiện trong Hình~\ref{be_structure}.
         Chứa mã nguồn khởi tạo và quản lý máy chủ MQTT, chịu trách nhiệm giao tiếp theo mô hình publish-subscribe với các thiết bị đầu cuối. \\
 
         \texttt{src/common}   &
-        Bao gồm các mô-đun dùng chung như xác thực người dùng, quản lý kết nối cơ sở dữ liệu, và chuẩn hóa phản hồi lỗi hệ thống.            \\
+        Bao gồm các mô-đun dùng chung như xác thực người dùng, quản lý kết nối cơ sở dữ liệu, chuẩn hóa phản hồi lỗi hệ thống.               \\
 
         \texttt{src/config}   &
         Lưu trữ các thông số cấu hình nội bộ, bao gồm biến môi trường, thông tin kết nối và khóa truy cập nội bộ giữa các dịch vụ.           \\
@@ -936,9 +936,9 @@ lớp đối với bài toán phân loại nhị phân:
 \end{equation}
 
 Trong đó, $\mathbf{w}$ là vector trọng số, $\mathbf{x}$ là vector đặc trưng đầu
-vào, và $b$ là hệ số điều chỉnh (bias). Khi xác suất này vượt quá một ngưỡng
-nhất định, mô hình sẽ gán nhãn cho $\mathbf{x}$ là thuộc lớp dương. Ngược lại,
-nếu nhỏ hơn ngưỡng, mẫu được phân loại vào lớp âm.
+vào, $b$ là hệ số điều chỉnh (bias). Khi xác suất này vượt quá một ngưỡng nhất
+định, mô hình sẽ gán nhãn cho $\mathbf{x}$ là thuộc lớp dương. Ngược lại, nếu
+nhỏ hơn ngưỡng, mẫu được phân loại vào lớp âm.
 
 Mặc dù đơn giản và dễ triển khai, hồi quy logistic ban đầu chỉ phù hợp với các
 bài toán phân loại nhị phân. Để mở rộng cho bài toán phân loại đa lớp, có thể
@@ -956,8 +956,8 @@ tất cả các lớp và lựa chọn lớp có xác suất cao nhất làm đ�
 Ngoài phương pháp softmax, một biến thể khác thường được sử dụng là One-vs-Rest
 (OvR). Trong biến thể này, mô hình sẽ huấn luyện $K$ bộ phân loại nhị phân độc
 lập, mỗi bộ phân biệt một lớp cụ thể với phần còn lại của tập dữ liệu. Khi dự
-đoán, mẫu dữ liệu mới được đưa vào cả $K$ mô hình, và lớp có xác suất dự đoán
-cao nhất sẽ được chọn làm kết quả cuối cùng.
+đoán, mẫu dữ liệu mới được đưa vào cả $K$ mô hình. Cuối cùng, lớp có xác suất
+dự đoán cao nhất sẽ được chọn làm kết quả.
 
 Trong bài toán phân loại tư thế ngủ, LR được kì vọng sẽ tối ưu về mặt chi phí
 tính toán và kích thước mô hình để phù hợp với các bài toán triển khai tại
@@ -1025,7 +1025,7 @@ trong đó:
 \[
     \|\mathbf{w}\|_2 = \sqrt{\sum_{i=1}^{d} w_i^2}
 \]
-với vector trọng số $\mathbf{w}$, và $d$ là số chiều của không gian.
+với vector trọng số $\mathbf{w}$, $d$ là số chiều của không gian.
 
 Hình~\ref{svm} minh hoạ khái niệm mặt siêu phẳng và các máy hỗ trợ trong không
 gian hai chiều.
@@ -1084,8 +1084,7 @@ cùng.
 
 One-vs-Rest (OvR): Phương pháp này huấn luyện một mô hình cho mỗi lớp, trong đó
 mô hình học cách phân biệt giữa một lớp cụ thể và phần còn lại. Với $K$ lớp, ta
-có $K$ mô hình. Trong quá trình suy luận, mô hình đưa ra xác suất hoặc độ tin
-cậy, và lớp có giá trị cao nhất sẽ được chọn.
+có $K$ mô hình.
 
 \subsubsection{Rừng ngẫu nhiên}
 
@@ -1152,8 +1151,8 @@ Mỗi nơ-ron trong lớp ẩn thực hiện một tổ hợp tuyến tính gi�
     f(x) = \max(0, x)
 \end{equation}
 
-Đầu ra của mạng được tính thông qua lan truyền tiến,
-và mô hình được huấn luyện bằng cách tối thiểu hóa một hàm mất mát.
+Đầu ra của mạng được tính thông qua lan truyền tiến. Tiếp theo,
+mô hình được huấn luyện bằng cách tối thiểu hóa một hàm mất mát.
 Khác với các mô
 hình học máy truyền thống cần cung cập các đặc trưng để huấn luyện theo các thủ công,
 ANN sẽ tự động trích xuất và huấn luyện dựa trên bộ đặc trưng riêng của nó.

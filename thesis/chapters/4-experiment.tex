@@ -134,7 +134,7 @@ Thời gian để chuẩn bị dữ liệu cho học máy
 (thu thập, tiền xử lý) chiếm tới hơn 80\% khối lượng
 công việc trong bài toán phân loại tư thế ngủ.
 Điều này càng khẳng định định hướng
-"chuẩn hóa quy trình từ thu thập dữ liệu đến lưu trữ" của nhóm là hợp lý.
+chuẩn hóa quy trình từ thu thập dữ liệu đến lưu trữ của nhóm là hợp lý.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/hocmaytime.png}
@@ -224,10 +224,10 @@ yếu vào tư thế nằm nghiêng trái và nằm sấp. Từ đây, một ph�
 
 Dữ liệu cảm biến thu thập được trước tiên được xử lý khử nhiễu bằng phương pháp
 hiệu chỉnh điểm gốc, bằng cách lấy hiệu giữa giá trị hiện tại và giá trị tham
-chiếu ban đầu trên ba trục $x$, $y$, và $z$. Sau đó, tín hiệu được chia thành
-các cửa sổ thời gian có độ dài 2 giây, với mức chồng lấn 50\% giữa các cửa sổ.
-Chỉ những cửa sổ dữ liệu có nhãn nhất quán trong toàn bộ thời gian mới được giữ
-lại để huấn luyện mô hình. Các cửa sổ chứa nhãn không đồng nhất (nhiều hơn một
+chiếu ban đầu trên ba trục $x$, $y$, $z$. Sau đó, tín hiệu được chia thành các
+cửa sổ thời gian có độ dài 2 giây, với mức chồng lấn 50\% giữa các cửa sổ. Chỉ
+những cửa sổ dữ liệu có nhãn nhất quán trong toàn bộ thời gian mới được giữ lại
+để huấn luyện mô hình. Các cửa sổ chứa nhãn không đồng nhất (nhiều hơn một
 nhãn) hoặc có biểu hiện chuyển động bất thường sẽ bị loại bỏ khỏi quá trình xử
 lý tiếp theo.
 \subsubsection{Đặc trưng miền thời gian (T1)}\label{AA}
@@ -648,9 +648,9 @@ luyện.
 Đối với mô hình LR, sau khi mô hình LR được huấn luyện và hiệu chỉnh,
 toàn bộ tham số của mô hình (bao gồm trọng số và hệ số chệch)
 cùng với thông số chuẩn hoá (scaler) được lưu trữ lại bằng thư viện Joblib
-\footnote{\textit{Joblib} là một thư viện trong Python, được thiết kế tối ưu cho việc tuần tự hoá  và lưu trữ các đối tượng dữ liệu lớn như mô hình học máy, tham số, và bộ chuẩn hoá}.
+\footnote{\textit{Joblib} là một thư viện trong Python, được thiết kế tối ưu cho việc tuần tự hoá  và lưu trữ các đối tượng dữ liệu lớn như mô hình học máy, tham số, bộ chuẩn hoá}.
 Cơ chế này sử dụng để trích xuất toàn bộ tham số huấn luyện
-(bao gồm ma trận trọng số, vector bias, và các giá trị cực tiểu -
+(bao gồm ma trận trọng số, vector bias, các giá trị cực tiểu -
 cực đại của scaler) dưới dạng hằng số ngôn ngữ C.
 
 Sau khi mô hình ANN được huấn luyện, việc chuyển đổi mô hình sang định dạng
@@ -710,10 +710,10 @@ khoẻ thời gian thực.
 
 Khác với LR, ANN được triển khai trên chip thông qua định dạng TensorFlow Lite
 Micro (TFLM). Khối \texttt{MicroInterpreter} trong TFLM chịu trách nhiệm đọc mô
-hình, thực thi các toán tử (Dense, ReLU, Softmax), và trả về xác suất dự đoán
-cho từng tư thế. Kết quả cuối cùng được xác định bằng cách chọn lớp có xác suất
-cao nhất. Mặc dù chi phí tính toán cao hơn, ANN có ưu thế trong việc nắm bắt
-quan hệ phi tuyến phức tạp giữa các tín hiệu.
+hình, thực thi các toán tử (Dense, ReLU, Softmax). Sau đó, trả về xác suất dự
+đoán cho từng tư thế. Kết quả cuối cùng được xác định bằng cách chọn lớp có xác
+suất cao nhất. Mặc dù chi phí tính toán cao hơn, ANN có ưu thế trong việc nắm
+bắt quan hệ phi tuyến phức tạp giữa các tín hiệu.
 
 \subsection*{Đánh giá hiệu suất và tài nguyên}
 
@@ -783,12 +783,10 @@ hình có thể truyền toàn bộ dữ liệu tập kiểm
 tra vào phần cứng và nhận lại giá trị suy luận được xây dựng.
 Quy trình đánh giá mô hình trên vi điều khiển được tổ chức theo hai nhánh
 chính: luồng xử lý trên MCU và luồng kiểm thử trên máy tính. Phía máy tính chịu
-trách nhiệm tải dữ liệu gia tốc trong tệp CSV, tạo các cửa sổ trượt kích thước xác định,
-và lần lượt truyền từng giá trị
+trách nhiệm tải dữ liệu gia tốc trong tệp CSV, tạo các cửa sổ trượt kích thước xác định. Tiếp đó, lần lượt truyền từng giá trị
 (x,y,z) của mỗi cửa sổ xuống MCU thông qua giao tiếp Serial. Mỗi khi MCU nhận đủ
 N mẫu, thiết bị thực thi toàn bộ pipeline suy luận gồm trích xuất 15 đặc trưng,
-chuẩn hoá các đặc trưng theo min-max, và đưa vào mô hình đã được chuyển đổi
-sang định dạng TFLite. Kết quả phân lớp được trả về máy tính dưới dạng một số
+chuẩn hoá các đặc trưng theo min-max. Kết quả phân lớp từ phần cứng sẽ được trả về máy tính dưới dạng một số
 nguyên đại diện cho tư thế ngủ.
 
 Trên máy tính, mỗi dự đoán nhận được được so sánh với nhãn gốc của cửa sổ tương
@@ -900,8 +898,8 @@ trong quá trình convert và triển khai trên biên.
 Sự khác biệt giữa hai mô hình đặc biệt rõ trong ma trận nhầm lẫn
 Bảng~\ref{tiny_result}. Trong khi LR duy trì cấu trúc phân lớp gần như lý tưởng
 ở cả bốn tư thế, ANN xuất hiện nhiều sai lệch nghiêm trọng giữa tư thế ngửa và
-nghiêng phải, và đặc biệt là không thể nhận dạng tư thế sấp. Điều này cho thấy
-LR phù hợp hơn cho tín hiệu từ cảm biến gia tốc gắn trên cơ thể.
+nghiêng phải. Đặc biệt là không thể nhận dạng tư thế sấp. Điều này cho thấy LR
+phù hợp hơn cho tín hiệu từ cảm biến gia tốc gắn trên cơ thể.
 
 Từ các kết quả này có thể khẳng định rằng, trong bối cảnh triển khai trên các
 hệ thống TinyML, LR tỏ ra vượt trội so với ANN không chỉ vì mô hình nhỏ gọn hơn

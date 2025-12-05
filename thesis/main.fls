@@ -627,6 +627,7 @@ INPUT .\chapters\1-introduction.tex
 INPUT chapters\1-introduction.tex
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
 INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
+INPUT C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
 INPUT .\chapters\2-base-knowledge.tex
 INPUT .\chapters\2-base-knowledge.tex
 INPUT .\chapters\2-base-knowledge.tex
