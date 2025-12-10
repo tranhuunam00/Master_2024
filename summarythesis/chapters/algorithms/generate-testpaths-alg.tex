@@ -1,0 +1,38 @@
+\begin{algorithm}[!ht]
+	\SetAlgoLined
+	\KwData{
+	\textit{beginNode}: ĐỈnh bắt đầu CFG, \textit{testpaths}: Mảng lưu trữ các đường đi,\newline
+	\textit{tp}: Đường đi hiện tại, \textit{flags}: Mảng đánh dấu nhánh của điều kiện
+	}
+    \KwResult{\textit{testpaths}: Tập tất cả các đường đi có trong cfg}
+    \SetKwFunction{CollectTestpaths}{\textsc{COLLECT}-TESTPATHS}
+    \SetKw{KwBy}{by}
+    \BlankLine
+    $testpaths \leftarrow new Array()$ \label{gen-path:initArray}; $tp \leftarrow new Array()$ \label{gen-path:initPath}; $flags \leftarrow new Array()$ \label{gen-path:initFlags} \\
+    $iterator \leftarrow cfg.getRootNode()$ \label{gen-path:getIterator}
+    \CollectTestpaths{$iterator, testpaths, tp, flags$} \\
+    $tp.push(iterator)$ \label{gen-path:addToPath} \\
+     \uIf{$iterator.isEndNode()$}{ \label{gen-path:checkEndNode}
+        $tp.setFlags(flags)$\label{gen-path:saveFlags}\\
+        $testpaths.push(tp)$ \label{gen-path:addToArray:1}\\
+        %  $tp.pop()$ \tcp*{Loại phần tử cuối của tp để duyệt đệ quy nhánh khác}
+      }
+    \uElseIf{ $iterator.isConditionNode()$ \label{gen-path:checkConditionNode}}
+    {
+    $trueNode \leftarrow iterator.getTrueNode()$ \label{gen-path:getTrueBranch} \\
+    $falseNode \leftarrow iterator.getFalseNode()$ \label{gen-path:getFalseBranch} \\
+    $flags.push(1)$ \label{gen-path:addTrueFlag:1}\\
+    \CollectTestpaths{$trueNode, testpaths, tp, flags$} \label{gen-path:traverseTrueBranch}\\
+    $flags.pop()$ \label{gen-path:deleteTrueMark} \\
+    $flags.push(0)$ \label{gen-path:addFalseFlag:1}\\
+     \CollectTestpaths{$falseNode, testpaths, tp, flags$} \label{gen-path:traverseFalseBranch}\\
+    $flags.pop()$ \label{gen-path:deleteFalseMark} \\
+    }
+    \Else{
+    $nextNode \leftarrow iterator.getNextNode()$ \label{gen-path:getNextNode}\\
+    \CollectTestpaths{$nextNode, testpaths, tp, flags$} \label{gen-path:traverseNextBranch}\\
+    }
+     $tp.pop()$ \label{gen-path:deleteEndPoint}\\
+    \caption{Thuật toán thu thập đường đi trong CFG}
+    \label{generate-testpath-alg}
+\end{algorithm}

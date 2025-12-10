@@ -1,0 +1,59 @@
+\begin{algorithm}[H]
+	\SetAlgoLined
+	\KwData{
+	\textit{path}: Đường kiểm thử được thực thi tượng trưng
+	}
+    \KwResult{\textit{constraints}: Tập tất cả các ràng buộc có trên đường kiểm thử}
+    \SetKwFunction{SymbolicExecution}{\textsc{SYMBOLIC}-EXECUTION}
+    \SetKw{KwBy}{by}
+    \BlankLine
+    \SymbolicExecution($path$) \\
+    $V \leftarrow path.getAllNodes()$ \label{symbolic:getAllNodes}; $table \leftarrow new Array()$ \label{symbolic:initTable}; $constraints = new Array()$ \label{symbolic:initConstraintArray}\\
+
+    \For{$ v : V $ \label{symbolic:traversePath} }{
+         \uIf{ $v.isDeclarationStatement()$ \label{symbolic:checkDeclaration}}{ 
+            $name \leftarrow v.getVariableName()$ \label{symbolic:geVariableName:1}\\
+            $value \leftarrow v.getValue() $ \label{symbolic:getValueExpression:1}\\
+            $replaceValue\leftarrow table.replaceExpression(value)$ \label{symbolic:replaceExpression:1}\\
+            $table.add(name, replaceValue)$ \label{symbolic:addToTable:1}\\
+          }
+          \uElseIf{$v.isAssignmentStatement()$ \label{symbolic:checkAssignment}}
+          {
+            $name \leftarrow v.getVariableName()$ \label{symbolic:geVariableName:2}\\
+             $value \leftarrow v.getValue() $  \label{symbolic:getValueExpression:2}\\
+            $replaceValue\leftarrow table.replaceExpression(value)$ \label{symbolic:replaceExpression:2}\\
+             $table.update(name, replaceValue)$ \label{symbolic:addToTable:2}\\
+          }
+          \uElseIf{ $v.isConditionStatement()$ \label{symbolic:checkCondition}}
+          {
+            $expression \leftarrow v.getExpression()$   \label{symbolic-getConditionExpression} \\
+            $constraint \leftarrow  table.replaceExpression(expression)$ \label{symbolic:replaceExpression:3}\\
+            $constraints.push(constraint)$ \label{symbolic:addConstraint}\\
+          } 
+          
+          
+        %   {
+        %     \eIf{ v là đỉnh thay đổi giá trị \label{symbolic:checkAssignment}}
+        %     {
+        %      $name \leftarrow v.getVariableName()$ \label{symbolic:geVariableName:2}\\
+        %      $value \leftarrow v.getValue() $  \label{symbolic:getValueExpression:2}\\
+        %     $replaceValue\leftarrow table.replaceExpression(value)$ \label{symbolic:replaceExpression:2}\\
+        %      $table.update(name, replaceValue)$ \label{symbolic:addToTable:2}\\
+        %     }
+        %     {
+        %     \eIf{v là đỉnh điều kiện \label{symbolic:checkCondition}}
+        %         {
+        %             $expression \leftarrow v.getExpression()$ \label{symbolic-getConditionExpression} \\
+        %             $constraint \leftarrow  table.replaceExpression(expression)$ \label{symbolic:replaceExpression:3}\\
+        %             $constraints.push(constraint)$ \label{symbolic:addConstraint}\\
+        %         }
+        %         {
+            
+        %         }
+        %     }
+        %   }
+    }
+    \Return $constraints$
+    \caption{Thuật toán thực thi tượng trưng}
+    \label{symbolic-execution}
+\end{algorithm}

@@ -1,0 +1,22 @@
+\begin{lstlisting}[float,language=C,caption=Tập lệnh khởi tạo các thuộc tính GATT, label=gattBle,captionpos=b]
+void setupPosition(void)
+{
+ 
+  positionService.begin();
+
+  accelerometerCharacter.setProperties(CHR_PROPS_NOTIFY+CHR_PROPS_READ+CHR_PROPS_WRITE );
+  accelerometerCharacter.setPermission(SECMODE_OPEN, SECMODE_NO_ACCESS);
+  accelerometerCharacter.setFixedLen(9);
+  accelerometerCharacter.setCccdWriteCallback(cccd_callback);  // Optionally capture CCCD updates
+  accelerometerCharacter.begin();
+  uint8_t accelerometerData[9] = { 0b00000000, 0b00000000, 0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000}; // Set the characteristic to use 8-bit values, with the sensor connected and detected
+  accelerometerCharacter.write(accelerometerData, 9);
+
+  gyroscopeCharacter.setProperties(CHR_PROPS_READ);
+  gyroscopeCharacter.setPermission(SECMODE_OPEN, SECMODE_NO_ACCESS);
+  gyroscopeCharacter.setFixedLen(1);
+  gyroscopeCharacter.begin();
+  gyroscopeCharacter.write8(2);    // Set the characteristic to 'Wrist' (2)
+}
+
+\end{lstlisting}

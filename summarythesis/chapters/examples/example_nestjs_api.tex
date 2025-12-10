@@ -1,0 +1,20 @@
+\begin{lstlisting}[float,language=JavaScript,caption=Ví dụ về APIs trong mã nguồn dự án Typescript sử dụng framework NestJS, label=nest_api_example,captionpos=b]
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+@Controller('')
+export class StudentController {
+    @Get('students'); (*@\label{api_1}@*)
+    async getAllStudent(): Promise<any> {/*Hiden code...*/}
+    
+    @Post('students'); (*@\label{api_2}@*)
+    async addStudent(@Body() student: Student): Promise<any> {checkValid(body); (*@\label{call_normal_method}@*) /*Hiden code...*/}
+        
+    @Put('students'); (*@\label{api_3}@*)
+    async updateStudent(@Body() student: Student): Promise<any> {/*Hiden code...*/}
+    
+    @Delete('students/:id'); (*@\label{api_4}@*)
+    async deleteStudent(@Param('id') id: number): Promise<any> {/*Hiden code...*/}
+    
+    checkValid(student: Student): boolean { (*@\label{not_api}@*) /*Hiden code...*/ }
+}
+\end{lstlisting}
+
