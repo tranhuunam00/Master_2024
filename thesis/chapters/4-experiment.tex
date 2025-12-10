@@ -641,7 +641,7 @@ thấy tiềm năng để giảm tiếp kích thước mô hình bằng cách gi
 luyện.
 
 \section{Triển khai mô hình lên phần cứng}
-\section{Chuyển đổi mô hình}
+\subsection{Chuyển đổi mô hình}
 
 Đầu tiên, bước chuẩn hóa sẽ được tiến hành để biến đổi từ mô hình trên máy chủ trung tâm thành định dạng mô hình trên vi điều khiển.
 Đối với mô hình LR, sau khi mô hình LR được huấn luyện và hiệu chỉnh,
@@ -690,7 +690,7 @@ khiển. Cuối cùng, tệp này được chuyển đổi sang dạng mảng nh
 (\texttt{position\_model.h}). Toàn bộ quy trình này nhằm tối ưu mô hình và giúp
 hệ thống thực hiện suy luận trực tiếp trên vi điều khiển ARM Cortex-M4.
 
-\section{Triển khai tại biên}
+\subsection{Triển khai tại biên}
 
 Trong bước triển khai thực tế, mô hình Logistic Regression (LR) được ánh xạ
 trực tiếp sang mã C/C++ thông qua ba thành phần chính: (i) tệp \texttt{model.h}

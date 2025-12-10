@@ -58,6 +58,6 @@
 \contentsline {subsection}{\numberline {3.3.3.}Lựa chọn tham số}{79}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4.}Đánh giá kết quả}{85}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4.}Triển khai mô hình lên phần cứng}{88}{section.3.4}%
-\contentsline {section}{\numberline {3.5.}Chuyển đổi mô hình}{88}{section.3.5}%
-\contentsline {section}{\numberline {3.6.}Triển khai tại biên}{90}{section.3.6}%
+\contentsline {subsection}{\numberline {3.4.1.}Chuyển đổi mô hình}{88}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2.}Triển khai tại biên}{90}{subsection.3.4.2}%
 \contentsfinish 
