@@ -1,4 +1,4 @@
-Tư thế ngủ nắm vai trò đặc biệt quan trọng trong việc duy trì sức khỏe tổng thể
+Tư thế ngủ có vai trò đặc biệt quan trọng trong việc duy trì sức khỏe tổng thể
 và chất lượng giấc ngủ, bên cạnh các yếu tố khác như thời lượng, môi trường và
 thói quen ngủ. Nhiều nghiên cứu đã chỉ ra rằng tư thế ngủ có thể ảnh hưởng trực
 tiếp đến hoạt động của hệ hô hấp, tim mạch và hệ cơ - xương, đặc biệt là cột
@@ -16,20 +16,20 @@ tại giường để thu thập tín hiệu nhịp tim \cite{Lee2013_12ecg}; c�
 nhận dạng tư thế bằng thị giác máy \cite{Mohammadi2019_camera, Tam2021_camera}.
 
 Các thiết bị đeo sử dụng tín hiệu đo lường quán tính (Inertial Measurement Unit
-- IMU) được đặt tại nhiều vị trí khác nhau trên cơ thể nổi lên như một cách
-tiếp cận nhỏ gọn, thuận tiện. Trong nghiên cứu \cite{Jeng_osa}, tác giả đã đề
-xuất hệ thống iSleePost sử dụng cảm biến gia tốc đeo ở cổ tay. Hệ thống này có
-độ chính xác lên tới 85\% trong việc nhận dạng các tư thế ngủ bằng các phương
-pháp học máy. Một thiết bị đeo khác có tên MORFEA được gắn phía trên mũi
-\cite{Manoni2020_posture}. Thiết bị này tích hợp cảm biến gia tốc ba trục để
-phân tích chuyển động. Tư thế ngủ sẽ được ước lượng dựa trên góc xoay và độ
-nghiêng của đầu và tham chiếu tới bảng điều kiện được xác lập từ trước. Tuy
-nhiên, tư thế nằm sấp không được xem xét do vị trí gắn thiết bị ở vùng mũi. Một
-nghiên cứu gần đây giới thiệu hệ thống NAPPA - tã thông minh được thiết kế để
-theo dõi nhịp thở và tư thế của trẻ sơ sinh trong khi ngủ \cite{Ranta2021_ta}.
-Thiết bị sử dụng cảm biến gia tốc và con quay hồi chuyển. Tuy nhiên, trong
-nghiên cứu này, các phương pháp và kết quả phát hiện tư thế ngủ chi tiết không
-được công bố.
+- IMU) được đặt tại nhiều vị trí khác nhau trên cơ thể được coi như một cách
+tiếp cận nhỏ gọn, thuận tiện trong phân loại tư thế ngủ. Trong nghiên cứu
+\cite{Jeng_osa}, tác giả đã đề xuất hệ thống iSleePost sử dụng cảm biến gia tốc
+đeo ở cổ tay. Hệ thống này có độ chính xác lên tới 85\% trong việc nhận dạng
+các tư thế ngủ bằng các phương pháp học máy. Một thiết bị đeo khác có tên
+MORFEA được gắn phía trên mũi \cite{Manoni2020_posture}. Thiết bị này tích hợp
+cảm biến gia tốc ba trục để phân tích chuyển động. Tư thế ngủ sẽ được ước lượng
+dựa trên góc xoay và độ nghiêng của đầu và tham chiếu tới bảng điều kiện được
+xác lập từ trước. Tuy nhiên, tư thế nằm sấp không được xem xét do vị trí gắn
+thiết bị ở vùng mũi. Một nghiên cứu gần đây giới thiệu hệ thống NAPPA - tã
+thông minh được thiết kế để theo dõi nhịp thở và tư thế của trẻ sơ sinh trong
+khi ngủ \cite{Ranta2021_ta}. Thiết bị sử dụng cảm biến gia tốc và con quay hồi
+chuyển. Tuy nhiên, trong nghiên cứu này, các phương pháp và kết quả phát hiện
+tư thế ngủ chi tiết không được công bố.
 
 Các nghiên cứu sử dụng duy nhất một cảm biến gia tốc trong việc phân loại tư
 thế ngủ cũng cho thấy tiềm năng rất lớn. Nghiên cứu sử dụng cảm biến gia tốc
@@ -45,21 +45,21 @@ cửa sổ 1 giây, đạt độ chính xác > 98\% (F1-score trung bình 0.945 
 trong đó DT có hiệu năng và mức tiêu thụ bộ nhớ tối ưu nhất. Nhóm tác giả trong
 nghiên cứu \cite{Ferrer_osa} phát triển ứng dụng SleepPos với độ chính xác tổng
 thể đạt 98.2\%, nhưng độ nhạy với tư thế nằm sấp chỉ đạt 38.9\%. Nghiên cứu
-trên 89 bệnh nhân sử dụng cảm biến gắn tại hõm ức tích hợp cảm biến gia tốc ba
+trên 89 bệnh nhân sử dụng cảm biến gắn tại vùng cổ tích hợp cảm biến gia tốc ba
 trục cho thấy độ chính xác 96.9 - 98.6\% trong phát hiện tư thế ngủ, khẳng định
-hõm ức là vị trí tối ưu cho cảm biến gắn tại vùng cổ
-\cite{Kukwa2022_xuong_uc_co}. Các kết quả này cho thấy hướng tiếp cận đơn cảm
-biến hoàn toàn có thể thay thế cho hệ thống đa cảm biến trong bài toán phân
-loại tư thế ngủ. Tuy nhiên, các công trình hiện có chưa xem xét đến việc phân
-biệt trạng thái “đã nằm” hay “chưa nằm” - để xác định các hoạt động khác trong
-lúc ngủ. Đồng thời, việc lựa chọn tập hợp đặc trưng từ dữ liệu đơn cảm biến gia
-tốc và mô hình học máy phù hợp duy nhất đặt tại vùng cổ - vị trí có khả năng
-phản ánh biến thiên tư thế tốt nhất vẫn chưa được nghiên cứu cụ thể. Cho đến
-nay, tại Việt Nam chưa có công bố khoa học nào tập trung vào bài toán nhận dạng
-tư thế ngủ dựa hoàn toàn trên dữ liệu đơn cảm biến gia tốc và được triển khai
-mô hình học máy trực tiếp trên phần cứng hạn chế về tài nguyên. Khoảng trống
-này đặt ra yêu cầu là phải phát triển một hệ thống phân loại tư thế ngủ đơn
-giản với chi phí phù hợp, có khả năng xử lý ngay lập tức.
+vùng cổ là vị trí tối ưu. \cite{Kukwa2022_xuong_uc_co}. Các kết quả này cho
+thấy hướng tiếp cận đơn cảm biến hoàn toàn có thể thay thế cho hệ thống đa cảm
+biến trong bài toán phân loại tư thế ngủ. Tuy nhiên, các công trình hiện có
+chưa xem xét đến việc phân biệt trạng thái “đã nằm” hay “chưa nằm” - để xác
+định các hoạt động khác trong lúc ngủ. Đồng thời, việc lựa chọn tập hợp đặc
+trưng từ dữ liệu đơn cảm biến gia tốc và mô hình học máy phù hợp duy nhất đặt
+tại vùng cổ - vị trí có khả năng phản ánh biến thiên tư thế tốt nhất vẫn chưa
+được nghiên cứu cụ thể. Cho đến nay, tại Việt Nam chưa có công bố khoa học nào
+tập trung vào bài toán nhận dạng tư thế ngủ dựa hoàn toàn trên dữ liệu đơn cảm
+biến gia tốc và được triển khai mô hình học máy trực tiếp trên phần cứng hạn
+chế về tài nguyên. Khoảng trống này đặt ra yêu cầu là phải phát triển một hệ
+thống phân loại tư thế ngủ đơn giản với chi phí phù hợp, có khả năng xử lý ngay
+lập tức.
 
 Vì vậy, luận văn này sẽ tập trung làm rõ các đặc trưng của dữ liệu cảm biến gia
 tốc khi được đặt tại vùng cổ, đồng thời đi sâu tìm hiểu các đặc trưng dữ liệu

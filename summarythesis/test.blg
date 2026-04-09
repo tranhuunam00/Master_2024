@@ -1,0 +1,24 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'test.blg'
+[199] biber-MSWIN64:342> INFO - === 
+[292] Biber.pm:421> INFO - Reading 'test.bcf'
+[371] Biber.pm:1002> INFO - Found 3 citekeys in bib section 0
+[391] Biber.pm:4487> INFO - Processing section 0
+[408] Biber.pm:4678> INFO - Looking for bibtex file 'refs.bib' for section 0
+[503] bibtex.pm:1713> INFO - LaTeX decoding ...
+[646] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
+[745] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'variable = shifted' with 'variable = non-ignorable'
+[746] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[746] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'vi-VN'
+[784] bbl.pm:676> INFO - Writing 'test.bbl' with encoding 'UTF-8'
+[787] bbl.pm:779> INFO - Output to test.bbl
+[787] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_hdQJ\8fe4c9854184545302f21ebf0d47516c_15432.utf8, line 906, warning: undefined macro "March"
+[787] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_hdQJ\8fe4c9854184545302f21ebf0d47516c_15432.utf8, line 1045, warning: undefined macro "July"
+[787] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_hdQJ\8fe4c9854184545302f21ebf0d47516c_15432.utf8, line 1052, warning: undefined macro "July"
+[787] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_hdQJ\8fe4c9854184545302f21ebf0d47516c_15432.utf8, line 1076, warning: undefined macro "February"
+[787] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_hdQJ\8fe4c9854184545302f21ebf0d47516c_15432.utf8, line 1127, warning: undefined macro "July"
+[787] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_hdQJ\8fe4c9854184545302f21ebf0d47516c_15432.utf8, line 1135, warning: undefined macro "July"
+[787] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_hdQJ\8fe4c9854184545302f21ebf0d47516c_15432.utf8, line 1142, warning: undefined macro "July"
+[787] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_hdQJ\8fe4c9854184545302f21ebf0d47516c_15432.utf8, line 1218, warning: undefined macro "November"
+[787] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_hdQJ\8fe4c9854184545302f21ebf0d47516c_15432.utf8, line 1924, warning: 1 characters of junk seen at toplevel
+[787] Biber.pm:134> INFO - WARNINGS: 9

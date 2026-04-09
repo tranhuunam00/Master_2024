@@ -1,0 +1,41 @@
+\begin{algorithm}[H]
+	\SetAlgoLined
+	\KwData{
+	\textit{expression}: thành phần AST của biểu thức, \textit{table}: bảng lưu trữ các biến sử dụng trong đường đi
+	}
+    \KwResult{\textit{symExpression}: Biểu thức đã được thay thế}
+    \SetKwFunction{replaceExpression}{\textsc{REPLACE}-EXPRESSION}
+    \SetKw{KwBy}{by}
+    \BlankLine
+    \replaceExpression($expression$, $table$) \\
+    % $V \leftarrow path.getAllNodes()$ \label{symbolic:getAllNodes}; $table \leftarrow new Array()$ \label{symbolic:initTable}; $constraints = new Array()$ \label{symbolic:initConstraintArray}\\
+     \uIf{ $expression.isSingleExpression()$ \label{replace-alg:checkSingleExp}}{ 
+        \uIf{$expression.isLiteralExpression()$ \label{replace-alg:checkLiteralExpression}}{
+            $symExpression \leftarrow$ new $LiteralSymExp(expression.getText())$ \label{replace-alg:assignLiteralSymExp}\\
+        }
+        \Else {
+            $aliasName \leftarrow getAliasName(expression)$ \label{replace-alg:getAliasName}\\
+            $variable \leftarrow table.findByName(aliasName)$ \label{replace-alg:findByName}\\
+            \uIf{$variable != null$ \label{replace-alg:checkNotNull}}{
+            $symExpression \leftarrow variable.getValueExpression()$ \label{replace-alg:getValueExpression:1}\\
+            }
+            \Else{
+                $newVar \leftarrow table.createNewVarAndAddToTable(expression, table)$ \label{replace-alg:createNewVar}\\
+                $symExpression \leftarrow newVar.getValueExpression$ \label{replace-alg:getValueExpression:2}\\
+            }
+        }
+      }
+      \uElseIf{$expression.isBinaryExpression()$ \label{replace-alg:checkBinaryExp}}
+      {
+         $operator \leftarrow expression.getOperator()$ \label{replace-alg:getOperator}\\
+        $left \leftarrow expression.getLeft()$ \label{replace-alg:getLeft}\\
+         $symLeft \leftarrow \replaceExpression{left, table}$ \label{replace-alg:getSymLeft}\\
+         $right \leftarrow expression.getRight() $  \label{replace-alg:getRight}\\
+         $symRight \leftarrow \replaceExpression{right, table} $  \label{replace-alg:getSymRight}\\
+        $symExpression \leftarrow$ new $BinarySymExp(operator, symLeft, symRight)$ \label{replace-alg:assignBinarySymExp}
+      }
+     \Return $symExpression$
+      
+    \caption{Thuật toán thay thế biểu thức}
+    \label{replace-expression}
+\end{algorithm}
