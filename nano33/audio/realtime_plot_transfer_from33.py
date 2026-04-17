@@ -1,46 +1,45 @@
 import serial
+import numpy as np
+import wave
 import time
+from datetime import datetime
 
-# ===== CẤU HÌNH =====
 PORT = 'COM6'
-BAUD_RATE = 115200
-FILENAME = "audio_data.csv"
+BAUD = 921600
+DURATION = 5
+SAMPLE_RATE = 16000
 
-LABEL = 1             # ví dụ: 1 = ngáy, 0 = bình thường
-DURATION = 60         # ghi bao nhiêu giây
+ser = serial.Serial(PORT, BAUD)
 
 
-ser = serial.Serial(PORT, BAUD_RATE, timeout=1)
-time.sleep(2)  # chờ Arduino reset
+time.sleep(2)
 
-print(f"Recording audio from {PORT} → '{FILENAME}' | LABEL = {LABEL}")
-print("Press Ctrl+C to stop...\n")
+ser.reset_input_buffer()
 
-start_time = time.time()
+time.sleep(0.1)
+while ser.in_waiting:
+    ser.read(ser.in_waiting)
 
-# ===== GHI FILE =====
-with open(FILENAME, "w") as f:
-    f.write("audio,label\n")  # header đơn giản
+print("Recording...")
 
-    try:
-        while time.time() - start_time < DURATION:
-            line = ser.readline().decode("utf-8").strip()
 
-            if line:
-                try:
-                    value = int(line)  # audio sample (int16)
-                    labeled_line = f"{value},{LABEL}"
+num_samples = SAMPLE_RATE * DURATION
+buffer = bytearray()
 
-                    print(labeled_line)
-                    f.write(labeled_line + "\n")
+while len(buffer) < num_samples * 2:
+    data = ser.read(1024)
+    if data:
+        buffer.extend(data)
 
-                except:
-                    # bỏ qua dòng lỗi
-                    continue
+ser.close()
 
-    except KeyboardInterrupt:
-        print("\n⏹️ Stopped manually.")
+audio = np.frombuffer(buffer[:num_samples*2], dtype=np.int16)
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+filename = f"output_{timestamp}.wav"
+with wave.open(filename, "wb") as wf:
+    wf.setnchannels(1)
+    wf.setsampwidth(2)
+    wf.setframerate(SAMPLE_RATE)
+    wf.writeframes(audio.tobytes())
 
-    finally:
-        ser.close()
-        print(f"\n✅ Done. File saved: {FILENAME}")
+print("Saved OK")
