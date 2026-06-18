@@ -193,6 +193,7 @@ def create_document():
     add_bullet("Thiết kế dự phòng sẵn cổng kết nối cho cảm biến đo nồng độ bão hòa oxy máu (SpO2) nhằm phục vụ việc nâng cấp tích hợp ở phiên bản tiếp theo.")
     add_bullet("Giao diện người dùng tại chỗ trực quan thông qua màn hình OLED hiển thị thông số và nút xoay mã hóa vòng quay (Rotary Encoder) kết hợp nút nhấn.")
     add_bullet("Kết nối không dây BLE GATT Profile với tên thiết bị 'SIPAP' truyền gói dữ liệu JSON mỗi 200ms lên ứng dụng di động để đồng bộ với đám mây SleepCare.")
+    add_bullet("Tích hợp bình làm ẩm (Humidifier module) chứa nước cất trên đường thở giúp duy trì độ ẩm và nhiệt độ thích hợp cho luồng khí cung cấp tới bệnh nhân, giảm kích ứng và khô rát niêm mạc hô hấp của người sử dụng.")
 
     add_image_with_caption(doc, "image.png", "Hình 2: Sơ đồ luồng hoạt động của hệ thống hỗ trợ thở SIPAP với 3 chế độ CPAP, BiPAP và APAP.", 5.5)
 
@@ -208,13 +209,13 @@ def create_document():
     add_bullet("Khối xử lý trung tâm: Vi điều khiển chính Arduino Nano 33 BLE Sense (sử dụng chip ARM Cortex-M4 32-bit mạnh mẽ, tích hợp sẵn anten BLE) thực hiện việc đọc dữ liệu cảm biến, chạy thuật toán điều khiển PID quạt và phát sóng BLE. Vi điều khiển phụ ESP32 được dự phòng tích hợp trên bo mạch để thực hiện kết nối Wi-Fi/Internet gửi dữ liệu trực tiếp lên Cloud IoT.")
     add_bullet("Khối tạo áp lực: Sử dụng động cơ quạt thổi không chổi than (Brushless Blower) WS4540-12-NZ03 hoạt động ở điện áp 12VDC, kèm Driver điều khiển chuyên dụng. Driver nhận xung PWM từ chân D3 của Arduino để thay đổi tốc độ quay, đồng thời gửi lại xung phản hồi tốc độ quay FG về chân ngắt D2 của Arduino.")
     add_bullet("Khối đường dẫn khí: Bao gồm buồng khí chế tạo từ vật liệu Mica trong dày 3mm cắt laser chính xác, ống dẫn khí silicon y tế mềm, mặt nạ thở dạng mũi (nasal mask) và van thở ra (exhalation valve).")
+    add_bullet("Khối làm ẩm (Humidifier): Tích hợp bình làm ẩm chứa nước y tế nằm tiếp nối ngay sau quạt thổi khí và trước mặt nạ thở. Khí áp lực dương đi qua bề mặt nước để hấp thụ hơi ẩm khuếch tán tự nhiên trước khi đi vào đường hô hấp của bệnh nhân.")
     add_bullet("Khối nguồn: Adapter 12VDC công suất lớn cấp cho động cơ blower; mạch hạ áp Buck Converter bước xuống 5V và 3.3V có độ ổn định cao để nuôi vi điều khiển và các cảm biến tránh nhiễu tín hiệu analog.")
     add_bullet("Khối giao diện: Màn hình OLED kết hợp bộ mã hóa quay (Rotary Encoder) 8 nút xoay và nút ấn để người dùng cài đặt thông số áp suất đích và chế độ thở tại chỗ.")
 
     add_image_with_caption(doc, "schematic.png", "Hình 3: Sơ đồ kết nối phần cứng và phân bổ chân tín hiệu giữa các thành phần của hệ thống SIPAP.", 5.5)
-    add_image_with_caption(doc, "sipap_conceptual_diagram.png", "Hình 4: Sơ đồ thiết kế concept 3D của hệ thống hỗ trợ thở SIPAP.", 5.0)
-    add_image_with_caption(doc, "image (4).png", "Hình 5: Thiết bị thực tế SIPAP cận cảnh cấu trúc buồng khí và cách bố trí các module bo mạch.", 4.0)
-    add_image_with_caption(doc, "image (1).png", "Hình 6: Mẫu thử nghiệm hoàn chỉnh của thiết bị SIPAP kết nối với bóng thở (phổi giả) phục vụ kiểm định hiệu năng quạt thổi.", 4.0)
+    add_image_with_caption(doc, "image (4).png", "Hình 4: Thiết bị thực tế SIPAP cận cảnh cấu trúc buồng khí và cách bố trí các module bo mạch.", 4.0)
+    add_image_with_caption(doc, "image (1).png", "Hình 5: Mẫu thử nghiệm hoàn chỉnh của thiết bị SIPAP kết nối với bóng thở (phổi giả) phục vụ kiểm định hiệu năng quạt thổi.", 4.0)
 
     add_heading_2("1.1. Chi tiết thông số kỹ thuật của các cấu phần cốt lõi")
     
@@ -226,7 +227,7 @@ def create_document():
     add_bullet("Vận hành tại điểm Lưu lượng khí cực đại (At Max Air flow): Tốc độ quay đạt 45.000 vòng/phút (RPM); Dòng điện tiêu thụ 1,6 A; Công suất tiêu thụ 119,2 W; Lưu lượng khí đạt 7,2 m³/h (tương đương 4,23 CFM hoặc 120 LPM); Độ ồn đo được là 62 dBA.")
     add_bullet("Vận hành tại điểm Á suất khí cực đại (At Max Air Pressure): Tốc độ quay đạt 49.000 vòng/phút (RPM); Dòng điện tiêu thụ 0,9 A; Công suất tiêu thụ 10,8 W; Áp suất tĩnh đạt 5,0 kPa (tương đương 51 cmH2O); Độ ồn khi bị chặn hoàn toàn dòng khí (Block Noise Level) là 49 dBA.")
     
-    add_image_with_caption(doc, "blower.png", "Hình 7: Động cơ quạt thổi không chổi than WS4540-12-NZ03 sử dụng trong khối tạo áp lực.", 3.2)
+    add_image_with_caption(doc, "blower.png", "Hình 6: Động cơ quạt thổi không chổi than WS4540-12-NZ03 sử dụng trong khối tạo áp lực.", 3.2)
     
     p = doc.add_paragraph()
     p.add_run("b) Cảm biến áp suất đường thở (MPXV5010G):\n").bold = True
@@ -243,7 +244,7 @@ def create_document():
     add_bullet("Thời gian khởi động ổn định (Warm-Up Time): 20 ms.")
     add_bullet("Áp suất chịu đựng tối đa trước khi hỏng (Pmax): 40 kPa.")
     
-    add_image_with_caption(doc, "sensorpressure.png", "Hình 8: Cảm biến áp suất silicon MPXV5010G với kết cấu chân dán SOP.", 3.0)
+    add_image_with_caption(doc, "sensorpressure.png", "Hình 7: Cảm biến áp suất silicon MPXV5010G với kết cấu chân dán SOP.", 3.0)
     
     p = doc.add_paragraph()
     p.add_run("c) Cảm biến lưu lượng khí thở (Sensirion SFM3300-D / SFM3300-AW):\n").bold = True
@@ -259,7 +260,7 @@ def create_document():
     add_bullet("Giá trị điểm không (Offset Flow): 32768.")
     add_bullet("Dải áp suất tuyệt đối hoạt động: 0,54 đến 1,1 bar.")
     
-    add_image_with_caption(doc, "sensorflow.png", "Hình 9: Cảm biến lưu lượng khí y tế chuyên dụng Sensirion SFM3300-D.", 3.5)
+    add_image_with_caption(doc, "sensorflow.png", "Hình 8: Cảm biến lưu lượng khí y tế chuyên dụng Sensirion SFM3300-D.", 3.5)
 
     add_heading_2("2. Danh mục vật tư chế tạo mẫu thử nghiệm (BOM)")
     
@@ -285,7 +286,8 @@ def create_document():
         ("11", "Cảm biến đo nồng độ SpO2 (chưa dùng)", "1", "100.000", "100.000", "Cảm biến quang học đo nồng độ oxy huyết (dự phòng nâng cấp cho phiên bản sau)"),
         ("12", "Màn hình hiển thị OLED", "1", "65.000", "65.000", "Màn hình hiển thị thông số áp suất, lưu lượng, nhịp thở"),
         ("13", "Cảm biến lưu lượng (SFM3300-D)", "1", "2.300.000", "2.300.000", "Cảm biến lưu lượng khí y tế chuyên dụng, giao tiếp I2C"),
-        ("14", "Nút xoay và nút ấn (Rotary Encoder)", "1", "40.000", "40.000", "Bộ mã hóa vòng quay tương tác người dùng tại chỗ")
+        ("14", "Nút xoay và nút ấn (Rotary Encoder)", "1", "40.000", "40.000", "Bộ mã hóa vòng quay tương tác người dùng tại chỗ"),
+        ("15", "Bình làm ẩm khí thở (Humidifier)", "1", "250.000", "250.000", "Bình chứa nước y tế làm ẩm luồng khí thở tự nhiên")
     ]
     
     table = doc.add_table(rows=1, cols=6)
@@ -338,7 +340,7 @@ def create_document():
     # Merge cells for total title
     row_cells[0].merge(row_cells[1]).merge(row_cells[2]).merge(row_cells[3])
     
-    row_cells[4].text = "7.095.000"
+    row_cells[4].text = "7.345.000"
     set_cell_margins(row_cells[4], top=120, bottom=120, left=150, right=150)
     set_cell_shading(row_cells[4], "F2F2F2")
     p = row_cells[4].paragraphs[0]
@@ -405,13 +407,13 @@ def create_document():
                "'LED_ON' (bật LED chỉ thị), 'LED_OFF' (tắt LED chỉ thị), 'START' (chạy quạt), 'STOP' (tắt quạt), 'PWM:<giá trị>' (thiết lập tốc độ quạt trực tiếp).\n"
                "  - Tính năng an toàn: Khi mất kết nối BLE (disconnect), thiết bị tự động tắt quạt (PWM = 0) để bảo vệ an toàn cho bệnh nhân.")
 
-    add_image_with_caption(doc, "image (2).png", "Hình 10: Thử nghiệm thực nghiệm đo đạc thông số và điều khiển tốc độ quạt thổi trên mô hình người giả kết nối với máy tính.", 4.0)
+    add_image_with_caption(doc, "image (2).png", "Hình 9: Thử nghiệm thực nghiệm đo đạc thông số và điều khiển tốc độ quạt thổi trên mô hình người giả kết nối với máy tính.", 4.0)
 
     # 12. Section 6: Technical and Economic Benefits
     add_heading_1("VI. HIỆU QUẢ ĐẠT ĐƯỢC VÀ ĐỊNH HƯỚNG PHÁT TRIỂN")
     p = doc.add_paragraph()
     p.add_run("1. Hiệu quả kỹ thuật và kinh tế:\n").bold = True
-    add_bullet("Giá thành chế tạo cực kỳ thấp: Tổng chi phí linh kiện chỉ khoảng 7.095.000 VND, rẻ hơn từ 3 đến 8 lần so với các máy CPAP thương mại nhập khẩu trên thị trường.")
+    add_bullet("Giá thành chế tạo cực kỳ thấp: Tổng chi phí linh kiện chỉ khoảng 7.345.000 VND, rẻ hơn từ 3 đến 8 lần so với các máy CPAP thương mại nhập khẩu trên thị trường.")
     add_bullet("Hệ thống tích hợp các cảm biến đo lường áp suất và lưu lượng khí thở thời gian thực, cung cấp dữ liệu hô hấp quan trọng cho bệnh nhân trong giấc ngủ.")
     add_bullet("Khả năng IoT hóa cao: Nhờ kết nối BLE và sự chuẩn bị của module ESP32, dữ liệu hô hấp có thể dễ dàng đồng bộ lên đám mây y tế SleepCare, cho phép bác sĩ chẩn đoán và theo dõi từ xa.")
     add_bullet("Thiết kế nhỏ gọn, vỏ mica cắt laser trong suốt giúp dễ dàng kiểm tra cơ khí trực quan, lắp đặt và sửa chữa nhanh chóng theo dạng module.")
@@ -423,7 +425,7 @@ def create_document():
     add_bullet("Giai đoạn 3: AI-based Adaptation - Phát triển và nhúng thuật toán trí tuệ nhân tạo (AI/Machine Learning) trên ứng dụng di động hoặc máy chủ để tự động nhận dạng nhịp thở bất thường và đưa ra dự báo sớm cơn ngưng thở, từ đó điều chỉnh tự động áp suất quạt thổi (Auto-CPAP/APAP) thông minh hơn.")
     add_bullet("Giai đoạn 4: Sleep Ecosystem Integration - Tích hợp thiết bị vào hệ sinh thái chăm sóc giấc ngủ thông minh toàn diện cùng các cảm biến môi trường (nhiệt độ, ánh sáng, tiếng ồn phòng ngủ).")
 
-    add_image_with_caption(doc, "image (5).png", "Hình 11: Sơ đồ lộ trình phát triển hệ thống SIPAP từ phiên bản thử nghiệm (MVP) đến hệ sinh thái chăm sóc giấc ngủ thông minh (Mô hình mô phỏng thiết kế dự kiến).", 6.0)
+    add_image_with_caption(doc, "image (5).png", "Hình 10: Sơ đồ lộ trình phát triển hệ thống SIPAP từ phiên bản thử nghiệm (MVP) đến hệ sinh thái chăm sóc giấc ngủ thông minh (Mô hình mô phỏng thiết kế dự kiến).", 6.0)
 
     # 13. Section 7: Patent Claims (Yêu cầu bảo hộ)
     add_heading_1("VII. YÊU CẦU BẢO HỘ")
@@ -448,6 +450,10 @@ def create_document():
     
     p = doc.add_paragraph()
     p.add_run("5. Hệ thống hỗ trợ thở theo điểm yêu cầu bảo hộ 1, đặc trưng ở chỗ: ")
+    p.add_run("Hệ thống tích hợp thêm một bình làm ẩm khí thở (Humidifier) chứa nước cất y tế đặt tiếp nối sau khối tạo áp lực dương và trước mặt nạ thở, nhằm làm ẩm tự nhiên luồng khí lưu thông, ngăn ngừa hiện tượng khô rát niêm mạc hô hấp của người sử dụng.")
+    
+    p = doc.add_paragraph()
+    p.add_run("6. Hệ thống hỗ trợ thở theo điểm yêu cầu bảo hộ 1, đặc trưng ở chỗ: ")
     p.add_run("Bảo hộ tên gọi độc quyền sáng chế 'SIPAP' (Smart Interactive PAP - Thiết bị hỗ trợ thở áp lực dương tương tác thông minh) do GS.TS.KH. Dương Quý Sỹ đề xuất sáng tạo gắn liền với hệ sinh thái giải pháp kỹ thuật y tế nêu trên.")
 
     # Save to file
