@@ -198,8 +198,8 @@ void setup()
     while (1);
   }
 
-  BLE.setLocalName("CPAP_VSSM");
-  BLE.setDeviceName("CPAP_VSSM");
+  BLE.setLocalName("SIPAP");
+  BLE.setDeviceName("SIPAP");
 
   BLE.setAdvertisedService(cpapService);
 

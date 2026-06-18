@@ -50,8 +50,8 @@ void setup() {
   }
 
   // ===== BLE Device =====
-  BLE.setLocalName("CPAP_VSSM");
-  BLE.setDeviceName("CPAP_VSSM");
+  BLE.setLocalName("SIPAP");
+  BLE.setDeviceName("SIPAP");
 
   // ===== Add Service =====
   BLE.setAdvertisedService(cpapService);
