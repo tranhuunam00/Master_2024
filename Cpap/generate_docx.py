@@ -212,8 +212,9 @@ def create_document():
     add_bullet("Khối giao diện: Màn hình OLED kết hợp bộ mã hóa quay (Rotary Encoder) 8 nút xoay và nút ấn để người dùng cài đặt thông số áp suất đích và chế độ thở tại chỗ.")
 
     add_image_with_caption(doc, "schematic.png", "Hình 3: Sơ đồ kết nối phần cứng và phân bổ chân tín hiệu giữa các thành phần của hệ thống SIPAP.", 5.5)
-    add_image_with_caption(doc, "image (4).png", "Hình 4: Thiết bị thực tế SIPAP cận cảnh cấu trúc buồng khí và cách bố trí các module bo mạch.", 4.0)
-    add_image_with_caption(doc, "image (1).png", "Hình 5: Mẫu thử nghiệm hoàn chỉnh của thiết bị SIPAP kết nối với bóng thở (phổi giả) phục vụ kiểm định hiệu năng quạt thổi.", 4.0)
+    add_image_with_caption(doc, "sipap_conceptual_diagram.png", "Hình 4: Sơ đồ thiết kế concept 3D của hệ thống hỗ trợ thở SIPAP.", 5.0)
+    add_image_with_caption(doc, "image (4).png", "Hình 5: Thiết bị thực tế SIPAP cận cảnh cấu trúc buồng khí và cách bố trí các module bo mạch.", 4.0)
+    add_image_with_caption(doc, "image (1).png", "Hình 6: Mẫu thử nghiệm hoàn chỉnh của thiết bị SIPAP kết nối với bóng thở (phổi giả) phục vụ kiểm định hiệu năng quạt thổi.", 4.0)
 
     add_heading_2("1.1. Chi tiết thông số kỹ thuật của các cấu phần cốt lõi")
     
@@ -225,7 +226,7 @@ def create_document():
     add_bullet("Vận hành tại điểm Lưu lượng khí cực đại (At Max Air flow): Tốc độ quay đạt 45.000 vòng/phút (RPM); Dòng điện tiêu thụ 1,6 A; Công suất tiêu thụ 119,2 W; Lưu lượng khí đạt 7,2 m³/h (tương đương 4,23 CFM hoặc 120 LPM); Độ ồn đo được là 62 dBA.")
     add_bullet("Vận hành tại điểm Á suất khí cực đại (At Max Air Pressure): Tốc độ quay đạt 49.000 vòng/phút (RPM); Dòng điện tiêu thụ 0,9 A; Công suất tiêu thụ 10,8 W; Áp suất tĩnh đạt 5,0 kPa (tương đương 51 cmH2O); Độ ồn khi bị chặn hoàn toàn dòng khí (Block Noise Level) là 49 dBA.")
     
-    add_image_with_caption(doc, "blower.png", "Hình 6: Động cơ quạt thổi không chổi than WS4540-12-NZ03 sử dụng trong khối tạo áp lực.", 3.2)
+    add_image_with_caption(doc, "blower.png", "Hình 7: Động cơ quạt thổi không chổi than WS4540-12-NZ03 sử dụng trong khối tạo áp lực.", 3.2)
     
     p = doc.add_paragraph()
     p.add_run("b) Cảm biến áp suất đường thở (MPXV5010G):\n").bold = True
@@ -242,7 +243,7 @@ def create_document():
     add_bullet("Thời gian khởi động ổn định (Warm-Up Time): 20 ms.")
     add_bullet("Áp suất chịu đựng tối đa trước khi hỏng (Pmax): 40 kPa.")
     
-    add_image_with_caption(doc, "sensorpressure.png", "Hình 7: Cảm biến áp suất silicon MPXV5010G với kết cấu chân dán SOP.", 3.0)
+    add_image_with_caption(doc, "sensorpressure.png", "Hình 8: Cảm biến áp suất silicon MPXV5010G với kết cấu chân dán SOP.", 3.0)
     
     p = doc.add_paragraph()
     p.add_run("c) Cảm biến lưu lượng khí thở (Sensirion SFM3300-D / SFM3300-AW):\n").bold = True
@@ -258,7 +259,7 @@ def create_document():
     add_bullet("Giá trị điểm không (Offset Flow): 32768.")
     add_bullet("Dải áp suất tuyệt đối hoạt động: 0,54 đến 1,1 bar.")
     
-    add_image_with_caption(doc, "sensorflow.png", "Hình 8: Cảm biến lưu lượng khí y tế chuyên dụng Sensirion SFM3300-D.", 3.5)
+    add_image_with_caption(doc, "sensorflow.png", "Hình 9: Cảm biến lưu lượng khí y tế chuyên dụng Sensirion SFM3300-D.", 3.5)
 
     add_heading_2("2. Danh mục vật tư chế tạo mẫu thử nghiệm (BOM)")
     
@@ -271,7 +272,7 @@ def create_document():
     # 10. Table: Bill of Materials (BOM)
     # Columns: STT, Tên Linh Kiện, Số lượng, Đơn giá (VND), Thành tiền (VND), Ghi chú
     bom_data = [
-        ("1", "Arduino 33 BLE SENSE", "1", "863.000", "863.000", "Vi điều khiển chính, ARM Cortex-M4, tích hợp BLE"),
+        ("1", "Arduino Nano 33 BLE Sense", "1", "863.000", "863.000", "Vi điều khiển chính, ARM Cortex-M4, tích hợp BLE"),
         ("2", "ESP32 Microcontroller (chưa dùng)", "1", "162.000", "162.000", "Vi điều khiển phụ phục vụ mở rộng WiFi (dự phòng nâng cấp)"),
         ("3", "Nguồn 12 V", "1", "100.000", "100.000", "Cấp nguồn 12VDC cho quạt thổi và Driver"),
         ("4", "Rắc chuyển đổi", "1", "50.000", "50.000", "Đầu giắc cắm DC Power Jack 5.5x2.1mm"),
@@ -282,9 +283,9 @@ def create_document():
         ("9", "Mặt nạ mũi (Nasal Mask)", "1", "1.000.000", "1.000.000", "Mặt nạ thở silicon y tế đeo mũi của bệnh nhân"),
         ("10", "Mica trong + công cắt laser", "1", "500.000", "500.000", "Chế tạo hộp vỏ máy và buồng nén khí"),
         ("11", "Cảm biến đo nồng độ SpO2 (chưa dùng)", "1", "100.000", "100.000", "Cảm biến quang học đo nồng độ oxy huyết (dự phòng nâng cấp cho phiên bản sau)"),
-        ("12", "Màn hình LED hiển thị (OLED)", "1", "65.000", "65.000", "Màn hình hiển thị thông số áp suất, lưu lượng, nhịp thở"),
+        ("12", "Màn hình hiển thị OLED", "1", "65.000", "65.000", "Màn hình hiển thị thông số áp suất, lưu lượng, nhịp thở"),
         ("13", "Cảm biến lưu lượng (SFM3300-D)", "1", "2.300.000", "2.300.000", "Cảm biến lưu lượng khí y tế chuyên dụng, giao tiếp I2C"),
-        ("14", "Nút xoay và nút ấn (Rotary Encoder)", "8", "5.000", "40.000", "Bộ mã hóa vòng quay tương tác người dùng tại chỗ")
+        ("14", "Nút xoay và nút ấn (Rotary Encoder)", "1", "40.000", "40.000", "Bộ mã hóa vòng quay tương tác người dùng tại chỗ")
     ]
     
     table = doc.add_table(rows=1, cols=6)
@@ -404,7 +405,7 @@ def create_document():
                "'LED_ON' (bật LED chỉ thị), 'LED_OFF' (tắt LED chỉ thị), 'START' (chạy quạt), 'STOP' (tắt quạt), 'PWM:<giá trị>' (thiết lập tốc độ quạt trực tiếp).\n"
                "  - Tính năng an toàn: Khi mất kết nối BLE (disconnect), thiết bị tự động tắt quạt (PWM = 0) để bảo vệ an toàn cho bệnh nhân.")
 
-    add_image_with_caption(doc, "image (2).png", "Hình 8: Thử nghiệm thực nghiệm đo đạc thông số và điều khiển tốc độ quạt thổi trên mô hình người giả kết nối với máy tính.", 4.0)
+    add_image_with_caption(doc, "image (2).png", "Hình 10: Thử nghiệm thực nghiệm đo đạc thông số và điều khiển tốc độ quạt thổi trên mô hình người giả kết nối với máy tính.", 4.0)
 
     # 12. Section 6: Technical and Economic Benefits
     add_heading_1("VI. HIỆU QUẢ ĐẠT ĐƯỢC VÀ ĐỊNH HƯỚNG PHÁT TRIỂN")
@@ -422,7 +423,7 @@ def create_document():
     add_bullet("Giai đoạn 3: AI-based Adaptation - Phát triển và nhúng thuật toán trí tuệ nhân tạo (AI/Machine Learning) trên ứng dụng di động hoặc máy chủ để tự động nhận dạng nhịp thở bất thường và đưa ra dự báo sớm cơn ngưng thở, từ đó điều chỉnh tự động áp suất quạt thổi (Auto-CPAP/APAP) thông minh hơn.")
     add_bullet("Giai đoạn 4: Sleep Ecosystem Integration - Tích hợp thiết bị vào hệ sinh thái chăm sóc giấc ngủ thông minh toàn diện cùng các cảm biến môi trường (nhiệt độ, ánh sáng, tiếng ồn phòng ngủ).")
 
-    add_image_with_caption(doc, "image (5).png", "Hình 10: Sơ đồ lộ trình phát triển hệ thống SIPAP từ phiên bản thử nghiệm (MVP) đến hệ sinh thái chăm sóc giấc ngủ thông minh (Mô hình mô phỏng thiết kế dự kiến).", 6.0)
+    add_image_with_caption(doc, "image (5).png", "Hình 11: Sơ đồ lộ trình phát triển hệ thống SIPAP từ phiên bản thử nghiệm (MVP) đến hệ sinh thái chăm sóc giấc ngủ thông minh (Mô hình mô phỏng thiết kế dự kiến).", 6.0)
 
     # 13. Section 7: Patent Claims (Yêu cầu bảo hộ)
     add_heading_1("VII. YÊU CẦU BẢO HỘ")
