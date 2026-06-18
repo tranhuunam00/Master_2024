@@ -1,44 +1,22 @@
-/*
-  Arduino Nano 33 BLE Sense
-  SFM3300 + BLE Notify + Blower PWM + RPM
+#define DEBUG 0
 
-  Chức năng:
-  ✅ Đọc flow từ SFM3300
-  ✅ Tính volume
-  ✅ Điều khiển blower bằng PWM
-  ✅ Đọc RPM blower
-  ✅ Gửi data BLE sang app
-  ✅ Nhận command từ app
+#if DEBUG
+  #define DBG(x) Serial.print(x)
+  #define DBGLN(x) Serial.println(x)
+#else
+  #define DBG(x)
+  #define DBGLN(x)
+#endif
 
-  BLE Commands:
-  - START
-  - STOP
-  - PWM:xx    (0 -> 255)
-
-  JSON:
-  {
-    "flow":xx,
-    "volume":xx,
-    "sign":xx,
-    "rpm":xx,
-    "pwm":xx
-  }
-*/
-
-#include <Wire.h>
-#include <math.h>
 #include <ArduinoBLE.h>
 
 // =====================================================
-// ================= SFM3300 CONFIG ====================
+// ================= PRESSURE SENSOR ===================
 // =====================================================
 
-#define POLYNOMIAL 0x31
-#define SFM3300_ADDR 0x40
+#define PRESSURE_PIN A0
 
-const float FLOW_BIAS = 0.3;
-const float FILTER_ALPHA = 0.2;
-const int SIGN_CONFIRM = 4;
+float pressure = 0;
 
 const unsigned sensorMs = 10;
 const unsigned bleSendMs = 200;
@@ -53,8 +31,6 @@ int fgPin = 2;
 volatile int pulseCount = 0;
 
 int blowerPwm = 0;
-bool blowerRunning = false;
-
 int currentRPM = 0;
 
 unsigned long lastRpmCheck = 0;
@@ -80,43 +56,11 @@ BLEStringCharacteristic actionCharacteristic(
 );
 
 // =====================================================
-// ==================== VARIABLES ======================
-// =====================================================
-
-float flow = 0;
-float flow_prev = 0;
-float volume = 0;
-
-unsigned long mt_prev = 0;
-
-int current_sign = 0;
-int sign_counter = 0;
-
-bool crc_error = false;
 
 bool notifyEnabled = false;
 
 unsigned long sensorPrev = 0;
 unsigned long lastBleSend = 0;
-
-// =====================================================
-// ====================== CRC ==========================
-// =====================================================
-
-uint8_t CRC_prim(uint8_t x, uint8_t crc)
-{
-  crc ^= x;
-
-  for (uint8_t i = 0; i < 8; i++)
-  {
-    if (crc & 0x80)
-      crc = (crc << 1) ^ POLYNOMIAL;
-    else
-      crc <<= 1;
-  }
-
-  return crc;
-}
 
 // =====================================================
 // ==================== INTERRUPT ======================
@@ -128,103 +72,25 @@ void countPulse()
 }
 
 // =====================================================
-// ==================== SIGN ===========================
+// ================= PRESSURE READ =====================
 // =====================================================
 
-int get_sign(float f)
+void readPressure()
 {
-  if (f > FLOW_BIAS)
-    return 1;
+  int adc = analogRead(PRESSURE_PIN);
 
-  if (f < -FLOW_BIAS)
-    return -1;
+  float voltage =
+    adc * 3.3 / 4095.0;
 
-  return 0;
-}
+  // Chia áp 10k/20k
+  float sensorVoltage =
+    voltage * 1.5;
 
-void update_sign(int new_sign)
-{
-  if (new_sign == 0)
-    return;
+  pressure =
+    ((sensorVoltage / 5.0) - 0.04) / 0.09;
 
-  if (new_sign == current_sign)
-  {
-    sign_counter = 0;
-    return;
-  }
-
-  sign_counter++;
-
-  if (sign_counter >= SIGN_CONFIRM)
-  {
-    Serial.println("---- Direction Changed ----");
-
-    Serial.print("Volume cycle: ");
-    Serial.println(volume);
-
-    current_sign = new_sign;
-    sign_counter = 0;
-
-    volume = 0;
-  }
-}
-
-// =====================================================
-// ================= READ SENSOR =======================
-// =====================================================
-
-void SFM_measure()
-{
-  if (Wire.requestFrom(SFM3300_ADDR, 3) != 3)
-    return;
-
-  uint8_t crc = 0;
-
-  uint8_t a = Wire.read();
-  crc = CRC_prim(a, crc);
-
-  uint8_t b = Wire.read();
-  crc = CRC_prim(b, crc);
-
-  uint8_t c = Wire.read();
-
-  if ((crc_error = (crc != c)))
-    return;
-
-  uint16_t raw = (a << 8) | b;
-
-  float new_flow =
-    ((float)raw - 32768.0) / 120.0;
-
-  // FILTER
-  new_flow =
-    FILTER_ALPHA * new_flow +
-    (1 - FILTER_ALPHA) * flow_prev;
-
-  // DEAD ZONE
-  if (fabs(new_flow) < FLOW_BIAS)
-    new_flow = 0;
-
-  // SIGN
-  int new_sign = get_sign(new_flow);
-
-  update_sign(new_sign);
-
-  // TIME
-  unsigned long mt = millis();
-
-  float dt = (mt - mt_prev);
-
-  mt_prev = mt;
-
-  // VOLUME
-  volume +=
-    (flow_prev + new_flow) / 2.0 *
-    (dt / 60000.0) *
-    1000.0;
-
-  flow_prev = new_flow;
-  flow = new_flow;
+  if (pressure < 0)
+    pressure = 0;
 }
 
 // =====================================================
@@ -247,11 +113,10 @@ void readRPM()
 
     interrupts();
 
-    // 2 pulse / revolution
     currentRPM = (count / 2) * 60;
 
-    Serial.print("RPM: ");
-    Serial.println(currentRPM);
+    DBG("RPM: ");
+    DBGLN(currentRPM);
   }
 }
 
@@ -267,10 +132,8 @@ void setBlowerPWM(int pwm)
 
   analogWrite(pwmPin, blowerPwm);
 
-  blowerRunning = (pwm > 0);
-
-  Serial.print("PWM SET: ");
-  Serial.println(blowerPwm);
+  DBG("PWM SET: ");
+  DBGLN(blowerPwm);
 }
 
 // =====================================================
@@ -284,9 +147,7 @@ void sendBleData()
 
   String sensorData =
     "{"
-    "\"flow\":" + String(flow, 2) + "," +
-    "\"volume\":" + String(volume, 2) + "," +
-    "\"sign\":" + String(current_sign) + "," +
+    "\"pressure\":" + String(pressure, 2) + "," +
     "\"rpm\":" + String(currentRPM) + "," +
     "\"pwm\":" + String(blowerPwm) +
     "}";
@@ -296,12 +157,8 @@ void sendBleData()
 
   if (success)
   {
-    Serial.print("SEND: ");
-    Serial.println(sensorData);
-  }
-  else
-  {
-    Serial.println("SEND FAILED");
+    DBG("SEND: ");
+    DBGLN(sensorData);
   }
 }
 
@@ -311,13 +168,14 @@ void sendBleData()
 
 void setup()
 {
+#if DEBUG
   Serial.begin(115200);
+  delay(1000);
+#endif
 
-  while (!Serial);
+  analogReadResolution(12);
 
-  // ===================================================
-  // BLOWER
-  // ===================================================
+  pinMode(PRESSURE_PIN, INPUT);
 
   pinMode(pwmPin, OUTPUT);
 
@@ -331,51 +189,16 @@ void setup()
 
   analogWrite(pwmPin, 0);
 
-  // ===================================================
-  // LED
-  // ===================================================
-
   pinMode(LED_BUILTIN, OUTPUT);
-
-  // ===================================================
-  // I2C
-  // ===================================================
-
-  Wire.begin();
-
-  // RESET SENSOR
-  Wire.beginTransmission(SFM3300_ADDR);
-  Wire.write(0x20);
-  Wire.write(0x00);
-  Wire.endTransmission();
-
-  delay(100);
-
-  // START MEASUREMENT
-  Wire.beginTransmission(SFM3300_ADDR);
-  Wire.write(0x10);
-  Wire.write(0x00);
-  Wire.endTransmission();
-
-  delay(100);
-
-  mt_prev = millis();
-
-  Serial.println("SFM3300 READY");
-
-  // ===================================================
-  // BLE
-  // ===================================================
 
   if (!BLE.begin())
   {
-    Serial.println("BLE START FAILED");
+    DBGLN("BLE FAILED");
 
     while (1);
   }
 
   BLE.setLocalName("CPAP_VSSM");
-
   BLE.setDeviceName("CPAP_VSSM");
 
   BLE.setAdvertisedService(cpapService);
@@ -390,11 +213,11 @@ void setup()
 
   BLE.addService(cpapService);
 
-  sensorCharacteristic.writeValue("ready");
+  sensorCharacteristic.writeValue("READY");
 
   BLE.advertise();
 
-  Serial.println("BLE READY");
+  DBGLN("BLE READY");
 }
 
 // =====================================================
@@ -407,42 +230,33 @@ void loop()
 
   if (central)
   {
-    Serial.print("CONNECTED: ");
-    Serial.println(central.address());
+    DBG("CONNECTED: ");
+    DBGLN(central.address());
 
     while (central.connected())
     {
       BLE.poll();
 
-      unsigned long now = millis();
+      unsigned long now =
+        millis();
 
-      // ===============================================
-      // READ FLOW
-      // ===============================================
+      // Pressure
 
       if (now - sensorPrev >= sensorMs)
       {
         sensorPrev = now;
 
-        SFM_measure();
+        readPressure();
       }
 
-      // ===============================================
-      // READ RPM
-      // ===============================================
+      // RPM
 
       readRPM();
 
-      // ===============================================
-      // NOTIFY
-      // ===============================================
+      // Notify
 
       notifyEnabled =
         sensorCharacteristic.subscribed();
-
-      // ===============================================
-      // SEND BLE
-      // ===============================================
 
       if (notifyEnabled)
       {
@@ -454,21 +268,14 @@ void loop()
         }
       }
 
-      // ===============================================
-      // RECEIVE COMMAND
-      // ===============================================
+      // Commands
 
       if (actionCharacteristic.written())
       {
         String action =
           actionCharacteristic.value();
 
-        Serial.print("ACTION: ");
-        Serial.println(action);
-
-        // =============================================
-        // LED
-        // =============================================
+        DBGLN(action);
 
         if (action == "LED_ON")
         {
@@ -477,7 +284,6 @@ void loop()
             HIGH
           );
         }
-
         else if (action == "LED_OFF")
         {
           digitalWrite(
@@ -485,40 +291,21 @@ void loop()
             LOW
           );
         }
-
-        // =============================================
-        // START
-        // =============================================
-
         else if (action == "START")
         {
           setBlowerPWM(55);
-
-          Serial.println("BLOWER START");
         }
-
-        // =============================================
-        // STOP
-        // =============================================
-
         else if (action == "STOP")
         {
           setBlowerPWM(0);
-
-          Serial.println("BLOWER STOP");
         }
-
-        // =============================================
-        // PWM:120
-        // =============================================
-
-        else if (action.startsWith("PWM:"))
+        else if (
+          action.startsWith("PWM:")
+        )
         {
-          String value =
-            action.substring(4);
-
           int pwm =
-            value.toInt();
+            action.substring(4)
+            .toInt();
 
           setBlowerPWM(pwm);
         }
@@ -527,7 +314,7 @@ void loop()
       delay(10);
     }
 
-    Serial.println("DISCONNECTED");
+    DBGLN("DISCONNECTED");
 
     notifyEnabled = false;
 
