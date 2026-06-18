@@ -147,7 +147,7 @@ def create_document():
         "nhằm vinh danh sự đồng hành chuyên môn từ Hội Y học Giấc ngủ Việt Nam."
     ).italic = True
 
-    add_image_with_caption(doc, "image (3).png", "Hình 1: GS. TS. KH. Dương Quý Sỹ kiểm tra mẫu thiết kế thực tế của thiết bị hỗ trợ thở tương tác thông minh SIPAP.", 4.0)
+    add_image_with_caption(doc, "image_3.png", "Hình 1: GS. TS. KH. Dương Quý Sỹ kiểm tra mẫu thiết kế thực tế của thiết bị hỗ trợ thở tương tác thông minh SIPAP.", 4.0)
 
     # 6. Section 2: Technical Field
     add_heading_1("II. LĨNH VỰC KỸ THUẬT ĐƯỢC ĐỀ CẬP")
@@ -214,8 +214,8 @@ def create_document():
     add_bullet("Khối giao diện: Màn hình OLED kết hợp bộ mã hóa quay (Rotary Encoder) 8 nút xoay và nút ấn để người dùng cài đặt thông số áp suất đích và chế độ thở tại chỗ.")
 
     add_image_with_caption(doc, "schematic.png", "Hình 3: Sơ đồ kết nối phần cứng và phân bổ chân tín hiệu giữa các thành phần của hệ thống SIPAP.", 5.5)
-    add_image_with_caption(doc, "image (4).png", "Hình 4: Thiết bị thực tế SIPAP cận cảnh cấu trúc buồng khí và cách bố trí các module bo mạch.", 4.0)
-    add_image_with_caption(doc, "image (1).png", "Hình 5: Mẫu thử nghiệm hoàn chỉnh của thiết bị SIPAP kết nối với bóng thở (phổi giả) phục vụ kiểm định hiệu năng quạt thổi.", 4.0)
+    add_image_with_caption(doc, "image_4.png", "Hình 4: Thiết bị thực tế SIPAP cận cảnh cấu trúc buồng khí và cách bố trí các module bo mạch.", 4.0)
+    add_image_with_caption(doc, "image_1.png", "Hình 5: Mẫu thử nghiệm hoàn chỉnh của thiết bị SIPAP kết nối với bóng thở (phổi giả) phục vụ kiểm định hiệu năng quạt thổi.", 4.0)
 
     add_heading_2("1.1. Chi tiết thông số kỹ thuật của các cấu phần cốt lõi")
     
@@ -407,7 +407,7 @@ def create_document():
                "'LED_ON' (bật LED chỉ thị), 'LED_OFF' (tắt LED chỉ thị), 'START' (chạy quạt), 'STOP' (tắt quạt), 'PWM:<giá trị>' (thiết lập tốc độ quạt trực tiếp).\n"
                "  - Tính năng an toàn: Khi mất kết nối BLE (disconnect), thiết bị tự động tắt quạt (PWM = 0) để bảo vệ an toàn cho bệnh nhân.")
 
-    add_image_with_caption(doc, "image (2).png", "Hình 9: Thử nghiệm thực nghiệm đo đạc thông số và điều khiển tốc độ quạt thổi trên mô hình người giả kết nối với máy tính.", 4.0)
+    add_image_with_caption(doc, "image_2.png", "Hình 9: Thử nghiệm thực nghiệm đo đạc thông số và điều khiển tốc độ quạt thổi trên mô hình người giả kết nối với máy tính.", 4.0)
 
     # 12. Section 6: Technical and Economic Benefits
     add_heading_1("VI. HIỆU QUẢ ĐẠT ĐƯỢC VÀ ĐỊNH HƯỚNG PHÁT TRIỂN")
@@ -425,7 +425,7 @@ def create_document():
     add_bullet("Giai đoạn 3: AI-based Adaptation - Phát triển và nhúng thuật toán trí tuệ nhân tạo (AI/Machine Learning) trên ứng dụng di động hoặc máy chủ để tự động nhận dạng nhịp thở bất thường và đưa ra dự báo sớm cơn ngưng thở, từ đó điều chỉnh tự động áp suất quạt thổi (Auto-CPAP/APAP) thông minh hơn.")
     add_bullet("Giai đoạn 4: Sleep Ecosystem Integration - Tích hợp thiết bị vào hệ sinh thái chăm sóc giấc ngủ thông minh toàn diện cùng các cảm biến môi trường (nhiệt độ, ánh sáng, tiếng ồn phòng ngủ).")
 
-    add_image_with_caption(doc, "image (5).png", "Hình 10: Sơ đồ lộ trình phát triển hệ thống SIPAP từ phiên bản thử nghiệm (MVP) đến hệ sinh thái chăm sóc giấc ngủ thông minh (Mô hình mô phỏng thiết kế dự kiến).", 6.0)
+    add_image_with_caption(doc, "image_5.png", "Hình 10: Sơ đồ lộ trình phát triển hệ thống SIPAP từ phiên bản thử nghiệm (MVP) đến hệ sinh thái chăm sóc giấc ngủ thông minh (Mô hình mô phỏng thiết kế dự kiến).", 6.0)
 
     # 13. Section 7: Patent Claims (Yêu cầu bảo hộ)
     add_heading_1("VII. YÊU CẦU BẢO HỘ")
