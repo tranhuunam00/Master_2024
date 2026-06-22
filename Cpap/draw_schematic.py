@@ -2,10 +2,11 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import os
 
-def draw_schematic():
+def draw_schematic(lang='vi'):
     """
     Sơ đồ kết nối phần cứng SIPAP v1.
     Layout rộng hơn, tránh chồng chéo nhãn và mũi tên.
+    lang: 'vi' cho Tiếng Việt, 'en' cho Tiếng Anh.
     """
     fig, ax = plt.subplots(figsize=(14, 10))
     ax.set_xlim(0, 14)
@@ -21,12 +22,6 @@ def draw_schematic():
     box_oled    = dict(boxstyle="round,pad=0.3", fc="#E0F7FA", ec="#00838F", lw=2)
 
     # ===== NODE POSITIONS (x, y) =====
-    # Row 1 (top):    Power 12V,                    Flow Sensor
-    # Row 2:          Buck Converter,                (I2C lines down)
-    # Row 3 (center): Pressure Sensor,  MCU,         Blower Driver
-    # Row 4:          Voltage Divider,               Blower Motor
-    # Row 5 (bottom): OLED display
-
     pos_power   = (2.0, 9.0)
     pos_buck    = (2.0, 7.0)
     pos_flow    = (7.0, 9.0)
@@ -37,32 +32,62 @@ def draw_schematic():
     pos_blower  = (12.0, 3.0)
     pos_oled    = (7.0, 2.0)
 
+    # ===== TEXT LABELS BASED ON LANGUAGE =====
+    if lang == 'vi':
+        lbl_power   = "NGUỒN CẤP\n12VDC Adapter"
+        lbl_buck    = "MẠCH HẠ ÁP BUCK\n(12V → 5V / 3.3V)"
+        lbl_flow    = "CẢM BIẾN LƯU LƯỢNG\nSensirion SFM3300-D\n(Giao tiếp I2C · Nguồn: 5V)"
+        lbl_mcu     = "VI ĐIỀU KHIỂN TRUNG TÂM\nArduino Nano 33 BLE Sense\n(ARM Cortex-M4 · 3.3V logic)"
+        lbl_press   = "CẢM BIẾN ÁP SUẤT\nMPXV5010G\n(Nguồn cấp: 5V)"
+        lbl_divider = "CẦU PHÂN ÁP\nR1=10kΩ · R2=20kΩ\n(5V → 3.3V cho ADC)"
+        lbl_driver  = "MẠCH LÁI ĐỘNG CƠ\n(Driver Blower PWM)"
+        lbl_blower  = "ĐỘNG CƠ QUẠT THỔI\nBrushless Blower\nWS4540-12-NZ03"
+        lbl_oled    = "MÀN HÌNH OLED 0.96\"\n& Rotary Encoder"
+        lbl_fg      = "RPM FG Feedback\n(Pin D2 · Ngắt ngoài)"
+        lbl_oled_c  = "I2C / GPIO\n(Hiển thị & Cài đặt)"
+        lbl_gnd     = "⚡ LƯU Ý: TẤT CẢ CÁC THÀNH PHẦN PHẢI NỐI CHUNG ĐẤT (COMMON GND) VỚI ARDUINO"
+        lbl_title   = "SƠ ĐỒ KẾT NỐI HỆ THỐNG PHẦN CỨNG SIPAP (VERSION 1)"
+    else:
+        lbl_power   = "POWER SUPPLY\n12VDC Adapter"
+        lbl_buck    = "BUCK CONVERTER\n(12V → 5V / 3.3V)"
+        lbl_flow    = "FLOW SENSOR\nSensirion SFM3300-D\n(I2C Comm. · Power: 5V)"
+        lbl_mcu     = "CENTRAL MICROCONTROLLER\nArduino Nano 33 BLE Sense\n(ARM Cortex-M4 · 3.3V logic)"
+        lbl_press   = "PRESSURE SENSOR\nMPXV5010G\n(Power Supply: 5V)"
+        lbl_divider = "VOLTAGE DIVIDER\nR1=10kΩ · R2=20kΩ\n(5V → 3.3V for ADC)"
+        lbl_driver  = "MOTOR DRIVER\n(Blower PWM Driver)"
+        lbl_blower  = "BRUSHLESS BLOWER MOTOR\nWS4540-12-NZ03"
+        lbl_oled    = "0.96\" OLED DISPLAY\n& Rotary Encoder"
+        lbl_fg      = "RPM FG Feedback\n(Pin D2 · Ext Interrupt)"
+        lbl_oled_c  = "I2C / GPIO\n(Display & Settings)"
+        lbl_gnd     = "⚡ NOTE: ALL COMPONENTS MUST SHARE A COMMON GROUND (COMMON GND) WITH ARDUINO"
+        lbl_title   = "HARDWARE SCHEMATIC DIAGRAM OF SIPAP SYSTEM (VERSION 1)"
+
     # ===== DRAW COMPONENT BOXES =====
-    ax.text(*pos_power, "NGUỒN CẤP\n12VDC Adapter",
+    ax.text(*pos_power, lbl_power,
             ha='center', va='center', bbox=box_power, fontsize=10, fontweight='bold')
 
-    ax.text(*pos_buck, "MẠCH HẠ ÁP BUCK\n(12V → 5V / 3.3V)",
+    ax.text(*pos_buck, lbl_buck,
             ha='center', va='center', bbox=box_power, fontsize=10, fontweight='bold')
 
-    ax.text(*pos_flow, "CẢM BIẾN LƯU LƯỢNG\nSensirion SFM3300-D\n(Giao tiếp I2C · Nguồn: 5V)",
+    ax.text(*pos_flow, lbl_flow,
             ha='center', va='center', bbox=box_sensor, fontsize=10, fontweight='bold')
 
-    ax.text(*pos_mcu, "VI ĐIỀU KHIỂN TRUNG TÂM\nArduino Nano 33 BLE Sense\n(ARM Cortex-M4 · 3.3V logic)",
+    ax.text(*pos_mcu, lbl_mcu,
             ha='center', va='center', bbox=box_mcu, fontsize=11, fontweight='bold')
 
-    ax.text(*pos_press, "CẢM BIẾN ÁP SUẤT\nMPXV5010G\n(Nguồn cấp: 5V)",
+    ax.text(*pos_press, lbl_press,
             ha='center', va='center', bbox=box_sensor, fontsize=10, fontweight='bold')
 
-    ax.text(*pos_divider, "CẦU PHÂN ÁP\nR1=10kΩ · R2=20kΩ\n(5V → 3.3V cho ADC)",
+    ax.text(*pos_divider, lbl_divider,
             ha='center', va='center', bbox=box_divider, fontsize=9, fontweight='bold')
 
-    ax.text(*pos_driver, "MẠCH LÁI ĐỘNG CƠ\n(Driver Blower PWM)",
+    ax.text(*pos_driver, lbl_driver,
             ha='center', va='center', bbox=box_blower, fontsize=10, fontweight='bold')
 
-    ax.text(*pos_blower, "ĐỘNG CƠ QUẠT THỔI\nBrushless Blower\nWS4540-12-NZ03",
+    ax.text(*pos_blower, lbl_blower,
             ha='center', va='center', bbox=box_blower, fontsize=10, fontweight='bold')
 
-    ax.text(*pos_oled, "MÀN HÌNH OLED 0.96\"\n& Rotary Encoder",
+    ax.text(*pos_oled, lbl_oled,
             ha='center', va='center', bbox=box_oled, fontsize=10, fontweight='bold')
 
     # ===== DRAW ARROWS =====
@@ -136,7 +161,7 @@ def draw_schematic():
 
     # Blower Driver → Arduino D2 (RPM FG Feedback) - return arrow slightly below
     draw_arrow(10.8, 5.3, 8.5, 5.3, color="#BF360C", lw=1.5)
-    add_label(9.6, 4.9, "RPM FG Feedback\n(Pin D2 · Ngắt ngoài)", color="#BF360C", fontsize=8)
+    add_label(9.6, 4.9, lbl_fg, color="#BF360C", fontsize=8)
 
     # Blower Driver → Blower Motor
     draw_arrow(12.0, 4.9, 12.0, 3.6, color="#E65100", lw=2)
@@ -148,28 +173,32 @@ def draw_schematic():
 
     # Arduino → OLED (I2C or SPI)
     draw_arrow(7.0, 4.8, 7.0, 2.6, color="#00695C", lw=1.5)
-    add_label(7.8, 3.5, "I2C / GPIO\n(Hiển thị & Cài đặt)", color="#00695C", fontsize=8)
+    add_label(7.8, 3.5, lbl_oled_c, color="#00695C", fontsize=8)
 
     # ──────────────────────────────────────────────
     # GND NOTE
     # ──────────────────────────────────────────────
     ax.text(7.0, 0.5,
-            "⚡ LƯU Ý: TẤT CẢ CÁC THÀNH PHẦN PHẢI NỐI CHUNG ĐẤT (COMMON GND) VỚI ARDUINO",
+            lbl_gnd,
             ha='center', va='center', color='#B71C1C', fontsize=10,
             style='italic', fontweight='bold',
             bbox=dict(boxstyle="round,pad=0.3", fc="#FFEBEE", ec="#E53935", lw=1.5, alpha=0.9))
 
     # ===== TITLE =====
-    plt.title("SƠ ĐỒ KẾT NỐI HỆ THỐNG PHẦN CỨNG SIPAP (VERSION 1)",
+    plt.title(lbl_title,
               fontsize=14, fontweight='bold', color='#1B365D', pad=18)
 
     # ===== SAVE =====
     out_dir = r"c:\Users\ADMIN\OneDrive\Máy tính\Master_2024\Cpap\document"
     os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, "schematic.png")
+    if lang == 'vi':
+        out_path = os.path.join(out_dir, "schematic.png")
+    else:
+        out_path = os.path.join(out_dir, "schematic_en.png")
     plt.savefig(out_path, dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"Schematic saved successfully at {out_path}!")
+    print(f"Schematic ({lang}) saved successfully at {out_path}!")
 
 if __name__ == "__main__":
-    draw_schematic()
+    draw_schematic('vi')
+    draw_schematic('en')
