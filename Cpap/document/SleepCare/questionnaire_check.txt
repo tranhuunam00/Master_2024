@@ -1,0 +1,24 @@
+=== PICHOT FATIGUE (8 questions) ===
+  Q1: 1. Tôi cảm thấy thiếu năng lượng?
+  Q2: 2. Mọi việc đòi hỏi tôi phải cố gắng?
+  Q3: 3. Tôi cảm thấy yếu ớt một vài nơi của cơ thể ?
+  Q4: 4. Tôi cảm thấy chân hay tay nặng nề?
+  Q5: 5. Tôi cảm thấy mệt mỏi mà không giải thích được ?
+  Q6: 6. Tôi mong muốn được nằm nghỉ? 
+  Q7: 7. Tôi cảm thấy khó tập trung ?
+  Q8: 8. Tôi cảm thấy mệt, nặng nề, trì trệ?
+
+=== PICHOT QD (13 questions) ===
+  Q1: 1. Tôi khó mà thoát ra khỏi những suy nghĩ tồi tệ trong đầu?
+  Q2: 2. Tôi cảm thấy không còn năng lượng?
+  Q3: 3. Tôi không còn thích làm những điều mà trước kia tôi rất yêu thích hoặc quan tâm?
+  Q4: 4. Tôi cảm thấy thất vọng và chán nản bản thân?
+  Q5: 5. Tôi cảm thấy bị ức chế và cản trở khi làm một điều gì đó?
+  Q6: 6. Hiện tại tôi cảm thấy mình kém hạnh phúc hơn những người khác?
+  Q7: 7. Rất buồn chán?
+  Q8: 8. Tôi cảm thấy mình bắt buộc phải cố gắng để làm bất cứ điều gì?
+  Q9: 9. Tinh thần tôi kém sáng suốt so với trước đây?
+  Q10: 10. Hiện tại tôi cảm thấy rất buồn?
+  Q11: 11. Tôi không có khả năng tự quyết định cũng như là điều chỉnh bản thân?
+  Q12: 12. Tôi gặp khó khăn khi thực hiện những công việc mà trước đây tôi thực hiện một cách dễ dàng?
+  Q13: 13. Hiện tại 'đời tôi trống rỗng'?
