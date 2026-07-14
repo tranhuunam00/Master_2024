@@ -6,6 +6,92 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.style import WD_STYLE_TYPE
 from docx.oxml import OxmlElement, parse_xml
 from docx.oxml.ns import nsdecls, qn
+import latex2mathml.converter
+from lxml import etree
+
+# Load XSLT for MathML → OMML conversion (one-time)
+XSLT_PATH = r"C:\Program Files\Microsoft Office\root\Office16\MML2OMML.XSL"
+_xslt_tree = etree.parse(XSLT_PATH)
+_xslt_transform = etree.XSLT(_xslt_tree)
+
+def latex_to_omml(latex_str):
+    """Convert a LaTeX math string to an OMML XML element for Word with post-processing."""
+    try:
+        mathml_str = latex2mathml.converter.convert(latex_str)
+        mathml_tree = etree.fromstring(mathml_str.encode('utf-8'))
+        omml_tree = _xslt_transform(mathml_tree)
+        omml_root = omml_tree.getroot()
+        
+        # Post-process OMML to fix empty tags (avoid dotted square placeholders) and force under-over summation limits
+        namespaces = {'m': 'http://schemas.openxmlformats.org/officeDocument/2006/math'}
+        
+        # 1. Force summation limit locations to be under/over (undOvr)
+        for limloc in omml_root.xpath('//m:limLoc', namespaces=namespaces):
+            limloc.set('{http://schemas.openxmlformats.org/officeDocument/2006/math}val', 'undOvr')
+            
+        # 2. Sibling swallowing logic: put the summation operands inside <m:e> to prevent empty operand dotted squares
+        for parent in omml_root.xpath('//m:nary/..', namespaces=namespaces):
+            children = list(parent)
+            i = 0
+            while i < len(children):
+                child = children[i]
+                if child.tag == '{http://schemas.openxmlformats.org/officeDocument/2006/math}nary':
+                    nary = child
+                    e_list = nary.xpath('m:e', namespaces=namespaces)
+                    if e_list:
+                        e_elem = e_list[0]
+                        # Swallow succeeding siblings (up to next summation or binary operators)
+                        j = i + 1
+                        swallowed = []
+                        while j < len(children):
+                            next_sibling = children[j]
+                            if next_sibling.tag == '{http://schemas.openxmlformats.org/officeDocument/2006/math}nary':
+                                break
+                            t_text = next_sibling.xpath('m:t', namespaces=namespaces)
+                            if t_text and t_text[0].text in ['=', ' + ', ' - ']:
+                                break
+                            swallowed.append(next_sibling)
+                            j += 1
+                        
+                        for elem in swallowed:
+                            parent.remove(elem)
+                            e_elem.append(elem)
+                        
+                        children = list(parent)
+                i += 1
+                
+        # 3. Clean empty sup/sub tags to avoid empty dotted squares
+        for nary in omml_root.xpath('//m:nary', namespaces=namespaces):
+            sup = nary.xpath('m:sup', namespaces=namespaces)
+            if sup and not (len(sup[0]) > 0 or sup[0].text):
+                suphide = nary.xpath('m:naryPr/m:supHide', namespaces=namespaces)
+                if suphide:
+                    suphide[0].set('{http://schemas.openxmlformats.org/officeDocument/2006/math}val', 'on')
+                nary.remove(sup[0])
+                
+            sub = nary.xpath('m:sub', namespaces=namespaces)
+            if sub and not (len(sub[0]) > 0 or sub[0].text):
+                subhide = nary.xpath('m:naryPr/m:subHide', namespaces=namespaces)
+                if subhide:
+                    subhide[0].set('{http://schemas.openxmlformats.org/officeDocument/2006/math}val', 'on')
+                nary.remove(sub[0])
+                
+        return omml_root
+    except Exception as e:
+        print(f"Warning: Could not convert equation to OMML: {e}")
+        return None
+
+def add_equation_to_doc(doc, latex_str):
+    """Add a centered Word equation paragraph from LaTeX source."""
+    omml_element = latex_to_omml(latex_str)
+    if omml_element is not None:
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.space_before = Pt(6)
+        p.paragraph_format.space_after = Pt(6)
+        p._element.append(omml_element)
+        return True
+    return False
 
 def create_element(name):
     return OxmlElement(name)
@@ -33,13 +119,59 @@ def clean_latex_math(text):
     # Strip any \mathrm, \mathit, \mathbf, \mathsf
     text = re.sub(r'\\math[a-z]+\{([^}]+)\}', r'\1', text)
     
-    # Convert subscripts like _{A} to (A)
-    text = re.sub(r'_\{([^}]+)\}', r' (\1)', text)
-    
     # Remove $ signs
     text = text.replace('$', '')
     
-    # Convert operators to professional Unicode math characters
+    # === STEP 1: Process \sum FIRST (before subscript/superscript conversion) ===
+    # \sum_{lower}^{upper} → Σ(lower→upper)
+    text = re.sub(r'\\sum_\{([^}]+)\}\^\{([^}]+)\}', r'Σ(\1→\2)', text)
+    # \sum_{lower} → Σ(lower)
+    text = re.sub(r'\\sum_\{([^}]+)\}', r'Σ(\1)', text)
+    # Bare \sum → Σ
+    text = text.replace(r'\sum', 'Σ')
+    
+    # === STEP 2: Convert escaped braces \{ \} → { } ===
+    text = text.replace(r'\{', '{')
+    text = text.replace(r'\}', '}')
+    
+    # === STEP 3: Convert superscripts ^{n} → ⁿ ===
+    superscript_map = {'0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
+                       '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'}
+    def replace_superscript(m):
+        content = m.group(1)
+        result = ''
+        for ch in content:
+            result += superscript_map.get(ch, ch)
+        return result
+    text = re.sub(r'\^\{([^}]+)\}', replace_superscript, text)
+    text = text.replace(r'^2', '²')
+    
+    # === STEP 4: Convert subscripts _{A} → (A) for multi-char, or Unicode for single-char ===
+    subscript_map = {
+        '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄',
+        '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉',
+        'a': 'ₐ', 'e': 'ₑ', 'h': 'ₕ', 'i': 'ᵢ', 'j': 'ⱼ',
+        'k': 'ₖ', 'l': 'ₗ', 'm': 'ₘ', 'n': 'ₙ', 'o': 'ₒ',
+        'p': 'ₚ', 'r': 'ᵣ', 's': 'ₛ', 't': 'ₜ', 'u': 'ᵤ',
+        'v': 'ᵥ', 'x': 'ₓ',
+    }
+    def replace_subscript_braces(m):
+        content = m.group(1)
+        # If all chars have Unicode subscript equivalents, use them
+        converted = ''
+        for ch in content:
+            if ch in subscript_map:
+                converted += subscript_map[ch]
+            else:
+                # Fallback to parenthesized notation for complex subscripts
+                return f'({content})'
+        return converted
+    text = re.sub(r'_\{([^}]+)\}', replace_subscript_braces, text)
+    
+    # Single-char subscripts: _i → ᵢ, _j → ⱼ
+    text = re.sub(r'_([a-z0-9])', lambda m: subscript_map.get(m.group(1), m.group(1)), text)
+    
+    # === STEP 5: Convert operators to Unicode ===
     text = text.replace(r'\le', ' ≤ ')
     text = text.replace(r'\ge', ' ≥ ')
     text = text.replace(r'\implies', ' ⇒ ')
@@ -47,35 +179,8 @@ def clean_latex_math(text):
     text = text.replace(r'\approx', ' ≈ ')
     text = text.replace(r'\in', ' ∈ ')
     
-    # Convert sum limits to friendly text
-    text = text.replace(r'\sum_{i=1}^{8}', 'Tổng (i = 1 đến 8) ')
-    text = text.replace(r'\sum_{i=1}^{17}', 'Tổng (i = 1 đến 17) ')
-    text = text.replace(r'\sum_{j=1}^{7}', 'Tổng (j = 1 đến 7) ')
-    text = text.replace(r'\sum_{i ∈ Thuận}', 'Tổng (i ∈ Thuận) ')
-    text = text.replace(r'\sum_{i ∈ Ngược}', 'Tổng (i ∈ Ngược) ')
-    text = text.replace(r'\sum_{i \in Thuận}', 'Tổng (i ∈ Thuận) ')
-    text = text.replace(r'\sum_{i \in Ngược}', 'Tổng (i ∈ Ngược) ')
-    text = text.replace(r'\sum', 'Tổng ')
-    
-    # Cleanup subscripts and variables
-    text = text.replace(r'_{STOP-BANG}', ' STOP-BANG')
-    text = text.replace(r'_{ESS}', ' ESS')
-    text = text.replace(r'_{Zung}', ' Zung')
-    text = text.replace(r'_{Hamilton}', ' Hamilton')
-    text = text.replace(r'_{PSQI}', ' PSQI')
-    text = text.replace(r'_{ISI}', ' ISI')
-    text = text.replace(r'_{Pichot-Fatigue}', ' Pichot-Fatigue')
-    text = text.replace(r'_{Pichot-QD}', ' Pichot-QD')
-    text = text.replace(r'_{GDS-15}', ' GDS-15')
-    text = text.replace(r'_{Age}', ' Age')
-    text = text.replace(r'_{Neck}', ' Neck')
-    text = text.replace(r'_{BMI}', ' BMI')
-    text = text.replace(r'_i', ' i')
-    text = text.replace(r'_j', ' j')
-    
-    # Cleanup others
+    # === STEP 6: Cleanup others ===
     text = text.replace(r'\quad', ' ')
-    text = text.replace(r'^2', '²')
     text = text.replace(r'\mid', ' | ')
     text = text.replace(r'\ll', ' << ')
     
@@ -322,14 +427,16 @@ def compile_tex_to_docx(tex_path, docx_path):
             continue
         if r'\end{equation}' in line:
             in_equation = False
-            p = doc.add_paragraph()
-            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            p.paragraph_format.space_before = Pt(6)
-            p.paragraph_format.space_after = Pt(6)
-            run = p.add_run(clean_latex_markup(equation_content))
-            run.font.name = 'Consolas'
-            run.font.size = Pt(11)
-            run.italic = True
+            # Try OMML equation first, fallback to plain text
+            if not add_equation_to_doc(doc, equation_content.strip()):
+                p = doc.add_paragraph()
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                p.paragraph_format.space_before = Pt(6)
+                p.paragraph_format.space_after = Pt(6)
+                run = p.add_run(clean_latex_markup(equation_content))
+                run.font.name = 'Consolas'
+                run.font.size = Pt(11)
+                run.italic = True
             i += 1
             continue
         if in_equation:
