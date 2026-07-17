@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Dự Toán Kinh Phí Đề Tài - VSSM SleepCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1b365d;
+            --primary-light: #2c5282;
+            --accent-color: #319795;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --border-color: #e2e8f0;
+            --hover-color: #edf2f7;
+            --focus-ring: rgba(49, 151, 149, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-card {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header-card h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Presets & Summary Cards */
+        .controls-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        button {
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #287a78;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .btn-secondary:hover {
+            background-color: #cbd5e0;
+        }
+
+        .btn-danger {
+            background-color: #fed7d7;
+            color: #c53030;
+        }
+
+        .btn-danger:hover {
+            background-color: #feb2b2;
+        }
+
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            border-left: 5px solid var(--primary-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card.accent {
+            border-left-color: var(--accent-color);
+        }
+
+        .card.other {
+            border-left-color: #ed8936;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #718096;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        /* Table Card styling */
+        .table-container {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 850px;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        th.center, td.center {
+            text-align: center;
+        }
+
+        td {
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        tr.group-row {
+            background-color: #f7fafc;
+            font-weight: 600;
+        }
+
+        tr.sub-row td:first-child {
+            padding-left: 2rem;
+        }
+
+        tr.sub-row td:nth-child(2) {
+            padding-left: 2rem;
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        tr.total-row {
+            background-color: #edf2f7;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border-top: 2px solid var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        /* Input styling */
+        input[type="number"] {
+            width: 100%;
+            padding: 0.4rem 0.6rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.15s ease;
+            text-align: right;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px var(--focus-ring);
+        }
+
+        input[type="number"]::-webkit-inner-spin-button, 
+        input[type="number"]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+
+        input[disabled] {
+            background-color: #edf2f7;
+            color: #4a5568;
+            border-color: #e2e8f0;
+            cursor: not-allowed;
+            font-weight: 600;
+        }
+
+        /* Helper styles */
+        .text-right {
+            text-align: right;
+        }
+
+        .metadata-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .meta-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .meta-field label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #718096;
+        }
+
+        .meta-field input {
+            padding: 0.5rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .meta-field input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .table-container {
+                box-shadow: none;
+                border: none;
+            }
+            table {
+                font-size: 9pt;
+            }
+            input[type="number"] {
+                border: none;
+                background: transparent;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Block -->
+    <div class="header-card">
+        <h1>9. Dự toán kinh phí thực hiện</h1>
+        <p>Bảng tính toán tương tác dự toán kinh phí khoa học và công nghệ - Nền tảng VSSM SleepCare</p>
+    </div>
+
+    <!-- Metadata Section -->
+    <div class="metadata-section">
+        <div class="meta-grid">
+            <div class="meta-field">
+                <label for="method-input">9.1 Phương thức khoán chi</label>
+                <input type="text" id="method-input" value="Khoán chi từng phần">
+            </div>
+            <div class="meta-field">
+                <label for="source-input">Tên Nguồn kinh phí khác</label>
+                <input type="text" id="source-input" value="VSSM & Đại học Y Dược">
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls & Presets -->
+    <div class="controls-row no-print">
+        <div class="btn-group">
+            <button class="btn-primary" onclick="loadPreset(500)">Tải Mẫu 500 Triệu (BKHCN)</button>
+            <button class="btn-secondary" onclick="loadPreset(300)">Tải Mẫu 300 Triệu (BKHCN)</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn-secondary" onclick="window.print()">In / Xuất Báo Cáo</button>
+            <button class="btn-danger" onclick="resetTable()">Xóa Trống</button>
+        </div>
+    </div>
+
+    <!-- Cards Summary -->
+    <div class="summary-cards">
+        <div class="card">
+            <span class="card-title">Tổng kinh phí thực hiện</span>
+            <span class="card-value" id="total-val">0.00</span>
+        </div>
+        <div class="card accent">
+            <span class="card-title">Nguồn Quỹ tài trợ</span>
+            <span class="card-value" id="fund-val">0.00</span>
+        </div>
+        <div class="card other">
+            <span class="card-title" id="source-label-card">Nguồn khác</span>
+            <span class="card-value" id="other-val">0.00</span>
+        </div>
+    </div>
+
+    <!-- Table Container -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2" class="center" style="width: 50px;">TT</th>
+                    <th rowspan="2" style="width: 350px;">Nội dung chi</th>
+                    <th rowspan="2" class="text-right" style="width: 130px;">Tổng kinh phí</th>
+                    <th colspan="2" class="center" style="border-bottom: 1px solid rgba(255,255,255,0.3)">Nguồn Quỹ tài trợ</th>
+                    <th rowspan="2" class="text-right" id="source-label-header" style="width: 150px;">Nguồn khác</th>
+                </tr>
+                <tr>
+                    <th class="text-right" style="width: 130px;">Kinh phí</th>
+                    <th class="text-right" style="width: 130px;">Trong đó khoán chi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1: Thù lao -->
+                <tr>
+                    <td class="center"><b>1</b></td>
+                    <td><b>Tiền thù lao tham gia nhiệm vụ</b></td>
+                    <td class="text-right"><input type="number" id="row-1-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-1-fund-val" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-1-fund-block" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-1-other" step="0.1" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Row 2: Nguyên nhiên vật liệu (Group) -->
+                <tr class="group-row">
+                    <td class="center"><b>2</b></td>
+                    <td><b>Nguyên liệu, nhiên liệu, vật liệu...</b></td>
+                    <td class="text-right"><input type="number" id="row-2-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-2-fund-val" disabled value="0.00"></td>
+                    <td><input type="number" id="row-2-fund-block" disabled value="0.00"></td>
+                    <td><input type="number" id="row-2-other" disabled value="0.00"></td>
+                </tr>
+                <!-- Sub-row 2.1 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Tài liệu, số liệu, sách, báo, tạp chí tham khảo chuyên môn</td>
+                    <td class="text-right"><input type="number" id="row-2-1-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-2-1-fund-val" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-2-1-fund-block" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-2-1-other" step="0.1" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 2.2 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Dụng cụ, phụ tùng, vật rẻ tiền mau hỏng phục vụ đo đạc</td>
+                    <td class="text-right"><input type="number" id="row-2-2-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-2-2-fund-val" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-2-2-fund-block" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-2-2-other" step="0.1" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 2.3 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Mua quyền truy cập cơ sở dữ liệu và bản quyền phần mềm phục vụ thực hiện nhiệm vụ</td>
+                    <td class="text-right"><input type="number" id="row-2-3-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-2-3-fund-val" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-2-3-fund-block" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-2-3-other" step="0.1" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 2.4 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Quyền sở hữu và sử dụng đối tượng SHTT / Công nghệ, sản phẩm mẫu nước ngoài</td>
+                    <td class="text-right"><input type="number" id="row-2-4-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-2-4-fund-val" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-2-4-fund-block" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-2-4-other" step="0.1" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Row 3: Sửa chữa, thuê tài sản -->
+                <tr>
+                    <td class="center"><b>3</b></td>
+                    <td><b>Sửa chữa, mua sắm, thuê tài sản</b></td>
+                    <td class="text-right"><input type="number" id="row-3-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-3-fund-val" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-3-fund-block" step="0.1" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-3-other" step="0.1" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Row 4: Chi khác (Group) -->
+                <tr class="group-row">
+                    <td class="center"><b>4</b></td>
+                    <td><b>Chi khác...</b></td>
+                    <td class="text-right"><input type="number" id="row-4-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-fund-val" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-fund-block" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-other" disabled value="0.00"></td>
+                </tr>
+                <!-- Sub-row 4.1 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Phí tham gia hội nghị, hội thảo khoa học, công tác phí...</td>
+                    <td class="text-right"><input type="number" id="row-4-1-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-1-fund-val" step="0.1" class="sub-fund" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-1-fund-block" step="0.1" class="sub-block" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-1-other" step="0.1" class="sub-other" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 4.2 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Dịch vụ thuê ngoài</td>
+                    <td class="text-right"><input type="number" id="row-4-2-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-2-fund-val" step="0.1" class="sub-fund" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-2-fund-block" step="0.1" class="sub-block" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-2-other" step="0.1" class="sub-other" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 4.3 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Điều tra, khảo sát thu thập số liệu</td>
+                    <td class="text-right"><input type="number" id="row-4-3-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-3-fund-val" step="0.1" class="sub-fund" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-3-fund-block" step="0.1" class="sub-block" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-3-other" step="0.1" class="sub-other" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 4.4 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Văn phòng phẩm, thông tin liên lạc, in ấn</td>
+                    <td class="text-right"><input type="number" id="row-4-4-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-4-fund-val" step="0.1" class="sub-fund" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-4-fund-block" step="0.1" class="sub-block" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-4-other" step="0.1" class="sub-other" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 4.5 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Phí công bố công trình khoa học và công nghệ</td>
+                    <td class="text-right"><input type="number" id="row-4-5-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-5-fund-val" step="0.1" class="sub-fund" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-5-fund-block" step="0.1" class="sub-block" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-5-other" step="0.1" class="sub-other" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 4.6 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Tự đánh giá kết quả thực hiện nhiệm vụ</td>
+                    <td class="text-right"><input type="number" id="row-4-6-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-6-fund-val" step="0.1" class="sub-fund" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-6-fund-block" step="0.1" class="sub-block" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-6-other" step="0.1" class="sub-other" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 4.7 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Tư vấn xây dựng hồ sơ đăng ký bảo hộ quyền SHTT</td>
+                    <td class="text-right"><input type="number" id="row-4-7-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-7-fund-val" step="0.1" class="sub-fund" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-7-fund-block" step="0.1" class="sub-block" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-7-other" step="0.1" class="sub-other" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 4.8 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Phổ biến, tuyên truyền kết quả của nhiệm vụ</td>
+                    <td class="text-right"><input type="number" id="row-4-8-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-8-fund-val" step="0.1" class="sub-fund" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-8-fund-block" step="0.1" class="sub-block" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-8-other" step="0.1" class="sub-other" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 4.9 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Công tác quản lý chung nhiệm vụ (của tổ chức chủ trì)</td>
+                    <td class="text-right"><input type="number" id="row-4-9-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-9-fund-val" step="0.1" class="sub-fund" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-9-fund-block" step="0.1" class="sub-block" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-9-other" step="0.1" class="sub-other" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 4.10 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Chi khác có liên quan trực tiếp đến triển khai nhiệm vụ</td>
+                    <td class="text-right"><input type="number" id="row-4-10-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-10-fund-val" step="0.1" class="sub-fund" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-10-fund-block" step="0.1" class="sub-block" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-10-other" step="0.1" class="sub-other" value="0.00" onchange="calculate()"></td>
+                </tr>
+                <!-- Sub-row 4.11 -->
+                <tr class="sub-row">
+                    <td class="center"></td>
+                    <td>- Các nội dung chi đặc thù</td>
+                    <td class="text-right"><input type="number" id="row-4-11-total" disabled value="0.00"></td>
+                    <td><input type="number" id="row-4-11-fund-val" step="0.1" class="sub-fund" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-11-fund-block" step="0.1" class="sub-block" value="0.00" onchange="calculate()"></td>
+                    <td><input type="number" id="row-4-11-other" step="0.1" class="sub-other" value="0.00" onchange="calculate()"></td>
+                </tr>
+
+                <!-- Total Row -->
+                <tr class="total-row">
+                    <td class="center"></td>
+                    <td>TỔNG CỘNG</td>
+                    <td class="text-right"><span id="grand-total">0.00</span></td>
+                    <td class="text-right"><span id="grand-fund-val">0.00</span></td>
+                    <td class="text-right"><span id="grand-fund-block">0.00</span></td>
+                    <td class="text-right"><span id="grand-other">0.00</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // Listen to changes in source name input
+    const sourceInput = document.getElementById('source-input');
+    sourceInput.addEventListener('input', updateSourceLabels);
+
+    function updateSourceLabels() {
+        const value = sourceInput.value || 'Nguồn khác';
+        document.getElementById('source-label-header').innerText = value;
+        document.getElementById('source-label-card').innerText = 'Nguồn khác (' + value + ')';
+    }
+
+    // Main calculation engine
+    function calculate() {
+        // 1. Calculate row totals (Row 1, 3)
+        for (let i of [1, 3]) {
+            const fundVal = parseFloat(document.getElementById(`row-${i}-fund-val`).value) || 0;
+            const otherVal = parseFloat(document.getElementById(`row-${i}-other`).value) || 0;
+            document.getElementById(`row-${i}-total`).value = (fundVal + otherVal).toFixed(2);
+        }
+
+        // 1.2. Calculate Row 2 (Nguyên vật liệu) sub-rows (2.1 to 2.4)
+        let row2FundSum = 0;
+        let row2BlockSum = 0;
+        let row2OtherSum = 0;
+
+        for (let i = 1; i <= 4; i++) {
+            const fundVal = parseFloat(document.getElementById(`row-2-${i}-fund-val`).value) || 0;
+            const blockVal = parseFloat(document.getElementById(`row-2-${i}-fund-block`).value) || 0;
+            const otherVal = parseFloat(document.getElementById(`row-2-${i}-other`).value) || 0;
+
+            document.getElementById(`row-2-${i}-total`).value = (fundVal + otherVal).toFixed(2);
+
+            row2FundSum += fundVal;
+            row2BlockSum += blockVal;
+            row2OtherSum += otherVal;
+        }
+
+        // Set parent Row 2 values
+        document.getElementById('row-2-fund-val').value = row2FundSum.toFixed(2);
+        document.getElementById('row-2-fund-block').value = row2BlockSum.toFixed(2);
+        document.getElementById('row-2-other').value = row2OtherSum.toFixed(2);
+        document.getElementById('row-2-total').value = (row2FundSum + row2OtherSum).toFixed(2);
+
+        // 2. Calculate row totals for sub-rows (4.1 to 4.11)
+        let subFundSum = 0;
+        let subBlockSum = 0;
+        let subOtherSum = 0;
+
+        for (let i = 1; i <= 11; i++) {
+            const fundVal = parseFloat(document.getElementById(`row-4-${i}-fund-val`).value) || 0;
+            const blockVal = parseFloat(document.getElementById(`row-4-${i}-fund-block`).value) || 0;
+            const otherVal = parseFloat(document.getElementById(`row-4-${i}-other`).value) || 0;
+
+            document.getElementById(`row-4-${i}-total`).value = (fundVal + otherVal).toFixed(2);
+
+            subFundSum += fundVal;
+            subBlockSum += blockVal;
+            subOtherSum += otherVal;
+        }
+
+        // 3. Set parent Row 4 (Chi khác) values
+        document.getElementById('row-4-fund-val').value = subFundSum.toFixed(2);
+        document.getElementById('row-4-fund-block').value = subBlockSum.toFixed(2);
+        document.getElementById('row-4-other').value = subOtherSum.toFixed(2);
+        document.getElementById('row-4-total').value = (subFundSum + subOtherSum).toFixed(2);
+
+        // 4. Calculate grand totals
+        let grandFundVal = 0;
+        let grandFundBlock = 0;
+        let grandOther = 0;
+
+        // Sum Rows 1, 2, 3, 4
+        for (let i = 1; i <= 4; i++) {
+            grandFundVal += parseFloat(document.getElementById(`row-${i}-fund-val`).value) || 0;
+            grandFundBlock += parseFloat(document.getElementById(`row-${i}-fund-block`).value) || 0;
+            grandOther += parseFloat(document.getElementById(`row-${i}-other`).value) || 0;
+        }
+
+        const grandTotal = grandFundVal + grandOther;
+
+        // Update display fields
+        document.getElementById('grand-total').innerText = grandTotal.toFixed(2);
+        document.getElementById('grand-fund-val').innerText = grandFundVal.toFixed(2);
+        document.getElementById('grand-fund-block').innerText = grandFundBlock.toFixed(2);
+        document.getElementById('grand-other').innerText = grandOther.toFixed(2);
+
+        // Update cards
+        document.getElementById('total-val').innerText = grandTotal.toFixed(2);
+        document.getElementById('fund-val').innerText = grandFundVal.toFixed(2);
+        document.getElementById('other-val').innerText = grandOther.toFixed(2);
+    }
+
+    // Presets
+    const presets = {
+        300: {
+            method: 'Khoán chi từng phần',
+            sourceName: 'VSSM & Đại học Y Dược',
+            data: {
+                'row-1-fund-val': 100.0, 'row-1-fund-block': 100.0, 'row-1-other': 50.0,
+                'row-3-fund-val': 15.0, 'row-3-fund-block': 0.0, 'row-3-other': 5.0,
+                
+                'row-2-1-fund-val': 3.0, 'row-2-1-fund-block': 0.0, 'row-2-1-other': 2.0,
+                'row-2-2-fund-val': 7.0, 'row-2-2-fund-block': 0.0, 'row-2-2-other': 3.0,
+                'row-2-3-fund-val': 7.0, 'row-2-3-fund-block': 0.0, 'row-2-3-other': 3.0,
+                'row-2-4-fund-val': 3.0, 'row-2-4-fund-block': 0.0, 'row-2-4-other': 2.0,
+
+                'row-4-1-fund-val': 12.0, 'row-4-1-fund-block': 12.0, 'row-4-1-other': 8.0,
+                'row-4-2-fund-val': 17.0, 'row-4-2-fund-block': 0.0, 'row-4-2-other': 8.0,
+                'row-4-3-fund-val': 10.0, 'row-4-3-fund-block': 0.0, 'row-4-3-other': 5.0,
+                'row-4-4-fund-val': 3.0, 'row-4-4-fund-block': 3.0, 'row-4-4-other': 2.0,
+                'row-4-5-fund-val': 7.0, 'row-4-5-fund-block': 0.0, 'row-4-5-other': 3.0,
+                'row-4-6-fund-val': 3.0, 'row-4-6-fund-block': 3.0, 'row-4-6-other': 2.0,
+                'row-4-7-fund-val': 3.0, 'row-4-7-fund-block': 0.0, 'row-4-7-other': 2.0,
+                'row-4-8-fund-val': 3.0, 'row-4-8-fund-block': 2.0, 'row-4-8-other': 2.0,
+                'row-4-9-fund-val': 7.0, 'row-4-9-fund-block': 0.0, 'row-4-9-other': 3.0,
+                'row-4-10-fund-val': 0.0, 'row-4-10-fund-block': 0.0, 'row-4-10-other': 0.0,
+                'row-4-11-fund-val': 0.0, 'row-4-11-fund-block': 0.0, 'row-4-11-other': 0.0
+            }
+        },
+        500: {
+            method: 'Khoán chi từng phần',
+            sourceName: 'VSSM & Đại học Y Dược',
+            data: {
+                'row-1-fund-val': 175.0, 'row-1-fund-block': 175.0, 'row-1-other': 75.0,
+                'row-3-fund-val': 30.0, 'row-3-fund-block': 0.0, 'row-3-other': 10.0,
+
+                'row-2-1-fund-val': 7.0, 'row-2-1-fund-block': 0.0, 'row-2-1-other': 3.0,
+                'row-2-2-fund-val': 10.0, 'row-2-2-fund-block': 0.0, 'row-2-2-other': 5.0,
+                'row-2-3-fund-val': 11.0, 'row-2-3-fund-block': 0.0, 'row-2-3-other': 4.0,
+                'row-2-4-fund-val': 7.0, 'row-2-4-fund-block': 0.0, 'row-2-4-other': 3.0,
+                
+                'row-4-1-fund-val': 20.0, 'row-4-1-fund-block': 20.0, 'row-4-1-other': 10.0,
+                'row-4-2-fund-val': 25.0, 'row-4-2-fund-block': 0.0, 'row-4-2-other': 15.0,
+                'row-4-3-fund-val': 18.0, 'row-4-3-fund-block': 0.0, 'row-4-3-other': 7.0,
+                'row-4-4-fund-val': 6.0, 'row-4-4-fund-block': 6.0, 'row-4-4-other': 4.0,
+                'row-4-5-fund-val': 14.0, 'row-4-5-fund-block': 0.0, 'row-4-5-other': 6.0,
+                'row-4-6-fund-val': 7.0, 'row-4-6-fund-block': 7.0, 'row-4-6-other': 3.0,
+                'row-4-7-fund-val': 7.0, 'row-4-7-fund-block': 0.0, 'row-4-7-other': 3.0,
+                'row-4-8-fund-val': 3.0, 'row-4-8-fund-block': 3.0, 'row-4-8-other': 2.0,
+                'row-4-9-fund-val': 10.0, 'row-4-9-fund-block': 0.0, 'row-4-9-other': 0.0,
+                'row-4-10-fund-val': 0.0, 'row-4-10-fund-block': 0.0, 'row-4-10-other': 0.0,
+                'row-4-11-fund-val': 0.0, 'row-4-11-fund-block': 0.0, 'row-4-11-other': 0.0
+            }
+        }
+    };
+
+    function loadPreset(presetVal) {
+        const preset = presets[presetVal];
+        if (!preset) return;
+
+        document.getElementById('method-input').value = preset.method;
+        document.getElementById('source-input').value = preset.sourceName;
+        updateSourceLabels();
+
+        for (const [id, value] of Object.entries(preset.data)) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.value = value.toFixed(2);
+            }
+        }
+
+        calculate();
+    }
+
+    function resetTable() {
+        const inputs = document.querySelectorAll('input[type="number"]');
+        inputs.forEach(input => {
+            if (!input.disabled) {
+                input.value = "0.00";
+            }
+        });
+        calculate();
+    }
+
+    // Initialize with 500M preset on load
+    window.onload = function() {
+        loadPreset(500);
+    };
+</script>
+
+</body>
+</html>
