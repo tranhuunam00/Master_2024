@@ -1,0 +1,342 @@
+ CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+ Độc Lập - Tự Do - Hạnh Phúc
+---------------o0o---------------
+ BẢN MÔ TẢ GIẢI PHÁP HỮU ÍCH
+ Tên giải pháp: HỆ THỐNG DI ĐỘNG TƯƠNG TÁC THÔNG MINH GIÁM SÁT SỨC KHỎE GIẤC NGỦ VÀ TẦM SOÁT HỘI CHỨNG NGƯNG THỞ KHI NGỦ (SLEEPCARE)
+
+Tên gọi sáng chế của phần mềm ứng dụng di động là SleepCare (Hệ thống giám sát sức khỏe giấc ngủ và hỗ trợ tầm soát ngưng thở khi ngủ từ xa), là giải pháp phần mềm và kiến trúc tương tác do GS.TS.KH. Dương Quý Sỹ đề xuất bảo hộ quyền sở hữu trí tuệ, nhằm cung cấp giải pháp sàng lọc không xâm lấn dễ tiếp cận dưới sự hỗ trợ chuyên môn của Hội Y học Giấc ngủ Việt Nam.
+I. THÔNG TIN CHUNG VÀ CỐ VẤN KHOA HỌC
+• Cố vấn khoa học \& Chỉ đạo chuyên môn: GS. TS. KH. Dương Quý Sỹ (Chủ tịch Hội Y học Giấc ngủ Việt Nam - VSSM).
+• Đơn vị bảo trợ học thuật và đồng hành chuyên môn: Hội Y học Giấc ngủ Việt Nam (VSSM).
+• Nhóm tác giả nghiên cứu chế tạo: GS.TS.KH. Dương Quý Sỹ, ThS. Trần Hữu Nam, ThS. Nguyễn Tuấn Anh, ThS. Tăng Thị Thảo Trâm, CN. Trần Thị Cẩm Tú, DS. Nguyễn Trọng Bằng, ThS. Nguyễn Văn Tới, TS. Nguyễn Duy Thái, GS. Ramon Farré, GS.TS. Thomas Penzel, GS.TS. Francis Martin, GS. Đinh Xuân Anh Tuấn.
+
+Biểu tượng ứng dụng SleepCare được bảo trợ chuyên môn bởi Hội Y học Giấc ngủ Việt Nam.
+II. LĨNH VỰC KỸ THUẬT ĐƯỢC ĐỀ CẬP
+Giải pháp hữu ích này đề cập đến lĩnh vực phần mềm y tế và thiết bị theo dõi sức khỏe cá nhân, cụ thể là hệ thống ứng dụng di động tương tác thông minh (SleepCare) tích hợp các thuật toán xử lý tín hiệu số thu được từ các cảm biến phần cứng có sẵn của điện thoại di động (microphone, cảm biến ánh sáng hoặc camera trước) nhằm giám sát chất lượng môi trường phòng ngủ, thu âm phân tích tiếng ngáy thời gian thực, thực hiện sàng lọc bệnh lý ngưng thở khi ngủ do tắc nghẽn (OSA) dựa trên các thang đo lâm sàng chuẩn hóa quốc tế và kết nối hệ thống y tế giấc ngủ.
+III. TÌNH TRẠNG KỸ THUẬT CỦA GIẢI PHÁP HỮU ÍCH
+Hội chứng ngưng thở khi ngủ do tắc nghẽn (OSA) là một bệnh lý hô hấp nguy hiểm liên quan mật thiết đến các nguy cơ tim mạch và đột quỵ. Tiêu chuẩn vàng để chẩn đoán OSA hiện nay là đo đa ký giấc ngủ (Polysomnography - PSG) tại các phòng thí nghiệm giấc ngủ chuyên dụng.
+Tuy nhiên, việc triển khai chẩn đoán OSA gặp nhiều khó khăn do:
+• Chi phí thực hiện đo PSG tại phòng khám y tế lớn và đắt đỏ, đòi hỏi bệnh nhân phải ngủ lại qua đêm với nhiều dây cáp kết nối trên cơ thể gây khó chịu và thay đổi sinh lý giấc ngủ tự nhiên.
+• Các ứng dụng di động theo dõi giấc ngủ thương mại hiện có chủ yếu dựa trên cảm biến gia tốc để ước lượng chu kỳ thức-ngủ chung chung, thiếu độ tin cậy y học và hoàn toàn không tích hợp các bộ câu hỏi lâm sàng chuẩn hóa.
+• Thiếu các giải pháp sàng lọc không xâm lấn tại nhà có thể đo lường tiếng ngáy kết hợp với các thông số môi trường phòng ngủ (độ ồn, độ sáng) để đưa ra chỉ số cảnh báo rủi ro mang tính khoa học.
+• Chưa có hệ thống kết nối trực tiếp giúp đồng bộ hóa dữ liệu sàng lọc ban đầu của bệnh nhân tại nhà với mạng lưới các chuyên gia và phòng khám giấc ngủ chuyên khoa của Hội Y học Giấc ngủ Việt Nam.
+IV. BẢN CHẤT KỸ THUẬT CỦA GIẢI PHÁP HỮU ÍCH
+Để giải quyết các hạn chế trên, giải pháp hữu ích đề xuất hệ thống phần mềm di động SleepCare hoạt động trên các hệ điều hành iOS/Android với kiến trúc đa mô-đun tích hợp:
+• Mô-đun bảng hỏi sàng lọc lâm sàng chuẩn hóa: Số hóa bộ câu hỏi sàng lọc buồn ngủ ban ngày Epworth (ESS) và bộ câu hỏi đánh giá rủi ro ngưng thở khi ngủ STOP-BANG, kết hợp thông tin nhân trắc học (BMI) để tự động tính điểm rủi ro.
+• Mô-đun phân tích tiếng ngáy thời gian thực dựa trên AI: Sử dụng mic của điện thoại thu âm luồng âm thanh PCM 16kHz, chạy mô hình phát hiện tiếng ngáy cục bộ (sử dụng thư viện snore\detection) để đếm số cơn ngáy, thời lượng ngáy và phát hiện ngáy bệnh lý dựa trên cường độ âm thanh (>56 dB) kéo dài.
+• Mô-đun đánh giá chất lượng môi trường phòng ngủ (Room Quality): Đo cường độ tiếng ồn phòng ngủ (dB) kết hợp cảm biến ánh sáng xung quanh (hoặc phân tích luồng ảnh camera trước làm phương án dự phòng) để tính toán độ sáng tối ưu cho giấc ngủ (Lux/Kelvin).
+• Mô-đun kết nối y khoa từ xa: Đồng bộ hóa dữ liệu đo đa ký giấc ngủ tại nhà (Home PSG) và đăng ký lịch khám tại các phòng khám đạt tiêu chuẩn quốc gia của VSSM thông qua giao tiếp mạng thời gian thực.
+
+Sơ đồ cấu trúc phần mềm và các khối kết nối tương tác của hệ thống SleepCare.
+V. MÔ TẢ CHI TIẾT PHƯƠNG ÁN THỰC HIỆN
+Sơ đồ cấu trúc phần mềm hệ thống
+Hệ thống được lập trình bằng ngôn ngữ Dart trên nền tảng Flutter, sử dụng kiến trúc quản lý trạng thái BLoC/Cubit để đảm bảo độ mượt mà và xử lý bất đồng bộ dữ liệu cảm biến:
+• Tầng giao diện (UI Layer): Cung cấp các trang màn hình: Sàng lọc rủi ro giấc ngủ (KiemTraBenhGiacNgu), Kiểm tra chất lượng phòng (RoomQualityPage), Đo tiếng ngáy (SnoreDetectionPage), Danh sách phòng khám chuyên khoa (PhongKhamList), và Giáo dục y khoa (ResourcesPage).
+• Tầng quản lý trạng thái (State Management): Sử dụng SnoreDetectionCubit để điều phối thu âm stream và chạy mô hình AI; sử dụng RoomQualityCubit để đọc cảm biến ánh sáng và tính toán tiếng ồn môi trường.
+• Tầng dịch vụ (Service Layer): Gồm kết nối WebSocket qua Socket.IO tới máy chủ trung tâm để truyền nhận dữ liệu lâm sàng thời gian thực, lưu trữ cục bộ qua Shared Preferences và đọc cấu hình động qua Firebase Remote Config.
+Chi tiết các thuật toán xử lý dữ liệu cảm biến
+a) Thuật toán phát hiện tiếng ngáy và tiếng ngáy bệnh lý
+Quá trình ghi âm và phát hiện tiếng ngáy được thực hiện trực tiếp trên thiết bị (On-device processing) theo quy trình sau:
+1. Khởi tạo bộ ghi âm AudioRecorder cấu hình tần số lấy mẫu 16.000 Hz, kênh đơn (mono), định dạng PCM 16-bit.
+2. Trích xuất dữ liệu âm thanh dưới dạng luồng byte. Cứ mỗi 2 byte dữ liệu thô (data[i] và data[i+1]) được ghép lại thành một mẫu số nguyên 16-bit:
+
+Nếu giá trị mẫu vượt quá 32767, nó sẽ được chuyển đổi thành số âm tương ứng trong hệ bù hai:
+
+3. Chuẩn hóa mảng mẫu âm thanh về khoảng số thực [-1.0, 1.0] bằng cách chia cho 32768.0, tạo thành cửa sổ âm thanh có độ dài 1 giây (16.000 mẫu).
+4. Chạy mô hình trí tuệ nhân tạo SnoreDetector.detectFromAudioWindow() để trả về kết quả nhị phân (có ngáy hay không).
+5. Đồng thời, đo cường độ âm thanh hiện tại (dBFS) từ hàm getAmplitude() và ánh xạ sang mức decibel vật lý (dB) bằng thang quy đổi phi tuyến tính:
+6. Nếu A ≤ -80 dBFS ⇒ dB = 30.0
+7. Nếu A ∈ (-80, -60] dBFS ⇒ dB = 30.0 + A + 80 / 20 × 10.0
+8. Nếu A ∈ (-60, -40] dBFS ⇒ dB = 40.0 + A + 60 / 20 × 15.0
+9. Nếu A ∈ (-40, -20] dBFS ⇒ dB = 55.0 + A + 40 / 20 × 20.0
+10. Nếu A > -20 dBFS ⇒ dB = 75.0 + A + 20 / 20 × 25.0
+11. Tiếng ngáy được ghi nhận là tiếng ngáy bệnh lý (Pathological Snoring) khi thỏa mãn đồng thời hai điều kiện: có tín hiệu ngáy được xác nhận bởi mô hình AI và cường độ âm thanh đo được vượt quá ngưỡng 56 dB liên tục trong thời gian từ 10 giây trở lên.
+
+Lưu đồ thuật toán phát hiện tiếng ngáy bệnh lý thời gian thực từ tín hiệu ghi âm.
+b) Thuật toán đo cường độ ánh sáng và tiếng ồn phòng ngủ
+* **Đo tiếng ồn nền:** Sử dụng microphone ghi nhận liên tục cường độ decibel (dB) trung bình và cực đại của phòng ngủ mỗi giây, giúp xác định xem tiếng ồn môi trường có ảnh hưởng đến pha ngủ sâu của bệnh nhân hay không (ngưỡng khuyến nghị dưới 35 dB).
+* **Đo cường độ ánh sáng:**
+• Trên các thiết bị Android: Sử dụng trực tiếp dữ liệu từ cảm biến ánh sáng phần cứng (Ambient Light Sensor) thông qua luồng dữ liệu LightSensor.luxStream() để lấy giá trị Lux thực tế.
+• Trên các thiết bị iOS hoặc Android không hỗ trợ cảm biến ánh sáng: Sử dụng camera trước để bắt luồng hình ảnh (CameraImage stream) ở độ phân giải thấp nhằm tiết kiệm pin. Thuật toán phân tích độ sáng trung bình B của các pixel ảnh trên thang [0, 255], sau đó quy đổi ra Lux bằng công thức thực nghiệm:
+
+Sau đó giá trị Lux được ánh xạ thành nhiệt độ màu tương đương (Kelvin) để đưa ra đánh giá về ánh sáng phòng ngủ.
+Thuật toán và công thức tính điểm các bảng hỏi lâm sàng
+Hệ thống di động SleepCare số hóa và tích hợp 11 bảng hỏi cùng chỉ số lâm sàng chuẩn y sinh để tầm soát đa chiều sức khỏe giấc ngủ, tâm thần và hô hấp của người dùng. Dưới đây mô tả chi tiết nội dung từng bảng hỏi, thang điểm của từng câu hỏi và thuật toán tính tổng điểm, phân loại rủi ro:
+1. Chỉ số khối cơ thể (Body Mass Index - BMI)
+• Mục đích đo: Đánh giá tình trạng dinh dưỡng, thừa cân và béo phì của người dùng - một trong những yếu tố rủi ro hàng đầu gây ngưng thở khi ngủ do tắc nghẽn (OSA).
+• Phương pháp đo: Người dùng nhập chiều cao H (cm) và cân nặng W (kg).
+• Công thức tính toán:
+
+• Phân loại rủi ro thừa cân/béo phì (Chuẩn Quốc tế):
+• Gầy: BMI < 18.5
+• Bình thường: 18.5 ≤ BMI < 25
+• Thừa cân: 25 ≤ BMI < 30
+• Béo phì: BMI ≥ 30
+2. Bảng hỏi tầm soát ngưng thở khi ngủ STOP-BANG
+• Mục đích đo: Tầm soát nhanh nguy cơ mắc Hội chứng ngưng thở khi ngủ do tắc nghẽn (OSA).
+• Bộ câu hỏi gồm 8 tiêu chí lâm sàng (Có/Không):
+1. Ngáy: Ông (bà) có ngáy to hơn cả lúc nói hay đến mức mà người ta có thể nghe thấy cho dù ở một phòng khác?
+2. Mệt mỏi: Ông (bà) có cảm thấy thường xuyên mệt mỏi hay buồn ngủ vào ban ngày không?
+3. Quan sát: Có ai thấy ông (bà) ngưng thở trong khi ngủ không?
+4. Huyết áp: Ông (bà) có đang được điều trị tăng huyết áp không?
+5. BMI: Chỉ số khối cơ thể BMI của ông (bà) có lớn hơn 30 kg/m² không? (Hệ thống tự động tính từ thông tin nhân trắc học).
+6. Vòng cổ: Vòng cổ của ông (bà) có ≥ 40 cm không? (đo ngang trái khế).
+7. Tuổi: Tuổi của ông (bà) có trên 50 tuổi không?
+8. Giới tính: Giới tính Nam?
+• Cách tính điểm từng câu: Câu trả lời "Có" = 1 điểm, "Không" = 0 điểm.
+• Thuật toán tính tổng điểm:
+
+• Ngưỡng phân loại rủi ro:
+• Nguy cơ cao mắc OSA: Score(STOP-BANG) ≥ 3
+• Nguy cơ thấp mắc OSA: Score(STOP-BANG) < 3
+3. Thang đo buồn ngủ ban ngày Epworth (ESS)
+• Mục đích đo: Đo lường mức độ buồn ngủ ban ngày của người dùng trong các tình huống sinh hoạt thường nhật.
+• Bộ câu hỏi gồm 8 tình huống đánh giá:
+1. Đang ngồi đọc sách
+2. Đang xem tivi
+3. Ngồi im, không hoạt động ở nơi công cộng (rạp chiếu phim, nhà hát, trong cuộc họp)
+4. Ngồi trong ô tô (hoặc phương tiện giao thông công cộng) chạy liên tục trên một giờ không dừng
+5. Nằm nghỉ buổi chiều trong hoàn cảnh cho phép
+6. Ngồi và nói chuyện với một người nào đó
+7. Ngồi im sau một bữa ăn trưa không uống nhiều rượu
+8. Ngồi trong ô tô khi xe cần phải dừng lại vài phút (đèn đỏ, kẹt xe)
+• Cách tính điểm từng câu: Người dùng tự chấm theo thang điểm Likert 4 mức:
+• 0 điểm: Không bao giờ ngủ gật
+• 1 điểm: Cơ may ngủ gật nhẹ
+• 2 điểm: Cơ may ngủ gật vừa
+• 3 điểm: Cơ may ngủ gật cao
+• Thuật toán tính tổng điểm:
+
+• Ngưỡng phân loại buồn ngủ ban ngày:
+• Bình thường: Score(ESS) < 8
+• Buồn ngủ nhẹ: 8 ≤ Score(ESS) ≤ 9
+• Buồn ngủ nhiều: 10 ≤ Score(ESS) ≤ 15
+• Buồn ngủ quá mức: Score(ESS) ≥ 16
+4. Thang tự đánh giá lo âu Zung (SAS)
+• Mục đích đo: Đánh giá mức độ nghiêm trọng của các triệu chứng rối loạn lo âu.
+• Bộ câu hỏi gồm 20 trạng thái cảm xúc và cơ thể:
+1. Tôi cảm thấy nóng nảy và lo âu hơn thường lệ.
+2. Tôi cảm thấy sợ vô cớ.
+3. Tôi dễ bối rối và cảm thấy hoảng sợ.
+4. Tôi thường có ác mộng.
+5. Tôi cảm thấy như bị ngã và vỡ ra từng mảnh (bủn rủn chân tay).
+6. Tôi cảm thấy mọi thứ đều tốt và không có điều gì xấu sẽ xảy ra.
+7. Tay và chân tôi lắc lư, run lên.
+8. Tôi đang khó chịu vì đau đầu, đau cổ, đau lưng.
+9. Tôi cảm thấy yếu và dễ mệt mỏi.
+10. Tôi cảm thấy bình tĩnh và có thể ngồi yên một cách dễ dàng.
+11. Tôi cảm thấy tim mình đập nhanh.
+12. Tôi đang khó chịu vì cơn hoa mắt chóng mặt.
+13. Tôi bị ngất và có lúc cảm thấy gần như thế.
+14. Tôi có thể thở ra, hít vào một cách dễ dàng.
+15. Tôi cảm thấy tê buốt, như có kiến bò ở đầu ngón tay, ngón chân.
+16. Tôi đang khó chịu vì đau dạ dày và đầy bụng.
+17. Tôi luôn cần phải đi tiểu.
+18. Bàn tay tôi thường khô và ấm.
+19. Tôi ngủ dễ dàng và luôn có một giấc ngủ tốt.
+20. Mặt tôi thường nóng và đỏ.
+• Cách tính điểm từng câu: Người dùng chọn theo tần suất xuất hiện: 0 (Không hoặc hiếm khi), 1 (Đôi khi), 2 (Phần lớn thời gian), 3 (Hầu như luôn luôn).
+• Đối với 15 câu thuận (câu 1-5, 7-9, 11-13, 15-17, 20): Điểm số của câu i là:
+
+• Đối với 5 câu nghịch (đảo ngược) (câu 6, 10, 14, 18, 19): Điểm số của câu i được tính bằng cách lấy 4 trừ đi giá trị chọn:
+
+• Thuật toán tính tổng điểm:
+
+• Ngưỡng phân loại lo âu:
+• Không lo âu: Score(Zung) < 41
+• Lo âu nhẹ: 41 ≤ Score(Zung) ≤ 50
+• Lo âu vừa: 51 ≤ Score(Zung) ≤ 60
+• Lo âu nặng: 61 ≤ Score(Zung) ≤ 70
+• Lo âu rất nặng: Score(Zung) ≥ 71
+5. Thang đánh giá trầm cảm Hamilton (HAM-D 17 mục)
+• Mục đích đo: Đo lường mức độ nghiêm trọng của hội chứng trầm cảm lâm sàng.
+• Bộ câu hỏi gồm 17 triệu chứng bệnh lý và thang điểm từng câu:
+1. Khí sắc trầm (Buồn bã, bi quan về tương lai, khóc lóc): 0 (Không), 1 (Nhẹ), 2 (Vừa), 3 (Nặng), 4 (Rất nặng).
+2. Cảm giác tội lỗi (Tự trách mình vì sai lầm hoặc tội lỗi): 0 (Không), 1 (Nhẹ), 2 (Ý nghĩ tự buộc tội), 3 (Coi bệnh là hình phạt), 4 (Ảo giác bị buộc tội).
+3. Ý tưởng tự sát (Cảm thấy cuộc sống vô nghĩa, có ý tưởng hoặc hành vi tự sát): 0 (Không), 1 (Cảm thấy sống vô nghĩa), 2 (Muốn chết), 3 (Có ý tưởng rõ rệt/dự định), 4 (Chuẩn bị và có hành vi).
+4. Mất ngủ - giai đoạn đầu (Khó đi vào giấc ngủ): 0 (Không), 1 (Thỉnh thoảng khó ngủ), 2 (Thường xuyên khó ngủ).
+5. Mất ngủ - giai đoạn giữa (Tỉnh giấc trong đêm, trằn trọc bồn chồn): 0 (Không), 1 (Thỉnh thoảng tỉnh giấc), 2 (Thường xuyên tỉnh giấc ban đêm).
+6. Mất ngủ - giai đoạn cuối (Thức dậy quá sớm và không thể ngủ lại được): 0 (Không), 1 (Thức dậy sớm nhưng ngủ lại được), 2 (Thức dậy sớm hẳn và mất ngủ hoàn toàn).
+7. Công việc và hoạt động (Kém hứng thú, giảm sút hiệu suất hoạt động thực tế): 0 (Không), 1 (Kém nhiệt tình, thụ động), 2 (Mất hứng thú sở thích cũ), 3 (Giảm hiệu suất công việc rõ rệt), 4 (Không thể làm việc, bỏ việc).
+8. Chậm chạp (Chậm chạp trong suy nghĩ, lời nói, hoạt động): 0 (Không), 1 (Chậm chạp nhẹ khi khám), 2 (Chậm chạp rõ rệt), 3 (Cực kỳ chậm chạp), 4 (Bất động sững sờ hoàn toàn).
+9. Kích động (Bứt rứt, bồn chồn đứng ngồi không yên): 0 (Không), 1 (Có chút bồn chồn), 2 (Vặn tay, đứng lên ngồi xuống nhiều), 3 (Cực kỳ bứt rứt, đi lại liên tục), 4 (Vò đầu bứt tai, đập phá).
+10. Lo âu tâm lý (Tăng lo âu, căng thẳng, cáu gắt): 0 (Không), 1 (Căng thẳng nhẹ), 2 (Lo lắng viển vông về tương lai), 3 (Thường xuyên bứt rứt sợ hãi), 4 (Cơn hoảng loạn sợ hãi cực độ).
+11. Lo âu thể chất (Các triệu chứng cơ thể như khó tiêu, tim đập nhanh, đau đầu, khó thở): 0 (Không), 1 (Nhẹ), 2 (Vừa), 3 (Nặng), 4 (Mất khả năng sinh hoạt vì triệu chứng).
+12. Triệu chứng cơ thể - dạ dày và ruột (Mất sự ngon miệng, nặng bụng, táo bón): 0 (Không), 1 (Nhẹ), 2 (Nặng).
+13. Triệu chứng cơ thể chung (Nặng nề tay chân, đầu, đau lưng, mệt mỏi rã rời): 0 (Không), 1 (Có biểu hiện mệt mỏi nhẹ), 2 (Cảm thấy mệt mỏi, bất lực cực độ).
+14. Triệu chứng sinh dục (Giảm ham muốn tình dục, rối loạn kinh nguyệt ở nữ): 0 (Không), 1 (Nhẹ), 2 (Mất ham muốn hoàn toàn).
+15. Nghi ngờ mắc bệnh (Lo sợ bị bệnh nặng, quá chú ý cơ thể): 0 (Không), 1 (Hơi lo lắng quá mức), 2 (Quá bận tâm về sức khỏe), 3 (Thường xuyên than vãn), 4 (Hoang tưởng nghi bệnh).
+16. Sút cân (Sút cân trong thời gian ngắn): 0 (Không), 1 (Sút cân nhẹ), 2 (Sút cân nhiều).
+17. Nhận thức ý thức bệnh (Nhận thức được mình đang mắc bệnh tâm lý): 0 (Nhận thức đầy đủ), 1 (Nhận thức một phần hoặc không rõ), 2 (Phủ nhận hoàn toàn tình trạng bệnh).
+• Cách tính điểm từng câu: Hệ thống tự động lấy chỉ số index của phương án người dùng đã lựa chọn (chạy từ 0 đến điểm tối đa của câu hỏi đó).
+• Thuật toán tính tổng điểm:
+
+• Ngưỡng phân loại trầm cảm:
+• Không trầm cảm: Score(Hamilton) < 8
+• Trầm cảm nhẹ: 8 ≤ Score(Hamilton) ≤ 13
+• Trầm cảm trung bình: 14 ≤ Score(Hamilton) ≤ 18
+• Trầm cảm nặng: 19 ≤ Score(Hamilton) ≤ 22
+• Trầm cảm rất nặng: Score(Hamilton) ≥ 23
+6. Chỉ số Chất lượng Giấc ngủ Pittsburgh (PSQI)
+• Mục đích đo: Đánh giá chất lượng và các rối loạn giấc ngủ của cá nhân trong vòng 1 tháng qua.
+• Thuật toán tính điểm 7 thành phần (mỗi thành phần chạy từ 0 đến 3 điểm):
+• Thành phần 1: Chất lượng giấc ngủ chủ quan. Trực tiếp lấy từ điểm câu số 6 (chất lượng giấc ngủ tự nhận đánh giá: Rất tốt = 0, Khá tốt = 1, Khá kém = 2, Rất kém = 3).
+• Thành phần 2: Độ trễ giấc ngủ (Sleep Latency). Tính tổng hợp từ số phút để đi vào giấc ngủ (Câu 2) và tần suất không thể đi vào giấc ngủ trong vòng 30 phút (Câu 5a). Quy đổi tổng điểm ra thang 0-3 điểm.
+• Thành phần 3: Thời lượng giấc ngủ (Sleep Duration). Dựa trên số giờ ngủ thực tế ban đêm (Câu 4): ≥ 7 giờ = 0 điểm, 6 ≤ giờ < 7 = 1 điểm, 5 ≤ giờ < 6 = 2 điểm, < 5 giờ = 3 điểm.
+• Thành phần 4: Hiệu quả giấc ngủ thực tế (Habitual Sleep Efficiency).
+
+Quy đổi: ≥ 84\% = 0 điểm, 74-83\% = 1 điểm, 65-73\% = 2 điểm, < 65\% = 3 điểm.
+• Thành phần 5: Rối loạn giấc ngủ (Sleep Disturbances). Tổng điểm tần suất của các sự kiện ban đêm (thức giấc giữa đêm, đi vệ sinh, ho ngáy to, nóng quá, lạnh quá, ác mộng, đau đớn...). Tổng điểm quy đổi ra thang 0-3 điểm.
+• Thành phần 6: Sử dụng thuốc ngủ (Use of Sleep Medication). Tần suất sử dụng thuốc ngủ kê đơn hoặc không kê đơn (Câu 7): Không dùng = 0, <1 lần/tuần = 1, 1-2 lần/tuần = 2, ≥ 3 lần/tuần = 3.
+• Thành phần 7: Rối loạn chức năng ban ngày (Daytime Dysfunction). Cộng điểm của tần suất buồn ngủ khi lái xe/ăn uống/hoạt động (Câu 8) và mức độ thiếu nhiệt tình hoàn thành công việc (Câu 9). Quy đổi tổng ra thang 0-3 điểm.
+• Thuật toán tính tổng điểm PSQI:
+
+• Ngưỡng phân loại chất lượng giấc ngủ:
+• Chất lượng giấc ngủ tốt: Score(PSQI) < 5
+• Chất lượng giấc ngủ trung bình: 5 ≤ Score(PSQI) ≤ 9
+• Chất lượng giấc ngủ kém: Score(PSQI) ≥ 10
+7. Bộ câu hỏi giấc ngủ trẻ em (PSQ)
+• Mục đích đo: Sàng lọc chứng rối loạn thở khi ngủ (Sleep-Disordered Breathing - SDB) ở trẻ em từ 2 đến 18 tuổi.
+• Bộ câu hỏi gồm 22 câu hỏi về thói quen của trẻ (Có/Không/Không biết):
+1. Con ông (bà) có ngủ ngáy hơn 50\% thời gian ngủ không?
+2. Con ông (bà) có luôn ngáy không?
+3. Con ông (bà) có ngáy to không?
+4. Trong khi ngủ, con ông (bà) có thở nặng nhọc hay thở ồn ào không?
+5. Trong khi ngủ, con ông (bà) có khó thở hay gắng sức để thở không?
+6. Có bao giờ ông (bà) nhận thấy con mình ngưng thở trong đêm không?
+7. Ban ngày, trẻ có xu hướng thở bằng miệng không?
+8. Trẻ có thức dậy với cảm giác khô miệng vào buổi sáng không?
+9. Thỉnh thoảng trẻ có đái dầm không?
+10. Trẻ có thấy mệt mỏi khi thức dậy vào buổi sáng không?
+11. Trẻ có buồn ngủ vào ban ngày không?
+12. Có giáo viên hay người chăm sóc nào nhận xét trẻ buồn ngủ ban ngày không?
+13. Trẻ có khó thức dậy vào buổi sáng không?
+14. Từ khi sinh ra, con ông (bà) có từng bị chậm phát triển thể chất không?
+15. Trẻ có bị đau đầu khi thức dậy vào buổi sáng không?
+16. Con ông (bà) có bị thừa cân không?
+17. Trẻ thường có vẻ như không nghe khi người khác nói trực tiếp với trẻ?
+18. Trẻ thường gặp khó khăn trong việc tổ chức công việc và hoạt động?
+19. Trẻ có dễ bị xao nhãng bởi các kích thích bên ngoài không?
+20. Trẻ có thường cựa quậy tay chân hoặc đứng ngồi không yên không?
+21. Trẻ có hay ngắt lời hoặc chen ngang vào việc của người khác không?
+22. Con ông (bà) có thường 'quá hiếu động' hay thường 'hay nói quá nhiều'?
+• Cách tính điểm từng câu: Câu trả lời "Có" = 1 điểm, "Không" = 0 điểm. Câu trả lời "Không biết" được loại khỏi mẫu thống kê.
+• Thuật toán tính toán chỉ số: Hệ thống tính tổng số câu trả lời dương tính Y (Có) và số câu trả lời âm tính N (Không).
+
+• Ngưỡng phân loại kết quả:
+• Dương tính (Nguy cơ cao bị rối loạn thở khi ngủ): Ratio > 0.33 (tương đương với điều kiện toán học Y > N/2.0).
+• Âm tính: Ratio ≤ 0.33.
+8. Chỉ số độ nghiêm trọng của mất ngủ (ISI)
+• Mục đích đo: Đánh giá cảm nhận chủ quan về mức độ nghiêm trọng và tác động của chứng mất ngủ.
+• Bộ câu hỏi gồm 7 mục khảo sát tự đánh giá:
+1. Mức độ nghiêm trọng của khó khăn khi đi vào giấc ngủ.
+2. Mức độ nghiêm trọng của khó khăn khi duy trì giấc ngủ (thức giấc ban đêm).
+3. Mức độ nghiêm trọng của việc thức dậy quá sớm vào buổi sáng.
+4. Mức độ hài lòng/không hài lòng với giấc ngủ hiện tại của bản thân.
+5. Mức độ ảnh hưởng của rối loạn giấc ngủ đến hoạt động ban ngày (mệt mỏi, hiệu suất, tập trung).
+6. Mức độ dễ nhận thấy của chứng mất ngủ đối với người khác xung quanh.
+7. Mức độ lo lắng, buồn phiền gây ra bởi tình trạng mất ngủ hiện tại.
+• Cách tính điểm từng câu: Người dùng tự chọn từ 0 đến 4 điểm (0: Không có/Rất hài lòng, 1: Nhẹ, 2: Vừa phải, 3: Nặng, 4: Rất nặng/Rất không hài lòng).
+• Thuật toán tính tổng điểm:
+
+• Ngưỡng phân loại độ nghiêm trọng của mất ngủ:
+• Không có mất ngủ lâm sàng: Score(ISI) < 8
+• Mất ngủ nhẹ: 8 ≤ Score(ISI) ≤ 14
+• Mất ngủ trung bình (lâm sàng): 15 ≤ Score(ISI) ≤ 21
+• Mất ngủ nặng (lâm sàng): Score(ISI) ≥ 22
+9. Thang đánh giá mệt mỏi Pichot
+• Mục đích đo: Đo lường tình trạng kiệt sức và mệt mỏi bệnh lý ban ngày của người dùng.
+• Bộ câu hỏi gồm 8 trạng thái mệt mỏi:
+1. Tôi cảm thấy thiếu năng lượng.
+2. Mọi việc đòi hỏi tôi phải cố gắng.
+3. Tôi cảm thấy yếu ớt một vài nơi của cơ thể.
+4. Tôi cảm thấy chân hay tay nặng nề.
+5. Tôi cảm thấy mệt mỏi mà không giải thích được.
+6. Tôi mong muốn được nằm nghỉ.
+7. Tôi cảm thấy khó tập trung.
+8. Tôi cảm thấy mệt, nặng nề, trì trệ.
+• Cách tính điểm từng câu: Likert 5 mức: 0 (Không có) đến 4 (Rất nhiều).
+• Thuật toán tính tổng điểm:
+
+• Phân loại: Bình thường khi Score(Pichot-Fatigue) ≤ 22 điểm; có biểu hiện mệt mỏi bệnh lý khi điểm số > 22 điểm.
+10. Thang đánh giá trầm cảm Pichot QD
+• Mục đích đo: Sàng lọc nhanh các biểu hiện nghi ngờ trầm cảm.
+• Bộ câu hỏi gồm 13 câu hỏi nhị phân (Đúng/Sai):
+1. Tôi khó mà thoát ra khỏi những suy nghĩ tồi tệ trong đầu.
+2. Tôi cảm thấy không còn năng lượng.
+3. Tôi không còn thích làm những điều mà trước kia tôi rất yêu thích hoặc quan tâm.
+4. Tôi cảm thấy thất vọng và chán nản bản thân.
+5. Tôi cảm thấy bị ức chế và cản trở khi làm một điều gì đó.
+6. Hiện tại tôi cảm thấy mình kém hạnh phúc hơn những người khác.
+7. Rất buồn chán.
+8. Tôi cảm thấy mình bắt buộc phải cố gắng để làm bất cứ điều gì.
+9. Tinh thần tôi kém sáng suốt so với trước đây.
+10. Hiện tại tôi cảm thấy rất buồn.
+11. Tôi không có khả năng tự quyết định cũng như là điều chỉnh bản thân.
+12. Tôi gặp khó khăn khi thực hiện những công việc mà trước đây tôi thực hiện một cách dễ dàng.
+13. Hiện tại ``đời tôi trống rỗng''.
+• Cách tính điểm: Câu trả lời "Đúng" = 1 điểm, "Sai" = 0 điểm.
+• Thuật toán tính tổng điểm:
+
+• Phân loại: Bình thường khi điểm số ≤ 7 điểm; nghi ngờ có trầm cảm bệnh lý khi điểm số > 7 điểm.
+11. Thang trầm cảm cho người cao tuổi (GDS-15)
+• Mục đích đo: Đo lường và tầm soát chứng trầm cảm chuyên biệt cho đối tượng người cao tuổi.
+• Bộ câu hỏi gồm 15 câu hỏi nhị phân (Có/Không):
+1. Ông/bà nhìn chung có hài lòng với cuộc sống của mình không?
+2. Ông/bà có từ bỏ nhiều hoạt động và sở thích thường ngày của mình không?
+3. Ông/bà có cảm thấy cuộc sống hiện tại của mình trống rỗng không?
+4. Ông/bà có thường xuyên cảm thấy buồn chán không?
+5. Ông/bà có hầu như luôn ở trong trạng thái tinh thần vui vẻ không?
+6. Ông/bà có lo sợ rằng điều gì đó tồi tệ sẽ xảy ra với mình không?
+7. Ông/bà có thường xuyên cảm thấy hạnh phúc không?
+8. Ông/bà có thường cảm thấy bất lực không?
+9. Ông/bà có thích ở nhà hơn là đi ra ngoài và làm những việc mới không?
+10. Ông/bà có nghĩ mình gặp nhiều vấn đề về trí nhớ hơn những người khác không?
+11. Ông/bà có nghĩ rằng thật tuyệt vời khi được sống đến lúc này không?
+12. Ông/bà có cảm thấy mình khá vô dụng ở trạng thái hiện tại không?
+13. Ông/bà có cảm thấy mình luôn tràn đầy năng lượng không?
+14. Ông/bà có cảm thấy hoàn cảnh sống của mình là vô vọng không?
+15. Ông/bà có nghĩ rằng hầu hết mọi người đều tốt số/tốt đẹp hơn mình không?
+• Cách tính điểm từng câu:
+• Đối với 10 câu thuận (câu 2, 3, 4, 6, 8, 9, 10, 12, 14, 15): Điểm cộng 1 nếu trả lời "Có".
+• Đối với 5 câu nghịch (đảo ngược) (câu 1, 5, 7, 11, 13): Điểm cộng 1 nếu trả lời "Không".
+• Thuật toán tính tổng điểm:
+
+• Ngưỡng phân loại trầm cảm người cao tuổi:
+• Trạng thái bình thường: 0 ≤ Score(GDS-15) ≤ 5
+• Nghi ngờ trầm cảm: 6 ≤ Score(GDS-15) ≤ 9
+• Trầm cảm rõ rệt: Score(GDS-15) ≥ 10
+Tích hợp quy trình tầm soát lâm sàng chuẩn hóa
+Ứng dụng di động SleepCare tích hợp lưu đồ tầm soát khoa học gồm 3 bước liên tiếp:
+1. Bước 1: Bảng câu hỏi chung và Chỉ số khối cơ thể (BMI): Ghi nhận tuổi, giới tính, chiều cao, cân nặng để tính chỉ số BMI, huyết áp và vòng cổ của bệnh nhân.
+2. Bước 2: Thang đo Epworth (ESS): Khảo sát mức độ buồn ngủ ban ngày trong 8 tình huống thường gặp với mức điểm từ 0 (không bao giờ buồn ngủ) đến 3 (buồn ngủ cao). Tổng điểm lớn hơn 10 cảnh báo tình trạng buồn ngủ ban ngày bệnh lý.
+3. Bước 3: Bảng câu hỏi STOP-BANG: Trả lời Có/Không cho 8 tiêu chí rủi ro lâm sàng (Ngáy to, Mệt mỏi ban ngày, Ngừng thở khi ngủ được quan sát, Huyết áp cao, BMI > 35, Tuổi > 50, Vòng cổ lớn, Giới tính nam).
+Kết quả được tính toán tổng hợp từ số câu trả lời dương tính và đưa ra mức cảnh báo rủi ro mắc hội chứng ngưng thở khi ngủ (OSA):
+• Rủi ro thấp: Tổng điểm kết hợp dưới 15. Khuyến nghị duy trì thói quen vệ sinh giấc ngủ tốt.
+• Rủi ro trung bình: Tổng điểm kết hợp từ 15 đến 20. Khuyến nghị người dùng thực hiện theo dõi tiếng ngáy bằng công cụ Snore Detection trên app.
+• Rủi ro cao: Tổng điểm kết hợp trên 20. Cảnh báo nguy cơ cao mắc OSA, ứng dụng tự động hiển thị danh sách các phòng khám chuyên khoa liên kết của VSSM và hướng dẫn bệnh nhân đăng ký dịch vụ đo đa ký giấc ngủ tại nhà (PSG) để chẩn đoán xác định.
+
+Sơ đồ thuật toán và quy trình đo lường chất lượng phòng ngủ thông qua các cảm biến.
+
+Mô hình quy trình đánh giá rủi ro ngưng thở khi ngủ và kết nối y tế lâm sàng.
+
+Dịch vụ đo đa ký giấc ngủ tại nhà (PSG) liên kết giữa SleepCare và các cơ sở y tế đối tác của Hội Y học Giấc ngủ Việt Nam.
+VI. HIỆU QUẢ ĐẠT ĐƯỢC VÀ ĐỊNH HƯỚNG PHÁT TRIỂN
+Hiệu quả kỹ thuật và kinh tế:
+• Không phát sinh chi phí phần cứng: Tận dụng tối đa các cảm biến hiện có trên điện thoại di động của người dùng, giúp hàng triệu người dân có thể tự tầm soát OSA miễn phí tại nhà.
+• Tính chuẩn hóa lâm sàng cao: Khác biệt hoàn toàn với các app thương mại thông thường, SleepCare tích hợp các thang đo y học chính thống (Epworth, STOP-BANG) được Hội Y học Giấc ngủ Việt Nam bảo trợ nội dung chuyên môn.
+• Giảm tải cho hệ thống y tế: Sàng lọc và phân loại bệnh nhân từ sớm tại nhà, giúp các bác sĩ tập trung nguồn lực điều trị cho những bệnh nhân thực sự có nguy cơ cao.
+• Tính kết nối thời gian thực: Đồng bộ dữ liệu dễ dàng qua đám mây SleepCare để bác sĩ theo dõi tiến triển bệnh.
+Lộ trình định hướng phát triển:
+• Giai đoạn 1: Clinical Validation - Đối chiếu kết quả sàng lọc của SleepCare với kết quả đo đa ký giấc ngủ PSG thực tế tại bệnh viện để hiệu chuẩn độ nhạy và độ đặc hiệu của thuật toán phát hiện tiếng ngáy.
+• Giai đoạn 2: Wearable Integration - Tích hợp kết nối với các thiết bị đeo thông minh (Smartwatch, Smart Ring) để đồng bộ thêm dữ liệu nhịp tim và bão hòa oxy máu (SpO₂) liên tục trong đêm.
+• Giai đoạn 3: Smart Sleep Ecosystem - Kết nối trực tiếp ứng dụng với thiết bị hỗ trợ thở áp lực dương tương tác thông minh SIPAP qua kết nối BLE để hiển thị biểu đồ áp suất điều trị, chỉ số rò rỉ khí và đồng bộ báo cáo tuân thủ điều trị của bệnh nhân lên đám mây y tế.
+VII. YÊU CẦU BẢO HỘ
+1. Hệ thống di động tương tác thông minh giám sát sức khỏe giấc ngủ và hỗ trợ tầm soát hội chứng ngưng thở khi ngủ từ xa, hệ thống bao gồm:
+2. Một mô-đun giao diện người dùng hiển thị các bảng câu hỏi lâm sàng chuẩn hóa gồm bộ câu hỏi sàng lọc Epworth và bộ câu hỏi đánh giá rủi ro STOP-BANG;
+3. Một mô-đun ghi âm thu thập tín hiệu âm thanh trực tiếp từ microphone tích hợp của thiết bị di động dưới định dạng luồng âm thanh PCM 16-bit, tần số lấy mẫu 16.000 Hz;
+4. Một mô-đun xử lý tín hiệu chạy cục bộ trên thiết bị di động có chứa mô hình trí tuệ nhân tạo được huấn luyện sẵn để nhận dạng tiếng ngáy từ luồng dữ liệu ghi âm;
+5. Đặc trưng ở chỗ: Mô-đun xử lý tín hiệu thực hiện tính toán cường độ decibel (dB) từ biên độ âm thanh thu được theo thang quy đổi phi tuyến tính và liên tục phân tích trạng thái tiếng ngáy của người dùng; khi phát hiện đồng thời tín hiệu ngáy từ mô hình trí tuệ nhân tạo và cường độ decibel âm thanh vượt ngưỡng 56 dB liên tiếp trong khoảng thời gian từ 10 giây trở lên, hệ thống sẽ xác định và ghi nhận đây là sự kiện tiếng ngáy bệnh lý; đồng thời, hệ thống kết hợp điểm số từ các bảng câu hỏi lâm sàng và số lượng sự kiện tiếng ngáy bệnh lý để phân loại mức độ rủi ro ngưng thở khi ngủ và đưa ra chỉ dẫn y khoa phù hợp.
+6. Hệ thống di động theo điểm yêu cầu bảo hộ 1, đặc trưng ở chỗ: Hệ thống tích hợp một mô-đun đo chất lượng môi trường phòng ngủ hoạt động bằng cách thu thập độ ồn nền từ microphone và cường độ ánh sáng Lux từ cảm biến ánh sáng phần cứng của thiết bị di động hoặc thông qua thuật toán phân tích độ sáng trung bình của luồng hình ảnh thu được từ camera trước để đánh giá mức độ phù hợp của môi trường phòng ngủ đối với giấc ngủ sinh lý của người dùng.
+7. Hệ thống di động theo điểm yêu cầu bảo hộ 1, đặc trưng ở chỗ: Hệ thống tích hợp mô-đun liên kết mạng thời gian thực sử dụng giao thức WebSocket kết nối trực tiếp đến máy chủ y tế giấc ngủ SleepCare nhằm đồng bộ dữ liệu sàng lọc tại nhà của bệnh nhân và cung cấp cổng đăng ký dịch vụ đo đa ký giấc ngủ (PSG) tại nhà từ danh sách các cơ sở y tế chuyên khoa được Hội Y học Giấc ngủ Việt Nam xác thực chuyên môn.
+8. Hệ thống di động theo điểm yêu cầu bảo hộ 1, đặc trưng ở chỗ: Hệ thống tích hợp tính năng kết nối không dây Bluetooth Low Energy (BLE) với thiết bị hỗ trợ thở áp lực dương tương tác thông minh SIPAP để nhận và hiển thị các thông số áp lực điều trị thực tế, tốc độ quay RPM của động cơ quạt thổi và lưu lượng khí thở thời gian thực của bệnh nhân ngay trên giao diện di động.
