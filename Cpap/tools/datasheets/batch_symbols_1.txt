@@ -1,0 +1,26 @@
+LIBRARY|C:\Users\Admin\Desktop\Master_2024\Cpap\hardware\CPAP_VSSM\SiPAP_Parts.SchLib
+SYMBOL|PEC11R-4220F-S0024|Bourns PEC11R rotary encoder w/ push switch, 5 terminals (Bourns datasheet Rev 04/26)|1
+PIN|1|A|eElectricIO|2|0|2900|1|200|1|1
+PIN|3|C|eElectricPassive|2|0|2800|1|200|1|1
+PIN|2|B|eElectricIO|2|0|2700|1|200|1|1
+PIN|4|SW1|eElectricPassive|0|600|2900|1|200|1|1
+PIN|5|SW2|eElectricPassive|0|600|2800|1|200|1|1
+SYMBOL|SSD1306_OLED_I2C|0.96in 128x64 I2C OLED module, 4-pin (GND,VCC,SCL,SDA), addr 0x3C|1
+PIN|1|GND|eElectricPower|2|0|2900|1|200|1|1
+PIN|2|VCC|eElectricPower|2|0|2800|1|200|1|1
+PIN|3|SCL|eElectricIO|0|600|2900|1|200|1|1
+PIN|4|SDA|eElectricIO|0|600|2800|1|200|1|1
+SYMBOL|LM393|Dual comparator, DIP-8/SOIC-8 (TI datasheet SLCS006)|1
+PIN|1|1OUT|eElectricOutput|0|600|3400|1|200|1|1
+PIN|2|1IN-|eElectricInput|2|0|3300|1|200|1|1
+PIN|3|1IN+|eElectricInput|2|0|3200|1|200|1|1
+PIN|4|GND|eElectricPower|2|0|3100|1|200|1|1
+PIN|5|2IN+|eElectricInput|2|0|3000|1|200|1|1
+PIN|6|2IN-|eElectricInput|2|0|2900|1|200|1|1
+PIN|7|2OUT|eElectricOutput|0|600|3300|1|200|1|1
+PIN|8|VCC|eElectricPower|0|600|3200|1|200|1|1
+SYMBOL|BUCK_MODULE_12to5|Generic DC-DC buck converter module (e.g. MP1584EN based), 4-pin VIN/VOUT|1
+PIN|1|VIN+|eElectricPower|2|0|2900|1|200|1|1
+PIN|2|VIN-|eElectricPower|2|0|2800|1|200|1|1
+PIN|3|VOUT+|eElectricPower|0|600|2900|1|200|1|1
+PIN|4|VOUT-|eElectricPower|0|600|2800|1|200|1|1

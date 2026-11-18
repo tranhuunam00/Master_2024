@@ -1,0 +1,25 @@
+LIBRARY|C:\Users\Admin\Desktop\Master_2024\Cpap\hardware\CPAP_VSSM\SiPAP_Parts.SchLib
+SYMBOL|RESISTOR|Generic resistor, 2-pin|1
+PIN|1|1|eElectricPassive|2|0|2900|1|100|0|0
+PIN|2|2|eElectricPassive|0|400|2900|1|100|0|0
+SYMBOL|CAPACITOR|Generic capacitor, 2-pin|1
+PIN|1|1|eElectricPassive|2|0|2900|1|100|0|0
+PIN|2|2|eElectricPassive|0|400|2900|1|100|0|0
+SYMBOL|DIODE|Generic diode, 2-pin (A=anode, K=cathode)|1
+PIN|1|A|eElectricPassive|2|0|2900|1|100|0|0
+PIN|2|K|eElectricPassive|0|400|2900|1|100|0|0
+SYMBOL|AO3401A|Alpha&Omega AO3401A P-channel MOSFET, SOT-23 (AOS datasheet)|1
+PIN|1|G|eElectricInput|2|0|2900|1|200|1|1
+PIN|2|S|eElectricPassive|3|200|2700|1|200|1|1
+PIN|3|D|eElectricPassive|0|400|2900|1|200|1|1
+SYMBOL|BUZZER|Generic piezo buzzer, 2-pin|1
+PIN|1|+|eElectricPassive|2|0|2900|1|200|1|1
+PIN|2|-|eElectricPassive|0|400|2900|1|200|1|1
+SYMBOL|CONN_DCJACK|DC barrel jack 5.5x2.1mm, 2-pin (VIN, GND)|1
+PIN|1|VIN|eElectricPassive|2|0|2900|1|200|1|1
+PIN|2|GND|eElectricPassive|0|400|2900|1|200|1|1
+SYMBOL|CONN_BLOWER4|4-pin blower cable connector: 12V, GND, PWM, FG|1
+PIN|1|V12|eElectricPassive|2|0|2900|1|200|1|1
+PIN|2|GND|eElectricPassive|2|0|2800|1|200|1|1
+PIN|3|PWM|eElectricPassive|0|400|2900|1|200|1|1
+PIN|4|FG|eElectricPassive|0|400|2800|1|200|1|1

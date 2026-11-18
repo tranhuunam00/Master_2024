@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "altium-mcp": {
+      "command": "python",
+      "args": ["C:/Users/Admin/Desktop/Master_2024/Cpap/tools/altium-mcp/start_server.py"]
+    }
+  }
+}
