@@ -62,7 +62,10 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 - Symbol + footprint mới đã có trong `SiPAP_Parts_v2.SchLib` / `SiPAP_Footprints.PcbLib` (đối chiếu datasheet).
 - Template schematic: `CPAP_VSSM/tools/sipap_template_revc.json` (64 linh kiện, 33 net, preview 0 lỗi). BOM: `Cpap/hardware/BOM_RevC.csv`.
 - Schematic `SiPAP_Main_RevC.SchDoc`: **xong, ERC 0 lỗi** (5 cảnh báo "no driving source" trên net cầu chia FB/EN/GATE/COMP_REF — bình thường). Rev B gỡ khỏi project (file vẫn giữ).
-- PCB Rev C: **chưa làm**.
+- PCB Rev C (`SiPAP_PCB.PcbDoc`): **xong** — 64/64 linh kiện khớp schematic, 100% đi dây, DRC điện 0 lỗi (clearance, short, unrouted, width, mask sliver). Khối buck đặt/đi dây tay vòng SW-L-BOOT-VIN-FB theo TI; 35 via khâu GND mới; 3 fiducial; test point TP1 12V / TP2 5V / TP3 3V3 / TP4 GND; chữ silk "SiPAP Rev C 2026-11", nhãn 12V IN, UART. Còn cảnh báo silk đè pad (silk footprint cũ) — xưởng tự cắt.
+- 3D: `CPAP_VSSM/3D/SiPAP_PCB_RevC.step` + `height_map.md` (cao nhất 26.5 mm encoder; 18.3 mm PTC F1 đứng).
+- Hồ sơ xưởng: `CPAP_VSSM/Fab_RevC/` — `SiPAP_RevC_Gerber.zip` (Gerber RS-274X mm, Excellon 4:3 có G85 slot, IPC-D-356A), `SiPAP_RevC_CPL.csv`, `BOM_RevC.csv`, `FAB_NOTES.md`, ảnh top/schematic. PDF assembly/schematic chưa xuất (Altium chỉ in PDF qua hộp thoại máy in) — dùng ảnh PNG thay.
+- **Còn treo:** symbol U6 (PEC11R) trong schematic vẫn trỏ footprint cũ `PEC11R-4220F-S0024` (sai bước chân); PCB đã dùng đúng `PEC11R-4xxxF-S_DS`. Cần tắt tạm "Symbol pins vs pads" (pad MP cơ khí không có chân) để relink — nếu không, lần "Update PCB" sau Altium sẽ đề xuất đổi U6 sang footprint sai: **bỏ dòng đó trong ECO**.
 
 ## Việc tiếp theo (đang làm dở)
 

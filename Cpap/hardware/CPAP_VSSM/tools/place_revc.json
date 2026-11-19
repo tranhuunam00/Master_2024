@@ -1,0 +1,390 @@
+[
+ {
+  "footprint": "TI_DDC0006A_SOT23-6",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "U8",
+  "x": 400,
+  "y": 1700,
+  "rotation": 0,
+  "layer": "TopLayer",
+  "comment": "TPS54202 (5V)",
+  "unique_id": "UHZIGGNU",
+  "pad_nets": {
+   "1": "GND",
+   "2": "SW5",
+   "3": "VIN12V",
+   "4": "FB5",
+   "6": "BST5"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "C15",
+  "x": 210,
+  "y": 1700,
+  "rotation": 90,
+  "layer": "TopLayer",
+  "comment": "100nF",
+  "unique_id": "NHFRQBIB",
+  "pad_nets": {
+   "1": "VIN12V",
+   "2": "GND"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "C13",
+  "x": 100,
+  "y": 1700,
+  "rotation": 90,
+  "layer": "TopLayer",
+  "comment": "10uF 35V",
+  "unique_id": "JCWSNYIZ",
+  "pad_nets": {
+   "1": "VIN12V",
+   "2": "GND"
+  }
+ },
+ {
+  "footprint": "IND_BOURNS_SRN6045TA",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "L1",
+  "x": 290,
+  "y": 1960,
+  "rotation": 180,
+  "layer": "TopLayer",
+  "comment": "15uH SRN6045TA-150M",
+  "unique_id": "EXJPZLTZ",
+  "pad_nets": {
+   "1": "SW5",
+   "2": "5V"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "C17",
+  "x": 530,
+  "y": 1810,
+  "rotation": 90,
+  "layer": "TopLayer",
+  "comment": "100nF",
+  "unique_id": "AWVJUHTA",
+  "pad_nets": {
+   "1": "BST5",
+   "2": "SW5"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "C18",
+  "x": 440,
+  "y": 2170,
+  "rotation": 0,
+  "layer": "TopLayer",
+  "comment": "22uF 16V",
+  "unique_id": "RONSZRXQ",
+  "pad_nets": {
+   "1": "5V",
+   "2": "GND"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "R19",
+  "x": 570,
+  "y": 1580,
+  "rotation": 90,
+  "layer": "TopLayer",
+  "comment": "100k 1%",
+  "unique_id": "QZVWRDXT",
+  "pad_nets": {
+   "1": "5V",
+   "2": "FB5"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "C19",
+  "x": 660,
+  "y": 1580,
+  "rotation": 90,
+  "layer": "TopLayer",
+  "comment": "75pF C0G",
+  "unique_id": "FGONDDBB",
+  "pad_nets": {
+   "1": "5V",
+   "2": "FB5"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "R20",
+  "x": 750,
+  "y": 1580,
+  "rotation": 270,
+  "layer": "TopLayer",
+  "comment": "13.3k 1%",
+  "unique_id": "RHNZYECN",
+  "pad_nets": {
+   "1": "FB5",
+   "2": "GND"
+  }
+ },
+ {
+  "footprint": "TI_DDC0006A_SOT23-6",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "U9",
+  "x": 1150,
+  "y": 1700,
+  "rotation": 0,
+  "layer": "TopLayer",
+  "comment": "TPS54202 (3V3)",
+  "unique_id": "WISSGBUX",
+  "pad_nets": {
+   "1": "GND",
+   "2": "SW3",
+   "3": "VIN12V",
+   "4": "FB3",
+   "6": "BST3"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "C16",
+  "x": 960,
+  "y": 1700,
+  "rotation": 90,
+  "layer": "TopLayer",
+  "comment": "100nF",
+  "unique_id": "DSXPYTQJ",
+  "pad_nets": {
+   "1": "VIN12V",
+   "2": "GND"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "C14",
+  "x": 850,
+  "y": 1700,
+  "rotation": 90,
+  "layer": "TopLayer",
+  "comment": "10uF 35V",
+  "unique_id": "ZBUGWAGN",
+  "pad_nets": {
+   "1": "VIN12V",
+   "2": "GND"
+  }
+ },
+ {
+  "footprint": "IND_BOURNS_SRN6045TA",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "L2",
+  "x": 1040,
+  "y": 1960,
+  "rotation": 180,
+  "layer": "TopLayer",
+  "comment": "10uH SRN6045TA-100M",
+  "unique_id": "QHVUEGTG",
+  "pad_nets": {
+   "1": "SW3",
+   "2": "3V3"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "C20",
+  "x": 1280,
+  "y": 1810,
+  "rotation": 90,
+  "layer": "TopLayer",
+  "comment": "100nF",
+  "unique_id": "ROFATXIB",
+  "pad_nets": {
+   "1": "BST3",
+   "2": "SW3"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "C21",
+  "x": 1190,
+  "y": 2170,
+  "rotation": 0,
+  "layer": "TopLayer",
+  "comment": "22uF 16V",
+  "unique_id": "GFAPOTZX",
+  "pad_nets": {
+   "1": "3V3",
+   "2": "GND"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "R21",
+  "x": 1320,
+  "y": 1580,
+  "rotation": 90,
+  "layer": "TopLayer",
+  "comment": "100k 1%",
+  "unique_id": "WLDSHLHM",
+  "pad_nets": {
+   "1": "3V3",
+   "2": "FB3"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "C22",
+  "x": 1410,
+  "y": 1580,
+  "rotation": 90,
+  "layer": "TopLayer",
+  "comment": "56pF C0G",
+  "unique_id": "HIACGPIE",
+  "pad_nets": {
+   "1": "3V3",
+   "2": "FB3"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "R22",
+  "x": 1500,
+  "y": 1580,
+  "rotation": 270,
+  "layer": "TopLayer",
+  "comment": "22.1k 1%",
+  "unique_id": "UFNIUQPH",
+  "pad_nets": {
+   "1": "FB3",
+   "2": "GND"
+  }
+ },
+ {
+  "footprint": "CUI_PJ-102AH",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "J1",
+  "x": 0,
+  "y": 2480,
+  "rotation": 0,
+  "layer": "TopLayer",
+  "comment": "PJ-102AH 12V IN",
+  "unique_id": "LARRENTU",
+  "pad_nets": {
+   "1": "VIN_RAW",
+   "2": "GND",
+   "3": "GND"
+  }
+ },
+ {
+  "footprint": "PTC_RADIAL_MF-R300",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "F1",
+  "x": 850,
+  "y": 2700,
+  "rotation": 0,
+  "layer": "TopLayer",
+  "comment": "MF-R300 3A PTC",
+  "unique_id": "AXBSQBDD",
+  "pad_nets": {
+   "1": "VIN_RAW",
+   "2": "VIN_FUSED"
+  }
+ },
+ {
+  "footprint": "DIOM_SMC_DO-214AB",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "D1",
+  "x": 950,
+  "y": 2420,
+  "rotation": 0,
+  "layer": "TopLayer",
+  "comment": "SS54 Schottky 5A",
+  "unique_id": "WKUUVTBI",
+  "pad_nets": {
+   "1": "VIN_FUSED",
+   "2": "VIN12V"
+  }
+ },
+ {
+  "footprint": "DIOM_SMB_DO-214AA_BOURNS",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "D2",
+  "x": 1300,
+  "y": 2420,
+  "rotation": 0,
+  "layer": "TopLayer",
+  "comment": "SMBJ15A TVS",
+  "unique_id": "MPOVDULB",
+  "pad_nets": {
+   "1": "VIN12V",
+   "2": "GND"
+  }
+ },
+ {
+  "footprint": "R_0805",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "C23",
+  "x": 1300,
+  "y": 2560,
+  "rotation": 0,
+  "layer": "TopLayer",
+  "comment": "22uF 25V",
+  "unique_id": "GEQHNXMH",
+  "pad_nets": {
+   "1": "VIN12V",
+   "2": "GND"
+  }
+ },
+ {
+  "footprint": "SOIC-8",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "Q1",
+  "x": 700,
+  "y": 720,
+  "rotation": 0,
+  "layer": "TopLayer",
+  "comment": "AO4407A",
+  "unique_id": "SIJKHFGH",
+  "pad_nets": {
+   "1": "VIN12V",
+   "2": "VIN12V",
+   "3": "VIN12V",
+   "4": "GATE",
+   "5": "BLOWER_V12",
+   "6": "BLOWER_V12",
+   "7": "BLOWER_V12",
+   "8": "BLOWER_V12"
+  }
+ },
+ {
+  "footprint": "BUZZER_TDK_PS1240",
+  "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Footprints.PcbLib",
+  "designator": "BZ1",
+  "x": 1720,
+  "y": 280,
+  "rotation": 0,
+  "layer": "TopLayer",
+  "comment": "PS1240P02BT",
+  "unique_id": "KQPTAQNN",
+  "pad_nets": {
+   "1": "BUZZER_CTRL",
+   "2": "GND"
+  }
+ }
+]
