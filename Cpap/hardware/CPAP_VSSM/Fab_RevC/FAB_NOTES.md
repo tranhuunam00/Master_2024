@@ -1,6 +1,6 @@
 # SiPAP Rev C — hồ sơ đặt mạch (fabrication + assembly)
 
-> Xuất lại 2026-11-19 (bản cuối): thêm công tắc nguồn SFM3300 (Q2/Q3), tụ bulk blower C25, Q4 P-MOSFET chống ngược cực thay D1, F1 lên MF-R400. Chi tiết: `Cpap/document/verification_RevC.md`.
+> Xuất lại 2026-11-19 (bản cuối): thêm công tắc nguồn SFM3300 (Q2/Q3), tụ bulk blower C25, Q4 P-MOSFET chống ngược cực thay D1, F1 lên MF-R400. Cập nhật 2026-11-19 22:20: D2 đổi SMBJ15A → **SMBJ13A** (kẹp 28.0 V @8/20 µs < VIN tối đa 30 V của TPS54202), dời 2 via VIN12V ra khỏi pad R27 / C10, xuất lại Gerber/khoan/IPC/CPL. Chi tiết: `Cpap/document/verification_RevC.md`.
 
 Gửi xưởng file `SiPAP_RevC_Gerber.zip` (Gerber + khoan). Đặt lắp ráp (PCBA) thì gửi thêm `BOM_RevC.csv` và `SiPAP_RevC_CPL.csv`.
 
@@ -19,7 +19,7 @@ Gửi xưởng file `SiPAP_RevC_Gerber.zip` (Gerber + khoan). Đặt lắp ráp 
 | Bề mặt | HASL không chì hoặc ENIG (khuyên ENIG vì U1 có EPAD lưới 3x3) |
 | Lỗ bắt vít | 4 x Ø3.2 mm có mạ, pad Ø6 mm |
 
-**Yêu cầu riêng:** 4 via nằm trong pad EPAD của U1 (ESP32, toạ độ 48.6/50.0 mm, 59.4/62.2 mm) — yêu cầu **lấp và phủ (filled & capped)** hoặc ít nhất phủ mặt nạ từ mặt dưới, để thiếc không chảy qua lỗ. Tương tự 1 via 0.30 mm nằm trong pad 2 của R27 (net VIN12V, ~30.2/57.5 mm).
+**Yêu cầu riêng:** 4 via nằm trong pad EPAD của U1 (ESP32, toạ độ 48.6/50.0 mm, 59.4/62.2 mm) — yêu cầu **lấp và phủ (filled & capped)** hoặc ít nhất phủ mặt nạ từ mặt dưới, để thiếc không chảy qua lỗ. Ngoài 4 via này, không còn via nào nằm trong pad SMD (via VIN12V cạnh R27 đã dời ra (32.07/59.31) và (32.77/59.31) mm).
 
 ## Danh sách file
 | File | Nội dung | Chuẩn |

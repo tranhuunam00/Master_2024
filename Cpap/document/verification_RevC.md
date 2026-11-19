@@ -122,3 +122,32 @@ DRC sau sửa: 0 lỗi điện. Netlist PCB ↔ schematic: 216 chân, 0 sai. Ger
 Sau sửa: ERC 0 lỗi; DRC 0 lỗi điện; netlist 240 pad / 204 chân, 0 sai; BOM ↔ CPL 72/72; Gerber 249/249 pad đúng lớp. STEP và bảng chiều cao đã xuất lại — F1 MF-R400 cao 24.8 mm là chi tiết cao nhất sau encoder.
 
 Lưu ý cho xưởng: 1 via nằm trong pad 2 của R27 (VIN12V) — ghi trong `FAB_NOTES.md` yêu cầu lấp/phủ như via EPAD của U1.
+
+## 8. Rà soát vòng 4 (2026-11-19 22:20, qua eda-agent)
+
+| # | Vấn đề | Tham chiếu | Sửa |
+|---|---|---|---|
+| 6 | SMBJ15A kẹp tới 31.7 V với xung 8/20 µs, vượt VIN tối đa 30 V của TPS54202 | Bourns SMBJ DS tr.2; TI SLVSD26 mục 5.1 | D2 → **SMBJ13A** (VRWM 13 V, Vc 21.5 V @10/1000 µs, 28.0 V @8/20 µs), cùng gói SMB |
+| 7 | 2 via VIN12V (0.30 mm) chồng mép pad 2 của R27 và pad 1 của C10 → thiếc chảy xuống lỗ | — | Dời via tới (32.07; 59.31) và (32.77; 59.31) mm, đoạn dây lớp dưới 40 mil (dài ~1.4 mm), khe hở tới 3V3 ≥ 14 mil |
+
+Sau sửa: Altium DRC 0 lỗi điện (clearance, short, unrouted, width, hole, mask sliver, net antenna, height); audit clearance độc lập của eda-agent 0 lỗi trên 1782 cặp; 37/37 net đi đủ. DRC vẫn dừng ở giới hạn 500 vì 384 lỗi silk–pad + 116 silk–silk (chỉ là chữ in, xưởng tự cắt). Gerber/khoan/IPC/CPL đã xuất lại; file khoan vẫn 298 lỗ.
+
+Kiểm chứng thêm: jack J1 PJ-102AH chịu 5.0 A (Same Sky DS, bảng Specifications), đủ cho blower 3 A.
+
+## 9. Mô phỏng mạch cắt áp phần cứng (Altium Mixed Sim, 2026-11-19)
+
+Deck: `hardware/CPAP_VSSM/sim_safety_cutoff*.nsx` (kết quả `.sdf`, ảnh `sim_safety_cutoff.png`).
+Model: LM393 = TI PSpice SLCJ016B (subckt LM2903B), lưu ở `tools/spice_models/lm393_ti/`. U3 MPXV5010 = nguồn theo hàm truyền NXP `Vout = Vs·(0.09·P + 0.04)`. Q1 AO4407A: AOS không công bố model SPICE, nên Q1 được thay bằng tụ Ciss 2.06 nF (AO4407A DS) và kiểm Vgs so với VGS(th). Thêm 10 pF ký sinh ở COMP_OUT để mô phỏng hội tụ. Trong mạch thử không có ESP32, nên kết quả chứng minh mạch cắt hoạt động độc lập firmware.
+
+| Nguồn 5V | Cắt (blower OFF) | Bật lại | Trễ |
+|---|---|---|---|
+| 4.75 V | 25.57 cmH2O | 22.64 cmH2O | 2.93 |
+| 5.00 V | 25.57 cmH2O | 22.79 cmH2O | 2.78 |
+| 5.25 V | 25.57 cmH2O | 22.89 cmH2O | 2.68 |
+
+- Bình thường: GATE 6.02 V → Vgs Q1 = −5.98 V (DS: RDS(on) < 17 mΩ @ −6 V) → blower chạy.
+- Khi cắt: GATE 11.81 V → Vgs = −0.19 V, nhỏ hơn |VGS(th)| tối thiểu 1.7 V (AO4407A DS) → Q1 tắt chắc chắn.
+- SAFETY_TRIP báo về ESP32: 2.88 V khi cắt, 0.01 V bình thường.
+- Khớp tính tay ở mục 3 (25.3 / 22.8 cmH2O). Ngưỡng cắt không đổi khi 5V lệch ±5% (thiết kế tỉ lệ theo nguồn).
+
+Mô phỏng chưa bao gồm: sai số của chính cảm biến (NXP DS ±5% FS), sai số điện trở 1%, Vos của LM393 trên dải nhiệt, và hành vi chuyển mạch thật của Q1. Bước 8 bring-up vẫn bắt buộc.
