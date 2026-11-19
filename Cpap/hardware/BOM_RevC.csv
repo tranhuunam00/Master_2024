@@ -13,8 +13,8 @@ Item,Qty,Designators,Value,Description,Footprint,Manufacturer,MPN,Alternate MPN,
 11,1,J1,PJ-102AH,DC barrel jack 2.1 mm THT,CUI_PJ-102AH,Same Sky,PJ-102AH,,,,THT,12V centre-positive adapter; jack at board edge
 12,1,J2,Blower cable,2x2 header 2.54 mm (12V/GND/PWM/FG),CONN_HEADER_4_2X2,Wurth Elektronik,61300421121,any 2x2 2.54 mm THT header,,,THT,
 13,1,J3,Prog UART,1x6 header 2.54 mm: GND 3V3 TXD RXD EN IO0,CONN_HEADER_6,Wurth Elektronik,61300611121,any 1x6 2.54 mm THT header,,,THT,Cross TX/RX on USB-UART adapter
-14,1,U4,SFM3300-D,Sensirion flow sensor (off-board; header on PCB),CONN_HEADER_6,Wurth Elektronik,61300611121,any 1x6 2.54 mm THT header,,,THT,"On-board part = 1x6 header; SFM3300-D sensor ordered separately (Sensirion), I2C 0x40"
-15,1,U5,OLED 0.96in,SSD1306 128x64 I2C module (off-board; header on PCB),CONN_HEADER_4,Wurth Elektronik,61300411121,any 1x4 2.54 mm THT header,,,THT,"On-board part = 1x4 header; SSD1306 0.96in module ordered separately, I2C 0x3C"
+14,1,U4,SFM3300-D,Sensirion flow sensor (off-board; header on PCB),CONN_HEADER_6,Wurth Elektronik,61300611121,any 1x6 2.54 mm THT header,,,THT,"On-board part = 1x6 header; SFM3300-D sensor ordered separately (Sensirion), I2C 0x40; cable straight 1:1, shielded if > 10 cm (DS 4.8)"
+15,1,U5,OLED 0.96in,SSD1306 128x64 I2C module (off-board; header on PCB),CONN_HEADER_4,Wurth Elektronik,61300411121,any 1x4 2.54 mm THT header,,,THT,"On-board part = 1x4 header; OLED module ordered separately: ProtoSupplies DSP-8 (SSD1306, VCC-GND-SCL-SDA -> cable swaps wires 1/2, see wiring_harness.md), I2C 0x3C"
 16,1,U6,PEC11R-4220F-S0024,Rotary encoder with push switch,PEC11R-4xxxF-S_DS,Bourns,PEC11R-4220F-S0024,,,,THT,26.5 mm tall; M7 panel hole
 17,1,BZ1,PS1240P02BT,Piezo buzzer 12 mm,BUZZER_TDK_PS1240,TDK,PS1240P02BT,PS1240P02CT3,,,THT,Driven from GPIO7
 18,3,C10 C13 C14,10uF 35V,MLCC 10uF X5R 35V (12V input),R_0805,Murata,GRM21BR6YA106KE43,Samsung CL21A106KLCLQNC,,,SMD,12V input bulk

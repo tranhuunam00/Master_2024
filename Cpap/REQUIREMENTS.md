@@ -16,15 +16,15 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 
 | Output | Vị trí dự kiến ban đầu | Vị trí thực tế | Trạng thái |
 |---|---|---|---|
-| Firmware ESP32-S3 tích hợp (áp suất + dự phòng + flow sensor + PID blower + BLE + OLED + encoder + còi báo) | `Cpap/firmware/sipap_v1/*.ino` | (giữ nguyên dự kiến) | **Chưa làm** — mới đọc xong `dull.ino` + `LEDCFade.ino` (driver SFM3300), chưa viết file thật |
-| Schematic PCB | `sipap_v1.kicad_sch` | `Cpap/hardware/CPAP_VSSM/SiPAP_Main_RevB.SchDoc` (Rev B, 2026-11-18) | **Xong, ERC 0 lỗi** — vẽ lại 45 linh kiện. Sheet cũ `SiPAP_Schematic.SchDoc` (gỡ khỏi project) có lỗi: J1 VIN chập GND, buck U8 không có đầu vào, pull-up I2C hở, 12V lọt vào GPIO6 ESP32, không có cổng nạp |
+| Firmware ESP32-S3 tích hợp (áp suất + dự phòng + flow sensor + PID blower + BLE + OLED + encoder + còi báo) | `Cpap/firmware/sipap_v1/*.ino` | `Cpap/firmware/sipap_v1/` | **Xong bản đầu (2026-11-19), biên dịch OK (arduino-cli, ESP32-S3 core 3.3.8: 679 KB flash / 32 KB RAM), chưa chạy trên board thật** — PI áp suất, kiểm chéo 2 cảm biến, theo dõi SAFETY_TRIP, SFM3300 + reset cứng qua IO16, OLED, encoder, còi báo động, BLE (giữ UUID cũ), watchdog. Self-test bring-up: giữ núm encoder khi cấp nguồn hoặc gửi `TEST` |
+| Schematic PCB | `sipap_v1.kicad_sch` | `Cpap/hardware/CPAP_VSSM/SiPAP_Main_RevC.SchDoc` (Rev C, 2026-11-19; Rev B giữ lại tham khảo) | **Xong Rev C, ERC 0 lỗi** — 72 linh kiện, có MPN. Rev B: vẽ lại 45 linh kiện. Sheet cũ `SiPAP_Schematic.SchDoc` (gỡ khỏi project) có lỗi: J1 VIN chập GND, buck U8 không có đầu vào, pull-up I2C hở, 12V lọt vào GPIO6 ESP32, không có cổng nạp |
 | Thư viện symbol | — | `Cpap/hardware/CPAP_VSSM/SiPAP_Parts_v2.SchLib` | **Xong** — tạo lại từ schematic (file `SiPAP_Parts.SchLib` gần như rỗng), sửa hướng chân trái (trước đây đầu nối nằm trong thân), thêm `CONN_UART6` |
 | Thư viện footprint | — | `Cpap/hardware/CPAP_VSSM/SiPAP_Footprints.PcbLib` | **Xong (Rev B)** — 3 footprint cũ SAI so với datasheet đã dựng lại: `ESP32-S3-WROOM-1_DS` (DS v1.8 Fig 11-1; cũ bước 0.9mm, EPAD 15.8x17.6mm), `MPXV5010GC6U_482A` (DS Fig 5; cũ 2 hàng cách 7.62mm + lật gương, đúng 16.76mm), `PEC11R-4xxxF-S_DS` (DS tr.2; cũ bước 5mm, thiếu 2 tai). Thêm `DIOM_SMC_DO-214AB`. Footprint cũ vẫn nằm trong lib nhưng không dùng |
 | PCB layout (đặt vị trí + đi dây thật) | — | `Cpap/hardware/CPAP_VSSM/SiPAP_PCB.PcbDoc` | **Xong (Rev B, 2026-11-18)** — 2 lớp, 101.6x76.2mm, 4 lỗ M3, đổ GND 2 mặt + via khâu. DRC: 0 lỗi điện/va chạm 3D; còn 308 cảnh báo silkscreen (silk footprint cũ đè pad, xưởng tự cắt) |
 | Mô hình 3D + bảng chiều cao cho vỏ | — | `Cpap/hardware/CPAP_VSSM/3D/` (`SiPAP_PCB_RevB.step`, `height_map.md`) | **Xong** — khối 3D theo datasheet cho ESP32/MPXV5010/PEC11R; module buck, jack DC, còi là GIẢ ĐỊNH. Cao nhất 26.5mm (trục encoder) |
-| BOM.csv | `Cpap/hardware/BOM.csv` | `Cpap/hardware/BOM.csv` | **Xong (bản nháp)** — 45 linh kiện, MPN gợi ý cần xác nhận trước khi đặt hàng |
-| Gerber + drill + CPL | `Cpap/hardware/gerber/` | (giữ nguyên dự kiến, xuất từ Altium thay vì KiCad) | **Chưa làm** |
-| Sơ đồ dây nối ngoài PCB | `Cpap/hardware/wiring_harness.md` | (giữ nguyên dự kiến) | **Chưa làm** |
+| BOM.csv | `Cpap/hardware/BOM.csv` | `Cpap/hardware/BOM_RevC.csv` | **Xong** — 72 linh kiện, MPN + mã thay thế, khớp CPL |
+| Gerber + drill + CPL | `Cpap/hardware/gerber/` | `Cpap/hardware/CPAP_VSSM/Fab_RevC/` | **Xong, sẵn sàng đặt mạch** — Gerber RS-274X, Excellon, IPC-356, CPL, FAB_NOTES |
+| Sơ đồ dây nối ngoài PCB | `Cpap/hardware/wiring_harness.md` | (giữ nguyên dự kiến) | **Xong** — J1/J2/J3/U4/U5 từng chân, đối chiếu netlist + datasheet SFM3300 (cáp thẳng, shield nếu > 10 cm) + OLED ProtoSupplies DSP-8 (đảo dây 1–2), header Würth đã xác nhận mã. `CPAP_VSSM/tools/check_harness.py`: 17 PASS / 0 FAIL / 3 OPEN (dây blower chờ datasheet) |
 
 ## Giai đoạn B — Cơ khí & Khí động học
 
@@ -55,7 +55,7 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 - Vỏ: M3, in 3D.
 - CFD: mức đầy đủ (không chỉ tính giải tích), nhưng phụ thuộc cài được solver trên máy.
 
-## Rev C (đang làm, 2026-11-19)
+## Rev C (xong, 2026-11-19)
 
 - Thay module buck bằng 2x TPS54202 trên board (5V: 15uH, 100k/13.3k, FF 75pF; 3V3: 10uH, 100k/22.1k, FF 56pF — TI SLVSD26C Table 7-2).
 - Thêm F1 PTC MF-R400 (ban đầu MF-R300), D2 TVS SMBJ15A, J1 = PJ-102AH (3 chân), Q1 = AO4407A SO-8 (3A), BZ1 = TDK PS1240.
@@ -66,14 +66,12 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 - 3D: `CPAP_VSSM/3D/SiPAP_PCB_RevC.step` + `height_map.md` (cao nhất 26.5 mm encoder; 24.8 mm PTC F1 MF-R400 đứng; 11.5 mm tụ C25).
 - Hồ sơ xưởng: `CPAP_VSSM/Fab_RevC/` — `SiPAP_RevC_Gerber.zip` (Gerber RS-274X mm, Excellon 4:3 có G85 slot, IPC-D-356A), `SiPAP_RevC_CPL.csv`, `BOM_RevC.csv`, `FAB_NOTES.md`, ảnh top/schematic. PDF assembly/schematic chưa xuất (Altium chỉ in PDF qua hộp thoại máy in) — dùng ảnh PNG thay.
 - Bản cuối 2026-11-19: thêm công tắc nguồn SFM3300 (Q2 AO3401A + Q3 2N7002, IO16 = SFM_EN, bật mặc định), tụ bulk blower C25 220 µF 25 V cạnh J2, Q4 AO4407A chống ngược cực thay D1 SS54 (1.65 W → 0.19 W), F1 → MF-R400. ERC/DRC 0 lỗi, netlist 0 sai, Gerber kiểm 249/249 pad. Chi tiết `Cpap/document/verification_RevC.md` mục 7.
-- **Còn treo:** symbol U6 (PEC11R) trong schematic vẫn trỏ footprint cũ `PEC11R-4220F-S0024` (sai bước chân); PCB đã dùng đúng `PEC11R-4xxxF-S_DS`. Cần tắt tạm "Symbol pins vs pads" (pad MP cơ khí không có chân) để relink — nếu không, lần "Update PCB" sau Altium sẽ đề xuất đổi U6 sang footprint sai: **bỏ dòng đó trong ECO**.
+- U6 (PEC11R) trong schematic đã relink sang `PEC11R-4xxxF-S_DS` (2026-11-19); schematic ↔ PCB đồng bộ 72/72.
 
-## Việc tiếp theo (đang làm dở)
+## Việc tiếp theo
 
-1. Dọn lại ERC project (đang gỡ vài sheet rác còn sót trong project Altium gây nhiễu kết quả kiểm tra).
-2. PCB layout thật (đặt vị trí + đi dây đồng) trong `PCB2.PcbDoc`.
-3. BOM.csv đầy đủ.
-4. Firmware `.ino` thật.
-5. Gerber + wiring harness.
-6. Cơ khí (enclosure) + CFD.
-7. Hồ sơ an toàn/IFU.
+1. Đặt mạch Rev C (hồ sơ `Fab_RevC/`), mua blower + SFM3300 + OLED + adapter 12 V.
+2. Có blower thật: đo FG/PWM/dòng (`wiring_harness.md` mục 2), chỉnh `BLOWER_PWM_HZ`, `BLOWER_FG_PER_REV`, hệ số PI trong `firmware/sipap_v1/config.h`.
+3. Nhận board: chạy self-test, ghi kết quả (`document/verification_RevC.md` mục 4).
+4. Cơ khí: `enclosure.py` + layout_diagram (cần kích thước blower) + CFD.
+5. Hồ sơ an toàn: risk analysis, test report template, IFU.
