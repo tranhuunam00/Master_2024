@@ -81,3 +81,31 @@ Bước 8 là bằng chứng chính cho tính năng an toàn: nó phải đạt 
 2. Sửa thư viện (pad header MultiLayer, silk J1) bằng tay trong Altium khi rảnh — board đã đúng.
 3. Relink footprint U6 trong schematic (cần tắt tạm "Symbol pins vs pads").
 4. Đo dòng blower thật để chốt F1/D1 (mục 3).
+
+## 6. Rà soát vòng 3 (2026-11-19, trước khi đặt in)
+
+### Lỗi tìm ra và đã sửa trên board
+| # | Lỗi | Sửa |
+|---|---|---|
+| 4 | Khi pad header còn ở lớp Top, autorouter đã đi dây 3V3 lớp dưới chui qua chân **U5 pin 3 (I2C_SCL)** và **J3 pin 3 (UART_TX)** → sau khi sửa pad thành MultiLayer thì **chập 3V3** | Gỡ đoạn 3V3 đó, đi lại tuyến mới cách chân ≥ 20 mil; DRC 0 lỗi; kiểm Gerber GBL không còn đoạn cũ |
+| 5 | Dòng blower 3 A đi vòng: qua 4 via đơn 0.3 mm + đoạn 24 mil + pad VIN của U9 | Nối thẳng lớp dưới 50 mil từ cụm D1/C10 tới Q1; thêm via song song ở 2 đầu (tổng 5 via) |
+
+DRC sau sửa: 0 lỗi điện. Netlist PCB ↔ schematic: 216 chân, 0 sai. Gerber: mọi pad xuyên lỗ có đồng ở cả 2 mặt, silk nằm trong board.
+
+### Đối chiếu chân với datasheet (đạt)
+- TPS54202 DDC: 1 GND, 2 SW, 3 VIN, 4 FB, 5 EN (để hở — có pull-up trong), 6 BOOT.
+- LM393: 1 OUT1, 2 IN1−, 3 IN1+, 4 GND, 8 VCC; unit B nối GND (dải common-mode gồm GND); output hở collector kéo lên 12V hợp lệ (tối đa 36V).
+- MPXV5010 Case 482A: 2 Vs, 3 GND, 4 Vout; ra tối đa 4.7 V → qua cầu chia 2/3 còn 3.13 V vào ADC1 (IO4/IO5).
+- ESP32-S3: chỉ dùng ADC1 (không bị WiFi chặn); không đụng IO35–37 (PSRAM octal của N8R8), IO45/46 (strapping); EN có RC 10k/1 µF đúng khuyến cáo.
+- SFM3300: header U4 1 HEAT_GND, 2 VDD 5V, 3 SCK, 4 GND, 5 DATA, 6 HEAT (để trống) — đúng pad layout DS tr.4; mức logic cao tối thiểu 2.5 V → pull-up 3V3 đạt.
+- AO4407A: S 1-3, G 4, D 5-8; Rds(on) < 17 mΩ @ Vgs −6 V; Vgs max ±25 V.
+
+### Điểm còn mở — cần quyết trước/sau khi đặt
+| Mức | Vấn đề | Đề xuất |
+|---|---|---|
+| Cao | **SFM3300 datasheet: "phải có khả năng reset cứng bằng cách ngắt nguồn sensor"** — hiện VDD nối thẳng 5V, firmware không ngắt được | Thêm công tắc nguồn tải (load switch logic 3.3V) cho VDD SFM3300, điều khiển bằng 1 GPIO trống — cần sửa schematic + PCB |
+| Trung bình | Không có tụ bulk (100–470 µF) gần J2 cho blower | Thêm tụ hoá/polymer cạnh J2 nếu driver blower không có sẵn tụ |
+| Trung bình | F1 MF-R300 giảm còn 2.31 A ở 50 °C; D1 SS54 ~1.65 W ở 3.3 A | Đo dòng blower thật; nếu > 2 A liên tục thì đổi F1 lớn hơn và/hoặc thay D1 bằng P-MOSFET chống ngược cực |
+| Thấp | BLOWER_PWM dùng IO3 (chân strapping JTAG) | Chỉ ảnh hưởng nếu đốt eFuse JTAG_SEL — mặc định không sao |
+| Thấp | Thứ tự chân module OLED khác nhau giữa các hãng (GND-VCC-SCL-SDA vs VCC-GND-…) | Kiểm tra module mua về trước khi cắm |
+| Thấp | Encoder chưa có tụ lọc RC phần cứng | Chống dội bằng firmware |
