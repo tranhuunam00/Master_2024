@@ -61,7 +61,8 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 - Thêm F1 PTC MF-R300, D2 TVS SMBJ15A, J1 = PJ-102AH (3 chân), Q1 = AO4407A SO-8 (3A), BZ1 = TDK PS1240.
 - Symbol + footprint mới đã có trong `SiPAP_Parts_v2.SchLib` / `SiPAP_Footprints.PcbLib` (đối chiếu datasheet).
 - Template schematic: `CPAP_VSSM/tools/sipap_template_revc.json` (64 linh kiện, 33 net, preview 0 lỗi). BOM: `Cpap/hardware/BOM_RevC.csv`.
-- **Chưa vẽ lên sheet / PCB**: Altium đang ở chế độ Viewer (mất Author seat) nên không lưu được.
+- Schematic `SiPAP_Main_RevC.SchDoc`: **xong, ERC 0 lỗi** (5 cảnh báo "no driving source" trên net cầu chia FB/EN/GATE/COMP_REF — bình thường). Rev B gỡ khỏi project (file vẫn giữ).
+- PCB Rev C: **chưa làm**.
 
 ## Việc tiếp theo (đang làm dở)
 
