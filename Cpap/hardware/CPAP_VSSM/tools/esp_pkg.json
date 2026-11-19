@@ -1,0 +1,464 @@
+{
+ "family": "custom",
+ "name": "ESP32-S3-WROOM-1_DS",
+ "body_x": 18.0,
+ "body_y": 25.5,
+ "height": 3.1,
+ "source": {
+  "document": "ESP32-S3-WROOM-1 & WROOM-1U Datasheet",
+  "revision": "v1.8",
+  "page": 45,
+  "ref": "Figure 11-1 Recommended PCB Land Pattern",
+  "path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\tools\\datasheets\\esp32-s3-wroom-1_datasheet_v1.8.pdf"
+ },
+ "custom_pads": [
+  {
+   "number": "1",
+   "x": -8.75,
+   "y": 5.26,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "2",
+   "x": -8.75,
+   "y": 3.99,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "3",
+   "x": -8.75,
+   "y": 2.72,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "4",
+   "x": -8.75,
+   "y": 1.45,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "5",
+   "x": -8.75,
+   "y": 0.18,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "6",
+   "x": -8.75,
+   "y": -1.09,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "7",
+   "x": -8.75,
+   "y": -2.36,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "8",
+   "x": -8.75,
+   "y": -3.63,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "9",
+   "x": -8.75,
+   "y": -4.9,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "10",
+   "x": -8.75,
+   "y": -6.17,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "11",
+   "x": -8.75,
+   "y": -7.44,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "12",
+   "x": -8.75,
+   "y": -8.71,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "13",
+   "x": -8.75,
+   "y": -9.98,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "14",
+   "x": -8.75,
+   "y": -11.25,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "15",
+   "x": -6.985,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "16",
+   "x": -5.715,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "17",
+   "x": -4.445,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "18",
+   "x": -3.175,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "19",
+   "x": -1.905,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "20",
+   "x": -0.635,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "21",
+   "x": 0.635,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "22",
+   "x": 1.905,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "23",
+   "x": 3.175,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "24",
+   "x": 4.445,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "25",
+   "x": 5.715,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "26",
+   "x": 6.985,
+   "y": -12.5,
+   "width": 0.9,
+   "height": 1.5
+  },
+  {
+   "number": "27",
+   "x": 8.75,
+   "y": -11.25,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "28",
+   "x": 8.75,
+   "y": -9.98,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "29",
+   "x": 8.75,
+   "y": -8.71,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "30",
+   "x": 8.75,
+   "y": -7.44,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "31",
+   "x": 8.75,
+   "y": -6.17,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "32",
+   "x": 8.75,
+   "y": -4.9,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "33",
+   "x": 8.75,
+   "y": -3.63,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "34",
+   "x": 8.75,
+   "y": -2.36,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "35",
+   "x": 8.75,
+   "y": -1.09,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "36",
+   "x": 8.75,
+   "y": 0.18,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "37",
+   "x": 8.75,
+   "y": 1.45,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "38",
+   "x": 8.75,
+   "y": 2.72,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "39",
+   "x": 8.75,
+   "y": 3.99,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "40",
+   "x": 8.75,
+   "y": 5.26,
+   "width": 1.5,
+   "height": 0.9
+  },
+  {
+   "number": "41",
+   "x": -2.9,
+   "y": -1.06,
+   "width": 0.9,
+   "height": 0.9
+  },
+  {
+   "number": "41",
+   "x": -1.5,
+   "y": -1.06,
+   "width": 0.9,
+   "height": 0.9
+  },
+  {
+   "number": "41",
+   "x": -0.1,
+   "y": -1.06,
+   "width": 0.9,
+   "height": 0.9
+  },
+  {
+   "number": "41",
+   "x": -2.9,
+   "y": -2.46,
+   "width": 0.9,
+   "height": 0.9
+  },
+  {
+   "number": "41",
+   "x": -1.5,
+   "y": -2.46,
+   "width": 0.9,
+   "height": 0.9
+  },
+  {
+   "number": "41",
+   "x": -0.1,
+   "y": -2.46,
+   "width": 0.9,
+   "height": 0.9
+  },
+  {
+   "number": "41",
+   "x": -2.9,
+   "y": -3.86,
+   "width": 0.9,
+   "height": 0.9
+  },
+  {
+   "number": "41",
+   "x": -1.5,
+   "y": -3.86,
+   "width": 0.9,
+   "height": 0.9
+  },
+  {
+   "number": "41",
+   "x": -0.1,
+   "y": -3.86,
+   "width": 0.9,
+   "height": 0.9
+  }
+ ],
+ "drawing_numbers": [
+  18,
+  6,
+  7.49,
+  25.5,
+  1.5,
+  0.9,
+  16.51,
+  1.5,
+  0.5,
+  0.9,
+  0.5,
+  3.7,
+  3.7,
+  0.9,
+  7.5,
+  10.29,
+  1.27,
+  0.5,
+  1.27,
+  2.015,
+  2.015,
+  17.5
+ ],
+ "drawing_dims": [
+  {
+   "pad": "1",
+   "mm": 1.5,
+   "axis": "x"
+  },
+  {
+   "pad": "1",
+   "mm": 0.9,
+   "axis": "y"
+  },
+  {
+   "pad": "15",
+   "mm": 0.9,
+   "axis": "x"
+  },
+  {
+   "pad": "15",
+   "mm": 1.5,
+   "axis": "y"
+  },
+  {
+   "from": "1",
+   "to": "14",
+   "mm": 16.51,
+   "axis": "y",
+   "between": "centres"
+  },
+  {
+   "from": "1",
+   "to": "2",
+   "mm": 1.27,
+   "axis": "y",
+   "between": "centres"
+  },
+  {
+   "from": "15",
+   "to": "16",
+   "mm": 1.27,
+   "axis": "x",
+   "between": "centres"
+  },
+  {
+   "from": "1",
+   "to": "40",
+   "mm": 17.5,
+   "axis": "x",
+   "between": "centres"
+  },
+  {
+   "pad": "41#1",
+   "mm": 0.9,
+   "axis": "x"
+  },
+  {
+   "pad": "41#1",
+   "mm": 0.9,
+   "axis": "y"
+  },
+  {
+   "from": "41#1",
+   "to": "41#2",
+   "mm": 0.5,
+   "axis": "x",
+   "between": "gap"
+  },
+  {
+   "from": "41#1",
+   "to": "41#3",
+   "mm": 3.7,
+   "axis": "x",
+   "between": "outer"
+  },
+  {
+   "from": "41#1",
+   "to": "41#7",
+   "mm": 3.7,
+   "axis": "y",
+   "between": "outer"
+  }
+ ]
+}

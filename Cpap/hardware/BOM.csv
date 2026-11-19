@@ -1,0 +1,27 @@
+Item,Qty,Designators,Value,Description,Footprint,Manufacturer,MPN (suggested - verify before ordering),Mount,Notes
+1,1,U1,ESP32-S3-WROOM-1-N8R8,WiFi+BLE MCU module,ESP32-S3-WROOM-1_DS (Espressif DS v1.8 Fig 11-1),Espressif,ESP32-S3-WROOM-1-N8R8,SMD,Antenna end at board top edge; no copper under antenna area; 4 vias in EPAD - tent/fill
+2,2,U2 U3,MPXV5010GC6U,Pressure sensor 0-10 kPa (primary + redundant),MPXV5010GC6U_482A (DS Fig 5: 16.76 mm row span),NXP,MPXV5010GC6U,SMD,Pins 1/5/6/7/8 internal - leave unconnected (DS note); 13.21 mm tall incl. port
+3,1,U7,LM393,Dual comparator - independent over-pressure cutoff,SOIC-8,TI,LM393DR,SMD,Unit B unused (inputs tied to GND)
+4,1,Q1,AO3401A,P-MOSFET 30V 4A - blower cutoff,SOT-23,Alpha & Omega,AO3401A,SMD,Blower current must stay below ~3A
+5,1,D1,SS54,Schottky 5A 40V - reverse polarity protection (series),DO-214AB (SMC),Vishay / generic,SSC54-E3/57T or SS54,SMD,Cathode band at pad 2
+6,1,U8,Buck 12V->5V,DC-DC buck module (e.g. MP1584EN board),CONN_HEADER_4,Generic,MP1584EN module,THT (hand),Set output to 5.0V before fitting
+7,1,U9,Buck 5V->3V3,DC-DC buck module (e.g. MP1584EN board),CONN_HEADER_4,Generic,MP1584EN module,THT (hand),Set output to 3.3V before fitting
+8,1,U4,SFM3300-D,Sensirion flow sensor (off-board via cable),CONN_HEADER_6,Sensirion,SFM3300-D,THT (hand),I2C 0x40; heater pin unused
+9,1,U5,OLED 0.96in I2C,SSD1306 128x64 module (off-board via cable),CONN_HEADER_4,Generic,SSD1306 0.96in I2C,THT (hand),I2C 0x3C
+10,1,U6,PEC11R-4220F-S0024,Rotary encoder with push switch,PEC11R-4xxxF-S_DS (DS p2 layout incl. 2 mounting slots),Bourns,PEC11R-4220F-S0024,THT (hand),26.5 mm tall (20 mm shaft) - needs M7 panel hole
+11,1,J1,DC Jack 12V,DC barrel jack 5.5x2.1mm,DCJACK_THT_2PIN,Generic,PJ-002A (check pinout),THT (hand),Footprint is 2-pin generic - confirm against chosen jack
+12,1,J2,Blower cable,2x2 header 2.54mm (12V/GND/PWM/FG),CONN_HEADER_4_2X2,Generic,2x2 pin header,THT (hand),
+13,1,J3,Prog UART,1x6 header 2.54mm: GND 3V3 TXD RXD EN IO0,CONN_HEADER_6,Generic,1x6 pin header,THT (hand),Cross TX/RX on USB-UART adapter
+14,1,BZ1,Piezo buzzer,Piezo buzzer 7.6mm pitch,BUZZER_THT_7.6,Generic,piezo 12mm,THT (hand),Driven directly from IO7 - must be a low-current piezo
+15,3,C1 C2 C10,10uF,MLCC 10uF X5R (C10 rated 25V),R_0805,Samsung,CL21A106KAYNNNE (25V),SMD,
+16,2,C3 C4,100nF,MLCC 100nF X7R 50V,R_0805,Samsung,CL21B104KBCNNNC,SMD,
+17,3,C5 C6 C9,1uF,MLCC 1uF X7R 25V,R_0805,Samsung,CL21B105KAFNNNE,SMD,C6/C9 = MPXV5010 Vs decoupling (DS Fig 3)
+18,2,C7 C11,10nF,MLCC 10nF X7R 50V,R_0805,Samsung,CL21B103KBANNNC,SMD,MPXV5010 Vs decoupling (DS Fig 3)
+19,2,C8 C12,470pF,MLCC 470pF C0G 50V,R_0805,Samsung,CL21C471JBANNNC,SMD,MPXV5010 output filter (DS Fig 3)
+20,10,R1 R3 R7 R8 R9 R11 R12 R13 R14 R17,10k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-0710KL,SMD,
+21,2,R2 R4,20k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-0720KL,SMD,
+22,2,R5 R6,4.7k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-074K7L,SMD,I2C pull-ups to 3V3
+23,1,R10,47k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-0747KL,SMD,Trip ref = 5V*10k/57k = 0.877V (~25 cmH2O)
+24,2,R15 R18,1M,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-071ML,SMD,R18 = comparator hysteresis
+25,1,R16,330k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-07330KL,SMD,
+26,4,MH1-MH4,M3,Mounting hole 3.2mm plated,PAD 6mm,-,-,-,Board 101.6 x 76.2 mm

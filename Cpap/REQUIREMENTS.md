@@ -17,11 +17,12 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 | Output | Vị trí dự kiến ban đầu | Vị trí thực tế | Trạng thái |
 |---|---|---|---|
 | Firmware ESP32-S3 tích hợp (áp suất + dự phòng + flow sensor + PID blower + BLE + OLED + encoder + còi báo) | `Cpap/firmware/sipap_v1/*.ino` | (giữ nguyên dự kiến) | **Chưa làm** — mới đọc xong `dull.ino` + `LEDCFade.ino` (driver SFM3300), chưa viết file thật |
-| Schematic PCB | `sipap_v1.kicad_sch` | `Cpap/hardware/CPAP_VSSM/SiPAP_Schematic.SchDoc` (Altium thật) | **Xong + ERC sạch (0 lỗi)** — 30 linh kiện, đã verify từng pinout theo datasheet thật |
-| Thư viện symbol | — | `Cpap/hardware/CPAP_VSSM/SiPAP_Parts.SchLib` | **Xong** — 7 symbol tạo tay theo datasheet thật (ESP32-S3-WROOM-1, MPXV5010GC6U, SFM3300-D, PEC11R, SSD1306, LM393, buck module) |
-| Thư viện footprint | — | `Cpap/hardware/CPAP_VSSM/SiPAP_Footprints.PcbLib` | **Xong** — 12 footprint, đã gán cho cả 30 linh kiện. ESP32-S3 footprint (41 pad castellated) đã verify số đo khớp datasheet 100% |
-| PCB layout (đặt vị trí + đi dây thật) | — | `Cpap/hardware/CPAP_VSSM/PCB2.PcbDoc` (cần đổi tên) | **Chưa làm** — bước tiếp theo |
-| BOM.csv | `Cpap/hardware/BOM.csv` | (giữ nguyên dự kiến) | **Chưa làm** — có sẵn bảng giá 15 dòng cũ trong `generate_docx.py` làm nền, cần bổ sung part number/nhà phân phối thật |
+| Schematic PCB | `sipap_v1.kicad_sch` | `Cpap/hardware/CPAP_VSSM/SiPAP_Main_RevB.SchDoc` (Rev B, 2026-11-18) | **Xong, ERC 0 lỗi** — vẽ lại 45 linh kiện. Sheet cũ `SiPAP_Schematic.SchDoc` (gỡ khỏi project) có lỗi: J1 VIN chập GND, buck U8 không có đầu vào, pull-up I2C hở, 12V lọt vào GPIO6 ESP32, không có cổng nạp |
+| Thư viện symbol | — | `Cpap/hardware/CPAP_VSSM/SiPAP_Parts_v2.SchLib` | **Xong** — tạo lại từ schematic (file `SiPAP_Parts.SchLib` gần như rỗng), sửa hướng chân trái (trước đây đầu nối nằm trong thân), thêm `CONN_UART6` |
+| Thư viện footprint | — | `Cpap/hardware/CPAP_VSSM/SiPAP_Footprints.PcbLib` | **Xong (Rev B)** — 3 footprint cũ SAI so với datasheet đã dựng lại: `ESP32-S3-WROOM-1_DS` (DS v1.8 Fig 11-1; cũ bước 0.9mm, EPAD 15.8x17.6mm), `MPXV5010GC6U_482A` (DS Fig 5; cũ 2 hàng cách 7.62mm + lật gương, đúng 16.76mm), `PEC11R-4xxxF-S_DS` (DS tr.2; cũ bước 5mm, thiếu 2 tai). Thêm `DIOM_SMC_DO-214AB`. Footprint cũ vẫn nằm trong lib nhưng không dùng |
+| PCB layout (đặt vị trí + đi dây thật) | — | `Cpap/hardware/CPAP_VSSM/SiPAP_PCB.PcbDoc` | **Xong (Rev B, 2026-11-18)** — 2 lớp, 101.6x76.2mm, 4 lỗ M3, đổ GND 2 mặt + via khâu. DRC: 0 lỗi điện/va chạm 3D; còn 308 cảnh báo silkscreen (silk footprint cũ đè pad, xưởng tự cắt) |
+| Mô hình 3D + bảng chiều cao cho vỏ | — | `Cpap/hardware/CPAP_VSSM/3D/` (`SiPAP_PCB_RevB.step`, `height_map.md`) | **Xong** — khối 3D theo datasheet cho ESP32/MPXV5010/PEC11R; module buck, jack DC, còi là GIẢ ĐỊNH. Cao nhất 26.5mm (trục encoder) |
+| BOM.csv | `Cpap/hardware/BOM.csv` | `Cpap/hardware/BOM.csv` | **Xong (bản nháp)** — 45 linh kiện, MPN gợi ý cần xác nhận trước khi đặt hàng |
 | Gerber + drill + CPL | `Cpap/hardware/gerber/` | (giữ nguyên dự kiến, xuất từ Altium thay vì KiCad) | **Chưa làm** |
 | Sơ đồ dây nối ngoài PCB | `Cpap/hardware/wiring_harness.md` | (giữ nguyên dự kiến) | **Chưa làm** |
 
