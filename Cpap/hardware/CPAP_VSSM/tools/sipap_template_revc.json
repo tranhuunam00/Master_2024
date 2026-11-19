@@ -1,0 +1,4008 @@
+{
+ "parts": [
+  {
+   "designator": "J1",
+   "lib_reference": "CONN_DCJACK3",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 300,
+   "y": 13800,
+   "rotation": 0,
+   "value": "PJ-102AH 12V IN"
+  },
+  {
+   "designator": "F1",
+   "lib_reference": "FUSE_PTC",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 13000,
+   "rotation": 0,
+   "value": "MF-R300 3A PTC"
+  },
+  {
+   "designator": "D1",
+   "lib_reference": "DIODE",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 9600,
+   "rotation": 0,
+   "value": "SS54 Schottky 5A",
+   "unique_id": "WKUUVTBI"
+  },
+  {
+   "designator": "D2",
+   "lib_reference": "TVS_UNI",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 12000,
+   "rotation": 0,
+   "value": "SMBJ15A TVS"
+  },
+  {
+   "designator": "C10",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 8600,
+   "rotation": 0,
+   "value": "10uF 35V",
+   "unique_id": "ASZKUQZD"
+  },
+  {
+   "designator": "C23",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 8100,
+   "rotation": 0,
+   "value": "22uF 25V"
+  },
+  {
+   "designator": "Q1",
+   "lib_reference": "AO4407A",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 10300,
+   "rotation": 0,
+   "value": "AO4407A"
+  },
+  {
+   "designator": "R13",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 6400,
+   "rotation": 0,
+   "value": "10k",
+   "unique_id": "OWGBCMWK"
+  },
+  {
+   "designator": "R17",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 5900,
+   "rotation": 0,
+   "value": "10k",
+   "unique_id": "CJQMKMKS"
+  },
+  {
+   "designator": "J2",
+   "lib_reference": "CONN_BLOWER4",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 5200,
+   "rotation": 0,
+   "value": "Blower cable",
+   "unique_id": "IPXHUCUC"
+  },
+  {
+   "designator": "R12",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 4400,
+   "rotation": 0,
+   "value": "10k",
+   "unique_id": "HQXQVQOT"
+  },
+  {
+   "designator": "U8",
+   "lib_reference": "TPS54202",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 13800,
+   "rotation": 0,
+   "value": "TPS54202 (5V)"
+  },
+  {
+   "designator": "C13",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 10200,
+   "rotation": 0,
+   "value": "10uF 35V"
+  },
+  {
+   "designator": "C15",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 9800,
+   "rotation": 0,
+   "value": "100nF"
+  },
+  {
+   "designator": "C17",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 9400,
+   "rotation": 0,
+   "value": "100nF"
+  },
+  {
+   "designator": "L1",
+   "lib_reference": "INDUCTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 11900,
+   "rotation": 0,
+   "value": "15uH SRN6045TA-150M"
+  },
+  {
+   "designator": "C2",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 8600,
+   "rotation": 0,
+   "value": "22uF 16V",
+   "unique_id": "PKZXTIPV"
+  },
+  {
+   "designator": "C18",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 8200,
+   "rotation": 0,
+   "value": "22uF 16V"
+  },
+  {
+   "designator": "R19",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 7800,
+   "rotation": 0,
+   "value": "100k 1%"
+  },
+  {
+   "designator": "C19",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 7400,
+   "rotation": 0,
+   "value": "75pF C0G"
+  },
+  {
+   "designator": "R20",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 7000,
+   "rotation": 0,
+   "value": "13.3k 1%"
+  },
+  {
+   "designator": "U9",
+   "lib_reference": "TPS54202",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 9200,
+   "rotation": 0,
+   "value": "TPS54202 (3V3)"
+  },
+  {
+   "designator": "C14",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 5600,
+   "rotation": 0,
+   "value": "10uF 35V"
+  },
+  {
+   "designator": "C16",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 5200,
+   "rotation": 0,
+   "value": "100nF"
+  },
+  {
+   "designator": "C20",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 4800,
+   "rotation": 0,
+   "value": "100nF"
+  },
+  {
+   "designator": "L2",
+   "lib_reference": "INDUCTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 7300,
+   "rotation": 0,
+   "value": "10uH SRN6045TA-100M"
+  },
+  {
+   "designator": "C1",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 4000,
+   "rotation": 0,
+   "value": "22uF 16V",
+   "unique_id": "JSYMXWSU"
+  },
+  {
+   "designator": "C21",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 3600,
+   "rotation": 0,
+   "value": "22uF 16V"
+  },
+  {
+   "designator": "R21",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 3200,
+   "rotation": 0,
+   "value": "100k 1%"
+  },
+  {
+   "designator": "C22",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 2800,
+   "rotation": 0,
+   "value": "56pF C0G"
+  },
+  {
+   "designator": "R22",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 4000,
+   "y": 2400,
+   "rotation": 0,
+   "value": "22.1k 1%"
+  },
+  {
+   "designator": "U7",
+   "lib_reference": "LM393",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 8600,
+   "rotation": 0,
+   "value": "LM393",
+   "unique_id": "DMOWYEOF"
+  },
+  {
+   "designator": "C4",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 7600,
+   "rotation": 0,
+   "value": "100nF",
+   "unique_id": "HWQKVUUL"
+  },
+  {
+   "designator": "R10",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 7000,
+   "rotation": 0,
+   "value": "47k",
+   "unique_id": "XWJFOFPJ"
+  },
+  {
+   "designator": "R11",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 6400,
+   "rotation": 0,
+   "value": "10k",
+   "unique_id": "PZHIMIYX"
+  },
+  {
+   "designator": "R18",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 5800,
+   "rotation": 0,
+   "value": "1M",
+   "unique_id": "WCNFAMSQ"
+  },
+  {
+   "designator": "R15",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 5200,
+   "rotation": 0,
+   "value": "1M",
+   "unique_id": "VBIGISGA"
+  },
+  {
+   "designator": "R16",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 4600,
+   "rotation": 0,
+   "value": "330k",
+   "unique_id": "TLKRYWTD"
+  },
+  {
+   "designator": "U2",
+   "lib_reference": "MPXV5010GC6U",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 3600,
+   "rotation": 0,
+   "value": "MPXV5010GC6U (primary)",
+   "unique_id": "JMDWTRXU"
+  },
+  {
+   "designator": "C6",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 2700,
+   "rotation": 0,
+   "value": "1uF",
+   "unique_id": "MWOTXQNY"
+  },
+  {
+   "designator": "C7",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 2200,
+   "rotation": 0,
+   "value": "10nF",
+   "unique_id": "JTIIAVYQ"
+  },
+  {
+   "designator": "C8",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 1700,
+   "rotation": 0,
+   "value": "470pF",
+   "unique_id": "FTHUFLZV"
+  },
+  {
+   "designator": "R1",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 1200,
+   "rotation": 0,
+   "value": "10k",
+   "unique_id": "UQEZVUJD"
+  },
+  {
+   "designator": "R2",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 7600,
+   "y": 700,
+   "rotation": 0,
+   "value": "20k",
+   "unique_id": "JGUWTYTX"
+  },
+  {
+   "designator": "U3",
+   "lib_reference": "MPXV5010GC6U",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 10600,
+   "y": 3600,
+   "rotation": 0,
+   "value": "MPXV5010GC6U (redundant)",
+   "unique_id": "JONZAHCO"
+  },
+  {
+   "designator": "C9",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 10600,
+   "y": 2700,
+   "rotation": 0,
+   "value": "1uF",
+   "unique_id": "MXWIGYVF"
+  },
+  {
+   "designator": "C11",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 10600,
+   "y": 2200,
+   "rotation": 0,
+   "value": "10nF",
+   "unique_id": "JVKYLKFW"
+  },
+  {
+   "designator": "C12",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 10600,
+   "y": 1700,
+   "rotation": 0,
+   "value": "470pF",
+   "unique_id": "HBBTYRSM"
+  },
+  {
+   "designator": "R3",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 10600,
+   "y": 1200,
+   "rotation": 0,
+   "value": "10k",
+   "unique_id": "JJDACZSN"
+  },
+  {
+   "designator": "R4",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 10600,
+   "y": 700,
+   "rotation": 0,
+   "value": "20k",
+   "unique_id": "NVYXBZNO"
+  },
+  {
+   "designator": "U1",
+   "lib_reference": "ESP32-S3-WROOM-1",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 11200,
+   "y": 7200,
+   "rotation": 0,
+   "value": "ESP32-S3-WROOM-1-N8R8",
+   "unique_id": "GKWJANVW"
+  },
+  {
+   "designator": "C3",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 10600,
+   "y": 5400,
+   "rotation": 0,
+   "value": "100nF",
+   "unique_id": "UCEJSYHD"
+  },
+  {
+   "designator": "R9",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 10600,
+   "y": 4900,
+   "rotation": 0,
+   "value": "10k",
+   "unique_id": "VWAEVGAH"
+  },
+  {
+   "designator": "C5",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 10600,
+   "y": 4400,
+   "rotation": 0,
+   "value": "1uF",
+   "unique_id": "CDEDXQBY"
+  },
+  {
+   "designator": "J3",
+   "lib_reference": "CONN_UART6",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 8600,
+   "rotation": 0,
+   "value": "Prog UART",
+   "unique_id": "KZQYUFBB"
+  },
+  {
+   "designator": "U4",
+   "lib_reference": "SFM3300-D",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 7700,
+   "rotation": 0,
+   "value": "SFM3300-D",
+   "unique_id": "ZMZCBDUM"
+  },
+  {
+   "designator": "U5",
+   "lib_reference": "SSD1306_OLED_I2C",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 6800,
+   "rotation": 0,
+   "value": "OLED 0.96in I2C",
+   "unique_id": "EBIDXNXH"
+  },
+  {
+   "designator": "R5",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 6100,
+   "rotation": 0,
+   "value": "4.7k",
+   "unique_id": "AVYMKMST"
+  },
+  {
+   "designator": "R6",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 5600,
+   "rotation": 0,
+   "value": "4.7k",
+   "unique_id": "GDMRIXTS"
+  },
+  {
+   "designator": "U6",
+   "lib_reference": "PEC11R-4220F-S0024",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 4800,
+   "rotation": 0,
+   "value": "PEC11R-4220F-S0024",
+   "unique_id": "YXBUJGMN"
+  },
+  {
+   "designator": "R7",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 3900,
+   "rotation": 0,
+   "value": "10k",
+   "unique_id": "KPQUZJCR"
+  },
+  {
+   "designator": "R8",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 3400,
+   "rotation": 0,
+   "value": "10k",
+   "unique_id": "MNKEZZHV"
+  },
+  {
+   "designator": "R14",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 2900,
+   "rotation": 0,
+   "value": "10k",
+   "unique_id": "MGEPHOKT"
+  },
+  {
+   "designator": "BZ1",
+   "lib_reference": "BUZZER",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 2200,
+   "rotation": 0,
+   "value": "PS1240P02BT",
+   "unique_id": "KQPTAQNN"
+  }
+ ],
+ "wires": [
+  {
+   "net": "VIN_RAW",
+   "path": [
+    "J1.1",
+    [
+     1500,
+     13800
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "J1.3",
+    [
+     1800,
+     13700
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "J1.2",
+    [
+     1500,
+     13600
+    ]
+   ]
+  },
+  {
+   "net": "VIN_RAW",
+   "path": [
+    "F1.1",
+    [
+     200,
+     13000
+    ]
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "path": [
+    "F1.2",
+    [
+     1600,
+     13000
+    ]
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "path": [
+    "D1.1",
+    [
+     100,
+     12500
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "D1.2",
+    [
+     2000,
+     12500
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "D2.1",
+    [
+     1600,
+     12000
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "D2.2",
+    [
+     800,
+     12000
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "C10.1",
+    [
+     400,
+     11500
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C10.2",
+    [
+     2000,
+     11500
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "C23.1",
+    [
+     400,
+     11000
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C23.2",
+    [
+     2000,
+     11000
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "Q1.1",
+    [
+     800,
+     10300
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "Q1.2",
+    [
+     500,
+     10200
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "Q1.3",
+    [
+     800,
+     10100
+    ]
+   ]
+  },
+  {
+   "net": "GATE",
+   "path": [
+    "Q1.4",
+    [
+     200,
+     9900
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "path": [
+    "Q1.5",
+    [
+     2200,
+     10300
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "path": [
+    "Q1.6",
+    [
+     2200,
+     10200
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "path": [
+    "Q1.7",
+    [
+     2200,
+     10100
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "path": [
+    "Q1.8",
+    [
+     2200,
+     10000
+    ]
+   ]
+  },
+  {
+   "net": "GATE",
+   "path": [
+    "R13.1",
+    [
+     100,
+     9300
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "R13.2",
+    [
+     2000,
+     9300
+    ]
+   ]
+  },
+  {
+   "net": "GATE",
+   "path": [
+    "R17.1",
+    [
+     100,
+     8800
+    ]
+   ]
+  },
+  {
+   "net": "COMP_OUT",
+   "path": [
+    "R17.2",
+    [
+     1700,
+     8800
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "path": [
+    "J2.1",
+    [
+     0,
+     8100
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "J2.2",
+    [
+     600,
+     8000
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_PWM",
+   "path": [
+    "J2.3",
+    [
+     1800,
+     8100
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_FG",
+   "path": [
+    "J2.4",
+    [
+     1800,
+     8000
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "R12.1",
+    [
+     400,
+     7300
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_FG",
+   "path": [
+    "R12.2",
+    [
+     1700,
+     7300
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "U8.3",
+    [
+     3800,
+     13800
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U8.1",
+    [
+     3500,
+     13500
+    ]
+   ]
+  },
+  {
+   "net": "BST5",
+   "path": [
+    "U8.6",
+    [
+     5400,
+     13800
+    ]
+   ]
+  },
+  {
+   "net": "SW5",
+   "path": [
+    "U8.2",
+    [
+     5400,
+     13700
+    ]
+   ]
+  },
+  {
+   "net": "FB5",
+   "path": [
+    "U8.4",
+    [
+     5400,
+     13500
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "C13.1",
+    [
+     3400,
+     13100
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C13.2",
+    [
+     5000,
+     13100
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "C15.1",
+    [
+     3400,
+     12700
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C15.2",
+    [
+     5000,
+     12700
+    ]
+   ]
+  },
+  {
+   "net": "BST5",
+   "path": [
+    "C17.1",
+    [
+     3100,
+     12300
+    ]
+   ]
+  },
+  {
+   "net": "SW5",
+   "path": [
+    "C17.2",
+    [
+     4700,
+     12300
+    ]
+   ]
+  },
+  {
+   "net": "SW5",
+   "path": [
+    "L1.1",
+    [
+     3200,
+     11900
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "L1.2",
+    [
+     4600,
+     11900
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "C2.1",
+    [
+     3400,
+     11500
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C2.2",
+    [
+     5000,
+     11500
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "C18.1",
+    [
+     3400,
+     11100
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C18.2",
+    [
+     5000,
+     11100
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "R19.1",
+    [
+     3400,
+     10700
+    ]
+   ]
+  },
+  {
+   "net": "FB5",
+   "path": [
+    "R19.2",
+    [
+     4700,
+     10700
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "C19.1",
+    [
+     3400,
+     10300
+    ]
+   ]
+  },
+  {
+   "net": "FB5",
+   "path": [
+    "C19.2",
+    [
+     4700,
+     10300
+    ]
+   ]
+  },
+  {
+   "net": "FB5",
+   "path": [
+    "R20.1",
+    [
+     3100,
+     9900
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "R20.2",
+    [
+     5000,
+     9900
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "U9.3",
+    [
+     3800,
+     9200
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U9.1",
+    [
+     3500,
+     8900
+    ]
+   ]
+  },
+  {
+   "net": "BST3",
+   "path": [
+    "U9.6",
+    [
+     5400,
+     9200
+    ]
+   ]
+  },
+  {
+   "net": "SW3",
+   "path": [
+    "U9.2",
+    [
+     5400,
+     9100
+    ]
+   ]
+  },
+  {
+   "net": "FB3",
+   "path": [
+    "U9.4",
+    [
+     5400,
+     8900
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "C14.1",
+    [
+     3400,
+     8500
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C14.2",
+    [
+     5000,
+     8500
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "C16.1",
+    [
+     3400,
+     8100
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C16.2",
+    [
+     5000,
+     8100
+    ]
+   ]
+  },
+  {
+   "net": "BST3",
+   "path": [
+    "C20.1",
+    [
+     3100,
+     7700
+    ]
+   ]
+  },
+  {
+   "net": "SW3",
+   "path": [
+    "C20.2",
+    [
+     4700,
+     7700
+    ]
+   ]
+  },
+  {
+   "net": "SW3",
+   "path": [
+    "L2.1",
+    [
+     3200,
+     7300
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "L2.2",
+    [
+     4600,
+     7300
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "C1.1",
+    [
+     3400,
+     6900
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C1.2",
+    [
+     5000,
+     6900
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "C21.1",
+    [
+     3400,
+     6500
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C21.2",
+    [
+     5000,
+     6500
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "R21.1",
+    [
+     3400,
+     6100
+    ]
+   ]
+  },
+  {
+   "net": "FB3",
+   "path": [
+    "R21.2",
+    [
+     4700,
+     6100
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "C22.1",
+    [
+     3400,
+     5700
+    ]
+   ]
+  },
+  {
+   "net": "FB3",
+   "path": [
+    "C22.2",
+    [
+     4700,
+     5700
+    ]
+   ]
+  },
+  {
+   "net": "FB3",
+   "path": [
+    "R22.1",
+    [
+     3100,
+     5300
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "R22.2",
+    [
+     5000,
+     5300
+    ]
+   ]
+  },
+  {
+   "net": "COMP_REF",
+   "path": [
+    "U7.2",
+    [
+     6600,
+     11900
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_RED_ADC",
+   "path": [
+    "U7.3",
+    [
+     6600,
+     11800
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U7.4",
+    [
+     6900,
+     11700
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U7.5",
+    [
+     7200,
+     11600
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U7.6",
+    [
+     6900,
+     11500
+    ]
+   ]
+  },
+  {
+   "net": "COMP_OUT",
+   "path": [
+    "U7.1",
+    [
+     8600,
+     12000
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "U7.8",
+    [
+     8600,
+     11800
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "C4.1",
+    [
+     7000,
+     10500
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C4.2",
+    [
+     8600,
+     10500
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "R10.1",
+    [
+     7000,
+     9900
+    ]
+   ]
+  },
+  {
+   "net": "COMP_REF",
+   "path": [
+    "R10.2",
+    [
+     8300,
+     9900
+    ]
+   ]
+  },
+  {
+   "net": "COMP_REF",
+   "path": [
+    "R11.1",
+    [
+     6700,
+     9300
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "R11.2",
+    [
+     8600,
+     9300
+    ]
+   ]
+  },
+  {
+   "net": "COMP_OUT",
+   "path": [
+    "R18.1",
+    [
+     6700,
+     8700
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_RED_ADC",
+   "path": [
+    "R18.2",
+    [
+     8300,
+     8700
+    ]
+   ]
+  },
+  {
+   "net": "COMP_OUT",
+   "path": [
+    "R15.1",
+    [
+     6700,
+     8100
+    ]
+   ]
+  },
+  {
+   "net": "SAFETY_TRIP",
+   "path": [
+    "R15.2",
+    [
+     8300,
+     8100
+    ]
+   ]
+  },
+  {
+   "net": "SAFETY_TRIP",
+   "path": [
+    "R16.1",
+    [
+     6700,
+     7500
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "R16.2",
+    [
+     8600,
+     7500
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "U2.2",
+    [
+     8600,
+     6600
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U2.3",
+    [
+     8900,
+     6500
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_PRI_RAW",
+   "path": [
+    "U2.4",
+    [
+     8600,
+     6400
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "C6.1",
+    [
+     7000,
+     5600
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C6.2",
+    [
+     8600,
+     5600
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "C7.1",
+    [
+     7000,
+     5100
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C7.2",
+    [
+     8600,
+     5100
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_PRI_RAW",
+   "path": [
+    "C8.1",
+    [
+     6700,
+     4600
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C8.2",
+    [
+     8600,
+     4600
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_PRI_RAW",
+   "path": [
+    "R1.1",
+    [
+     6700,
+     4100
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_PRI_ADC",
+   "path": [
+    "R1.2",
+    [
+     8300,
+     4100
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_PRI_ADC",
+   "path": [
+    "R2.1",
+    [
+     6700,
+     3600
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "R2.2",
+    [
+     8600,
+     3600
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "U3.2",
+    [
+     11600,
+     6600
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U3.3",
+    [
+     11900,
+     6500
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_RED_RAW",
+   "path": [
+    "U3.4",
+    [
+     11600,
+     6400
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "C9.1",
+    [
+     10000,
+     5600
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C9.2",
+    [
+     11600,
+     5600
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "C11.1",
+    [
+     10000,
+     5100
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C11.2",
+    [
+     11600,
+     5100
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_RED_RAW",
+   "path": [
+    "C12.1",
+    [
+     9700,
+     4600
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C12.2",
+    [
+     11600,
+     4600
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_RED_RAW",
+   "path": [
+    "R3.1",
+    [
+     9700,
+     4100
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_RED_ADC",
+   "path": [
+    "R3.2",
+    [
+     11300,
+     4100
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_RED_ADC",
+   "path": [
+    "R4.1",
+    [
+     9700,
+     3600
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "R4.2",
+    [
+     11600,
+     3600
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U1.1",
+    [
+     10500,
+     11300
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "U1.2",
+    [
+     10800,
+     11200
+    ]
+   ]
+  },
+  {
+   "net": "EN",
+   "path": [
+    "U1.3",
+    [
+     10200,
+     11100
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_PRI_ADC",
+   "path": [
+    "U1.4",
+    [
+     10200,
+     11000
+    ]
+   ]
+  },
+  {
+   "net": "PRESS_RED_ADC",
+   "path": [
+    "U1.5",
+    [
+     10200,
+     10900
+    ]
+   ]
+  },
+  {
+   "net": "SAFETY_TRIP",
+   "path": [
+    "U1.6",
+    [
+     10200,
+     10800
+    ]
+   ]
+  },
+  {
+   "net": "BUZZER_CTRL",
+   "path": [
+    "U1.7",
+    [
+     10200,
+     10700
+    ]
+   ]
+  },
+  {
+   "net": "ENC_A",
+   "path": [
+    "U1.10",
+    [
+     10200,
+     10400
+    ]
+   ]
+  },
+  {
+   "net": "ENC_B",
+   "path": [
+    "U1.11",
+    [
+     10200,
+     10300
+    ]
+   ]
+  },
+  {
+   "net": "I2C_SDA",
+   "path": [
+    "U1.12",
+    [
+     10200,
+     10200
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_PWM",
+   "path": [
+    "U1.15",
+    [
+     10200,
+     9900
+    ]
+   ]
+  },
+  {
+   "net": "I2C_SCL",
+   "path": [
+    "U1.17",
+    [
+     10200,
+     9700
+    ]
+   ]
+  },
+  {
+   "net": "ENC_SW",
+   "path": [
+    "U1.23",
+    [
+     12900,
+     11200
+    ]
+   ]
+  },
+  {
+   "net": "BOOT",
+   "path": [
+    "U1.27",
+    [
+     12900,
+     10800
+    ]
+   ]
+  },
+  {
+   "net": "UART_RX",
+   "path": [
+    "U1.36",
+    [
+     12900,
+     9900
+    ]
+   ]
+  },
+  {
+   "net": "UART_TX",
+   "path": [
+    "U1.37",
+    [
+     12900,
+     9800
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_FG",
+   "path": [
+    "U1.38",
+    [
+     12900,
+     9700
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U1.40",
+    [
+     13200,
+     9500
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U1.41",
+    [
+     12900,
+     9400
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "C3.1",
+    [
+     10000,
+     8300
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C3.2",
+    [
+     11600,
+     8300
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "R9.1",
+    [
+     10000,
+     7800
+    ]
+   ]
+  },
+  {
+   "net": "EN",
+   "path": [
+    "R9.2",
+    [
+     11300,
+     7800
+    ]
+   ]
+  },
+  {
+   "net": "EN",
+   "path": [
+    "C5.1",
+    [
+     9700,
+     7300
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C5.2",
+    [
+     11600,
+     7300
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "J3.1",
+    [
+     13900,
+     11500
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "J3.2",
+    [
+     14200,
+     11400
+    ]
+   ]
+  },
+  {
+   "net": "UART_RX",
+   "path": [
+    "J3.4",
+    [
+     13600,
+     11300
+    ]
+   ]
+  },
+  {
+   "net": "UART_TX",
+   "path": [
+    "J3.3",
+    [
+     15600,
+     11500
+    ]
+   ]
+  },
+  {
+   "net": "EN",
+   "path": [
+    "J3.5",
+    [
+     15600,
+     11400
+    ]
+   ]
+  },
+  {
+   "net": "BOOT",
+   "path": [
+    "J3.6",
+    [
+     15600,
+     11300
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U4.1",
+    [
+     13900,
+     10600
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "U4.2",
+    [
+     14200,
+     10500
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U4.4",
+    [
+     13900,
+     10400
+    ]
+   ]
+  },
+  {
+   "net": "I2C_SCL",
+   "path": [
+    "U4.3",
+    [
+     15600,
+     10600
+    ]
+   ]
+  },
+  {
+   "net": "I2C_SDA",
+   "path": [
+    "U4.5",
+    [
+     15600,
+     10500
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U5.1",
+    [
+     13900,
+     9700
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "U5.2",
+    [
+     14200,
+     9600
+    ]
+   ]
+  },
+  {
+   "net": "I2C_SCL",
+   "path": [
+    "U5.3",
+    [
+     15600,
+     9700
+    ]
+   ]
+  },
+  {
+   "net": "I2C_SDA",
+   "path": [
+    "U5.4",
+    [
+     15600,
+     9600
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "R5.1",
+    [
+     14000,
+     9000
+    ]
+   ]
+  },
+  {
+   "net": "I2C_SCL",
+   "path": [
+    "R5.2",
+    [
+     15300,
+     9000
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "R6.1",
+    [
+     14000,
+     8500
+    ]
+   ]
+  },
+  {
+   "net": "I2C_SDA",
+   "path": [
+    "R6.2",
+    [
+     15300,
+     8500
+    ]
+   ]
+  },
+  {
+   "net": "ENC_A",
+   "path": [
+    "U6.1",
+    [
+     13600,
+     7700
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U6.3",
+    [
+     14200,
+     7600
+    ]
+   ]
+  },
+  {
+   "net": "ENC_B",
+   "path": [
+    "U6.2",
+    [
+     13600,
+     7500
+    ]
+   ]
+  },
+  {
+   "net": "ENC_SW",
+   "path": [
+    "U6.4",
+    [
+     15600,
+     7700
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "U6.5",
+    [
+     15600,
+     7600
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "R7.1",
+    [
+     14000,
+     6800
+    ]
+   ]
+  },
+  {
+   "net": "ENC_A",
+   "path": [
+    "R7.2",
+    [
+     15300,
+     6800
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "R8.1",
+    [
+     14000,
+     6300
+    ]
+   ]
+  },
+  {
+   "net": "ENC_B",
+   "path": [
+    "R8.2",
+    [
+     15300,
+     6300
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "R14.1",
+    [
+     14000,
+     5800
+    ]
+   ]
+  },
+  {
+   "net": "ENC_SW",
+   "path": [
+    "R14.2",
+    [
+     15300,
+     5800
+    ]
+   ]
+  },
+  {
+   "net": "BUZZER_CTRL",
+   "path": [
+    "BZ1.1",
+    [
+     13600,
+     5100
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "BZ1.2",
+    [
+     15700,
+     5100
+    ]
+   ]
+  }
+ ],
+ "ports": [
+  {
+   "net": "GND",
+   "at": [
+    1800,
+    13700
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    1500,
+    13600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    2000,
+    12500
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    1600,
+    12000
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    800,
+    12000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    400,
+    11500
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    2000,
+    11500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    400,
+    11000
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    2000,
+    11000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    800,
+    10300
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    500,
+    10200
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    800,
+    10100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    2000,
+    9300
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    600,
+    8000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    400,
+    7300
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3800,
+    13800
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    3500,
+    13500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3400,
+    13100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    13100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3400,
+    12700
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    12700
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    4600,
+    11900
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "5V",
+   "at": [
+    3400,
+    11500
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    11500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    3400,
+    11100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    11100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    3400,
+    10700
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "5V",
+   "at": [
+    3400,
+    10300
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    9900
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3800,
+    9200
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    3500,
+    8900
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3400,
+    8500
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    8500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3400,
+    8100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    8100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    4600,
+    7300
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    3400,
+    6900
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    6900
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    3400,
+    6500
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    6500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    3400,
+    6100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    3400,
+    5700
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    5300
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    6900,
+    11700
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    7200,
+    11600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    6900,
+    11500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    8600,
+    11800
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "5V",
+   "at": [
+    7000,
+    10500
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    10500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    7000,
+    9900
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    9300
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    7500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    8600,
+    6600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8900,
+    6500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    7000,
+    5600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    5600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    7000,
+    5100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    5100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    4600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    3600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    11600,
+    6600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11900,
+    6500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    10000,
+    5600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    5600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    10000,
+    5100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    5100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    4600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    3600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    10500,
+    11300
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    10800,
+    11200
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    13200,
+    9500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    12900,
+    9400
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    10000,
+    8300
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    8300
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    10000,
+    7800
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    7300
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    13900,
+    11500
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    14200,
+    11400
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    13900,
+    10600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    14200,
+    10500
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    13900,
+    10400
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    13900,
+    9700
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    14200,
+    9600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    14000,
+    9000
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    14000,
+    8500
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    14200,
+    7600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    15600,
+    7600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    14000,
+    6800
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    14000,
+    6300
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    14000,
+    5800
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    15700,
+    5100
+   ],
+   "style": "gnd_power"
+  }
+ ],
+ "labels": [
+  {
+   "net": "VIN_RAW",
+   "at": [
+    1500,
+    13800
+   ]
+  },
+  {
+   "net": "VIN_RAW",
+   "at": [
+    200,
+    13000
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "at": [
+    1600,
+    13000
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "at": [
+    100,
+    12500
+   ]
+  },
+  {
+   "net": "GATE",
+   "at": [
+    200,
+    9900
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "at": [
+    2200,
+    10300
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "at": [
+    2200,
+    10200
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "at": [
+    2200,
+    10100
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "at": [
+    2200,
+    10000
+   ]
+  },
+  {
+   "net": "GATE",
+   "at": [
+    100,
+    9300
+   ]
+  },
+  {
+   "net": "GATE",
+   "at": [
+    100,
+    8800
+   ]
+  },
+  {
+   "net": "COMP_OUT",
+   "at": [
+    1700,
+    8800
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "at": [
+    0,
+    8100
+   ]
+  },
+  {
+   "net": "BLOWER_PWM",
+   "at": [
+    1800,
+    8100
+   ]
+  },
+  {
+   "net": "BLOWER_FG",
+   "at": [
+    1800,
+    8000
+   ]
+  },
+  {
+   "net": "BLOWER_FG",
+   "at": [
+    1700,
+    7300
+   ]
+  },
+  {
+   "net": "BST5",
+   "at": [
+    5400,
+    13800
+   ]
+  },
+  {
+   "net": "SW5",
+   "at": [
+    5400,
+    13700
+   ]
+  },
+  {
+   "net": "FB5",
+   "at": [
+    5400,
+    13500
+   ]
+  },
+  {
+   "net": "BST5",
+   "at": [
+    3100,
+    12300
+   ]
+  },
+  {
+   "net": "SW5",
+   "at": [
+    4700,
+    12300
+   ]
+  },
+  {
+   "net": "SW5",
+   "at": [
+    3200,
+    11900
+   ]
+  },
+  {
+   "net": "FB5",
+   "at": [
+    4700,
+    10700
+   ]
+  },
+  {
+   "net": "FB5",
+   "at": [
+    4700,
+    10300
+   ]
+  },
+  {
+   "net": "FB5",
+   "at": [
+    3100,
+    9900
+   ]
+  },
+  {
+   "net": "BST3",
+   "at": [
+    5400,
+    9200
+   ]
+  },
+  {
+   "net": "SW3",
+   "at": [
+    5400,
+    9100
+   ]
+  },
+  {
+   "net": "FB3",
+   "at": [
+    5400,
+    8900
+   ]
+  },
+  {
+   "net": "BST3",
+   "at": [
+    3100,
+    7700
+   ]
+  },
+  {
+   "net": "SW3",
+   "at": [
+    4700,
+    7700
+   ]
+  },
+  {
+   "net": "SW3",
+   "at": [
+    3200,
+    7300
+   ]
+  },
+  {
+   "net": "FB3",
+   "at": [
+    4700,
+    6100
+   ]
+  },
+  {
+   "net": "FB3",
+   "at": [
+    4700,
+    5700
+   ]
+  },
+  {
+   "net": "FB3",
+   "at": [
+    3100,
+    5300
+   ]
+  },
+  {
+   "net": "COMP_REF",
+   "at": [
+    6600,
+    11900
+   ]
+  },
+  {
+   "net": "PRESS_RED_ADC",
+   "at": [
+    6600,
+    11800
+   ]
+  },
+  {
+   "net": "COMP_OUT",
+   "at": [
+    8600,
+    12000
+   ]
+  },
+  {
+   "net": "COMP_REF",
+   "at": [
+    8300,
+    9900
+   ]
+  },
+  {
+   "net": "COMP_REF",
+   "at": [
+    6700,
+    9300
+   ]
+  },
+  {
+   "net": "COMP_OUT",
+   "at": [
+    6700,
+    8700
+   ]
+  },
+  {
+   "net": "PRESS_RED_ADC",
+   "at": [
+    8300,
+    8700
+   ]
+  },
+  {
+   "net": "COMP_OUT",
+   "at": [
+    6700,
+    8100
+   ]
+  },
+  {
+   "net": "SAFETY_TRIP",
+   "at": [
+    8300,
+    8100
+   ]
+  },
+  {
+   "net": "SAFETY_TRIP",
+   "at": [
+    6700,
+    7500
+   ]
+  },
+  {
+   "net": "PRESS_PRI_RAW",
+   "at": [
+    8600,
+    6400
+   ]
+  },
+  {
+   "net": "PRESS_PRI_RAW",
+   "at": [
+    6700,
+    4600
+   ]
+  },
+  {
+   "net": "PRESS_PRI_RAW",
+   "at": [
+    6700,
+    4100
+   ]
+  },
+  {
+   "net": "PRESS_PRI_ADC",
+   "at": [
+    8300,
+    4100
+   ]
+  },
+  {
+   "net": "PRESS_PRI_ADC",
+   "at": [
+    6700,
+    3600
+   ]
+  },
+  {
+   "net": "PRESS_RED_RAW",
+   "at": [
+    11600,
+    6400
+   ]
+  },
+  {
+   "net": "PRESS_RED_RAW",
+   "at": [
+    9700,
+    4600
+   ]
+  },
+  {
+   "net": "PRESS_RED_RAW",
+   "at": [
+    9700,
+    4100
+   ]
+  },
+  {
+   "net": "PRESS_RED_ADC",
+   "at": [
+    11300,
+    4100
+   ]
+  },
+  {
+   "net": "PRESS_RED_ADC",
+   "at": [
+    9700,
+    3600
+   ]
+  },
+  {
+   "net": "EN",
+   "at": [
+    10200,
+    11100
+   ]
+  },
+  {
+   "net": "PRESS_PRI_ADC",
+   "at": [
+    10200,
+    11000
+   ]
+  },
+  {
+   "net": "PRESS_RED_ADC",
+   "at": [
+    10200,
+    10900
+   ]
+  },
+  {
+   "net": "SAFETY_TRIP",
+   "at": [
+    10200,
+    10800
+   ]
+  },
+  {
+   "net": "BUZZER_CTRL",
+   "at": [
+    10200,
+    10700
+   ]
+  },
+  {
+   "net": "ENC_A",
+   "at": [
+    10200,
+    10400
+   ]
+  },
+  {
+   "net": "ENC_B",
+   "at": [
+    10200,
+    10300
+   ]
+  },
+  {
+   "net": "I2C_SDA",
+   "at": [
+    10200,
+    10200
+   ]
+  },
+  {
+   "net": "BLOWER_PWM",
+   "at": [
+    10200,
+    9900
+   ]
+  },
+  {
+   "net": "I2C_SCL",
+   "at": [
+    10200,
+    9700
+   ]
+  },
+  {
+   "net": "ENC_SW",
+   "at": [
+    12900,
+    11200
+   ]
+  },
+  {
+   "net": "BOOT",
+   "at": [
+    12900,
+    10800
+   ]
+  },
+  {
+   "net": "UART_RX",
+   "at": [
+    12900,
+    9900
+   ]
+  },
+  {
+   "net": "UART_TX",
+   "at": [
+    12900,
+    9800
+   ]
+  },
+  {
+   "net": "BLOWER_FG",
+   "at": [
+    12900,
+    9700
+   ]
+  },
+  {
+   "net": "EN",
+   "at": [
+    11300,
+    7800
+   ]
+  },
+  {
+   "net": "EN",
+   "at": [
+    9700,
+    7300
+   ]
+  },
+  {
+   "net": "UART_RX",
+   "at": [
+    13600,
+    11300
+   ]
+  },
+  {
+   "net": "UART_TX",
+   "at": [
+    15600,
+    11500
+   ]
+  },
+  {
+   "net": "EN",
+   "at": [
+    15600,
+    11400
+   ]
+  },
+  {
+   "net": "BOOT",
+   "at": [
+    15600,
+    11300
+   ]
+  },
+  {
+   "net": "I2C_SCL",
+   "at": [
+    15600,
+    10600
+   ]
+  },
+  {
+   "net": "I2C_SDA",
+   "at": [
+    15600,
+    10500
+   ]
+  },
+  {
+   "net": "I2C_SCL",
+   "at": [
+    15600,
+    9700
+   ]
+  },
+  {
+   "net": "I2C_SDA",
+   "at": [
+    15600,
+    9600
+   ]
+  },
+  {
+   "net": "I2C_SCL",
+   "at": [
+    15300,
+    9000
+   ]
+  },
+  {
+   "net": "I2C_SDA",
+   "at": [
+    15300,
+    8500
+   ]
+  },
+  {
+   "net": "ENC_A",
+   "at": [
+    13600,
+    7700
+   ]
+  },
+  {
+   "net": "ENC_B",
+   "at": [
+    13600,
+    7500
+   ]
+  },
+  {
+   "net": "ENC_SW",
+   "at": [
+    15600,
+    7700
+   ]
+  },
+  {
+   "net": "ENC_A",
+   "at": [
+    15300,
+    6800
+   ]
+  },
+  {
+   "net": "ENC_B",
+   "at": [
+    15300,
+    6300
+   ]
+  },
+  {
+   "net": "ENC_SW",
+   "at": [
+    15300,
+    5800
+   ]
+  },
+  {
+   "net": "BUZZER_CTRL",
+   "at": [
+    13600,
+    5100
+   ]
+  }
+ ],
+ "nets": {
+  "VIN_RAW": [
+   "J1.1",
+   "F1.1"
+  ],
+  "GND": [
+   "J1.3",
+   "J1.2",
+   "D2.2",
+   "C10.2",
+   "C23.2",
+   "J2.2",
+   "U8.1",
+   "C13.2",
+   "C15.2",
+   "C2.2",
+   "C18.2",
+   "R20.2",
+   "U9.1",
+   "C14.2",
+   "C16.2",
+   "C1.2",
+   "C21.2",
+   "R22.2",
+   "U7.4",
+   "U7.5",
+   "U7.6",
+   "C4.2",
+   "R11.2",
+   "R16.2",
+   "U2.3",
+   "C6.2",
+   "C7.2",
+   "C8.2",
+   "R2.2",
+   "U3.3",
+   "C9.2",
+   "C11.2",
+   "C12.2",
+   "R4.2",
+   "U1.1",
+   "U1.40",
+   "U1.41",
+   "C3.2",
+   "C5.2",
+   "J3.1",
+   "U4.1",
+   "U4.4",
+   "U5.1",
+   "U6.3",
+   "U6.5",
+   "BZ1.2"
+  ],
+  "VIN_FUSED": [
+   "F1.2",
+   "D1.1"
+  ],
+  "VIN12V": [
+   "D1.2",
+   "D2.1",
+   "C10.1",
+   "C23.1",
+   "Q1.1",
+   "Q1.2",
+   "Q1.3",
+   "R13.2",
+   "U8.3",
+   "C13.1",
+   "C15.1",
+   "U9.3",
+   "C14.1",
+   "C16.1"
+  ],
+  "GATE": [
+   "Q1.4",
+   "R13.1",
+   "R17.1"
+  ],
+  "BLOWER_V12": [
+   "Q1.5",
+   "Q1.6",
+   "Q1.7",
+   "Q1.8",
+   "J2.1"
+  ],
+  "COMP_OUT": [
+   "R17.2",
+   "U7.1",
+   "R18.1",
+   "R15.1"
+  ],
+  "BLOWER_PWM": [
+   "J2.3",
+   "U1.15"
+  ],
+  "BLOWER_FG": [
+   "J2.4",
+   "R12.2",
+   "U1.38"
+  ],
+  "3V3": [
+   "R12.1",
+   "L2.2",
+   "C1.1",
+   "C21.1",
+   "R21.1",
+   "C22.1",
+   "U1.2",
+   "C3.1",
+   "R9.1",
+   "J3.2",
+   "U5.2",
+   "R5.1",
+   "R6.1",
+   "R7.1",
+   "R8.1",
+   "R14.1"
+  ],
+  "BST5": [
+   "U8.6",
+   "C17.1"
+  ],
+  "SW5": [
+   "U8.2",
+   "C17.2",
+   "L1.1"
+  ],
+  "FB5": [
+   "U8.4",
+   "R19.2",
+   "C19.2",
+   "R20.1"
+  ],
+  "5V": [
+   "L1.2",
+   "C2.1",
+   "C18.1",
+   "R19.1",
+   "C19.1",
+   "U7.8",
+   "C4.1",
+   "R10.1",
+   "U2.2",
+   "C6.1",
+   "C7.1",
+   "U3.2",
+   "C9.1",
+   "C11.1",
+   "U4.2"
+  ],
+  "BST3": [
+   "U9.6",
+   "C20.1"
+  ],
+  "SW3": [
+   "U9.2",
+   "C20.2",
+   "L2.1"
+  ],
+  "FB3": [
+   "U9.4",
+   "R21.2",
+   "C22.2",
+   "R22.1"
+  ],
+  "COMP_REF": [
+   "U7.2",
+   "R10.2",
+   "R11.1"
+  ],
+  "PRESS_RED_ADC": [
+   "U7.3",
+   "R18.2",
+   "R3.2",
+   "R4.1",
+   "U1.5"
+  ],
+  "SAFETY_TRIP": [
+   "R15.2",
+   "R16.1",
+   "U1.6"
+  ],
+  "PRESS_PRI_RAW": [
+   "U2.4",
+   "C8.1",
+   "R1.1"
+  ],
+  "PRESS_PRI_ADC": [
+   "R1.2",
+   "R2.1",
+   "U1.4"
+  ],
+  "PRESS_RED_RAW": [
+   "U3.4",
+   "C12.1",
+   "R3.1"
+  ],
+  "EN": [
+   "U1.3",
+   "R9.2",
+   "C5.1",
+   "J3.5"
+  ],
+  "BUZZER_CTRL": [
+   "U1.7",
+   "BZ1.1"
+  ],
+  "ENC_A": [
+   "U1.10",
+   "U6.1",
+   "R7.2"
+  ],
+  "ENC_B": [
+   "U1.11",
+   "U6.2",
+   "R8.2"
+  ],
+  "I2C_SDA": [
+   "U1.12",
+   "U4.5",
+   "U5.4",
+   "R6.2"
+  ],
+  "I2C_SCL": [
+   "U1.17",
+   "U4.3",
+   "U5.3",
+   "R5.2"
+  ],
+  "ENC_SW": [
+   "U1.23",
+   "U6.4",
+   "R14.2"
+  ],
+  "BOOT": [
+   "U1.27",
+   "J3.6"
+  ],
+  "UART_RX": [
+   "U1.36",
+   "J3.4"
+  ],
+  "UART_TX": [
+   "U1.37",
+   "J3.3"
+  ]
+ }
+}

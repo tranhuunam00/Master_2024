@@ -1,8 +1,8 @@
 {
   "mcpServers": {
-    "altium-mcp": {
+    "altium": {
       "command": "python",
-      "args": ["C:/Users/Admin/Desktop/Master_2024/Cpap/tools/altium-mcp/start_server.py"]
+      "args": ["-m", "eda_agent"]
     }
   }
 }

@@ -1,0 +1,687 @@
+                   
+www.sensirion.com D1 
+Version 1.4 – March 2022 
+1/9 
+Datasheet SFM3300-D  
+Datasheet SFM3300-AW 
+Digital Flow Meter for medical applications 
+ 
+▪ Flow range: ± 250 slm, bidirectional 
+▪ Small dead space < 10ml 
+▪ Single use (-D) version 
+▪ Re-use (-AW) version 
+▪ Very fast update time (0.5ms) 
+ 
+ 
+Product Summary
+The SFM3300 series is Sensirion’s digital flow meter series 
+designed for medical applications. It measures the flow rate 
+of air, oxygen and other non-aggressive gases with 
+superb accuracy. The special design of the flow channel 
+results in a very small dead space.  
+The SFM3300-D is the disposable single-use Version. The 
+re-use version SFM3300-AW withstands washing and 
+autoclaving procedures. Both versions are extremely well 
+suited for proximal flow measurements in medical ventilation 
+and other respiratory applications. 
+ 
+ 
+The SFM3300 series has been designed with the use by 
+medical professionals in mind. It features medical cones 
+for pneumatic connection to standard breathing circuits and 
+a mechanical interface for easy and reliable electrical 
+reconnection. The sensor element, signal processing and 
+digital calibration are on a single microchip assuring very 
+fast signal processing time, best-in-class accuracy and 
+superior robustness to rough handling and adverse 
+conditions. 
+The well-proven and patented CMOSens® sensor 
+technology is perfectly suited for high-quality mass 
+production and is the ideal choice for demanding and cost-
+sensitive OEM applications. 
+ 
+ 
+ 
+Applications 
+▪ 
+Proximal Flow measurement 
+▪ 
+Expiratory flow measurement 
+▪ 
+For Ventilation & Anesthesia 
+▪ 
+Respiratory measurements 
+▪ 
+Metabolic Measurements 
+ 
+OEM options 
+A variety of custom options can be implemented for high-
+volume OEM applications (custom flow rates, calibration 
+for other gases etc.). Contact us for more information.  
+Sensor chip 
+The SFM3300 series flow meter features a fifth-generation 
+silicon sensor chip. In addition to a thermal mass flow 
+sensor element, the chip contains an amplifier, A/D 
+converter, EEPROM memory, digital signal processing 
+circuitry, and interface. Due to seamless integration of 
+signal acquisition and processing on the single silicon die 
+significant performance and cost benefits are achieved. 
+ 
+ 
+ 
+www.sensirion.com D1 
+Version 1.4 – March 2022 
+2/9 
+ 
+1.1 
+ Physical specifications 1 
+Parameter 
+Condition 
+Value 
+Unit 
+Flow range 
+ 
+-250 … +250 
+slm2 
+ 
+ 
+Typical 
+Max 3 
+Accuracy4 
+span <100 slm 
+span >100 slm 
+offset 
+3 5 
+7 5 
+0.1 5 
+5 
+10 
+0.2 
+% m.v.6 
+% m.v.6  
+slm2 
+Noise Level4,7 
+span <25slm 
+span >25slm 
+offset 
+2.0 8 
+3 8 
+0.1 8 
+2.5  
+5 
+0.2 
+% m.v6  
+% m.v6  
+slm2 
+Accuracy shift for deviation from 
+Reference temperature 25°C 
+span 
+offset 
+0.4 8 
+0.015 8 
+0.5 
+0.02 
+% m.v./10˚C 
+% m.v./10°C 
+Resolution (14bit) 
+span 
+offset 
+ 
+0.07 
+0.034 
+% m.v. 6  
+slm2 
+Pressure drop 
+@ 60 slm 
+@ 100 slm 
+@ 200 slm 
+180 / 0.73 8 
+380 / 1.53 8 
+1400 / 5.62 8 
+230 / 0.93 
+550 / 2.21 
+1900 / 7.63 
+Pa / inH2O 
+Pa / inH2O 
+Pa / inH2O 
+ 
+1.2 
+Ambient conditions 
+Parameter 
+Condition 
+Value 
+Unit 
+Calibrated Temperature Range 
+Dry gas 
++10 … +50 
+°C 
+Operating Temperature Range9 
+10-95% rel. hum. (non cond.) 
++5 … +50  
+°C 
+Extended Operating Range 
+Recommended to use  
+on-sensor heater 
+-20…+5 
+°C 
+Storage Temperature 
+10-95% rel. hum. (non cond.) 
+-40 … +70 
+°C 
+Shelf Life for SFM3300-D 
+15°C - 35°C; 30 - 70 % rel. 
+hum. 
+storage in original packaging 
+3 
+years 
+Operating Pressure Range 
+absolute 
+0.54 – 1.1 
+bar 
+Burst Overpressure 
+gauge 
+0.3 
+bar 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1 Reference conditions are temperature = 25°C, absolute pressure = 966 mbar, horizontal flow and Vdd = 5V 
+2 slm: mass flow measured in liters per minute at standard conditions (T = 20 °C, p = 1013.25 mbar) 
+3 for "Max" no sensor measured outside of this limits will be shipped and a CpK of 1.33 is targeted 
+4 For accuracy, noise level or resolution the total value is the sum of offset and span values 
+5 This value corresponds to a CpK of 0.67 (95% of sensors within the “Typical” limit) 
+6 %m.v. = % measured value = % of reading 
+7 Noise level defined as standard deviation of individual sensor readings, measured at full sampling rate 
+8 Average value 
+9 Do not exceed these operating conditions by heating the sensor excessively with the external heater, see section 4.4. 
+ 
+www.sensirion.com D1 
+Version 1.4 – March 2022 
+3/9 
+1.3 
+Media compatibility 
+Parameter 
+Value 
+Calibration 10 
+Air 
+Media Compatibility 
+Air (non-condensing), N2, O2, other non- aggressive gases 
+Wetted Materials –AW version 
+Si, Si3N4, SiOx, Gold, Epoxy, PPSU, silicone, stainless steel 
+Wetted Materials –D version 
+Si, Si3N4, SiOx, Gold, Epoxy, MABS, silicone 
+RoHS, REACH 
+RoHS and REACH compliant 
+ 
+2. Electrical Specifications 
+ 
+2.1 
+Electrical characteristics 
+ 
+Electrical properties 
+Condition 
+Value 
+Unit 
+Interface 
+ 
+I2C 
+ 
+Default Sensor Address 
+ 
+64 (h40) 
+ 
+Update Time 
+14 bit 
+0.5 
+ms 
+Soft Reset Time 
+ 
+80 
+ms 
+Start-up Time 11 
+Max. 
+100 
+ms 
+I2C bus Clock Frequency 
+Max. 
+400 
+kHz 
+Supply Voltage 
+ 
+5V±5% 
+V 
+Communication Level 
+ 
+High 
+Low 
+Min. 
+Max. 
+V 
+2.5 
+GND 
+VDD 
+1.1 
+Power Consumption12 
+ 
+< 50 
+mW 
+Electrical Connector 
+ 
+See section 0 and 3.2 
+ 
+External Heater Power Rating13 
+Max. 
+0.5 
+W 
+External Heater Resistance 
+Typ. 
+51 
+Ω 
+Output signal resolution14 
+ 
+14 
+bit 
+Scale Factor Flow 
+Air, N2 
+120 
+1/slm 
+Offset Flow 
+ 
+32768  
+ 
+ 
+ 
+ 
+10 Contact Sensirion for information about other gases, wider calibrated temperature ranges and higher storage temperatures. 
+11 After 4.75V is reached 
+12 When the heater resistor on the PCB is not in operation 
+13 The heater’s purpose is to avoid condensation or icing. One should only apply sufficient power to achieve this purpose. See section 4.4 
+for more details.  
+14 16 bit with two least significant bits always zero 
+ 
+ 
+ 
+www.sensirion.com D1 
+Version 1.4 – March 2022 
+4/9 
+2.2 
+Pad layout 
+ 
+ 
+ 
+2.3 
+Conversion to Physical Values 
+In order to obtain the measured flow in [slm], the measured 
+value needs to be converted using the following formula: 
+ 
+𝑓𝑙𝑜𝑤 [slm] = 𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑑 𝑣𝑎𝑙𝑢𝑒−𝑜𝑓𝑓𝑠𝑒𝑡 𝑓𝑙𝑜𝑤
+𝑠𝑐𝑎𝑙𝑒 𝑓𝑎𝑐𝑡𝑜𝑟 𝑓𝑙𝑜𝑤
+ 
+ 
+ 
+Please note that the first measurement performed directly 
+after chip initialization is not valid. 
+ 
+3. Mechanical Specifications 
+All dimensions are in millimeters (mm). 
+ 
+ 
+  
+ 
+www.sensirion.com D1 
+Version 1.4 – March 2022 
+5/9 
+3.1 
+Mechanical fitting 
+Fittings of the SFM3300 series sensors correspond to the 
+international standard ISO5356-1:2004. Details about this 
+type of connection can be found in the description of the 
+standard.   
+ 
+ 
+3.2 
+Mechanical / Electrical Interface  
+SFM3300 series sensors have been designed for use in an 
+proximal/expiratory environment. Therefore the sensor 
+connector has been designed for an easy and reliable 
+connection and disconnection. The connector itself is not 
+provided as a standard product by Sensirion but Sensirion 
+can help with an application note including design 
+recommendations. 
+ 
+ 
+Dimension 
+Condition 
+Value 
+Unit 
+Length 
+ 
+69.3 
+mm 
+Diameter Flow channel 
+ 
+11.25 
+mm 
+Proximal medical cone 
+Inner 
+15 
+mm 
+Proximal medical socket 
+Outer 
+22 
+mm 
+Distal medical socket 
+Inner 
+22 
+mm 
+Distal medical cone 
+Outer 
+15 
+mm 
+Dead space 
+ 
+<10 
+ml 
+Weight 
+ 
+<20 
+g 
+ 
+www.sensirion.com D1 
+Version 1.4 – March 2022 
+6/9 
+4. Instructions for Use 
+ 
+4.1 
+Calibration orientation 
+The sensors are calibrated horizontally as depicted in the 
+following graph: 
+  
+ 
+ 
+ 
+Positive flow direction is from the female 22 mm cone to the 
+male 22 mm medical cone, so that inspiratory flows are 
+positive and expiratory flows negative. 
+ 
+4.2 
+Inlet flow conditions 
+In order to provide good flow conditions, the inner diameter 
+of the connecting tube has to be approximately the same as 
+the inner diameter of the SFM3300 main flow channel. The 
+SFM3300-AW is equipped with meshes on the in- and 
+outlets of the flow channel to reduce turbulences and thus 
+improve the stability. In contrast the SFM3300-D has been 
+designed without meshes as stability after re-use is not 
+needed for a single use sensor. 
+ 
+4.3 
+Temperature compensation 
+The SFM3300 series sensors feature digital temperature 
+compensation. The temperature is measured on the 
+CMOSens® chip by an on-chip temperature sensor. This 
+data is fed to a compensation circuit that is also integrated 
+on the CMOSens® sensor chip. Thus, no external 
+temperature compensation is necessary. 
+ 
+4.4 
+Heater operation 
+ 
+The sensor has an external heater for cases where the gas 
+flowing through the sensor contains high humidity and is 
+warmer than the ambient temperature. In such cases, 
+heating the sensor can help to avoid condensation or icing. 
+Sufficient power should be provided for this purpose, but 
+excessive power must be avoided for two reasons:  
+1) to stay within the operating temperature range, 
+2) to maintain the best accuracy.  
+Reading out the chip temperature can be used as feedback 
+on the current sensor temperature.  
+ 
+4.5 
+Reprocessing (applies only to SFM3300-AW 
+version) 
+ 
+The SFM3300-AW has been designed to withstand medical 
+cleaning procedures. For details of the test and the results 
+contact Sensirion. 
+ 
+Sensirion AG does not guarantee the stability of the flow 
+sensor using arbitrary methods and/or equipment for 
+autoclaving. Validation of the flow sensor stability for a 
+specific type of procedure and/or equipment is the sole 
+responsibility of the customer. 
+ 
+4.6 
+ESD 
+The electronics of the SFM3300 flow sensor chip has been 
+tested for ESD and passed an 8kV contact test. For ESD 
+information about the additional EEPROM available on the 
+SFM3300-AW version (type: 24LC01BT-I/MC) please 
+consult the datasheet of the EEPROM. 
+ 
+4.7 
+Sensor handling 
+The SFM3300 series sensors have been designed to be 
+robust and shock resistant. Nevertheless, the accuracy of 
+the high-precision SFM3300 sensors can be degraded by 
+rough handling. Sensirion does not guarantee proper 
+operation in case of improper handling.  
+ 
+Note: never connect the sensor while connecting part is wet. 
+Especially after cleaning procedure special care is needed 
+to dry the sensor.  
+ 
+Please be aware that SFM3300 has been designed for 
+usage with air and other non-corrosive and non-toxic gases. 
+ 
+If leak tightness is critical in customer application it remains 
+customer’s sole responsibility to leak-test the sensor before 
+usage.  
+ 
+4.8 
+I2C Interface and communication 
+Due to I2C interface restrictions, the cable length from the 
+sensor to the microprocessor is recommended to be as 
+short as possible and certainly not above 30 cm. For wires 
+longer than 10 cm it is mandatory to shield the SDA and 
+SCL. 
+In case data is read from the sensor, the first data byte of 
+the transaction must always be acknowledged by the 
+master.  
+It must be possible to reset the sensor through a hard reset, 
+i.e. powering off and on the sensor, in case the sensor 
+freezes. 
+ 
+I2C Communication details are given in the application note 
+“GF_AN_SFM3xxx_I2C Functional Description”. 
+ 
+Positive flow direction  
+(also marked on the sensor body) 
+ 
+www.sensirion.com D1 
+Version 1.4 – March 2022 
+7/9 
+SFM3300-AW only: 
+There is an additional EEPROM on the SFM3300-AW to 
+allow storage of customer-specific data (like for example 
+usage hours). Please see all details in the datasheet of the 
+EEPROM. The EEPROM is of type 24LC01BT-I/MC. No 
+additional validation or modification of EEPROM settings 
+has been performed by Sensirion. 
+ 
+ 
+ 
+www.sensirion.com D1 
+Version 1.4 – March 2022 
+8/9 
+5. Ordering Information 
+Use the part names and product numbers shown in the 
+table below when ordering SFM3300 series sensors. For 
+the latest product information and local distributors, visit 
+www.sensirion.com.  
+ 
+Part name 
+Product Number 
+SFM3300-250-AW 
+1-101052-01 
+SFM3300-250-D 
+1-101053-01 
+ 
+Packaging units: 30 items/tray. 
+Every sensor is traceable by a unique Serial Number. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Revision history 
+Date 
+Author 
+Version 
+Changes 
+July 2017 
+SAW 
+1.0  
+Release SFM3300-D 
+Sep 2018 
+DAT 
+1.1 
+Added shelf life for SFM3300-D version on page 2; Removed rev history before version 1.0;  
+January 2019 
+DAT 
+1.2 
+Fully released also –AW version 
+January 2022 
+PSIM 
+1.3 
+Note on operating temperature conditions and heater’s operation 
+March 2022 
+PSIM 
+1.4 
+Added section 4.4 
+ 
+ 
+www.sensirion.com D1 
+Version 1.4 – March 2022 
+9/9 
+ Important Notices 
+Warning, personal injury 
+Do not use this product as safety or emergency stop devices or in 
+any other application where failure of the product could result in 
+personal injury (including death). Do not use this product for 
+applications other than its intended and authorized use. Before 
+installing, handling, using or servicing this product, please consult 
+the datasheet and application notes. Failure to comply with these 
+instructions could result in death or serious injury. 
+If the Buyer shall purchase or use SENSIRION products for any 
+unintended or unauthorized application, Buyer shall defend, indemnify 
+and hold harmless SENSIRION and its officers, employees, subsidiaries, 
+affiliates and distributors against all claims, costs, damages and 
+expenses, and reasonable attorney fees arising out of, directly or 
+indirectly, any claim of personal injury or death associated with such 
+unintended or unauthorized use, even if SENSIRION shall be allegedly 
+negligent with respect to the design or the manufacture of the product. 
+ESD Precautions 
+The inherent design of this component causes it to be sensitive to 
+electrostatic discharge (ESD). To prevent ESD-induced damage and/or 
+degradation, take customary and statutory ESD precautions when 
+handling this product. 
+Warranty 
+SENSIRION warrants solely to the original purchaser of this product for 
+a period of 12 months (one year) from the date of delivery that this 
+product shall be of the quality, material and workmanship defined in 
+SENSIRION’s published specifications of the product. Within such period, 
+if proven to be defective, SENSIRION shall repair and/or replace this 
+product, in SENSIRION’s discretion, free of charge to the Buyer, 
+provided that: 
+▪ notice in writing describing the defects shall be given to SENSIRION 
+within fourteen (14) days after their appearance;  
+▪ such defects shall be found, to SENSIRION’s reasonable 
+satisfaction, to have arisen from SENSIRION’s faulty design, 
+material, or workmanship;  
+▪ the defective product shall be returned to SENSIRION’s factory at 
+the Buyer’s expense; and 
+▪ the warranty period for any repaired or replaced product shall be 
+limited to the unexpired portion of the original period. 
+This warranty does not apply to any equipment which has not been 
+installed and used within the specifications recommended by 
+SENSIRION for the intended and proper use of the equipment. EXCEPT 
+FOR THE WARRANTIES EXPRESSLY SET FORTH HEREIN, 
+SENSIRION MAKES NO WARRANTIES, EITHER EXPRESS OR 
+IMPLIED, WITH RESPECT TO THE PRODUCT. ANY AND ALL 
+WARRANTIES, INCLUDING WITHOUT LIMITATION, WARRANTIES 
+OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR 
+PURPOSE, ARE EXPRESSLY EXCLUDED AND DECLINED. 
+SENSIRION is only liable for defects of this product arising under the 
+conditions of operation provided for in the datasheet and proper use of 
+the goods. SENSIRION explicitly disclaims all warranties, express or 
+implied, for any period during which the goods are operated or stored not 
+in accordance with the technical specifications. 
+SENSIRION does not assume any liability arising out of any application 
+or use of any product or circuit and specifically disclaims any and all 
+liability, including without limitation consequential or incidental damages. 
+All operating parameters, including without limitation recommended 
+parameters, must be validated for each customer’s applications by 
+customer’s technical experts. Recommended parameters can and do 
+vary in different applications. 
+SENSIRION reserves the right, without further notice, (i) to change the 
+product specifications and/or the information in this document and (ii) to 
+improve reliability, functions and design of this product. 
+Copyright © 2001-2015, SENSIRION. 
+CMOSens® is a trademark of Sensirion 
+All rights reserved 
+ 
+ 
+ 
+ 
+ 
+Headquarters and Subsidiaries 
+SENSIRION AG 
+Laubisruetistr. 50 
+CH-8712 Staefa ZH 
+Switzerland 
+ 
+phone: 
++41 44 306 40 00 
+fax: 
++41 44 306 40 30 
+info@sensirion.com 
+www.sensirion.com 
+Sensirion Inc., USA 
+phone: 
++1 805 409 4900 
+info_us@sensirion.com 
+www.sensirion.com 
+ 
+Sensirion Japan Co. Ltd. 
+ 
+phone: 
++81 3 3444 4940 
+info@sensirion.co.jp 
+www.sensirion.co.jp 
+Sensirion Korea Co. Ltd. 
+phone: 
++82 31 345 0031 3 
+info@sensirion.co.kr 
+www.sensirion.co.kr 
+ 
+Sensirion China Co. Ltd. 
+phone: 
++86 755 8252 1501 
+info@sensirion.com.cn 
+www.sensirion.com.cn 
+Sensirion AG (Germany) 
+phone:  
++41 44 927 11 66 
+info@sensirion.com 
+www.sensirion.com 
+To find your local representative, please visit www.sensirion.com/contact 
+ 

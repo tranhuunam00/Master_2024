@@ -32,6 +32,7 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 |---|---|---|
 | `enclosure.py` (CadQuery) + `.step`/`.stl` | `Cpap/mechanical/` | **Chưa làm** — chờ xong PCB để lấy đúng toạ độ lỗ bắt vít (không đoán) |
 | Ốc vít | M3, lỗ clearance Ø3.2mm, boss Ø~6mm, khớp đúng 4 lỗ mounting trên PCB | Ghi nhận yêu cầu, chưa làm |
+| Yêu cầu vỏ (người dùng, 2026-11-19) | Chú ý: (1) vị trí cổng cắm (jack DC 12V, cáp blower, cổng nạp UART, ống áp cảm biến) dễ tiếp cận; (2) ốc vít; (3) dễ tháo mở để bảo trì; (4) chỗ đặt blower phải giảm ồn và giảm rung (đế cao su/đệm chống rung, tách khỏi PCB, đường khí có tiêu âm) | Ghi nhận, áp dụng khi làm `enclosure.py` |
 | `layout_diagram.png` — vị trí từng khối (PCB, blower, buồng mica+humidifier, OLED, encoder, cổng khí) bên trong vỏ | `Cpap/mechanical/` | **Chưa làm** |
 | CFD đường khí (OpenFOAM) | `Cpap/cfd/` | **Chưa làm** — đã kiểm tra: máy chưa cài OpenFOAM/ANSYS, cần cài thêm (vài GB, có thể mất nhiều thời gian) |
 
@@ -53,6 +54,14 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 - PCB: thiết kế bằng Altium trực tiếp (không qua KiCad nữa).
 - Vỏ: M3, in 3D.
 - CFD: mức đầy đủ (không chỉ tính giải tích), nhưng phụ thuộc cài được solver trên máy.
+
+## Rev C (đang làm, 2026-11-19)
+
+- Thay module buck bằng 2x TPS54202 trên board (5V: 15uH, 100k/13.3k, FF 75pF; 3V3: 10uH, 100k/22.1k, FF 56pF — TI SLVSD26C Table 7-2).
+- Thêm F1 PTC MF-R300, D2 TVS SMBJ15A, J1 = PJ-102AH (3 chân), Q1 = AO4407A SO-8 (3A), BZ1 = TDK PS1240.
+- Symbol + footprint mới đã có trong `SiPAP_Parts_v2.SchLib` / `SiPAP_Footprints.PcbLib` (đối chiếu datasheet).
+- Template schematic: `CPAP_VSSM/tools/sipap_template_revc.json` (64 linh kiện, 33 net, preview 0 lỗi). BOM: `Cpap/hardware/BOM_RevC.csv`.
+- **Chưa vẽ lên sheet / PCB**: Altium đang ở chế độ Viewer (mất Author seat) nên không lưu được.
 
 ## Việc tiếp theo (đang làm dở)
 
