@@ -1,6 +1,6 @@
 # SiPAP Rev C — hồ sơ đặt mạch (fabrication + assembly)
 
-> **CHƯA GỬI XƯỞNG BỘ FILE NÀY.** Kiểm tra lại (2026-11-19) phát hiện: header J2/J3/U4/U5 thiếu đồng mặt dưới và silk J1 lệch ra ngoài board. Phải xuất lại sau khi sửa — xem `Cpap/document/verification_RevC.md`.
+> Đã kiểm tra lại và xuất lại 2026-11-19 (sửa pad header J2/J3/U4/U5 thiếu đồng mặt dưới, silk J1 lệch). Chi tiết: `Cpap/document/verification_RevC.md`.
 
 Gửi xưởng file `SiPAP_RevC_Gerber.zip` (Gerber + khoan). Đặt lắp ráp (PCBA) thì gửi thêm `BOM_RevC.csv` và `SiPAP_RevC_CPL.csv`.
 

@@ -2,7 +2,7 @@
 
 Ngày: 2026-11-19. Phạm vi: `CPAP_VSSM` (schematic `SiPAP_Main_RevC.SchDoc`, PCB `SiPAP_PCB.PcbDoc`, hồ sơ `Fab_RevC/`).
 
-> **TRẠNG THÁI: CHƯA ĐƯỢC ĐẶT MẠCH.** Lần kiểm tra lại này tìm ra 2 lỗi trong file Gerber đã xuất (mục 2). Lỗi đã sửa trong Altium nhưng chưa lưu và chưa xuất lại Gerber — xem mục 5.
+> **TRẠNG THÁI: SẴN SÀNG ĐẶT MẠCH** (sau khi sửa 2 lỗi ở mục 2 và xuất lại Gerber). Rủi ro còn lại: F1/D1 phụ thuộc dòng blower thật (mục 3).
 
 ## 1. Kiểm tra tự động (đã chạy)
 
@@ -20,8 +20,8 @@ Ngày: 2026-11-19. Phạm vi: `CPAP_VSSM` (schematic `SiPAP_Main_RevC.SchDoc`, P
 
 | # | Lỗi | Hậu quả | Trạng thái |
 |---|---|---|---|
-| 1 | 20 pad xuyên lỗ của J2, J3, U4, U5 (header 2.54) khai báo ở lớp Top thay vì MultiLayer (bản footprint cũ từ Rev B) | Mặt dưới không có đồng và không mở mask → **không hàn được header** | Đã sửa trên board (MultiLayer), **chưa lưu**; thư viện cần sửa tương tự |
-| 2 | Khung silk/assembly/courtyard của J1 (PJ-102AH) vẽ đối xứng quanh gốc, trong khi thân jack nằm 0–14.4 mm (pad và khối 3D vẫn đúng) | Silk in lệch 7.2 mm ra ngoài mép board | Đang sửa trong thư viện thì script Altium crash |
+| 1 | 20 pad xuyên lỗ của J2, J3, U4, U5 (header 2.54) khai báo ở lớp Top thay vì MultiLayer (bản footprint cũ từ Rev B) | Mặt dưới không có đồng và không mở mask → **không hàn được header** | **Đã sửa trên board + xuất lại Gerber** (đã kiểm: có pad ở GTL/GBL/GTS/GBS). Thư viện vẫn là bản cũ → **không** 'update from library' cho J2/J3/U4/U5 |
+| 2 | Khung silk/assembly/courtyard của J1 (PJ-102AH) vẽ đối xứng quanh gốc, trong khi thân jack nằm 0–14.4 mm (pad và khối 3D vẫn đúng) | Silk in lệch 7.2 mm ra ngoài mép board | **Đã sửa trên board + xuất lại** (silk X ≥ 0). Sửa trong thư viện làm script Altium crash → footprint J1 trong thư viện còn thiếu silk: **không** 'update from library' cho J1 |
 | 3 | Footprint U6 trong schematic còn trỏ bản cũ `PEC11R-4220F-S0024` | Chỉ ảnh hưởng nếu chạy "Update PCB" (sẽ đề xuất đổi sang bản sai) | Chờ tắt tạm "Symbol pins vs pads" |
 
 ## 3. Tính toán kiểm chứng (theo datasheet)
@@ -77,7 +77,7 @@ Ghi kết quả từng máy vào `Cpap/document/test_report_template.md` (chưa 
 Bước 8 là bằng chứng chính cho tính năng an toàn: nó phải đạt khi ESP32 không chạy, vì mạch cắt áp dùng phần cứng độc lập.
 
 ## 5. Việc cần làm trước khi đặt mạch
-1. Khởi động lại cầu nối Altium → lưu board (giữ phần sửa pad header) → sửa xong silk J1 trong thư viện + sửa pad header trong thư viện → DRC lại.
-2. Xuất lại Gerber + khoan + IPC-356 + CPL vào `Fab_RevC/` và đóng gói lại zip.
+1. ~~Sửa board, DRC lại, xuất lại Gerber/khoan/IPC/CPL~~ — xong 2026-11-19.
+2. Sửa thư viện (pad header MultiLayer, silk J1) bằng tay trong Altium khi rảnh — board đã đúng.
 3. Relink footprint U6 trong schematic (cần tắt tạm "Symbol pins vs pads").
 4. Đo dòng blower thật để chốt F1/D1 (mục 3).
