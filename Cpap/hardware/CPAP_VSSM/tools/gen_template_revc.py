@@ -28,6 +28,9 @@ SYM = {
     "FUSE_PTC": {"1": (100, 0, "L", 100), "2": (300, 0, "R", 100)},
     "TVS_UNI": {"2": (100, 0, "L", 100), "1": (300, 0, "R", 100)},
     "CONN_DCJACK3": {"1": (800, 0, "R", 200), "3": (800, -100, "R", 200), "2": (800, -200, "R", 200)},
+    "2N7002": {"1": (200, 0, "L", 200), "3": (300, 100, "U", 200), "2": (300, -100, "D", 200)},
+    "CAP_POL": {"1": (100, 0, "L", 100), "2": (300, 0, "R", 100)},
+    "AO3401A": {"1": (0, 2900, "L", 200), "2": (200, 2600, "D", 200), "3": (400, 2900, "R", 200)},
     "AO4407A": {"1": (200, 0, "L", 200), "2": (200, -100, "L", 200), "3": (200, -200, "L", 200), "4": (200, -400, "L", 200),
                 "5": (800, 0, "R", 200), "6": (800, -100, "R", 200), "7": (800, -200, "R", 200), "8": (800, -300, "R", 200)},
 }
@@ -37,21 +40,19 @@ for i in range(1, 22):
 for i in range(22, 42):
     esp[str(i)] = (1300, 4100 - (i - 22) * 100, "R", 200)
 SYM["ESP32-S3-WROOM-1"] = esp
-BASE = {k: 0 for k in ("TPS54202", "INDUCTOR", "FUSE_PTC", "TVS_UNI", "CONN_DCJACK3", "AO4407A")}
+BASE = {k: 0 for k in ("TPS54202", "INDUCTOR", "FUSE_PTC", "TVS_UNI", "CONN_DCJACK3", "AO4407A", "2N7002", "CAP_POL")}
 
-UID = {"D1": "WKUUVTBI", "C10": "ASZKUQZD", "C2": "PKZXTIPV", "C1": "JSYMXWSU", "R13": "OWGBCMWK", "R17": "CJQMKMKS",
-       "J2": "IPXHUCUC", "R12": "HQXQVQOT", "U7": "DMOWYEOF", "C4": "HWQKVUUL", "R10": "XWJFOFPJ", "R11": "PZHIMIYX",
-       "R18": "WCNFAMSQ", "R15": "VBIGISGA", "R16": "TLKRYWTD", "U2": "JMDWTRXU", "C6": "MWOTXQNY", "C7": "JTIIAVYQ",
-       "C8": "FTHUFLZV", "R1": "UQEZVUJD", "R2": "JGUWTYTX", "U3": "JONZAHCO", "C9": "MXWIGYVF", "C11": "JVKYLKFW",
-       "C12": "HBBTYRSM", "R3": "JJDACZSN", "R4": "NVYXBZNO", "U1": "GKWJANVW", "C3": "UCEJSYHD", "R9": "VWAEVGAH",
-       "C5": "CDEDXQBY", "J3": "KZQYUFBB", "U4": "ZMZCBDUM", "U5": "EBIDXNXH", "R5": "AVYMKMST", "R6": "GDMRIXTS",
-       "U6": "YXBUJGMN", "R7": "KPQUZJCR", "R8": "MNKEZZHV", "R14": "MGEPHOKT", "BZ1": "KQPTAQNN"}
+UID = {'J1': 'LARRENTU', 'F1': 'AXBSQBDD', 'D2': 'MPOVDULB', 'C10': 'OQHIGRIE', 'C23': 'GEQHNXMH', 'Q1': 'SIJKHFGH', 'R13': 'PDUGZXWC', 'R17': 'CJQMKMKS', 'J2': 'IPXHUCUC', 'R12': 'HQXQVQOT', 'U8': 'UHZIGGNU', 'C13': 'JCWSNYIZ', 'C15': 'NHFRQBIB', 'C17': 'AWVJUHTA', 'L1': 'EXJPZLTZ', 'C2': 'PKZXTIPV', 'C18': 'RONSZRXQ', 'R19': 'QZVWRDXT', 'C19': 'FGONDDBB', 'R20': 'RHNZYECN', 'U9': 'WISSGBUX', 'C14': 'ZBUGWAGN', 'C16': 'DSXPYTQJ', 'C20': 'ROFATXIB', 'L2': 'QHVUEGTG', 'C1': 'JSYMXWSU', 'C21': 'GFAPOTZX', 'R21': 'WLDSHLHM', 'C22': 'HIACGPIE', 'R22': 'UFNIUQPH', 'U7': 'DMOWYEOF', 'C4': 'HWQKVUUL', 'R10': 'XWJFOFPJ', 'R11': 'PZHIMIYX', 'R18': 'WCNFAMSQ', 'R15': 'VBIGISGA', 'R16': 'TLKRYWTD', 'U2': 'EVBTLQEC', 'C6': 'MWOTXQNY', 'C7': 'JTIIAVYQ', 'C8': 'FTHUFLZV', 'R1': 'UQEZVUJD', 'R2': 'JGUWTYTX', 'U3': 'JONZAHCO', 'C9': 'MXWIGYVF', 'C11': 'JVKYLKFW', 'C12': 'HBBTYRSM', 'R3': 'JJDACZSN', 'R4': 'NVYXBZNO', 'U1': 'GKWJANVW', 'C3': 'UCEJSYHD', 'R9': 'VWAEVGAH', 'C5': 'CDEDXQBY', 'J3': 'KZQYUFBB', 'U4': 'ZMZCBDUM', 'U5': 'EBIDXNXH', 'R5': 'AVYMKMST', 'R6': 'GDMRIXTS', 'U6': 'YXBUJGMN', 'R7': 'KPQUZJCR', 'R8': 'MNKEZZHV', 'R14': 'MGEPHOKT', 'BZ1': 'KQPTAQNN'}
 
 POWER = {"GND", "3V3", "5V", "VIN12V"}
 parts, wires, ports, labels, nets = [], [], [], [], {}
 
 
+OY = 1500   # whole sheet lifted so the bottom block sits inside the frame
+
+
 def place(des, sym, x, y, value, conns):
+    y += OY
     ox, oy = x, y - BASE.get(sym, 2900)
     p = {"designator": des, "lib_reference": sym, "library_path": LIB, "x": ox, "y": oy, "rotation": 0, "value": value}
     if des in UID:
@@ -70,6 +71,8 @@ def place(des, sym, x, y, value, conns):
             cx, cy = ax - ln, ay; ex, ey = cx - stub, cy
         elif side == "R":
             cx, cy = ax + ln, ay; ex, ey = cx + stub, cy
+        elif side == "U":
+            cx, cy = ax, ay + ln; ex, ey = cx, cy + stub
         else:
             cx, cy = ax, ay - ln; ex, ey = cx, cy - stub
         wires.append({"net": net, "path": [f"{des}.{pin}", [ex, ey]]})
@@ -85,8 +88,7 @@ tp = lambda a, b: {"1": a, "2": b}
 
 # ---------- column A: input protection + blower switch ----------
 place("J1", "CONN_DCJACK3", 300, 13800, "PJ-102AH 12V IN", {"1": "VIN_RAW", "3": "GND", "2": "GND"})
-place("F1", "FUSE_PTC", 1000, 13000, "MF-R300 3A PTC", tp("VIN_RAW", "VIN_FUSED"))
-place("D1", "DIODE", 1000, 12500, "SS54 Schottky 5A", tp("VIN_FUSED", "VIN12V"))
+place("F1", "FUSE_PTC", 1000, 13000, "MF-R400 4A PTC", tp("VIN_RAW", "VIN_FUSED"))
 place("D2", "TVS_UNI", 1000, 12000, "SMBJ15A TVS", {"1": "VIN12V", "2": "GND"})
 place("C10", C, 1000, 11500, "10uF 35V", tp("VIN12V", "GND"))
 place("C23", C, 1000, 11000, "22uF 25V", tp("VIN12V", "GND"))
@@ -96,6 +98,13 @@ place("R13", R, 1000, 9300, "10k", tp("GATE", "VIN12V"))
 place("R17", R, 1000, 8800, "10k", tp("GATE", "COMP_OUT"))
 place("J2", "CONN_BLOWER4", 1000, 8100, "Blower cable", {"1": "BLOWER_V12", "2": "GND", "3": "BLOWER_PWM", "4": "BLOWER_FG"})
 place("R12", R, 1000, 7300, "10k", tp("3V3", "BLOWER_FG"))
+# reverse-polarity P-MOSFET (replaces SS54): D=input, S=VIN12V, gate divider gives Vgs = -VIN/2
+place("Q4", "AO4407A", 1000, 6500, "AO4407A", {"1": "VIN12V", "2": "VIN12V", "3": "VIN12V", "4": "RPP_G",
+                                               "5": "VIN_FUSED", "6": "VIN_FUSED", "7": "VIN_FUSED", "8": "VIN_FUSED"})
+place("R26", R, 1000, 5600, "10k", tp("RPP_G", "GND"))
+place("R27", R, 1000, 5100, "10k", tp("RPP_G", "VIN12V"))
+# blower bulk capacitor at J2 (Panasonic EEU-FC1E221, 220uF 25V, 555 mA ripple)
+place("C25", "CAP_POL", 1000, 4400, "220uF 25V", tp("BLOWER_V12", "GND"))
 
 # ---------- column B: TPS54202 bucks (TI SLVSD26C Fig 7-1 / Table 7-2) ----------
 XB = 4000
@@ -147,7 +156,7 @@ place("R3", R, X2, 3100 + DY, "10k", tp("PRESS_RED_RAW", "PRESS_RED_ADC"))
 place("R4", R, X2, 2600 + DY, "20k", tp("PRESS_RED_ADC", "GND"))
 esp_nets = {"1": "GND", "2": "3V3", "3": "EN", "4": "PRESS_PRI_ADC", "5": "PRESS_RED_ADC", "6": "SAFETY_TRIP", "7": "BUZZER_CTRL",
             "10": "ENC_A", "11": "ENC_B", "12": "I2C_SDA", "15": "BLOWER_PWM", "17": "I2C_SCL",
-            "23": "ENC_SW", "27": "BOOT", "36": "UART_RX", "37": "UART_TX", "38": "BLOWER_FG", "40": "GND", "41": "GND"}
+            "23": "ENC_SW", "27": "BOOT", "36": "UART_RX", "37": "UART_TX", "38": "BLOWER_FG", "40": "GND", "41": "GND", "9": "SFM_EN"}
 place("U1", "ESP32-S3-WROOM-1", 11200, 9100 + DY, "ESP32-S3-WROOM-1-N8R8", esp_nets)
 place("C3", C, X2, 7300 + DY, "100nF", tp("3V3", "GND"))
 place("R9", R, X2, 6800 + DY, "10k", tp("3V3", "EN"))
@@ -156,7 +165,7 @@ place("C5", C, X2, 6300 + DY, "1uF", tp("EN", "GND"))
 # ---------- column X3: UI + I/O ----------
 X3 = 14600
 place("J3", "CONN_UART6", X3, 10500 + DY, "Prog UART", {"1": "GND", "2": "3V3", "4": "UART_RX", "3": "UART_TX", "5": "EN", "6": "BOOT"})
-place("U4", "SFM3300-D", X3, 9600 + DY, "SFM3300-D", {"1": "GND", "2": "5V", "4": "GND", "3": "I2C_SCL", "5": "I2C_SDA", "6": None})
+place("U4", "SFM3300-D", X3, 9600 + DY, "SFM3300-D", {"1": "GND", "2": "SFM_5V", "4": "GND", "3": "I2C_SCL", "5": "I2C_SDA", "6": None})
 place("U5", "SSD1306_OLED_I2C", X3, 8700 + DY, "OLED 0.96in I2C", {"1": "GND", "2": "3V3", "3": "I2C_SCL", "4": "I2C_SDA"})
 place("R5", R, X3, 8000 + DY, "4.7k", tp("3V3", "I2C_SCL"))
 place("R6", R, X3, 7500 + DY, "4.7k", tp("3V3", "I2C_SDA"))
@@ -165,6 +174,12 @@ place("R7", R, X3, 5800 + DY, "10k", tp("3V3", "ENC_A"))
 place("R8", R, X3, 5300 + DY, "10k", tp("3V3", "ENC_B"))
 place("R14", R, X3, 4800 + DY, "10k", tp("3V3", "ENC_SW"))
 place("BZ1", "BUZZER", X3, 4100 + DY, "PS1240P02BT", tp("BUZZER_CTRL", "GND"))
+# SFM3300 power switch (datasheet 4.8: sensor must be resettable by power cycling). IO16 high = on (default via R24).
+place("Q2", "AO3401A", X3, 4200, "AO3401A", {"1": "SFM_G", "2": "5V", "3": "SFM_5V"})
+place("R23", R, X3 + 1400, 3700, "100k", tp("5V", "SFM_G"))
+place("Q3", "2N7002", X3 + 800, 2700, "2N7002", {"1": "SFM_EN", "2": "GND", "3": "SFM_G"})
+place("R24", R, X3, 2000, "10k", tp("3V3", "SFM_EN"))
+place("C24", C, X3, 1500, "100nF", tp("SFM_5V", "GND"))
 
 tpl = {"parts": parts, "wires": wires, "ports": ports, "labels": labels, "nets": nets}
 out = os.path.join(HERE, "sipap_template_revc.json")

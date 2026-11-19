@@ -58,13 +58,14 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 ## Rev C (đang làm, 2026-11-19)
 
 - Thay module buck bằng 2x TPS54202 trên board (5V: 15uH, 100k/13.3k, FF 75pF; 3V3: 10uH, 100k/22.1k, FF 56pF — TI SLVSD26C Table 7-2).
-- Thêm F1 PTC MF-R300, D2 TVS SMBJ15A, J1 = PJ-102AH (3 chân), Q1 = AO4407A SO-8 (3A), BZ1 = TDK PS1240.
+- Thêm F1 PTC MF-R400 (ban đầu MF-R300), D2 TVS SMBJ15A, J1 = PJ-102AH (3 chân), Q1 = AO4407A SO-8 (3A), BZ1 = TDK PS1240.
 - Symbol + footprint mới đã có trong `SiPAP_Parts_v2.SchLib` / `SiPAP_Footprints.PcbLib` (đối chiếu datasheet).
-- Template schematic: `CPAP_VSSM/tools/sipap_template_revc.json` (64 linh kiện, 33 net, preview 0 lỗi). BOM: `Cpap/hardware/BOM_RevC.csv`.
+- Template schematic: `CPAP_VSSM/tools/sipap_template_revc.json` (72 linh kiện, 37 net, preview 0 lỗi). BOM: `Cpap/hardware/BOM_RevC.csv`.
 - Schematic `SiPAP_Main_RevC.SchDoc`: **xong, ERC 0 lỗi** (5 cảnh báo "no driving source" trên net cầu chia FB/EN/GATE/COMP_REF — bình thường). Rev B gỡ khỏi project (file vẫn giữ).
-- PCB Rev C (`SiPAP_PCB.PcbDoc`): **xong** — 64/64 linh kiện khớp schematic, 100% đi dây, DRC điện 0 lỗi (clearance, short, unrouted, width, mask sliver). Khối buck đặt/đi dây tay vòng SW-L-BOOT-VIN-FB theo TI; 35 via khâu GND mới; 3 fiducial; test point TP1 12V / TP2 5V / TP3 3V3 / TP4 GND; chữ silk "SiPAP Rev C 2026-11", nhãn 12V IN, UART. Còn cảnh báo silk đè pad (silk footprint cũ) — xưởng tự cắt.
-- 3D: `CPAP_VSSM/3D/SiPAP_PCB_RevC.step` + `height_map.md` (cao nhất 26.5 mm encoder; 18.3 mm PTC F1 đứng).
+- PCB Rev C (`SiPAP_PCB.PcbDoc`): **xong** — 72/72 linh kiện khớp schematic, 100% đi dây, DRC điện 0 lỗi (clearance, short, unrouted, width, mask sliver). Khối buck đặt/đi dây tay vòng SW-L-BOOT-VIN-FB theo TI; 35 via khâu GND mới; 3 fiducial; test point TP1 12V / TP2 5V / TP3 3V3 / TP4 GND; chữ silk "SiPAP Rev C 2026-11", nhãn 12V IN, UART. Còn cảnh báo silk đè pad (silk footprint cũ) — xưởng tự cắt.
+- 3D: `CPAP_VSSM/3D/SiPAP_PCB_RevC.step` + `height_map.md` (cao nhất 26.5 mm encoder; 24.8 mm PTC F1 MF-R400 đứng; 11.5 mm tụ C25).
 - Hồ sơ xưởng: `CPAP_VSSM/Fab_RevC/` — `SiPAP_RevC_Gerber.zip` (Gerber RS-274X mm, Excellon 4:3 có G85 slot, IPC-D-356A), `SiPAP_RevC_CPL.csv`, `BOM_RevC.csv`, `FAB_NOTES.md`, ảnh top/schematic. PDF assembly/schematic chưa xuất (Altium chỉ in PDF qua hộp thoại máy in) — dùng ảnh PNG thay.
+- Bản cuối 2026-11-19: thêm công tắc nguồn SFM3300 (Q2 AO3401A + Q3 2N7002, IO16 = SFM_EN, bật mặc định), tụ bulk blower C25 220 µF 25 V cạnh J2, Q4 AO4407A chống ngược cực thay D1 SS54 (1.65 W → 0.19 W), F1 → MF-R400. ERC/DRC 0 lỗi, netlist 0 sai, Gerber kiểm 249/249 pad. Chi tiết `Cpap/document/verification_RevC.md` mục 7.
 - **Còn treo:** symbol U6 (PEC11R) trong schematic vẫn trỏ footprint cũ `PEC11R-4220F-S0024` (sai bước chân); PCB đã dùng đúng `PEC11R-4xxxF-S_DS`. Cần tắt tạm "Symbol pins vs pads" (pad MP cơ khí không có chân) để relink — nếu không, lần "Update PCB" sau Altium sẽ đề xuất đổi U6 sang footprint sai: **bỏ dòng đó trong ECO**.
 
 ## Việc tiếp theo (đang làm dở)

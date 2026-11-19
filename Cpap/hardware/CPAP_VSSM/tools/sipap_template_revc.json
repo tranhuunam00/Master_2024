@@ -5,82 +5,77 @@
    "lib_reference": "CONN_DCJACK3",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 300,
-   "y": 13800,
+   "y": 15300,
    "rotation": 0,
-   "value": "PJ-102AH 12V IN"
+   "value": "PJ-102AH 12V IN",
+   "unique_id": "LARRENTU"
   },
   {
    "designator": "F1",
    "lib_reference": "FUSE_PTC",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 1000,
-   "y": 13000,
+   "y": 14500,
    "rotation": 0,
-   "value": "MF-R300 3A PTC"
-  },
-  {
-   "designator": "D1",
-   "lib_reference": "DIODE",
-   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
-   "x": 1000,
-   "y": 9600,
-   "rotation": 0,
-   "value": "SS54 Schottky 5A",
-   "unique_id": "WKUUVTBI"
+   "value": "MF-R400 4A PTC",
+   "unique_id": "AXBSQBDD"
   },
   {
    "designator": "D2",
    "lib_reference": "TVS_UNI",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 1000,
-   "y": 12000,
+   "y": 13500,
    "rotation": 0,
-   "value": "SMBJ15A TVS"
+   "value": "SMBJ15A TVS",
+   "unique_id": "MPOVDULB"
   },
   {
    "designator": "C10",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 1000,
-   "y": 8600,
+   "y": 10100,
    "rotation": 0,
    "value": "10uF 35V",
-   "unique_id": "ASZKUQZD"
+   "unique_id": "OQHIGRIE"
   },
   {
    "designator": "C23",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 1000,
-   "y": 8100,
+   "y": 9600,
    "rotation": 0,
-   "value": "22uF 25V"
+   "value": "22uF 25V",
+   "unique_id": "GEQHNXMH"
   },
   {
    "designator": "Q1",
    "lib_reference": "AO4407A",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 1000,
-   "y": 10300,
+   "y": 11800,
    "rotation": 0,
-   "value": "AO4407A"
+   "value": "AO4407A",
+   "unique_id": "SIJKHFGH"
   },
   {
    "designator": "R13",
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 1000,
-   "y": 6400,
+   "y": 7900,
    "rotation": 0,
    "value": "10k",
-   "unique_id": "OWGBCMWK"
+   "unique_id": "PDUGZXWC"
   },
   {
    "designator": "R17",
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 1000,
-   "y": 5900,
+   "y": 7400,
    "rotation": 0,
    "value": "10k",
    "unique_id": "CJQMKMKS"
@@ -90,7 +85,7 @@
    "lib_reference": "CONN_BLOWER4",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 1000,
-   "y": 5200,
+   "y": 6700,
    "rotation": 0,
    "value": "Blower cable",
    "unique_id": "IPXHUCUC"
@@ -100,62 +95,103 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 1000,
-   "y": 4400,
+   "y": 5900,
    "rotation": 0,
    "value": "10k",
    "unique_id": "HQXQVQOT"
+  },
+  {
+   "designator": "Q4",
+   "lib_reference": "AO4407A",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 8000,
+   "rotation": 0,
+   "value": "AO4407A"
+  },
+  {
+   "designator": "R26",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 4200,
+   "rotation": 0,
+   "value": "10k"
+  },
+  {
+   "designator": "R27",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 3700,
+   "rotation": 0,
+   "value": "10k"
+  },
+  {
+   "designator": "C25",
+   "lib_reference": "CAP_POL",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 5900,
+   "rotation": 0,
+   "value": "220uF 25V"
   },
   {
    "designator": "U8",
    "lib_reference": "TPS54202",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 13800,
+   "y": 15300,
    "rotation": 0,
-   "value": "TPS54202 (5V)"
+   "value": "TPS54202 (5V)",
+   "unique_id": "UHZIGGNU"
   },
   {
    "designator": "C13",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 10200,
+   "y": 11700,
    "rotation": 0,
-   "value": "10uF 35V"
+   "value": "10uF 35V",
+   "unique_id": "JCWSNYIZ"
   },
   {
    "designator": "C15",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 9800,
+   "y": 11300,
    "rotation": 0,
-   "value": "100nF"
+   "value": "100nF",
+   "unique_id": "NHFRQBIB"
   },
   {
    "designator": "C17",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 9400,
+   "y": 10900,
    "rotation": 0,
-   "value": "100nF"
+   "value": "100nF",
+   "unique_id": "AWVJUHTA"
   },
   {
    "designator": "L1",
    "lib_reference": "INDUCTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 11900,
+   "y": 13400,
    "rotation": 0,
-   "value": "15uH SRN6045TA-150M"
+   "value": "15uH SRN6045TA-150M",
+   "unique_id": "EXJPZLTZ"
   },
   {
    "designator": "C2",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 8600,
+   "y": 10100,
    "rotation": 0,
    "value": "22uF 16V",
    "unique_id": "PKZXTIPV"
@@ -165,88 +201,97 @@
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 8200,
+   "y": 9700,
    "rotation": 0,
-   "value": "22uF 16V"
+   "value": "22uF 16V",
+   "unique_id": "RONSZRXQ"
   },
   {
    "designator": "R19",
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 7800,
+   "y": 9300,
    "rotation": 0,
-   "value": "100k 1%"
+   "value": "100k 1%",
+   "unique_id": "QZVWRDXT"
   },
   {
    "designator": "C19",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 7400,
+   "y": 8900,
    "rotation": 0,
-   "value": "75pF C0G"
+   "value": "75pF C0G",
+   "unique_id": "FGONDDBB"
   },
   {
    "designator": "R20",
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 7000,
+   "y": 8500,
    "rotation": 0,
-   "value": "13.3k 1%"
+   "value": "13.3k 1%",
+   "unique_id": "RHNZYECN"
   },
   {
    "designator": "U9",
    "lib_reference": "TPS54202",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 9200,
+   "y": 10700,
    "rotation": 0,
-   "value": "TPS54202 (3V3)"
+   "value": "TPS54202 (3V3)",
+   "unique_id": "WISSGBUX"
   },
   {
    "designator": "C14",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 5600,
+   "y": 7100,
    "rotation": 0,
-   "value": "10uF 35V"
+   "value": "10uF 35V",
+   "unique_id": "ZBUGWAGN"
   },
   {
    "designator": "C16",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 5200,
+   "y": 6700,
    "rotation": 0,
-   "value": "100nF"
+   "value": "100nF",
+   "unique_id": "DSXPYTQJ"
   },
   {
    "designator": "C20",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 4800,
+   "y": 6300,
    "rotation": 0,
-   "value": "100nF"
+   "value": "100nF",
+   "unique_id": "ROFATXIB"
   },
   {
    "designator": "L2",
    "lib_reference": "INDUCTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 7300,
+   "y": 8800,
    "rotation": 0,
-   "value": "10uH SRN6045TA-100M"
+   "value": "10uH SRN6045TA-100M",
+   "unique_id": "QHVUEGTG"
   },
   {
    "designator": "C1",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 4000,
+   "y": 5500,
    "rotation": 0,
    "value": "22uF 16V",
    "unique_id": "JSYMXWSU"
@@ -256,43 +301,47 @@
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 3600,
+   "y": 5100,
    "rotation": 0,
-   "value": "22uF 16V"
+   "value": "22uF 16V",
+   "unique_id": "GFAPOTZX"
   },
   {
    "designator": "R21",
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 3200,
+   "y": 4700,
    "rotation": 0,
-   "value": "100k 1%"
+   "value": "100k 1%",
+   "unique_id": "WLDSHLHM"
   },
   {
    "designator": "C22",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 2800,
+   "y": 4300,
    "rotation": 0,
-   "value": "56pF C0G"
+   "value": "56pF C0G",
+   "unique_id": "HIACGPIE"
   },
   {
    "designator": "R22",
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 4000,
-   "y": 2400,
+   "y": 3900,
    "rotation": 0,
-   "value": "22.1k 1%"
+   "value": "22.1k 1%",
+   "unique_id": "UFNIUQPH"
   },
   {
    "designator": "U7",
    "lib_reference": "LM393",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 8600,
+   "y": 10100,
    "rotation": 0,
    "value": "LM393",
    "unique_id": "DMOWYEOF"
@@ -302,7 +351,7 @@
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 7600,
+   "y": 9100,
    "rotation": 0,
    "value": "100nF",
    "unique_id": "HWQKVUUL"
@@ -312,7 +361,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 7000,
+   "y": 8500,
    "rotation": 0,
    "value": "47k",
    "unique_id": "XWJFOFPJ"
@@ -322,7 +371,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 6400,
+   "y": 7900,
    "rotation": 0,
    "value": "10k",
    "unique_id": "PZHIMIYX"
@@ -332,7 +381,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 5800,
+   "y": 7300,
    "rotation": 0,
    "value": "1M",
    "unique_id": "WCNFAMSQ"
@@ -342,7 +391,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 5200,
+   "y": 6700,
    "rotation": 0,
    "value": "1M",
    "unique_id": "VBIGISGA"
@@ -352,7 +401,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 4600,
+   "y": 6100,
    "rotation": 0,
    "value": "330k",
    "unique_id": "TLKRYWTD"
@@ -362,17 +411,17 @@
    "lib_reference": "MPXV5010GC6U",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 3600,
+   "y": 5100,
    "rotation": 0,
    "value": "MPXV5010GC6U (primary)",
-   "unique_id": "JMDWTRXU"
+   "unique_id": "EVBTLQEC"
   },
   {
    "designator": "C6",
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 2700,
+   "y": 4200,
    "rotation": 0,
    "value": "1uF",
    "unique_id": "MWOTXQNY"
@@ -382,7 +431,7 @@
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 2200,
+   "y": 3700,
    "rotation": 0,
    "value": "10nF",
    "unique_id": "JTIIAVYQ"
@@ -392,7 +441,7 @@
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 1700,
+   "y": 3200,
    "rotation": 0,
    "value": "470pF",
    "unique_id": "FTHUFLZV"
@@ -402,7 +451,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 1200,
+   "y": 2700,
    "rotation": 0,
    "value": "10k",
    "unique_id": "UQEZVUJD"
@@ -412,7 +461,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 7600,
-   "y": 700,
+   "y": 2200,
    "rotation": 0,
    "value": "20k",
    "unique_id": "JGUWTYTX"
@@ -422,7 +471,7 @@
    "lib_reference": "MPXV5010GC6U",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 10600,
-   "y": 3600,
+   "y": 5100,
    "rotation": 0,
    "value": "MPXV5010GC6U (redundant)",
    "unique_id": "JONZAHCO"
@@ -432,7 +481,7 @@
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 10600,
-   "y": 2700,
+   "y": 4200,
    "rotation": 0,
    "value": "1uF",
    "unique_id": "MXWIGYVF"
@@ -442,7 +491,7 @@
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 10600,
-   "y": 2200,
+   "y": 3700,
    "rotation": 0,
    "value": "10nF",
    "unique_id": "JVKYLKFW"
@@ -452,7 +501,7 @@
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 10600,
-   "y": 1700,
+   "y": 3200,
    "rotation": 0,
    "value": "470pF",
    "unique_id": "HBBTYRSM"
@@ -462,7 +511,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 10600,
-   "y": 1200,
+   "y": 2700,
    "rotation": 0,
    "value": "10k",
    "unique_id": "JJDACZSN"
@@ -472,7 +521,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 10600,
-   "y": 700,
+   "y": 2200,
    "rotation": 0,
    "value": "20k",
    "unique_id": "NVYXBZNO"
@@ -482,7 +531,7 @@
    "lib_reference": "ESP32-S3-WROOM-1",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 11200,
-   "y": 7200,
+   "y": 8700,
    "rotation": 0,
    "value": "ESP32-S3-WROOM-1-N8R8",
    "unique_id": "GKWJANVW"
@@ -492,7 +541,7 @@
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 10600,
-   "y": 5400,
+   "y": 6900,
    "rotation": 0,
    "value": "100nF",
    "unique_id": "UCEJSYHD"
@@ -502,7 +551,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 10600,
-   "y": 4900,
+   "y": 6400,
    "rotation": 0,
    "value": "10k",
    "unique_id": "VWAEVGAH"
@@ -512,7 +561,7 @@
    "lib_reference": "CAPACITOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 10600,
-   "y": 4400,
+   "y": 5900,
    "rotation": 0,
    "value": "1uF",
    "unique_id": "CDEDXQBY"
@@ -522,7 +571,7 @@
    "lib_reference": "CONN_UART6",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 14600,
-   "y": 8600,
+   "y": 10100,
    "rotation": 0,
    "value": "Prog UART",
    "unique_id": "KZQYUFBB"
@@ -532,7 +581,7 @@
    "lib_reference": "SFM3300-D",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 14600,
-   "y": 7700,
+   "y": 9200,
    "rotation": 0,
    "value": "SFM3300-D",
    "unique_id": "ZMZCBDUM"
@@ -542,7 +591,7 @@
    "lib_reference": "SSD1306_OLED_I2C",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 14600,
-   "y": 6800,
+   "y": 8300,
    "rotation": 0,
    "value": "OLED 0.96in I2C",
    "unique_id": "EBIDXNXH"
@@ -552,7 +601,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 14600,
-   "y": 6100,
+   "y": 7600,
    "rotation": 0,
    "value": "4.7k",
    "unique_id": "AVYMKMST"
@@ -562,7 +611,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 14600,
-   "y": 5600,
+   "y": 7100,
    "rotation": 0,
    "value": "4.7k",
    "unique_id": "GDMRIXTS"
@@ -572,7 +621,7 @@
    "lib_reference": "PEC11R-4220F-S0024",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 14600,
-   "y": 4800,
+   "y": 6300,
    "rotation": 0,
    "value": "PEC11R-4220F-S0024",
    "unique_id": "YXBUJGMN"
@@ -582,7 +631,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 14600,
-   "y": 3900,
+   "y": 5400,
    "rotation": 0,
    "value": "10k",
    "unique_id": "KPQUZJCR"
@@ -592,7 +641,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 14600,
-   "y": 3400,
+   "y": 4900,
    "rotation": 0,
    "value": "10k",
    "unique_id": "MNKEZZHV"
@@ -602,7 +651,7 @@
    "lib_reference": "RESISTOR",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 14600,
-   "y": 2900,
+   "y": 4400,
    "rotation": 0,
    "value": "10k",
    "unique_id": "MGEPHOKT"
@@ -612,10 +661,55 @@
    "lib_reference": "BUZZER",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
    "x": 14600,
-   "y": 2200,
+   "y": 3700,
    "rotation": 0,
    "value": "PS1240P02BT",
    "unique_id": "KQPTAQNN"
+  },
+  {
+   "designator": "Q2",
+   "lib_reference": "AO3401A",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 2800,
+   "rotation": 0,
+   "value": "AO3401A"
+  },
+  {
+   "designator": "R23",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 16000,
+   "y": 2300,
+   "rotation": 0,
+   "value": "100k"
+  },
+  {
+   "designator": "Q3",
+   "lib_reference": "2N7002",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 15400,
+   "y": 4200,
+   "rotation": 0,
+   "value": "2N7002"
+  },
+  {
+   "designator": "R24",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 600,
+   "rotation": 0,
+   "value": "10k"
+  },
+  {
+   "designator": "C24",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 14600,
+   "y": 100,
+   "rotation": 0,
+   "value": "100nF"
   }
  ],
  "wires": [
@@ -625,7 +719,7 @@
     "J1.1",
     [
      1500,
-     13800
+     15300
     ]
    ]
   },
@@ -635,7 +729,7 @@
     "J1.3",
     [
      1800,
-     13700
+     15200
     ]
    ]
   },
@@ -645,7 +739,7 @@
     "J1.2",
     [
      1500,
-     13600
+     15100
     ]
    ]
   },
@@ -655,7 +749,7 @@
     "F1.1",
     [
      200,
-     13000
+     14500
     ]
    ]
   },
@@ -665,27 +759,7 @@
     "F1.2",
     [
      1600,
-     13000
-    ]
-   ]
-  },
-  {
-   "net": "VIN_FUSED",
-   "path": [
-    "D1.1",
-    [
-     100,
-     12500
-    ]
-   ]
-  },
-  {
-   "net": "VIN12V",
-   "path": [
-    "D1.2",
-    [
-     2000,
-     12500
+     14500
     ]
    ]
   },
@@ -695,7 +769,7 @@
     "D2.1",
     [
      1600,
-     12000
+     13500
     ]
    ]
   },
@@ -705,7 +779,7 @@
     "D2.2",
     [
      800,
-     12000
+     13500
     ]
    ]
   },
@@ -715,7 +789,7 @@
     "C10.1",
     [
      400,
-     11500
+     13000
     ]
    ]
   },
@@ -725,7 +799,7 @@
     "C10.2",
     [
      2000,
-     11500
+     13000
     ]
    ]
   },
@@ -735,7 +809,7 @@
     "C23.1",
     [
      400,
-     11000
+     12500
     ]
    ]
   },
@@ -745,7 +819,7 @@
     "C23.2",
     [
      2000,
-     11000
+     12500
     ]
    ]
   },
@@ -755,7 +829,7 @@
     "Q1.1",
     [
      800,
-     10300
+     11800
     ]
    ]
   },
@@ -765,7 +839,7 @@
     "Q1.2",
     [
      500,
-     10200
+     11700
     ]
    ]
   },
@@ -775,7 +849,7 @@
     "Q1.3",
     [
      800,
-     10100
+     11600
     ]
    ]
   },
@@ -785,7 +859,7 @@
     "Q1.4",
     [
      200,
-     9900
+     11400
     ]
    ]
   },
@@ -795,7 +869,7 @@
     "Q1.5",
     [
      2200,
-     10300
+     11800
     ]
    ]
   },
@@ -805,7 +879,7 @@
     "Q1.6",
     [
      2200,
-     10200
+     11700
     ]
    ]
   },
@@ -815,7 +889,7 @@
     "Q1.7",
     [
      2200,
-     10100
+     11600
     ]
    ]
   },
@@ -825,7 +899,7 @@
     "Q1.8",
     [
      2200,
-     10000
+     11500
     ]
    ]
   },
@@ -835,7 +909,7 @@
     "R13.1",
     [
      100,
-     9300
+     10800
     ]
    ]
   },
@@ -845,7 +919,7 @@
     "R13.2",
     [
      2000,
-     9300
+     10800
     ]
    ]
   },
@@ -855,7 +929,7 @@
     "R17.1",
     [
      100,
-     8800
+     10300
     ]
    ]
   },
@@ -865,7 +939,7 @@
     "R17.2",
     [
      1700,
-     8800
+     10300
     ]
    ]
   },
@@ -875,7 +949,7 @@
     "J2.1",
     [
      0,
-     8100
+     9600
     ]
    ]
   },
@@ -885,7 +959,7 @@
     "J2.2",
     [
      600,
-     8000
+     9500
     ]
    ]
   },
@@ -895,7 +969,7 @@
     "J2.3",
     [
      1800,
-     8100
+     9600
     ]
    ]
   },
@@ -905,7 +979,7 @@
     "J2.4",
     [
      1800,
-     8000
+     9500
     ]
    ]
   },
@@ -915,7 +989,7 @@
     "R12.1",
     [
      400,
-     7300
+     8800
     ]
    ]
   },
@@ -925,7 +999,147 @@
     "R12.2",
     [
      1700,
-     7300
+     8800
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "Q4.1",
+    [
+     800,
+     8000
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "Q4.2",
+    [
+     500,
+     7900
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "Q4.3",
+    [
+     800,
+     7800
+    ]
+   ]
+  },
+  {
+   "net": "RPP_G",
+   "path": [
+    "Q4.4",
+    [
+     200,
+     7600
+    ]
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "path": [
+    "Q4.5",
+    [
+     2200,
+     8000
+    ]
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "path": [
+    "Q4.6",
+    [
+     2200,
+     7900
+    ]
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "path": [
+    "Q4.7",
+    [
+     2200,
+     7800
+    ]
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "path": [
+    "Q4.8",
+    [
+     2200,
+     7700
+    ]
+   ]
+  },
+  {
+   "net": "RPP_G",
+   "path": [
+    "R26.1",
+    [
+     100,
+     7100
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "R26.2",
+    [
+     2000,
+     7100
+    ]
+   ]
+  },
+  {
+   "net": "RPP_G",
+   "path": [
+    "R27.1",
+    [
+     100,
+     6600
+    ]
+   ]
+  },
+  {
+   "net": "VIN12V",
+   "path": [
+    "R27.2",
+    [
+     2000,
+     6600
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "path": [
+    "C25.1",
+    [
+     200,
+     5900
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C25.2",
+    [
+     1600,
+     5900
     ]
    ]
   },
@@ -935,7 +1149,7 @@
     "U8.3",
     [
      3800,
-     13800
+     15300
     ]
    ]
   },
@@ -945,7 +1159,7 @@
     "U8.1",
     [
      3500,
-     13500
+     15000
     ]
    ]
   },
@@ -955,7 +1169,7 @@
     "U8.6",
     [
      5400,
-     13800
+     15300
     ]
    ]
   },
@@ -965,7 +1179,7 @@
     "U8.2",
     [
      5400,
-     13700
+     15200
     ]
    ]
   },
@@ -975,7 +1189,7 @@
     "U8.4",
     [
      5400,
-     13500
+     15000
     ]
    ]
   },
@@ -985,7 +1199,7 @@
     "C13.1",
     [
      3400,
-     13100
+     14600
     ]
    ]
   },
@@ -995,7 +1209,7 @@
     "C13.2",
     [
      5000,
-     13100
+     14600
     ]
    ]
   },
@@ -1005,7 +1219,7 @@
     "C15.1",
     [
      3400,
-     12700
+     14200
     ]
    ]
   },
@@ -1015,7 +1229,7 @@
     "C15.2",
     [
      5000,
-     12700
+     14200
     ]
    ]
   },
@@ -1025,7 +1239,7 @@
     "C17.1",
     [
      3100,
-     12300
+     13800
     ]
    ]
   },
@@ -1035,7 +1249,7 @@
     "C17.2",
     [
      4700,
-     12300
+     13800
     ]
    ]
   },
@@ -1045,7 +1259,7 @@
     "L1.1",
     [
      3200,
-     11900
+     13400
     ]
    ]
   },
@@ -1055,7 +1269,7 @@
     "L1.2",
     [
      4600,
-     11900
+     13400
     ]
    ]
   },
@@ -1065,7 +1279,7 @@
     "C2.1",
     [
      3400,
-     11500
+     13000
     ]
    ]
   },
@@ -1075,7 +1289,7 @@
     "C2.2",
     [
      5000,
-     11500
+     13000
     ]
    ]
   },
@@ -1085,7 +1299,7 @@
     "C18.1",
     [
      3400,
-     11100
+     12600
     ]
    ]
   },
@@ -1095,7 +1309,7 @@
     "C18.2",
     [
      5000,
-     11100
+     12600
     ]
    ]
   },
@@ -1105,7 +1319,7 @@
     "R19.1",
     [
      3400,
-     10700
+     12200
     ]
    ]
   },
@@ -1115,7 +1329,7 @@
     "R19.2",
     [
      4700,
-     10700
+     12200
     ]
    ]
   },
@@ -1125,7 +1339,7 @@
     "C19.1",
     [
      3400,
-     10300
+     11800
     ]
    ]
   },
@@ -1135,7 +1349,7 @@
     "C19.2",
     [
      4700,
-     10300
+     11800
     ]
    ]
   },
@@ -1145,7 +1359,7 @@
     "R20.1",
     [
      3100,
-     9900
+     11400
     ]
    ]
   },
@@ -1155,7 +1369,7 @@
     "R20.2",
     [
      5000,
-     9900
+     11400
     ]
    ]
   },
@@ -1165,7 +1379,7 @@
     "U9.3",
     [
      3800,
-     9200
+     10700
     ]
    ]
   },
@@ -1175,7 +1389,7 @@
     "U9.1",
     [
      3500,
-     8900
+     10400
     ]
    ]
   },
@@ -1185,7 +1399,7 @@
     "U9.6",
     [
      5400,
-     9200
+     10700
     ]
    ]
   },
@@ -1195,7 +1409,7 @@
     "U9.2",
     [
      5400,
-     9100
+     10600
     ]
    ]
   },
@@ -1205,7 +1419,7 @@
     "U9.4",
     [
      5400,
-     8900
+     10400
     ]
    ]
   },
@@ -1215,7 +1429,7 @@
     "C14.1",
     [
      3400,
-     8500
+     10000
     ]
    ]
   },
@@ -1225,7 +1439,7 @@
     "C14.2",
     [
      5000,
-     8500
+     10000
     ]
    ]
   },
@@ -1235,7 +1449,7 @@
     "C16.1",
     [
      3400,
-     8100
+     9600
     ]
    ]
   },
@@ -1245,7 +1459,7 @@
     "C16.2",
     [
      5000,
-     8100
+     9600
     ]
    ]
   },
@@ -1255,7 +1469,7 @@
     "C20.1",
     [
      3100,
-     7700
+     9200
     ]
    ]
   },
@@ -1265,7 +1479,7 @@
     "C20.2",
     [
      4700,
-     7700
+     9200
     ]
    ]
   },
@@ -1275,7 +1489,7 @@
     "L2.1",
     [
      3200,
-     7300
+     8800
     ]
    ]
   },
@@ -1285,7 +1499,7 @@
     "L2.2",
     [
      4600,
-     7300
+     8800
     ]
    ]
   },
@@ -1295,7 +1509,7 @@
     "C1.1",
     [
      3400,
-     6900
+     8400
     ]
    ]
   },
@@ -1305,7 +1519,7 @@
     "C1.2",
     [
      5000,
-     6900
+     8400
     ]
    ]
   },
@@ -1315,7 +1529,7 @@
     "C21.1",
     [
      3400,
-     6500
+     8000
     ]
    ]
   },
@@ -1325,7 +1539,7 @@
     "C21.2",
     [
      5000,
-     6500
+     8000
     ]
    ]
   },
@@ -1335,7 +1549,7 @@
     "R21.1",
     [
      3400,
-     6100
+     7600
     ]
    ]
   },
@@ -1345,7 +1559,7 @@
     "R21.2",
     [
      4700,
-     6100
+     7600
     ]
    ]
   },
@@ -1355,7 +1569,7 @@
     "C22.1",
     [
      3400,
-     5700
+     7200
     ]
    ]
   },
@@ -1365,7 +1579,7 @@
     "C22.2",
     [
      4700,
-     5700
+     7200
     ]
    ]
   },
@@ -1375,7 +1589,7 @@
     "R22.1",
     [
      3100,
-     5300
+     6800
     ]
    ]
   },
@@ -1385,7 +1599,7 @@
     "R22.2",
     [
      5000,
-     5300
+     6800
     ]
    ]
   },
@@ -1395,7 +1609,7 @@
     "U7.2",
     [
      6600,
-     11900
+     13400
     ]
    ]
   },
@@ -1405,7 +1619,7 @@
     "U7.3",
     [
      6600,
-     11800
+     13300
     ]
    ]
   },
@@ -1415,7 +1629,7 @@
     "U7.4",
     [
      6900,
-     11700
+     13200
     ]
    ]
   },
@@ -1425,7 +1639,7 @@
     "U7.5",
     [
      7200,
-     11600
+     13100
     ]
    ]
   },
@@ -1435,7 +1649,7 @@
     "U7.6",
     [
      6900,
-     11500
+     13000
     ]
    ]
   },
@@ -1445,7 +1659,7 @@
     "U7.1",
     [
      8600,
-     12000
+     13500
     ]
    ]
   },
@@ -1455,7 +1669,7 @@
     "U7.8",
     [
      8600,
-     11800
+     13300
     ]
    ]
   },
@@ -1465,7 +1679,7 @@
     "C4.1",
     [
      7000,
-     10500
+     12000
     ]
    ]
   },
@@ -1475,7 +1689,7 @@
     "C4.2",
     [
      8600,
-     10500
+     12000
     ]
    ]
   },
@@ -1485,7 +1699,7 @@
     "R10.1",
     [
      7000,
-     9900
+     11400
     ]
    ]
   },
@@ -1495,7 +1709,7 @@
     "R10.2",
     [
      8300,
-     9900
+     11400
     ]
    ]
   },
@@ -1505,7 +1719,7 @@
     "R11.1",
     [
      6700,
-     9300
+     10800
     ]
    ]
   },
@@ -1515,7 +1729,7 @@
     "R11.2",
     [
      8600,
-     9300
+     10800
     ]
    ]
   },
@@ -1525,7 +1739,7 @@
     "R18.1",
     [
      6700,
-     8700
+     10200
     ]
    ]
   },
@@ -1535,7 +1749,7 @@
     "R18.2",
     [
      8300,
-     8700
+     10200
     ]
    ]
   },
@@ -1545,7 +1759,7 @@
     "R15.1",
     [
      6700,
-     8100
+     9600
     ]
    ]
   },
@@ -1555,7 +1769,7 @@
     "R15.2",
     [
      8300,
-     8100
+     9600
     ]
    ]
   },
@@ -1565,7 +1779,7 @@
     "R16.1",
     [
      6700,
-     7500
+     9000
     ]
    ]
   },
@@ -1575,7 +1789,7 @@
     "R16.2",
     [
      8600,
-     7500
+     9000
     ]
    ]
   },
@@ -1585,7 +1799,7 @@
     "U2.2",
     [
      8600,
-     6600
+     8100
     ]
    ]
   },
@@ -1595,7 +1809,7 @@
     "U2.3",
     [
      8900,
-     6500
+     8000
     ]
    ]
   },
@@ -1605,7 +1819,7 @@
     "U2.4",
     [
      8600,
-     6400
+     7900
     ]
    ]
   },
@@ -1615,7 +1829,7 @@
     "C6.1",
     [
      7000,
-     5600
+     7100
     ]
    ]
   },
@@ -1625,7 +1839,7 @@
     "C6.2",
     [
      8600,
-     5600
+     7100
     ]
    ]
   },
@@ -1635,7 +1849,7 @@
     "C7.1",
     [
      7000,
-     5100
+     6600
     ]
    ]
   },
@@ -1645,7 +1859,7 @@
     "C7.2",
     [
      8600,
-     5100
+     6600
     ]
    ]
   },
@@ -1655,7 +1869,7 @@
     "C8.1",
     [
      6700,
-     4600
+     6100
     ]
    ]
   },
@@ -1665,7 +1879,7 @@
     "C8.2",
     [
      8600,
-     4600
+     6100
     ]
    ]
   },
@@ -1675,7 +1889,7 @@
     "R1.1",
     [
      6700,
-     4100
+     5600
     ]
    ]
   },
@@ -1685,7 +1899,7 @@
     "R1.2",
     [
      8300,
-     4100
+     5600
     ]
    ]
   },
@@ -1695,7 +1909,7 @@
     "R2.1",
     [
      6700,
-     3600
+     5100
     ]
    ]
   },
@@ -1705,7 +1919,7 @@
     "R2.2",
     [
      8600,
-     3600
+     5100
     ]
    ]
   },
@@ -1715,7 +1929,7 @@
     "U3.2",
     [
      11600,
-     6600
+     8100
     ]
    ]
   },
@@ -1725,7 +1939,7 @@
     "U3.3",
     [
      11900,
-     6500
+     8000
     ]
    ]
   },
@@ -1735,7 +1949,7 @@
     "U3.4",
     [
      11600,
-     6400
+     7900
     ]
    ]
   },
@@ -1745,7 +1959,7 @@
     "C9.1",
     [
      10000,
-     5600
+     7100
     ]
    ]
   },
@@ -1755,7 +1969,7 @@
     "C9.2",
     [
      11600,
-     5600
+     7100
     ]
    ]
   },
@@ -1765,7 +1979,7 @@
     "C11.1",
     [
      10000,
-     5100
+     6600
     ]
    ]
   },
@@ -1775,7 +1989,7 @@
     "C11.2",
     [
      11600,
-     5100
+     6600
     ]
    ]
   },
@@ -1785,7 +1999,7 @@
     "C12.1",
     [
      9700,
-     4600
+     6100
     ]
    ]
   },
@@ -1795,7 +2009,7 @@
     "C12.2",
     [
      11600,
-     4600
+     6100
     ]
    ]
   },
@@ -1805,7 +2019,7 @@
     "R3.1",
     [
      9700,
-     4100
+     5600
     ]
    ]
   },
@@ -1815,7 +2029,7 @@
     "R3.2",
     [
      11300,
-     4100
+     5600
     ]
    ]
   },
@@ -1825,7 +2039,7 @@
     "R4.1",
     [
      9700,
-     3600
+     5100
     ]
    ]
   },
@@ -1835,7 +2049,7 @@
     "R4.2",
     [
      11600,
-     3600
+     5100
     ]
    ]
   },
@@ -1845,7 +2059,7 @@
     "U1.1",
     [
      10500,
-     11300
+     12800
     ]
    ]
   },
@@ -1855,7 +2069,7 @@
     "U1.2",
     [
      10800,
-     11200
+     12700
     ]
    ]
   },
@@ -1865,7 +2079,7 @@
     "U1.3",
     [
      10200,
-     11100
+     12600
     ]
    ]
   },
@@ -1875,7 +2089,7 @@
     "U1.4",
     [
      10200,
-     11000
+     12500
     ]
    ]
   },
@@ -1885,7 +2099,7 @@
     "U1.5",
     [
      10200,
-     10900
+     12400
     ]
    ]
   },
@@ -1895,7 +2109,7 @@
     "U1.6",
     [
      10200,
-     10800
+     12300
     ]
    ]
   },
@@ -1905,7 +2119,7 @@
     "U1.7",
     [
      10200,
-     10700
+     12200
     ]
    ]
   },
@@ -1915,7 +2129,7 @@
     "U1.10",
     [
      10200,
-     10400
+     11900
     ]
    ]
   },
@@ -1925,7 +2139,7 @@
     "U1.11",
     [
      10200,
-     10300
+     11800
     ]
    ]
   },
@@ -1935,7 +2149,7 @@
     "U1.12",
     [
      10200,
-     10200
+     11700
     ]
    ]
   },
@@ -1945,7 +2159,7 @@
     "U1.15",
     [
      10200,
-     9900
+     11400
     ]
    ]
   },
@@ -1955,7 +2169,7 @@
     "U1.17",
     [
      10200,
-     9700
+     11200
     ]
    ]
   },
@@ -1965,7 +2179,7 @@
     "U1.23",
     [
      12900,
-     11200
+     12700
     ]
    ]
   },
@@ -1975,7 +2189,7 @@
     "U1.27",
     [
      12900,
-     10800
+     12300
     ]
    ]
   },
@@ -1985,7 +2199,7 @@
     "U1.36",
     [
      12900,
-     9900
+     11400
     ]
    ]
   },
@@ -1995,7 +2209,7 @@
     "U1.37",
     [
      12900,
-     9800
+     11300
     ]
    ]
   },
@@ -2005,7 +2219,7 @@
     "U1.38",
     [
      12900,
-     9700
+     11200
     ]
    ]
   },
@@ -2015,7 +2229,7 @@
     "U1.40",
     [
      13200,
-     9500
+     11000
     ]
    ]
   },
@@ -2025,7 +2239,17 @@
     "U1.41",
     [
      12900,
-     9400
+     10900
+    ]
+   ]
+  },
+  {
+   "net": "SFM_EN",
+   "path": [
+    "U1.9",
+    [
+     10200,
+     12000
     ]
    ]
   },
@@ -2035,7 +2259,7 @@
     "C3.1",
     [
      10000,
-     8300
+     9800
     ]
    ]
   },
@@ -2045,7 +2269,7 @@
     "C3.2",
     [
      11600,
-     8300
+     9800
     ]
    ]
   },
@@ -2055,7 +2279,7 @@
     "R9.1",
     [
      10000,
-     7800
+     9300
     ]
    ]
   },
@@ -2065,7 +2289,7 @@
     "R9.2",
     [
      11300,
-     7800
+     9300
     ]
    ]
   },
@@ -2075,7 +2299,7 @@
     "C5.1",
     [
      9700,
-     7300
+     8800
     ]
    ]
   },
@@ -2085,7 +2309,7 @@
     "C5.2",
     [
      11600,
-     7300
+     8800
     ]
    ]
   },
@@ -2095,7 +2319,7 @@
     "J3.1",
     [
      13900,
-     11500
+     13000
     ]
    ]
   },
@@ -2105,7 +2329,7 @@
     "J3.2",
     [
      14200,
-     11400
+     12900
     ]
    ]
   },
@@ -2115,7 +2339,7 @@
     "J3.4",
     [
      13600,
-     11300
+     12800
     ]
    ]
   },
@@ -2125,7 +2349,7 @@
     "J3.3",
     [
      15600,
-     11500
+     13000
     ]
    ]
   },
@@ -2135,7 +2359,7 @@
     "J3.5",
     [
      15600,
-     11400
+     12900
     ]
    ]
   },
@@ -2145,7 +2369,7 @@
     "J3.6",
     [
      15600,
-     11300
+     12800
     ]
    ]
   },
@@ -2155,17 +2379,17 @@
     "U4.1",
     [
      13900,
-     10600
+     12100
     ]
    ]
   },
   {
-   "net": "5V",
+   "net": "SFM_5V",
    "path": [
     "U4.2",
     [
-     14200,
-     10500
+     13600,
+     12000
     ]
    ]
   },
@@ -2175,7 +2399,7 @@
     "U4.4",
     [
      13900,
-     10400
+     11900
     ]
    ]
   },
@@ -2185,7 +2409,7 @@
     "U4.3",
     [
      15600,
-     10600
+     12100
     ]
    ]
   },
@@ -2195,7 +2419,7 @@
     "U4.5",
     [
      15600,
-     10500
+     12000
     ]
    ]
   },
@@ -2205,7 +2429,7 @@
     "U5.1",
     [
      13900,
-     9700
+     11200
     ]
    ]
   },
@@ -2215,7 +2439,7 @@
     "U5.2",
     [
      14200,
-     9600
+     11100
     ]
    ]
   },
@@ -2225,7 +2449,7 @@
     "U5.3",
     [
      15600,
-     9700
+     11200
     ]
    ]
   },
@@ -2235,7 +2459,7 @@
     "U5.4",
     [
      15600,
-     9600
+     11100
     ]
    ]
   },
@@ -2245,7 +2469,7 @@
     "R5.1",
     [
      14000,
-     9000
+     10500
     ]
    ]
   },
@@ -2255,7 +2479,7 @@
     "R5.2",
     [
      15300,
-     9000
+     10500
     ]
    ]
   },
@@ -2265,7 +2489,7 @@
     "R6.1",
     [
      14000,
-     8500
+     10000
     ]
    ]
   },
@@ -2275,7 +2499,7 @@
     "R6.2",
     [
      15300,
-     8500
+     10000
     ]
    ]
   },
@@ -2285,7 +2509,7 @@
     "U6.1",
     [
      13600,
-     7700
+     9200
     ]
    ]
   },
@@ -2295,7 +2519,7 @@
     "U6.3",
     [
      14200,
-     7600
+     9100
     ]
    ]
   },
@@ -2305,7 +2529,7 @@
     "U6.2",
     [
      13600,
-     7500
+     9000
     ]
    ]
   },
@@ -2315,7 +2539,7 @@
     "U6.4",
     [
      15600,
-     7700
+     9200
     ]
    ]
   },
@@ -2325,7 +2549,7 @@
     "U6.5",
     [
      15600,
-     7600
+     9100
     ]
    ]
   },
@@ -2335,7 +2559,7 @@
     "R7.1",
     [
      14000,
-     6800
+     8300
     ]
    ]
   },
@@ -2345,7 +2569,7 @@
     "R7.2",
     [
      15300,
-     6800
+     8300
     ]
    ]
   },
@@ -2355,7 +2579,7 @@
     "R8.1",
     [
      14000,
-     6300
+     7800
     ]
    ]
   },
@@ -2365,7 +2589,7 @@
     "R8.2",
     [
      15300,
-     6300
+     7800
     ]
    ]
   },
@@ -2375,7 +2599,7 @@
     "R14.1",
     [
      14000,
-     5800
+     7300
     ]
    ]
   },
@@ -2385,7 +2609,7 @@
     "R14.2",
     [
      15300,
-     5800
+     7300
     ]
    ]
   },
@@ -2395,7 +2619,7 @@
     "BZ1.1",
     [
      13600,
-     5100
+     6600
     ]
    ]
   },
@@ -2405,7 +2629,127 @@
     "BZ1.2",
     [
      15700,
-     5100
+     6600
+    ]
+   ]
+  },
+  {
+   "net": "SFM_G",
+   "path": [
+    "Q2.1",
+    [
+     13600,
+     5700
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "Q2.2",
+    [
+     14800,
+     5000
+    ]
+   ]
+  },
+  {
+   "net": "SFM_5V",
+   "path": [
+    "Q2.3",
+    [
+     15400,
+     5700
+    ]
+   ]
+  },
+  {
+   "net": "5V",
+   "path": [
+    "R23.1",
+    [
+     15400,
+     5200
+    ]
+   ]
+  },
+  {
+   "net": "SFM_G",
+   "path": [
+    "R23.2",
+    [
+     16700,
+     5200
+    ]
+   ]
+  },
+  {
+   "net": "SFM_EN",
+   "path": [
+    "Q3.1",
+    [
+     14600,
+     4200
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "Q3.2",
+    [
+     15700,
+     3400
+    ]
+   ]
+  },
+  {
+   "net": "SFM_G",
+   "path": [
+    "Q3.3",
+    [
+     15700,
+     4700
+    ]
+   ]
+  },
+  {
+   "net": "3V3",
+   "path": [
+    "R24.1",
+    [
+     14000,
+     3500
+    ]
+   ]
+  },
+  {
+   "net": "SFM_EN",
+   "path": [
+    "R24.2",
+    [
+     15300,
+     3500
+    ]
+   ]
+  },
+  {
+   "net": "SFM_5V",
+   "path": [
+    "C24.1",
+    [
+     13700,
+     3000
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C24.2",
+    [
+     15600,
+     3000
     ]
    ]
   }
@@ -2415,7 +2759,7 @@
    "net": "GND",
    "at": [
     1800,
-    13700
+    15200
    ],
    "style": "gnd_power"
   },
@@ -2423,23 +2767,15 @@
    "net": "GND",
    "at": [
     1500,
-    13600
+    15100
    ],
    "style": "gnd_power"
-  },
-  {
-   "net": "VIN12V",
-   "at": [
-    2000,
-    12500
-   ],
-   "style": "bar"
   },
   {
    "net": "VIN12V",
    "at": [
     1600,
-    12000
+    13500
    ],
    "style": "bar"
   },
@@ -2447,102 +2783,6 @@
    "net": "GND",
    "at": [
     800,
-    12000
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "VIN12V",
-   "at": [
-    400,
-    11500
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    2000,
-    11500
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "VIN12V",
-   "at": [
-    400,
-    11000
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    2000,
-    11000
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "VIN12V",
-   "at": [
-    800,
-    10300
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "VIN12V",
-   "at": [
-    500,
-    10200
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "VIN12V",
-   "at": [
-    800,
-    10100
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "VIN12V",
-   "at": [
-    2000,
-    9300
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    600,
-    8000
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "3V3",
-   "at": [
-    400,
-    7300
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "VIN12V",
-   "at": [
-    3800,
-    13800
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    3500,
     13500
    ],
    "style": "gnd_power"
@@ -2550,463 +2790,103 @@
   {
    "net": "VIN12V",
    "at": [
-    3400,
-    13100
+    400,
+    13000
    ],
    "style": "bar"
   },
   {
    "net": "GND",
    "at": [
-    5000,
-    13100
+    2000,
+    13000
    ],
    "style": "gnd_power"
   },
   {
    "net": "VIN12V",
    "at": [
-    3400,
-    12700
+    400,
+    12500
    ],
    "style": "bar"
   },
   {
    "net": "GND",
    "at": [
-    5000,
-    12700
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "5V",
-   "at": [
-    4600,
-    11900
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "5V",
-   "at": [
-    3400,
-    11500
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    5000,
-    11500
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "5V",
-   "at": [
-    3400,
-    11100
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    5000,
-    11100
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "5V",
-   "at": [
-    3400,
-    10700
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "5V",
-   "at": [
-    3400,
-    10300
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    5000,
-    9900
+    2000,
+    12500
    ],
    "style": "gnd_power"
   },
   {
    "net": "VIN12V",
    "at": [
-    3800,
-    9200
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    3500,
-    8900
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "VIN12V",
-   "at": [
-    3400,
-    8500
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    5000,
-    8500
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "VIN12V",
-   "at": [
-    3400,
-    8100
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    5000,
-    8100
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "3V3",
-   "at": [
-    4600,
-    7300
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "3V3",
-   "at": [
-    3400,
-    6900
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    5000,
-    6900
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "3V3",
-   "at": [
-    3400,
-    6500
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    5000,
-    6500
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "3V3",
-   "at": [
-    3400,
-    6100
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "3V3",
-   "at": [
-    3400,
-    5700
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    5000,
-    5300
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "GND",
-   "at": [
-    6900,
-    11700
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "GND",
-   "at": [
-    7200,
-    11600
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "GND",
-   "at": [
-    6900,
-    11500
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "5V",
-   "at": [
-    8600,
+    800,
     11800
    ],
    "style": "bar"
   },
   {
-   "net": "5V",
+   "net": "VIN12V",
    "at": [
-    7000,
-    10500
+    500,
+    11700
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    800,
+    11600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    2000,
+    10800
    ],
    "style": "bar"
   },
   {
    "net": "GND",
    "at": [
-    8600,
-    10500
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "5V",
-   "at": [
-    7000,
-    9900
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    8600,
-    9300
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "GND",
-   "at": [
-    8600,
-    7500
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "5V",
-   "at": [
-    8600,
-    6600
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    8900,
-    6500
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "5V",
-   "at": [
-    7000,
-    5600
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    8600,
-    5600
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "5V",
-   "at": [
-    7000,
-    5100
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    8600,
-    5100
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "GND",
-   "at": [
-    8600,
-    4600
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "GND",
-   "at": [
-    8600,
-    3600
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "5V",
-   "at": [
-    11600,
-    6600
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    11900,
-    6500
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "5V",
-   "at": [
-    10000,
-    5600
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    11600,
-    5600
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "5V",
-   "at": [
-    10000,
-    5100
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    11600,
-    5100
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "GND",
-   "at": [
-    11600,
-    4600
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "GND",
-   "at": [
-    11600,
-    3600
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "GND",
-   "at": [
-    10500,
-    11300
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "3V3",
-   "at": [
-    10800,
-    11200
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "GND",
-   "at": [
-    13200,
+    600,
     9500
    ],
    "style": "gnd_power"
   },
   {
-   "net": "GND",
-   "at": [
-    12900,
-    9400
-   ],
-   "style": "gnd_power"
-  },
-  {
    "net": "3V3",
    "at": [
-    10000,
-    8300
+    400,
+    8800
    ],
    "style": "bar"
   },
   {
-   "net": "GND",
+   "net": "VIN12V",
    "at": [
-    11600,
-    8300
+    800,
+    8000
    ],
-   "style": "gnd_power"
+   "style": "bar"
   },
   {
-   "net": "3V3",
+   "net": "VIN12V",
    "at": [
-    10000,
+    500,
+    7900
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    800,
     7800
    ],
    "style": "bar"
@@ -3014,23 +2894,303 @@
   {
    "net": "GND",
    "at": [
-    11600,
-    7300
+    2000,
+    7100
    ],
    "style": "gnd_power"
   },
   {
+   "net": "VIN12V",
+   "at": [
+    2000,
+    6600
+   ],
+   "style": "bar"
+  },
+  {
    "net": "GND",
    "at": [
-    13900,
-    11500
+    1600,
+    5900
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3800,
+    15300
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    3500,
+    15000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3400,
+    14600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    14600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3400,
+    14200
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    14200
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    4600,
+    13400
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "5V",
+   "at": [
+    3400,
+    13000
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    13000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    3400,
+    12600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    12600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    3400,
+    12200
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "5V",
+   "at": [
+    3400,
+    11800
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    11400
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3800,
+    10700
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    3500,
+    10400
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3400,
+    10000
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    10000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "VIN12V",
+   "at": [
+    3400,
+    9600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    9600
    ],
    "style": "gnd_power"
   },
   {
    "net": "3V3",
    "at": [
-    14200,
+    4600,
+    8800
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    3400,
+    8400
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    8400
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    3400,
+    8000
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    8000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    3400,
+    7600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    3400,
+    7200
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    5000,
+    6800
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    6900,
+    13200
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    7200,
+    13100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    6900,
+    13000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    8600,
+    13300
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "5V",
+   "at": [
+    7000,
+    12000
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    12000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    7000,
     11400
    ],
    "style": "bar"
@@ -3038,56 +3198,272 @@
   {
    "net": "GND",
    "at": [
-    13900,
-    10600
+    8600,
+    10800
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    9000
    ],
    "style": "gnd_power"
   },
   {
    "net": "5V",
    "at": [
+    8600,
+    8100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8900,
+    8000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    7000,
+    7100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    7100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    7000,
+    6600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    6600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    6100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    8600,
+    5100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    11600,
+    8100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11900,
+    8000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    10000,
+    7100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    7100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    10000,
+    6600
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    6600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    6100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    5100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    10500,
+    12800
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    10800,
+    12700
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    13200,
+    11000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    12900,
+    10900
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    10000,
+    9800
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    9800
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    10000,
+    9300
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    11600,
+    8800
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    13900,
+    13000
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
     14200,
+    12900
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    13900,
+    12100
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    13900,
+    11900
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "GND",
+   "at": [
+    13900,
+    11200
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    14200,
+    11100
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    14000,
     10500
    ],
    "style": "bar"
   },
   {
-   "net": "GND",
-   "at": [
-    13900,
-    10400
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "GND",
-   "at": [
-    13900,
-    9700
-   ],
-   "style": "gnd_power"
-  },
-  {
-   "net": "3V3",
-   "at": [
-    14200,
-    9600
-   ],
-   "style": "bar"
-  },
-  {
    "net": "3V3",
    "at": [
     14000,
-    9000
-   ],
-   "style": "bar"
-  },
-  {
-   "net": "3V3",
-   "at": [
-    14000,
-    8500
+    10000
    ],
    "style": "bar"
   },
@@ -3095,7 +3471,7 @@
    "net": "GND",
    "at": [
     14200,
-    7600
+    9100
    ],
    "style": "gnd_power"
   },
@@ -3103,7 +3479,7 @@
    "net": "GND",
    "at": [
     15600,
-    7600
+    9100
    ],
    "style": "gnd_power"
   },
@@ -3111,7 +3487,7 @@
    "net": "3V3",
    "at": [
     14000,
-    6800
+    8300
    ],
    "style": "bar"
   },
@@ -3119,7 +3495,7 @@
    "net": "3V3",
    "at": [
     14000,
-    6300
+    7800
    ],
    "style": "bar"
   },
@@ -3127,7 +3503,7 @@
    "net": "3V3",
    "at": [
     14000,
-    5800
+    7300
    ],
    "style": "bar"
   },
@@ -3135,7 +3511,47 @@
    "net": "GND",
    "at": [
     15700,
-    5100
+    6600
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "5V",
+   "at": [
+    14800,
+    5000
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "5V",
+   "at": [
+    15400,
+    5200
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    15700,
+    3400
+   ],
+   "style": "gnd_power"
+  },
+  {
+   "net": "3V3",
+   "at": [
+    14000,
+    3500
+   ],
+   "style": "bar"
+  },
+  {
+   "net": "GND",
+   "at": [
+    15600,
+    3000
    ],
    "style": "gnd_power"
   }
@@ -3145,616 +3561,728 @@
    "net": "VIN_RAW",
    "at": [
     1500,
-    13800
+    15300
    ]
   },
   {
    "net": "VIN_RAW",
    "at": [
     200,
-    13000
+    14500
    ]
   },
   {
    "net": "VIN_FUSED",
    "at": [
     1600,
-    13000
-   ]
-  },
-  {
-   "net": "VIN_FUSED",
-   "at": [
-    100,
-    12500
+    14500
    ]
   },
   {
    "net": "GATE",
    "at": [
     200,
-    9900
+    11400
    ]
   },
   {
    "net": "BLOWER_V12",
    "at": [
     2200,
+    11800
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "at": [
+    2200,
+    11700
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "at": [
+    2200,
+    11600
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "at": [
+    2200,
+    11500
+   ]
+  },
+  {
+   "net": "GATE",
+   "at": [
+    100,
+    10800
+   ]
+  },
+  {
+   "net": "GATE",
+   "at": [
+    100,
     10300
-   ]
-  },
-  {
-   "net": "BLOWER_V12",
-   "at": [
-    2200,
-    10200
-   ]
-  },
-  {
-   "net": "BLOWER_V12",
-   "at": [
-    2200,
-    10100
-   ]
-  },
-  {
-   "net": "BLOWER_V12",
-   "at": [
-    2200,
-    10000
-   ]
-  },
-  {
-   "net": "GATE",
-   "at": [
-    100,
-    9300
-   ]
-  },
-  {
-   "net": "GATE",
-   "at": [
-    100,
-    8800
    ]
   },
   {
    "net": "COMP_OUT",
    "at": [
     1700,
-    8800
+    10300
    ]
   },
   {
    "net": "BLOWER_V12",
    "at": [
     0,
-    8100
+    9600
    ]
   },
   {
    "net": "BLOWER_PWM",
    "at": [
     1800,
-    8100
+    9600
    ]
   },
   {
    "net": "BLOWER_FG",
    "at": [
     1800,
-    8000
+    9500
    ]
   },
   {
    "net": "BLOWER_FG",
    "at": [
     1700,
-    7300
+    8800
+   ]
+  },
+  {
+   "net": "RPP_G",
+   "at": [
+    200,
+    7600
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "at": [
+    2200,
+    8000
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "at": [
+    2200,
+    7900
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "at": [
+    2200,
+    7800
+   ]
+  },
+  {
+   "net": "VIN_FUSED",
+   "at": [
+    2200,
+    7700
+   ]
+  },
+  {
+   "net": "RPP_G",
+   "at": [
+    100,
+    7100
+   ]
+  },
+  {
+   "net": "RPP_G",
+   "at": [
+    100,
+    6600
+   ]
+  },
+  {
+   "net": "BLOWER_V12",
+   "at": [
+    200,
+    5900
    ]
   },
   {
    "net": "BST5",
    "at": [
     5400,
+    15300
+   ]
+  },
+  {
+   "net": "SW5",
+   "at": [
+    5400,
+    15200
+   ]
+  },
+  {
+   "net": "FB5",
+   "at": [
+    5400,
+    15000
+   ]
+  },
+  {
+   "net": "BST5",
+   "at": [
+    3100,
     13800
    ]
   },
   {
    "net": "SW5",
    "at": [
-    5400,
-    13700
-   ]
-  },
-  {
-   "net": "FB5",
-   "at": [
-    5400,
-    13500
-   ]
-  },
-  {
-   "net": "BST5",
-   "at": [
-    3100,
-    12300
-   ]
-  },
-  {
-   "net": "SW5",
-   "at": [
     4700,
-    12300
+    13800
    ]
   },
   {
    "net": "SW5",
    "at": [
     3200,
-    11900
+    13400
    ]
   },
   {
    "net": "FB5",
    "at": [
     4700,
-    10700
+    12200
    ]
   },
   {
    "net": "FB5",
    "at": [
     4700,
-    10300
+    11800
    ]
   },
   {
    "net": "FB5",
    "at": [
     3100,
-    9900
+    11400
    ]
   },
   {
    "net": "BST3",
    "at": [
     5400,
+    10700
+   ]
+  },
+  {
+   "net": "SW3",
+   "at": [
+    5400,
+    10600
+   ]
+  },
+  {
+   "net": "FB3",
+   "at": [
+    5400,
+    10400
+   ]
+  },
+  {
+   "net": "BST3",
+   "at": [
+    3100,
     9200
    ]
   },
   {
    "net": "SW3",
    "at": [
-    5400,
-    9100
-   ]
-  },
-  {
-   "net": "FB3",
-   "at": [
-    5400,
-    8900
-   ]
-  },
-  {
-   "net": "BST3",
-   "at": [
-    3100,
-    7700
-   ]
-  },
-  {
-   "net": "SW3",
-   "at": [
     4700,
-    7700
+    9200
    ]
   },
   {
    "net": "SW3",
    "at": [
     3200,
-    7300
+    8800
    ]
   },
   {
    "net": "FB3",
    "at": [
     4700,
-    6100
+    7600
    ]
   },
   {
    "net": "FB3",
    "at": [
     4700,
-    5700
+    7200
    ]
   },
   {
    "net": "FB3",
    "at": [
     3100,
-    5300
+    6800
    ]
   },
   {
    "net": "COMP_REF",
    "at": [
     6600,
-    11900
+    13400
    ]
   },
   {
    "net": "PRESS_RED_ADC",
    "at": [
     6600,
-    11800
+    13300
    ]
   },
   {
    "net": "COMP_OUT",
    "at": [
     8600,
-    12000
+    13500
    ]
   },
   {
    "net": "COMP_REF",
    "at": [
     8300,
-    9900
+    11400
    ]
   },
   {
    "net": "COMP_REF",
    "at": [
     6700,
-    9300
+    10800
    ]
   },
   {
    "net": "COMP_OUT",
    "at": [
     6700,
-    8700
+    10200
    ]
   },
   {
    "net": "PRESS_RED_ADC",
    "at": [
     8300,
-    8700
+    10200
    ]
   },
   {
    "net": "COMP_OUT",
    "at": [
     6700,
-    8100
+    9600
    ]
   },
   {
    "net": "SAFETY_TRIP",
    "at": [
     8300,
-    8100
+    9600
    ]
   },
   {
    "net": "SAFETY_TRIP",
    "at": [
     6700,
-    7500
+    9000
    ]
   },
   {
    "net": "PRESS_PRI_RAW",
    "at": [
     8600,
-    6400
+    7900
    ]
   },
   {
    "net": "PRESS_PRI_RAW",
    "at": [
     6700,
-    4600
+    6100
    ]
   },
   {
    "net": "PRESS_PRI_RAW",
    "at": [
     6700,
-    4100
+    5600
    ]
   },
   {
    "net": "PRESS_PRI_ADC",
    "at": [
     8300,
-    4100
+    5600
    ]
   },
   {
    "net": "PRESS_PRI_ADC",
    "at": [
     6700,
-    3600
+    5100
    ]
   },
   {
    "net": "PRESS_RED_RAW",
    "at": [
     11600,
-    6400
+    7900
    ]
   },
   {
    "net": "PRESS_RED_RAW",
    "at": [
     9700,
-    4600
+    6100
    ]
   },
   {
    "net": "PRESS_RED_RAW",
    "at": [
     9700,
-    4100
+    5600
    ]
   },
   {
    "net": "PRESS_RED_ADC",
    "at": [
     11300,
-    4100
+    5600
    ]
   },
   {
    "net": "PRESS_RED_ADC",
    "at": [
     9700,
-    3600
+    5100
    ]
   },
   {
    "net": "EN",
    "at": [
     10200,
-    11100
+    12600
    ]
   },
   {
    "net": "PRESS_PRI_ADC",
    "at": [
     10200,
-    11000
+    12500
    ]
   },
   {
    "net": "PRESS_RED_ADC",
    "at": [
     10200,
-    10900
+    12400
    ]
   },
   {
    "net": "SAFETY_TRIP",
    "at": [
     10200,
-    10800
+    12300
    ]
   },
   {
    "net": "BUZZER_CTRL",
    "at": [
     10200,
-    10700
+    12200
    ]
   },
   {
    "net": "ENC_A",
    "at": [
     10200,
-    10400
+    11900
    ]
   },
   {
    "net": "ENC_B",
    "at": [
     10200,
-    10300
+    11800
    ]
   },
   {
    "net": "I2C_SDA",
    "at": [
     10200,
-    10200
+    11700
    ]
   },
   {
    "net": "BLOWER_PWM",
    "at": [
     10200,
-    9900
+    11400
    ]
   },
   {
    "net": "I2C_SCL",
    "at": [
     10200,
-    9700
+    11200
    ]
   },
   {
    "net": "ENC_SW",
    "at": [
     12900,
-    11200
+    12700
    ]
   },
   {
    "net": "BOOT",
    "at": [
     12900,
-    10800
+    12300
    ]
   },
   {
    "net": "UART_RX",
    "at": [
     12900,
-    9900
+    11400
    ]
   },
   {
    "net": "UART_TX",
    "at": [
     12900,
-    9800
+    11300
    ]
   },
   {
    "net": "BLOWER_FG",
    "at": [
     12900,
-    9700
+    11200
+   ]
+  },
+  {
+   "net": "SFM_EN",
+   "at": [
+    10200,
+    12000
    ]
   },
   {
    "net": "EN",
    "at": [
     11300,
-    7800
+    9300
    ]
   },
   {
    "net": "EN",
    "at": [
     9700,
-    7300
+    8800
    ]
   },
   {
    "net": "UART_RX",
    "at": [
     13600,
-    11300
+    12800
    ]
   },
   {
    "net": "UART_TX",
    "at": [
     15600,
-    11500
+    13000
    ]
   },
   {
    "net": "EN",
    "at": [
     15600,
-    11400
+    12900
    ]
   },
   {
    "net": "BOOT",
    "at": [
     15600,
-    11300
+    12800
+   ]
+  },
+  {
+   "net": "SFM_5V",
+   "at": [
+    13600,
+    12000
    ]
   },
   {
    "net": "I2C_SCL",
    "at": [
     15600,
-    10600
+    12100
    ]
   },
   {
    "net": "I2C_SDA",
    "at": [
     15600,
+    12000
+   ]
+  },
+  {
+   "net": "I2C_SCL",
+   "at": [
+    15600,
+    11200
+   ]
+  },
+  {
+   "net": "I2C_SDA",
+   "at": [
+    15600,
+    11100
+   ]
+  },
+  {
+   "net": "I2C_SCL",
+   "at": [
+    15300,
     10500
    ]
   },
   {
-   "net": "I2C_SCL",
-   "at": [
-    15600,
-    9700
-   ]
-  },
-  {
    "net": "I2C_SDA",
    "at": [
-    15600,
-    9600
+    15300,
+    10000
    ]
   },
   {
-   "net": "I2C_SCL",
+   "net": "ENC_A",
    "at": [
-    15300,
+    13600,
+    9200
+   ]
+  },
+  {
+   "net": "ENC_B",
+   "at": [
+    13600,
     9000
    ]
   },
   {
-   "net": "I2C_SDA",
-   "at": [
-    15300,
-    8500
-   ]
-  },
-  {
-   "net": "ENC_A",
-   "at": [
-    13600,
-    7700
-   ]
-  },
-  {
-   "net": "ENC_B",
-   "at": [
-    13600,
-    7500
-   ]
-  },
-  {
    "net": "ENC_SW",
    "at": [
     15600,
-    7700
+    9200
    ]
   },
   {
    "net": "ENC_A",
    "at": [
     15300,
-    6800
+    8300
    ]
   },
   {
    "net": "ENC_B",
    "at": [
     15300,
-    6300
+    7800
    ]
   },
   {
    "net": "ENC_SW",
    "at": [
     15300,
-    5800
+    7300
    ]
   },
   {
    "net": "BUZZER_CTRL",
    "at": [
     13600,
-    5100
+    6600
+   ]
+  },
+  {
+   "net": "SFM_G",
+   "at": [
+    13600,
+    5700
+   ]
+  },
+  {
+   "net": "SFM_5V",
+   "at": [
+    15400,
+    5700
+   ]
+  },
+  {
+   "net": "SFM_G",
+   "at": [
+    16700,
+    5200
+   ]
+  },
+  {
+   "net": "SFM_EN",
+   "at": [
+    14600,
+    4200
+   ]
+  },
+  {
+   "net": "SFM_G",
+   "at": [
+    15700,
+    4700
+   ]
+  },
+  {
+   "net": "SFM_EN",
+   "at": [
+    15300,
+    3500
+   ]
+  },
+  {
+   "net": "SFM_5V",
+   "at": [
+    13700,
+    3000
    ]
   }
  ],
@@ -3770,6 +4298,8 @@
    "C10.2",
    "C23.2",
    "J2.2",
+   "R26.2",
+   "C25.2",
    "U8.1",
    "C13.2",
    "C15.2",
@@ -3809,14 +4339,18 @@
    "U5.1",
    "U6.3",
    "U6.5",
-   "BZ1.2"
+   "BZ1.2",
+   "Q3.2",
+   "C24.2"
   ],
   "VIN_FUSED": [
    "F1.2",
-   "D1.1"
+   "Q4.5",
+   "Q4.6",
+   "Q4.7",
+   "Q4.8"
   ],
   "VIN12V": [
-   "D1.2",
    "D2.1",
    "C10.1",
    "C23.1",
@@ -3824,6 +4358,10 @@
    "Q1.2",
    "Q1.3",
    "R13.2",
+   "Q4.1",
+   "Q4.2",
+   "Q4.3",
+   "R27.2",
    "U8.3",
    "C13.1",
    "C15.1",
@@ -3841,7 +4379,8 @@
    "Q1.6",
    "Q1.7",
    "Q1.8",
-   "J2.1"
+   "J2.1",
+   "C25.1"
   ],
   "COMP_OUT": [
    "R17.2",
@@ -3874,7 +4413,13 @@
    "R6.1",
    "R7.1",
    "R8.1",
-   "R14.1"
+   "R14.1",
+   "R24.1"
+  ],
+  "RPP_G": [
+   "Q4.4",
+   "R26.1",
+   "R27.1"
   ],
   "BST5": [
    "U8.6",
@@ -3906,7 +4451,8 @@
    "U3.2",
    "C9.1",
    "C11.1",
-   "U4.2"
+   "Q2.2",
+   "R23.1"
   ],
   "BST3": [
    "U9.6",
@@ -4003,6 +4549,21 @@
   "UART_TX": [
    "U1.37",
    "J3.3"
+  ],
+  "SFM_EN": [
+   "U1.9",
+   "Q3.1",
+   "R24.2"
+  ],
+  "SFM_5V": [
+   "U4.2",
+   "Q2.3",
+   "C24.1"
+  ],
+  "SFM_G": [
+   "Q2.1",
+   "R23.2",
+   "Q3.3"
   ]
  }
 }

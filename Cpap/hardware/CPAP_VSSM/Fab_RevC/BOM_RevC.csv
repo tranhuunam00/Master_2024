@@ -3,10 +3,11 @@ Item,Qty,Designators,Value,Description,Footprint,Manufacturer,MPN,Alternate MPN,
 2,2,U2 U3,MPXV5010GC6U,Pressure sensor 0-10 kPa (primary + redundant),MPXV5010GC6U_482A,NXP,MPXV5010GC6U,MPXV5010GC6T1 (tape),,,SMD,Pins 1/5/6/7/8 NC per datasheet; 13.2 mm tall incl. port
 3,2,U8 U9,TPS54202,Sync buck 4.5-28V 2A (U8 -> 5V; U9 -> 3V3),TI_DDC0006A_SOT23-6,Texas Instruments,TPS54202DDCR,TPS54202HDDCR,,,SMD,EN pin left floating (internal pull-up) = always on
 4,1,U7,LM393,Dual comparator - independent over-pressure cutoff,SOIC-8,Texas Instruments,LM393DR,LM393DR2G (onsemi),,,SMD,Unit B inputs tied to GND
-5,1,Q1,AO4407A,P-MOSFET -30V -12A SO-8 - blower power cutoff,SOIC-8,Alpha & Omega,AO4407A,AO4407AL,,,SMD,S=1-3 G=4 D=5-8
-6,1,D1,SS54,Schottky 5A 40V - reverse polarity,DIOM_SMC_DO-214AB,Vishay,SS54-E3/57T,SS54 (MCC / onsemi),,,SMD,Cathode band toward VIN12V
+5,2,Q1 Q4,AO4407A,"P-MOSFET -30V -12A SO-8 (Q1 blower cutoff; Q4 reverse-polarity, Vgs -6V via R26/R27)",SOIC-8,Alpha & Omega,AO4407A,AO4407AL,,,SMD,S=1-3 G=4 D=5-8
+6,1,Q2,AO3401A,P-MOSFET -30V -4A SOT-23 - SFM3300 5V power switch (reset by power cycle),SOT-23,Alpha & Omega,AO3401A,AO3401 (various) / SI2301CDS,,,SMD,G=1 S=2 D=3
+6a,1,Q3,2N7002,N-MOSFET 60V 115mA SOT-23 - drives Q2 gate from IO16 (SFM_EN),SOT-23,Diodes Inc,2N7002-7-F,2N7002 (onsemi / Nexperia),,,SMD,G=1 S=2 D=3; IO16 high = sensor ON
 7,1,D2,SMBJ15A,TVS 15V uni 600W on 12V input,DIOM_SMB_DO-214AA_BOURNS,Bourns,SMBJ15A,SMBJ15A (Littelfuse),,,SMD,Pad 1 = cathode (band) to VIN12V
-8,1,F1,MF-R300,PTC resettable fuse 3A hold 30V radial,PTC_RADIAL_MF-R300,Bourns,MF-R300,RXEF300 (Littelfuse),,,THT,
+8,1,F1,MF-R400,PTC resettable fuse 4A hold 30V radial (3.08A hold at 50C),PTC_RADIAL_MF-R300,Bourns,MF-R400,RXEF400 (Littelfuse),,,THT,"14.4 x 3 mm body, 24.8 mm tall; pitch 5.1 mm"
 9,1,L1,15uH,Power inductor 15uH (5V rail),IND_BOURNS_SRN6045TA,Bourns,SRN6045TA-150M,,,,SMD,6.0x6.0x4.5 mm
 10,1,L2,10uH,Power inductor 10uH (3V3 rail),IND_BOURNS_SRN6045TA,Bourns,SRN6045TA-100M,,,,SMD,6.0x6.0x4.5 mm
 11,1,J1,PJ-102AH,DC barrel jack 2.1 mm THT,CUI_PJ-102AH,Same Sky (CUI),PJ-102AH,,,,THT,12V centre-positive adapter; jack at board edge
@@ -18,20 +19,22 @@ Item,Qty,Designators,Value,Description,Footprint,Manufacturer,MPN,Alternate MPN,
 17,1,BZ1,PS1240P02BT,Piezo buzzer 12 mm,BUZZER_TDK_PS1240,TDK,PS1240P02BT,PS1240P02CT3,,,THT,Driven from GPIO7
 18,3,C10 C13 C14,10uF 35V,MLCC 10uF X5R 35V (12V input),R_0805,Murata,GRM21BR6YA106KE43,Samsung CL21A106KLCLQNC,,,SMD,12V input bulk
 18a,1,C23,22uF 25V,MLCC 22uF X5R 25V (12V bulk near TVS),R_0805,Murata,GRM21BR61E226ME44,Samsung CL21A226MAYNNNE,,,SMD,0805 max height ~1.45 mm
+18b,1,C25,220uF 25V,Aluminium electrolytic 220uF 25V low-ESR radial - blower bulk at J2,CAP_RAD_D8_P3.5,Panasonic,EEU-FC1E221,UVZ1E221MPD (Nichicon) / EEU-FR1E221,,,THT,"D8 x 11.5 mm, pitch 3.5 mm; '-' stripe to GND (pad 2)"
 19,4,C1 C2 C18 C21,22uF 16V,MLCC output X5R,R_0805,Murata,GRM21BR61C226ME44,CL21A226MOCLRNC (Samsung),,,SMD,2 per buck output
-20,6,C3 C4 C15 C16 C17 C20,100nF,MLCC 100nF X7R 50V,R_0805,Samsung,CL21B104KBCNNNC,GRM21BR71H104KA01,,,SMD,C17/C20 = BOOT caps
+20,7,C3 C4 C15 C16 C17 C20 C24,100nF,MLCC 100nF X7R 50V,R_0805,Samsung,CL21B104KBCNNNC,GRM21BR71H104KA01,,,SMD,C17/C20 = BOOT caps; C24 = SFM3300 local decoupling
 21,3,C5 C6 C9,1uF,MLCC 1uF X7R 25V,R_0805,Samsung,CL21B105KAFNNNE,,,,SMD,
 22,2,C7 C11,10nF,MLCC 10nF X7R 50V,R_0805,Samsung,CL21B103KBANNNC,,,,SMD,
 23,2,C8 C12,470pF,MLCC 470pF C0G 50V,R_0805,Samsung,CL21C471JBANNNC,,,,SMD,
 24,1,C19,75pF,MLCC 75pF C0G 50V (5V FB feed-forward),R_0805,Murata,GRM2165C1H750JA01,,,,SMD,TI SLVSD26C Table 7-2
 25,1,C22,56pF,MLCC 56pF C0G 50V (3V3 FB feed-forward),R_0805,Murata,GRM2165C1H560JA01,,,,SMD,TI SLVSD26C Table 7-2
-26,10,R1 R3 R7 R8 R9 R11 R12 R13 R14 R17,10k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-0710KL,,,,SMD,
+26,13,R1 R3 R7 R8 R9 R11 R12 R13 R14 R17 R24 R26 R27,10k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-0710KL,,,,SMD,R24 = SFM_EN pull-up (sensor on by default); R26/R27 = Q4 gate divider
 27,2,R2 R4,20k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-0720KL,,,,SMD,
 28,2,R5 R6,4.7k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-074K7L,,,,SMD,I2C pull-ups
 29,1,R10,47k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-0747KL,,,,SMD,Trip ref ~0.877V (~25 cmH2O)
 30,2,R15 R18,1M,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-071ML,,,,SMD,R18 = hysteresis
 31,1,R16,330k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-07330KL,,,,SMD,
 32,2,R19 R21,100k,Resistor 1% 1/8W (FB top),R_0805,Yageo,RC0805FR-07100KL,,,,SMD,
+32a,1,R23,100k,Resistor 1% 1/8W (Q2 gate pull-up = OFF),R_0805,Yageo,RC0805FR-07100KL,,,,SMD,Same part as R19/R21
 33,1,R20,13.3k,Resistor 1% 1/8W (5V FB bottom),R_0805,Yageo,RC0805FR-0713K3L,,,,SMD,Vout = 0.596*(1+100k/13.3k) = 5.08V
 34,1,R22,22.1k,Resistor 1% 1/8W (3V3 FB bottom),R_0805,Yageo,RC0805FR-0722K1L,,,,SMD,Vout = 0.596*(1+100k/22.1k) = 3.29V
 35,4,MH1-MH4,M3,Mounting hole 3.2 mm plated,PAD 6mm,-,-,,,,-,Board 101.6 x 76.2 mm

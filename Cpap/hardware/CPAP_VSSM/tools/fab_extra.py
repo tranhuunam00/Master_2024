@@ -53,7 +53,7 @@ lines.append("999")
 open(os.path.join(out, "SiPAP_RevC.ipc"), "w", newline="\r\n").write("\n".join(lines) + "\n")
 
 # ---------------- Pick and place (generic CPL, mm, top side) ----------------
-THT = {"J1", "J2", "J3", "U4", "U5", "U6", "F1", "BZ1"}   # hand / wave soldered
+THT = {"J1", "J2", "J3", "U4", "U5", "U6", "F1", "BZ1", "C25"}   # hand / wave soldered
 with open(os.path.join(out, "SiPAP_RevC_CPL.csv"), "w", newline="") as fh:
     w = csv.writer(fh)
     w.writerow(["Designator", "Comment", "Footprint", "Mid X (mm)", "Mid Y (mm)", "Rotation", "Layer", "Mount"])

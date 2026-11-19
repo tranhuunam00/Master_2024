@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: SiPAP_PCB.PcbDoc   11/19/2026  3:21:58 PM
+NCDrill File Report For: SiPAP_PCB.PcbDoc   11/19/2026  9:20:03 PM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -8,15 +8,15 @@ ASCII Plated SlotHoles File : SiPAP_PCB-SlotHoles-Plated.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      0.254mm (10mil)                                           Round             6         PTH        65.78mm (2.59inch)
-T2      0.305mm (12mil)                                           Round             251       PTH        1416.73mm (55.78inch)
-T3      0.899mm (35mil)                                           Round             2         PTH        5.00mm (0.20inch)
+T1      0.254mm (10mil)                                           Round             7         PTH        86.61mm (3.41inch)
+T2      0.305mm (12mil)                                           Round             251       PTH        1379.69mm (54.32inch)
+T3      0.899mm (35mil)                                           Round             4         PTH        35.78mm (1.41inch)
 T4      1mm (39mil)                                               Round             25        PTH        196.45mm (7.73inch)
 T5      1mm (39mil)                                               Slot              3         PTH        25.32mm (1.00inch)
 T6      1.1mm (43mil)                                             Round             2         PTH        5.10mm (0.20inch)
 T7      1.8mm (71mil)                                             Slot              2         PTH        24.43mm (0.96inch)
 T8      3.2mm (126mil)                                            Round             4         PTH        256.54mm (10.10inch)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              295
+Totals                                                                              298
 
 Total Processing Time (hh:mm:ss) : 00:00:00

@@ -1,6 +1,6 @@
 # SiPAP Rev C — hồ sơ đặt mạch (fabrication + assembly)
 
-> Đã kiểm tra lại và xuất lại 2026-11-19 (sửa pad header J2/J3/U4/U5 thiếu đồng mặt dưới, silk J1 lệch). Chi tiết: `Cpap/document/verification_RevC.md`.
+> Xuất lại 2026-11-19 (bản cuối): thêm công tắc nguồn SFM3300 (Q2/Q3), tụ bulk blower C25, Q4 P-MOSFET chống ngược cực thay D1, F1 lên MF-R400. Chi tiết: `Cpap/document/verification_RevC.md`.
 
 Gửi xưởng file `SiPAP_RevC_Gerber.zip` (Gerber + khoan). Đặt lắp ráp (PCBA) thì gửi thêm `BOM_RevC.csv` và `SiPAP_RevC_CPL.csv`.
 
@@ -19,7 +19,7 @@ Gửi xưởng file `SiPAP_RevC_Gerber.zip` (Gerber + khoan). Đặt lắp ráp 
 | Bề mặt | HASL không chì hoặc ENIG (khuyên ENIG vì U1 có EPAD lưới 3x3) |
 | Lỗ bắt vít | 4 x Ø3.2 mm có mạ, pad Ø6 mm |
 
-**Yêu cầu riêng:** 4 via nằm trong pad EPAD của U1 (ESP32, toạ độ 48.6/50.0 mm, 59.4/62.2 mm) — yêu cầu **lấp và phủ (filled & capped)** hoặc ít nhất phủ mặt nạ từ mặt dưới, để thiếc không chảy qua lỗ.
+**Yêu cầu riêng:** 4 via nằm trong pad EPAD của U1 (ESP32, toạ độ 48.6/50.0 mm, 59.4/62.2 mm) — yêu cầu **lấp và phủ (filled & capped)** hoặc ít nhất phủ mặt nạ từ mặt dưới, để thiếc không chảy qua lỗ. Tương tự 1 via 0.30 mm nằm trong pad 2 của R27 (net VIN12V, ~30.2/57.5 mm).
 
 ## Danh sách file
 | File | Nội dung | Chuẩn |
@@ -41,10 +41,10 @@ Gửi xưởng file `SiPAP_RevC_Gerber.zip` (Gerber + khoan). Đặt lắp ráp 
 Toạ độ Gerber và khoan cùng gốc (relative origin = góc dưới-trái board).
 
 ## Lắp ráp
-- **SMD (xưởng gắn máy):** U1, U2, U3, U7, U8, U9, Q1, D1, D2, L1, L2, toàn bộ R/C 0805. Có 3 fiducial (FID1–FID3) Ø1 mm.
-- **THT (hàn tay hoặc xưởng hàn tay):** J1, J2, J3, U4, U5, U6, F1, BZ1 — đánh dấu "THT" trong CPL.
+- **SMD (xưởng gắn máy):** U1, U2, U3, U7, U8, U9, Q1, Q2, Q3, Q4, D2, L1, L2, toàn bộ R/C 0805 (50 con). Có 3 fiducial (FID1–FID3) Ø1 mm.
+- **THT (hàn tay hoặc xưởng hàn tay):** J1, J2, J3, U4, U5, U6, F1, BZ1, C25 — đánh dấu "THT" trong CPL.
 - **Không lắp:** TP1–TP4 (pad test 12V / 5V / 3V3 / GND), FID1–3.
-- Cực tính: D1 vạch (cathode) về phía pad 2 (VIN12V, bên phải); D2 vạch về pad 1 (VIN12V, bên trái); U1/U7/U8/U9/Q1 chấm pin 1 theo silkscreen.
+- Cực tính: D2 vạch về pad 1 (VIN12V, bên trái); **C25 vạch '−' về pad 2 (GND, bên phải), chân + là pad vuông**; U1/U7/U8/U9/Q1/Q4 chấm pin 1 theo silkscreen.
 - Góc xoay trong CPL theo quy ước Altium (0° = như footprint trong thư viện). Mỗi xưởng có thể cần chỉnh offset góc cho SOT-23-6 / SO-8 — yêu cầu xưởng gửi ảnh xác nhận (DFM preview) trước khi gắn.
 
 ## Nếu xưởng thiếu linh kiện
@@ -54,3 +54,5 @@ BOM có cột **Alternate MPN** cho từng dòng chính. Điện trở/tụ 0805
 1. Đo trở kháng 12V–GND, 5V–GND, 3V3–GND (không được chập) trước khi cấp nguồn.
 2. Cấp 12V qua J1 có giới hạn dòng 0.5 A, đo TP2 = 5.0–5.15 V, TP3 = 3.25–3.35 V.
 3. Kiểm tra mạch an toàn: tăng áp U3 > ~25 cmH2O → Q1 cắt nguồn blower (J2 pin 1 về 0 V).
+4. Cấp ngược cực −12 V (giới hạn 0.3 A): dòng ≈ 0 (Q4 chặn).
+5. Kéo IO16 xuống 0 → U4 pin 2 (VDD SFM3300) về 0 V; thả ra → 5 V (công tắc Q2/Q3).
