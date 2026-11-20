@@ -1,41 +1,46 @@
 {
+ "version": "0.2",
  "outer_mm": [
-  308.6,
-  125.0,
-  81.5
+  212.6,
+  124.0,
+  82.0
  ],
  "pcb_top_z": 61.0,
- "tub_water_ml_at_max": 315,
+ "encoder_above_lid_mm": 5.5,
+ "tub_water_ml_at_max": 309,
+ "muffler_top_to_pcb_bottom_mm": 4.4,
  "volumes_cm3": {
-  "base": 317.2,
-  "lid": 95.7,
-  "tub": 87.7,
-  "tub_lid": 25.0
+  "base": 242.6,
+  "lid": 77.9,
+  "muffler": 63.6,
+  "muffler_lid": 17.1,
+  "tub": 86.6,
+  "tub_lid": 24.5
  },
  "valid": {
   "base": true,
   "lid": true,
+  "muffler": true,
+  "muffler_lid": true,
   "tub": true,
   "tub_lid": true
  },
- "pcb_bbox": [
-  3.5,
-  4.5,
-  60.61,
-  105.1,
-  80.7,
-  87.5
- ],
  "interference_mm3": {
   "tub-base": 0.0,
   "tub-lid": 0.0,
   "tub_lid-lid": 0.0,
-  "blower-base": 0.0,
+  "muffler-base": 0.0,
+  "muffler_lid-base": 0.0,
+  "blower-muffler": 0.0,
+  "blower-muffler_lid": 0.0,
   "sfm-base": 0.0,
-  "sfm-blower": 0.0,
   "sfm-lid": 0.0,
-  "blower-tub": 0.0,
+  "sfm-muffler": 0.0,
+  "sfm-muffler_lid": 0.0,
+  "sfm-tub": 0.0,
   "pcb-base": 0.0,
-  "pcb-lid": 0.0
+  "pcb-lid": 0.0,
+  "pcb-muffler_lid": 0.0,
+  "pcb-sfm": 0.0
  }
 }

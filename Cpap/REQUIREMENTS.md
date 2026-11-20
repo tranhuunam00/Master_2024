@@ -30,7 +30,7 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 
 | Output | Vị trí | Trạng thái |
 |---|---|---|
-| Vỏ hộp (FreeCAD, tham số hoá) + `.step`/`.stl` | `Cpap/mechanical/enclosure/` | **v0.1 (2026-11-20)** — 3 khoang điện tử / blower / làm ẩm, bình nước tháo rời 315 mL (làm ẩm thường, chừa chỗ đĩa sưởi Rev D), 0 va chạm với PCB STEP. Blower là khối giả định — chờ blower thật |
+| Vỏ hộp (FreeCAD, tham số hoá) + `.step`/`.stl` | `Cpap/mechanical/enclosure/` | **v0.2 (2026-11-20)** — 213 × 124 × 82 mm, blower dưới PCB trong hộp tiêu âm + mê cung hút gió, bình làm ẩm tháo rời ~310 mL, 16/16 kiểm va chạm = 0. Blower vẫn là khối giả định |
 | Ốc vít | M3, lỗ clearance Ø3.2mm, boss Ø~6mm, khớp đúng 4 lỗ mounting trên PCB | Ghi nhận yêu cầu, chưa làm |
 | Yêu cầu vỏ (người dùng, 2026-11-19) | Chú ý: (1) vị trí cổng cắm (jack DC 12V, cáp blower, cổng nạp UART, ống áp cảm biến) dễ tiếp cận; (2) ốc vít; (3) dễ tháo mở để bảo trì; (4) chỗ đặt blower phải giảm ồn và giảm rung (đế cao su/đệm chống rung, tách khỏi PCB, đường khí có tiêu âm) | Ghi nhận, áp dụng khi làm `enclosure.py` |
 | `layout_diagram.png` — vị trí từng khối (PCB, blower, buồng mica+humidifier, OLED, encoder, cổng khí) bên trong vỏ | `Cpap/mechanical/` | **Chưa làm** |

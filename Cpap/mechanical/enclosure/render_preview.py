@@ -38,6 +38,8 @@ PARTS = {  # name: (color, alpha)
     "sipap_lid": ("#c9d1dc", 0.30),
     "sipap_tub": ("#5fa8d3", 0.55),
     "sipap_tub_lid": ("#8cc4e6", 0.45),
+    "sipap_muffler": ("#7b6fb0", 0.35),
+    "sipap_muffler_lid": ("#9d93c9", 0.30),
     "ref_blower": ("#e07a2f", 0.9),
     "ref_sfm3300": ("#3f9b6b", 0.9),
     "ref_pcb": ("#2f6b3a", 0.95),
@@ -79,8 +81,11 @@ def render(names, fname, elev, azim, title):
     plt.close(fig)
 
 
-inside = ["sipap_base", "sipap_tub", "sipap_tub_lid", "ref_blower", "ref_sfm3300", "ref_pcb"]
-render(inside, "preview_open.png", 32, -60, "SiPAP enclosure v0.1 - lid removed")
-render(inside + ["sipap_lid"], "preview_closed.png", 25, -55, "SiPAP enclosure v0.1 - closed")
-render(inside, "preview_top.png", 90, -90, "Top view: electronics | blower | humidifier")
+inside = ["sipap_base", "sipap_muffler", "sipap_muffler_lid", "sipap_tub", "sipap_tub_lid",
+          "ref_blower", "ref_sfm3300", "ref_pcb"]
+render(inside, "preview_open.png", 28, -60, "SiPAP enclosure v0.2 - lid removed")
+render(inside + ["sipap_lid"], "preview_closed.png", 25, -55, "SiPAP enclosure v0.2 - closed")
+render([n for n in inside if n != "ref_pcb"], "preview_under_pcb.png", 28, -60,
+       "v0.2 without PCB: blower in muffler box + labyrinth intake")
+render(inside, "preview_top.png", 90, -90, "Top view: PCB over blower | humidifier")
 print("ok")
