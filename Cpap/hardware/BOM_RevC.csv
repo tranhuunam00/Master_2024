@@ -1,12 +1,12 @@
 Item,Qty,Designators,Value,Description,Footprint,Manufacturer,MPN,Alternate MPN,LCSC #,Digi-Key #,Mount,Notes
-1,1,U1,ESP32-S3-WROOM-1-N8R8,WiFi+BLE MCU module 8MB flash 8MB PSRAM,ESP32-S3-WROOM-1_DS,Espressif,ESP32-S3-WROOM-1-N8R8,ESP32-S3-WROOM-1-N16R8,,,SMD,Antenna at board edge; keepout under antenna; EPAD vias tented
+1,1,U1,ESP32-S3-WROOM-1-N8R8,WiFi+BLE MCU module 8MB flash 8MB PSRAM,ESP32-S3-WROOM-1_DS,Espressif,ESP32-S3-WROOM-1-N8R8,ESP32-S3-WROOM-1-N16R8,C2913201,,SMD,Antenna at board edge; keepout under antenna; EPAD vias tented
 2,2,U2 U3,MPXV5010GC6U,Pressure sensor 0-10 kPa (primary + redundant),MPXV5010GC6U_482A,NXP,MPXV5010GC6U,MPXV5010GC6T1 (tape),,,SMD,Pins 1/5/6/7/8 NC per datasheet; 13.2 mm tall incl. port
-3,2,U8 U9,TPS54202,Sync buck 4.5-28V 2A (U8 -> 5V; U9 -> 3V3),TI_DDC0006A_SOT23-6,Texas Instruments,TPS54202DDCR,TPS54202HDDCR,,,SMD,EN pin left floating (internal pull-up) = always on
+3,2,U8 U9,TPS54202,Sync buck 4.5-28V 2A (U8 -> 5V; U9 -> 3V3),TI_DDC0006A_SOT23-6,Texas Instruments,TPS54202DDCR,TPS54202HDDCR,C191884,,SMD,EN pin left floating (internal pull-up) = always on
 4,1,U7,LM393,Dual comparator - independent over-pressure cutoff,SOIC-8,Texas Instruments,LM393DR,LM393DR2G (onsemi),,,SMD,Unit B inputs tied to GND
 5,2,Q1 Q4,AO4407A,"P-MOSFET -30V -12A SO-8 (Q1 blower cutoff; Q4 reverse-polarity, Vgs -6V via R26/R27)",SOIC-8,Alpha & Omega Semiconductor,AO4407A,AO4407AL,,,SMD,S=1-3 G=4 D=5-8
 6,1,Q2,AO3401A,P-MOSFET -30V -4A SOT-23 - SFM3300 5V power switch (reset by power cycle),SOT-23,Alpha & Omega Semiconductor,AO3401A,AO3401 (various) / SI2301CDS,,,SMD,G=1 S=2 D=3
 6a,1,Q3,2N7002,N-MOSFET 60V 115mA SOT-23 - drives Q2 gate from IO16 (SFM_EN),SOT-23,Diodes Incorporated,2N7002-7-F,2N7002 (onsemi / Nexperia),,,SMD,G=1 S=2 D=3; IO16 high = sensor ON
-7,1,D2,SMBJ15A,TVS 15V uni 600W on 12V input,DIOM_SMB_DO-214AA_BOURNS,Bourns,SMBJ15A,SMBJ15A (Littelfuse),,,SMD,Pad 1 = cathode (band) to VIN12V
+7,1,D2,SMBJ13A,"TVS 13V uni 600W on 12V input (Vc 21.5V @10/1000us, 28.0V @8/20us < TPS54202 VIN abs max 30V)",DIOM_SMB_DO-214AA_BOURNS,Bourns,SMBJ13A,SMBJ13A (Littelfuse),,,SMD,Pad 1 = cathode (band) to VIN12V; Bourns SMBJ DS p.2
 8,1,F1,MF-R400,PTC resettable fuse 4A hold 30V radial (3.08A hold at 50C),PTC_RADIAL_MF-R300,Bourns,MF-R400,RXEF400 (Littelfuse),,,THT,"14.4 x 3 mm body, 24.8 mm tall; pitch 5.1 mm"
 9,1,L1,15uH,Power inductor 15uH (5V rail),IND_BOURNS_SRN6045TA,Bourns,SRN6045TA-150M,,,,SMD,6.0x6.0x4.5 mm
 10,1,L2,10uH,Power inductor 10uH (3V3 rail),IND_BOURNS_SRN6045TA,Bourns,SRN6045TA-100M,,,,SMD,6.0x6.0x4.5 mm
@@ -15,8 +15,8 @@ Item,Qty,Designators,Value,Description,Footprint,Manufacturer,MPN,Alternate MPN,
 13,1,J3,Prog UART,1x6 header 2.54 mm: GND 3V3 TXD RXD EN IO0,CONN_HEADER_6,Wurth Elektronik,61300611121,any 1x6 2.54 mm THT header,,,THT,Cross TX/RX on USB-UART adapter
 14,1,U4,SFM3300-D,Sensirion flow sensor (off-board; header on PCB),CONN_HEADER_6,Wurth Elektronik,61300611121,any 1x6 2.54 mm THT header,,,THT,"On-board part = 1x6 header; SFM3300-D sensor ordered separately (Sensirion), I2C 0x40; cable straight 1:1, shielded if > 10 cm (DS 4.8)"
 15,1,U5,OLED 0.96in,SSD1306 128x64 I2C module (off-board; header on PCB),CONN_HEADER_4,Wurth Elektronik,61300411121,any 1x4 2.54 mm THT header,,,THT,"On-board part = 1x4 header; OLED module ordered separately: ProtoSupplies DSP-8 (SSD1306, VCC-GND-SCL-SDA -> cable swaps wires 1/2, see wiring_harness.md), I2C 0x3C"
-16,1,U6,PEC11R-4220F-S0024,Rotary encoder with push switch,PEC11R-4xxxF-S_DS,Bourns,PEC11R-4220F-S0024,,,,THT,26.5 mm tall; M7 panel hole
-17,1,BZ1,PS1240P02BT,Piezo buzzer 12 mm,BUZZER_TDK_PS1240,TDK,PS1240P02BT,PS1240P02CT3,,,THT,Driven from GPIO7
+16,1,U6,PEC11R-4220F-S0024,Rotary encoder with push switch,PEC11R-4xxxF-S_DS,Bourns,PEC11R-4220F-S0024,,C143797,,THT,26.5 mm tall; M7 panel hole
+17,1,BZ1,PS1240P02BT,Piezo buzzer 12 mm,BUZZER_TDK_PS1240,TDK,PS1240P02BT,PS1240P02CT3,C76871,,THT,Driven from GPIO7
 18,3,C10 C13 C14,10uF 35V,MLCC 10uF X5R 35V (12V input),R_0805,Murata,GRM21BR6YA106KE43,Samsung CL21A106KLCLQNC,,,SMD,12V input bulk
 18a,1,C23,22uF 25V,MLCC 22uF X5R 25V (12V bulk near TVS),R_0805,Murata,GRM21BR61E226ME44,Samsung CL21A226MAYNNNE,,,SMD,0805 max height ~1.45 mm
 18b,1,C25,220uF 25V,Aluminium electrolytic 220uF 25V low-ESR radial - blower bulk at J2,CAP_RAD_D8_P3.5,Panasonic,EEU-FC1E221,UVZ1E221MPD (Nichicon) / EEU-FR1E221,,,THT,"D8 x 11.5 mm, pitch 3.5 mm; '-' stripe to GND (pad 2)"

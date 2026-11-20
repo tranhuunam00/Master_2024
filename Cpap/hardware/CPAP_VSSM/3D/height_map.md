@@ -25,7 +25,7 @@ File 3D: `SiPAP_PCB_RevC.step` (cùng thư mục). Rev B (`SiPAP_PCB_RevB.step`)
 | L1, L2 | Cuộn cảm Bourns SRN6045TA | 7.37 / 26.42 | 49.78 | 6.0 x 6.0 | 4.55 | Bourns SRN6045TA DS tr.1 (4.25 ±0.3) |  |
 | U1 | ESP32-S3-WROOM-1 | 50.8 | 63.25 | 18 x 25.5 | 3.1 | Espressif DS v1.8 | Anten ở mép trên: không đặt kim loại/vít trong 15 mm quanh anten |
 | Q4 | AO4407A (SO-8), chống ngược cực | 24.13 | 61.47 | 4.9 x 6.0 | 1.75 | AOS AO4407A DS | Thay D1 SS54 cũ |
-| D2 | SMBJ15A (SMB) | 33.02 | 61.47 | 4.6 x 3.9 | 2.44 | Bourns SMBJ DS |  |
+| D2 | SMBJ13A (SMB) | 33.02 | 61.47 | 4.6 x 3.9 | 2.44 | Bourns SMBJ DS |  |
 | Q1 | AO4407A (SO-8) | 17.78 | 18.29 | 4.9 x 6.0 | 1.75 | AOS AO4407A DS |  |
 | U7 | LM393 (SO-8) | 36.83 | 22.86 | 4.9 x 6.0 | 1.75 | JEDEC MS-012 |  |
 | Q2, Q3 | AO3401A / 2N7002 (SOT-23), công tắc nguồn SFM3300 | 85.09 / 77.72 | 6.10 | 2.9 x 2.4 | 1.12 | JEDEC TO-236 |  |

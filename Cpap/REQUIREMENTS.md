@@ -58,7 +58,7 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 ## Rev C (xong, 2026-11-19)
 
 - Thay module buck bằng 2x TPS54202 trên board (5V: 15uH, 100k/13.3k, FF 75pF; 3V3: 10uH, 100k/22.1k, FF 56pF — TI SLVSD26C Table 7-2).
-- Thêm F1 PTC MF-R400 (ban đầu MF-R300), D2 TVS SMBJ15A, J1 = PJ-102AH (3 chân), Q1 = AO4407A SO-8 (3A), BZ1 = TDK PS1240.
+- Thêm F1 PTC MF-R400 (ban đầu MF-R300), D2 TVS SMBJ13A (ban đầu SMBJ15A, đổi vì kẹp 31.7 V > 30 V của TPS54202), J1 = PJ-102AH (3 chân), Q1 = AO4407A SO-8 (3A), BZ1 = TDK PS1240.
 - Symbol + footprint mới đã có trong `SiPAP_Parts_v2.SchLib` / `SiPAP_Footprints.PcbLib` (đối chiếu datasheet).
 - Template schematic: `CPAP_VSSM/tools/sipap_template_revc.json` (72 linh kiện, 37 net, preview 0 lỗi). BOM: `Cpap/hardware/BOM_RevC.csv`.
 - Schematic `SiPAP_Main_RevC.SchDoc`: **xong, ERC 0 lỗi** (5 cảnh báo "no driving source" trên net cầu chia FB/EN/GATE/COMP_REF — bình thường). Rev B gỡ khỏi project (file vẫn giữ).

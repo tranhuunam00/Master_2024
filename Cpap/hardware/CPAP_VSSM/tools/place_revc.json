@@ -329,7 +329,7 @@
   "y": 2420,
   "rotation": 0,
   "layer": "TopLayer",
-  "comment": "SMBJ15A TVS",
+  "comment": "SMBJ13A TVS",
   "unique_id": "MPOVDULB",
   "pad_nets": {
    "1": "VIN12V",

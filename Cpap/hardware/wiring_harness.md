@@ -20,7 +20,7 @@ Header trên board — **đã đối chiếu datasheet gốc Würth** (lưu ở 
 | Mục | Giá trị |
 |---|---|
 | Adapter | 12 V DC, **≥ 3.5 A** (blower ~3 A + mạch ~0.5 A), jack 5.5/2.1 mm, **dương ở giữa** |
-| Bảo vệ trên board | F1 MF-R400 (4 A), Q4 chống ngược cực, D2 TVS 15 V |
+| Bảo vệ trên board | F1 MF-R400 (4 A), Q4 chống ngược cực, D2 TVS SMBJ13A (kẹp ≤ 28 V) |
 | Lưu ý | Adapter phải có chứng nhận an toàn (IEC 62368-1 / 60601-1 nếu dùng y tế) |
 
 ## 2. J2 — blower (header 2x2, 2.54 mm)

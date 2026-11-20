@@ -89,7 +89,7 @@ tp = lambda a, b: {"1": a, "2": b}
 # ---------- column A: input protection + blower switch ----------
 place("J1", "CONN_DCJACK3", 300, 13800, "PJ-102AH 12V IN", {"1": "VIN_RAW", "3": "GND", "2": "GND"})
 place("F1", "FUSE_PTC", 1000, 13000, "MF-R400 4A PTC", tp("VIN_RAW", "VIN_FUSED"))
-place("D2", "TVS_UNI", 1000, 12000, "SMBJ15A TVS", {"1": "VIN12V", "2": "GND"})
+place("D2", "TVS_UNI", 1000, 12000, "SMBJ13A TVS", {"1": "VIN12V", "2": "GND"})
 place("C10", C, 1000, 11500, "10uF 35V", tp("VIN12V", "GND"))
 place("C23", C, 1000, 11000, "22uF 25V", tp("VIN12V", "GND"))
 place("Q1", "AO4407A", 1000, 10300, "AO4407A", {"1": "VIN12V", "2": "VIN12V", "3": "VIN12V", "4": "GATE",
