@@ -151,3 +151,11 @@ Model: LM393 = TI PSpice SLCJ016B (subckt LM2903B), lưu ở `tools/spice_models
 - Khớp tính tay ở mục 3 (25.3 / 22.8 cmH2O). Ngưỡng cắt không đổi khi 5V lệch ±5% (thiết kế tỉ lệ theo nguồn).
 
 Mô phỏng chưa bao gồm: sai số của chính cảm biến (NXP DS ±5% FS), sai số điện trở 1%, Vos của LM393 trên dải nhiệt, và hành vi chuyển mạch thật của Q1. Bước 8 bring-up vẫn bắt buộc.
+
+## 8. Dây nối ngoài và header (2026-11-20)
+
+- Header J2/J3/U4/U5 đối chiếu datasheet gốc Würth (61300421121 / 61300611121 / 61300411121): bước 2.54 mm, chân 0.64 mm, lỗ khuyên Ø1.10 ±0.15 mm — board 1.00 mm: đạt.
+- Pin 1 của các header là pad tròn (không có dấu) → đã thêm chữ "1" silkscreen cạnh pin 1 của J2, J3, U4, U5; DRC điện 0 lỗi; Gerber xuất lại (đồng và khoan không đổi, chỉ lớp silk GTO), 249/249 pad đúng lớp.
+- SFM3300: thứ tự pad theo datasheet v1.4 mục 2.2 trùng U4 1→6, cáp thẳng; cáp > 10 cm phải chống nhiễu (mục 4.8).
+- OLED: chốt ProtoSupplies DSP-8 (VCC-GND-SCL-SDA) → cáp đảo dây 1–2.
+- `hardware/CPAP_VSSM/tools/check_harness.py`: 17 PASS / 0 FAIL / 3 OPEN (3 dây blower chờ datasheet blower).

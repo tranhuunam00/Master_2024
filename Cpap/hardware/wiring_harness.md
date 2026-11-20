@@ -1,10 +1,10 @@
 # SiPAP Rev C — sơ đồ dây nối ngoài PCB (wiring harness)
 
-Áp dụng cho board `SiPAP_PCB.PcbDoc` Rev C. Chân lấy từ schematic `SiPAP_Main_RevC.SchDoc`. Pin 1 của mỗi header là **pad vuông** trên board — luôn đối chiếu silkscreen trước khi bấm cáp.
+Áp dụng cho board `SiPAP_PCB.PcbDoc` Rev C. Chân lấy từ schematic `SiPAP_Main_RevC.SchDoc`. Pin 1 của mỗi header J2/J3/U4/U5 được **đánh số "1" trên silkscreen** ngay cạnh chân (pad header đều tròn) — luôn đối chiếu trước khi bấm cáp.
 
 **Kiểm tự động:** `python CPAP_VSSM/tools/check_harness.py` mô phỏng từng dây (chân board → net → chân thiết bị theo datasheet): loại chân, dải điện áp nguồn (trường hợp xấu nhất), mức logic, TX→RX, không 2 ngõ ra chung dây. Kết quả 2026-11-19: **17 PASS, 0 FAIL, 3 OPEN** (3 dây blower — chờ datasheet blower). Đã thử cố tình đấu sai (OLED không đảo dây, UART TX→TX): checker báo FAIL đúng 4 dây.
 
-Header trên board (đã đối chiếu thông số hãng/nhà phân phối): J2 = Würth **61300421121** (2x2, 2.54 mm, THT), J3/U4 = **61300611121** (1x6), U5 = **61300411121** (1x4); 3 A, 250 V, −40…105 °C.
+Header trên board — **đã đối chiếu datasheet gốc Würth** (lưu ở `Cpap/tools/datasheets/Wurth_*.pdf`): J2 = **61300421121** (WR-PHD dual 2x2), J3/U4 = **61300611121** (1x6), U5 = **61300411121** (1x4). Chân vuông 0.64 mm, bước 2.54 mm; Würth khuyên lỗ Ø1.10 ±0.15 mm (0.95–1.25) — board khoan **1.00 mm**, pad 1.5 mm: đạt. 3 A, 250 V, −40…105 °C (nhà phân phối RS).
 
 ```
  Adapter 12V ──► J1 ──F1──Q4──┬──► U8 (5V) ──► MPXV5010 x2, LM393, SFM3300 (qua Q2)
@@ -31,6 +31,11 @@ Header trên board (đã đối chiếu thông số hãng/nhà phân phối): J2
 | 3 | BLOWER_PWM | PWM / speed in | Mức 3.3 V từ ESP32 IO3, 25 kHz (đổi `BLOWER_PWM_HZ` theo datasheet blower) |
 | 4 | BLOWER_FG | FG / tacho out | Kéo lên 3V3 qua R12 10k — **blower phải ra FG kiểu open-collector**. Nếu FG ra 5/12 V: thêm chia áp hoặc diode, KHÔNG cắm thẳng |
 
+- Vị trí chân J2 nhìn từ mặt trên board (pin 1 = chân có chữ "1" bên trái, góc trên-trái), giống cách đánh số của Würth (1-2 cùng một cột):
+  ```
+   [1] 12V    [3] PWM
+   [2] GND    [4] FG
+  ```
 - Dây: 12V/GND **AWG20 (≥ 0.5 mm²)**, dài ≤ 30 cm; PWM/FG AWG26, xoắn với GND nếu > 15 cm.
 - Đầu cái: housing 2x2 2.54 mm (Dupont / Harwin M20) có khoá nếu được — blower rung làm lỏng đầu cắm.
 - **Trước khi cắm lần đầu**: đo mức FG khi blower chạy riêng, kiểm tra blower nhận PWM 3.3 V (mục 1 trong test).
@@ -45,7 +50,7 @@ Header trên board (đã đối chiếu thông số hãng/nhà phân phối): J2
 | 5 | I2C_SDA | SDA | Pull-up 4.7k → 3V3 trên board |
 | 6 | — | HEAT | Để trống (heater 51 Ω, chỉ dùng khi cần chống đọng hơi) |
 
-- **Đã đối chiếu datasheet** Sensirion SFM3300 v1.4 mục 2.2 (pad layout): 6 pad bước 2.54 mm theo thứ tự HEAT_GND · VDD · SCK · GND · DATA · HEAT — trùng 1:1 với U4 chân 1→6, nên cáp đi **thẳng, không đảo dây**. VDD 5 V ±5 % (board 4.94–5.22 V), mức logic cao tối thiểu 2.5 V (pull-up 3V3 đạt).
+- **Đã đối chiếu datasheet** Sensirion SFM3300 v1.4 mục 2.2 (pad layout): 6 pad bước 2.54 mm theo thứ tự HEAT_GND · VDD · SCK · GND · DATA · HEAT — trùng 1:1 với U4 chân 1→6, nên cáp đi **thẳng, không đảo dây**. Kiểm khi lắp (không cần đoán): (1) đo thông mạch từng dây từ U4 tới pad cảm biến theo bảng; (2) chạy self-test — mục 4 phải thấy cảm biến ở 0x40, tắt được khi IO16 = 0 và đọc lưu lượng có CRC đúng. **Cắm ngược đầu cáp sẽ đưa 5 V vào chân DATA và GND vào HEAT** — luôn đo thông mạch trước khi cấp điện lần đầu, và đánh dấu pin 1 trên cả 2 đầu cáp. VDD 5 V ±5 % (board 4.94–5.22 V), mức logic cao tối thiểu 2.5 V (pull-up 3V3 đạt).
 - **Đầu nối:** Sensirion không bán sẵn đầu cắm cho cảm biến (DS mục 3.2). Cách làm: hàn trực tiếp 6 dây (hoặc 1 header 1x6 2.54 mm) vào 6 pad của cảm biến, đầu kia bấm housing 1x6 2.54 mm cắm vào U4.
 - **Cáp (DS mục 4.8):** càng ngắn càng tốt, **tối đa 30 cm; dài hơn 10 cm thì BẮT BUỘC dùng cáp chống nhiễu (shield) cho SDA và SCL**, shield nối GND ở phía board. Khuyên đặt cảm biến ≤ 10 cm từ U4 để dùng dây thường. Firmware chạy I2C 400 kHz; nếu cáp dài hơn hoặc báo lỗi `FLOW SENSOR`, hạ xuống 100 kHz trong `sipap_v1.ino` (`Wire.begin(..., 100000)`, `oled.setBusClock(100000)`) và tăng `DISPLAY_MS` lên 500.
 - Lắp **trên đường khí chính** (cổng côn 22 mm), mũi tên trên thân hướng **về phía bệnh nhân**. Cách blower/humidifier ≥ 1 đoạn ống thẳng để dòng ổn định; tránh hơi nước đọng vào cảm biến (đặt trước humidifier hoặc có bẫy nước).

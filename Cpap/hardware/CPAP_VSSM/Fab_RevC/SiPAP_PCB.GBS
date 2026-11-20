@@ -7,7 +7,7 @@ G04 Board_Origin=0|0*
 %MOMM*%
 G71*
 G04*
-G04 #@! TF.SameCoordinates,E02371DB-090D-4DA1-8939-915336D87295*
+G04 #@! TF.SameCoordinates,D42DCC13-510D-4621-85F8-FB7C49BF49DA*
 G04*
 G04*
 G04 #@! TF.FilePolarity,Negative*
