@@ -1,46 +1,203 @@
 {
- "version": "0.2",
+ "version": "0.3",
  "outer_mm": [
   212.6,
   124.0,
-  82.0
+  89.6
  ],
- "pcb_top_z": 61.0,
- "encoder_above_lid_mm": 5.5,
- "tub_water_ml_at_max": 309,
- "muffler_top_to_pcb_bottom_mm": 4.4,
+ "outer_with_patient_cone_mm": 230.6,
+ "z": {
+  "blower_axis": 30.5,
+  "hood_top": 60.0,
+  "pcb_bottom": 63.0,
+  "pcb_top": 64.6,
+  "lid_underside": 86.6,
+  "lid_top": 89.6
+ },
+ "encoder_above_lid_mm": {
+  "PEC11R-4220F (20 mm, BOM now)": 1.5,
+  "PEC11R-4225F (25 mm)": 6.5
+ },
+ "housing_top_to_lid_mm": 5.5,
+ "blower_gaps_mm": {
+  "inlet_stub_to_foam": 16.0,
+  "outlet_end_to_spigot": 4.0
+ },
+ "duct": {
+  "length_mm": 145,
+  "id_mm": 12.0,
+  "velocity_m_s_at_60lpm": 8.8,
+  "dp_cmH2O_at_60lpm_est": 1.63
+ },
+ "cable_lengths_mm": {
+  "cable_j2_blower": 172,
+  "cable_u4_sfm": 147,
+  "cable_u5_oled": 72,
+  "ptube_tap_T": 43,
+  "ptube_u2": 12,
+  "ptube_u3": 12
+ },
+ "tub": {
+  "inner_mm": [
+   91.0,
+   96.0,
+   68.5
+  ],
+  "fill_ml_MAX": 120,
+  "max_level_above_floor_mm": 13.7,
+  "tilt_check": {
+   "cavity_ml": 550,
+   "v_max_ml": 129.5,
+   "v_fill_ml": 120,
+   "worst_gravity_dir": [
+    0.716,
+    -0.642,
+    0.275
+   ],
+   "max_fill_by_case_ml": {
+    "upright": 269,
+    "upside_down": 232,
+    "tilt90_right(+x down)": 173,
+    "tilt90_left(-x down)": 181,
+    "tilt90_back(+y down)": 177,
+    "tilt90_front(-y down)": 176,
+    "tilt45_right": 179,
+    "tilt45_left": 181,
+    "tilt45_back": 181,
+    "tilt45_front": 187
+   },
+   "margin_mm": 3.0,
+   "n_directions": 2010,
+   "voxel_mm": 1.0,
+   "note": "static check; water must stay >= margin below both snorkel mouths for every gravity direction"
+  }
+ },
  "volumes_cm3": {
-  "base": 242.6,
-  "lid": 77.9,
-  "muffler": 63.6,
-  "muffler_lid": 17.1,
-  "tub": 86.6,
-  "tub_lid": 24.5
+  "base": 268.6,
+  "lid": 77.8,
+  "hood": 55.9,
+  "bracket": 7.4,
+  "duct": 16.7,
+  "tub": 152.6,
+  "tub_lid": 30.7
  },
  "valid": {
   "base": true,
   "lid": true,
-  "muffler": true,
-  "muffler_lid": true,
+  "hood": true,
+  "bracket": true,
+  "duct": true,
   "tub": true,
   "tub_lid": true
  },
- "interference_mm3": {
-  "tub-base": 0.0,
-  "tub-lid": 0.0,
-  "tub_lid-lid": 0.0,
-  "muffler-base": 0.0,
-  "muffler_lid-base": 0.0,
-  "blower-muffler": 0.0,
-  "blower-muffler_lid": 0.0,
-  "sfm-base": 0.0,
-  "sfm-lid": 0.0,
-  "sfm-muffler": 0.0,
-  "sfm-muffler_lid": 0.0,
-  "sfm-tub": 0.0,
-  "pcb-base": 0.0,
-  "pcb-lid": 0.0,
-  "pcb-muffler_lid": 0.0,
-  "pcb-sfm": 0.0
- }
+ "interference_mm3_nonzero": {},
+ "interference_fail": {},
+ "pairs_checked": 351,
+ "fasteners_bom": [
+  {
+   "group": "oled",
+   "qty": 4,
+   "item": "Vit tu ren M2 x 5 (module OLED vao 4 tru duoi nap) - DO LAI vi tri lo module that"
+  },
+  {
+   "group": "blower",
+   "qty": 4,
+   "item": "Vit tu ren ST2.2 x 13 dau tru (pan head) - vao lo D1.6 sau 15 cua blower"
+  },
+  {
+   "group": "blower",
+   "qty": 4,
+   "item": "Long den cao su D6 x D2.4 x 1.5 mm (giua ga va mat motor)"
+  },
+  {
+   "group": "blower",
+   "qty": 2,
+   "item": "Grommet cao su cho lo D6.4, tam 3 mm (chan ga)"
+  },
+  {
+   "group": "blower",
+   "qty": 2,
+   "item": "Vit M3 x 12 dau bang ISO 10642 + 2 dai oc M3 (tu duoi day vo len)"
+  },
+  {
+   "group": "hood",
+   "qty": 3,
+   "item": "Vit M3 x 10 ISO 10642 + dai oc M3 (tai hop tieu am -> day vo)"
+  },
+  {
+   "group": "hood",
+   "qty": 1,
+   "item": "Mut PU tieu am 2 mm, tu dinh, ~260 cm2 (lot day, 4 vach, tran hop)"
+  },
+  {
+   "group": "hood",
+   "qty": 1,
+   "item": "Doan gioang mut 3 x 3 mm duoi mep hop tieu am (~330 mm)"
+  },
+  {
+   "group": "hood",
+   "qty": 1,
+   "item": "Tam loc khi 28 x 42 x 5 mm (soi polyester) giua vach sau va buong hut"
+  },
+  {
+   "group": "hood",
+   "qty": 1,
+   "item": "Grommet cao su lo D14 / long D10 (ong ra blower qua vach hop)"
+  },
+  {
+   "group": "hood",
+   "qty": 1,
+   "item": "Grommet cao su lo D7 / long D4 (cap blower qua vach hop)"
+  },
+  {
+   "group": "duct",
+   "qty": 1,
+   "item": "Ong silicone ID 9-10 x OD 13, dai 16 mm (noi ong ra blower <-> ong dan, cach rung)"
+  },
+  {
+   "group": "duct",
+   "qty": 1,
+   "item": "Insert nhiet M3 x 5.7 (chan ong dan) + vit M3 x 8 ISO 10642 tu duoi day"
+  },
+  {
+   "group": "pcb",
+   "qty": 4,
+   "item": "Vit M3 x 6 dau tron ISO 7380 + 4 insert nhiet M3 x 5.7 (tru do PCB)"
+  },
+  {
+   "group": "lid",
+   "qty": 6,
+   "item": "Vit M3 x 8 dau bang ISO 10642 + 6 insert nhiet M3 x 5.7 (nap)"
+  },
+  {
+   "group": "base",
+   "qty": 4,
+   "item": "Chan cao su dan D12 x 3 mm"
+  },
+  {
+   "group": "sfm",
+   "qty": 2,
+   "item": "Day rut 2.5 x 100 mm (giu SFM3300 tren 2 gia)"
+  },
+  {
+   "group": "tub",
+   "qty": 1,
+   "item": "Day silicone D2 mm ~ 380 mm (gioang nap binh, ep vao ranh)"
+  },
+  {
+   "group": "tub",
+   "qty": 1,
+   "item": "O-ring 16 x 2 mm silicone (ong vao binh <-> dock)"
+  },
+  {
+   "group": "tub",
+   "qty": 1,
+   "item": "(tuy chon) van 1 chieu silicone dang la/duckbill D11-15 trong ong vao - chon loai ton ap < 0.3 cmH2O @ 60 L/ph"
+  },
+  {
+   "group": "ptube",
+   "qty": 1,
+   "item": "Ong silicone 3 x 5 mm ~ 140 mm + 1 cut chu T 3.2 mm (diem do ap -> U2/U3) + 3 day rut"
+  }
+ ]
 }

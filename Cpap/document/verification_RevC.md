@@ -170,3 +170,12 @@ Mô phỏng chưa bao gồm: sai số của chính cảm biến (NXP DS ±5% FS)
 | FG | 1 xung/vòng, kiểu ngõ ra không ghi | R12 10 k kéo lên 3V3 | **Đã thêm** R29 1 k nối tiếp bảo vệ ESP32; firmware sửa `BLOWER_FG_PER_REV = 1` |
 
 PCB: R28, C26, R29 đặt ở vùng trống (25.4 / 6.6–13.7 mm), không đè linh kiện/thân C25/vỏ header J2. Lần đặt đầu (sát J2) bị DRC bắt chập với đường 12V 50 mil và chạm vỏ nhựa J2 → đã dời. Kết quả: DRC điện 0 lỗi (kể cả net antenna, unrouted); schematic ↔ PCB 75/75; netlist 246 chân, 0 sai; Gerber 255/255 pad; BOM ↔ CPL 75/75; kiểm dây nối 19 PASS / 0 FAIL / 1 OPEN (kiểu ngõ ra FG).
+
+## 10. Vỏ hộp v0.3 khớp blower thật + kiểm cơ khí (2026-11-20)
+- Kích thước blower, lỗ bắt vít, hướng ống ra lấy từ bản vẽ Wonsmart (lưu `Cpap/tools/datasheets/Wonsmart_WS4540-12-NZ03.pdf`).
+- Vỏ cao 82 → 90 mm. Lý do: blower dày 45 mm, và đầu cắm Dupont cần ~21 mm trên board.
+- **U6 đổi PEC11R-4220F → 4225F** (trục 25 mm, DS PEC11R) để trục còn nhô 6.5 mm khỏi nắp. Đã sửa BOM_RevC.csv, CPL, height_map; **schematic Altium chưa sửa tham số MPN** (footprint không đổi).
+- `mechanical/enclosure/out/report.json`:
+  - 351 cặp va chạm = 0 mm³ (gồm PCB thật, vít, đầu cắm, cáp, ống áp);
+  - bình chống đổ MAX 120 mL, khô miệng ống ở 2010 hướng trọng lực với lề 3 mm;
+  - tổn áp ống dẫn ~1.6 cmH₂O @ 60 L/ph (ước tính).

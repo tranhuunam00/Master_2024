@@ -37,6 +37,7 @@ Header trên board — **đã đối chiếu datasheet gốc Würth** (lưu ở 
    [2] GND    [4] FG
   ```
 - Dây: 12V/GND **AWG20 (≥ 0.5 mm²)**, dài ≤ 30 cm; PWM/FG AWG26, xoắn với GND nếu > 15 cm.
+- Trong vỏ v0.3 đường dây blower → J2 dài ~172 mm (qua grommet vách hộp tiêu âm, lên sau mép PCB, dọc mép trái) — dây zin 150 ± 20 mm nên **hàn nối thêm ~40 mm dây 24AWG** (cũng là chỗ đổi cỡ dây để bấm cos).
 - Đầu cái: housing 2x2 2.54 mm (Dupont / Harwin M20) có khoá nếu được — blower rung làm lỏng đầu cắm.
 - **Trước khi cắm lần đầu**: đo mức FG khi blower chạy riêng, kiểm tra blower nhận PWM 3.3 V (mục 1 trong test).
 
@@ -52,6 +53,7 @@ Header trên board — **đã đối chiếu datasheet gốc Würth** (lưu ở 
 
 - **Đã đối chiếu datasheet** Sensirion SFM3300 v1.4 mục 2.2 (pad layout): 6 pad bước 2.54 mm theo thứ tự HEAT_GND · VDD · SCK · GND · DATA · HEAT — trùng 1:1 với U4 chân 1→6, nên cáp đi **thẳng, không đảo dây**. Kiểm khi lắp (không cần đoán): (1) đo thông mạch từng dây từ U4 tới pad cảm biến theo bảng; (2) chạy self-test — mục 4 phải thấy cảm biến ở 0x40, tắt được khi IO16 = 0 và đọc lưu lượng có CRC đúng. **Cắm ngược đầu cáp sẽ đưa 5 V vào chân DATA và GND vào HEAT** — luôn đo thông mạch trước khi cấp điện lần đầu, và đánh dấu pin 1 trên cả 2 đầu cáp. VDD 5 V ±5 % (board 4.94–5.22 V), mức logic cao tối thiểu 2.5 V (pull-up 3V3 đạt).
 - **Đầu nối:** Sensirion không bán sẵn đầu cắm cho cảm biến (DS mục 3.2). Cách làm: hàn trực tiếp 6 dây (hoặc 1 header 1x6 2.54 mm) vào 6 pad của cảm biến, đầu kia bấm housing 1x6 2.54 mm cắm vào U4.
+- **Trong vỏ v0.3 cáp này dài ~147 mm** (SFM nằm sau PCB, U4 ở góc trước-phải) → **phải dùng cáp chống nhiễu** cho SDA/SCL.
 - **Cáp (DS mục 4.8):** càng ngắn càng tốt, **tối đa 30 cm; dài hơn 10 cm thì BẮT BUỘC dùng cáp chống nhiễu (shield) cho SDA và SCL**, shield nối GND ở phía board. Khuyên đặt cảm biến ≤ 10 cm từ U4 để dùng dây thường. Firmware chạy I2C 400 kHz; nếu cáp dài hơn hoặc báo lỗi `FLOW SENSOR`, hạ xuống 100 kHz trong `sipap_v1.ino` (`Wire.begin(..., 100000)`, `oled.setBusClock(100000)`) và tăng `DISPLAY_MS` lên 500.
 - Lắp **trên đường khí chính** (cổng côn 22 mm), mũi tên trên thân hướng **về phía bệnh nhân**. Cách blower/humidifier ≥ 1 đoạn ống thẳng để dòng ổn định; tránh hơi nước đọng vào cảm biến (đặt trước humidifier hoặc có bẫy nước).
 
@@ -84,7 +86,7 @@ Header trên board — **đã đối chiếu datasheet gốc Würth** (lưu ở 
 
 ## 6. Ống áp — U2 (chính), U3 (dự phòng)
 - Ống silicon **ID 3 mm** (cổng cảm biến Ø3.17 mm), dài ≤ 30 cm, không gập.
-- Hai ống nối chung qua **1 cút chữ T** tới **1 điểm đo ở đầu ra máy** (sau humidifier, trước ống thở) — cả 2 cảm biến phải đo cùng một áp, nếu không firmware báo `SENSORS DISAGREE`.
+- Hai ống nối chung qua **1 cút chữ T** tới **1 điểm đo: núm Ø3.4 trên dock** (vỏ v0.3 — giữa đầu ra SFM3300 và vòi bình làm ẩm). Cả 2 cảm biến phải đo cùng một áp, nếu không firmware báo `SENSORS DISAGREE`. Điểm đo nằm trước bình nên tháo bình không phải rút ống; tổn áp qua bình đo một lần trên bàn, > 0.2 cmH₂O thì bù trong firmware. Chiều dài theo mô hình: 43 mm (núm → T) + 12 mm mỗi nhánh, cộng đoạn chồng lên núm.
 - Điểm đo có bẫy nước / đặt cao hơn đường khí để hơi nước không chảy vào cảm biến.
 - U3 là đầu vào của mạch cắt quá áp phần cứng (25 cmH₂O): **tuột ống U3 = mất lớp bảo vệ phần cứng**. Dùng ống có khoá hoặc kẹp dây rút.
 

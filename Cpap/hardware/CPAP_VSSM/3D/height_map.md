@@ -4,14 +4,14 @@ Board: 101.60 x 76.20 mm, dày 1.6 mm (FR-4 2 lớp, đồng 1 oz). Gốc (0,0) 
 
 Lỗ bắt vít M3 (Ø3.2 mm, pad Ø6 mm): (3.81, 3.81), (97.79, 3.81), (3.81, 72.39), (97.79, 72.39).
 
-**Cao nhất: 26.5 mm (trục encoder U6, xuyên mặt vỏ). Không tính encoder: 24.8 mm (cầu chì PTC F1 MF-R400 đứng)**, rồi 13.21 mm (cảm biến áp), 11.5 mm (tụ C25) và 11.0 mm (jack DC).
+**Cao nhất: 31.5 mm (trục encoder U6 PEC11R-4225F, trục 25 mm, xuyên mặt vỏ v0.3). Không tính encoder: 24.8 mm (cầu chì PTC F1 MF-R400 đứng)**, rồi 13.21 mm (cảm biến áp), 11.5 mm (tụ C25) và 11.0 mm (jack DC).
 F1 phải để đứng: không bẻ nằm được (phía +Y chỉ còn 7.6 mm tới mép board, phía −Y đè lên L2/Q4). Vỏ cần chừa ≥ 26 mm trên mặt PCB ở vùng X 15–30 mm, Y 66–71 mm.
 
 File 3D: `SiPAP_PCB_RevC.step` (cùng thư mục). Rev B (`SiPAP_PCB_RevB.step`) đã cũ — không dùng.
 
 | Ký hiệu | Linh kiện | X (mm) | Y (mm) | Đáy (mm) | Cao (mm) | Nguồn số liệu | Ghi chú cho vỏ |
 |---|---|---|---|---|---|---|---|
-| U6 | Encoder PEC11R-4220F-S0024 | 57.15 | 14.22 | 12.5 x 13.4 | 26.5 | Bourns PEC11R DS tr.2-3 | Lỗ Ø7 (ren M7) trên mặt vỏ, đúng tâm trục |
+| U6 | Encoder PEC11R-4225F-S0024 (trục 25 mm, vỏ v0.3) | 57.15 | 14.22 | 12.5 x 13.4 | 31.5 | Bourns PEC11R DS tr.2-3 | Lỗ Ø7 (ren M7) trên mặt vỏ, đúng tâm trục |
 | F1 | PTC Bourns MF-R400 (đứng) | 22.86 | 68.58 | 14.4 x 3.0 | 24.8 | Bourns MF-R DS tr.3 (MF-R400: A 14.4, B 24.8, E 3.0 max) | Chi tiết cao nhất sau encoder |
 | C25 | Tụ hoá Panasonic EEU-FC1E221 220 µF 25 V | 12.19 | 5.84 | Ø8.0 | 11.5 | Panasonic FC DS (D8 x L11.5) | Ngay cạnh J2; chừa thêm ~1 mm cho đầu tụ |
 | U2 | Cảm biến áp MPXV5010GC6U (chính) | 90.42 | 46.99 | 10.8 x 10.8 | 13.21 | NXP MPX5010 DS Case 482A | Ống áp Ø3.17 — chừa chỗ cắm ống silicon |

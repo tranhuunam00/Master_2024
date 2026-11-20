@@ -21,7 +21,7 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 | Thư viện symbol | — | `Cpap/hardware/CPAP_VSSM/SiPAP_Parts_v2.SchLib` | **Xong** — tạo lại từ schematic (file `SiPAP_Parts.SchLib` gần như rỗng), sửa hướng chân trái (trước đây đầu nối nằm trong thân), thêm `CONN_UART6` |
 | Thư viện footprint | — | `Cpap/hardware/CPAP_VSSM/SiPAP_Footprints.PcbLib` | **Xong (Rev B)** — 3 footprint cũ SAI so với datasheet đã dựng lại: `ESP32-S3-WROOM-1_DS` (DS v1.8 Fig 11-1; cũ bước 0.9mm, EPAD 15.8x17.6mm), `MPXV5010GC6U_482A` (DS Fig 5; cũ 2 hàng cách 7.62mm + lật gương, đúng 16.76mm), `PEC11R-4xxxF-S_DS` (DS tr.2; cũ bước 5mm, thiếu 2 tai). Thêm `DIOM_SMC_DO-214AB`. Footprint cũ vẫn nằm trong lib nhưng không dùng |
 | PCB layout (đặt vị trí + đi dây thật) | — | `Cpap/hardware/CPAP_VSSM/SiPAP_PCB.PcbDoc` | **Xong (Rev B, 2026-11-18)** — 2 lớp, 101.6x76.2mm, 4 lỗ M3, đổ GND 2 mặt + via khâu. DRC: 0 lỗi điện/va chạm 3D; còn 308 cảnh báo silkscreen (silk footprint cũ đè pad, xưởng tự cắt) |
-| Mô hình 3D + bảng chiều cao cho vỏ | — | `Cpap/hardware/CPAP_VSSM/3D/` (`SiPAP_PCB_RevB.step`, `height_map.md`) | **Xong** — khối 3D theo datasheet cho ESP32/MPXV5010/PEC11R; module buck, jack DC, còi là GIẢ ĐỊNH. Cao nhất 26.5mm (trục encoder) |
+| Mô hình 3D + bảng chiều cao cho vỏ | — | `Cpap/hardware/CPAP_VSSM/3D/` (`SiPAP_PCB_RevB.step`, `height_map.md`) | **Xong** — khối 3D theo datasheet cho ESP32/MPXV5010/PEC11R; module buck, jack DC, còi là GIẢ ĐỊNH. Cao nhất 31.5mm (trục encoder PEC11R-4225F, đổi từ 4220F cho vỏ v0.3) |
 | BOM.csv | `Cpap/hardware/BOM.csv` | `Cpap/hardware/BOM_RevC.csv` | **Xong** — 72 linh kiện, MPN + mã thay thế, khớp CPL |
 | Gerber + drill + CPL | `Cpap/hardware/gerber/` | `Cpap/hardware/CPAP_VSSM/Fab_RevC/` | **Xong, sẵn sàng đặt mạch** — Gerber RS-274X, Excellon, IPC-356, CPL, FAB_NOTES |
 | Sơ đồ dây nối ngoài PCB | `Cpap/hardware/wiring_harness.md` | (giữ nguyên dự kiến) | **Xong** — J1/J2/J3/U4/U5 từng chân, đối chiếu netlist + datasheet SFM3300 (cáp thẳng, shield nếu > 10 cm) + OLED ProtoSupplies DSP-8 (đảo dây 1–2), header Würth đã xác nhận mã. `CPAP_VSSM/tools/check_harness.py`: 17 PASS / 0 FAIL / 3 OPEN (dây blower chờ datasheet) |
@@ -30,10 +30,10 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 
 | Output | Vị trí | Trạng thái |
 |---|---|---|
-| Vỏ hộp (FreeCAD, tham số hoá) + `.step`/`.stl` | `Cpap/mechanical/enclosure/` | **v0.2 (2026-11-20)** — 213 × 124 × 82 mm, blower dưới PCB trong hộp tiêu âm + mê cung hút gió, bình làm ẩm tháo rời ~310 mL, 16/16 kiểm va chạm = 0. Blower vẫn là khối giả định |
+| Vỏ hộp (FreeCAD, tham số hoá) + `.step` | `Cpap/mechanical/enclosure/` | **v0.3 (2026-11-20)** — 213 × 124 × 90 mm, blower thật WS4540 trên ga chữ L (4 vít ST2.2 + long đen cao su, 2 vít M3 + grommet), hộp tiêu âm + mê cung hút gió, ống dẫn ID 12 tới SFM3300, dock + bình chống đổ (MAX 120 mL, khô miệng ống ở mọi góc nghiêng, kể cả lật ngược), chữ SIPAP, đủ vít/cáp/ống áp; 351 cặp kiểm va chạm = 0 |
 | Ốc vít | M3, lỗ clearance Ø3.2mm, boss Ø~6mm, khớp đúng 4 lỗ mounting trên PCB | Ghi nhận yêu cầu, chưa làm |
 | Yêu cầu vỏ (người dùng, 2026-11-19) | Chú ý: (1) vị trí cổng cắm (jack DC 12V, cáp blower, cổng nạp UART, ống áp cảm biến) dễ tiếp cận; (2) ốc vít; (3) dễ tháo mở để bảo trì; (4) chỗ đặt blower phải giảm ồn và giảm rung (đế cao su/đệm chống rung, tách khỏi PCB, đường khí có tiêu âm) | Ghi nhận, áp dụng khi làm `enclosure.py` |
-| `layout_diagram.png` — vị trí từng khối (PCB, blower, buồng mica+humidifier, OLED, encoder, cổng khí) bên trong vỏ | `Cpap/mechanical/` | **Chưa làm** |
+| `layout_diagram.png` — vị trí từng khối (PCB, blower, buồng mica+humidifier, OLED, encoder, cổng khí) bên trong vỏ | `Cpap/mechanical/` | **Thay bằng** ảnh `mechanical/enclosure/out/preview_*.png` (v0.3: vị trí từng khối, đường khí, cáp, ống áp) |
 | CFD đường khí (OpenFOAM) | `Cpap/cfd/` | **Chưa làm** — đã kiểm tra: máy chưa cài OpenFOAM/ANSYS, cần cài thêm (vài GB, có thể mất nhiều thời gian) |
 
 ## Giai đoạn C — An toàn & Hồ sơ
