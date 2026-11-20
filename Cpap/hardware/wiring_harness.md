@@ -26,10 +26,10 @@ Header trên board — **đã đối chiếu datasheet gốc Würth** (lưu ở 
 ## 2. J2 — blower (header 2x2, 2.54 mm)
 | Chân J2 | Net | Nối tới blower | Ghi chú |
 |---|---|---|---|
-| 1 | BLOWER_V12 | +12 V (dây đỏ) | Đã qua Q1 — mất khi mạch an toàn cắt; C25 220 µF ngay cạnh |
-| 2 | GND | GND (dây đen) | |
-| 3 | BLOWER_PWM | PWM / speed in | Mức 3.3 V từ ESP32 IO3, 25 kHz (đổi `BLOWER_PWM_HZ` theo datasheet blower) |
-| 4 | BLOWER_FG | FG / tacho out | Kéo lên 3V3 qua R12 10k — **blower phải ra FG kiểu open-collector**. Nếu FG ra 5/12 V: thêm chia áp hoặc diode, KHÔNG cắm thẳng |
+| 1 | BLOWER_V12 | **Đỏ (pin4 +12 V)** | Đã qua Q1 — mất khi mạch an toàn cắt; C25 220 µF ngay cạnh |
+| 2 | GND | **Đen (pin3 GND)** | |
+| 3 | BLOWER_VSR | **Vàng (pin1 VSR)** | Điện áp tốc độ **0–3.3 V một chiều**: PWM 20 kHz từ IO3 qua lọc RC R28 1 k + C26 1 µF (fc 159 Hz) trên board |
+| 4 | BLOWER_FG_IN | **Trắng (pin2 FG)** | 1 xung/vòng (rpm = Hz × 60). Qua R29 1 k nối tiếp → IO2, kéo lên 3V3 bằng R12 10 k. Kiểu ngõ ra FG chưa ghi trong bản vẽ hãng — đo thử FG ≤ 3.3 V trước khi chạy lâu |
 
 - Vị trí chân J2 nhìn từ mặt trên board (pin 1 = chân có chữ "1" bên trái, góc trên-trái), giống cách đánh số của Würth (1-2 cùng một cột):
   ```
@@ -95,3 +95,9 @@ Header trên board — **đã đối chiếu datasheet gốc Würth** (lưu ở 
 1. Đo thông mạch từng dây theo bảng trên; không chập giữa 12V–GND, 5V–GND, 3V3–GND.
 2. Cắm OLED, SFM3300 trước; chạy self-test mục 1–7.
 3. Cắm blower sau cùng, chạy self-test mục 8–9.
+
+## Blower thật: Wonsmart WS4540-12-NZ03 (bản vẽ hãng rev 2023-07-12)
+- 12 VDC, driver tích hợp; 1.6 A khi thổi tự do, 1.3 A tại điểm làm việc 3.5 kPa / 82 L/phút, 0.9 A khi bịt kín (5.0 kPa).
+- Thân xoắn ốc Ø48, rộng 54 mm (kể cả ống ra), dày 45 mm (kể cả ống hút Ø10 × 10 mm). Ống ra Ø10 ngoài / Ø8 trong. Ống hút Ø7 trong.
+- 4 lỗ bắt vít **Ø1.6 sâu 15 mm trên vòng Ø36.8** ở mặt motor → vít tự ren **ST2.2 × 13** qua long đen cao su.
+- Dây 4 sợi 20AWG dài 150 mm: **20AWG to hơn đầu cos Dupont 2.54 (22–28AWG)** → hàn nối mỗi sợi sang dây 24AWG ngắn + co nhiệt rồi mới bấm cos, hoặc hàn thẳng vào header.

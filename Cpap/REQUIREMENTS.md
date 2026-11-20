@@ -66,6 +66,7 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 - 3D: `CPAP_VSSM/3D/SiPAP_PCB_RevC.step` + `height_map.md` (cao nhất 26.5 mm encoder; 24.8 mm PTC F1 MF-R400 đứng; 11.5 mm tụ C25).
 - Hồ sơ xưởng: `CPAP_VSSM/Fab_RevC/` — `SiPAP_RevC_Gerber.zip` (Gerber RS-274X mm, Excellon 4:3 có G85 slot, IPC-D-356A), `SiPAP_RevC_CPL.csv`, `BOM_RevC.csv`, `FAB_NOTES.md`, ảnh top/schematic. PDF assembly/schematic chưa xuất (Altium chỉ in PDF qua hộp thoại máy in) — dùng ảnh PNG thay.
 - Bản cuối 2026-11-19: thêm công tắc nguồn SFM3300 (Q2 AO3401A + Q3 2N7002, IO16 = SFM_EN, bật mặc định), tụ bulk blower C25 220 µF 25 V cạnh J2, Q4 AO4407A chống ngược cực thay D1 SS54 (1.65 W → 0.19 W), F1 → MF-R400. ERC/DRC 0 lỗi, netlist 0 sai, Gerber kiểm 249/249 pad. Chi tiết `Cpap/document/verification_RevC.md` mục 7.
+- Khớp blower thật WS4540-12-NZ03 (2026-11-20): thêm R28/C26 (lọc PWM → điện áp VSR 0–3.3 V) và R29 (bảo vệ FG); 75 linh kiện, DRC 0, netlist 0 sai.
 - U6 (PEC11R) trong schematic đã relink sang `PEC11R-4xxxF-S_DS` (2026-11-19); schematic ↔ PCB đồng bộ 72/72.
 
 ## Việc tiếp theo

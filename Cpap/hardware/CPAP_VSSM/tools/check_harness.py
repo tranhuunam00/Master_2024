@@ -23,15 +23,15 @@ NET = {
     # power nets carry the worst-case band (R 1% + VFB 1%), verification_RevC.md sec 3
     "3V3":        ("power", (3.21, 3.38)),   # TPS54202 U9
     "SFM_5V":     ("power", (4.94, 5.22)),   # U8 through Q2 (AO3401A, ~50 mOhm x 5 mA -> <1 mV)
-    "BLOWER_V12": ("power", (11.4, 12.6)),   # adapter 12 V +-5% minus F1/Q4 drop
+    "BLOWER_V12": ("power", (11.4, 12.6)),   # adapter 12 V +-5 %, F1/Q4 drop < 0.1 V at 1.6 A
     "I2C_SCL":    ("i2c",   3.21),           # 4.7k pull-ups R5/R6 to 3V3 (worst-case low)
     "I2C_SDA":    ("i2c",   3.21),
     "UART_TX":    ("out",   3.293),   # ESP32 TXD0
     "UART_RX":    ("in",    3.293),   # ESP32 RXD0
     "EN":         ("in",    3.293),   # 10k pull-up R9 + 1 uF
     "BOOT":       ("in",    3.293),   # IO0, internal pull-up
-    "BLOWER_PWM": ("out",   3.293),   # ESP32 IO3 push-pull
-    "BLOWER_FG":  ("in_pu", 3.293),   # ESP32 IO2, R12 10k pull-up to 3V3 -> device must be open-drain
+    "BLOWER_VSR":   ("out",   3.293),   # ESP32 IO3 PWM through R28 1k + C26 1uF -> 0-3.3 V DC
+    "BLOWER_FG_IN": ("in_pu", 3.293),   # R29 1k series -> IO2 with R12 10k pull-up to 3V3
 }
 
 # ---- external devices (datasheet pin tables) ----
@@ -50,10 +50,12 @@ DEV = {
         "src": "generic 3.3 V adapter",
         "pins": {"GND": ("gnd",), "3V3": ("nc",), "RXD": ("in",), "TXD": ("out",), "RTS": ("out",), "DTR": ("out",)},
     },
-    "Blower": {      # NO DATASHEET YET -> what the board assumes
-        "src": "none - blower not selected",
-        "pins": {"V+": ("power", None, None), "GND": ("gnd",), "PWM": ("unknown", "PWM input: must accept 3.3 V logic"),
-                 "FG": ("unknown", "tacho output: must be open-collector (board pulls up to 3V3)")},
+    "Blower": {      # Wonsmart WS4540-12-NZ03 drawing rev 2023-07-12 (built-in driver, 4 wires)
+        "src": "Wonsmart WS4540-12-NZ03 drawing: pin1 yellow VSR 0-3.3V, pin2 white FG, pin3 black GND, pin4 red +12V",
+        # 12 VDC nominal; the drawing gives no range -> modelled as 12 V +-10 %
+        "pins": {"V+": ("power", 10.8, 13.2), "GND": ("gnd",), "PWM": ("in",),
+                 "FG": ("unknown", "FG output stage not specified (drawing: '1 Hz x 60 = speed'); "
+                                   "board pulls up to 3V3 via R12 - measure that FG never exceeds 3.3 V")},
     },
 }
 
@@ -69,7 +71,7 @@ HARNESS = {
                        ("J3.4", "USB-UART 3V3", "TXD"), ("J3.5", "USB-UART 3V3", "RTS"), ("J3.6", "USB-UART 3V3", "DTR")],
 }
 # expected net per board pin, as written in wiring_harness.md
-DOC = {"J2.1": "BLOWER_V12", "J2.2": "GND", "J2.3": "BLOWER_PWM", "J2.4": "BLOWER_FG",
+DOC = {"J2.1": "BLOWER_V12", "J2.2": "GND", "J2.3": "BLOWER_VSR", "J2.4": "BLOWER_FG_IN",
        "U4.1": "GND", "U4.2": "SFM_5V", "U4.3": "I2C_SCL", "U4.4": "GND", "U4.5": "I2C_SDA",
        "U5.1": "GND", "U5.2": "3V3", "U5.3": "I2C_SCL", "U5.4": "I2C_SDA",
        "J3.1": "GND", "J3.2": "3V3", "J3.3": "UART_TX", "J3.4": "UART_RX", "J3.5": "EN", "J3.6": "BOOT"}

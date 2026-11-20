@@ -41,7 +41,7 @@ Gửi xưởng file `SiPAP_RevC_Gerber.zip` (Gerber + khoan). Đặt lắp ráp 
 Toạ độ Gerber và khoan cùng gốc (relative origin = góc dưới-trái board).
 
 ## Lắp ráp
-- **SMD (xưởng gắn máy):** U1, U2, U3, U7, U8, U9, Q1, Q2, Q3, Q4, D2, L1, L2, toàn bộ R/C 0805 (50 con). Có 3 fiducial (FID1–FID3) Ø1 mm.
+- **SMD (xưởng gắn máy):** U1, U2, U3, U7, U8, U9, Q1, Q2, Q3, Q4, D2, L1, L2, toàn bộ R/C 0805 (53 con). Có 3 fiducial (FID1–FID3) Ø1 mm.
 - **THT (hàn tay hoặc xưởng hàn tay):** J1, J2, J3, U4, U5, U6, F1, BZ1, C25 — đánh dấu "THT" trong CPL.
 - **Không lắp:** TP1–TP4 (pad test 12V / 5V / 3V3 / GND), FID1–3.
 - Cực tính: D2 vạch về pad 1 (VIN12V, bên trái); **C25 vạch '−' về pad 2 (GND, bên phải), chân + là pad vuông**; U1/U7/U8/U9/Q1/Q4 chấm pin 1 theo silkscreen.

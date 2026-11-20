@@ -30,6 +30,6 @@ File 3D: `SiPAP_PCB_RevC.step` (cùng thư mục). Rev B (`SiPAP_PCB_RevB.step`)
 | U7 | LM393 (SO-8) | 36.83 | 22.86 | 4.9 x 6.0 | 1.75 | JEDEC MS-012 |  |
 | Q2, Q3 | AO3401A / 2N7002 (SOT-23), công tắc nguồn SFM3300 | 85.09 / 77.72 | 6.10 | 2.9 x 2.4 | 1.12 | JEDEC TO-236 |  |
 | U8, U9 | TPS54202 (SOT-23-6) | 10.16 / 29.21 | 43.18 | 1.6 x 2.9 | 1.1 | TI SLVSD26C DDC0006A |  |
-| R/C | 0805 (50 con) |  |  | 2.0 x 1.25 | ≤1.45 | MLCC 22 µF 0805 dày nhất |  |
+| R/C | 0805 (53 con) |  |  | 2.0 x 1.25 | ≤1.45 | MLCC 22 µF 0805 dày nhất |  |
 
 Tất cả số liệu lấy từ datasheet đã tải trong `Cpap/tools/datasheets/`; header 2.54 dùng kích thước chuẩn (2.5 mm nhựa + 6 mm chân).

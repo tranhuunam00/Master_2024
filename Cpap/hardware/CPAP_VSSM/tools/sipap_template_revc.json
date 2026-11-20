@@ -137,6 +137,33 @@
    "value": "220uF 25V"
   },
   {
+   "designator": "R28",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 2300,
+   "rotation": 0,
+   "value": "1k"
+  },
+  {
+   "designator": "C26",
+   "lib_reference": "CAPACITOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 1800,
+   "rotation": 0,
+   "value": "1uF"
+  },
+  {
+   "designator": "R29",
+   "lib_reference": "RESISTOR",
+   "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
+   "x": 1000,
+   "y": 1300,
+   "rotation": 0,
+   "value": "1k"
+  },
+  {
    "designator": "U8",
    "lib_reference": "TPS54202",
    "library_path": "C:\\Users\\ADMIN\\OneDrive\\M\u00e1y t\u00ednh\\Master_2024\\Cpap\\hardware\\CPAP_VSSM\\SiPAP_Parts_v2.SchLib",
@@ -964,7 +991,7 @@
    ]
   },
   {
-   "net": "BLOWER_PWM",
+   "net": "BLOWER_VSR",
    "path": [
     "J2.3",
     [
@@ -974,7 +1001,7 @@
    ]
   },
   {
-   "net": "BLOWER_FG",
+   "net": "BLOWER_FG_IN",
    "path": [
     "J2.4",
     [
@@ -1140,6 +1167,66 @@
     [
      1600,
      5900
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_PWM",
+   "path": [
+    "R28.1",
+    [
+     100,
+     5200
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_VSR",
+   "path": [
+    "R28.2",
+    [
+     1700,
+     5200
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_VSR",
+   "path": [
+    "C26.1",
+    [
+     100,
+     4700
+    ]
+   ]
+  },
+  {
+   "net": "GND",
+   "path": [
+    "C26.2",
+    [
+     2000,
+     4700
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_FG_IN",
+   "path": [
+    "R29.1",
+    [
+     100,
+     4200
+    ]
+   ]
+  },
+  {
+   "net": "BLOWER_FG",
+   "path": [
+    "R29.2",
+    [
+     1700,
+     4200
     ]
    ]
   },
@@ -2916,6 +3003,14 @@
    "style": "gnd_power"
   },
   {
+   "net": "GND",
+   "at": [
+    2000,
+    4700
+   ],
+   "style": "gnd_power"
+  },
+  {
    "net": "VIN12V",
    "at": [
     3800,
@@ -3642,14 +3737,14 @@
    ]
   },
   {
-   "net": "BLOWER_PWM",
+   "net": "BLOWER_VSR",
    "at": [
     1800,
     9600
    ]
   },
   {
-   "net": "BLOWER_FG",
+   "net": "BLOWER_FG_IN",
    "at": [
     1800,
     9500
@@ -3716,6 +3811,41 @@
    "at": [
     200,
     5900
+   ]
+  },
+  {
+   "net": "BLOWER_PWM",
+   "at": [
+    100,
+    5200
+   ]
+  },
+  {
+   "net": "BLOWER_VSR",
+   "at": [
+    1700,
+    5200
+   ]
+  },
+  {
+   "net": "BLOWER_VSR",
+   "at": [
+    100,
+    4700
+   ]
+  },
+  {
+   "net": "BLOWER_FG_IN",
+   "at": [
+    100,
+    4200
+   ]
+  },
+  {
+   "net": "BLOWER_FG",
+   "at": [
+    1700,
+    4200
    ]
   },
   {
@@ -4300,6 +4430,7 @@
    "J2.2",
    "R26.2",
    "C25.2",
+   "C26.2",
    "U8.1",
    "C13.2",
    "C15.2",
@@ -4388,14 +4519,14 @@
    "R18.1",
    "R15.1"
   ],
-  "BLOWER_PWM": [
+  "BLOWER_VSR": [
    "J2.3",
-   "U1.15"
+   "R28.2",
+   "C26.1"
   ],
-  "BLOWER_FG": [
+  "BLOWER_FG_IN": [
    "J2.4",
-   "R12.2",
-   "U1.38"
+   "R29.1"
   ],
   "3V3": [
    "R12.1",
@@ -4416,10 +4547,19 @@
    "R14.1",
    "R24.1"
   ],
+  "BLOWER_FG": [
+   "R12.2",
+   "R29.2",
+   "U1.38"
+  ],
   "RPP_G": [
    "Q4.4",
    "R26.1",
    "R27.1"
+  ],
+  "BLOWER_PWM": [
+   "R28.1",
+   "U1.15"
   ],
   "BST5": [
    "U8.6",

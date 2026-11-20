@@ -22,7 +22,7 @@ Item,Qty,Designators,Value,Description,Footprint,Manufacturer,MPN,Alternate MPN,
 18b,1,C25,220uF 25V,Aluminium electrolytic 220uF 25V low-ESR radial - blower bulk at J2,CAP_RAD_D8_P3.5,Panasonic,EEU-FC1E221,UVZ1E221MPD (Nichicon) / EEU-FR1E221,,,THT,"D8 x 11.5 mm, pitch 3.5 mm; '-' stripe to GND (pad 2)"
 19,4,C1 C2 C18 C21,22uF 16V,MLCC output X5R,R_0805,Murata,GRM21BR61C226ME44,CL21A226MOCLRNC (Samsung),,,SMD,2 per buck output
 20,7,C3 C4 C15 C16 C17 C20 C24,100nF,MLCC 100nF X7R 50V,R_0805,Samsung,CL21B104KBCNNNC,GRM21BR71H104KA01,,,SMD,C17/C20 = BOOT caps; C24 = SFM3300 local decoupling
-21,3,C5 C6 C9,1uF,MLCC 1uF X7R 25V,R_0805,Samsung,CL21B105KAFNNNE,,,,SMD,
+21,4,C5 C6 C9 C26,1uF,MLCC 1uF X7R 25V,R_0805,Samsung,CL21B105KAFNNNE,,,,SMD,C26 = blower VSR RC filter (with R28)
 22,2,C7 C11,10nF,MLCC 10nF X7R 50V,R_0805,Samsung,CL21B103KBANNNC,,,,SMD,
 23,2,C8 C12,470pF,MLCC 470pF C0G 50V,R_0805,Samsung,CL21C471JBANNNC,,,,SMD,
 24,1,C19,75pF,MLCC 75pF C0G 50V (5V FB feed-forward),R_0805,Murata,GRM2165C1H750JA01,,,,SMD,TI SLVSD26C Table 7-2
@@ -37,6 +37,7 @@ Item,Qty,Designators,Value,Description,Footprint,Manufacturer,MPN,Alternate MPN,
 32a,1,R23,100k,Resistor 1% 1/8W (Q2 gate pull-up = OFF),R_0805,Yageo,RC0805FR-07100KL,,,,SMD,Same part as R19/R21
 33,1,R20,13.3k,Resistor 1% 1/8W (5V FB bottom),R_0805,Yageo,RC0805FR-0713K3L,,,,SMD,Vout = 0.596*(1+100k/13.3k) = 5.08V
 34,1,R22,22.1k,Resistor 1% 1/8W (3V3 FB bottom),R_0805,Yageo,RC0805FR-0722K1L,,,,SMD,Vout = 0.596*(1+100k/22.1k) = 3.29V
+34a,2,R28 R29,1k,Resistor 1% 1/8W,R_0805,Yageo,RC0805FR-071KL,,,,SMD,R28+C26: PWM->0-3.3 V VSR filter for WS4540 (fc 159 Hz); R29: series protection on blower FG
 35,4,MH1-MH4,M3,Mounting hole 3.2 mm plated,PAD 6mm,-,-,,,,-,Board 101.6 x 76.2 mm
 36,3,FID1-FID3,Fiducial,1.0 mm copper / 2.0 mm mask opening,pad,-,-,,,,-,Global fiducials for SMT
 37,4,TP1-TP4,Test point,"1.5 mm SMD pad: TP1 12V, TP2 5V, TP3 3V3, TP4 GND",pad,-,-,,,,-,No part fitted

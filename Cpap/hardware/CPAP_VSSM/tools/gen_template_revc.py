@@ -96,7 +96,7 @@ place("Q1", "AO4407A", 1000, 10300, "AO4407A", {"1": "VIN12V", "2": "VIN12V", "3
                                                 "5": "BLOWER_V12", "6": "BLOWER_V12", "7": "BLOWER_V12", "8": "BLOWER_V12"})
 place("R13", R, 1000, 9300, "10k", tp("GATE", "VIN12V"))
 place("R17", R, 1000, 8800, "10k", tp("GATE", "COMP_OUT"))
-place("J2", "CONN_BLOWER4", 1000, 8100, "Blower cable", {"1": "BLOWER_V12", "2": "GND", "3": "BLOWER_PWM", "4": "BLOWER_FG"})
+place("J2", "CONN_BLOWER4", 1000, 8100, "Blower cable", {"1": "BLOWER_V12", "2": "GND", "3": "BLOWER_VSR", "4": "BLOWER_FG_IN"})
 place("R12", R, 1000, 7300, "10k", tp("3V3", "BLOWER_FG"))
 # reverse-polarity P-MOSFET (replaces SS54): D=input, S=VIN12V, gate divider gives Vgs = -VIN/2
 place("Q4", "AO4407A", 1000, 6500, "AO4407A", {"1": "VIN12V", "2": "VIN12V", "3": "VIN12V", "4": "RPP_G",
@@ -105,6 +105,12 @@ place("R26", R, 1000, 5600, "10k", tp("RPP_G", "GND"))
 place("R27", R, 1000, 5100, "10k", tp("RPP_G", "VIN12V"))
 # blower bulk capacitor at J2 (Panasonic EEU-FC1E221, 220uF 25V, 555 mA ripple)
 place("C25", "CAP_POL", 1000, 4400, "220uF 25V", tp("BLOWER_V12", "GND"))
+# WS4540-12-NZ03 (Wonsmart drawing 2023-07-12): pin1 VSR is a 0-3.3 V speed VOLTAGE -> RC-filter the
+# ESP32 PWM (1k + 1uF, fc 159 Hz; 20 kHz ripple < 0.5 %). FG output stage not specified -> 1k series
+# limits current into the ESP32 clamp diode if it ever drives 5 V; R12 pull-up stays on the MCU side.
+place("R28", R, 1000, 3700, "1k", tp("BLOWER_PWM", "BLOWER_VSR"))
+place("C26", C, 1000, 3200, "1uF", tp("BLOWER_VSR", "GND"))
+place("R29", R, 1000, 2700, "1k", tp("BLOWER_FG_IN", "BLOWER_FG"))
 
 # ---------- column B: TPS54202 bucks (TI SLVSD26C Fig 7-1 / Table 7-2) ----------
 XB = 4000

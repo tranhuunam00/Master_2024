@@ -33,11 +33,13 @@ constexpr float   SFM_OFFSET      = 32768.0f;
 constexpr float   SFM_SCALE       = 120.0f;  // slm per count (air)
 constexpr uint8_t SFM_MAX_FAILS   = 20;      // consecutive bad reads before a power-cycle reset
 
-// ---------------- Blower ----------------
-constexpr uint32_t BLOWER_PWM_HZ     = 25000;  // check against the blower datasheet
+// ---------------- Blower: Wonsmart WS4540-12-NZ03 (12 V, 1.6 A max, built-in driver) ----------------
+constexpr uint32_t BLOWER_PWM_HZ     = 20000;  // WS4540-12-NZ03 VSR input is 0-3.3 V speed voltage;
+                                               // high-frequency 3.3 V PWM worked on the bench (dkbom.ino).
+                                               // If speed is unstable, add 10k + 1uF RC at the J2 cable end.
 constexpr uint8_t  BLOWER_PWM_BITS   = 10;
 constexpr uint16_t BLOWER_PWM_MAX    = (1u << BLOWER_PWM_BITS) - 1;
-constexpr uint8_t  BLOWER_FG_PER_REV = 2;      // FG pulses per revolution (blower datasheet)
+constexpr uint8_t  BLOWER_FG_PER_REV = 1;      // WS4540-12-NZ03 drawing: FG "1 Hz x 60 = speed" -> 1 pulse/rev
 constexpr float    BLOWER_MIN_DUTY   = 0.15f;  // below this most BLDC blowers stall
 
 // ---------------- Therapy limits ----------------

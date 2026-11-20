@@ -159,3 +159,14 @@ Mô phỏng chưa bao gồm: sai số của chính cảm biến (NXP DS ±5% FS)
 - SFM3300: thứ tự pad theo datasheet v1.4 mục 2.2 trùng U4 1→6, cáp thẳng; cáp > 10 cm phải chống nhiễu (mục 4.8).
 - OLED: chốt ProtoSupplies DSP-8 (VCC-GND-SCL-SDA) → cáp đảo dây 1–2.
 - `hardware/CPAP_VSSM/tools/check_harness.py`: 17 PASS / 0 FAIL / 3 OPEN (3 dây blower chờ datasheet blower).
+
+## 9. Khớp blower thật WS4540-12-NZ03 (2026-11-20)
+
+| Hạng mục | Datasheet Wonsmart (2023-07-12) | Board | Kết luận |
+|---|---|---|---|
+| Nguồn | 12 VDC, 1.6 A max | F1 4 A (3.08 A @50 °C), Q1, adapter 3.5 A, C25 220 µF | Đạt |
+| Chân dây | pin1 VSR, pin2 FG, pin3 GND, pin4 +12V | J2.3, J2.4, J2.2, J2.1 | Đạt |
+| Điều tốc | **VSR = điện áp 0–3.3 V** | Trước: PWM thô vào thẳng | **Đã sửa:** thêm R28 1 k + C26 1 µF (lọc RC, fc 159 Hz, gợn < 0.5 % ở 20 kHz) |
+| FG | 1 xung/vòng, kiểu ngõ ra không ghi | R12 10 k kéo lên 3V3 | **Đã thêm** R29 1 k nối tiếp bảo vệ ESP32; firmware sửa `BLOWER_FG_PER_REV = 1` |
+
+PCB: R28, C26, R29 đặt ở vùng trống (25.4 / 6.6–13.7 mm), không đè linh kiện/thân C25/vỏ header J2. Lần đặt đầu (sát J2) bị DRC bắt chập với đường 12V 50 mil và chạm vỏ nhựa J2 → đã dời. Kết quả: DRC điện 0 lỗi (kể cả net antenna, unrouted); schematic ↔ PCB 75/75; netlist 246 chân, 0 sai; Gerber 255/255 pad; BOM ↔ CPL 75/75; kiểm dây nối 19 PASS / 0 FAIL / 1 OPEN (kiểu ngõ ra FG).
