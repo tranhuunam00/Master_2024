@@ -1,20 +1,10 @@
-Output: Gerber Files
-Type  : Gerber
-From  : Variant [[No Variations]] of Project [CPAP_VSSM.PrjPcb]
-   Generated File[SiPAP_PCB.GTO]
-   Generated File[SiPAP_PCB.GTP]
-   Generated File[SiPAP_PCB.GTS]
-   Generated File[SiPAP_PCB.GTL]
-   Generated File[SiPAP_PCB.GBL]
-   Generated File[SiPAP_PCB.GBS]
-   Generated File[SiPAP_PCB.GBP]
-   Generated File[SiPAP_PCB.GBO]
-   Generated File[SiPAP_PCB.GM]
-   Generated File[SiPAP_PCB.EXTREP]
-   Generated File[SiPAP_PCB.REP]
+Output: Test Point Report
+Type  : Test Points
+From  : Project [CPAP_VSSM.PrjPcb]
+   Generated File[Fabrication Testpoint Report for SiPAP_PCB.ipc]
 
 
-Files Generated   : 11
+Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 8:54:29 AM On 11/20/2026
+Finished Output Generation At 11:27:34 AM On 11/21/2026
