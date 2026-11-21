@@ -816,4 +816,5 @@ def main():
     log("done")
 
 
-main()
+if __name__ == "__main__":
+    main()
