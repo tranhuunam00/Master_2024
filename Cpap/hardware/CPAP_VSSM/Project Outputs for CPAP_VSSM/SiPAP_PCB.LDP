@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Users\ADMIN\OneDrive\Máy tính\Master_2024\Cpap\hardware\CPAP_VSSM\SiPAP_PCB.PcbDoc
+LayersSetName=Top_Bot_Plated_Thru_Holes|DrillFile=sipap_pcb-roundholes-plated.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Plated_Slot_Holes|DrillFile=sipap_pcb-slotholes-plated.txt|DrillLayers=gtl,gbl
