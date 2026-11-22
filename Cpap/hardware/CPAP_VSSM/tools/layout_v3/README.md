@@ -51,6 +51,7 @@ Các quy tắc dưới đây lấy từ góp ý của người review bản v1/v
 | `sch_edit1.py` | Sửa schematic: nhãn GPIO của U1, thông số U6 |
 | `silk_labels.py`, `silk_labels2.py`, `fix_designators.py`, `polarity_marks.py` | Silkscreen: nhãn, tên linh kiện đọc được (0°/90°), dấu cực tính và chân 1 |
 | `gerber_check.py` | Đọc ngược Gerber + Excellon, so với dump board: pad, via, lỗ khoan, khoảng cách tới mép |
+| `pcbdoc_read.py` | Đọc thẳng file `.PcbDoc` đã lưu (OLE, không cần Altium): pad/net/linh kiện/via, để kiểm net đã lưu đúng |
 | `SiPAP_Fab_src.OutJob`, `SiPAP_Docs_src.OutJob` | Nguồn của 2 OutJob trong project (Gerber/khoan/IPC/ODB và PDF schematic) |
 | `../fab_v3.py` | Gom hồ sơ `Fab_RevC_v3/`: đổi tên, zip, CPL, BOM, kiểm BOM ↔ board |
 
