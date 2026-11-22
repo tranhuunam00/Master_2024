@@ -71,3 +71,29 @@ Post-fix checks in `checks/`: `gerber_check_after_fix.txt` (273 pads, 139 tented
 
 JLC pages (read by a web-fetch agent on 2026-11-22): https://jlcpcb.com/partdetail/C122537 and https://jlcpcb.com/partdetail/C865182, both Yageo, 0805, 0.1 %, 25 ppm, 125 mW, 150 V, "Extended". Stock was not shown. The yageo.com URLs tried for this datasheet returned 404.
 Checks: `checks/rail5v_worstcase.txt`, `checks/gerber_xor_after_R19R20.txt` (7/7 layers identical), `checks/sch_pcb_bom_sync.txt`.
+
+## Off-board parts (2026-11-22, later): E3–E11 in `BOM_RevC_v3_offboard.csv`
+Downloaded on 2026-11-22 and stored in `Cpap/tools/datasheets/` (SHA-256 appended to `datasheet_sha256.txt`). Page images of every cited page are in `pages/` (file name = datasheet name + page).
+
+| File | Source URL | Pages cited | What is taken from it |
+|---|---|---|---|
+| MeanWell_GSM60B.pdf | https://www.meanwell.com/Upload/PDF/GSM60B/GSM60B-SPEC.PDF (file dated 2026-05-09) | p.1 features, model encoding; p.2 specification | E4 GSM60B12-P1J: 12 V ±3.0 %, 5 A, ripple 100 mVp-p, OVP 12.6–16.2 V, touch current < 50 µA, 2×MOPP, IEC 60601-1 / 60601-1-11, Class II, C8 inlet; P1J = 2.1 × 5.5 × 11 mm, C+ |
+| MeanWell_DC_plug.pdf | https://www.meanwell.com/upload/pdf/DC_plug.pdf | p.1 | E4b DC PLUG-P1J-P1I = 2.1 × 5.5 × 9.5 mm; no 2.0 mm option is offered |
+| Adafruit_monochrome-oled-breakouts.pdf | https://cdn-learn.adafruit.com/downloads/pdf/monochrome-oled-breakouts.pdf | p.7 power; p.17 and p.49 STEMMA QT wiring; p.79 schematic (JP2, I2C address note) | E3: Vin 3–5 V, 3.3 V logic safe; I2C default, no RST needed; JP2 1 SDA … 7 VCC, 8 GND; 0x3D with DC/SA0 open |
+| Solomon_SSD1306_Adafruit.pdf | https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf (Solomon Systech Rev 1.1, Apr 2008) | p.48 DC characteristics | VDD 1.65–3.3 V, VIH 0.8 × VDD |
+| Espressif_ESP-Prog_user_guide.html | https://docs.espressif.com/projects/esp-dev-kits/en/latest/other/esp-prog/user_guide.html | Program Interface table, Description of Components, Package Contents | E5: PROG 2.54 mm pin list; RX/TX always 3.3 V; only 1.27 mm flat cables in the box |
+| Espressif_SCH_ESP32-PROG_V2.1.pdf, Espressif_DIM_ESP32-PROG_V2.1.pdf | https://dl.espressif.com/dl/schematics/SCH_ESP32-PROG_V2.1_20190709.pdf, …/DIM_ESP32-PROG_V2.1_20190709.pdf | SCH p.1 (crops `_uart_crop`, `_header_crop`) | FT_TXD → R20 → ESP_RXD0, FT_RXD → R21 → ESP_TXD0; header pin 1 EN, 3 TXD0, 5 RXD0 |
+| Molex_SD-90119.pdf | LCSC copy for C588663: https://datasheet.lcsc.com/datasheet/pdf/c0c1a1b7bfbe9e5a950cae27bf7867eb.pdf (Molex drawing SD-90119, 2 sheets) | sheet 1 note 4; sheet 2 table | 90119-2110: plating E (0.38–0.64 µm Au), 22–24 AWG, insulation 1.02–1.47 mm; mates with 0.635 mm square pin |
+| Molex_90123_catalog.pdf | Farnell copy of the Molex catalog page C-86: https://www.farnell.com/datasheets/7011.pdf | p.1 | 90123: 3.0 A, 350 V, width 2.54 mm max, stackable in 2 directions, ordering table 0102–0132 |
+| Molex_90123-0102.pdf, Molex_90156-0144.pdf, Molex_90142-0006.pdf | Rapid copies of Molex part sheets: https://static.rapidonline.com/pdf/05-4394_v1.pdf, 05-4422_v1.pdf, 05-4407_v1.pdf | p.1 | circuits, rows, "Use With 90119", stackable (90123) |
+| Molex_90156-0146.pdf | Farnell copy of the Molex part sheet: https://www.farnell.com/datasheets/2672904.pdf | p.1 | 6 circuits, single row, "Use With 90119" |
+| Molex_90119-0111.pdf | Farnell copy of the Molex part sheet (generated 2025-03-08): https://www.farnell.com/datasheets/4507172.pdf | p.1–2 | tooling: hand crimp tool 63825-8100 for 24–22 AWG |
+| Belden_9534.pdf, Belden_9535.pdf, Belden_8444.pdf | https://catalog.belden.com/techdata/EN/9534_techdata.pdf, 9535_techdata.pdf, 8444_techdata.pdf | p.1 | 9534/9535: 4/5 × 24 AWG, insulation 1.1 mm, foil + drain, 110/210 pF/m, 1.8 A; 8444: 4 × 22 AWG, insulation 1.3 mm, 2.4 A |
+
+Not saved, and why:
+- molex.com (drawings SD-90156, SD-90142, SD-90123 and product spec PS-99020-0001) timed out for curl and for the web-fetch tool. The pages load in a browser, but the site blocks sending the file anywhere, so the Molex part sheets and catalog page above (copies hosted by Farnell and Rapid) are used instead.
+- Saint-Gobain Tygon ND 100-65 datasheet (medical.saint-gobain.com) answers with a browser check (HTTP 403) → E9 left open.
+- Nordson Medical T20-6005: the product page (fluid-components.nordsonmedical.com) gives "Tee, 3/32 in (2.4 mm) ID tubing, polypropylene, bags of 1000"; no drawing PDF exists at the usual part-drawing address (HTTP 404) → E9 left open.
+- Kilo International knobs: only distributor listings found, no maker drawing → E10 left open.
+
+Check: `CPAP_VSSM/tools/check_harness.py` after switching to the Adafruit OLED and ESP-Prog: 23 PASS, 0 FAIL, 1 OPEN (blower FG output stage, as before).

@@ -52,7 +52,7 @@ Board đã qua kiểm giới hạn công nghệ **JLCPCB bản tiêu chuẩn, 2 
 | `SiPAP_RevC_v3_BOM_JLC.csv` | BOM theo cột của JLC, 30 dòng, chỉ SMD | CSV |
 | `SiPAP_RevC_v3_CPL_JLC.csv` | Toạ độ gắp-đặt theo cột của JLC, 69 linh kiện SMD | CSV |
 | `SiPAP_RevC_v3_pin1_check.csv` | Toạ độ chân 1 của 12 linh kiện có cực tính hoặc có hướng (thêm RV1), để so với ảnh preview của JLC | CSV |
-| `BOM_RevC_v3_offboard.csv` | 10 món ngoài board (blower, SFM3300, OLED, adapter, USB-UART, đầu cắm và cáp, ống áp, núm encoder): số liệu trích datasheet kèm trang, và trạng thái (đã xác minh / chưa chọn mã / chưa có datasheet) | CSV |
+| `BOM_RevC_v3_offboard.csv` | 14 dòng ngoài board E1–E11 (blower, SFM3300, OLED Adafruit 326, adapter Mean Well GSM60B12-P1J + đầu chuyển, mạch nạp ESP-Prog, 4 bộ cáp Molex C-Grid III + Belden, kìm bấm; còn mở: dây nguồn C7, ống áp + cút T, núm encoder): số liệu trích datasheet kèm trang, mã LCSC khi có, trạng thái | CSV |
 | `review_evidence/` | Bằng chứng review: ảnh các trang datasheet được trích, SHA-256 của datasheet, kết quả kiểm Gerber/netlist, `SOURCES.md` | PNG / TXT |
 | `SiPAP_RevC_v3.step` | Mô hình 3D (trục encoder đúng 31.5 mm) | STEP AP214 |
 | `SiPAP_RevC_v3_Schematic.pdf` | Schematic 1 trang | PDF |

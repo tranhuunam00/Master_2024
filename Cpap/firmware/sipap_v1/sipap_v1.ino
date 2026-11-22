@@ -320,6 +320,13 @@ void setup() {
   encoderBegin();
 
   Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL, I2C_HZ);
+  // Adafruit 0.96" 128x64 STEMMA QT (off-board E3) answers at 0x3D with DC/SA0 open
+  // (Adafruit monochrome-oled-breakouts.pdf p.79 schematic note); other SSD1306 modules use 0x3C.
+  Wire.beginTransmission(0x3C);
+  if (Wire.endTransmission() != 0) {
+    Wire.beginTransmission(0x3D);
+    if (Wire.endTransmission() == 0) oled.setI2CAddress(0x3D * 2);   // u8g2 takes the 8-bit address
+  }
   oled.begin();
   oled.setBusClock(I2C_HZ);
   oled.clearBuffer();

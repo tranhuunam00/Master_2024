@@ -23,7 +23,7 @@ NET = {
     # power nets carry the worst-case band (R 1% + VFB 1%), verification_RevC.md sec 3
     "3V3":        ("power", (3.21, 3.38)),   # TPS54202 U9
     "SFM_5V":     ("power", (4.94, 5.22)),   # U8 through Q2 (AO3401A, ~50 mOhm x 5 mA -> <1 mV)
-    "BLOWER_V12": ("power", (11.4, 12.6)),   # adapter 12 V +-5 %, F1/Q4 drop < 0.1 V at 1.6 A
+    "BLOWER_V12": ("power", (11.54, 12.36)), # Mean Well GSM60B12-P1J 12 V +-3.0 % (GSM60B-SPEC p.2), F1/Q4 drop < 0.1 V at 1.6 A
     "I2C_SCL":    ("i2c",   3.21),           # 4.7k pull-ups R5/R6 to 3V3 (worst-case low)
     "I2C_SDA":    ("i2c",   3.21),
     "UART_TX":    ("out",   3.293),   # ESP32 TXD0
@@ -42,13 +42,17 @@ DEV = {
         "pins": {"HEAT_GND": ("gnd",), "VDD": ("power", 4.75, 5.25), "SCK": ("i2c", 2.5),
                  "GND": ("gnd",), "DATA": ("i2c", 2.5), "HEAT": ("nc",)},
     },
-    "OLED DSP-8": {  # ProtoSupplies DSP-8 SSD1306 0.96" (VCC GND SCL SDA, on-board 3.3 V regulator)
-        "src": "protosupplies.com DSP-8: 'accepts 3.3 V or 5 V' -> modelled as 3.3 V -5% .. 5 V +5%",
-        "pins": {"VCC": ("power", 3.135, 5.25), "GND": ("gnd",), "SCL": ("i2c", 0.7 * 3.3), "SDA": ("i2c", 0.7 * 3.3)},
+    "OLED Adafruit 326": {  # Adafruit 0.96" 128x64 OLED, STEMMA QT version (off-board E3)
+        "src": "Adafruit monochrome-oled-breakouts.pdf p.7 (Vin 3-5 V, 3.3 V logic safe), p.79 JP2 pinout; "
+               "SSD1306 Rev 1.1 p.48 VIH 0.8 x VDD (VDD 3.3 V on the module)",
+        "pins": {"VCC": ("power", 3.0, 5.0), "GND": ("gnd",), "SCL": ("i2c", 0.8 * 3.3), "SDA": ("i2c", 0.8 * 3.3),
+                 "DC/SA0": ("nc",), "RST": ("nc",), "CS": ("nc",), "3.3V": ("nc",)},
     },
-    "USB-UART 3V3": {  # any CP2102/CH340 adapter set to 3.3 V
-        "src": "generic 3.3 V adapter",
-        "pins": {"GND": ("gnd",), "3V3": ("nc",), "RXD": ("in",), "TXD": ("out",), "RTS": ("out",), "DTR": ("out",)},
+    "ESP-Prog": {  # Espressif ESP-Prog, PROG 2.54 mm header (off-board E5)
+        "src": "Espressif ESP-Prog user guide (Program Interface table) + SCH_ESP32-PROG_V2.1: "
+               "FT_TXD -R20-> ESP_RXD0, FT_RXD -R21-> ESP_TXD0; signals always 3.3 V",
+        "pins": {"ESP_EN": ("out",), "VDD": ("nc",), "ESP_TXD0": ("in",), "GND": ("gnd",),
+                 "ESP_RXD0": ("out",), "ESP_IO0": ("out",)},
     },
     "Blower": {      # Wonsmart WS4540-12-NZ03 drawing rev 2023-07-12 (built-in driver, 4 wires)
         "src": "Wonsmart WS4540-12-NZ03 drawing: pin1 yellow VSR 0-3.3V, pin2 white FG, pin3 black GND, pin4 red +12V",
@@ -64,11 +68,15 @@ HARNESS = {
     "J2 -> blower": [("J2.1", "Blower", "V+"), ("J2.2", "Blower", "GND"), ("J2.3", "Blower", "PWM"), ("J2.4", "Blower", "FG")],
     "U4 -> SFM3300": [("U4.1", "SFM3300-D", "HEAT_GND"), ("U4.2", "SFM3300-D", "VDD"), ("U4.3", "SFM3300-D", "SCK"),
                       ("U4.4", "SFM3300-D", "GND"), ("U4.5", "SFM3300-D", "DATA"), (None, "SFM3300-D", "HEAT")],
-    # module pin order is VCC GND SCL SDA, U5 is GND VCC SCL SDA -> wires 1 and 2 cross
-    "U5 -> OLED": [("U5.1", "OLED DSP-8", "GND"), ("U5.2", "OLED DSP-8", "VCC"), ("U5.3", "OLED DSP-8", "SCL"),
-                   ("U5.4", "OLED DSP-8", "SDA")],
-    "J3 -> USB-UART": [("J3.1", "USB-UART 3V3", "GND"), (None, "USB-UART 3V3", "3V3"), ("J3.3", "USB-UART 3V3", "RXD"),
-                       ("J3.4", "USB-UART 3V3", "TXD"), ("J3.5", "USB-UART 3V3", "RTS"), ("J3.6", "USB-UART 3V3", "DTR")],
+    # Adafruit JP2: 1 SDA, 2 SCL, 3 DC/SA0, 4 RST, 5 CS, 6 3.3V, 7 VCC, 8 GND (p.79). Module end is a 1x8
+    # housing with contacts only in cavities 1, 2, 7, 8; DC/SA0 left open -> address 0x3D (firmware probes both).
+    "U5 -> OLED": [("U5.1", "OLED Adafruit 326", "GND"), ("U5.2", "OLED Adafruit 326", "VCC"),
+                   ("U5.3", "OLED Adafruit 326", "SCL"), ("U5.4", "OLED Adafruit 326", "SDA"),
+                   (None, "OLED Adafruit 326", "DC/SA0"), (None, "OLED Adafruit 326", "RST"),
+                   (None, "OLED Adafruit 326", "CS"), (None, "OLED Adafruit 326", "3.3V")],
+    # ESP-Prog PROG 2.54 mm: 1 EN, 2 VDD, 3 ESP_TXD0, 4 GND, 5 ESP_RXD0, 6 IO0. ESP_TXD0 is the target's TX.
+    "J3 -> ESP-Prog": [("J3.1", "ESP-Prog", "GND"), (None, "ESP-Prog", "VDD"), ("J3.3", "ESP-Prog", "ESP_TXD0"),
+                       ("J3.4", "ESP-Prog", "ESP_RXD0"), ("J3.5", "ESP-Prog", "ESP_EN"), ("J3.6", "ESP-Prog", "ESP_IO0")],
 }
 # expected net per board pin, as written in wiring_harness.md
 DOC = {"J2.1": "BLOWER_V12", "J2.2": "GND", "J2.3": "BLOWER_VSR", "J2.4": "BLOWER_FG_IN",

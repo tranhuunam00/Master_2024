@@ -7,24 +7,43 @@ Source: the URL when the file was downloaded on 2026-11-22. "earlier session" me
 | File | Pages | SHA-256 (first 16) | Used for | Source |
 |---|---|---|---|---|
 | 2N7002_Diodes.pdf | 5 | `3984debf5b293762` | Q3 (2N7002) | earlier session |
+| Adafruit_monochrome-oled-breakouts.pdf | 85 | `fd3bf6312ddd70b0` | off-board E3 Adafruit 326 | https://cdn-learn.adafruit.com/downloads/pdf/monochrome-oled-breakouts.pdf |
 | AO3401A.pdf | 5 | `0d8e3261ae280e00` | Q2 (AO3401A) | earlier session |
 | AO4407A.pdf | 5 | `ef4b3686383ca726` | Q1 Q4 (AO4407A) | earlier session |
+| Belden_8444.pdf | 2 | `6069b0345236c091` | off-board E6 cable | https://catalog.belden.com/techdata/EN/8444_techdata.pdf |
+| Belden_9534.pdf | 2 | `3fa391c6cae9fe63` | off-board E7, E8 cable | https://catalog.belden.com/techdata/EN/9534_techdata.pdf |
+| Belden_9535.pdf | 2 | `2e05e120d625c5ec` | off-board E5b cable | https://catalog.belden.com/techdata/EN/9535_techdata.pdf |
 | Bourns_3224.pdf | 3 | `db9857638bb6b034` | RV1 (3224W-1-503E) | https://www.bourns.com/docs/Product-Datasheets/3224.pdf |
 | Bourns_MF-R.pdf | 10 | `d22f0f06c8909784` | F1 (MF-R400) | earlier session |
 | Bourns_MF-SM.pdf | 7 | `c55c1edf8cba275a` | **not used by the current BOM** | earlier session |
 | Bourns_SMBJ.pdf | 6 | `3303bff29fd46a97` | D2 (SMBJ13CA-E3/52) | earlier session |
+| esp32-s3-wroom-1_datasheet_v1.8.pdf | 53 | `27d71971da07c280` | U1 (ESP32-S3-WROOM-1-N8R8) | earlier session |
+| Espressif_DIM_ESP32-PROG_V2.1.pdf | 1 | `6d67a938b88e8b89` | off-board E5 ESP-Prog | https://dl.espressif.com/dl/schematics/DIM_ESP32-PROG_V2.1_20190709.pdf |
+| Espressif_ESP-Prog_user_guide.html | HTML | `75e40db0b2f8601c` | off-board E5 ESP-Prog | https://docs.espressif.com/projects/esp-dev-kits/en/latest/other/esp-prog/user_guide.html (page saved as HTML) |
+| Espressif_SCH_ESP32-PROG_V2.1.pdf | 1 | `ab1f074c7b6c75e7` | off-board E5 ESP-Prog | https://dl.espressif.com/dl/schematics/SCH_ESP32-PROG_V2.1_20190709.pdf |
 | FH_0805CG.pdf | 30 | `705023d3be045414` | C19 (0805CG750J500NT); C22 (0805CG560J500NT) | LCSC copy for C1838/C1828 |
 | JSCJ_2N7002.pdf | 5 | `7941fb423af7c6c6` | Q3 (2N7002) | LCSC copy for C8545 |
 | LM393_TI.pdf | 56 | `a1f63934820e27c1` | U7 (LM393DR2G) | earlier session |
+| MeanWell_DC_plug.pdf | 1 | `6184980f2c2a71a9` | off-board E4b DC PLUG-P1J-P1I | https://www.meanwell.com/upload/pdf/DC_plug.pdf |
+| MeanWell_GSM60B.pdf | 5 | `3b971459c945ec49` | off-board E4 GSM60B12-P1J | https://www.meanwell.com/Upload/PDF/GSM60B/GSM60B-SPEC.PDF |
+| Molex_90119-0111.pdf | 3 | `8fc089740fd993ef` | off-board E11 crimp tool 63825-8100 (tooling list) | Farnell copy of the Molex part sheet: https://www.farnell.com/datasheets/4507172.pdf |
+| Molex_90123-0102.pdf | 1 | `6df4a138a27048ea` | off-board E6 housing | Rapid copy of the Molex part sheet: https://static.rapidonline.com/pdf/05-4394_v1.pdf |
+| Molex_90123_catalog.pdf | 1 | `6c23cd319aa7b31d` | off-board E6, E8 housings (90123 series page) | Farnell copy of the Molex catalog page: https://www.farnell.com/datasheets/7011.pdf |
+| Molex_90142-0006.pdf | 1 | `d6119c4e7f087beb` | off-board E5b housing | Rapid copy of the Molex part sheet: https://static.rapidonline.com/pdf/05-4407_v1.pdf |
+| Molex_90156-0144.pdf | 1 | `e36780fa8b7c98bc` | off-board E8 housing | Rapid copy of the Molex part sheet: https://static.rapidonline.com/pdf/05-4422_v1.pdf |
+| Molex_90156-0146.pdf | 1 | `2affe2eb4a7a2d80` | off-board E5b, E7 housing | Farnell copy of the Molex part sheet: https://www.farnell.com/datasheets/2672904.pdf |
+| Molex_SD-90119.pdf | 2 | `cc5884db48038677` | off-board E5b-E8 crimp terminal 90119-2110 | LCSC copy of Molex drawing SD-90119 for C588663: https://datasheet.lcsc.com/datasheet/pdf/c0c1a1b7bfbe9e5a950cae27bf7867eb.pdf |
 | MPX5010_b.pdf | 12 | `796fbf22bebe0df7` | U2 U3 (MPXV5010GC6T1) | earlier session |
 | Murata_GRM21BR61H106KE43.pdf | 31 | `ff8de8901544f5f4` | C10 C13 C14 (GRM21BR61H106KE43L) | LCSC copy for C440198 |
-| PEC11R.pdf | 4 | `ac88f657e611bc82` | U6 (PEC11R-4225F-S0024) | earlier session |
-| PJ-102AH.pdf | 3 | `269ff7d1d8b7130a` | J1 (PJ-102AH) | earlier session |
+| onsemi_LM393.pdf | 13 | `2fd8e714267f0539` | U7 (LM393DR2G) | https://www.onsemi.com/pdf/datasheet/lm393-d.pdf |
 | Panasonic_ERJP06.pdf | 9 | `441511405b982033` | R16 (ERJP06F3303V) | LCSC copy for C441993 |
 | Panasonic_FC.pdf | 17 | `42d91ae29ab6122d` | C25 (EEU-FC1E221) | earlier session |
-| SFM3300.pdf | 9 | `f7c20973d6592903` | U4 (61300611121); off-board E2 SFM3300-D | earlier session |
-| SRN6045TA.pdf | 4 | `a5144a82a215a917` | L1 (SRN6045TA-150M); L2 (SRN6045TA-100M) | earlier session |
+| PEC11R.pdf | 4 | `ac88f657e611bc82` | U6 (PEC11R-4225F-S0024) | earlier session |
+| PJ-102AH.pdf | 3 | `269ff7d1d8b7130a` | J1 (PJ-102AH) | earlier session |
 | Samsung_CL21.pdf | 84 | `96baebe4bd0ce363` | C23 (CL21A226MAQNNNE); C1 C2 C18 C21 C27 (CL21A226MAQNNNE); C5 C6 C9 C26 (CL21B105KBFNNNE); C7 C11 (CL21B103KBANNNC) | LCSC copy for C45783/C28323/C1710 |
+| SFM3300.pdf | 9 | `f7c20973d6592903` | U4 (61300611121); off-board E2 SFM3300-D | earlier session |
+| Solomon_SSD1306_Adafruit.pdf | 65 | `d55f875357de96d8` | off-board E3 (SSD1306 controller) | Adafruit copy of Solomon Systech SSD1306 Rev 1.1: https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf |
+| SRN6045TA.pdf | 4 | `a5144a82a215a917` | L1 (SRN6045TA-150M); L2 (SRN6045TA-100M) | earlier session |
 | TDK_PS_buzzer.pdf | 8 | `a2e091ca64d6cfef` | BZ1 (PS1240P02BT) | earlier session |
 | TPS54202.pdf | 31 | `297fae8754121e09` | U8 U9 (TPS54202DDCR) | earlier session |
 | UNIROYAL_0805W8F.pdf | 9 | `11cd644d5d8a34a6` | R1 R3 R7 R8 R9 R11 R12 R13 R14 R17 R24 R26 R27 (0805W8F1002T5E); R2 R4 (0805W8F2002T5E); R5 R6 (0805W8F4701T5E); R10 (0805W8F3602T5E); R15 R18 (0805W8F1004T5E); R21 (0805W8F1003T5E); R23 (0805W8F1003T5E); R30 (0805W8F1003T5E); R22 (0805W8F2212T5E); R28 R29 (0805W8F1001T5E) | LCSC copy for C17414 (same file for every 0805W8F code) |
@@ -36,7 +55,7 @@ Source: the URL when the file was downloaded on 2026-11-22. "earlier session" me
 | Yageo_CC0805_NP0.pdf | 23 | `495287fc811dc714` | C8 C12 (CC0805JRNPOYBN471) | LCSC copy for C277525 |
 | Yageo_CC0805_X7R.pdf | 29 | `61a606825ab314ea` | C3 C4 C15 C16 C17 C20 C24 (CC0805KRX7R9BB104) | LCSC copy for C49678 |
 | Yageo_RT.pdf | 10 | `0a729d144519a702` | R19 (RT0805BRD07100KL); R20 (RT0805BRD0713K3L) | LCSC copy for C122537/C865182 (Yageo RT V.16) |
-| esp32-s3-wroom-1_datasheet_v1.8.pdf | 53 | `27d71971da07c280` | U1 (ESP32-S3-WROOM-1-N8R8) | earlier session |
-| onsemi_LM393.pdf | 13 | `2fd8e714267f0539` | U7 (LM393DR2G) | https://www.onsemi.com/pdf/datasheet/lm393-d.pdf |
 
-Off-board items with no part chosen yet (E3 OLED, E4–E10) have no datasheet here; see `BOM_RevC_v3_offboard.csv`.
+
+Off-board items still without a chosen part (E4c mains cord, E9 tubing and T-fitting, E10 knob) have no datasheet here; the reason is in the Status column of `BOM_RevC_v3_offboard.csv`.
+Distributor-hosted copies (LCSC, Farnell, Rapid, Adafruit) are used where the maker's own site refuses automated downloads (molex.com timed out on 2026-11-22); each is the maker's own document (title block or "generated by Molex" header), unchanged.
