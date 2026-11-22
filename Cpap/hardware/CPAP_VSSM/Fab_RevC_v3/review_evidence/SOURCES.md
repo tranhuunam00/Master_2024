@@ -63,3 +63,11 @@ Downloaded with the user's approval from the manufacturer or distributor site an
 Official web pages: https://jlcpcb.com/partdetail/C4360 (0805W8F3602T5E, Extended) and https://jlcpcb.com/partdetail/C48484 (Bourns 3224W-1-503E, Extended); https://www.lcsc.com/product-detail/C4360.html and C48484.html (MPN, maker, package). https://www.nxp.com/docs/en/data-sheet/MPX5010.pdf returned HTTP 404 on 2026-11-22, so the Motorola MPX5010_b.pdf remains the MPX5010 source.
 
 Post-fix checks in `checks/`: `gerber_check_after_fix.txt` (273 pads, 139 tented vias), `ipc356_nets_after_fix.txt`, `gerber_xor_vs_HEAD.txt` (XOR against commit 6f5d0b1; rasteriser `scripts/rast2.py` handles %LPC% clear polarity, which the first one, `scripts/rast.py`, ignored and so reported copper layers as identical: kept to show the tool error).
+
+## R19/R20 change (2026-11-22, later)
+| File | Source URL | Pages cited | What is taken from it |
+|---|---|---|---|
+| Yageo_RT.pdf | LCSC copy of the Yageo RT series datasheet V.16 (May 06, 2025), linked from both C122537 and C865182: https://datasheet.lcsc.com/datasheet/pdf/46d7760c582640714d605308a25a220a.pdf | p.2 ordering code (B = 0.1 %, R = paper taping, D = 25 ppm/C); p.5 Table 2 (RT0805 1/8 W, 150 V, 0.1 %/25 ppm range 1 R-1.5 M) | R19 RT0805BRD07100KL, R20 RT0805BRD0713K3L |
+
+JLC pages (read by a web-fetch agent on 2026-11-22): https://jlcpcb.com/partdetail/C122537 and https://jlcpcb.com/partdetail/C865182, both Yageo, 0805, 0.1 %, 25 ppm, 125 mW, 150 V, "Extended". Stock was not shown. The yageo.com URLs tried for this datasheet returned 404.
+Checks: `checks/rail5v_worstcase.txt`, `checks/gerber_xor_after_R19R20.txt` (7/7 layers identical), `checks/sch_pcb_bom_sync.txt`.

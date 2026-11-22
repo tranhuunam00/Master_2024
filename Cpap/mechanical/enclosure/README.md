@@ -75,7 +75,7 @@ blower → ống silicone → **ống dẫn in (`sipap_duct`)** → đứng lên
 | Blower → J2 | ra mặt motor → grommet vách sau hộp → lên sau mép PCB → dọc mép trái trên board → cắm J2 | 172 mm | Dây blower 150 ± 20 mm, 20AWG → hàn nối dây 24AWG ~40 mm + co nhiệt rồi bấm cos |
 | SFM3300 → U4 | hàn thẳng vào 6 pad trên thân SFM → mép sau → dọc mép phải → U4 | 147 mm | **> 10 cm → bắt buộc cáp chống nhiễu cho SDA/SCL (DS 4.8)** |
 | OLED → U5 | hàn vào chân module (dưới nắp) → U5 | 72 mm | Đảo dây 1–2 (xem `wiring_harness.md`) |
-| Ống áp | dock → cút T → U2, U3 | 43 + 12 + 12 mm (+ đoạn chồng lên núm) | Silicone 3 × 5 mm, dây rút ở U3 |
+| Ống áp | dock → cút T → U2, U3 | 43 + 12 + 12 mm (+ đoạn chồng lên núm) | Silicone 3 × 5 mm, dây rút ở U3. Lưu ý: cổng MPXV5010 chỉ Ø2.92–3.17 mm (datasheet MPX5010 tr.7, kích thước W), ống ID 3 mm có thể lỏng: kẹp cả U2 lẫn U3 hoặc dùng ống lòng nhỏ hơn |
 
 Các đường xếp thành lớp nên không đè nhau (đã kiểm va chạm):
 - cáp blower và cáp SFM sát nắp (z ≈ 84.7);

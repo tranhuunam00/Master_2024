@@ -90,6 +90,7 @@ Một lượt review chỉ đọc, đối chiếu từng con số với datashee
 | m3 | Nhỏ | Chân VSR của blower lơ lửng khi ESP32 reset hoặc đang nạp firmware | Netlist: BLOWER_VSR/BLOWER_PWM không có điện trở kéo; bản vẽ Wonsmart chỉ ghi VSR 0–3.3 V | Thêm R30 100k xuống GND |
 | m4 | Nhỏ | Datasheet lưu trong repo không phải của linh kiện JLC gắn; 2 file hỏng | Trang lcsc.com của C8545, C7955, C1973187 | Tải datasheet JSCJ, onsemi, Vishay; xoá `MPX5010.pdf` và `EC11.pdf` |
 | m5 | Nhỏ | BOM ghi J1 "2.1 mm" trong khi chân giữa Ø2.0 | PJ-102AH DS tr.2 | Sửa mô tả trong BOM và `wiring_harness.md` |
+| m6 | Nhỏ (phát hiện khi sửa) | Ray 5V xấu nhất tới 5.35 V với R19/R20 1 %, vượt 5.25 V của MPX5010 và SFM3300 | TI SLVSD26C tr.5 (VFB 0.581–0.611 V); MPX5010 DS tr.2; SFM3300 DS tr.3 | R19/R20 → Yageo RT 0.1 % 25 ppm (Yageo RT DS V.16 tr.2, tr.5): 4.93–5.23 V |
 
 Có một lỗi công cụ được ghi lại: `pdftotext -layout` làm lệch một hàng trong bảng SRN6045TA và SMBJ, nên một phát hiện nháp về cuộn cảm đã bị bỏ sau khi đối chiếu ảnh trang gốc. BOM ghi đúng.
 

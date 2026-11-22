@@ -89,7 +89,7 @@ Layout v3: J3 nằm **dọc** mép phải, chân 1 (GND, có chấm tròn) ở *
 - Self-test: giữ núm encoder khi cấp nguồn, hoặc gửi `TEST` qua Serial 115200 trong 2 s đầu.
 
 ## 6. Ống áp — U2 (chính), U3 (dự phòng)
-- Ống silicon **ID 3 mm** (cổng cảm biến Ø3.17 mm), dài ≤ 30 cm, không gập.
+- Cổng cảm biến có đường kính ngoài **2.92–3.17 mm** (kích thước W, bản vẽ case 482A, datasheet MPX5010 trang 7). Ống silicon ID 3 mm có thể lỏng trên cổng 2.92 mm: chọn ống lòng nhỏ hơn hoặc thêm kẹp, nhất là ống của U3. Dài ≤ 30 cm, không gập. Danh sách mua: `CPAP_VSSM/Fab_RevC_v3/BOM_RevC_v3_offboard.csv` (mục E9).
 - Hai ống nối chung qua **1 cút chữ T** tới **1 điểm đo: núm Ø3.4 trên dock** (vỏ v0.3 — giữa đầu ra SFM3300 và vòi bình làm ẩm). Cả 2 cảm biến phải đo cùng một áp, nếu không firmware báo `SENSORS DISAGREE`. Điểm đo nằm trước bình nên tháo bình không phải rút ống; tổn áp qua bình đo một lần trên bàn, > 0.2 cmH₂O thì bù trong firmware. Chiều dài theo mô hình: 43 mm (núm → T) + 12 mm mỗi nhánh, cộng đoạn chồng lên núm.
 - Điểm đo có bẫy nước / đặt cao hơn đường khí để hơi nước không chảy vào cảm biến.
 - U3 là đầu vào của mạch cắt quá áp phần cứng (25 cmH₂O): **tuột ống U3 = mất lớp bảo vệ phần cứng**. Dùng ống có khoá hoặc kẹp dây rút.

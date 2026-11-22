@@ -56,7 +56,7 @@ Self-check: my Gerber parser reproduced the builder's numbers (268 pads, 135 ten
 - *Fix:* state the pin diameter and the adapter plug size that must be used.
 
 ## Checked and found correct (do not re-audit)
-1. TPS54202 dividers: 0.596·(1+100/13.3) = 5.08 V and 0.596·(1+100/22.1) = 3.29 V (VFB, p.5). L, R and C6 match Table 7-2 (p.17). The VFB tolerance keeps 5V at 4.95–5.21 V, inside MPXV (4.75–5.25 V) and SFM3300 (5 V ±5 %).
+1. **[ERRATUM 2026-11-22: this item was wrong. It counted only the VFB tolerance. With R19/R20 at 1 % and 100 ppm/C over 60 C, the 5V rail can reach 5.35 V, above the 5.25 V limit of MPX5010 and SFM3300. Fixed with 0.1 % Yageo RT parts, which give 4.93-5.23 V; see FAB_NOTES.md.]** TPS54202 dividers: 0.596·(1+100/13.3) = 5.08 V and 0.596·(1+100/22.1) = 3.29 V (VFB, p.5). L, R and C6 match Table 7-2 (p.17). The VFB tolerance keeps 5V at 4.95–5.21 V, inside MPXV (4.75–5.25 V) and SFM3300 (5 V ±5 %).
 2. TPS54202 pinout matches the pads (p.3). BOOT cap is 100 nF on BOOT–SW. EN floating is allowed (p.3). The TVS 8/20 clamp of 28.0 V (SMBJ p.2) is below the VIN abs max of 30 V (p.4).
 3. SRN6045TA ratings in the BOM and the land pattern (5.1 x 1.8 mm, 6.5 mm span) match DS p.1, checked on the page image.
 4. Comparator: COMP_REF 0.877 V. Positive feedback through R18 gives 2.63 cmH2O hysteresis. LM393 VO max 36 V (p.4) allows the 12 V pull-up. VICR is fine (p.9). Unit B inputs are grounded.

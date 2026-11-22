@@ -48,10 +48,11 @@ Board đã qua kiểm giới hạn công nghệ **JLCPCB bản tiêu chuẩn, 2 
 | `SiPAP_RevC_v3.ipc` | Netlist kiểm tra điện, 412 điểm (273 pad + 139 via) | IPC-D-356 |
 | `SiPAP_RevC_v3_ODB++.zip` | Bản ODB++ cùng nội dung | ODB++ |
 | `SiPAP_RevC_v3_CPL.csv` | Toạ độ gắp-đặt, mm, gốc ở góc dưới-trái | CSV |
-| `BOM_RevC_v3.csv` | 44 dòng, có MPN, mã thay thế và mã LCSC | CSV |
-| `SiPAP_RevC_v3_BOM_JLC.csv` | BOM theo cột của JLC, 29 dòng, chỉ SMD | CSV |
+| `BOM_RevC_v3.csv` | 45 dòng, có MPN, mã thay thế và mã LCSC | CSV |
+| `SiPAP_RevC_v3_BOM_JLC.csv` | BOM theo cột của JLC, 30 dòng, chỉ SMD | CSV |
 | `SiPAP_RevC_v3_CPL_JLC.csv` | Toạ độ gắp-đặt theo cột của JLC, 69 linh kiện SMD | CSV |
 | `SiPAP_RevC_v3_pin1_check.csv` | Toạ độ chân 1 của 12 linh kiện có cực tính hoặc có hướng (thêm RV1), để so với ảnh preview của JLC | CSV |
+| `BOM_RevC_v3_offboard.csv` | 10 món ngoài board (blower, SFM3300, OLED, adapter, USB-UART, đầu cắm và cáp, ống áp, núm encoder): số liệu trích datasheet kèm trang, và trạng thái (đã xác minh / chưa chọn mã / chưa có datasheet) | CSV |
 | `review_evidence/` | Bằng chứng review: ảnh các trang datasheet được trích, SHA-256 của datasheet, kết quả kiểm Gerber/netlist, `SOURCES.md` | PNG / TXT |
 | `SiPAP_RevC_v3.step` | Mô hình 3D (trục encoder đúng 31.5 mm) | STEP AP214 |
 | `SiPAP_RevC_v3_Schematic.pdf` | Schematic 1 trang | PDF |
@@ -75,9 +76,9 @@ Gerber, file khoan và CPL dùng chung gốc toạ độ (góc dưới-trái boa
 
 ## Đặt lắp ráp ở JLCPCB
 Upload `SiPAP_RevC_v3_BOM_JLC.csv` và `SiPAP_RevC_v3_CPL_JLC.csv`.
-- **Phạm vi:** 69 linh kiện SMD mặt trên, 29 dòng. 9 linh kiện THT không có trong 2 file này, hàn tay sau.
+- **Phạm vi:** 69 linh kiện SMD mặt trên, 30 dòng. 9 linh kiện THT không có trong 2 file này, hàn tay sau.
 - **Cột đúng mẫu JLC.** BOM: Comment, Designator (ngăn bằng dấu phẩy), Footprint (tên gói như `0805`, `SOT-23-6`, không dùng tên footprint thư viện), LCSC Part #. CPL: Designator, Mid X, Mid Y, Layer, Rotation. Script đã kiểm: designator trong CPL và trong BOM trùng nhau đúng 67/67, số lượng mỗi dòng khớp.
-- **Mã LCSC** tra ngày 2026-11-22, sau đó đối chiếu từng mã trên trang sản phẩm lcsc.com (`review_evidence/SOURCES.md`). 27/29 dòng có mã: 14 dòng basic (50 linh kiện) và 13 dòng extended (17 linh kiện). C4360 (R10 36k) và C48484 (RV1) là extended theo trang jlcpcb.com/partdetail. JLC tính thêm phí cho mỗi mã extended.
+- **Mã LCSC** tra ngày 2026-11-22, sau đó đối chiếu từng mã trên trang sản phẩm lcsc.com (`review_evidence/SOURCES.md`). 28/30 dòng có mã: 14 dòng basic (49 linh kiện) và 14 dòng extended (18 linh kiện). C4360 (R10 36k), C48484 (RV1), C122537 (R19) và C865182 (R20) là extended theo trang jlcpcb.com/partdetail. JLC tính thêm phí cho mỗi mã extended.
   - R/C dùng mã basic cùng giá trị, cùng sai số, điện áp bằng hoặc cao hơn và cùng điện môi như BOM, đúng luật thay thế ở mục dưới. Các tụ 10 µF thay bằng loại 50 V (BOM ghi 35 V), cũng X5R.
   - Dòng 22 µF 16 V và 22 µF 25 V gộp chung 1 mã loại 25 V (C45783). Hai dòng 100k cũng gộp làm một.
 - **2 dòng chưa có mã: L1 (SRN6045TA-150M), L2 (SRN6045TA-100M).** Để JLC tự khớp theo MPN lúc đặt. Nếu JLC không có thì bỏ 2 dòng này ra và hàn tay. Nếu thay bằng cuộn khác, điều kiện ghi ở cột Notes, lấy theo datasheet SRN6045TA trang 1:
@@ -98,7 +99,7 @@ Upload `SiPAP_RevC_v3_BOM_JLC.csv` và `SiPAP_RevC_v3_CPL_JLC.csv`.
   - Q2/Q3 là SOT-23 ba chân, không có chấm, nên nhìn hướng chân đơn.
 
 ## Nếu xưởng thiếu linh kiện
-BOM có cột **Alternate MPN** cho từng dòng chính. R/C 0805 dùng hãng nào cũng được, miễn đúng giá trị, sai số (1% cho R), điện áp và điện môi ghi trong BOM. Không thay TPS54202 bằng IC khác chân; chỉ TPS54202H tương thích. Mã LCSC đã chọn cho từng dòng nằm trong cột `LCSC #` và cột Notes của `BOM_RevC_v3.csv`. Vẫn cần duyệt từng dòng trên trang JLC trước khi thanh toán, vì tồn kho thay đổi hằng ngày.
+Từ 2026-11-22, cột **MPN** ghi đúng linh kiện JLC sẽ gắn, và cột **Datasheet** ghi file datasheet tương ứng trong `Cpap/tools/datasheets/` (bảng tra: `Cpap/tools/datasheets/INDEX.md`). `fab_v3.py` dừng lại nếu một dòng thiếu file. Mã thiết kế ban đầu được chuyển sang cột **Alternate MPN**, ghi rõ "datasheet not in repo"; muốn dùng mã đó thì phải tải datasheet của nó trước. R/C 0805 dùng hãng nào cũng được, miễn đúng giá trị, sai số (1% cho R), điện áp và điện môi ghi trong BOM. Không thay TPS54202 bằng IC khác chân; chỉ TPS54202H tương thích. Mã LCSC đã chọn cho từng dòng nằm trong cột `LCSC #` và cột Notes của `BOM_RevC_v3.csv`. Vẫn cần duyệt từng dòng trên trang JLC trước khi thanh toán, vì tồn kho thay đổi hằng ngày.
 
 ## Firmware
 Gán GPIO v3 nằm trong `Cpap/firmware/sipap_v1/config.h`. Bản sửa ngày 2026-11-22 (sau review) biên dịch đạt với arduino-esp32 3.3.8 (`esp32s3`, PSRAM OPI, flash 8 MB, bảng phân vùng mặc định): 679 626 byte chương trình, 31 980 byte RAM. **Không nạp firmware cũ lên board v3** vì chân đã đổi. Từ bản sửa này, BLE phải ghép đôi bằng mã PIN 6 số; mã hiện trên OLED lúc khởi động và in ra cổng Serial (mỗi board một mã, tính từ địa chỉ MAC). Lệnh `PWM:n` chỉ có khi biên dịch với `SIPAP_BENCH_MODE`.
@@ -223,3 +224,10 @@ Review đối kháng (một lượt, chỉ đọc) tìm ra 2 lỗi lớn (M1, M2
 - Ảnh `SiPAP_v3_TOP.png` và `SiPAP_v3_BOTTOM.png` (render 3D) vẽ từ trước lần sửa này.
 - Datasheet Bourns ghi rằng sản phẩm Bourns không được khuyến nghị cho ứng dụng y tế sống còn (life-critical medical) nếu không có phê duyệt bằng văn bản của Bourns (Bourns 3224 DS trang 3). Board có các linh kiện Bourns: RV1, F1, L1/L2, U6. Đây là giới hạn của bản thiết kế nghiên cứu này.
 - Bộ luật DRC vẫn chờ bạn duyệt.
+
+**Ray 5V: R19/R20 đổi sang loại 0.1 % (cũng ngày 2026-11-22).**
+- **Lý do:** VFB của TPS54202 là 0.581–0.611 V (SLVSD26C trang 5). Với R19/R20 sai số 1 % và hệ số nhiệt 100 ppm/°C trên 60 °C, ray 5V xấu nhất lên tới 5.35 V. Mức này vượt giới hạn 5.25 V của MPX5010 (DS trang 2) và SFM3300 (5 V ±5 %, DS trang 3).
+- **Sửa:** dùng Yageo RT0805BRD07100KL (R19, C122537) và RT0805BRD0713K3L (R20, C865182). Theo datasheet Yageo RT V.16 (`Cpap/tools/datasheets/Yageo_RT.pdf`): mã B = ±0.1 %, D = 25 ppm/°C (trang 2); RT0805 chịu 1/8 W, 150 V (trang 5).
+- **Kết quả:** ray 5V xấu nhất còn 4.93–5.23 V (`review_evidence/checks/rail5v_worstcase.txt`).
+- **Ray 3V3** (R21/R22) giữ loại 1 %: 3.16–3.43 V, vẫn trong 3.0–3.6 V của ESP32-S3-WROOM-1 (DS trang 27).
+- Chỉ đổi giá trị trong schematic, PCB và BOM. Gerber giống hệt bản trước (XOR 7/7 lớp). Schematic, PCB và BOM vẫn khớp 252/252 chân, 78/78 linh kiện.

@@ -99,6 +99,19 @@ for r in rows:
                       'STEP model updated to this height')
     if des == ['J1']:
         r['Description'] = 'DC barrel jack THT, 2.0 mm centre pin, 24 V / 5.0 A (Same Sky PJ-102AH DS p.1-2)'
+    if des == ['R19', 'R21']:   # R19 (5V divider) goes 0.1 %, R21 (3V3) stays 1 % on its own line 32c
+        r['Qty'] = '1'; r['Designators'] = 'R19'
+        r['Description'] = 'Resistor 0.1% 1/8W thin film 25 ppm/C (5V FB top)'
+        r['Manufacturer'] = 'Yageo'; r['MPN'] = 'RT0805BRD07100KL'
+        r['Notes'] = ('0.1 % keeps the 5V rail inside the 4.75-5.25 V allowed for MPX5010 (DS p.2) and SFM3300 (DS p.3): '
+                      'VFB 0.581-0.611 V (TI SLVSD26C p.5) gives 4.93-5.23 V with 0.1 % and 25 ppm/C over 60 C; 1 % '
+                      'thick film could reach 5.35 V. Yageo RT DS V.16: B = 0.1 %, D = 25 ppm/C (p.2), RT0805 1/8 W, '
+                      '150 V, 1 R-1.5 M at 0.1 %/25 ppm (p.5)')
+    if des == ['R20']:
+        r['Description'] = 'Resistor 0.1% 1/8W thin film 25 ppm/C (5V FB bottom)'
+        r['Manufacturer'] = 'Yageo'; r['MPN'] = 'RT0805BRD0713K3L'
+        r['Notes'] = ('Vout = 0.596*(1+100k/13.3k) = 5.08V typ; 0.1 % with R19, see R19 note '
+                      '(Yageo RT DS V.16 p.2 and p.5)')
     if des == ['R10']:
         r['Value'] = '36k'; r['MPN'] = 'RC0805FR-0736KL'
         r['Notes'] = ('COMP_REF top leg in series with RV1 (5V - RV1 - R10 - COMP_REF, R11 10k to GND): COMP_REF '
@@ -113,6 +126,11 @@ new_rows = {
                      'Pin 1 (CCW end) on 5V, wiper 2 tied to pin 3 (CW end): clockwise = more resistance = lower trip '
                      '(Bourns 3224 DS p.1 schematic). An open element or lifted wiper raises the resistance, so '
                      'COMP_REF falls and the cutoff trips (fail-safe)')},
+    '32': {'Item': '32c', 'Qty': '1', 'Designators': 'R21', 'Value': '100k',
+           'Description': 'Resistor 1% 1/8W (3V3 FB top)', 'Footprint': 'R_0805', 'Manufacturer': 'Yageo',
+           'MPN': 'RC0805FR-07100KL', 'Alternate MPN': '', 'LCSC #': '', 'Digi-Key #': '', 'Mount': 'SMD',
+           'Notes': ('3V3 rail with 1 %: 0.581-0.611 V x (1 + 100k/22.1k) incl. 1 % gives 3.16-3.43 V (3.13-3.47 V '
+                     'even with 100 ppm/C over 60 C), inside ESP32-S3-WROOM-1 VDD33 3.0-3.6 V (DS v1.8 p.27)')},
     '32a': {'Item': '32b', 'Qty': '1', 'Designators': 'R30', 'Value': '100k',
             'Description': 'Resistor 1% 1/8W (BLOWER_VSR pull-down)', 'Footprint': 'R_0805', 'Manufacturer': 'Yageo',
             'MPN': 'RC0805FR-07100KL', 'Alternate MPN': '', 'LCSC #': '', 'Digi-Key #': '', 'Mount': 'SMD',
@@ -150,8 +168,9 @@ LCSC = {
     '27': ('C4328', 'basic', '0805W8F2002T5E'), '28': ('C17673', 'basic', '0805W8F4701T5E'),
     '29': ('C4360', 'extended', '0805W8F3602T5E 36k 1%'), '29a': ('C48484', 'extended', 'Bourns 3224W-1-503E'),
     '30': ('C17514', 'basic', '0805W8F1004T5E'), '32b': ('C149504', 'basic', '0805W8F1003T5E'),
-    '31': ('C441993', 'extended', 'ERJP06F3303V'), '32': ('C149504', 'basic', '0805W8F1003T5E'),
-    '32a': ('C149504', 'basic', '0805W8F1003T5E'), '33': ('C17446', 'extended', '0805W8F1332T5E'),
+    '31': ('C441993', 'extended', 'ERJP06F3303V'),
+    '32': ('C122537', 'extended', 'Yageo RT0805BRD07100KL 100k 0.1% 25ppm'), '32c': ('C149504', 'basic', '0805W8F1003T5E'),
+    '32a': ('C149504', 'basic', '0805W8F1003T5E'), '33': ('C865182', 'extended', 'Yageo RT0805BRD0713K3L 13.3k 0.1% 25ppm'),
     '34': ('C17552', 'extended', '0805W8F2212T5E'), '34a': ('C17513', 'basic', '0805W8F1001T5E'),
 }
 NOT_IN_JLC = {'9': 'not in the JLC library index (2026-11-22): let JLC match the MPN at order time, or hand-solder. '
@@ -172,6 +191,52 @@ for r in rows:
         r['Notes'] = (r['Notes'] + '; ' if r['Notes'] else '') + extra
     elif r['Item'] in NOT_IN_JLC:
         r['Notes'] = (r['Notes'] + '; ' if r['Notes'] else '') + NOT_IN_JLC[r['Item']]
+# The MPN column names the part JLC actually fits (its datasheet is in Cpap/tools/datasheets); the design-time
+# MPN moves to Alternate MPN. Every line gets the datasheet file(s) it was checked against, and the run stops
+# if one is missing.
+FITTED = {
+    '2': ('NXP', 'MPXV5010GC6T1'), '4': ('onsemi', 'LM393DR2G'), '6a': ('JSCJ', '2N7002'),
+    '7': ('Vishay', 'SMBJ13CA-E3/52'), '18': ('Murata', 'GRM21BR61H106KE43L'),
+    '18a': ('Samsung', 'CL21A226MAQNNNE'), '19': ('Samsung', 'CL21A226MAQNNNE'),
+    '20': ('Yageo', 'CC0805KRX7R9BB104'), '21': ('Samsung', 'CL21B105KBFNNNE'), '22': ('Samsung', 'CL21B103KBANNNC'),
+    '23': ('Yageo', 'CC0805JRNPOYBN471'), '24': ('FH', '0805CG750J500NT'), '25': ('FH', '0805CG560J500NT'),
+    '26': ('UNI-ROYAL', '0805W8F1002T5E'), '27': ('UNI-ROYAL', '0805W8F2002T5E'), '28': ('UNI-ROYAL', '0805W8F4701T5E'),
+    '29': ('UNI-ROYAL', '0805W8F3602T5E'), '30': ('UNI-ROYAL', '0805W8F1004T5E'), '31': ('Panasonic', 'ERJP06F3303V'),
+    '32a': ('UNI-ROYAL', '0805W8F1003T5E'), '32b': ('UNI-ROYAL', '0805W8F1003T5E'), '32c': ('UNI-ROYAL', '0805W8F1003T5E'),
+    '34': ('UNI-ROYAL', '0805W8F2212T5E'), '34a': ('UNI-ROYAL', '0805W8F1001T5E'),
+}
+DATASHEET = {
+    '1': 'esp32-s3-wroom-1_datasheet_v1.8.pdf', '2': 'MPX5010_b.pdf', '3': 'TPS54202.pdf',
+    '4': 'onsemi_LM393.pdf; LM393_TI.pdf', '5': 'AO4407A.pdf', '6': 'AO3401A.pdf', '6a': 'JSCJ_2N7002.pdf; 2N7002_Diodes.pdf',
+    '7': 'Vishay_SMBJ.pdf; Bourns_SMBJ.pdf', '8': 'Bourns_MF-R.pdf', '9': 'SRN6045TA.pdf', '10': 'SRN6045TA.pdf',
+    '11': 'PJ-102AH.pdf', '12': 'Wurth_61300421121.pdf', '13': 'Wurth_61300611121.pdf',
+    '14': 'Wurth_61300611121.pdf; SFM3300.pdf', '15': 'Wurth_61300411121.pdf', '16': 'PEC11R.pdf',
+    '17': 'TDK_PS_buzzer.pdf', '18': 'Murata_GRM21BR61H106KE43.pdf', '18a': 'Samsung_CL21.pdf', '18b': 'Panasonic_FC.pdf',
+    '19': 'Samsung_CL21.pdf', '20': 'Yageo_CC0805_X7R.pdf', '21': 'Samsung_CL21.pdf', '22': 'Samsung_CL21.pdf',
+    '23': 'Yageo_CC0805_NP0.pdf', '24': 'FH_0805CG.pdf', '25': 'FH_0805CG.pdf',
+    '26': 'UNIROYAL_0805W8F.pdf', '27': 'UNIROYAL_0805W8F.pdf', '28': 'UNIROYAL_0805W8F.pdf', '29': 'UNIROYAL_0805W8F.pdf',
+    '29a': 'Bourns_3224.pdf', '30': 'UNIROYAL_0805W8F.pdf', '31': 'Panasonic_ERJP06.pdf', '32': 'Yageo_RT.pdf',
+    '32a': 'UNIROYAL_0805W8F.pdf', '32b': 'UNIROYAL_0805W8F.pdf', '32c': 'UNIROYAL_0805W8F.pdf', '33': 'Yageo_RT.pdf',
+    '34': 'UNIROYAL_0805W8F.pdf', '34a': 'UNIROYAL_0805W8F.pdf',
+}
+DS_DIR = os.path.abspath(os.path.join(PRJ, '..', '..', 'tools', 'datasheets'))
+missing_ds = []
+for r in rows:
+    if r['Item'] in FITTED:
+        maker, mpn = FITTED[r['Item']]
+        if mpn != r['MPN']:
+            old = f"{r['Manufacturer']} {r['MPN']} (design-time MPN, datasheet not in repo)"
+            r['Alternate MPN'] = old + ('; ' + r['Alternate MPN'] if r['Alternate MPN'] else '')
+            r['Manufacturer'], r['MPN'] = maker, mpn
+    if r['Item'] in DATASHEET:
+        r['Datasheet'] = DATASHEET[r['Item']]
+        missing_ds += [f for f in DATASHEET[r['Item']].split('; ') if not os.path.isfile(os.path.join(DS_DIR, f))]
+    elif r['Mount'] in ('SMD', 'THT'):
+        missing_ds.append(f"item {r['Item']} has no datasheet")
+    else:
+        r['Datasheet'] = 'n/a (board feature, no part)'
+if missing_ds:
+    sys.exit(f'datasheet check failed: {missing_ds}')
 with open(os.path.join(OUT, f'BOM_RevC_v3.csv'), 'w', newline='', encoding='utf-8') as fh:
     w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
     w.writeheader(); w.writerows(rows)
