@@ -160,3 +160,7 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# Altium raw outputs from the OutJobs (renamed copies live in Fab_RevC_v3/)
+Cpap/hardware/CPAP_VSSM/Project Outputs for CPAP_VSSM/v3/
+Cpap/hardware/CPAP_VSSM/Project Outputs for CPAP_VSSM/v3docs/
