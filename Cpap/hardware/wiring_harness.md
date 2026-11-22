@@ -10,7 +10,7 @@ Header trên board — **đã đối chiếu datasheet gốc Würth** (lưu ở 
 
 ```
  Adapter 12V ──► J1 ──F1──Q4──┬──► U8 (5V) ──► MPXV5010 x2, LM393, SFM3300 (qua Q2)
- (2.1 mm, + giữa)             ├──► U9 (3V3) ─► ESP32, OLED, pull-up
+ (chân Ø2.0, + giữa)          ├──► U9 (3V3) ─► ESP32, OLED, pull-up
                               └──► Q1 (cắt quá áp) ──► C25 ──► J2 ──► BLOWER
                                                          J2 ◄── PWM / FG
  ESP32 ── I2C ──┬── U4 ──cáp── SFM3300-D (trên đường khí)
@@ -21,7 +21,7 @@ Header trên board — **đã đối chiếu datasheet gốc Würth** (lưu ở 
 ## 1. J1 — nguồn 12 V (jack DC PJ-102AH, mép trái board)
 | Mục | Giá trị |
 |---|---|
-| Adapter | 12 V DC, **≥ 3.5 A** (blower ~3 A + mạch ~0.5 A), jack 5.5/2.1 mm, **dương ở giữa** |
+| Adapter | 12 V DC, **≥ 3.5 A** (giữ như cũ để có dự phòng; blower Wonsmart WS4540-12-NZ03 ăn 1.6 A ±15 % khi thổi tự do theo bản vẽ hãng, cộng mạch), **dương ở giữa**. Đầu cắm phải khớp jack PJ-102AH: chân giữa Ø2.0 mm (Same Sky PJ-102AH DS tr.2), jack chịu 24 V / 5.0 A (DS tr.1) |
 | Bảo vệ trên board | F1 MF-R400 (4 A), Q4 chống ngược cực, D2 TVS SMBJ13A (kẹp ≤ 28 V) |
 | Lưu ý | Adapter phải có chứng nhận an toàn (IEC 62368-1 / 60601-1 nếu dùng y tế) |
 

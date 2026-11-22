@@ -52,7 +52,7 @@ void runSelfTest(U8G2 &oled) {
   bool zeroOk = pressureBegin();
   PressureReading pr;
   pressureRead(pr);
-  snprintf(d, sizeof d, "pri %.3f V, red %.3f V (expect 0.10-0.35, typ 0.20)", pr.priV, pr.redV);
+  snprintf(d, sizeof d, "pri %.3f V, red %.3f V (MPX5010 DS p.2: 0-%.3f V, typ 0.20)", pr.priV, pr.redV, ZERO_V_MAX);
   result("zero output in range", zeroOk ? 1 : -1, d);
   float diff = fabsf((pr.priV - pr.redV) / (PRESS_VS * 0.09f) * KPA_TO_CMH2O);
   snprintf(d, sizeof d, "raw difference %.2f cmH2O (expect < 1.0 before zeroing)", diff);
@@ -128,11 +128,26 @@ void runSelfTest(U8G2 &oled) {
     result("blower spins", ask("Did the blower spin and stop again?"));
   } else { result("FG pulses / rpm > 0", 0); result("blower spins", 0); }
 
-  // 9. Independent over-pressure cutoff
+  // 9. Independent over-pressure cutoff, calibrated with RV1
   // Pressure is read on the PRIMARY sensor: R18 (LM393 hysteresis) feeds the trip output back into
   // PRESS_RED_ADC, so U3's own reading jumps ~2.4 cmH2O when the cutoff trips and would hide the
   // hysteresis. Both sensors must see the same pressure: pressurise the shared T, not U3 alone.
-  Serial.println("9. Hardware over-pressure cutoff (U3 + LM393 + Q1)");
+  // U3's zero-pressure offset (MPX5010 DS p.2: 0-0.425 V) moves the trip point by ~10 cmH2O, so RV1
+  // (50k, in series with R10 36k on the 5V side of COMP_REF, R11 10k to GND) is set here: more RV1
+  // resistance = lower COMP_REF = trip at a lower pressure. Range 36k..86k covers the datasheet
+  // offset and span limits (COMP_REF 0.52..1.09 V at Vs = 5 V, 0.55 V with RV1 at its -10 % tolerance,
+  // vs 0.69..1.05 V needed).
+  Serial.println("9. Hardware over-pressure cutoff (U3 + LM393 + Q1), RV1 calibration");
+  {
+    // COMP_REF that trips at TRIP_TARGET for THIS U3: comparator input = g x U3 Vout, with
+    // g = (R4||R18)/(R3 + R4||R18) = (20k||1M)/(10k + 20k||1M) = 0.66225 while COMP_OUT is low,
+    // and U3 Vout = Voff + Vs x 0.09 x P[kPa] (MPX5010 DS p.4, offset replaced by the measured zero).
+    const float g = 0.66225f;
+    float voffU3 = pressureZeroV(false) / (PRESS_DIVIDER * g);   // undo the firmware's 2/3 divider assumption
+    float target = g * (voffU3 + PRESS_VS * 0.09f * TRIP_TARGET_CMH2O / KPA_TO_CMH2O);
+    Serial.printf("   U3 zero %.3f V -> set COMP_REF (U7 pin 2 to GND, DMM) to %.3f V with RV1, then test below\n",
+                  voffU3, target);
+  }
   if (ask("Ready to raise pressure on the shared U2+U3 tube (T-piece; syringe / water column), slowly, within 60 s?") > 0) {
     Serial.println("   raise pressure slowly...");
     float tripAt = NAN, releaseAt = NAN, peak = 0;
@@ -152,8 +167,13 @@ void runSelfTest(U8G2 &oled) {
         delay(20);
       }
     }
-    snprintf(d, sizeof d, "trip %.1f cmH2O (expect 23.8-26.8), peak seen %.1f", tripAt, peak);
-    result("trip threshold", (!isnan(tripAt) && tripAt > 23.8f && tripAt < 26.8f) ? 1 : -1, d);
+    float lo = TRIP_TARGET_CMH2O - TRIP_TOL_CMH2O, hi = TRIP_TARGET_CMH2O + TRIP_TOL_CMH2O;
+    snprintf(d, sizeof d, "trip %.1f cmH2O (target %.1f-%.1f), peak seen %.1f", tripAt, lo, hi, peak);
+    result("trip threshold", (!isnan(tripAt) && tripAt >= lo && tripAt <= hi) ? 1 : -1, d);
+    // RV1: pin 1 (CCW end) on 5V, wiper 2 tied to pin 3 (CW end) on REF_TOP. Bourns 3224 DS p.1 draws
+    // CW rotation moving the wiper toward pin 3, so clockwise = more resistance = lower trip pressure.
+    if (isnan(tripAt) || tripAt > hi) Serial.println("   -> trip too high: turn RV1 CLOCKWISE (more resistance), then rerun the self-test");
+    else if (tripAt < lo)             Serial.println("   -> trip too low: turn RV1 COUNTER-CLOCKWISE (less resistance), then rerun the self-test");
     snprintf(d, sizeof d, "release %.1f cmH2O (expect 1.5-3.5 below trip)", releaseAt);
     float h = tripAt - releaseAt;
     result("hysteresis", (!isnan(releaseAt) && h > 1.5f && h < 3.5f) ? 1 : -1, d);

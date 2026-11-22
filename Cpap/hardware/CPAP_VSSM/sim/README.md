@@ -9,6 +9,8 @@ Chạy bằng Altium Mixed Sim (ngspice) qua eda-agent `sim_run_deck`. LM393 dù
 | `sim_normal_overview.png` | Dạng sóng 0–25 ms |
 | `sim_q1_turn_on.png` | Phóng to lúc Q1 đóng |
 
+> **Sau review 2026-11-22:** board đổi R10 47k thành R10 36k + RV1 50k (biến trở chỉnh ngưỡng cắt), và thêm R30 100k từ BLOWER_VSR xuống GND. Deck này vẫn dùng R10 47k. Với cảm biến có Voff điển hình 0.2 V, ngưỡng 25 cmH2O cần COMP_REF ≈ 0.863 V, tức tổng điện trở phía trên ≈ 47.9k, nghĩa là RV1 vặn tới ≈ 11.9k. Vì vậy deck tương đương board đã chỉnh cho cảm biến điển hình. R30 làm VSR thấp hơn khoảng 1 % (chia áp với R28 1k), chưa được mô phỏng lại. Cách tính: `Fab_RevC_v3/review_evidence/scripts/trip_calc.py`.
+
 ## Mô hình hoá
 Nguồn và mã băm của từng model nằm trong `models/README.md` (đã kiểm ngày 2026-11-22).
 - TPS54202: model của TI (SLVMBJ5C) bị mã hoá kiểu PSpice, ngspice và Altium đều không đọc được. Vì vậy dùng nguồn ổn áp theo hành vi: soft-start 5 ms, UVLO bật 4.2 V và tắt 3.7 V (TI SLVSD26C tr.5), hiệu suất giả định 90 % / 85 %.

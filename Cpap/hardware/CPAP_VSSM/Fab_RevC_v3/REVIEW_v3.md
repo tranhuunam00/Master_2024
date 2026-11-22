@@ -78,3 +78,19 @@ Datasheet gốc lưu ở `Cpap/tools/datasheets/`.
    - Một đoạn EN ở mặt dưới chạm mép thân R12 (9.9 mil).
    - Schematic: ký hiệu GND đè chữ PRESS_PRI_ADC cạnh chân 3–4 của U1. Chỉ là thẩm mỹ, netlist đúng.
 5. **Chưa thử trên phần cứng:** firmware mới chỉ biên dịch. Mức FG của blower vẫn chờ đo (mục OPEN trong `check_harness.py`). Quy trình test khi nhận board nằm trong FAB_NOTES.
+
+## 5. Review đối kháng 2026-11-22 và các sửa đổi
+
+Một lượt review chỉ đọc, đối chiếu từng con số với datasheet gốc (ảnh các trang được trích, SHA-256 và kết quả kiểm nằm trong `review_evidence/`), tìm ra:
+
+| # | Mức | Vấn đề | Căn cứ | Đã sửa |
+|---|---|---|---|---|
+| M1 | Lớn | Ngưỡng cắt áp phần cứng không chỉnh được, thực tế ~20–30 cmH2O chứ không phải ~25 | MPX5010 DS tr.2: Voff 0–0.425 V, VFSS 4.275–4.725 V | R10 36k + RV1 Bourns 3224W-1-503E 50k phía 5V; chỉnh lúc test bằng self-test mục 9 |
+| M2 | Lớn | Firmware cho xoá AL_ZERO mà không hiệu chuẩn lại; BLE không xác thực; lệnh `PWM:n` chạy hở vòng đến 100 % | `sipap_v1.ino` dòng 137, 253–257, 312; `bleBegin` | AL_ZERO chỉ xoá khi hiệu chuẩn lại đạt; ghép đôi BLE bằng passkey + MITM + bonding; `PWM:n` chỉ có trong bản test bàn |
+| m3 | Nhỏ | Chân VSR của blower lơ lửng khi ESP32 reset hoặc đang nạp firmware | Netlist: BLOWER_VSR/BLOWER_PWM không có điện trở kéo; bản vẽ Wonsmart chỉ ghi VSR 0–3.3 V | Thêm R30 100k xuống GND |
+| m4 | Nhỏ | Datasheet lưu trong repo không phải của linh kiện JLC gắn; 2 file hỏng | Trang lcsc.com của C8545, C7955, C1973187 | Tải datasheet JSCJ, onsemi, Vishay; xoá `MPX5010.pdf` và `EC11.pdf` |
+| m5 | Nhỏ | BOM ghi J1 "2.1 mm" trong khi chân giữa Ø2.0 | PJ-102AH DS tr.2 | Sửa mô tả trong BOM và `wiring_harness.md` |
+
+Có một lỗi công cụ được ghi lại: `pdftotext -layout` làm lệch một hàng trong bảng SRN6045TA và SMBJ, nên một phát hiện nháp về cuộn cảm đã bị bỏ sau khi đối chiếu ảnh trang gốc. BOM ghi đúng.
+
+Chi tiết layout và kết quả kiểm tra sau khi sửa (ERC 0, DRC 0, 40/40 net, Gerber đọc ngược 273 pad / 139 via / 179 lỗ, XOR với bản cũ chỉ khác quanh RV1, R10, R30): `FAB_NOTES.md`, mục "Sửa sau review đối kháng 2026-11-22".

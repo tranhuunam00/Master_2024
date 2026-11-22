@@ -1,0 +1,9 @@
+COMP_REF 0.8772 V, divider gain 0.66225, sensor Vout at trip 1.3246 V
+Voff 0.000 V -> trip  30.0 cmH2O (span 4.5 V); span 4.275..4.725 V ->  28.6.. 31.6
+Voff 0.100 V -> trip  27.7 cmH2O (span 4.5 V); span 4.275..4.725 V ->  26.4.. 29.2
+Voff 0.142 V -> trip  26.8 cmH2O (span 4.5 V); span 4.275..4.725 V ->  25.5.. 28.2
+Voff 0.200 V -> trip  25.5 cmH2O (span 4.5 V); span 4.275..4.725 V ->  24.3.. 26.8
+Voff 0.274 V -> trip  23.8 cmH2O (span 4.5 V); span 4.275..4.725 V ->  22.7.. 25.1
+Voff 0.350 V -> trip  22.1 cmH2O (span 4.5 V); span 4.275..4.725 V ->  21.0.. 23.2
+Voff 0.425 V -> trip  20.4 cmH2O (span 4.5 V); span 4.275..4.725 V ->  19.4.. 21.5
+release Vout 1.2086 V, hysteresis 2.63 cmH2O

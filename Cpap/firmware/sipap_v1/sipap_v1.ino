@@ -16,6 +16,7 @@
 #include <BLEDevice.h>
 #include <BLEServer.h>
 #include <BLE2902.h>
+#include <BLESecurity.h>
 #include <esp_task_wdt.h>
 #include "config.h"
 #include "hw.h"
@@ -47,6 +48,8 @@ static bool     manualPwm = false;        // BLE "PWM:n" bench mode
 static float    manualDuty = 0;
 static bool     muted = false;
 static uint32_t muteUntil = 0;
+static bool     zeroValid = false;        // true only after a zero calibration inside the datasheet window
+static uint32_t blePasskey = 0;
 
 static PressureReading pr;
 static FlowReading     fl = {0, false, 0};
@@ -85,13 +88,23 @@ class CmdCb : public BLECharacteristicCallbacks {
 
 static void bleBegin() {
   BLEDevice::init("SIPAP");
+  // Passkey entry pairing with bonding, MITM and LE Secure Connections (arduino-esp32 3.3.8 example
+  // Server_secure_static_passkey). The passkey comes from the factory MAC, so each board has its own.
+  uint64_t mac = ESP.getEfuseMac();
+  blePasskey = (uint32_t)((mac ^ (mac >> 24)) % 1000000ULL);
+  BLESecurity *sec = new BLESecurity();
+  sec->setPassKey(true, blePasskey);
+  sec->setCapability(ESP_IO_CAP_OUT);
+  sec->setAuthenticationMode(true, true, true);
   BLEServer *srv = BLEDevice::createServer();
   srv->setCallbacks(new ServerCb());
   BLEService *svc = srv->createService(SVC_UUID);
   dataChr = svc->createCharacteristic(DATA_UUID, BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_NOTIFY);
+  dataChr->setAccessPermissions(ESP_GATT_PERM_READ_ENC_MITM);
   dataChr->addDescriptor(new BLE2902());
   dataChr->setValue("READY");
   BLECharacteristic *cmd = svc->createCharacteristic(CMD_UUID, BLECharacteristic::PROPERTY_WRITE);
+  cmd->setAccessPermissions(ESP_GATT_PERM_WRITE_ENC_MITM);   // no command without an authenticated link
   cmd->setCallbacks(new CmdCb());
   svc->start();
   BLEAdvertising *adv = BLEDevice::getAdvertising();
@@ -122,19 +135,37 @@ static void raise(uint16_t a) {
   if (a & AL_STOPPING) { blowerSetDuty(0); if (mode == Mode::Running) mode = Mode::Fault; }
 }
 
+// Clear latched alarms on request (short press or BLE "CLEAR"). Alarms whose cause is still present
+// stay set: the hardware trip while SAFETY_TRIP is high, and AL_ZERO until a zero calibration passes.
+// A re-zero is attempted only with the blower stopped and no FG pulse for REZERO_QUIET_MS, so residual
+// pressure from a spinning-down blower is not taken as the sensor offset.
+static void clearLatchedAlarms(uint16_t keep) {
+  if (!zeroValid && mode != Mode::Running && blowerMsSinceLastPulse() > REZERO_QUIET_MS) {
+    blowerSetDuty(0);
+    zeroValid = pressureBegin();
+    Serial.printf("re-zero %s: pri %.3f V  red %.3f V\n", zeroValid ? "OK" : "FAILED",
+                  pressureZeroV(true), pressureZeroV(false));
+  }
+  alarms = keep | (safetyTripped() ? AL_HW_TRIP : 0) | (zeroValid ? 0 : AL_ZERO);
+  if (mode == Mode::Fault && !(alarms & AL_STOPPING)) mode = Mode::Standby;
+}
+
 static void handleCommand(const String &c) {
   Serial.printf("[BLE] %s\n", c.c_str());
   if (c == "START") startTherapy();
   else if (c == "STOP") stopTherapy();
   else if (c.startsWith("SET:")) setpoint = constrain(c.substring(4).toFloat(), SET_MIN_CMH2O, SET_MAX_CMH2O);
-  else if (c.startsWith("PWM:")) {           // bench mode: open loop, 0..255 like the old protocol
+#ifdef SIPAP_BENCH_MODE
+  else if (c.startsWith("PWM:")) {           // bench mode only: open loop, 0..255 like the old protocol
     if (alarms & AL_STOPPING) return;
     manualDuty = constrain(c.substring(4).toInt(), 0, 255) / 255.0f;
     manualPwm = manualDuty > 0;
     mode = manualPwm ? Mode::Running : Mode::Standby;
     if (!manualPwm) blowerSetDuty(0);
-  } else if (c == "MUTE") { muted = true; muteUntil = millis() + 120000; }
-  else if (c == "CLEAR") { alarms = safetyTripped() ? AL_HW_TRIP : AL_NONE; if (mode == Mode::Fault) mode = Mode::Standby; }
+  }
+#endif
+  else if (c == "MUTE") { muted = true; muteUntil = millis() + 120000; }
+  else if (c == "CLEAR") clearLatchedAlarms(alarms & AL_FLOW);
 }
 
 // ======================= Control (every CONTROL_MS) =======================
@@ -178,6 +209,9 @@ static void controlStep() {
   float d;
   if (manualPwm) {
     d = manualDuty;
+    // Open loop has no setpoint: hold it to the highest allowed setpoint + HIGH_DEV instead.
+    if (pr.pri > SET_MAX_CMH2O + HIGH_DEV_CMH2O) { if (!tHigh) tHigh = now; else if (now - tHigh > HIGH_DEV_MS) raise(AL_HIGH); }
+    else tHigh = 0;
   } else {
     target = min(setpoint, target + RAMP_CMH2O_PER_S * dt);
     float err = target - pr.pri;
@@ -252,9 +286,7 @@ static void handleUi() {
   }
   if (encoderTakePress() && alarms) {         // short press with alarm: silence 2 min, clear latched alarms
     muted = true; muteUntil = millis() + 120000;
-    uint16_t keep = (safetyTripped() ? AL_HW_TRIP : 0) | (alarms & AL_FLOW);
-    alarms = keep;
-    if (mode == Mode::Fault && !(alarms & AL_STOPPING)) mode = Mode::Standby;
+    clearLatchedAlarms(alarms & AL_FLOW);
   }
   if (muted && millis() > muteUntil) muted = false;
 
@@ -309,10 +341,23 @@ void setup() {
   }
   if (wantTest) runSelfTest(oled);   // never returns
 
-  if (!pressureBegin()) raise(AL_ZERO);
-  Serial.printf("zero: pri %.3f V  red %.3f V\n", pressureZeroV(true), pressureZeroV(false));
+  zeroValid = pressureBegin();
+  if (!zeroValid) raise(AL_ZERO);
+  Serial.printf("zero: pri %.3f V  red %.3f V (datasheet window 0-%.3f V)\n",
+                pressureZeroV(true), pressureZeroV(false), ZERO_V_MAX);
 
   bleBegin();
+  {
+    char buf[24];
+    snprintf(buf, sizeof buf, "BLE PIN %06lu", (unsigned long)blePasskey);
+    Serial.println(buf);
+    oled.clearBuffer();
+    oled.setFont(u8g2_font_6x10_tf);
+    oled.drawStr(0, 20, "SiPAP Rev C");
+    oled.drawStr(0, 36, buf);
+    oled.sendBuffer();
+    delay(3000);                 // before the task watchdog is armed
+  }
 
   esp_task_wdt_config_t wdt = {.timeout_ms = WDT_MS, .idle_core_mask = 0, .trigger_panic = true};
   esp_task_wdt_reconfigure(&wdt);

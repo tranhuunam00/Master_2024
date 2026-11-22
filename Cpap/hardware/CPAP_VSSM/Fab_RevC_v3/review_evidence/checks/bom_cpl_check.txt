@@ -1,0 +1,4 @@
+JLC BOM 67 CPL 67 onlyBOM set() onlyCPL set()
+dump comps 76 generic CPL rows 76
+cpl/dump diffs 0
+main BOM refs 87 missing vs dump set() extra {'FID2', 'TP2', 'TP3', 'MH1', 'TP1', 'MH3', 'FID1', 'MH2', 'FID3', 'MH4', 'TP4'}

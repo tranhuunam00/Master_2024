@@ -7,6 +7,9 @@ Inputs (made in Altium through the eda-agent bridge):
   - board dump JSON (pads, vias, components) from obj_query
   - Fab_RevC_v2/BOM_RevC_v2.csv as the base of the BOM (lines edited below)
 Usage: python fab_v3.py <board_dump.json>
+2026-11-22 review fixes: R10 47k -> 36k plus trimmer RV1 (Bourns 3224W-1-503E) in the COMP_REF top leg, so the
+LM393 trip can be set to 25 cmH2O whatever U3's offset (MPX5010 DS p.2: 0-0.425 V); R30 100k pulls BLOWER_VSR
+low while the ESP32 is in reset. Board dump: tools/layout_v3/board_dump_v3_rv1.json.
 """
 import csv, json, os, shutil, sys, zipfile
 
@@ -94,28 +97,59 @@ for r in rows:
     if des == ['U6']:
         r['Notes'] = ('31.5 mm tall above PCB: 6.5 mm body + L = 25 mm shaft (Bourns PEC11R DS p.2-3 shaft table); '
                       'STEP model updated to this height')
+    if des == ['J1']:
+        r['Description'] = 'DC barrel jack THT, 2.0 mm centre pin, 24 V / 5.0 A (Same Sky PJ-102AH DS p.1-2)'
+    if des == ['R10']:
+        r['Value'] = '36k'; r['MPN'] = 'RC0805FR-0736KL'
+        r['Notes'] = ('COMP_REF top leg in series with RV1 (5V - RV1 - R10 - COMP_REF, R11 10k to GND): COMP_REF '
+                      '0.52-1.09 V over RV1 travel at Vs = 5 V, covering MPX5010 DS p.2 offset 0-0.425 V and span '
+                      '4.275-4.725 V (needs 0.69-1.05 V for a 25 cmH2O trip)')
+new_rows = {
+    '29': {'Item': '29a', 'Qty': '1', 'Designators': 'RV1', 'Value': '50k',
+           'Description': 'Trimmer 50k +-10 %, 12-turn cermet, top adjust, SMD 4 mm (Bourns 3224 DS p.1)',
+           'Footprint': 'BOURNS_3224W', 'Manufacturer': 'Bourns', 'MPN': '3224W-1-503E', 'Alternate MPN': '',
+           'LCSC #': '', 'Digi-Key #': '', 'Mount': 'SMD',
+           'Notes': ('Sets the LM393 hardware trip: adjust at test to 25 cmH2O (firmware self-test step 9). '
+                     'Pin 1 (CCW end) on 5V, wiper 2 tied to pin 3 (CW end): clockwise = more resistance = lower trip '
+                     '(Bourns 3224 DS p.1 schematic). An open element or lifted wiper raises the resistance, so '
+                     'COMP_REF falls and the cutoff trips (fail-safe)')},
+    '32a': {'Item': '32b', 'Qty': '1', 'Designators': 'R30', 'Value': '100k',
+            'Description': 'Resistor 1% 1/8W (BLOWER_VSR pull-down)', 'Footprint': 'R_0805', 'Manufacturer': 'Yageo',
+            'MPN': 'RC0805FR-07100KL', 'Alternate MPN': '', 'LCSC #': '', 'Digi-Key #': '', 'Mount': 'SMD',
+            'Notes': ('Holds the blower speed input at 0 V while IO10 is high-Z (reset, boot, flashing via J3); '
+                      'with R28 1k it lowers the VSR level by 1 %')},
+}
+out_rows = []
+for r in rows:
+    out_rows.append(r)
+    if r['Item'] in new_rows:
+        out_rows.append(new_rows[r['Item']])
+rows = out_rows
 # LCSC / JLC parts, looked up 2026-11-22 with the lcsc skill (jlcsearch). (code, JLC library, part MPN if
 # it differs from the BOM's MPN). Passives use JLC *basic* parts of the same value, tolerance, voltage
 # and dielectric, as the BOM's substitution rule allows. '' = not found in the JLC library index.
 LCSC = {
     '1': ('C2913201', 'extended', ''),
-    '2': ('C3238865', 'extended', 'MPXV5010GC6T1 = same sensor on tape and reel (NXP MPX5010 DS p.5 ordering table: '
-                                  'Gauge, Axial Port, SMT, case 482A); LCSC stock was 3 on 2026-11-22 for 2 needed'),
+    '2': ('C3238865', 'extended', 'MPXV5010GC6T1 = same sensor on tape and reel (MPX5010 DS p.5 ordering table, '
+                                  'Motorola/Freescale, now NXP: Gauge, Axial Port, SMT, case 482A); LCSC stock was 3 on '
+                                  '2026-11-22 for 2 needed'),
     '3': ('C191884', 'extended', ''),
-    '4': ('C7955', 'basic', 'LM393DR2G (onsemi), same SOIC-8 pinout'), '5': ('C16072', 'extended', 'AOS'),
-    '6': ('C15127', 'basic', 'AOS'), '6a': ('C8545', 'basic', '2N7002 (CJ)'),
-    '7': ('C1973187', 'extended', 'SMBJ13CA-E3/52 (Vishay), bidirectional alternate: same row as SMBJ13A in Bourns SMBJ '
-                                  'DS p.2 (VRWM 13 V, VBR 14.4-15.9 V, VC 21.5 V @ 28 A 10/1000 us); D2 is on VIN12V after '
-                                  'Q4, so it never sees a reversed supply and either orientation is fine'),
+    '4': ('C7955', 'basic', 'LM393DR2G (onsemi), same SOIC-8 pinout (onsemi LM393 DS p.1: 1 output A, 4 GND, 8 VCC)'),
+    '5': ('C16072', 'extended', 'AOS'),
+    '6': ('C15127', 'basic', 'AOS'), '6a': ('C8545', 'basic', '2N7002 (JSCJ; JSCJ DS p.1: 1 gate, 2 source, 3 drain)'),
+    '7': ('C1973187', 'extended', 'SMBJ13CA-E3/52 (Vishay), bidirectional alternate: Vishay SMBJ DS p.2 SMBJ13A/CA row '
+                                  'VWM 13 V, VBR 14.4-15.9 V, VC 21.5 V @ 27.9 A (same values as Bourns SMBJ DS p.2); '
+                                  'D2 is on VIN12V after Q4, so it never sees a reversed supply and either orientation is fine'),
     '8': ('C208488', 'extended', ''), '9': ('', '', ''), '10': ('', '', ''), '11': ('C3096093', 'extended', ''),
     '17': ('C76871', 'extended', ''), '18': ('C440198', 'basic', 'GRM21BR61H106KE43L 10uF 50V X5R'),
     '18a': ('C45783', 'basic', 'CL21A226MAQNNNE 22uF 25V X5R'), '18b': ('C178666', 'extended', ''),
     '19': ('C45783', 'basic', 'CL21A226MAQNNNE 22uF 25V X5R'), '20': ('C49678', 'basic', 'CC0805KRX7R9BB104 100nF 50V X7R'),
     '21': ('C28323', 'basic', 'CL21B105KBFNNNE 1uF 50V X7R'), '22': ('C1710', 'basic', ''),
-    '23': ('C277525', 'extended', 'CC0805JRNPOYBN471 470pF 50V NP0'), '24': ('C1838', 'extended', '0805CG750J500NT 75pF 50V C0G'),
+    '23': ('C277525', 'extended', 'CC0805JRNPOYBN471 470pF 250V NP0'), '24': ('C1838', 'extended', '0805CG750J500NT 75pF 50V C0G'),
     '25': ('C1828', 'extended', '0805CG560J500NT 56pF 50V C0G'), '26': ('C17414', 'basic', '0805W8F1002T5E'),
     '27': ('C4328', 'basic', '0805W8F2002T5E'), '28': ('C17673', 'basic', '0805W8F4701T5E'),
-    '29': ('C17713', 'basic', '0805W8F4702T5E'), '30': ('C17514', 'basic', '0805W8F1004T5E'),
+    '29': ('C4360', 'extended', '0805W8F3602T5E 36k 1%'), '29a': ('C48484', 'extended', 'Bourns 3224W-1-503E'),
+    '30': ('C17514', 'basic', '0805W8F1004T5E'), '32b': ('C149504', 'basic', '0805W8F1003T5E'),
     '31': ('C441993', 'extended', 'ERJP06F3303V'), '32': ('C149504', 'basic', '0805W8F1003T5E'),
     '32a': ('C149504', 'basic', '0805W8F1003T5E'), '33': ('C17446', 'extended', '0805W8F1332T5E'),
     '34': ('C17552', 'extended', '0805W8F2212T5E'), '34a': ('C17513', 'basic', '0805W8F1001T5E'),
@@ -128,7 +162,8 @@ NOT_IN_JLC = {'9': 'not in the JLC library index (2026-11-22): let JLC match the
                     '(SRN6045TA DS p.1)'}
 JLC_MPN = {'7': 'SMBJ13CA-E3/52 (alternate for SMBJ13A)', '2': 'MPXV5010GC6T1 (tape and reel of MPXV5010GC6U)'}
 JLC_PKG = {'1': 'Module 25.5x18mm (ESP32-S3-WROOM-1)', '2': 'SOP-8 (NXP case 482A)', '3': 'SOT-23-6', '4': 'SOIC-8',
-           '5': 'SOIC-8', '6': 'SOT-23', '6a': 'SOT-23', '7': 'SMB (DO-214AA)', '9': 'SMD 6x6mm', '10': 'SMD 6x6mm'}
+           '5': 'SOIC-8', '6': 'SOT-23', '6a': 'SOT-23', '7': 'SMB (DO-214AA)', '9': 'SMD 6x6mm', '10': 'SMD 6x6mm',
+           '29a': 'SMD-3P 4.8x3.5mm (Bourns 3224W)'}
 for r in rows:
     code, lib, part = LCSC.get(r['Item'], ('', '', ''))
     if code:
@@ -189,8 +224,10 @@ with open(os.path.join(OUT, f'{NAME}_pin1_check.csv'), 'w', newline='', encoding
     w.writerow(['Designator', 'Package', 'Pin 1 X (mm)', 'Pin 1 Y (mm)', 'Pin 1 is', 'Silkscreen mark'])
     marks = {'D2': ('cathode (VIN12V)', 'bar on the right of D2'),
              'U1': ('GND', 'dot at the top-left corner; CPL point = module body centre, 3.62 mm above the pad '
-                           'centre, antenna end towards the board edge')}
-    for d in ('U1', 'U2', 'U3', 'U7', 'U8', 'U9', 'Q1', 'Q2', 'Q3', 'Q4', 'D2'):
+                           'centre, antenna end towards the board edge'),
+             'RV1': ('pin 1 = CCW end (5V)', 'none; pin 2 (wiper) is the single 1.6 x 2.0 mm pad, pins 1 and 3 the '
+                                            'two 1.6 x 1.3 mm pads (Bourns 3224 DS p.1)')}
+    for d in ('U1', 'U2', 'U3', 'U7', 'U8', 'U9', 'Q1', 'Q2', 'Q3', 'Q4', 'D2', 'RV1'):
         x, y = pads_by[d]
         pkg = next(r for r in jlc_rows if d in r['Designator'].split(','))['Footprint']
         w.writerow([d, pkg, f'{x:.2f}', f'{y:.2f}', *marks.get(d, ('pin 1', 'dot next to pin 1' if d not in ('Q2', 'Q3') else 'none (3-pin SOT-23)'))])

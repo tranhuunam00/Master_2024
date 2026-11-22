@@ -1,0 +1,11 @@
+GTL apertures 35 flashes 403 regions 198 draws 4518
+GBL apertures 18 flashes 175 regions 80 draws 1780
+GTS apertures 26 flashes 268 regions 0 draws 0
+GBS apertures 12 flashes 40 regions 0 draws 0
+GTP apertures 12 flashes 221 regions 0 draws 0
+GBP apertures 0 flashes 0 regions 0 draws 0
+GTO apertures 5 flashes 0 regions 0 draws 1703
+GBO apertures 0 flashes 0 regions 0 draws 0
+vias 135 problems []
+pads 268 missing {'GTP': 7}
+[('', 'TP4', 'GTP'), ('', 'TP3', 'GTP'), ('', 'TP2', 'GTP'), ('', 'TP1', 'GTP'), ('', 'FID3', 'GTP'), ('', 'FID2', 'GTP'), ('', 'FID1', 'GTP')]

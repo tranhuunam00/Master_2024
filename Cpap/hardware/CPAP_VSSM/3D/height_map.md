@@ -23,6 +23,7 @@ File 3D: `SiPAP_PCB_RevC_v3.step` (cùng thư mục, bản sao của `Fab_RevC_v
 | J3 | Header 1x6 nạp UART, dọc mép phải, chân 1 ở trên (toạ độ = tâm hàng chân) | 96.52 | 60.96 | 2.54 x 15.2 | 8.5 | Header 2.54 chuẩn | Cần tiếp cận khi nạp firmware |
 | BZ1 | Còi TDK PS1240P02BT | 43.69 | 7.11 | Ø12.2 | 6.5 | TDK PS series DS tr.2-3 | Lỗ thoát âm trên vỏ ngay trên còi |
 | L1, L2 | Cuộn cảm Bourns SRN6045TA | 27.30 / 27.30 | 36.96 / 52.70 | 6.0 x 6.0 | 4.55 | Bourns SRN6045TA DS tr.1 (4.25 ±0.3) |  |
+| RV1 | Biến trở chỉnh ngưỡng cắt Bourns 3224W-1-503E (thêm 2026-11-22) | 33.27 | 18.29 | 4.8 x 3.5 (xoay 90°) | 5.3 | Bourns 3224 DS tr.1 (thân 5.1, tổng 5.3 kể cả chân) | Vít chỉnh ở mặt trên: cần với tới bằng tua vít khi chỉnh (lúc test, trước khi đóng vỏ) |
 | U1 | ESP32-S3-WROOM-1 | 50.80 | 63.25 | 18 x 25.5 | 3.1 | Espressif DS v1.8 | Anten ở mép trên: không đặt kim loại/vít trong 15 mm quanh anten |
 | Q4 | AO4407A (SO-8), chống ngược cực | 25.40 | 61.98 | 4.9 x 6.0 | 1.75 | AOS AO4407A DS | Thay D1 SS54 cũ |
 | D2 | SMBJ13A (SMB) | 18.29 | 59.18 | 4.6 x 3.9 | 2.44 | Bourns SMBJ DS |  |
@@ -30,6 +31,6 @@ File 3D: `SiPAP_PCB_RevC_v3.step` (cùng thư mục, bản sao của `Fab_RevC_v
 | U7 | LM393 (SO-8) | 38.10 | 33.02 | 4.9 x 6.0 | 1.75 | JEDEC MS-012 |  |
 | Q2, Q3 | AO3401A / 2N7002 (SOT-23), công tắc nguồn SFM3300 | 85.09 / 81.28 | 7.11 / 5.08 | 2.9 x 2.4 | 1.12 | JEDEC TO-236 |  |
 | U8, U9 | TPS54202 (SOT-23-6) | 20.32 / 20.32 | 32.77 / 48.51 | 1.6 x 2.9 | 1.1 | TI SLVSD26C DDC0006A |  |
-| R/C | 0805 (54 con, có C27 22 µF mới) |  |  | 2.0 x 1.25 | ≤1.45 | MLCC 22 µF 0805 dày nhất |  |
+| R/C | 0805 (55 con, có C27 22 µF và R30 100k mới) |  |  | 2.0 x 1.25 | ≤1.45 | MLCC 22 µF 0805 dày nhất |  |
 
 Tất cả số liệu lấy từ datasheet đã tải trong `Cpap/tools/datasheets/`; header 2.54 dùng kích thước chuẩn (2.5 mm nhựa + 6 mm chân).

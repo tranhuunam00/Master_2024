@@ -1,0 +1,8 @@
+schematic pins 252 PCB pins 252 | multi-pin nets 40 | single-pin nets = N/C on PCB: 35
+mismatches []
+PCB pins not in schematic []
+multi-pin nets with different pin sets []
+in schematic, not in BOM []
+in BOM (parts), not in schematic []
+on several BOM lines []
+JLC BOM == CPL: True | JLC BOM == all SMD in main BOM: True []
