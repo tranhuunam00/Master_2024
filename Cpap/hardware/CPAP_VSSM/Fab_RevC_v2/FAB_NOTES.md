@@ -1,3 +1,5 @@
+> **ĐÃ CŨ — KHÔNG DÙNG ĐỂ ĐẶT IN (2026-11-21).** Thay bằng `../Fab_RevC_v3/` (layout v3: sửa 22 lỗi clearance, 84 góc gắt, dây dưới thân linh kiện; thêm C27; đổi gán GPIO — firmware v3 không chạy đúng trên board v2 và ngược lại).
+
 # SiPAP Rev C (layout v2) — hồ sơ đặt mạch
 
 > Xuất 2026-11-21 sau khi **đặt lại linh kiện và đi dây lại toàn bộ** theo góp ý review (dây gọn, độ rộng đồng nhất, không đi dây dưới thân linh kiện, khối giống nhau đi dây giống nhau). Schematic và danh sách linh kiện **không đổi** so với Rev C; chỉ đổi vị trí/đi dây. Bộ cũ trong `Fab_RevC/` là layout cũ — **không dùng nữa**.

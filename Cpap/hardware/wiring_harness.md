@@ -1,6 +1,8 @@
 # SiPAP Rev C — sơ đồ dây nối ngoài PCB (wiring harness)
 
-Áp dụng cho board `SiPAP_PCB.PcbDoc` Rev C. Chân lấy từ schematic `SiPAP_Main_RevC.SchDoc`. Pin 1 của mỗi header J2/J3/U4/U5 được **đánh số "1" trên silkscreen** ngay cạnh chân (pad header đều tròn) — luôn đối chiếu trước khi bấm cáp.
+Áp dụng cho board `SiPAP_PCB.PcbDoc` Rev C **layout v3** (2026-11-21). Chân lấy từ schematic `SiPAP_Main_RevC.SchDoc`. Pin 1 của mỗi header J2/J3/U4/U5 có **chấm tròn trên silkscreen** ngay cạnh chân (pad header đều tròn); J3 có thêm nhãn từng chân GND · 3V3 · TX · RX · EN · IO0 — luôn đối chiếu trước khi bấm cáp.
+
+**Layout v3 đổi gán GPIO** (thứ tự chân header không đổi): BLOWER_PWM = IO10, BLOWER_FG = IO11, BUZZER = IO12, SAFETY_TRIP = IO9, I2C SDA/SCL = IO2/IO1, encoder A/B/SW = IO47/IO21/IO48; giữ nguyên PRESS_PRI = IO4, PRESS_RED = IO5, SFM_EN = IO16. Firmware `firmware/sipap_v1/config.h` đã sửa theo.
 
 **Kiểm tự động:** `python CPAP_VSSM/tools/check_harness.py` mô phỏng từng dây (chân board → net → chân thiết bị theo datasheet): loại chân, dải điện áp nguồn (trường hợp xấu nhất), mức logic, TX→RX, không 2 ngõ ra chung dây. Kết quả 2026-11-19: **17 PASS, 0 FAIL, 3 OPEN** (3 dây blower — chờ datasheet blower). Đã thử cố tình đấu sai (OLED không đảo dây, UART TX→TX): checker báo FAIL đúng 4 dây.
 
@@ -28,10 +30,10 @@ Header trên board — **đã đối chiếu datasheet gốc Würth** (lưu ở 
 |---|---|---|---|
 | 1 | BLOWER_V12 | **Đỏ (pin4 +12 V)** | Đã qua Q1 — mất khi mạch an toàn cắt; C25 220 µF ngay cạnh |
 | 2 | GND | **Đen (pin3 GND)** | |
-| 3 | BLOWER_VSR | **Vàng (pin1 VSR)** | Điện áp tốc độ **0–3.3 V một chiều**: PWM 20 kHz từ IO3 qua lọc RC R28 1 k + C26 1 µF (fc 159 Hz) trên board |
-| 4 | BLOWER_FG_IN | **Trắng (pin2 FG)** | 1 xung/vòng (rpm = Hz × 60). Qua R29 1 k nối tiếp → IO2, kéo lên 3V3 bằng R12 10 k. Kiểu ngõ ra FG chưa ghi trong bản vẽ hãng — đo thử FG ≤ 3.3 V trước khi chạy lâu |
+| 3 | BLOWER_VSR | **Vàng (pin1 VSR)** | Điện áp tốc độ **0–3.3 V một chiều**: PWM 20 kHz từ IO10 qua lọc RC R28 1 k + C26 1 µF (fc 159 Hz) trên board |
+| 4 | BLOWER_FG_IN | **Trắng (pin2 FG)** | 1 xung/vòng (rpm = Hz × 60). Qua R29 1 k nối tiếp → IO11, kéo lên 3V3 bằng R12 10 k. Kiểu ngõ ra FG chưa ghi trong bản vẽ hãng — đo thử FG ≤ 3.3 V trước khi chạy lâu |
 
-- Vị trí chân J2 nhìn từ mặt trên board (pin 1 = chân có chữ "1" bên trái, góc trên-trái), giống cách đánh số của Würth (1-2 cùng một cột):
+- Vị trí chân J2 nhìn từ mặt trên board (pin 1 = chân có chấm tròn silkscreen, góc trên-trái; chữ "BLOWER" in phía dưới J2), giống cách đánh số của Würth (1-2 cùng một cột):
   ```
    [1] 12V    [3] PWM
    [2] GND    [4] FG
@@ -72,6 +74,8 @@ Header trên board — **đã đối chiếu datasheet gốc Würth** (lưu ở 
 - Firmware kiểm cả địa chỉ 0x3C và 0x3D trong self-test.
 
 ## 5. J3 — cổng nạp UART (header 1x6, mép phải)
+Layout v3: J3 nằm **dọc** mép phải, chân 1 (GND, có chấm tròn) ở **trên cùng**, chân 6 (IO0) dưới cùng; nhãn từng chân in bên trái header, chữ "UART" bên phải. Thứ tự chân không đổi so với Rev C:
+
 | Chân J3 | Net | Adapter USB-UART 3.3 V |
 |---|---|---|
 | 1 | GND | GND |

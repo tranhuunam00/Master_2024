@@ -1,3 +1,5 @@
+> **ĐÃ CŨ — KHÔNG DÙNG ĐỂ ĐẶT IN (2026-11-21).** Layout đầu tiên của Rev C. Dùng `../Fab_RevC_v3/`.
+
 # SiPAP Rev C — hồ sơ đặt mạch (fabrication + assembly)
 
 > Xuất lại 2026-11-19 (bản cuối): thêm công tắc nguồn SFM3300 (Q2/Q3), tụ bulk blower C25, Q4 P-MOSFET chống ngược cực thay D1, F1 lên MF-R400. Cập nhật 2026-11-19 22:20: D2 đổi SMBJ15A → **SMBJ13A** (kẹp 28.0 V @8/20 µs < VIN tối đa 30 V của TPS54202), dời 2 via VIN12V ra khỏi pad R27 / C10, xuất lại Gerber/khoan/IPC/CPL. Chi tiết: `Cpap/document/verification_RevC.md`.

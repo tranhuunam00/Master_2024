@@ -2,7 +2,7 @@
 // Board: "ESP32S3 Dev Module", PSRAM: OPI, Flash: 8MB, upload via J3 (UART0, hold IO0 at reset).
 //
 // What it does
-//   - PI pressure control on the primary MPXV5010 (U2), blower PWM on IO3
+//   - PI pressure control on the primary MPXV5010 (U2), blower PWM on IO10
 //   - redundant sensor U3 cross-check + monitors the independent LM393 cutoff (SAFETY_TRIP)
 //   - SFM3300 flow + breath volume, hard reset by power cycling when it stops answering
 //   - OLED (SSD1306) status, encoder for setpoint / start-stop, piezo alarms

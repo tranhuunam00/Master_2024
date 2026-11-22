@@ -30,8 +30,8 @@ NET = {
     "UART_RX":    ("in",    3.293),   # ESP32 RXD0
     "EN":         ("in",    3.293),   # 10k pull-up R9 + 1 uF
     "BOOT":       ("in",    3.293),   # IO0, internal pull-up
-    "BLOWER_VSR":   ("out",   3.293),   # ESP32 IO3 PWM through R28 1k + C26 1uF -> 0-3.3 V DC
-    "BLOWER_FG_IN": ("in_pu", 3.293),   # R29 1k series -> IO2 with R12 10k pull-up to 3V3
+    "BLOWER_VSR":   ("out",   3.293),   # ESP32 IO10 PWM through R28 1k + C26 1uF -> 0-3.3 V DC (layout v3 pin map)
+    "BLOWER_FG_IN": ("in_pu", 3.293),   # R29 1k series -> IO11 with R12 10k pull-up to 3V3 (layout v3 pin map)
 }
 
 # ---- external devices (datasheet pin tables) ----

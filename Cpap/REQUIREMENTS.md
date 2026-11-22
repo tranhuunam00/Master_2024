@@ -23,7 +23,7 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 | PCB layout (đặt vị trí + đi dây thật) | — | `Cpap/hardware/CPAP_VSSM/SiPAP_PCB.PcbDoc` | **Xong (Rev B, 2026-11-18)** — 2 lớp, 101.6x76.2mm, 4 lỗ M3, đổ GND 2 mặt + via khâu. DRC: 0 lỗi điện/va chạm 3D; còn 308 cảnh báo silkscreen (silk footprint cũ đè pad, xưởng tự cắt) |
 | Mô hình 3D + bảng chiều cao cho vỏ | — | `Cpap/hardware/CPAP_VSSM/3D/` (`SiPAP_PCB_RevB.step`, `height_map.md`) | **Xong** — khối 3D theo datasheet cho ESP32/MPXV5010/PEC11R; module buck, jack DC, còi là GIẢ ĐỊNH. Cao nhất 31.5mm (trục encoder PEC11R-4225F, đổi từ 4220F cho vỏ v0.3) |
 | BOM.csv | `Cpap/hardware/BOM.csv` | `Cpap/hardware/BOM_RevC.csv` | **Xong** — 72 linh kiện, MPN + mã thay thế, khớp CPL |
-| Gerber + drill + CPL | `Cpap/hardware/gerber/` | `Cpap/hardware/CPAP_VSSM/Fab_RevC/` | **Xong, sẵn sàng đặt mạch** — Gerber RS-274X, Excellon, IPC-356, CPL, FAB_NOTES |
+| Gerber + drill + CPL | `Cpap/hardware/gerber/` | `Cpap/hardware/CPAP_VSSM/Fab_RevC_v3/` (layout v3, 2026-11-21; `Fab_RevC/` và `Fab_RevC_v2/` đã cũ) | **Xong, sẵn sàng đặt mạch** — Gerber RS-274X, Excellon, IPC-356, ODB++, CPL, BOM, STEP, PDF schematic, FAB_NOTES, REVIEW_v3 |
 | Sơ đồ dây nối ngoài PCB | `Cpap/hardware/wiring_harness.md` | (giữ nguyên dự kiến) | **Xong** — J1/J2/J3/U4/U5 từng chân, đối chiếu netlist + datasheet SFM3300 (cáp thẳng, shield nếu > 10 cm) + OLED ProtoSupplies DSP-8 (đảo dây 1–2), header Würth đã xác nhận mã. `CPAP_VSSM/tools/check_harness.py`: 17 PASS / 0 FAIL / 3 OPEN (dây blower chờ datasheet) |
 
 ## Giai đoạn B — Cơ khí & Khí động học
@@ -69,9 +69,31 @@ Plan ban đầu định làm PCB bằng **KiCad** (vì tưởng không có Altiu
 - Khớp blower thật WS4540-12-NZ03 (2026-11-20): thêm R28/C26 (lọc PWM → điện áp VSR 0–3.3 V) và R29 (bảo vệ FG); 75 linh kiện, DRC 0, netlist 0 sai.
 - U6 (PEC11R) trong schematic đã relink sang `PEC11R-4xxxF-S_DS` (2026-11-19); schematic ↔ PCB đồng bộ 72/72.
 
+## Rev C layout v3 (xong, 2026-11-21)
+
+Làm lại toàn bộ PCB theo góp ý review bản v1/v2 và các cổng kiểm của eda-agent. Chi tiết và số đo: `CPAP_VSSM/Fab_RevC_v3/REVIEW_v3.md`.
+
+- **Schematic:**
+  - đổi gán GPIO của U1 để mỗi tín hiệu ra đúng cạnh module, không còn chân strapping lái ngoại vi;
+  - thêm C27 22 µF ở chân 3V3 (ESP32-S3-WROOM-1 DS v1.8, Hình 9-1 tr.41);
+  - U6 = PEC11R-4225F.
+
+  Đã đồng bộ sang PCB, BOM, `firmware/sipap_v1/config.h` (biên dịch đạt) và `hardware/wiring_harness.md`.
+- **PCB:** 2 lớp, linh kiện chạm vỏ hộp giữ nguyên chỗ, F1 trả về hốc nắp.
+  - Đo trên board: DRC 0, góc gắt 0 (v2: 84), dây lạ dưới thân linh kiện mặt trên 0 (v2: 29 + 19 dưới ESP32), clearance 0 (v2: 22), via tín hiệu có via GND kèm 40/64 (v2: 0/76).
+  - Hai buck và hai cảm biến áp là các khối giống hệt nhau.
+  - Silkscreen có thêm 17 dấu cực tính / chân 1.
+- **Hồ sơ:** `CPAP_VSSM/Fab_RevC_v3/`, đạt kiểm giới hạn JLCPCB tiêu chuẩn. Gerber/khoan đã đọc ngược: 268/268 pad, 135/135 via phủ mask kín, 175/175 lỗ. STEP có trục encoder đúng 31.5 mm. Bảng chiều cao `CPAP_VSSM/3D/height_map.md` đã cập nhật toạ độ v3.
+- **Xuất lại:** OutJob `SiPAP_Fab.OutJob` / `SiPAP_Docs.OutJob`. Script: `CPAP_VSSM/tools/layout_v3/final/`, `CPAP_VSSM/tools/layout_v3/fab_v3.py`.
+- **Còn mở:**
+  - duyệt bộ luật DRC (verdict `pass_unapproved_rules`);
+  - mã LCSC nếu đặt PCBA;
+  - 24 via tín hiệu chậm chưa có via GND kèm;
+  - footprint trong thư viện chưa có dấu cực tính (mới thêm trên board).
+
 ## Việc tiếp theo
 
-1. Đặt mạch Rev C (hồ sơ `Fab_RevC/`), mua blower + SFM3300 + OLED + adapter 12 V.
+1. Đặt mạch Rev C layout v3 (hồ sơ `Fab_RevC_v3/`, **không dùng `Fab_RevC/` hay `Fab_RevC_v2/`**), mua blower + SFM3300 + OLED + adapter 12 V.
 2. Có blower thật: đo FG/PWM/dòng (`wiring_harness.md` mục 2), chỉnh `BLOWER_PWM_HZ`, `BLOWER_FG_PER_REV`, hệ số PI trong `firmware/sipap_v1/config.h`.
 3. Nhận board: chạy self-test, ghi kết quả (`document/verification_RevC.md` mục 4).
 4. Cơ khí: `enclosure.py` + layout_diagram (cần kích thước blower) + CFD.

@@ -4,19 +4,21 @@
 #pragma once
 #include <Arduino.h>
 
-// ---------------- Pins ----------------
-constexpr int PIN_PRESS_PRI   = 4;   // U2 MPXV5010 via 10k/20k divider (ADC1)
-constexpr int PIN_PRESS_RED   = 5;   // U3 MPXV5010 via 10k/20k divider (ADC1), also LM393 input
-constexpr int PIN_SAFETY_TRIP = 6;   // HIGH (~3 V) = hardware over-pressure cutoff active
-constexpr int PIN_BUZZER      = 7;   // TDK PS1240 piezo, IO7 -> GND
-constexpr int PIN_I2C_SDA     = 8;   // SFM3300 + OLED, 4.7k pull-ups to 3V3
-constexpr int PIN_I2C_SCL     = 9;
-constexpr int PIN_SFM_EN      = 16;  // HIGH = SFM3300 powered (Q3/Q2), 10k pull-up -> on by default
-constexpr int PIN_ENC_A       = 17;  // PEC11R, 10k pull-ups, contacts to GND
-constexpr int PIN_ENC_B       = 18;
-constexpr int PIN_ENC_SW      = 21;  // push = LOW
-constexpr int PIN_BLOWER_PWM  = 3;   // J2.3 (strapping pin; driven LOW first thing in setup)
-constexpr int PIN_BLOWER_FG   = 2;   // J2.4, 10k pull-up to 3V3 (blower FG must be open-collector)
+// ---------------- Pins (PCB layout v3 GPIO map) ----------------
+// Each signal uses the module edge that faces its part (v3 re-layout). No strapping pin
+// (IO0/IO3/IO45/IO46) drives a peripheral any more; IO35-IO37 stay free (octal PSRAM on N8R8).
+constexpr int PIN_PRESS_PRI   = 4;   // U1 pin 4,  U2 MPXV5010 via 10k/20k divider (ADC1)
+constexpr int PIN_PRESS_RED   = 5;   // U1 pin 5,  U3 MPXV5010 via 10k/20k divider (ADC1), also LM393 input
+constexpr int PIN_SAFETY_TRIP = 9;   // U1 pin 17, HIGH (~3 V) = hardware over-pressure cutoff active
+constexpr int PIN_BUZZER      = 12;  // U1 pin 20, TDK PS1240 piezo, IO12 -> GND
+constexpr int PIN_I2C_SDA     = 2;   // U1 pin 38, SFM3300 + OLED, 4.7k pull-ups to 3V3
+constexpr int PIN_I2C_SCL     = 1;   // U1 pin 39
+constexpr int PIN_SFM_EN      = 16;  // U1 pin 9,  HIGH = SFM3300 powered (Q3/Q2), 10k pull-up -> on by default
+constexpr int PIN_ENC_A       = 47;  // U1 pin 24, PEC11R, 10k pull-ups, contacts to GND
+constexpr int PIN_ENC_B       = 21;  // U1 pin 23
+constexpr int PIN_ENC_SW      = 48;  // U1 pin 25, push = LOW
+constexpr int PIN_BLOWER_PWM  = 10;  // U1 pin 18, -> R28 1k / C26 1uF -> J2.3 (VSR)
+constexpr int PIN_BLOWER_FG   = 11;  // U1 pin 19, <- R29 1k <- J2.4, 10k pull-up to 3V3 (blower FG open-collector)
 
 // ---------------- Pressure sensors (NXP MPXV5010) ----------------
 // Vout = Vs * (0.09 * P[kPa] + 0.04); ADC sees Vout * 20k / 30k.
@@ -36,7 +38,7 @@ constexpr uint8_t SFM_MAX_FAILS   = 20;      // consecutive bad reads before a p
 // ---------------- Blower: Wonsmart WS4540-12-NZ03 (12 V, 1.6 A max, built-in driver) ----------------
 constexpr uint32_t BLOWER_PWM_HZ     = 20000;  // WS4540-12-NZ03 VSR input is 0-3.3 V speed voltage;
                                                // high-frequency 3.3 V PWM worked on the bench (dkbom.ino).
-                                               // If speed is unstable, add 10k + 1uF RC at the J2 cable end.
+                                               // On-board R28 1k + C26 1uF (fc 159 Hz) turn it into a DC level.
 constexpr uint8_t  BLOWER_PWM_BITS   = 10;
 constexpr uint16_t BLOWER_PWM_MAX    = (1u << BLOWER_PWM_BITS) - 1;
 constexpr uint8_t  BLOWER_FG_PER_REV = 1;      // WS4540-12-NZ03 drawing: FG "1 Hz x 60 = speed" -> 1 pulse/rev
