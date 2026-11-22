@@ -156,11 +156,16 @@ static void controlStep() {
   }
 
   // ---- safety checks (run in every mode) ----
-  if (safetyTripped()) raise(AL_HW_TRIP);
+  bool tripped = safetyTripped();
+  if (tripped) raise(AL_HW_TRIP);
   if (!pr.priOk || !pr.redOk) raise(AL_SENSOR);
   if (pr.pri > SOFT_LIMIT_CMH2O) raise(AL_SOFT_LIMIT);
 
-  if (fabsf(pr.pri - pr.red) > DISAGREE_CMH2O) {
+  // R18 (the LM393 hysteresis resistor) feeds the trip output back into PRESS_RED_ADC: while the
+  // cutoff is active (COMP_OUT ~11.8 V) the redundant reading sits ~2.4 cmH2O high
+  // (11.8 V through 1 MOhm into the 6.67 kOhm divider = +73 mV at the ADC). The cross-check
+  // pauses until the cutoff releases; AL_HW_TRIP is already raised.
+  if (!tripped && fabsf(pr.pri - pr.red) > DISAGREE_CMH2O) {
     if (!tDisagree) tDisagree = now;
     else if (now - tDisagree > DISAGREE_MS) raise(AL_DISAGREE);
   } else tDisagree = 0;
@@ -282,9 +287,9 @@ void setup() {
   buzzerBegin();
   encoderBegin();
 
-  Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL, 400000);
+  Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL, I2C_HZ);
   oled.begin();
-  oled.setBusClock(400000);
+  oled.setBusClock(I2C_HZ);
   oled.clearBuffer();
   oled.setFont(u8g2_font_6x10_tf);
   oled.drawStr(0, 20, "SiPAP Rev C");

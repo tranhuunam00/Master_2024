@@ -64,6 +64,8 @@ void runSelfTest(U8G2 &oled) {
 
   // 4. SFM3300 power switch (Q2/Q3) and readings
   Serial.println("4. SFM3300 power switch + flow");
+  // Deliberate short probe with the bus up while VDD is off: if the sensor still answers here it is
+  // being fed through SDA/SCL, which is the fault sfmPowerCycle() avoids by holding the bus low.
   digitalWrite(PIN_SFM_EN, LOW);
   delay(150);
   bool gone = !i2cPresent(SFM_ADDR);
@@ -127,23 +129,26 @@ void runSelfTest(U8G2 &oled) {
   } else { result("FG pulses / rpm > 0", 0); result("blower spins", 0); }
 
   // 9. Independent over-pressure cutoff
+  // Pressure is read on the PRIMARY sensor: R18 (LM393 hysteresis) feeds the trip output back into
+  // PRESS_RED_ADC, so U3's own reading jumps ~2.4 cmH2O when the cutoff trips and would hide the
+  // hysteresis. Both sensors must see the same pressure: pressurise the shared T, not U3 alone.
   Serial.println("9. Hardware over-pressure cutoff (U3 + LM393 + Q1)");
-  if (ask("Ready to raise pressure on U3's port (syringe / water column), slowly, within 60 s?") > 0) {
+  if (ask("Ready to raise pressure on the shared U2+U3 tube (T-piece; syringe / water column), slowly, within 60 s?") > 0) {
     Serial.println("   raise pressure slowly...");
     float tripAt = NAN, releaseAt = NAN, peak = 0;
     uint32_t t1 = millis();
     while (millis() - t1 < 60000 && isnan(tripAt)) {
       pressureRead(pr);
-      peak = max(peak, pr.red);
-      if (safetyTripped()) tripAt = pr.red;
+      peak = max(peak, pr.pri);
+      if (safetyTripped()) tripAt = pr.pri;
       delay(20);
     }
     if (!isnan(tripAt)) {
-      Serial.printf("   tripped at %.1f cmH2O, now release pressure slowly...\n", tripAt);
+      Serial.printf("   tripped at %.1f cmH2O (U2), now release pressure slowly...\n", tripAt);
       t1 = millis();
       while (millis() - t1 < 60000 && isnan(releaseAt)) {
         pressureRead(pr);
-        if (!safetyTripped()) releaseAt = pr.red;
+        if (!safetyTripped()) releaseAt = pr.pri;
         delay(20);
       }
     }

@@ -83,9 +83,21 @@ void sfmBegin() {
 }
 
 void sfmPowerCycle() {
+  // SFM3300 DS p.3: SDA/SCL high level max = VDD. With VDD switched off, the 4.7k pull-ups (R5/R6,
+  // to 3V3) would feed the sensor through its I/O pins and it may never see a clean power-on reset.
+  // So the bus is held low while the sensor is off. SDA falls first and is released last, which the
+  // OLED on the same bus sees as an empty START...STOP and ignores.
+  Wire.end();
+  pinMode(PIN_I2C_SDA, OUTPUT); digitalWrite(PIN_I2C_SDA, LOW);
+  pinMode(PIN_I2C_SCL, OUTPUT); digitalWrite(PIN_I2C_SCL, LOW);
   digitalWrite(PIN_SFM_EN, LOW);   // Q2 off -> sensor VDD 0 V
-  delay(100);
-  digitalWrite(PIN_SFM_EN, HIGH);
+  delay(SFM_OFF_MS);
+  digitalWrite(PIN_SFM_EN, HIGH);  // power back before the bus is released
+  delay(2);
+  pinMode(PIN_I2C_SCL, INPUT);     // external pull-ups take the lines high
+  delayMicroseconds(10);
+  pinMode(PIN_I2C_SDA, INPUT);     // SDA rising while SCL high = STOP
+  Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL, I2C_HZ);
   delay(100);
   sfmResets++;
   sfmFails = 0;

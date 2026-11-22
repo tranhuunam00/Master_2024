@@ -34,6 +34,8 @@ constexpr uint8_t SFM_ADDR        = 0x40;
 constexpr float   SFM_OFFSET      = 32768.0f;
 constexpr float   SFM_SCALE       = 120.0f;  // slm per count (air)
 constexpr uint8_t SFM_MAX_FAILS   = 20;      // consecutive bad reads before a power-cycle reset
+constexpr uint32_t SFM_OFF_MS     = 100;     // sensor VDD off time in a power-cycle reset
+constexpr uint32_t I2C_HZ         = 400000;  // SFM3300 max 400 kHz (Sensirion SFM3300 DS p.3)
 
 // ---------------- Blower: Wonsmart WS4540-12-NZ03 (12 V, 1.6 A max, built-in driver) ----------------
 constexpr uint32_t BLOWER_PWM_HZ     = 20000;  // WS4540-12-NZ03 VSR input is 0-3.3 V speed voltage;

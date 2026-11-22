@@ -84,7 +84,7 @@ Gán GPIO v3 nằm trong `Cpap/firmware/sipap_v1/config.h` và đã biên dịch
 ## Kiểm tra sau khi nhận board
 1. Trước khi cấp nguồn, đo điện trở 12V–GND, 5V–GND và 3V3–GND (TP1–TP4); không được chập.
 2. Cấp 12V qua J1, giới hạn dòng 0.5 A. Đo TP2 = 5.0–5.15 V, TP3 = 3.25–3.35 V.
-3. Mạch an toàn: tăng áp U3 > ~25 cmH2O thì Q1 phải cắt nguồn blower (J2 chân 1 về 0 V).
+3. Mạch an toàn: tăng áp ở **ống chung của U2 và U3** (cút chữ T) lên trên ~25 cmH2O thì Q1 phải cắt nguồn blower (J2 chân 1 về 0 V). Đọc áp bằng U2: khi mạch cắt, R18 đẩy số đọc của U3 lên khoảng 2.4 cmH2O (đây là cơ chế tạo trễ, không phải lỗi).
 4. Cấp ngược cực −12 V, giới hạn 0.3 A: dòng ≈ 0 (Q4 chặn).
 5. Kéo IO16 xuống 0 thì U4 chân 2 (VDD của SFM3300) về 0 V; thả ra thì về 5 V (công tắc Q2/Q3).
 
