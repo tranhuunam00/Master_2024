@@ -1,13 +1,17 @@
 * SiPAP Rev C - normal operation (v2: real-adapter, UVLO, unpowered LM393, square-law Q1): hot-plug 12 V, rails up, ESP32 reset release, SFM3300 on,
 * blower PWM 45 % (starts at 15 ms, time compressed), pressure 10 cmH2O on U2/U3, safety cutoff idle.
-* Real model: LM393 = TI PSpice SLCJ016B (subckt LM2903B).
-* Behavioural (no vendor SPICE model): TPS54202 = regulated source, tSS 5 ms, UVLO rising 4.2 V
-*   (TI SLVSD26C p.5), efficiency 90 % / 85 % (assumed); AO4407A / AO3401A / 2N7002 = voltage-
-*   controlled switches at datasheet VGS(th) and RDS(on), plus Ciss / body diode.
+* Vendor models: LM393 = TI PSpice SLCJ016B (subckt LM2903B); Q3 2N7002 = Diodes Inc 2N7002.spice.txt
+*   (subckt N7002, rev 2017-02-09). Both files: see models/README.md (URL + SHA-256).
+* Behavioural, because the vendor publishes no model ngspice can read:
+*   TPS54202 (TI SLVMBJ5C is an encrypted PSpice library) = regulated source, tSS 5 ms, UVLO rising
+*   4.2 V (TI SLVSD26C p.5), efficiency 90 % / 85 % (assumed);
+*   AO4407A / AO3401A (AOS product pages list no SPICE model, checked 2026-11-22) = switches at
+*   datasheet VGS(th) and RDS(on), plus Ciss / body diode.
 * MPXV5010 = NXP transfer function Vout = Vs*(0.09*P+0.04), 5 mA supply (NXP DS p.2).
 * Loads (assumed): 3V3 120 mA (ESP32 + OLED), SFM3300 10 mA (<50 mW, Sensirion DS p.3),
 *   blower I = (0.1 + 1.5*(VSR/3.3)^2) A at 12 V.
 .INCLUDE "C:\Users\ADMIN\EDA Agent\workspace\spice\lm393.lib"
+.INCLUDE "C:\Users\ADMIN\EDA Agent\workspace\spice\2N7002_Diodes.spice.txt"
 .OPTIONS ITL4=200 RELTOL=0.003 METHOD=GEAR
 .MODEL SWP SW(VT=2.0 VH=0.2 RON=0.017 ROFF=1E7)
 .MODEL SWP2 SW(VT=0.9 VH=0.1 RON=0.05 ROFF=1E8)
@@ -112,7 +116,7 @@ R29 BLOWER_FG_IN BLOWER_FG 1K
 R12 3V3 BLOWER_FG 10K
 * ---- SFM3300 power switch: R24 pull-up SFM_EN, Q3 2N7002, Q2 AO3401A, R23
 R24 3V3 SFM_EN 10K
-SQ3 SFM_G 0 SFM_EN 0 SWN
+XQ3 SFM_G SFM_EN 0 N7002
 R23 5V SFM_G 100K
 CQ2 5V SFM_G 645P
 SQ2 5V SFM_5V 5V SFM_G SWP2

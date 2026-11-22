@@ -10,10 +10,16 @@ Chạy bằng Altium Mixed Sim (ngspice) qua eda-agent `sim_run_deck`. LM393 dù
 | `sim_q1_turn_on.png` | Phóng to lúc Q1 đóng |
 
 ## Mô hình hoá
-- TPS54202 (chưa có model SPICE): nguồn ổn áp theo hành vi. Soft-start 5 ms, UVLO bật 4.2 V và tắt 3.7 V (TI SLVSD26C tr.5). Hiệu suất giả định 90 % / 85 %.
-- AO4407A, AO3401A, 2N7002 (AOS không công bố model):
-  - Q1 mô hình theo luật bình phương, Vth 2 V, RDS(on) 17 mΩ (AO4407A DS tr.1), kèm Cgs/Cgd;
-  - Q4, Q2, Q3 là công tắc theo ngưỡng Vgs trong datasheet.
+Nguồn và mã băm của từng model nằm trong `models/README.md` (đã kiểm ngày 2026-11-22).
+- TPS54202: model của TI (SLVMBJ5C) bị mã hoá kiểu PSpice, ngspice và Altium đều không đọc được. Vì vậy dùng nguồn ổn áp theo hành vi: soft-start 5 ms, UVLO bật 4.2 V và tắt 3.7 V (TI SLVSD26C tr.5), hiệu suất giả định 90 % / 85 %.
+- AO4407A, AO3401A: AOS không công bố model SPICE.
+  - Q1 mô hình theo luật bình phương, Vth 2 V, RDS(on) 17 mΩ (AO4407A DS tr.1), kèm Cgs/Cgd.
+  - Q4 và Q2 là công tắc theo ngưỡng Vgs trong datasheet.
+- Q3 2N7002: dùng model của hãng (Diodes, subckt `N7002`). Đã chạy lại trong Altium Mixed Sim ngày 2026-11-22. Kết quả khớp lần chạy trước, khi Q3 còn là công tắc theo ngưỡng:
+  - dòng đỉnh Q1: 19.9 A (lần trước 20 A);
+  - VIN12V sụt thấp nhất: 8.42 V;
+  - 5V / 3V3 / SFM_5V: 5.080 / 3.288 / 5.079 V.
+- Hai ảnh PNG vẽ từ lần chạy trước. Chỉ khác lần chạy mới ở dạng sóng SFM_G.
 - MPXV5010: Vout = Vs·(0.09·P + 0.04), dòng tiêu thụ 5 mA (NXP DS tr.2).
 - Adapter: tụ ngõ ra 470 µF, cáp 0.15 Ω / 1 µH. Đây là giả định.
 - Phụ tải giả định: 3V3 120 mA, SFM3300 10 mA (< 50 mW, Sensirion DS tr.3), blower 0.1 + 1.5·(VSR/3.3)² A.
@@ -28,5 +34,11 @@ Chạy bằng Altium Mixed Sim (ngspice) qua eda-agent `sim_run_deck`. LM393 dù
 - Áp 10 cmH2O: PRESS_ADC 0.43 V, COMP_REF 0.89 V (ngưỡng ~25 cmH2O), SAFETY_TRIP 0.01 V.
 - PWM 45 %: VSR 1.48 V, gợn 40 mV p-p, ổn định sau ~3 ms (τ = 1 ms). FG ở IO11 dao động 0.30 ↔ 3.29 V.
 - Trạng thái ổn định: VIN12V 11.93 V, BLOWER_V12 11.93 V, SFM_5V 5.08 V.
+- Công tắc SFM3300, với model 2N7002 của hãng:
+  - SFM_EN vượt 2.15 V lúc 4.22 ms (VTO của model, gần VGS(th) điển hình);
+  - Q3 kéo SFM_G xuống dưới 0.5 V sau 87 µs, nên Q2 dẫn;
+  - SFM_5V đạt 4.5 V lúc 5.38 ms, bám theo 5V.
+
+  Trước 4.25 ms, SFM_G bám theo 5V nên Q2 tắt (Vgs = 0) và SFM_5V = 0 V. Sau đó SFM_5V bám theo 5V, từ 3.4 V lên đến hết soft-start.
 
 Không thay được bring-up thật: sai số linh kiện, adapter thật, blower thật và firmware chưa được mô phỏng.

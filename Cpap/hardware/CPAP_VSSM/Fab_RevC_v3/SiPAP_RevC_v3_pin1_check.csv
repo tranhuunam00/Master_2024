@@ -1,0 +1,12 @@
+Designator,Package,Pin 1 X (mm),Pin 1 Y (mm),Pin 1 is,Silkscreen mark
+U1,Module 25.5x18mm (ESP32-S3-WROOM-1),42.05,68.51,GND,"dot at the top-left corner; CPL point = module body centre, 3.62 mm above the pad centre, antenna end towards the board edge"
+U2,SOP-8 (NXP case 482A),82.04,50.80,pin 1,dot next to pin 1
+U3,SOP-8 (NXP case 482A),82.04,33.02,pin 1,dot next to pin 1
+U7,SOIC-8,36.20,30.32,pin 1,dot next to pin 1
+U8,SOT-23-6,21.27,34.12,pin 1,dot next to pin 1
+U9,SOT-23-6,21.27,49.86,pin 1,dot next to pin 1
+Q1,SOIC-8,18.16,22.00,pin 1,dot next to pin 1
+Q2,SOT-23,84.14,6.16,pin 1,none (3-pin SOT-23)
+Q3,SOT-23,80.33,6.03,pin 1,none (3-pin SOT-23)
+Q4,SOIC-8,23.49,59.28,pin 1,dot next to pin 1
+D2,SMB (DO-214AA),20.27,59.18,cathode (VIN12V),bar on the right of D2

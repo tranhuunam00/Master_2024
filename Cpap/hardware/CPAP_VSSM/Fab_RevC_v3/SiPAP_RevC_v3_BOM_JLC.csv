@@ -1,0 +1,29 @@
+Comment,Designator,Footprint,LCSC Part #,Manufacturer,MPN,Quantity,Notes
+ESP32-S3-WROOM-1-N8R8,U1,Module 25.5x18mm (ESP32-S3-WROOM-1),C2913201,Espressif,ESP32-S3-WROOM-1-N8R8,1,JLC extended
+MPXV5010GC6U,"U2,U3",SOP-8 (NXP case 482A),C3238865,NXP,MPXV5010GC6T1 (tape and reel of MPXV5010GC6U),2,"JLC extended; fitted part MPXV5010GC6T1 = same sensor on tape and reel (NXP MPX5010 DS p.5 ordering table: Gauge, Axial Port, SMT, case 482A); LCSC stock was 3 on 2026-11-22 for 2 needed"
+TPS54202,"U8,U9",SOT-23-6,C191884,Texas Instruments,TPS54202DDCR,2,JLC extended
+LM393,U7,SOIC-8,C7955,Texas Instruments,LM393DR,1,"JLC basic; fitted part LM393DR2G (onsemi), same SOIC-8 pinout"
+AO4407A,"Q1,Q4",SOIC-8,C16072,Alpha & Omega Semiconductor,AO4407A,2,JLC extended; fitted part AOS
+AO3401A,Q2,SOT-23,C15127,Alpha & Omega Semiconductor,AO3401A,1,JLC basic; fitted part AOS
+2N7002,Q3,SOT-23,C8545,Diodes Incorporated,2N7002-7-F,1,JLC basic; fitted part 2N7002 (CJ)
+SMBJ13A,D2,SMB (DO-214AA),C1973187,Vishay,SMBJ13CA-E3/52 (alternate for SMBJ13A),1,"JLC extended; fitted part SMBJ13CA-E3/52 (Vishay), bidirectional alternate: same row as SMBJ13A in Bourns SMBJ DS p.2 (VRWM 13 V, VBR 14.4-15.9 V, VC 21.5 V @ 28 A 10/1000 us); D2 is on VIN12V after Q4, so it never sees a reversed supply and either orientation is fine"
+15uH,L1,SMD 6x6mm,,Bourns,SRN6045TA-150M,1,"not in the JLC library index (2026-11-22): let JLC match the MPN at order time, or hand-solder. A substitute must be 15 uH +-20 %, Isat >= 3.8 A, Irms >= 2.8 A, DCR <= 71 mOhm, 6x6 mm (SRN6045TA DS p.1)"
+10uH,L2,SMD 6x6mm,,Bourns,SRN6045TA-100M,1,"not in the JLC library index (2026-11-22): let JLC match the MPN at order time, or hand-solder. A substitute must be 10 uH +-20 %, Isat >= 4.6 A, Irms >= 3.2 A, DCR <= 52 mOhm, 6x6 mm (SRN6045TA DS p.1)"
+10uF 35V,"C10,C13,C14",0805,C440198,Murata,GRM21BR6YA106KE43,3,JLC basic; fitted part GRM21BR61H106KE43L 10uF 50V X5R
+22uF 25V,"C1,C2,C18,C21,C23,C27",0805,C45783,Murata,GRM21BR61E226ME44 / GRM21BR61C226ME44,6,JLC basic; fitted part CL21A226MAQNNNE 22uF 25V X5R
+100nF,"C3,C4,C15,C16,C17,C20,C24",0805,C49678,Samsung,CL21B104KBCNNNC,7,JLC basic; fitted part CC0805KRX7R9BB104 100nF 50V X7R
+1uF,"C5,C6,C9,C26",0805,C28323,Samsung,CL21B105KAFNNNE,4,JLC basic; fitted part CL21B105KBFNNNE 1uF 50V X7R
+10nF,"C7,C11",0805,C1710,Samsung,CL21B103KBANNNC,2,JLC basic
+470pF,"C8,C12",0805,C277525,Samsung,CL21C471JBANNNC,2,JLC extended; fitted part CC0805JRNPOYBN471 470pF 50V NP0
+75pF,C19,0805,C1838,Murata,GRM2165C1H750JA01,1,JLC extended; fitted part 0805CG750J500NT 75pF 50V C0G
+56pF,C22,0805,C1828,Murata,GRM2165C1H560JA01,1,JLC extended; fitted part 0805CG560J500NT 56pF 50V C0G
+10k,"R1,R3,R7,R8,R9,R11,R12,R13,R14,R17,R24,R26,R27",0805,C17414,Yageo,RC0805FR-0710KL,13,JLC basic; fitted part 0805W8F1002T5E
+20k,"R2,R4",0805,C4328,Yageo,RC0805FR-0720KL,2,JLC basic; fitted part 0805W8F2002T5E
+4.7k,"R5,R6",0805,C17673,Yageo,RC0805FR-074K7L,2,JLC basic; fitted part 0805W8F4701T5E
+47k,R10,0805,C17713,Yageo,RC0805FR-0747KL,1,JLC basic; fitted part 0805W8F4702T5E
+1M,"R15,R18",0805,C17514,Yageo,RC0805FR-071ML,2,JLC basic; fitted part 0805W8F1004T5E
+330k,R16,0805,C441993,Yageo,RC0805FR-07330KL,1,JLC extended; fitted part ERJP06F3303V
+100k,"R19,R21,R23",0805,C149504,Yageo,RC0805FR-07100KL,3,JLC basic; fitted part 0805W8F1003T5E
+13.3k,R20,0805,C17446,Yageo,RC0805FR-0713K3L,1,JLC extended; fitted part 0805W8F1332T5E
+22.1k,R22,0805,C17552,Yageo,RC0805FR-0722K1L,1,JLC extended; fitted part 0805W8F2212T5E
+1k,"R28,R29",0805,C17513,Yageo,RC0805FR-071KL,2,JLC basic; fitted part 0805W8F1001T5E

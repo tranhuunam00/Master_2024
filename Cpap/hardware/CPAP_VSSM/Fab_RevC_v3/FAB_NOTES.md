@@ -11,7 +11,8 @@
 
 ## Gửi xưởng
 - **Chỉ in mạch trần:** gửi `SiPAP_RevC_v3_Gerber.zip`, gồm Gerber và file khoan.
-- **Có lắp ráp (PCBA):** gửi thêm `BOM_RevC_v3.csv` và `SiPAP_RevC_v3_CPL.csv`.
+- **Có lắp ráp (PCBA) ở JLCPCB:** gửi thêm `SiPAP_RevC_v3_BOM_JLC.csv` và `SiPAP_RevC_v3_CPL_JLC.csv`, xem mục "Đặt lắp ráp ở JLCPCB".
+- **Có lắp ráp ở xưởng khác:** gửi thêm `BOM_RevC_v3.csv` và `SiPAP_RevC_v3_CPL.csv`. Hai file này đủ cả linh kiện THT.
 - Nếu xưởng nhận ODB++ thì có thể gửi `SiPAP_RevC_v3_ODB++.zip` thay cho bộ Gerber. Nội dung hai bộ giống nhau.
 
 Board đã qua kiểm giới hạn công nghệ **JLCPCB bản tiêu chuẩn, 2 lớp, đồng 1 oz**: đạt hết 7/7 mục. Mục đồng–mép board bridge không tự kiểm được nên tôi đo trực tiếp trên Gerber, đạt 0.647 mm ≥ 0.2 mm.
@@ -47,7 +48,10 @@ Board đã qua kiểm giới hạn công nghệ **JLCPCB bản tiêu chuẩn, 2 
 | `SiPAP_RevC_v3.ipc` | Netlist kiểm tra điện, 403 điểm (268 pad + 135 via) | IPC-D-356 |
 | `SiPAP_RevC_v3_ODB++.zip` | Bản ODB++ cùng nội dung | ODB++ |
 | `SiPAP_RevC_v3_CPL.csv` | Toạ độ gắp-đặt, mm, gốc ở góc dưới-trái | CSV |
-| `BOM_RevC_v3.csv` | 42 dòng, có MPN và mã thay thế | CSV |
+| `BOM_RevC_v3.csv` | 42 dòng, có MPN, mã thay thế và mã LCSC | CSV |
+| `SiPAP_RevC_v3_BOM_JLC.csv` | BOM theo cột của JLC, 28 dòng, chỉ SMD | CSV |
+| `SiPAP_RevC_v3_CPL_JLC.csv` | Toạ độ gắp-đặt theo cột của JLC, 67 linh kiện SMD | CSV |
+| `SiPAP_RevC_v3_pin1_check.csv` | Toạ độ chân 1 của 11 linh kiện có cực tính, để so với ảnh preview của JLC | CSV |
 | `SiPAP_RevC_v3.step` | Mô hình 3D (trục encoder đúng 31.5 mm) | STEP AP214 |
 | `SiPAP_RevC_v3_Schematic.pdf` | Schematic 1 trang | PDF |
 | `SiPAP_v3_TOP.png`, `SiPAP_v3_BOTTOM.png` | Ảnh 3D mặt trên / dưới (mặt dưới bị lật gương) | PNG |
@@ -68,8 +72,31 @@ Gerber, file khoan và CPL dùng chung gốc toạ độ (góc dưới-trái boa
 - **J3 (cổng nạp UART):** nằm dọc mép phải, chân 1 (GND) ở trên cùng. Tên từng chân in trên silk: GND, 3V3, TX, RX, EN, IO0.
 - Góc xoay trong CPL theo quy ước Altium. Nên yêu cầu xưởng gửi ảnh DFM preview để xác nhận góc của SOT-23-6, SO-8 và MPXV trước khi gắn.
 
+## Đặt lắp ráp ở JLCPCB
+Upload `SiPAP_RevC_v3_BOM_JLC.csv` và `SiPAP_RevC_v3_CPL_JLC.csv`.
+- **Phạm vi:** 67 linh kiện SMD mặt trên, 28 dòng. 9 linh kiện THT không có trong 2 file này, hàn tay sau.
+- **Cột đúng mẫu JLC.** BOM: Comment, Designator (ngăn bằng dấu phẩy), Footprint (tên gói như `0805`, `SOT-23-6`, không dùng tên footprint thư viện), LCSC Part #. CPL: Designator, Mid X, Mid Y, Layer, Rotation. Script đã kiểm: designator trong CPL và trong BOM trùng nhau đúng 67/67, số lượng mỗi dòng khớp.
+- **Mã LCSC** tra ngày 2026-11-22 bằng jlcsearch. 26/28 dòng có mã: 15 dòng basic (50 linh kiện) và 11 dòng extended (15 linh kiện). JLC tính thêm phí cho mỗi mã extended.
+  - R/C dùng mã basic cùng giá trị, cùng sai số, điện áp bằng hoặc cao hơn và cùng điện môi như BOM, đúng luật thay thế ở mục dưới. Các tụ 10 µF thay bằng loại 50 V (BOM ghi 35 V), cũng X5R.
+  - Dòng 22 µF 16 V và 22 µF 25 V gộp chung 1 mã loại 25 V (C45783). Hai dòng 100k cũng gộp làm một.
+- **2 dòng chưa có mã: L1 (SRN6045TA-150M), L2 (SRN6045TA-100M).** Để JLC tự khớp theo MPN lúc đặt. Nếu JLC không có thì bỏ 2 dòng này ra và hàn tay. Nếu thay bằng cuộn khác, điều kiện ghi ở cột Notes, lấy theo datasheet SRN6045TA trang 1:
+  - L1: 15 µH, Isat ≥ 3.8 A, Irms ≥ 2.8 A, DCR ≤ 71 mΩ;
+  - L2: 10 µH, Isat ≥ 4.6 A, Irms ≥ 3.2 A, DCR ≤ 52 mΩ.
+- **2 dòng cần để ý:**
+  - **U2/U3 = C3238865 (MPXV5010GC6T1).** Đây là cùng cảm biến với GC6U, chỉ khác đóng gói: cuộn băng thay vì ống (bảng Ordering Information, datasheet NXP MPX5010 trang 5). Lúc tra, LCSC chỉ còn 3 con. Nếu hết hàng thì bỏ U2/U3 khỏi đơn và hàn tay.
+    - Gắn máy được: datasheet trang 6 nói gói SOP tự căn chỉnh khi hàn reflow.
+    - Cảm biến được kiểm với khí khô (trang 3), nên giữ lỗ cổng áp không dính flux hay nước rửa.
+  - **D2 = C1973187 (SMBJ13CA, 2 chiều)** thay cho SMBJ13A (1 chiều).
+    - Hai mã nằm cùng một dòng thông số trong datasheet Bourns SMBJ trang 2: VRWM 13 V, VBR 14.4–15.9 V, VC 21.5 V @ 28 A.
+    - D2 đứng sau Q4 trên VIN12V (J1 → F1 → Q4 → VIN12V → D2), nên không bao giờ bị cấp ngược cực. Vì vậy xoay chiều nào cũng được, và vạch cathode trên silk không còn ý nghĩa.
+    - Muốn giữ đúng SMBJ13A thì xoá mã này đi để JLC tự khớp.
+- **Góc xoay.** CPL dùng góc của Altium, trong khi thư viện JLC có thể đặt gốc khác cho một số gói như SOT-23 và SOIC-8.
+  - Ở màn preview của JLC, so chấm chân 1 của từng linh kiện với `SiPAP_RevC_v3_pin1_check.csv`. File này có toạ độ chân 1 (mm) và dấu silk tương ứng của 11 linh kiện có cực tính.
+  - U1: điểm CPL là tâm thân module, cao hơn tâm cụm pad 3.62 mm, đầu anten quay ra mép trên.
+  - Q2/Q3 là SOT-23 ba chân, không có chấm, nên nhìn hướng chân đơn.
+
 ## Nếu xưởng thiếu linh kiện
-BOM có cột **Alternate MPN** cho từng dòng chính. R/C 0805 dùng hãng nào cũng được, miễn đúng giá trị, sai số (1% cho R), điện áp và điện môi ghi trong BOM. Không thay TPS54202 bằng IC khác chân; chỉ TPS54202H tương thích. Cột mã LCSC mới có 3 dòng. Nếu đặt PCBA ở JLCPCB, xưởng sẽ tự khớp phần còn lại theo MPN; cần duyệt từng dòng trước khi thanh toán.
+BOM có cột **Alternate MPN** cho từng dòng chính. R/C 0805 dùng hãng nào cũng được, miễn đúng giá trị, sai số (1% cho R), điện áp và điện môi ghi trong BOM. Không thay TPS54202 bằng IC khác chân; chỉ TPS54202H tương thích. Mã LCSC đã chọn cho từng dòng nằm trong cột `LCSC #` và cột Notes của `BOM_RevC_v3.csv`. Vẫn cần duyệt từng dòng trên trang JLC trước khi thanh toán, vì tồn kho thay đổi hằng ngày.
 
 ## Firmware
 Gán GPIO v3 nằm trong `Cpap/firmware/sipap_v1/config.h` và đã biên dịch thử cho ESP32-S3: 678 634 byte flash (20%), 31 980 byte RAM (9%). **Không nạp firmware cũ lên board v3** vì chân đã đổi:
