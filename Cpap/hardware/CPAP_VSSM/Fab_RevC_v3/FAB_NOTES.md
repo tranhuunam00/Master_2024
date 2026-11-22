@@ -48,7 +48,7 @@ Board đã qua kiểm giới hạn công nghệ **JLCPCB bản tiêu chuẩn, 2 
 | `SiPAP_RevC_v3.ipc` | Netlist kiểm tra điện, 412 điểm (273 pad + 139 via) | IPC-D-356 |
 | `SiPAP_RevC_v3_ODB++.zip` | Bản ODB++ cùng nội dung | ODB++ |
 | `SiPAP_RevC_v3_CPL.csv` | Toạ độ gắp-đặt, mm, gốc ở góc dưới-trái | CSV |
-| `BOM_RevC_v3.csv` | 45 dòng, có MPN, mã thay thế và mã LCSC | CSV |
+| `BOM_RevC_v3.csv` | 45 dòng, có MPN, mã thay thế, mã LCSC, cột **Datasheet URL** (link gốc của file datasheet, lấy từ `Cpap/tools/datasheets/SOURCES.csv`) và **LCSC URL** (trang sản phẩm LCSC) | CSV |
 | `SiPAP_RevC_v3_BOM_JLC.csv` | BOM theo cột của JLC, 30 dòng, chỉ SMD | CSV |
 | `SiPAP_RevC_v3_CPL_JLC.csv` | Toạ độ gắp-đặt theo cột của JLC, 69 linh kiện SMD | CSV |
 | `SiPAP_RevC_v3_pin1_check.csv` | Toạ độ chân 1 của 12 linh kiện có cực tính hoặc có hướng (thêm RV1), để so với ảnh preview của JLC | CSV |
@@ -99,7 +99,7 @@ Upload `SiPAP_RevC_v3_BOM_JLC.csv` và `SiPAP_RevC_v3_CPL_JLC.csv`.
   - Q2/Q3 là SOT-23 ba chân, không có chấm, nên nhìn hướng chân đơn.
 
 ## Nếu xưởng thiếu linh kiện
-Từ 2026-11-22, cột **MPN** ghi đúng linh kiện JLC sẽ gắn, và cột **Datasheet** ghi file datasheet tương ứng trong `Cpap/tools/datasheets/` (bảng tra: `Cpap/tools/datasheets/INDEX.md`). `fab_v3.py` dừng lại nếu một dòng thiếu file. Mã thiết kế ban đầu được chuyển sang cột **Alternate MPN**, ghi rõ "datasheet not in repo"; muốn dùng mã đó thì phải tải datasheet của nó trước. R/C 0805 dùng hãng nào cũng được, miễn đúng giá trị, sai số (1% cho R), điện áp và điện môi ghi trong BOM. Không thay TPS54202 bằng IC khác chân; chỉ TPS54202H tương thích. Mã LCSC đã chọn cho từng dòng nằm trong cột `LCSC #` và cột Notes của `BOM_RevC_v3.csv`. Vẫn cần duyệt từng dòng trên trang JLC trước khi thanh toán, vì tồn kho thay đổi hằng ngày.
+Từ 2026-11-22, cột **MPN** ghi đúng linh kiện JLC sẽ gắn, và cột **Datasheet** ghi file datasheet tương ứng trong `Cpap/tools/datasheets/` (bảng tra: `Cpap/tools/datasheets/INDEX.md`). `fab_v3.py` dừng lại nếu một dòng thiếu file, hoặc nếu file đó chưa có dòng trong `SOURCES.csv`. Link trong `SOURCES.csv` đã được tải lại ngày 2026-11-22 và so SHA-256 với file trong repo; 4 file chưa có link kiểm được (MPX5010_b, TDK_PS_buzzer, Panasonic_FC, Wonsmart) ghi rõ lý do. Mã thiết kế ban đầu được chuyển sang cột **Alternate MPN**, ghi rõ "datasheet not in repo"; muốn dùng mã đó thì phải tải datasheet của nó trước. R/C 0805 dùng hãng nào cũng được, miễn đúng giá trị, sai số (1% cho R), điện áp và điện môi ghi trong BOM. Không thay TPS54202 bằng IC khác chân; chỉ TPS54202H tương thích. Mã LCSC đã chọn cho từng dòng nằm trong cột `LCSC #` và cột Notes của `BOM_RevC_v3.csv`. Vẫn cần duyệt từng dòng trên trang JLC trước khi thanh toán, vì tồn kho thay đổi hằng ngày.
 
 ## Firmware
 Gán GPIO v3 nằm trong `Cpap/firmware/sipap_v1/config.h`. Bản sửa ngày 2026-11-22 (sau review) biên dịch đạt với arduino-esp32 3.3.8 (`esp32s3`, PSRAM OPI, flash 8 MB, bảng phân vùng mặc định): 679 626 byte chương trình, 31 980 byte RAM. **Không nạp firmware cũ lên board v3** vì chân đã đổi. Từ bản sửa này, BLE phải ghép đôi bằng mã PIN 6 số; mã hiện trên OLED lúc khởi động và in ra cổng Serial (mỗi board một mã, tính từ địa chỉ MAC). Lệnh `PWM:n` chỉ có khi biên dịch với `SIPAP_BENCH_MODE`.

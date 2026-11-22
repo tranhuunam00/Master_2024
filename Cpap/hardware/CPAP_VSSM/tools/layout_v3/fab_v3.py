@@ -237,6 +237,17 @@ for r in rows:
         r['Datasheet'] = 'n/a (board feature, no part)'
 if missing_ds:
     sys.exit(f'datasheet check failed: {missing_ds}')
+# Links for later use: official datasheet link per file (tools/datasheets/SOURCES.csv, each one checked against the
+# stored file) and the LCSC product page for the LCSC code.
+with open(os.path.join(DS_DIR, 'SOURCES.csv'), encoding='utf-8') as fh:
+    DS_URL = {s['File']: s['URL'] for s in csv.DictReader(fh)}
+for r in rows:
+    files = r['Datasheet'].split('; ') if r['Item'] in DATASHEET else []
+    unlisted = [f for f in files if f not in DS_URL]
+    if unlisted:
+        sys.exit(f'datasheet link check failed: {unlisted} not in tools/datasheets/SOURCES.csv')
+    r['Datasheet URL'] = '; '.join(DS_URL[f] or f'{f}: no checked link (see tools/datasheets/SOURCES.csv)' for f in files)
+    r['LCSC URL'] = f"https://www.lcsc.com/product-detail/{r['LCSC #']}.html" if r['LCSC #'] else ''
 with open(os.path.join(OUT, f'BOM_RevC_v3.csv'), 'w', newline='', encoding='utf-8') as fh:
     w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
     w.writeheader(); w.writerows(rows)

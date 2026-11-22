@@ -1,0 +1,50 @@
+File,URL,Check
+2N7002_Diodes.pdf,https://www.diodes.com/assets/Datasheets/ds11303.pdf,SHA-256 identical to the repo file (2026-11-22)
+Adafruit_monochrome-oled-breakouts.pdf,https://cdn-learn.adafruit.com/downloads/pdf/monochrome-oled-breakouts.pdf,downloaded from this link on 2026-11-22
+AO3401A.pdf,https://www.aosmd.com/res/datasheets/AO3401A.pdf,SHA-256 identical to the repo file (2026-11-22)
+AO4407A.pdf,https://www.aosmd.com/res/datasheets/AO4407A.pdf,SHA-256 identical to the repo file (2026-11-22)
+Belden_8444.pdf,https://catalog.belden.com/techdata/EN/8444_techdata.pdf,downloaded from this link on 2026-11-22
+Belden_9534.pdf,https://catalog.belden.com/techdata/EN/9534_techdata.pdf,downloaded from this link on 2026-11-22
+Belden_9535.pdf,https://catalog.belden.com/techdata/EN/9535_techdata.pdf,downloaded from this link on 2026-11-22
+Bourns_3224.pdf,https://www.bourns.com/docs/Product-Datasheets/3224.pdf,downloaded from this link on 2026-11-22
+Bourns_MF-R.pdf,https://www.bourns.com/docs/Product-Datasheets/mfr.pdf,SHA-256 identical to the repo file (2026-11-22)
+Bourns_MF-SM.pdf,https://www.bourns.com/docs/Product-Datasheets/mfsm.pdf,SHA-256 identical to the repo file (2026-11-22)
+Bourns_SMBJ.pdf,https://www.bourns.com/docs/Product-Datasheets/SMBJ.pdf,SHA-256 identical to the repo file (2026-11-22)
+esp32-s3-wroom-1_datasheet_v1.8.pdf,https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf,"SHA-256 identical to the repo file (2026-11-22); the link always serves the latest version, so it will differ after Espressif publishes v1.9"
+Espressif_DIM_ESP32-PROG_V2.1.pdf,https://dl.espressif.com/dl/schematics/DIM_ESP32-PROG_V2.1_20190709.pdf,downloaded from this link on 2026-11-22
+Espressif_ESP-Prog_user_guide.html,https://docs.espressif.com/projects/esp-dev-kits/en/latest/other/esp-prog/user_guide.html,downloaded from this link on 2026-11-22 (page saved as HTML)
+Espressif_SCH_ESP32-PROG_V2.1.pdf,https://dl.espressif.com/dl/schematics/SCH_ESP32-PROG_V2.1_20190709.pdf,downloaded from this link on 2026-11-22
+FH_0805CG.pdf,https://datasheet.lcsc.com/datasheet/pdf/09fe2daf22580a99fa7fea93ccb20fb7.pdf,"LCSC copy; SHA-256 identical to the repo file (2026-11-22) (C1838, C1828)"
+JSCJ_2N7002.pdf,https://datasheet.lcsc.com/datasheet/pdf/a141b8bd86b14475955ac8c4d3eea0a8.pdf,LCSC copy; SHA-256 identical to the repo file (2026-11-22) (C8545)
+LM393_TI.pdf,https://www.ti.com/lit/ds/symlink/lm393.pdf,SHA-256 identical to the repo file (2026-11-22); the link always serves the latest revision
+MeanWell_DC_plug.pdf,https://www.meanwell.com/upload/pdf/DC_plug.pdf,downloaded from this link on 2026-11-22
+MeanWell_GSM60B.pdf,https://www.meanwell.com/Upload/PDF/GSM60B/GSM60B-SPEC.PDF,downloaded from this link on 2026-11-22
+Molex_90119-0111.pdf,https://www.farnell.com/datasheets/4507172.pdf,Farnell copy of the Molex part sheet; downloaded from this link on 2026-11-22
+Molex_90123-0102.pdf,https://static.rapidonline.com/pdf/05-4394_v1.pdf,Rapid copy of the Molex part sheet; downloaded from this link on 2026-11-22
+Molex_90123_catalog.pdf,https://www.farnell.com/datasheets/7011.pdf,Farnell copy of the Molex catalog page; downloaded from this link on 2026-11-22
+Molex_90142-0006.pdf,https://static.rapidonline.com/pdf/05-4407_v1.pdf,Rapid copy of the Molex part sheet; downloaded from this link on 2026-11-22
+Molex_90156-0144.pdf,https://static.rapidonline.com/pdf/05-4422_v1.pdf,Rapid copy of the Molex part sheet; downloaded from this link on 2026-11-22
+Molex_90156-0146.pdf,https://www.farnell.com/datasheets/2672904.pdf,Farnell copy of the Molex part sheet; downloaded from this link on 2026-11-22
+Molex_SD-90119.pdf,https://datasheet.lcsc.com/datasheet/pdf/c0c1a1b7bfbe9e5a950cae27bf7867eb.pdf,LCSC copy of Molex drawing SD-90119 (C588663); downloaded from this link on 2026-11-22
+MPX5010_b.pdf,,NOT VERIFIED: Motorola MPX5010/D (2001); download source was not recorded. https://www.nxp.com/docs/en/data-sheet/MPX5010.pdf returns 404 and nxp.com returns 403 from here (2026-11-22)
+Murata_GRM21BR61H106KE43.pdf,https://datasheet.lcsc.com/datasheet/pdf/8cca754305bc7d881114d4ba10b82bf2.pdf,LCSC copy; SHA-256 identical to the repo file (2026-11-22) (C440198)
+onsemi_LM393.pdf,https://www.onsemi.com/pdf/datasheet/lm393-d.pdf,downloaded from this link on 2026-11-22
+Panasonic_ERJP06.pdf,https://datasheet.lcsc.com/datasheet/pdf/3694598bef8f46f8e50ce38954aee850.pdf,LCSC copy; SHA-256 identical to the repo file (2026-11-22) (C441993)
+Panasonic_FC.pdf,,"NOT VERIFIED: Panasonic ""FC series catalog"" (2018-10-17); download source was not recorded. industrial.panasonic.com returns 403 from here, and none of the 5 LCSC copies for C178666 matches (2026-11-22)"
+PEC11R.pdf,https://www.bourns.com/docs/Product-Datasheets/PEC11R.pdf,SHA-256 identical to the repo file (2026-11-22)
+PJ-102AH.pdf,https://www.sameskydevices.com/product/resource/pj-102ah.pdf,"same text and date (09/12/2024) as the repo file; Same Sky stamps a new PDF on every download, so SHA-256 differs"
+Samsung_CL21.pdf,https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf,"LCSC copy; SHA-256 identical to the repo file (2026-11-22) (C45783, C28323, C1710)"
+SFM3300.pdf,https://sensirion.com/media/documents/8ECF0D28/62D13110/Sensirion_Datasheet_SFM3300-AW_SFM3300-D.pdf,"SHA-256 identical to the repo file (2026-11-22); product page https://sensirion.com/products/catalog/SFM3300-D lists SFM3304-D as ""Successor product"""
+Solomon_SSD1306_Adafruit.pdf,https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf,Adafruit copy of Solomon Systech SSD1306 Rev 1.1; downloaded from this link on 2026-11-22
+SRN6045TA.pdf,https://www.bourns.com/docs/Product-Datasheets/SRN6045TA.pdf,SHA-256 identical to the repo file (2026-11-22)
+TDK_PS_buzzer.pdf,,"NOT VERIFIED: TDK ""PS series"" (2001); download source was not recorded. product.tdk.com returns 403 from here and the LCSC page for C76871 offers only its own viewer (2026-11-22)"
+TPS54202.pdf,https://www.ti.com/lit/ds/symlink/tps54202.pdf,SHA-256 identical to the repo file (2026-11-22); the link always serves the latest revision
+UNIROYAL_0805W8F.pdf,https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf,LCSC copy; SHA-256 identical to the repo file (2026-11-22) (C17414)
+Vishay_SMBJ.pdf,https://www.vishay.com/docs/88392/smbj.pdf,downloaded from this link on 2026-11-22
+Wonsmart_WS4540-12-NZ03.pdf,,"NO PUBLIC LINK: Wonsmart drawing dated 2023-07-12, supplied by the maker or seller; no copy found on the web (2026-11-22)"
+Wurth_61300411121.pdf,https://www.we-online.com/components/products/datasheet/61300411121.pdf,SHA-256 identical to the repo file (2026-11-22) (checked in the browser; the site refuses curl)
+Wurth_61300421121.pdf,https://www.we-online.com/components/products/datasheet/61300421121.pdf,SHA-256 identical to the repo file (2026-11-22) (checked in the browser; the site refuses curl)
+Wurth_61300611121.pdf,https://www.we-online.com/components/products/datasheet/61300611121.pdf,SHA-256 identical to the repo file (2026-11-22) (checked in the browser; the site refuses curl)
+Yageo_CC0805_NP0.pdf,https://datasheet.lcsc.com/datasheet/pdf/4eca2bb4b507f1633db47e922d632b95.pdf,LCSC copy; SHA-256 identical to the repo file (2026-11-22) (C277525)
+Yageo_CC0805_X7R.pdf,https://datasheet.lcsc.com/datasheet/pdf/23ccee80ee542e7cf156a772bb589942.pdf,LCSC copy; SHA-256 identical to the repo file (2026-11-22) (C49678)
+Yageo_RT.pdf,https://datasheet.lcsc.com/datasheet/pdf/46d7760c582640714d605308a25a220a.pdf,"LCSC copy; SHA-256 identical to the repo file (2026-11-22) (C122537, C865182)"
