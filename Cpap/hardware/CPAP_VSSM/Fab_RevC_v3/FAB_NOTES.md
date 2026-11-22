@@ -1,6 +1,6 @@
 # SiPAP Rev C (layout v3) — hồ sơ đặt mạch
 
-> Xuất ngày 2026-11-21. Đây là **bộ duy nhất dùng để đặt in**. Hai bộ `Fab_RevC/` và `Fab_RevC_v2/` là layout cũ, **không dùng nữa**.
+> Xuất ngày 2026-11-21, xuất lại 2026-11-22 (xem "Cập nhật 2026-11-22" ở cuối). Đây là **bộ duy nhất dùng để đặt in**. Hai bộ `Fab_RevC/` và `Fab_RevC_v2/` là layout cũ, **không dùng nữa**.
 >
 > So với v2, bản v3 bố trí lại linh kiện và đi dây lại toàn bộ theo góp ý review. Schematic có 3 thay đổi, đều đã đồng bộ sang PCB, BOM và firmware:
 > - đổi gán GPIO của ESP32;
@@ -124,7 +124,8 @@ Gán GPIO v3 nằm trong `Cpap/firmware/sipap_v1/config.h` và đã biên dịch
 | Đọc ngược Gerber/khoan | Viền đúng 101.6 x 76.2 mm. **268/268 pad** có đồng và mask đúng lớp; kem hàn đủ, trừ TP và FID (đúng ý). **135/135 via** có đồng 2 mặt và phủ mask kín. **175/175 lỗ** khớp vị trí và cỡ, không thừa lỗ |
 | Schematic ↔ PCB | 76/76 linh kiện, `in_sync`. 218 chân có net khớp từng chân. 29 chân để trống (net 1 chân) đều khớp |
 | BOM ↔ board | 76 linh kiện, mỗi linh kiện đúng 1 dòng BOM, giá trị khớp comment |
-| ERC | 0 lỗi. 7 cảnh báo "no driving source" trên net cầu chia/cổng (COMP_REF, EN, FB3, FB5, GATE, RPP_G, SFM_G), bình thường |
+| ERC | 0 vi phạm (2026-11-22). 7 cảnh báo "Nets with no driving source" trên COMP_REF, EN, FB3, FB5, GATE, RPP_G, SFM_G được tắt bằng dấu No ERC đặt đúng nhãn net, và chỉ tắt riêng loại cảnh báo này. Các net này chỉ được cấp qua điện trở (cầu chia hoặc kéo lên) |
+| Chạm keep-out | 0 (2026-11-22). Vùng cấm anten và đoạn keep-out mép board chỗ U1 và J1 đã chuyển vào footprint của chính linh kiện đó, giữ nguyên hình học |
 | Dây cáp (`check_harness.py`) | 19 đạt, 0 lỗi, 1 chờ dữ liệu blower |
 
 **Trạng thái DRC:** bridge ghi verdict là `pass_unapproved_rules`, tức DRC đạt nhưng bộ luật chưa được bạn duyệt. Phiên này đã sửa 4 luật:
@@ -137,10 +138,28 @@ Duyệt trong Altium bằng `pcb_drc_rules(action='approve')` nếu đồng ý.
 **Ngoại lệ đã biết, có chủ đích:**
 | Mục | Vì sao chấp nhận |
 |---|---|
-| J1 chạm keep-out mép board; U1 nằm trên keep-out anten | Miệng jack phải ra đúng mép trái. Anten module phải nằm trên vùng cấm đồng ở mép board (ESP32-S3-WROOM-1 DS v1.8, mục layout anten) |
 | 24/64 via tín hiệu không có via GND trong 40 mil | Đều là tín hiệu chậm hoặc DC: EN, ADC, buzzer, gate MOSFET, nguồn 3V3/5V, SW của buck. Board không có tín hiệu tốc độ cao |
 | 10 mảng GND rời ở mặt trên | Cả 10 đều nối xuống mặt phẳng GND liền khối ở mặt dưới qua via; 0 mảng chết |
 | Silk viền module U1 cách mép trên 0.10 mm | Thân module đặt sát mép theo yêu cầu anten. Xưởng có thể cắt bớt nét silk này, không ảnh hưởng gì |
 | 1 đoạn EN ở mặt dưới chạm mép thân R12 (9.9 mil) | Nằm ở mặt dưới, không nằm giữa 2 pad. Mặt trên: 0 đoạn dây lạ dưới thân linh kiện |
 
 File OutJob để xuất lại: `CPAP_VSSM/SiPAP_Fab.OutJob` (Gerber, khoan, IPC-356, ODB++) và `SiPAP_Docs.OutJob` (PDF schematic). Script gom hồ sơ: `tools/layout_v3/fab_v3.py`.
+
+Lưu ý: `SiPAP_Fab.OutJob` còn một mục in ra máy in (`Print To \\CLDFS01\Supply Room B&W`), sót lại từ mẫu của Altium. Máy in này không có trên máy đang dùng; lần xuất ngày 2026-11-22 không có lệnh in nào vào hàng đợi. Nên tắt mục này trong OutJob.
+
+## Cập nhật 2026-11-22
+**Thư viện và board:**
+- Vùng cấm anten của U1 và đoạn keep-out mép board ngay chỗ U1 (mép trên) và J1 (mép trái) đã chuyển vào footprint `ESP32-S3-WROOM-1_DS` và `CUI_PJ-102AH`, giữ đúng toạ độ và bề rộng 30 mil như cũ. Đoạn keep-out mép board được cắt ra để nối tiếp hai đoạn này.
+- Footprint `PEC11R-4xxxF-S_DS` trong thư viện sửa cao 31.5 mm cho khớp board: thân 6.5 mm cộng trục L = 25 mm (Bourns PEC11R DS tr.2-3).
+- U1, J1, U6 được nạp lại từ thư viện. Cả 268/268 pad giữ nguyên vị trí, cỡ và net.
+- Silk viền J1 trước đó đã xoá trên board để nhường chỗ cho chữ "12V IN"; nay xoá lại như cũ.
+
+**Kết quả:** DRC 0, chạm keep-out 0, ERC 0.
+
+**Xuất lại hồ sơ** rồi so từng lớp với bản ngày 2026-11-21. Cách so: vẽ cả hai bản thành ảnh 20 µm/điểm, rồi đếm điểm ảnh khác nhau.
+- Silk, mask, kem hàn và đồng mặt dưới giống hệt.
+- Đồng mặt trên lệch 0.0056 mm², quanh toạ độ (19.5, 30.5) mm. Đây là sai khác khi đổ đồng lại (repour), nằm xa chỗ sửa keep-out và nhỏ hơn mức xưởng làm được.
+- Lỗ khoan giống hệt.
+- Đọc ngược Gerber vẫn đạt: 268/268 pad, 135/135 via phủ kín, 175/175 lỗ, đồng cách mép 0.647 mm.
+
+**Bước 6 (model STEP của hãng) chưa làm.** Bourns PEC11R, Same Sky PJ-102AH và Espressif ESP32-S3-WROOM-1 không có link tải STEP trực tiếp, chỉ tải được qua SnapEDA/Octopart (cần tài khoản) hoặc trang tài nguyên riêng của hãng. Thân 3D hiện tại là khối đùn, kích thước lấy từ datasheet (xem `../3D/height_map.md`). Nếu bạn tải file STEP về, có thể gắn vào thư viện bằng `lib_link_3d_model`.
