@@ -1,11 +1,9 @@
 # Realistic top/bottom render of an Altium Gerber set (RS-274X + Excellon).
-# Usage: python -I render_sides.py <gerber_dir> <basename> <out_dir> [ppm]
+# Usage: python render_sides.py <gerber_dir> <basename> <out_dir> [ppm]
+# Import side_images() to get the board-only top/bottom layer images (used by render_3d.py).
 import re, sys, math, os
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
-
-G, BASE, OUT = sys.argv[1], sys.argv[2], sys.argv[3]
-PPM = float(sys.argv[4]) if len(sys.argv) > 4 else 24.0  # pixels per mm
 
 
 def arc_pts(x0, y0, x1, y1, i, j, cw):
@@ -166,45 +164,59 @@ def drills(path):
     return holes
 
 
-f = lambda e: os.path.join(G, f'{BASE}.{e}')
-outline = parse(f('GM'))
-xs = [p[0] for o in outline if o[0] == 'D' for p in o[2]]; ys = [p[1] for o in outline if o[0] == 'D' for p in o[2]]
-bx0, by0, bx1, by1 = min(xs), min(ys), max(xs), max(ys)
-M = 3.0
-cv = Canvas((bx0 - M, by0 - M, bx1 + M, by1 + M), PPM)
-board = np.zeros((cv.H, cv.W), bool)
-a, b = cv.T(bx0, by1), cv.T(bx1, by0)
-board[int(a[1]):int(b[1]), int(a[0]):int(b[0])] = True
+class Board:
+    """Gerber set rasterised on a canvas with margin M (mm) around the outline."""
 
-hole_im = Image.new('L', (cv.W, cv.H), 0); hd = ImageDraw.Draw(hole_im)
-for name in (f'{BASE}-RoundHoles.TXT', f'{BASE}-SlotHoles.TXT'):
-    p = os.path.join(G, name)
-    if not os.path.exists(p): continue
-    for x1, y1, x2, y2, d in drills(p):
-        A, B = cv.T(x1, y1), cv.T(x2, y2); r = d / 2 * PPM
-        hd.line([A, B], fill=255, width=max(1, int(round(d * PPM))))
-        for cx, cy in (A, B): hd.ellipse([cx - r, cy - r, cx + r, cy + r], fill=255)
-holes = np.array(hole_im) > 127
+    def __init__(self, G, BASE, PPM, M=3.0):
+        self.G, self.BASE, self.PPM = G, BASE, PPM
+        outline = parse(self.f('GM'))
+        xs = [p[0] for o in outline if o[0] == 'D' for p in o[2]]; ys = [p[1] for o in outline if o[0] == 'D' for p in o[2]]
+        self.bx0, self.by0, self.bx1, self.by1 = min(xs), min(ys), max(xs), max(ys)
+        self.cv = cv = Canvas((self.bx0 - M, self.by0 - M, self.bx1 + M, self.by1 + M), PPM)
+        self.board = np.zeros((cv.H, cv.W), bool)
+        a, b = cv.T(self.bx0, self.by1), cv.T(self.bx1, self.by0)
+        self.box = (int(a[0]), int(a[1]), int(b[0]), int(b[1]))
+        self.board[int(a[1]):int(b[1]), int(a[0]):int(b[0])] = True
+        hole_im = Image.new('L', (cv.W, cv.H), 0); hd = ImageDraw.Draw(hole_im)
+        for name in (f'{BASE}-RoundHoles.TXT', f'{BASE}-SlotHoles.TXT'):
+            p = os.path.join(G, name)
+            if not os.path.exists(p): continue
+            for x1, y1, x2, y2, d in drills(p):
+                A, B = cv.T(x1, y1), cv.T(x2, y2); r = d / 2 * PPM
+                hd.line([A, B], fill=255, width=max(1, int(round(d * PPM))))
+                for cx, cy in (A, B): hd.ellipse([cx - r, cy - r, cx + r, cy + r], fill=255)
+        self.holes = np.array(hole_im) > 127
+
+    def f(self, e):
+        return os.path.join(self.G, f'{self.BASE}.{e}')
+
+    def layer_rgb(self, cu, mask, silk, edge_px=5):
+        """Board image (unmirrored, as seen from the top) of one side, including the margin."""
+        cv, board, holes = self.cv, self.board, self.holes
+        C = cv.raster(parse(self.f(cu))); S = cv.raster(parse(self.f(mask))); K = cv.raster(parse(self.f(silk)))
+        img = np.zeros((cv.H, cv.W, 3), np.float32)
+        img[:] = (34, 34, 38)                                   # background
+        img[board] = (22, 92, 48)                               # FR4 under green mask
+        img[board & C] = (60, 150, 80)                          # copper under mask
+        img[board & S & ~C] = (170, 150, 95)                    # bare laminate in mask opening
+        img[board & S & C] = (212, 175, 85)                     # ENIG exposed copper
+        img[board & K & ~S] = (245, 245, 240)                   # silkscreen
+        img[holes] = (18, 18, 20)
+        if edge_px:
+            edge = board & ~np.array(Image.fromarray(board.astype(np.uint8) * 255).filter(ImageFilter.MinFilter(edge_px))).astype(bool)
+            img[edge] = (12, 60, 30)
+        return img.clip(0, 255).astype(np.uint8)
+
+    def side_images(self):
+        """(top, bottom) board-only RGB arrays, both in top-view orientation (row 0 = max Y)."""
+        x0, y0, x1, y1 = self.box
+        top = self.layer_rgb('GTL', 'GTS', 'GTO', edge_px=0)[y0:y1, x0:x1]
+        bot = self.layer_rgb('GBL', 'GBS', 'GBO', edge_px=0)[y0:y1, x0:x1]
+        return top, bot
 
 
-def side(cu, mask, silk, mirror, title):
-    C = cv.raster(parse(f(cu))); S = cv.raster(parse(f(mask))); K = cv.raster(parse(f(silk)))
-    img = np.zeros((cv.H, cv.W, 3), np.float32)
-    img[:] = (34, 34, 38)                                   # background
-    sub = np.array((22, 92, 48), np.float32)                # FR4 under green mask
-    cu_mask = np.array((60, 150, 80), np.float32)           # copper under mask
-    gold = np.array((212, 175, 85), np.float32)             # ENIG exposed copper
-    fr4 = np.array((170, 150, 95), np.float32)              # bare laminate in mask opening
-    img[board] = sub
-    img[board & C] = cu_mask
-    img[board & S & ~C] = fr4
-    img[board & S & C] = gold
-    img[board & K & ~S] = (245, 245, 240)
-    img[holes] = (18, 18, 20)
-    # thin board edge
-    edge = board & ~np.array(Image.fromarray(board.astype(np.uint8) * 255).filter(ImageFilter.MinFilter(5))).astype(bool)
-    img[edge] = (12, 60, 30)
-    im = Image.fromarray(img.clip(0, 255).astype(np.uint8))
+def side(bd, cu, mask, silk, mirror, title):
+    im = Image.fromarray(bd.layer_rgb(cu, mask, silk))
     if mirror: im = im.transpose(Image.FLIP_LEFT_RIGHT)
     pad = 44
     canvas = Image.new('RGB', (im.width, im.height + pad), (34, 34, 38)); canvas.paste(im, (0, pad))
@@ -218,8 +230,12 @@ def side(cu, mask, silk, mirror, title):
     return canvas
 
 
-os.makedirs(OUT, exist_ok=True)
-w, h = bx1 - bx0, by1 - by0
-side('GTL', 'GTS', 'GTO', False, f'SiPAP Rev C v3 - TOP  ({w:.1f} x {h:.1f} mm)').save(os.path.join(OUT, 'SiPAP_v3_TOP_render.png'))
-side('GBL', 'GBS', 'GBO', True, f'SiPAP Rev C v3 - BOTTOM (nhin tu duoi, lat guong)').save(os.path.join(OUT, 'SiPAP_v3_BOTTOM_render.png'))
-print('board', bx0, by0, bx1, by1, 'px', cv.W, cv.H)
+if __name__ == '__main__':
+    G, BASE, OUT = sys.argv[1], sys.argv[2], sys.argv[3]
+    PPM = float(sys.argv[4]) if len(sys.argv) > 4 else 24.0  # pixels per mm
+    bd = Board(G, BASE, PPM)
+    os.makedirs(OUT, exist_ok=True)
+    w, h = bd.bx1 - bd.bx0, bd.by1 - bd.by0
+    side(bd, 'GTL', 'GTS', 'GTO', False, f'SiPAP Rev C v3 - TOP  ({w:.1f} x {h:.1f} mm)').save(os.path.join(OUT, 'SiPAP_v3_TOP_render.png'))
+    side(bd, 'GBL', 'GBS', 'GBO', True, f'SiPAP Rev C v3 - BOTTOM (nhin tu duoi, lat guong)').save(os.path.join(OUT, 'SiPAP_v3_BOTTOM_render.png'))
+    print('board', bd.bx0, bd.by0, bd.bx1, bd.by1, 'px', bd.cv.W, bd.cv.H)
